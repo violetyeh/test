@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '政务数据共享交换平台',
+  title: '人脸识别门禁控制系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
