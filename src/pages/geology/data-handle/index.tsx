@@ -91,6 +91,36 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
         project: 'APP启动页面',
         status: 1,
       },
+      {
+        id: '各地点站牌',
+        creator: '楼宇屏幕',
+        project: 'LED屏幕',
+        status: 1,
+      },
+      {
+        id: '各地点站牌',
+        creator: '公交站牌',
+        project: '广告机',
+        status: 1,
+      },
+      {
+        id: '各地点站牌',
+        creator: '道路广告牌',
+        project: '广告牌',
+        status: 1,
+      },
+      {
+        id: '新闻报纸',
+        creator: '报纸',
+        project: '阅读界面',
+        status: 1,
+      },
+      {
+        id: '新闻报纸',
+        creator: '书本',
+        project: '阅读界面',
+        status: 1,
+      },
      
     ];
     return (

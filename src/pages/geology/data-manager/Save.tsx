@@ -24,7 +24,7 @@ class Save extends Component<SaveProps, SaveState> {
 
     return (
       <Modal
-        title="媒体发布数据编辑"
+        title="广告投放数据编辑"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -41,22 +41,18 @@ class Save extends Component<SaveProps, SaveState> {
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="time" label="媒体发布时间" >
+          <Form.Item key="time" label="广告播放时间" >
             {getFieldDecorator('time', {
               initialValue: currentItem.time,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="type" label="媒体类型" >
+          <Form.Item key="type" label="媒体名称" >
             {getFieldDecorator('type', {
               initialValue: currentItem.type,
             })(
-              <Radio.Group defaultValue="a" buttonStyle="solid">
-                <Radio.Button value="a">产品宣传</Radio.Button>
-                <Radio.Button value="b">影视宣传</Radio.Button>
-                <Radio.Button value="c">公告宣告</Radio.Button>
-              </Radio.Group>,
+              <Input />,
             )}
           </Form.Item>
           <Form.Item key="creator" label="媒体内容" >

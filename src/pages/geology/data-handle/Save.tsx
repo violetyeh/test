@@ -40,16 +40,16 @@ class Save extends Component<SaveProps, SaveState> {
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="project" label="类型" >
-            {getFieldDecorator('project', {
-              initialValue: currentItem.project,
+          <Form.Item key="creator" label="类型" >
+            {getFieldDecorator('creator', {
+              initialValue: currentItem.creator,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="媒体名称" >
-            {getFieldDecorator('creator', {
-              initialValue: currentItem.creator,
+          <Form.Item key="project" label="媒体名称" >
+            {getFieldDecorator('project', {
+              initialValue: currentItem.project,
             })(
               <Input />,
             )}

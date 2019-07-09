@@ -26,11 +26,11 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
       dataIndex: 'id',
     },
     {
-      title: '媒体发布时间',
+      title: '广告播放日期',
       dataIndex: 'time',
     },
     {
-      title: '媒体类型',
+      title: '媒体名称',
       dataIndex: 'type',
     },
     {
@@ -38,7 +38,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
       dataIndex: 'creator',
     },
     {
-      title: '是否成功发布',
+      title: '是否成功投放',
       dataIndex: 'status',
       render: (text) => <Switch checkedChildren="成功" unCheckedChildren="失败" />,
     },
@@ -70,63 +70,63 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
     const data = [
       {
         id: 'SJ20101',
-        time:'2019-07-01 07:22:36',
-        type: '产品宣传',
-        creator: '口红广告',
+        time:'2019-07-01',
+        type: '中央一套',
+        creator: '化妆品广告',
         status: 1,
       },
       {
         id: 'SJ20102',
-        time:'2019-07-01 07:23:14',
-        type: '产品宣传',
-        creator: '减肥产品广告',
+        time:'2019-07-01',
+        type: '湖南一套',
+        creator: '珠宝广告',
         status: 1,
       },
       {
         id: 'SJ20103',
-        time:'2019-07-02 14:00:00',
-        type: '公告宣告',
-        creator: '政务公告',
+        time:'2019-07-02',
+        type: '中央二套',
+        creator: '公益广告',
         status: 1,
       },
       {
         id: 'SJ20104',
-        time:'2019-07-02 08:13:54',
-        type: '影视宣传',
-        creator: '《影》预告片',
+        time:'2019-07-02',
+        type: '湖南一套',
+        creator: '化妆品广告',
         status: 1,
       },
       {
         id: 'SJ20105',
-        time:'2019-07-03 15:10:22',
-        type: '公告宣告',
-        creator: '新增法规公告',
+        time:'2019-07-03',
+        type: '湖南一套',
+        creator: '化妆品广告',
         status: 1,
       },
       {
         id: 'SJ20106',
-        time:'2019-07-04 11:23:22',
-        type: '影视宣传',
-        creator: '《明暗》预告片',
+        time:'2019-07-04',
+        type: '湖南一套',
+        creator: '汽车广告',
         status: 1,
       },
       {
         id: 'SJ20107',
-        time:'2019-07-03 07:30:10',
-        type: '公告宣告',
-        creator: '新增法规公告',
+        time:'2019-07-03',
+        type: '湖南一套',
+        creator: '医药广告',
         status: 1,
       },
       {
         id: 'SJ20108',
-        time:'2019-07-03 07:22:01',
-        type: '产品宣传',
-        creator: '网友广告',
+        time:'2019-07-03',
+        type: '湖南一套',
+        creator: '农药广告',
         status: 1,
       },
     ];
     return (
-      <PageHeaderWrapper title="媒体发布数据编辑">
+      <PageHeaderWrapper title="广告投放数据编辑">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
@@ -137,7 +137,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="媒体类型">
+                  <Form.Item label="媒体名称">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -149,7 +149,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加媒体发布数据
+                        添加广告投放数据
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
