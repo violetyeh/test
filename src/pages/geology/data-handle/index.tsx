@@ -23,25 +23,21 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '媒体设备编号',
+      title: '投放渠道',
       dataIndex: 'id',
     },
     {
-      title: '所属区域',
-      dataIndex: 'project',
-    },
-    {
-      title: '区域位置',
+      title: '类型',
       dataIndex: 'creator',
     },
     {
-      title: '发布类型',
-      dataIndex: 'type',
+      title: '媒体名称',
+      dataIndex: 'project',
     },
     {
       title: '当前状态',
       dataIndex: 'status',
-      render: (text) => (<Tag color="red">{text}</Tag>),
+      render: (text) => (<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />),
     },
     {
       title: '操作',
@@ -78,10 +74,9 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
     const { saveVisible, detailVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'MT156',
-        project: '中央广场',
-        creator: '广袤楼',
-        type: '可乐广告',
+        id: '网络媒体',
+        creator: '电视',
+        project: '中央一套',
         status: '播放中',
       },
       {

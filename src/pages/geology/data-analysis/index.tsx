@@ -46,9 +46,8 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
       dataIndex: 'column',
     },
     {
-      title: '定义长度',
+      title: '定义长度（秒）',
       dataIndex: 'status',
-      render: (text) => <Progress percent={text} status="active" />,
     },
     {
       title: '操作',
@@ -88,82 +87,82 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
         status: 30,
       },
       {
-        id: 'GGLY02',
-        name: '楼宇广告机002',
-        type: '2019-06-24 06:10:10',
-        date: '2019-06-24 24:00:00',
-        creator: '吴启飒',
-        status: 60,
-        switchs:1,
+        id: '商业广告',
+        name: 'SK-II系列',
+        type: 'P',
+        date: '化妆品',
+        creator: 'SK-II',
+        column:'9秒广告',
+        status: 9,
       },
       {
-        id: 'GGLY03',
-        name: '楼宇广告机003',
-        type: '2019-06-25 06:10:10',
-        date: '2019-06-25 24:00:00',
-        creator: '王思',
-        status: 30,
-        switchs:1,
-      },
-      {
-        id: 'GGLY04',
-        name: '楼宇广告机004',
-        type: '2019-06-26 06:10:10',
-        date: '2019-06-26 24:00:00',
-        creator: '陈燕',
-        status: 17,
-        switchs:1,
-      },
-      {
-        id: 'GGLY05',
-        name: '楼宇广告机005',
-        type: '2019-06-27 06:10:10',
-        date: '2019-06-27 24:00:00',
-        creator: '明玉雨',
-        status: 26,
-        switchs:1,
-      },
-      {
-        id: 'GGLY06',
-        name: '楼宇广告机006',
-        type: '2019-06-28 06:10:10',
-        date: '2019-06-28 24:00:00',
-        creator: '刘玉燕',
-        status: 56,
-        switchs:1,
-      },
-      {
-        id: 'GGLY07',
-        name: '楼宇广告机007',
-        type: '2019-06-29 06:10:10',
-        date: '2019-06-29 24:00:00',
-        creator: '李玉',
+        id: '商业广告',
+        name: '佰草集系列',
+        type: 'P',
+        date: '化妆品',
+        creator: '佰草集',
+        column:'16秒广告',
         status: 16,
-        switchs:1,
       },
       {
-        id: 'GGLY08',
-        name: '楼宇广告机008',
-        type: '2019-06-30 06:10:10',
-        date: '2019-06-30 24:00:00',
-        creator: '汪峰',
-        status: 32,
-        switchs:1,
+        id: '商业广告',
+        name: '百雀羚系列',
+        type: 'P',
+        date: '化妆品',
+        creator: '百雀羚',
+        column:'10秒广告',
+        status: 10,
+      },
+      {
+        id: '公益广告',
+        name: '公安部',
+        type: 'v0890',
+        date: '公益',
+        creator: '警民同心 平安春节',
+        column:'30秒广告',
+        status: 30,
+      },
+      {
+        id: '公益广告',
+        name: 'CCTV',
+        type: 'v0891',
+        date: '公益',
+        creator: '战斗英雄张富清',
+        column:'17秒广告',
+        status: 17,
+      },
+      {
+        id: '珠宝广告',
+        name: '周六福',
+        type: 'P',
+        date: '珠宝',
+        creator: '黄金',
+        column:'20秒广告',
+        status: 20,
+      },
+      {
+        id: '珠宝广告',
+        name: '周六福',
+        type: 'P',
+        date: '珠宝',
+        creator: '钻石',
+        column:'15秒广告',
+        status: 15,
       },
     ];
        return (
-      <PageHeaderWrapper title="设备管理">
+      <PageHeaderWrapper title="广告投放管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="设备编号">
+                  <Form.Item label="广告类型">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="设备名称">
+                  <Form.Item label="名称">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -175,7 +174,7 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加设备
+                        添加投放广告
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
