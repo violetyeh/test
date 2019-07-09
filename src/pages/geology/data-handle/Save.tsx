@@ -23,7 +23,7 @@ class Save extends Component<SaveProps, SaveState> {
     const { form: { getFieldDecorator }, handleSaveVisible, currentItem } = this.props;
     return (
       <Modal
-        title="编辑政务人员信息"
+        title="编辑设备信息"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -33,42 +33,42 @@ class Save extends Component<SaveProps, SaveState> {
 
       >
         <Form {...formItemLayout} layout="vertical">
-          <Form.Item key="id" label="人员编号" >
+          <Form.Item key="id" label="媒体设备编号" >
             {getFieldDecorator('id', {
               initialValue: currentItem.id,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="project" label="所属地区" >
+          <Form.Item key="project" label="所属区域" >
             {getFieldDecorator('project', {
               initialValue: currentItem.project,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="姓名" >
+          <Form.Item key="creator" label="区域位置" >
             {getFieldDecorator('creator', {
               initialValue: currentItem.creator,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="type" label="人员职务" >
+          <Form.Item key="type" label="发布类型" >
             {getFieldDecorator('type', {
               initialValue: currentItem.type,
             })(
-              <Radio.Group defaultValue="a" buttonStyle="solid">
-                <Radio.Button value="a">普通员工</Radio.Button>
-                <Radio.Button value="b">管理层</Radio.Button>
-              </Radio.Group>,
+              <Input />,
             )}
           </Form.Item>
-          <Form.Item key="date" label="政务文件建立时间" >
-            {getFieldDecorator('date', {
-              initialValue: currentItem.date,
+          <Form.Item key="status" label="当前状态" >
+            {getFieldDecorator('status', {
+              initialValue: currentItem.status,
             })(
-              <Input.TextArea rows={2} />,
+              <Radio.Group defaultValue="a" buttonStyle="solid">
+                <Radio.Button value="a">播放中</Radio.Button>
+                <Radio.Button value="b">等待中</Radio.Button>
+              </Radio.Group>,
             )}
           </Form.Item>
         </Form>

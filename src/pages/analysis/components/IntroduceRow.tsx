@@ -26,7 +26,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='政务数据共享交换数量'
+          title='媒体发布数量'
           action={
             <Tooltip
               title={
@@ -37,7 +37,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(8846).format('0,0')}
-          footer='日工作量：500'
+          footer='日发布量：134'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -48,7 +48,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='共享交换进度'
+          title='发布进度'
           action={
             <Tooltip
               title={

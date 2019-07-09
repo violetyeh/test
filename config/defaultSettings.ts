@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '人脸识别门禁控制系统',
+  title: '楼宇媒体发布点位管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

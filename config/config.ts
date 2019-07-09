@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '政务数据文件管理',
+          name: '媒体设备管理',
           path: '/data-analysis',
           icon: 'fullscreen',
           component: './geology/data-analysis',
         },
         {
-          name: '政务文件人员管理',
+          name: '媒体位置发布管理',
           path: '/data-handle',
           icon: 'fullscreen',
           component: './geology/data-handle',
         },
         {
-          name: '政务数据共享交流管理',
+          name: '媒体发布数据管理',
           path: '/data-manager',
           icon: 'fullscreen',
           component: './geology/data-manager',

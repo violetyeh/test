@@ -24,7 +24,7 @@ class Save extends Component<SaveProps, SaveState> {
 
     return (
       <Modal
-        title="数据共享交流操作"
+        title="媒体发布数据编辑"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -41,14 +41,25 @@ class Save extends Component<SaveProps, SaveState> {
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="type" label="数据类型" >
-            {getFieldDecorator('type', {
-              initialValue: currentItem.type,
+          <Form.Item key="time" label="媒体发布时间" >
+            {getFieldDecorator('time', {
+              initialValue: currentItem.time,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="政务负责人" >
+          <Form.Item key="type" label="媒体类型" >
+            {getFieldDecorator('type', {
+              initialValue: currentItem.type,
+            })(
+              <Radio.Group defaultValue="a" buttonStyle="solid">
+                <Radio.Button value="a">产品宣传</Radio.Button>
+                <Radio.Button value="b">影视宣传</Radio.Button>
+                <Radio.Button value="c">公告宣告</Radio.Button>
+              </Radio.Group>,
+            )}
+          </Form.Item>
+          <Form.Item key="creator" label="媒体内容" >
             {getFieldDecorator('creator', {
               initialValue: currentItem.creator,
             })(

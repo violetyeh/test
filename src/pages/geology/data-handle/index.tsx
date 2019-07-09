@@ -23,23 +23,19 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '人员编号',
+      title: '媒体设备编号',
       dataIndex: 'id',
     },
     {
-      title: '所属地区',
+      title: '所属区域',
       dataIndex: 'project',
     },
     {
-      title: '姓名',
+      title: '区域位置',
       dataIndex: 'creator',
     },
     {
-      title: '政务文件建立时间',
-      dataIndex: 'date',
-    },
-    {
-      title: '人员职务',
+      title: '发布类型',
       dataIndex: 'type',
     },
     {
@@ -82,86 +78,78 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
     const { saveVisible, detailVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'RY20101',
-        project: '南沙区',
-        creator: '张林',
-        date: '2019-06-21',
-        type: '普通员工',
-        status: '在岗',
+        id: 'MT156',
+        project: '中央广场',
+        creator: '广袤楼',
+        type: '可乐广告',
+        status: '播放中',
       },
       {
-        id: 'RY20102',
-        project: '南沙区',
-        creator: '黄克',
-        date: '2019-06-22',
-        type: '管理层',
-        status: '休假中',
+        id: 'MT157',
+        project: '中央公园',
+        creator: '广袤楼',
+        type: '服装广告',
+        status: '等待中',
+      }, {
+        id: 'MT158',
+        project: '三峡广场',
+        creator: '齐天楼',
+        type: '可乐广告',
+        status: '播放中',
       },
+       {
+        id: 'MT159',
+        project: '美食广场',
+        creator: '美食街',
+        type: '美食广告',
+        status: '播放中',
+      }, 
       {
-        id: 'RY20103',
-        project: '天河区',
-        creator: '张思林',
-        date: '2019-06-19',
-        type: '普通员工',
-        status: '在岗',
+        id: 'MT160',
+        project: '中央广场',
+        creator: '广袤楼',
+        type: '珠宝广告',
+        status: '播放中',
       },
-      {
-        id: 'RY20104',
-        project: '天河区',
-        date: '2019-06-10',
-        creator: '曾平',
-        type: '普通员工',
-        status: '在岗',
+       {
+        id: 'MT162',
+        project: '宏宇大道',
+        creator: '魔天楼',
+        type: '电影宣传',
+        status: '等待中',
       },
+       {
+        id: 'MT165',
+        project: '中央大街',
+        creator: '影视楼',
+        type: '影视宣传',
+        status: '播放中',
+      }, 
       {
-        id: 'RY20105',
-        project: '天河区',
-        date: '2019-07-05',
-        creator: '蒋乐乐',
-        type: '管理层',
-        status: '在岗',
-      },
-      {
-        id: 'RY20106',
-        project: '白云区',
-        date: '2019-06-29',
-        creator: '王芊芊',
-        type: '普通员工',
-        status: '休假中',
-      },
-      {
-        id: 'RY20107',
-        project: '白云区',
-        date: '2019-06-19',
-        creator: '钟婷',
-        type: '管理层',
-        status: '在岗',
-      },
-      {
-        id: 'RY20108',
-        project: '白云区',
-        date: '2019-06-21',
-        creator: '王籽言',
-        type: '普通员工',
-        status: '在岗',
+        id: 'MT166',
+        project: '流星街',
+        creator: '政务楼',
+        type: '公告宣传',
+        status: '播放中',
       },
     ];
     return (
-      <PageHeaderWrapper title="政务人员管理">
+      <PageHeaderWrapper title="楼宇媒体设备管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="人员编号">
+                  <Form.Item label="媒体设备编号">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="人员类型">
+                  <Form.Item label="当前状态">
                     <Select >
-                      <Select.Option value="jack">普通员工</Select.Option>
-                      <Select.Option value="lucy">管理层</Select.Option>
+                      <Select.Option value="jack">播放中</Select.Option>
+                      <Select.Option value="lucy">等待中</Select.Option>
+                      
                     </Select>
                   </Form.Item>
                 </Col>
@@ -173,7 +161,7 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加政务管理人员
+                        添加媒体设备
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
