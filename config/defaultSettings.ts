@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '楼宇媒体发布点位管理系统',
+  title: '数据引领广告投放过程管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

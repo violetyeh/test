@@ -22,34 +22,33 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '设备编号',
+      title: '广告类型',
       dataIndex: 'id',
     },
     {
-      title: '设备名称',
+      title: '名称',
       dataIndex: 'name',
     },
     {
-      title: '设备日开启时间',
+      title: '版本',
       dataIndex: 'type',
     },
     {
-      title: '设备日关闭时间',
+      title: '上级分类',
       dataIndex: 'date',
     },
     {
-      title: '设备负责人',
+      title: '下级分类',
       dataIndex: 'creator',
     },
     {
-      title: '设备分布范围',
-      dataIndex: 'status',
-      render: (text) => <Progress percent={text} status="active" />,
+      title: '栏目类型',
+      dataIndex: 'column',
     },
     {
-      title: '设备开启',
-      dataIndex: 'switchs',
-      render: (text) => <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />,
+      title: '定义长度',
+      dataIndex: 'status',
+      render: (text) => <Progress percent={text} status="active" />,
     },
     {
       title: '操作',
@@ -80,13 +79,13 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'GGLY01',
-        name: '楼宇广告机001',
-        type: '2019-06-23 06:10:10',
-        date: '2019-06-23 24:00:00',
-        creator: '张丽',
+        id: '商业广告',
+        name: 'OLAY净白系列',
+        type: 'P',
+        date: '化妆品',
+        creator: 'OLAY',
+        column:'30秒广告',
         status: 30,
-        switchs:1,
       },
       {
         id: 'GGLY02',
