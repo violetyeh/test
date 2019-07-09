@@ -103,23 +103,20 @@ class Analysis extends Component<analysisProps, analysisState> {
     return (
       <GridContent>
         <React.Fragment>
-
+          <Suspense fallback={<PageLoading />}>
+            <IntroduceRow loading={loading} visitData={visitData} />
+          </Suspense>
           <Suspense fallback={null}>
-            <SalesCard
-              rangePickerValue={rangePickerValue}
-              salesData={salesData}
-              isActive={this.isActive}
-              handleRangePickerChange={() => { }}
+            <OfflineData
+              activeKey={activeKey}
               loading={loading}
-              selectDate={() => { }}
+              offlineData={offlineData}
+              offlineChartData={offlineChartData}
+              handleTabChange={this.handleTabChange}
             />
-            <div style={{ marginBottom: 50 }} />
-            <Suspense fallback={<PageLoading />}>
-              <IntroduceRow loading={loading} visitData={visitData} />
-            </Suspense>
           </Suspense>
         </React.Fragment>
-      </GridContent >
+      </GridContent>
     );
   }
 }

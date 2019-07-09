@@ -14,19 +14,17 @@ const topColResponsiveProps = {
   sm: 12,
   md: 12,
   lg: 12,
-  xl: 12,
+  xl: 6,
   style: { marginBottom: 24 },
 };
 
 const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVisitData[] }) => {
   return (
     <Row gutter={24}>
-
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          loading={loading}
-          title='政务数据共享交换数量'
+          title='推广次数'
           action={
             <Tooltip
               title={
@@ -36,19 +34,27 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(8846).format('0,0')}
-          footer='日工作量：500'
+          loading={loading}
+          total={282}
+          footer='今日推广: 23'
           contentHeight={46}
         >
-          <MiniArea color="#975FE4" data={visitData} />
+          <Trend flag="up" style={{ marginRight: 16 }}>
+            <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
+            <span className={styles.trendText}>12%</span>
+          </Trend>
+          <Trend flag="down">
+            <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
+            <span className={styles.trendText}>11%</span>
+          </Trend>
         </ChartCard>
       </Col>
 
       <Col {...topColResponsiveProps}>
         <ChartCard
-          loading={loading}
           bordered={false}
-          title='共享交换进度'
+          loading={loading}
+          title='测绘目标'
           action={
             <Tooltip
               title={
@@ -58,16 +64,58 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="66"
+          total={numeral(2123).format('0,0')}
+          footer='今日测绘：292'
+          contentHeight={46}
+        >
+          <MiniArea color="#975FE4" data={visitData} />
+        </ChartCard>
+      </Col>
+      <Col {...topColResponsiveProps}>
+        <ChartCard
+          bordered={false}
+          loading={loading}
+          title='推广进度'
+          action={
+            <Tooltip
+              title={
+                <FormattedMessage id="analysis.analysis.introduce" defaultMessage="Introduce" />
+              }
+            >
+              <Icon type="info-circle-o" />
+            </Tooltip>
+          }
+          total={numeral(2302).format('0,0')}
+          footer='推广进度：90%'
+          contentHeight={46}
+        >
+          <MiniBar data={visitData} />
+        </ChartCard>
+      </Col>
+      <Col {...topColResponsiveProps}>
+        <ChartCard
+          loading={loading}
+          bordered={false}
+          title='技术成熟度'
+          action={
+            <Tooltip
+              title={
+                <FormattedMessage id="analysis.analysis.introduce" defaultMessage="Introduce" />
+              }
+            >
+              <Icon type="info-circle-o" />
+            </Tooltip>
+          }
+          total="88%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>23%</span>
+                <span className={styles.trendText}>12%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>16%</span>
+                <span className={styles.trendText}>11%</span>
               </Trend>
             </div>
           }
