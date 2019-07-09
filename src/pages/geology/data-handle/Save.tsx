@@ -54,7 +54,6 @@ class Save extends Component<SaveProps, SaveState> {
               <Input />,
             )}
           </Form.Item>
-          </Form.Item>
           <Form.Item key="status" label="渠道开关" >
             {getFieldDecorator('status', {
               initialValue: currentItem.status,
