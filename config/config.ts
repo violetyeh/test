@@ -138,13 +138,13 @@ export default {
           component: './geology/data-analysis',
         },
         {
-          name: '广告投放流程管理',
+          name: '广告投放招标管理',
           path: '/data-handle',
           icon: 'fullscreen',
           component: './geology/data-handle',
         },
         {
-          name: '广告投放量数据管理',
+          name: '广告招商数据管理',
           path: '/data-manager',
           icon: 'fullscreen',
           component: './geology/data-manager',

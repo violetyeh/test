@@ -23,25 +23,25 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '广告投放合同名称',
+      title: '广告采购招标项目',
       dataIndex: 'id',
     },
     {
-      title: '广告类型',
+      title: '招标金额',
       dataIndex: 'creator',
     },
     {
-      title: '推广商品',
+      title: '信息类别',
       dataIndex: 'project',
     },
     {
-      title: '广告语',
+      title: '行业',
       dataIndex: 'ggy',
     },
     {
-      title: '合同是否启用',
+      title: '招标是否完成',
       dataIndex: 'status',
-      render: (text) => (<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />),
+      render: (text) => (<Switch checkedChildren="是" unCheckedChildren="否" defaultChecked />),
     },
     {
       title: '操作',
@@ -78,76 +78,76 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
     const { saveVisible, detailVisible, currentItem } = this.state;
     const data = [
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '化妆品广告',
-        ggy:'修护明眸娇颜,重拾流金岁月!',
+        id: '云南省博物馆“金沙水拍云崖暖——红军长征过云南”（暂定名）陈列布展项目招标公告',
+        creator: '￥220万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '珠宝广告',
-        ggy:'千金一诺，一饰铭记。',
+        id: '南岳区2019年深圳北站广告发布项目公开招标公告',
+        creator: '￥98万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '化妆品广告',
-        ggy:'美白,自信新感受!',
+        id: '黑龙江省福利彩票发行中心_福彩大家乐营销活动公开招标公告',
+        creator: '￥1500万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '珠宝广告',
-        ggy:'炫彩你饰界,只有我知心',
+        id: '广西壮族自治区疾病预防控制中心2019年艾滋病预防控制宣传公开招标公告',
+        creator: '￥245万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '化妆品广告',
-        ggy:'拥有精美化妆,完美体现自我!',
+        id: '北京交响乐团2019年“首都市民音乐厅”公益演出项目电视服务宣传采购项目公开招标公告',
+        creator: '￥79.77万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '珠宝广告',
-        ggy:'世上仅此一件，今生与你结缘!',
+        id: '三亚市旅游和文化广电体育局-联合央视四套中文国际频道进行三亚旅游专题宣传项目-公开招标公告',
+        creator: '￥1000万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '化妆品广告',
-        ggy:'青春亮丽,惟有发佳丽',
+        id: '2019年“就在山城.渝创渝新”就业创业宣传服务采购公告',
+        creator: '￥850万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
       {
-        id: '广告投放合同',
-        creator: '电视广告',
-        project: '珠宝广告',
-        ggy:'见证爱的表白，实现幸福的承诺。',
+        id: '尤溪县“互联网+油茶”综合服务平台网络推广服务项目招标公告',
+        creator: '￥100万',
+        project: '招标信息',
+        ggy:'广告投放',
         status: 1,
       },
      
     ];
     return (
-      <PageHeaderWrapper title="广告投放合同管理">
+      <PageHeaderWrapper title="广告投放招标管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="广告投放合同名称">
+                  <Form.Item label="广告采购招标项目">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="广告类型">
+                  <Form.Item label="招标金额">
                      <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -159,7 +159,7 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加广告合同
+                        添加广告招标项目
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">

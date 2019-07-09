@@ -65,7 +65,13 @@ class Save extends Component<SaveProps, SaveState> {
             {getFieldDecorator('status', {
               initialValue: currentItem.status,
             })(
-              <Input />,
+              <Radio.Group defaultValue="a" buttonStyle="solid">
+                <Radio.Button value="a">10万以内</Radio.Button>
+                <Radio.Button value="b">10万-100万</Radio.Button>
+                <Radio.Button value="c">100万-500万</Radio.Button>
+                <Radio.Button value="d">500万-1000万</Radio.Button>
+                <Radio.Button value="e">1000以上</Radio.Button>
+              </Radio.Group>,
             )}
           </Form.Item>
         </Form>

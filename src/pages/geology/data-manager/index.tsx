@@ -22,25 +22,20 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '合同编号',
+      title: '媒体名称',
       dataIndex: 'id',
     },
     {
-      title: '合同生效日期',
+      title: '价格',
       dataIndex: 'time',
     },
     {
-      title: '投放平台',
+      title: '类型',
       dataIndex: 'type',
     },
     {
-      title: '合同年限（年）',
+      title: '形式',
       dataIndex: 'creator',
-    },
-    {
-      title: '合同是否生效',
-      dataIndex: 'status',
-      render: (text) => <Switch checkedChildren="是" unCheckedChildren="否" />,
     },
     {
       title: '操作',
@@ -69,76 +64,68 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'HT1320108',
-        time:'2019-07-03',
-        type: '浙江一套',
-        creator: '5',
-        status: 1,
+        id: 'CCTV我爱你中华《传奇演说家》栏目招商，CCTV我爱你中华《传奇演说家》栏目招商推荐第一季全国总决赛预计在一月份在CCTV我爱你中华录制并播出',
+        time:'￥9600000.00',
+        type: '网综',
+        creator: '冠名',
       },
       {
-        id: 'HT1320101',
-        time:'2019-06-23',
-        type: '安徽一套',
-        creator: '3',
-        status: 1,
+        id: '世界旅游小姐中国区总决赛招商 世界旅游小姐中国区总决赛招商 世界旅游小姐中国区总决赛招商，多种形式合作~',
+        time:'￥8800000.00',
+        type: '体育赛事',
+        creator: 'Logo展示',
       },
       {
-        id: 'HT1320103',
-        time:'2019-06-28',
-        type: '中央二套',
-        creator: '2',
-        status: 1,
+        id: '旅游卫视《文旅之声》栏目全国首档大型文旅互动类综艺节目招商 冠名赞助 国家政策支持党的十八大以来，习近平总书记强调“ 要坚定文化自...',
+        time:'￥3600000.00',
+        type: '电视剧植入',
+        creator: '冠名',
       },
       {
-        id: 'HT1320104',
-        time:'2019-07-02',
-        type: '江苏一套',
-        creator: '3',
-        status: 1,
+        id: '“拳星汇”职业拳击赛事招商“拳星汇”职业拳击赛事招商 勇敢、坚持、热爱，汇聚无限可能！',
+        time:'￥3120000.00',
+        type: '体育赛事',
+        creator: 'Logo展示',
       },
       {
-        id: 'HT1320105',
-        time:'2019-07-03',
-        type: '湖南一套',
-        creator: '5',
-        status: 1,
+        id: '首届海峡国际合唱作曲大赛冠名招标',
+        time:'￥600000.00',
+        type: '音乐演出',
+        creator: '冠名',
       },
       {
-        id: 'HT1320106',
-        time:'2019-07-04',
-        type: '湖南一套',
-        creator: '2',
-        status: 1,
+        id: '香港卫视旅游台，旅游探访类节目《远行》',
+        time:'￥520000.00',
+        type: '体育赛事',
+        creator: 'Logo展示',
       },
       {
-        id: 'HT1320102',
-        time:'2019-06-05',
-        type: '湖南一套',
-        creator: '2',
-        status: 1,
+        id: 'CCTV老故事频道《信用中国》栏目招嘉宾',
+        time:'￥240000.00',
+        type: '电视剧植入',
+        creator: '口播',
       },
       {
-        id: 'HT1320107',
-        time:'2019-07-03',
-        type: '湖南一套',
-        creator: '1',
-        status: 1,
+        id: '湖南电视台《种草吧 麻麻》',
+        time:'￥120000.00',
+        type: '电视剧植入',
+        creator: '参演',
       },
      
     ];
     return (
-      <PageHeaderWrapper title="合同数据编辑">
+      <PageHeaderWrapper title="招商数据编辑">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="合同编号">
+                  <Form.Item label="媒体名称">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="投放平台">
+                  <Form.Item label="形式">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -150,7 +137,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加合同数据
+                        添加广告招商数据
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">

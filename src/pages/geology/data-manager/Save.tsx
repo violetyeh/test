@@ -24,7 +24,7 @@ class Save extends Component<SaveProps, SaveState> {
 
     return (
       <Modal
-        title="合同数据编辑"
+        title="广告招商数据编辑"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -34,32 +34,37 @@ class Save extends Component<SaveProps, SaveState> {
 
       >
         <Form {...formItemLayout} layout="vertical">
-          <Form.Item key="id" label="合同编号" >
+          <Form.Item key="id" label="媒体名称" >
             {getFieldDecorator('id', {
               initialValue: currentItem.id,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="time" label="合同生效日期" >
+          <Form.Item key="time" label="价格" >
             {getFieldDecorator('time', {
               initialValue: currentItem.time,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="type" label="投放平台" >
+          <Form.Item key="type" label="类型" >
             {getFieldDecorator('type', {
               initialValue: currentItem.type,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="合同年限（年）" >
+          <Form.Item key="creator" label="形式" >
             {getFieldDecorator('creator', {
               initialValue: currentItem.creator,
             })(
-              <Input />,
+              <Radio.Group defaultValue="a" buttonStyle="solid">
+                <Radio.Button value="a">冠名</Radio.Button>
+                <Radio.Button value="b">Logo展示</Radio.Button>
+                <Radio.Button value="c">参演</Radio.Button>
+                <Radio.Button value="d">口播</Radio.Button>
+              </Radio.Group>,
             )}
           </Form.Item>
         </Form>
