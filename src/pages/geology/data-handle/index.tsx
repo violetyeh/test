@@ -82,57 +82,57 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
       {
         id: '平台客户',
         creator: '搜狐网媒体新闻',
-        project: '56',
-        ggy:'78',
+        project: 56,
+        ggy:78,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '中华网科技',
-        project: '23',
-        ggy:'46',
+        project: 23,
+        ggy:46,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '凤凰网江苏',
-        project: '33',
-        ggy:'13',
+        project: 33,
+        ggy:13,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '中国贸易新闻网',
-        project: '45',
-        ggy:'26',
+        project: 45,
+        ggy:26,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '飞象网',
-        project: '65',
-        ggy:'36',
+        project: 65,
+        ggy:36,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '黔讯网',
-        project: '68',
-        ggy:'45',
+        project: 68,
+        ggy:45,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '北国网',
-        project: '65',
-        ggy:'64',
+        project: 65,
+        ggy:64,
         status: 1,
       },
       {
         id: '平台客户',
         creator: '华声在线',
-        project: '13',
-        ggy:'33',
+        project: 13,
+        ggy:33,
         status: 1,
       },
      
@@ -161,7 +161,7 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加广告招标项目
+                        添加广告来源类型
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">

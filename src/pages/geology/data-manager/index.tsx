@@ -22,20 +22,16 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '媒体名称',
+      title: '营销类型',
       dataIndex: 'id',
+    },
+    {
+      title: '名称',
+      dataIndex: 'type',
     },
     {
       title: '价格',
       dataIndex: 'time',
-    },
-    {
-      title: '类型',
-      dataIndex: 'type',
-    },
-    {
-      title: '形式',
-      dataIndex: 'creator',
     },
     {
       title: '操作',
@@ -64,68 +60,61 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'CCTV我爱你中华《传奇演说家》栏目招商，CCTV我爱你中华《传奇演说家》栏目招商推荐第一季全国总决赛预计在一月份在CCTV我爱你中华录制并播出',
-        time:'￥9600000.00',
-        type: '网综',
-        creator: '冠名',
+        id: '视频营销',
+        time:'￥72000.00',
+        type: '抖音APP首页推送',
       },
       {
-        id: '世界旅游小姐中国区总决赛招商 世界旅游小姐中国区总决赛招商 世界旅游小姐中国区总决赛招商，多种形式合作~',
-        time:'￥8800000.00',
-        type: '体育赛事',
-        creator: 'Logo展示',
+        id: '视频营销',
+        time:'￥20000.00',
+        type: '快手视频广告',
       },
       {
-        id: '旅游卫视《文旅之声》栏目全国首档大型文旅互动类综艺节目招商 冠名赞助 国家政策支持党的十八大以来，习近平总书记强调“ 要坚定文化自...',
-        time:'￥3600000.00',
-        type: '电视剧植入',
-        creator: '冠名',
+        id: '视频营销',
+        time:'￥10000.00',
+        type: '爱奇艺视频广告',
       },
       {
-        id: '“拳星汇”职业拳击赛事招商“拳星汇”职业拳击赛事招商 勇敢、坚持、热爱，汇聚无限可能！',
-        time:'￥3120000.00',
-        type: '体育赛事',
-        creator: 'Logo展示',
+        id: '视频营销',
+        time:'￥10000.00',
+        type: '优酷视频广告',
       },
       {
-        id: '首届海峡国际合唱作曲大赛冠名招标',
-        time:'￥600000.00',
-        type: '音乐演出',
-        creator: '冠名',
+        id: '视频营销',
+        time:'￥10000.00',
+        type: '腾讯视频广告',
       },
       {
-        id: '香港卫视旅游台，旅游探访类节目《远行》',
-        time:'￥520000.00',
-        type: '体育赛事',
-        creator: 'Logo展示',
+        id: '视频营销',
+        time:'￥60000.00',
+        type: '酷米网儿童视频广告',
       },
       {
-        id: 'CCTV老故事频道《信用中国》栏目招嘉宾',
-        time:'￥240000.00',
-        type: '电视剧植入',
-        creator: '口播',
+        id: '视频营销',
+        time:'￥720000.00',
+        type: '五洲传播中心《中国推介》节目贴片广告',
       },
       {
-        id: '湖南电视台《种草吧 麻麻》',
-        time:'￥120000.00',
-        type: '电视剧植入',
-        creator: '参演',
+        id: '视频营销',
+        time:'￥78.00',
+        type: '腾讯视频闪投（100个起投）',
       },
-     
+      
+      
     ];
     return (
-      <PageHeaderWrapper title="招商数据编辑">
+      <PageHeaderWrapper title="广告营销活动编辑">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="媒体名称">
+                  <Form.Item label="营销类型">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="形式">
+                  <Form.Item label="名称">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -137,7 +126,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加广告招商数据
+                        添加广告营销活动
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
