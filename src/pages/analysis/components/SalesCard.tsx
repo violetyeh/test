@@ -15,7 +15,7 @@ const { TabPane } = Tabs;
 const rankingListData: { title: string; total: number }[] = [];
 for (let i = 0; i < 7; i += 1) {
   rankingListData.push({
-    title: '数据引领广告投放' + (i + 1),
+    title: '广告投放合同' + (i + 1),
     total: 23 * (i + 1),
   });
 }
@@ -43,7 +43,7 @@ const SalesCard = ({
           tabBarStyle={{ marginBottom: 24 }}
         >
           <TabPane
-            tab='数据引领广告投放数据'
+            tab='广告投放合同文件'
             key="sales"
           >
             <Row>
@@ -51,7 +51,7 @@ const SalesCard = ({
                 <div className={styles.salesBar}>
                   <Bar
                     height={295}
-                    title='每月投放工作量'
+                    title='每月投放广告合同量'
                     data={salesData}
                   />
                 </div>
@@ -59,7 +59,7 @@ const SalesCard = ({
               <Col xl={8} lg={12} md={12} sm={24} xs={24}>
                 <div className={styles.salesRank}>
                   <h4 className={styles.rankingTitle}>
-                  数据引领广告投放排行
+                  投放广告合同量排行
                   </h4>
                   <ul className={styles.rankingList}>
                     {rankingListData.map((item, i) => (

@@ -22,25 +22,25 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '数据编号',
+      title: '合同编号',
       dataIndex: 'id',
     },
     {
-      title: '广告播放日期',
+      title: '合同生效日期',
       dataIndex: 'time',
     },
     {
-      title: '媒体名称',
+      title: '投放平台',
       dataIndex: 'type',
     },
     {
-      title: '媒体内容',
+      title: '合同年限（年）',
       dataIndex: 'creator',
     },
     {
-      title: '是否成功投放',
+      title: '合同是否生效',
       dataIndex: 'status',
-      render: (text) => <Switch checkedChildren="成功" unCheckedChildren="失败" />,
+      render: (text) => <Switch checkedChildren="是" unCheckedChildren="否" />,
     },
     {
       title: '操作',
@@ -69,75 +69,76 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: 'SJ20101',
-        time:'2019-07-01',
-        type: '中央一套',
-        creator: '化妆品广告',
+        id: 'HT1320108',
+        time:'2019-07-03',
+        type: '浙江一套',
+        creator: '5',
         status: 1,
       },
       {
-        id: 'SJ20102',
-        time:'2019-07-01',
-        type: '湖南一套',
-        creator: '珠宝广告',
+        id: 'HT1320101',
+        time:'2019-06-23',
+        type: '安徽一套',
+        creator: '3',
         status: 1,
       },
       {
-        id: 'SJ20103',
-        time:'2019-07-02',
+        id: 'HT1320103',
+        time:'2019-06-28',
         type: '中央二套',
-        creator: '公益广告',
+        creator: '2',
         status: 1,
       },
       {
-        id: 'SJ20104',
+        id: 'HT1320104',
         time:'2019-07-02',
-        type: '湖南一套',
-        creator: '化妆品广告',
+        type: '江苏一套',
+        creator: '3',
         status: 1,
       },
       {
-        id: 'SJ20105',
+        id: 'HT1320105',
         time:'2019-07-03',
         type: '湖南一套',
-        creator: '化妆品广告',
+        creator: '5',
         status: 1,
       },
       {
-        id: 'SJ20106',
+        id: 'HT1320106',
         time:'2019-07-04',
         type: '湖南一套',
-        creator: '汽车广告',
+        creator: '2',
         status: 1,
       },
       {
-        id: 'SJ20107',
-        time:'2019-07-03',
+        id: 'HT1320102',
+        time:'2019-06-05',
         type: '湖南一套',
-        creator: '医药广告',
+        creator: '2',
         status: 1,
       },
       {
-        id: 'SJ20108',
+        id: 'HT1320107',
         time:'2019-07-03',
         type: '湖南一套',
-        creator: '农药广告',
+        creator: '1',
         status: 1,
       },
+     
     ];
     return (
-      <PageHeaderWrapper title="广告投放数据编辑">
+      <PageHeaderWrapper title="合同数据编辑">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="数据编号">
+                  <Form.Item label="合同编号">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="媒体名称">
+                  <Form.Item label="投放平台">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -149,7 +150,7 @@ class DataManager extends Component<DataManagerProps, DataManagerState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加广告投放数据
+                        添加合同数据
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">

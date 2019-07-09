@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告投放管理',
+          name: '广告合同管理',
           path: '/data-analysis',
           icon: 'fullscreen',
           component: './geology/data-analysis',
         },
         {
-          name: '投放渠道管理',
+          name: '投放合同管理',
           path: '/data-handle',
           icon: 'fullscreen',
           component: './geology/data-handle',
         },
         {
-          name: '广告发布数据管理',
+          name: '合同数据管理',
           path: '/data-manager',
           icon: 'fullscreen',
           component: './geology/data-manager',

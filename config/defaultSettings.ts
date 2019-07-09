@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '数据引领广告投放过程管理软件',
+  title: '广告投放合同管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

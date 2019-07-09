@@ -26,7 +26,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='广告投放数量'
+          title='广告投放合同数量'
           action={
             <Tooltip
               title={
@@ -37,7 +37,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(8846).format('0,0')}
-          footer='日投放量：134'
+          footer='日投放合同量：223'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -48,7 +48,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='投放进度'
+          title='广告合同进度'
           action={
             <Tooltip
               title={
