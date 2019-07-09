@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
 import React from 'react';
 import { ColumnProps } from 'antd/lib/table';
-import { Divider, message, Card, Table, Form, Col, Row, Button, Input, Switch, Select, Tag, Modal } from 'antd';
+import { Divider, message, Card, Table, Form, Col, Row, Button, Input, Switch, Select, Tag, Modal, Progress } from 'antd';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import Save from './Save';
 import styles from '../style.less';
@@ -33,10 +33,12 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
     {
       title: '网页率',
       dataIndex: 'project',
+      render: (text) => <Progress percent={text} project="active" />,
     },
     {
       title: '新闻率',
       dataIndex: 'ggy',
+      render: (text) => <Progress percent={text} ggy="active" />,
     },
     {
       title: '投放是否成功',
@@ -80,74 +82,74 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
       {
         id: '平台客户',
         creator: '搜狐网媒体新闻',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '56',
+        ggy:'78',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '中华网科技',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '23',
+        ggy:'46',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '凤凰网江苏',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '33',
+        ggy:'13',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '中国贸易新闻网',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '45',
+        ggy:'26',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '飞象网',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '65',
+        ggy:'36',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '黔讯网',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '68',
+        ggy:'45',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '北国网',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '65',
+        ggy:'64',
         status: 1,
       },
       {
         id: '平台客户',
         creator: '华声在线',
-        project: '招标信息',
-        ggy:'广告投放',
+        project: '13',
+        ggy:'33',
         status: 1,
       },
      
     ];
     return (
-      <PageHeaderWrapper title="广告投放招标管理">
+      <PageHeaderWrapper title="广告来源管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="广告采购招标项目">
+                  <Form.Item label="广告来源">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="招标金额">
+                  <Form.Item label="媒体名称">
                      <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
