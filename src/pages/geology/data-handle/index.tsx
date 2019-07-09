@@ -35,7 +35,7 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
       dataIndex: 'project',
     },
     {
-      title: '当前状态',
+      title: '渠道开关',
       dataIndex: 'status',
       render: (text) => (<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />),
     },
@@ -77,75 +77,36 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
         id: '网络媒体',
         creator: '电视',
         project: '中央一套',
-        status: '播放中',
+        status: 1,
       },
       {
-        id: 'MT157',
-        project: '中央公园',
-        creator: '广袤楼',
-        type: '服装广告',
-        status: '等待中',
-      }, {
-        id: 'MT158',
-        project: '三峡广场',
-        creator: '齐天楼',
-        type: '可乐广告',
-        status: '播放中',
+        id: '网络媒体',
+        creator: '电脑',
+        project: '网页',
+        status: 1,
       },
-       {
-        id: 'MT159',
-        project: '美食广场',
-        creator: '美食街',
-        type: '美食广告',
-        status: '播放中',
-      }, 
       {
-        id: 'MT160',
-        project: '中央广场',
-        creator: '广袤楼',
-        type: '珠宝广告',
-        status: '播放中',
+        id: '网络媒体',
+        creator: '手机',
+        project: 'APP启动页面',
+        status: 1,
       },
-       {
-        id: 'MT162',
-        project: '宏宇大道',
-        creator: '魔天楼',
-        type: '电影宣传',
-        status: '等待中',
-      },
-       {
-        id: 'MT165',
-        project: '中央大街',
-        creator: '影视楼',
-        type: '影视宣传',
-        status: '播放中',
-      }, 
-      {
-        id: 'MT166',
-        project: '流星街',
-        creator: '政务楼',
-        type: '公告宣传',
-        status: '播放中',
-      },
+     
     ];
     return (
-      <PageHeaderWrapper title="楼宇媒体设备管理">
+      <PageHeaderWrapper title="广告渠道管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="媒体设备编号">
+                  <Form.Item label="投放渠道">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="当前状态">
-                    <Select >
-                      <Select.Option value="jack">播放中</Select.Option>
-                      <Select.Option value="lucy">等待中</Select.Option>
-                      
-                    </Select>
+                  <Form.Item label="类型">
+                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={9} sm={24}>
@@ -156,7 +117,7 @@ class DataHandle extends Component<DataHandleProps, DataHandleState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加媒体设备
+                        添加广告渠道
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">

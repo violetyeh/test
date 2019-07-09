@@ -23,7 +23,7 @@ class Save extends Component<SaveProps, SaveState> {
     const { form: { getFieldDecorator }, handleSaveVisible, currentItem } = this.props;
     return (
       <Modal
-        title="编辑设备信息"
+        title="编辑渠道信息"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -33,41 +33,35 @@ class Save extends Component<SaveProps, SaveState> {
 
       >
         <Form {...formItemLayout} layout="vertical">
-          <Form.Item key="id" label="媒体设备编号" >
+          <Form.Item key="id" label="投放渠道" >
             {getFieldDecorator('id', {
               initialValue: currentItem.id,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="project" label="所属区域" >
+          <Form.Item key="project" label="类型" >
             {getFieldDecorator('project', {
               initialValue: currentItem.project,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="区域位置" >
+          <Form.Item key="creator" label="媒体名称" >
             {getFieldDecorator('creator', {
               initialValue: currentItem.creator,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="type" label="发布类型" >
-            {getFieldDecorator('type', {
-              initialValue: currentItem.type,
-            })(
-              <Input />,
-            )}
           </Form.Item>
-          <Form.Item key="status" label="当前状态" >
+          <Form.Item key="status" label="渠道开关" >
             {getFieldDecorator('status', {
               initialValue: currentItem.status,
             })(
               <Radio.Group defaultValue="a" buttonStyle="solid">
-                <Radio.Button value="a">播放中</Radio.Button>
-                <Radio.Button value="b">等待中</Radio.Button>
+                <Radio.Button value="a">开</Radio.Button>
+                <Radio.Button value="b">关</Radio.Button>
               </Radio.Group>,
             )}
           </Form.Item>
