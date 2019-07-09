@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '广告投放合同管理系统',
+  title: '广告投放一体化平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -23,7 +23,7 @@ class Save extends Component<SaveProps, SaveState> {
     const { form: { getFieldDecorator }, handleSaveVisible, currentItem } = this.props;
     return (
       <Modal
-        title="编辑广告投放合同信息"
+        title="编辑广告投放服务信息"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -33,23 +33,30 @@ class Save extends Component<SaveProps, SaveState> {
 
       >
         <Form {...formItemLayout} layout="vertical">
-          <Form.Item key="id" label="广告类型" >
+          <Form.Item key="id" label="媒体分类" >
             {getFieldDecorator('id', {
               initialValue: currentItem.id,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="date" label="所属类型" >
+          <Form.Item key="date" label="广告需求（浏览人数：万）" >
             {getFieldDecorator('date', {
               initialValue: currentItem.date,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="creator" label="类别" >
+          <Form.Item key="creator" label="广告定位" >
             {getFieldDecorator('creator', {
               initialValue: currentItem.creator,
+            })(
+              <Input />,
+            )}
+          </Form.Item>
+          <Form.Item key="column" label="精准人群定位" >
+            {getFieldDecorator('column', {
+              initialValue: currentItem.column,
             })(
               <Input />,
             )}

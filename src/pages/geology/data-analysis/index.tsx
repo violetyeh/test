@@ -22,23 +22,23 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '广告合同类型',
+      title: '媒体分类',
       dataIndex: 'id',
     },
     {
-      title: '所属类型',
+      title: '广告需求（浏览人数：万）',
       dataIndex: 'date',
     },
     {
-      title: '类别',
+      title: '广告定位',
       dataIndex: 'creator',
     },
     {
-      title: '栏目类型',
+      title: '精准人群定位',
       dataIndex: 'column',
     },
     {
-      title: '价格（万元）',
+      title: '价格区间',
       dataIndex: 'status',
     },
     {
@@ -70,75 +70,75 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: '商业广告合同',
-        date: '化妆品',
-        creator: 'OLAY',
-        column:'30秒广告',
-        status: 10,
+        id: '广告营销',
+        date: 10,
+        creator: '标准广告位',
+        column:'男',
+        status: '10万以内',
       },
       {
-        id: '商业广告合同',
-        date: '化妆品',
-        creator: 'SK-II',
-        column:'9秒广告',
-        status: 15,
+        id: '海外营销',
+        date: 5,
+        creator: '非标运营位',
+        column:'女',
+        status:'10万-100万',
       },
       {
-        id: '商业广告合同',
-        date: '化妆品',
-        creator: '佰草集',
-        column:'16秒广告',
-        status: 20,
+        id: '自媒体营销',
+        date: 30,
+        creator: '固定运营位',
+        column:'女',
+        status: '100万-500万',
       },
       {
-        id: '商业广告合同',
-        date: '化妆品',
-        creator: '百雀羚',
-        column:'10秒广告',
-        status: 10,
+        id: '微信营销',
+        date: 35,
+        creator: '标准广告位',
+        column:'女',
+        status: '10万-100万',
       },
       {
-        id: '公益广告合同',
-        date: '公益',
-        creator: '警民同心 平安春节',
-        column:'30秒广告',
-        status: 25,
+        id: '微博营销',
+        date: 300,
+        creator: '非标运营位',
+        column:'男',
+        status: '10万-100万',
       },
       {
-        id: '公益广告合同',
-        date: '公益',
-        creator: '战斗英雄张富清',
-        column:'17秒广告',
-        status: 36,
+        id: '视频营销',
+        date: 70,
+        creator: '标准广告位',
+        column:'女',
+        status: '500万-1000万',
       },
       {
-        id: '珠宝广告合同',
-        date: '珠宝',
-        creator: '黄金手镯',
-        column:'20秒广告',
-        status: 50,
+        id: '广告招商',
+        date: 3,
+        creator: '标准广告位',
+        column:'女',
+        status: '10万-100万',
       },
       {
-        id: '珠宝广告合同',
-        date: '珠宝',
-        creator: '钻石项链',
-        column:'15秒广告',
-        status: 50,
+        id: '软文营销',
+        date: 4,
+        creator: '固定运营位',
+        column:'女',
+        status: '10万-100万',
       },
     ];
        return (
-      <PageHeaderWrapper title="广告投放合同管理">
+      <PageHeaderWrapper title="广告投放服务管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="广告合同类型">
+                  <Form.Item label="媒体分类">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="类别">
+                  <Form.Item label="广告需求">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -150,7 +150,7 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加投放广告合同
+                        添加投放广告服务
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
