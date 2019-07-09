@@ -23,7 +23,7 @@ class Save extends Component<SaveProps, SaveState> {
     const { form: { getFieldDecorator }, handleSaveVisible, currentItem } = this.props;
     return (
       <Modal
-        title="编辑广告投放服务信息"
+        title="编辑广告投放营销信息"
         className={styles.standardListForm}
         width={640}
         destroyOnClose
@@ -33,14 +33,14 @@ class Save extends Component<SaveProps, SaveState> {
 
       >
         <Form {...formItemLayout} layout="vertical">
-          <Form.Item key="id" label="媒体分类" >
+          <Form.Item key="id" label="广告投放类别" >
             {getFieldDecorator('id', {
               initialValue: currentItem.id,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="date" label="广告需求（浏览人数：万）" >
+          <Form.Item key="date" label="行业分类" >
             {getFieldDecorator('date', {
               initialValue: currentItem.date,
             })(
@@ -54,23 +54,23 @@ class Save extends Component<SaveProps, SaveState> {
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="column" label="精准人群定位" >
+          <Form.Item key="column" label="综合门户" >
             {getFieldDecorator('column', {
               initialValue: currentItem.column,
             })(
               <Input />,
             )}
           </Form.Item>
-          <Form.Item key="status" label="定义价格（万元）" >
+          <Form.Item key="status" label="价格区间" >
             {getFieldDecorator('status', {
               initialValue: currentItem.status,
             })(
               <Radio.Group defaultValue="a" buttonStyle="solid">
-                <Radio.Button value="a">10万以内</Radio.Button>
-                <Radio.Button value="b">10万-100万</Radio.Button>
-                <Radio.Button value="c">100万-500万</Radio.Button>
-                <Radio.Button value="d">500万-1000万</Radio.Button>
-                <Radio.Button value="e">1000以上</Radio.Button>
+                <Radio.Button value="a">20元-100元</Radio.Button>
+                <Radio.Button value="b">100元-1000元</Radio.Button>
+                <Radio.Button value="c">1000元-2000元</Radio.Button>
+                <Radio.Button value="d">2000元-10000元</Radio.Button>
+                <Radio.Button value="e">10000元以上</Radio.Button>
               </Radio.Group>,
             )}
           </Form.Item>

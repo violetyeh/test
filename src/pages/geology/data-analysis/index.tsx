@@ -22,11 +22,11 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
 
   columns: ColumnProps<any>[] = [
     {
-      title: '媒体分类',
+      title: '广告投放类别',
       dataIndex: 'id',
     },
     {
-      title: '广告需求（浏览人数：万）',
+      title: '行业分类',
       dataIndex: 'date',
     },
     {
@@ -34,7 +34,7 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
       dataIndex: 'creator',
     },
     {
-      title: '精准人群定位',
+      title: '综合门户',
       dataIndex: 'column',
     },
     {
@@ -70,75 +70,75 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
     const { saveVisible, currentItem } = this.state;
     const data = [
       {
-        id: '广告营销',
-        date: 10,
+        id: '网站媒体',
+        date: ' 新闻资讯',
         creator: '标准广告位',
-        column:'男',
-        status: '10万以内',
+        column:' 新浪网 ',
+        status: '20元-100元',
       },
       {
-        id: '海外营销',
-        date: 5,
+        id: '微信',
+        date: '财经商业',
         creator: '非标运营位',
-        column:'女',
-        status:'10万-100万',
+        column:'凤凰网 ',
+        status:'100元-1000元',
       },
       {
-        id: '自媒体营销',
-        date: 30,
+        id: '微博',
+        date: 'IT-科技',
         creator: '固定运营位',
-        column:'女',
-        status: '100万-500万',
+        column:'腾讯网',
+        status: '1000元-2000元',
       },
       {
-        id: '微信营销',
-        date: 35,
+        id: '视频网站',
+        date: '房产家居',
         creator: '标准广告位',
-        column:'女',
-        status: '10万-100万',
+        column:'搜狐网',
+        status: '2000元-10000元',
       },
       {
-        id: '微博营销',
-        date: 300,
+        id: '贴吧',
+        date: '酒店旅游',
         creator: '非标运营位',
-        column:'男',
-        status: '10万-100万',
+        column:'光明网 ',
+        status: '10000元以上',
       },
       {
-        id: '视频营销',
-        date: 70,
+        id: '论坛',
+        date: '教育培训',
         creator: '标准广告位',
-        column:'女',
-        status: '500万-1000万',
+        column:'慧聪网',
+        status: '2000元-10000元',
       },
       {
-        id: '广告招商',
-        date: 3,
+        id: '报纸杂志',
+        date: '女性时尚',
         creator: '标准广告位',
-        column:'女',
-        status: '10万-100万',
+        column:'中国经济网',
+        status: '100元-1000元',
       },
       {
-        id: '软文营销',
-        date: 4,
+        id: '百科',
+        date: '亲子母婴',
         creator: '固定运营位',
-        column:'女',
-        status: '10万-100万',
+        column:'中国日报网',
+        status: '100元-1000元',
       },
     ];
        return (
-      <PageHeaderWrapper title="广告投放服务管理">
+      <PageHeaderWrapper title="广告投放营销管理">
         <Card bordered={false}>
           <div className={styles.tableListForm}>
             <Form layout="inline">
               <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                 <Col md={7} sm={24}>
-                  <Form.Item label="媒体分类">
+                  <Form.Item label="广告投放类别">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
                 <Col md={8} sm={24}>
-                  <Form.Item label="广告需求">
+                  <Form.Item label="行业分类">
                     <Input placeholder="请输入" />
                   </Form.Item>
                 </Col>
@@ -150,7 +150,7 @@ class DataAnalysis extends Component<DataAnalysisProps, DataAnalysisState> {
                         htmlType="button"
                         onClick={() => this.setState({ saveVisible: true, currentItem: {} })}
                       >
-                        添加投放广告服务
+                        添加投放广告营销
                       </Button>
                       <Divider type="vertical" />
                       <Button icon="search" type="primary" htmlType="submit">
