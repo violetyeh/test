@@ -20,58 +20,77 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: '20190711水系测绘指导服务',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        yaosu: '湖泊、水库、双线河流等',
-        state: '启用',
+        fenlei: 'GGSJ广告系统架构设计',
         pinlv: 80,
+        yaosu: '系统操作不卡顿',
+        fenceng: '孟凡',
+        state: '启用',
+       
     },
     {
-        id: 'SER8201',
-        fenlei: '20190721高速公路测绘服务',
-        fenceng: '居民地',
-        leixing: '面、点',
-        yaosu: '湖泊、水库、双线河流等',
+        id: 'SER1271',
+        fenlei: 'GGSJ014广告系统架构设计',
+        pinlv: 32,
+        yaosu: '系统操作流畅',
+        fenceng: '王石',
         state: '启用',
-        pinlv: 73,
+       
     },
     {
-        id: 'SER3921',
-        fenlei: 'C1829铁路区间测绘服务',
-        fenceng: '铁路',
-        leixing: '线',
-        yaosu: '标准轨铁路、窄轨铁路',
+        id: 'SER1228',
+        fenlei: 'GGSJ023广告系统架构设计',
+        pinlv: 65,
+        yaosu: '系统操作不卡顿',
+        fenceng: '钱萌',
         state: '启用',
-        pinlv: 92,
+       
     },
     {
-        id: 'SER0029',
-        fenlei: 'G318国道测绘项目服务',
-        fenceng: '公路',
-        leixing: '线',
-        yaosu: '国道、省道、县道、乡道、其他公路',
+        id: 'SER1264',
+        fenlei: 'GGSJ47广告系统架构设计',
+        pinlv: 42,
+        yaosu: '按钮点击有效',
+        fenceng: '张琼凡',
         state: '启用',
-        pinlv: 82,
+       
     },
     {
-        id: 'SER2191',
-        fenlei: '重庆市测绘项目服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'SER1278',
+        fenlei: 'GGSJ36广告系统架构设计',
+        pinlv: 56,
+        yaosu: '系统操作不卡顿',
+        fenceng: '孟思三',
         state: '启用',
-        pinlv: 19,
+       
     },
     {
-        id: 'SER3321',
-        fenlei: '四川省测绘项目(B)服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'SER1226',
+        fenlei: 'GGSJ12广告系统架构设计',
+        pinlv: 12,
+        yaosu: '界面操作流畅',
+        fenceng: '王思',
         state: '启用',
-        pinlv: 73,
+       
     },
+    {
+        id: 'SER1224',
+        fenlei: 'GGSJ09广告系统架构设计',
+        pinlv: 26,
+        yaosu: '界面操作不卡顿',
+        fenceng: '陈思凡',
+        state: '启用',
+       
+    },
+    {
+        id: 'SER1223',
+        fenlei: 'GGSJ05广告系统架构设计',
+        pinlv: 33,
+        yaosu: '系统操作不卡顿',
+        fenceng: '张凡',
+        state: '启用',
+       
+    },
+    
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -88,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '服务名称',
+            title: '架构设计名称',
             dataIndex: 'fenlei',
         },
         {
-            title: '服务进度',
+            title: '架构进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -103,7 +122,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '技术要素类型',
+            title: '架构设计技术要素',
             dataIndex: 'yaosu',
         },
         {
@@ -148,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广服务管理"
+                title="架构剖析管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

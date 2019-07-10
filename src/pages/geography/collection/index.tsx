@@ -24,50 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: '人工测绘',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        name: '误差测量',
+        jishu: 'WZ12356JG架构广告位位置',
+        fenceng: '张宇',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
     {
         id: 'D0002',
-        jishu: '电子测绘',
-        fenceng: '居民地',
-        leixing: '面、点',
-        name: 'CNSS定位与测量',
+        jishu: 'WZ16356JG架构广告位位置',
+        fenceng: '孟凡',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
     {
         id: 'D0003',
-        jishu: '智能测绘',
-        fenceng: '铁路',
-        leixing: '线',
-        name: '计算机测绘',
+        jishu: 'WZ12656JG架构广告位位置',
+        fenceng: '程思',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
     {
         id: 'D0004',
-        jishu: '人工测绘',
-        fenceng: '公路',
-        leixing: '线',
-        name: '控制测量',
+        jishu: 'WZ12746JG架构广告位位置',
+        fenceng: '齐天',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
     {
         id: 'D0005',
-        jishu: '人工测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '数据测图',
+        jishu: 'WZ12366JG架构广告位位置',
+        fenceng: '钱偲',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
     {
         id: 'D0006',
-        jishu: '电子测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '工程测量',
+        jishu: 'WZ11256JG架构广告位位置',
+        fenceng: '孟宇思',
+        leixing: '线上广告',
+        name: '广告招商',
+        state: '启用',
+    },
+    {
+        id: 'D0007',
+        jishu: 'WZ112JG架构广告位位置',
+        fenceng: '方艳',
+        leixing: '线上广告',
+        name: '广告招商',
+        state: '启用',
+    },
+    {
+        id: 'D0008',
+        jishu: 'WZ11856JG架构广告位位置',
+        fenceng: '姜宇',
+        leixing: '线上广告',
+        name: '广告招商',
         state: '启用',
     },
 ]
@@ -86,20 +102,20 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '测绘技术名称',
-            dataIndex: 'name',
+            title: '广告主',
+            dataIndex: 'fenceng',
         },
         {
-            title: '技术类型',
+            title: '广告位',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据分层',
-            dataIndex: 'fenceng',
+            title: '售卖类型',
+            dataIndex: 'name',
         },
         {
-            title: '几何类型',
+            title: ' 广告样式',
             dataIndex: 'leixing',
         },
 
@@ -132,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测绘技术管理"
+                title="架构技术管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
