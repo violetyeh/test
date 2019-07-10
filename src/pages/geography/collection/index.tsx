@@ -24,68 +24,69 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: 'WZ12356JG架构广告位位置',
-        fenceng: '张宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '百度搜索广告',
+        name: '今日头条信息流',
+        leixing: '腾讯社交广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0002',
-        jishu: 'WZ16356JG架构广告位位置',
-        fenceng: '孟凡',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '神马搜索广告',
+        name: 'UC头条信息流',
+        leixing: '陌陌广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0003',
-        jishu: 'WZ12656JG架构广告位位置',
-        fenceng: '程思',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '360搜索广告',
+        name: '一点资讯信息流',
+        leixing: '朋友圈广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0004',
-        jishu: 'WZ12746JG架构广告位位置',
-        fenceng: '齐天',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '搜狗搜索广告',
+        name: '网易新闻信息流',
+        leixing: 'QQ空间广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0005',
-        jishu: 'WZ12366JG架构广告位位置',
-        fenceng: '钱偲',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '谷歌搜索广告',
+        name: '抖音广告信息流',
+        leixing: '新浪微博广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0006',
-        jishu: 'WZ11256JG架构广告位位置',
-        fenceng: '孟宇思',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '必应搜索广告',
+        name: '快手广告信息流',
+        leixing: '微信公众号广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0007',
-        jishu: 'WZ112JG架构广告位位置',
-        fenceng: '方艳',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '2345搜索广告',
+        name: '百度信息流',
+        leixing: '腾讯社交广告',
+        jishu: '线上投放',
         state: '启用',
     },
     {
         id: 'D0008',
-        jishu: 'WZ11856JG架构广告位位置',
-        fenceng: '姜宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        fenceng: '火狐搜索广告',
+        name: '今日头条信息流',
+        leixing: '腾讯社交广告',
+        jishu: '线上投放',
         state: '启用',
     },
+   
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -102,23 +103,22 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告主',
+            title: '搜索广告',
             dataIndex: 'fenceng',
         },
         {
-            title: '广告位',
-            dataIndex: 'jishu',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '售卖类型',
+            title: '信息流广告',
             dataIndex: 'name',
         },
         {
-            title: ' 广告样式',
+            title: ' 社交广告',
             dataIndex: 'leixing',
         },
-
+        {
+            title: '广告投放',
+            dataIndex: 'jishu',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+        },
         {
             title: '操作',
             render: (text, record) => (
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="架构技术管理"
+                title="投放信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

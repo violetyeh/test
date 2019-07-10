@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告系统架构流程',
+          name: '广告投放信息管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '广告系统架构设计',
+          name: '广告投放资源管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '广告系统架构剖析',
+          name: '广告投放数据管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

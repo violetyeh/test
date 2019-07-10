@@ -19,74 +19,74 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: 'GGSJ广告系统架构设计',
-        pinlv: 80,
-        yaosu: '系统操作不卡顿',
-        fenceng: '孟凡',
+        id: 'TFSJ010292',
+        fenlei: 'TFSJ投放广告数据',
+        pinlv: 50,
+        yaosu: '100万-200万',
+        fenceng: '化妆品',
         state: '启用',
        
     },
     {
-        id: 'SER1271',
-        fenlei: 'GGSJ014广告系统架构设计',
-        pinlv: 32,
-        yaosu: '系统操作流畅',
-        fenceng: '王石',
+        id: 'TFSJ010271',
+        fenlei: 'TFSJ014投放广告数据',
+        pinlv: 62,
+        yaosu: '50万-100万',
+        fenceng: '化妆品',
         state: '启用',
        
     },
     {
-        id: 'SER1228',
-        fenlei: 'GGSJ023广告系统架构设计',
+        id: 'TFSJ010228',
+        fenlei: 'TFSJ023投放广告数据',
         pinlv: 65,
-        yaosu: '系统操作不卡顿',
-        fenceng: '钱萌',
+        yaosu: '100万-200万',
+        fenceng: '珠宝',
         state: '启用',
        
     },
     {
-        id: 'SER1264',
-        fenlei: 'GGSJ47广告系统架构设计',
+        id: 'TFSJ010264',
+        fenlei: 'TFSJ47投放广告数据',
         pinlv: 42,
-        yaosu: '按钮点击有效',
-        fenceng: '张琼凡',
+        yaosu: '10万-50万',
+        fenceng: '化妆品',
         state: '启用',
        
     },
     {
-        id: 'SER1278',
-        fenlei: 'GGSJ36广告系统架构设计',
+        id: 'TFSJ010278',
+        fenlei: 'TFSJ36投放广告数据',
         pinlv: 56,
-        yaosu: '系统操作不卡顿',
-        fenceng: '孟思三',
+        yaosu: '100万-200万',
+        fenceng: '医药',
         state: '启用',
        
     },
     {
-        id: 'SER1226',
-        fenlei: 'GGSJ12广告系统架构设计',
+        id: 'TFSJ010226',
+        fenlei: 'TFSJ12投放广告数据',
         pinlv: 12,
-        yaosu: '界面操作流畅',
-        fenceng: '王思',
+        yaosu: '10万-50万',
+        fenceng: '家居',
         state: '启用',
        
     },
     {
-        id: 'SER1224',
-        fenlei: 'GGSJ09广告系统架构设计',
+        id: 'TFSJ010224',
+        fenlei: 'TFSJ09投放广告数据',
         pinlv: 26,
-        yaosu: '界面操作不卡顿',
-        fenceng: '陈思凡',
+        yaosu: '50万-100万',
+        fenceng: '房产',
         state: '启用',
        
     },
     {
-        id: 'SER1223',
-        fenlei: 'GGSJ05广告系统架构设计',
+        id: 'TFSJ010223',
+        fenlei: 'TFSJ05投放广告数据',
         pinlv: 33,
-        yaosu: '系统操作不卡顿',
-        fenceng: '张凡',
+        yaosu: '100万-200万',
+        fenceng: '装修',
         state: '启用',
        
     },
@@ -107,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '架构设计名称',
+            title: '广告数据',
             dataIndex: 'fenlei',
         },
         {
-            title: '架构进度',
+            title: '投放进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,11 +122,11 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '架构设计技术要素',
+            title: '投放预算',
             dataIndex: 'yaosu',
         },
         {
-            title: '负责人',
+            title: '广告类别',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
@@ -167,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="架构剖析管理"
+                title="投放数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

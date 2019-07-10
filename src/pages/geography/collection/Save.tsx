@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑架构流程"
+                title="编辑广告投放信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,15 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="广告主" >
+                    <Form.Item key="fenceng" label="搜索广告" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="广告位" >
-                        {getFieldDecorator('jishu', {
-                            initialValue: currentItem.jishu,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="name" label="售卖类型" >
+                    
+                    <Form.Item key="name" label="信息流广告" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
@@ -73,14 +67,20 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="leixing" label="广告样式" >
+                    <Form.Item key="leixing" label="社交广告" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    
+                    <Form.Item key="jishu" label="广告投放" >
+                        {getFieldDecorator('jishu', {
+                            initialValue: currentItem.jishu,
+                        })(
+                            <Input.TextArea rows={2} />,
+                        )}
+                    </Form.Item>
                 </Form>
             </Modal>
         );
