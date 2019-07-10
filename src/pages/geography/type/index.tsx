@@ -19,78 +19,77 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'TFSJ010292',
-        fenlei: 'TFSJ投放广告数据',
-        pinlv: 50,
-        yaosu: '100万-200万',
-        fenceng: '化妆品',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010271',
-        fenlei: 'TFSJ014投放广告数据',
-        pinlv: 62,
-        yaosu: '50万-100万',
-        fenceng: '化妆品',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010228',
-        fenlei: 'TFSJ023投放广告数据',
-        pinlv: 65,
-        yaosu: '100万-200万',
-        fenceng: '珠宝',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010264',
-        fenlei: 'TFSJ47投放广告数据',
-        pinlv: 42,
-        yaosu: '10万-50万',
-        fenceng: '化妆品',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010278',
-        fenlei: 'TFSJ36投放广告数据',
+        id: 'JZGG010278',
+        fenlei: 'JZGG36广告17秒',
         pinlv: 56,
-        yaosu: '100万-200万',
-        fenceng: '医药',
+        yaosu: '腾讯',
+        fenceng: '医药行业',
         state: '启用',
        
     },
     {
-        id: 'TFSJ010226',
-        fenlei: 'TFSJ12投放广告数据',
+        id: 'JZGG010226',
+        fenlei: 'JZGG12广告16秒',
         pinlv: 12,
-        yaosu: '10万-50万',
-        fenceng: '家居',
+        yaosu: '小红书',
+        fenceng: '家居行业',
         state: '启用',
        
     },
     {
-        id: 'TFSJ010224',
-        fenlei: 'TFSJ09投放广告数据',
+        id: 'JZGG010224',
+        fenlei: 'JZGG09广告30秒',
         pinlv: 26,
-        yaosu: '50万-100万',
-        fenceng: '房产',
+        yaosu: '淘宝',
+        fenceng: '房产行业',
         state: '启用',
        
     },
     {
-        id: 'TFSJ010223',
-        fenlei: 'TFSJ05投放广告数据',
+        id: 'JZGG010223',
+        fenlei: 'JZGG05广告10秒',
         pinlv: 33,
-        yaosu: '100万-200万',
-        fenceng: '装修',
+        yaosu: '腾讯',
+        fenceng: '装修行业',
         state: '启用',
        
     },
-    
+    {
+        id: 'JZGG010292',
+        fenlei: 'JZGG广告10秒',
+        pinlv: 50,
+        yaosu: '腾讯',
+        fenceng: '化妆品行业',
+        state: '启用',
+       
+    },
+    {
+        id: 'JZGG010271',
+        fenlei: 'JZGG014广告20秒',
+        pinlv: 62,
+        yaosu: '淘宝',
+        fenceng: '化妆品行业',
+        state: '启用',
+       
+    },
+    {
+        id: 'JZGG010228',
+        fenlei: 'JZGG023广告15秒',
+        pinlv: 65,
+        yaosu: '腾讯',
+        fenceng: '珠宝行业',
+        state: '启用',
+       
+    },
+    {
+        id: 'JZGG010264',
+        fenlei: 'JZGG47广告10秒',
+        pinlv: 42,
+        yaosu: '小红书',
+        fenceng: '化妆品行业',
+        state: '启用',
+       
+    },
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -107,9 +106,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告数据',
+            title: '精准广告数据',
             dataIndex: 'fenlei',
         },
+       
+        {
+            title: '投放媒体',
+            dataIndex: 'yaosu',
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
+        },
+        {
+            title: '精准分类',
+            dataIndex: 'fenceng',
+        },
+        // {
+        //     title: '几何类型',
+        //     dataIndex: 'leixing',
+        // },
         {
             title: '投放进度',
             dataIndex: 'pinlv',
@@ -121,19 +134,6 @@ class Type extends Component<TypeProps, TypeState>{
                 </div>,
 
         },
-        {
-            title: '投放预算',
-            dataIndex: 'yaosu',
-        },
-        {
-            title: '广告类别',
-            dataIndex: 'fenceng',
-            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
-        },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
 
         {
             title: '是否启用',
