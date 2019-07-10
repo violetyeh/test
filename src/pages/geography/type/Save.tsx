@@ -44,35 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="分类编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="服务名称" >
+                    <Form.Item key="fenlei" label="广告推广服务名称" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="负责人" >
-                        {getFieldDecorator('fenceng', {
-                            initialValue: currentItem.fenceng,
+                    <Form.Item key="pinlv" label="服务进度（%）" >
+                        {getFieldDecorator('pinlv', {
+                            initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="几何类型" >
-                        {getFieldDecorator('leixing', {
-                            initialValue: currentItem.leixing,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="yaosu" label="要素类型" >
+                    <Form.Item key="yaosu" label="广告圈子" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(

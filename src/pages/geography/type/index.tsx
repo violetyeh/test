@@ -20,57 +20,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: '20190711水系测绘指导服务',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        yaosu: '湖泊、水库、双线河流等',
+        fenlei: '东莞石龙国际电子城楼体LED屏广告',
+        yaosu: '广告人聚会',
         state: '启用',
-        pinlv: 80,
+        pinlv: 53,
     },
     {
         id: 'SER8201',
-        fenlei: '20190721高速公路测绘服务',
-        fenceng: '居民地',
-        leixing: '面、点',
-        yaosu: '湖泊、水库、双线河流等',
+        fenlei: '包茂高速延安北出口单立柱广告 ',
+        yaosu: '广告人访谈',
         state: '启用',
-        pinlv: 73,
+        pinlv: 64,
     },
     {
         id: 'SER3921',
-        fenlei: 'C1829铁路区间测绘服务',
-        fenceng: '铁路',
-        leixing: '线',
-        yaosu: '标准轨铁路、窄轨铁路',
+        fenlei: '南航报纸航空旅游报广告',
+        yaosu: '广告人脉圈',
         state: '启用',
         pinlv: 92,
     },
     {
         id: 'SER0029',
-        fenlei: 'G318国道测绘项目服务',
-        fenceng: '公路',
-        leixing: '线',
-        yaosu: '国道、省道、县道、乡道、其他公路',
+        fenlei: '广东科技报（图文、软文广告）',
+        yaosu: '广告人招聘',
         state: '启用',
         pinlv: 82,
     },
     {
         id: 'SER2191',
-        fenlei: '重庆市测绘项目服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        fenlei: '低价销售南方都市报所有版面的广告',
+        yaosu: '广告人脉圈',
         state: '启用',
         pinlv: 19,
     },
     {
         id: 'SER3321',
-        fenlei: '四川省测绘项目(B)服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        fenlei: '石家庄双面广告塔量身定制',
+        yaosu: '广告人招聘',
         state: '启用',
-        pinlv: 73,
+        pinlv: 63,
+    },
+    {
+        id: 'SER2136',
+        fenlei: '南京数字有线电视epg广告资源供应',
+        yaosu: '广告人脉圈',
+        state: '启用',
+        pinlv: 19,
+    },
+    {
+        id: 'SER3354',
+        fenlei: '苏州小区宣传栏广告媒体',
+        yaosu: '广告人招聘',
+        state: '启用',
+        pinlv: 54,
     },
 ]
 
@@ -84,11 +86,11 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '服务名称',
+            title: '广告推广服务名称',
             dataIndex: 'fenlei',
         },
         {
@@ -103,18 +105,9 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '技术要素类型',
+            title: '广告圈子',
             dataIndex: 'yaosu',
         },
-        {
-            title: '负责人',
-            dataIndex: 'fenceng',
-            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
-        },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
 
         {
             title: '是否启用',
@@ -148,7 +141,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广服务管理"
+                title="广告推广服务管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

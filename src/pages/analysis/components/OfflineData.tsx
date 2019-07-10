@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 测绘信息: 2800, 推广价格: 2800, 服务价格: 2260, 总收益率: 2 },
-  { label: '0.2', 测绘信息: 1800, 推广价格: 1800, 服务价格: 1300, 总收益率: 3 },
-  { label: '0.3', 测绘信息: 950, 推广价格: 950, 服务价格: 900, 总收益率: 5 },
-  { label: '0.4', 测绘信息: 500, 推广价格: 500, 服务价格: -390, 总收益率: 1 },
-  { label: '0.5', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.6', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.7', 测绘信息: 170, 推广价格: 170, 服务价格: -100, 总收益率: 3 },
-  { label: '0.8', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.9', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '1.0', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '未评分', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
+  { label: '0.1', 广告投放条数: 700, 广告投放价格: 800, 推广服务价格: 260, 广告收益率: 90 },
+  { label: '0.2', 广告投放条数: 1500, 广告投放价格: 900, 推广服务价格: 1300, 广告收益率: 35 },
+  { label: '0.3', 广告投放条数: 1950, 广告投放价格: 950, 推广服务价格: 900, 广告收益率: 50 },
+  { label: '0.4', 广告投放条数: 1500, 广告投放价格: 500, 推广服务价格: 390, 广告收益率: 15 },
+  { label: '0.5', 广告投放条数: 70, 广告投放价格: 1170, 推广服务价格: 600, 广告收益率: 33 },
+  { label: '0.6', 广告投放条数: 1170, 广告投放价格: 270, 推广服务价格: 100, 广告收益率: 34 },
+  { label: '0.7', 广告投放条数: 170, 广告投放价格: 170, 推广服务价格: 100, 广告收益率: 78 },
+  { label: '0.8', 广告投放条数: 170, 广告投放价格: 370, 推广服务价格:300, 广告收益率: 80 },
+  { label: '0.9', 广告投放条数: 1670, 广告投放价格: 170, 推广服务价格: 100, 广告收益率: 70 },
+  { label: '1.0', 广告投放条数: 170, 广告投放价格: 170, 推广服务价格: 100, 广告收益率: 60 },
+  { label: '未评分', 广告投放条数: 170, 广告投放价格: 170, 推广服务价格: 100, 广告收益率: 3 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['测绘信息', '推广价格', '服务价格'], // 展开字段集
+  fields: ['广告投放条数', '广告投放价格', '推广服务价格'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  总收益率: {
+  广告收益率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '测绘信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '推广价格', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '服务价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '总收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '广告投放条数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '广告投放价格', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '推广服务价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '广告收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '总收益率') {
+              if (geom.getYScale().field === value && value === '广告收益率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '总收益率') {
+              } else if (geom.getYScale().field === 'value' && value !== '广告收益率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*总收益率" color="#fad248" size={3} />
+        <Geom type="line" position="label*广告收益率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

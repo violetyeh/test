@@ -19,9 +19,36 @@ interface ModelState {
 
 const mockData = [
     {
+        id: 'YID8S0J',
+        date: '姜宇',
+        model: '广告标识',
+        type: '线上推广',
+        status: '启用',
+        pinlv: 'A29166视频推广渠道',
+        process: 23,
+    },
+    {
+        id: 'YID72IK',
+        date: '孟凡',
+        model: '广告招代理',
+        type: '线上推广',
+        status: '启用',
+        pinlv: 'A29153广告推广渠道',
+        process: 54,
+    },
+    {
+        id: 'YID63JJ',
+        date: '陈瑶瑶',
+        model: '广告招代理',
+        type: '线上推广',
+        status: '启用',
+        pinlv: 'A29192广告推广渠道',
+        process: 44,
+    },
+    {
         id: 'YIDS0191',
         date: '陈光学',
-        model: '人工测量',
+        model: '广告招标',
         type: '线上推广',
         remark: '同多X，Y坐标，将地和物通过点、线、面方式进行表达',
         status: '启用',
@@ -31,7 +58,7 @@ const mockData = [
     {
         id: 'YIDS2SI1',
         date: '杜维',
-        model: '电子测量',
+        model: '广告展会',
         type: '线上推广',
         remark: '用方格来模拟实体',
         status: '启用',
@@ -41,9 +68,8 @@ const mockData = [
     {
         id: 'YIDS01IOS',
         date: '陈鹏屹',
-        model: '人工测量',
+        model: '广告活动',
         type: '线下推广',
-        remark: '官方权威测绘和发布的数据',
         status: '启用',
         pinlv: 'AY72829线下推广渠道',
         process: 90,
@@ -51,9 +77,8 @@ const mockData = [
     {
         id: 'YSIW9s1',
         date: '张磊',
-        model: '电子测量',
+        model: '广告监测',
         type: '线上推广',
-        remark: '利用专业测绘仪器测绘数据所得',
         status: '启用',
         pinlv: 'A1910百度推广渠道',
         process: 70,
@@ -61,13 +86,13 @@ const mockData = [
     {
         id: 'YID80SJ',
         date: '陈芙蓉',
-        model: '人工测量',
+        model: '广告招代理',
         type: '线上推广',
-        remark: '卫星实时采集数据',
         status: '启用',
         pinlv: 'A29192广告推广渠道',
         process: 67,
     },
+   
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -79,11 +104,11 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '渠道名称',
+            title: '广告渠道名称',
             dataIndex: 'pinlv',
         },
         {
@@ -93,7 +118,7 @@ class Model extends Component<ModelProps, ModelState>{
         },
 
         {
-            title: '测绘技术类型',
+            title: '广告行业',
             dataIndex: 'model',
         },
         {
@@ -138,7 +163,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广渠道管理"
+                title="广告推广渠道管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
