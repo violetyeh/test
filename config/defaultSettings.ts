@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '精准广告投放系统',
+  title: '楼宇媒体资源管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
