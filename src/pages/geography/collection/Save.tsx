@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑精准广告投放信息"
+                title="编辑楼宇媒体信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="搜索广告" >
+                    <Form.Item key="fenceng" label="楼宇信息" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
@@ -59,7 +59,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="name" label="信息流广告" >
+                    <Form.Item key="name" label="设备数量" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
@@ -67,14 +67,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="leixing" label="社交广告" >
+                    <Form.Item key="leixing" label="属性" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="广告投放" >
+                    <Form.Item key="jishu" label="资源来源" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(

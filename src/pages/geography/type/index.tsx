@@ -19,77 +19,78 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'JZGG010278',
-        fenlei: 'JZGG36广告17秒',
-        pinlv: 56,
-        yaosu: '腾讯',
-        fenceng: '医药行业',
-        state: '启用',
-       
-    },
-    {
-        id: 'JZGG010226',
-        fenlei: 'JZGG12广告16秒',
-        pinlv: 12,
-        yaosu: '小红书',
-        fenceng: '家居行业',
-        state: '启用',
-       
-    },
-    {
-        id: 'JZGG010224',
-        fenlei: 'JZGG09广告30秒',
-        pinlv: 26,
-        yaosu: '淘宝',
-        fenceng: '房产行业',
-        state: '启用',
-       
-    },
-    {
-        id: 'JZGG010223',
-        fenlei: 'JZGG05广告10秒',
+        id: 'MTSJXX0223',
+        fenlei: 'JZGG05设备播放时长10秒',
         pinlv: 33,
-        yaosu: '腾讯',
-        fenceng: '装修行业',
+        yaosu: '电影预告片',
+        fenceng: '600万',
         state: '启用',
        
     },
     {
-        id: 'JZGG010292',
-        fenlei: 'JZGG广告10秒',
+        id: 'MTSJXX0292',
+        fenlei: 'JZGG设备播放时长10秒',
         pinlv: 50,
-        yaosu: '腾讯',
-        fenceng: '化妆品行业',
+        yaosu: '电影预告片',
+        fenceng: '200万',
         state: '启用',
        
     },
     {
-        id: 'JZGG010271',
-        fenlei: 'JZGG014广告20秒',
-        pinlv: 62,
-        yaosu: '淘宝',
-        fenceng: '化妆品行业',
+        id: 'MTSJXX0271',
+        fenlei: 'JZGG014设备播放时长20秒',
+        pinlv: 72,
+        yaosu: '服装广告',
+        fenceng: '200万',
         state: '启用',
        
     },
     {
-        id: 'JZGG010228',
-        fenlei: 'JZGG023广告15秒',
-        pinlv: 65,
-        yaosu: '腾讯',
-        fenceng: '珠宝行业',
+        id: 'MTSJXX0228',
+        fenlei: 'JZGG023设备播放时长15秒',
+        pinlv: 15,
+        yaosu: '电影预告片',
+        fenceng: '300万',
         state: '启用',
        
     },
     {
-        id: 'JZGG010264',
-        fenlei: 'JZGG47广告10秒',
-        pinlv: 42,
-        yaosu: '小红书',
-        fenceng: '化妆品行业',
+        id: 'MTSJXX0264',
+        fenlei: 'JZGG47设备播放时长10秒',
+        pinlv: 32,
+        yaosu: '珠宝广告',
+        fenceng: '200万',
         state: '启用',
        
     },
+    {
+        id: 'MTSJXX0278',
+        fenlei: 'MTSJX设备播放时长17秒',
+        pinlv: 56,
+        yaosu: '电影预告片',
+        fenceng: '250万',
+        state: '启用',
+       
+    },
+    {
+        id: 'MTSJXX0226',
+        fenlei: 'JZGG12设备播放时长16秒',
+        pinlv: 12,
+        yaosu: '珠宝广告',
+        fenceng: '1000万',
+        state: '启用',
+       
+    },
+    {
+        id: 'MTSJXX0224',
+        fenlei: 'JZGG09设备播放时长30秒',
+        pinlv: 26,
+        yaosu: '服装广告',
+        fenceng: '100万',
+        state: '启用',
+       
+    },
+    
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -106,25 +107,26 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '精准广告数据',
+            title: '媒体数据',
             dataIndex: 'fenlei',
         },
        
         {
-            title: '投放媒体',
+            title: '媒体设备播放信息',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '精准分类',
+            title: '收益',
             dataIndex: 'fenceng',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         // {
         //     title: '几何类型',
         //     dataIndex: 'leixing',
         // },
         {
-            title: '投放进度',
+            title: '设备使用率',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -167,7 +169,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="投放数据管理"
+                title="媒体数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

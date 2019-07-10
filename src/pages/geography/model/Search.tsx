@@ -22,14 +22,14 @@ class Search extends Component<SearchProps, SearchState>{
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="精准广告投放资源">
+                        <Form.Item label="媒体资源">
                             {getFieldDecorator('remark')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加精准广告投放资源信息</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加媒体资源</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>
