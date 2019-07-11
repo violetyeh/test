@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '食品样品检测参数',
+          name: '接触材料检验分析审核',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '食品理化检测设置',
+          name: '接触材料分析过程',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '理化检测数据管理',
+          name: '接触材料审核处置管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
