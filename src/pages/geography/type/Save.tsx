@@ -72,9 +72,9 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="样品产地" >
-                        {getFieldDecorator('riqi', {
-                            initialValue: currentItem.riqi,
+                    <Form.Item key="chandi" label="样品产地" >
+                        {getFieldDecorator('chandi', {
+                            initialValue: currentItem.chandi,
                         })(
                             <Input />,
                         )}
