@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '动物源食品样品对照试验',
+          name: '食品样品检测参数',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '兽药残留检测设置',
+          name: '食品理化检测设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '检测分析数据管理',
+          name: '理化检测数据管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

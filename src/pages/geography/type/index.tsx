@@ -20,85 +20,69 @@ interface TypeState {
 const mockData = [
     {
        id: '1',
-       zhonglei:'四环素类药物',
-       mingcheng:'四环素',
-       songjian:'广州动物源食品单位',
-       shengchan:'广州动物源食品生产单位',
-       chandi:'广州',
-       riqi:'2019年7月11日',
+       mingcheng:'猪肉（肉类）',
+       tg:12,
+       yz:28,
+       jcy:'陈州',
        state: 1,
     },
     {
         id: '2',
-        zhonglei:'β受体激动剂类药物',
-        mingcheng:'诺氟沙星',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'兔肉（肉类）',
+        tg:26,
+        yz:35,
+        jcy:'李梦琪',
         state: 1,
      },
      {
         id: '3',
-        zhonglei:'喹诺酮类药物',
-        mingcheng:'洛美沙星',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'茄子（蔬菜）',
+        tg:39,
+        yz:28,
+        jcy:'刘媛媛',
         state: 1,
      },
      {
         id: '4',
-        zhonglei:'磺胺类药物',
-        mingcheng:'磺胺邻二甲氧嘧啶',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'白菜（蔬菜）',
+        tg:42,
+        yz:28,
+        jcy:'李思思',
         state: 1,
      },
      {
         id: '5',
-        zhonglei:'四环素类药物',
-        mingcheng:'磺胺对甲氧嘧啶',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'胡萝卜（蔬菜）',
+        tg:77,
+        yz:63,
+        jcy:'葛春',
         state: 1,
      },
      {
         id: '6',
-        zhonglei:'四环素类药物',
-        mingcheng:'磺胺二甲基噁唑',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'鱼肉（肉类）',
+        tg:65,
+        yz:42,
+        jcy:'陈静婉',
         state: 1,
      },
      {
         id: '7',
-        zhonglei:'喹诺酮类药物',
-        mingcheng:'莱克多巴胺',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        mingcheng:'鸭肉（肉类）',
+        tg:26,
+        yz:78,
+        jcy:'王天乐',
         state: 1,
      },
      {
-        id: '8',
-        zhonglei:'四环素类药物',
-        mingcheng:'磺胺甲噁唑',
-        songjian:'广州动物源食品单位',
-        shengchan:'广州动物源食品生产单位',
-        chandi:'广州',
-        riqi:'2019年7月11日',
+        id: '18',
+        mingcheng:'鸡肉（肉类）',
+        tg:54,
+        yz:96,
+        jcy:'陈真',
         state: 1,
      },
-    
+   
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -115,35 +99,30 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '样品种类',
-            dataIndex: 'zhonglei',
-        },
-        {
             title: '样品名称',
             dataIndex: 'mingcheng',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '送检单位',
-            dataIndex: 'songjian',
-            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
+            title: '透光率',
+            dataIndex: 'tg',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            
         },
         {
-            title: '样品生产单位',
-            dataIndex: 'shengchan',
+            title: '抑制率',
+            dataIndex: 'yz',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '样品产地',
-            dataIndex: 'chandi',
+            title: '检测员',
+            dataIndex: 'jcy',
         },
+       
         {
-            title: '生产日期',
-            dataIndex: 'riqi',
-        },
-        {
-            title: '是否通过检测',
+            title: '合格情况',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="是" unCheckedChildren="否" />,
+            render: () => <Switch checkedChildren="合格" unCheckedChildren="不合格" />,
         },
         {
             title: '操作',
@@ -172,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测分析数据管理"
+                title="理化检测数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

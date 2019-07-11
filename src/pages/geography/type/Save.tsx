@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测分析数据"
+                title="编辑理化检测数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,30 +58,23 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="送检单位" >
-                        {getFieldDecorator('songjian', {
-                            initialValue: currentItem.songjian,
+                    <Form.Item key="tg" label="透光率（%）" >
+                        {getFieldDecorator('tg', {
+                            initialValue: currentItem.tg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="样品生产单位" >
-                        {getFieldDecorator('shengchan', {
-                            initialValue: currentItem.shengchan,
+                    <Form.Item key="yz" label="抑制率（%）" >
+                        {getFieldDecorator('yz', {
+                            initialValue: currentItem.yz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="chandi" label="样品产地" >
-                        {getFieldDecorator('chandi', {
-                            initialValue: currentItem.chandi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="riqi" label="生产日期" >
-                        {getFieldDecorator('riqi', {
-                            initialValue: currentItem.riqi,
+                    <Form.Item key="jcy" label="检测员" >
+                        {getFieldDecorator('jcy', {
+                            initialValue: currentItem.jcy,
                         })(
                             <Input />,
                         )}
