@@ -24,52 +24,69 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: '人工测绘',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        name: '误差测量',
+        tongdao:'通道1',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'13分钟',
         state: '启用',
     },
     {
         id: 'D0002',
-        jishu: '电子测绘',
-        fenceng: '居民地',
-        leixing: '面、点',
-        name: 'CNSS定位与测量',
+        tongdao:'通道2',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'4分钟',
         state: '启用',
     },
     {
         id: 'D0003',
-        jishu: '智能测绘',
-        fenceng: '铁路',
-        leixing: '线',
-        name: '计算机测绘',
+        tongdao:'通道3',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'3分钟',
         state: '启用',
     },
     {
         id: 'D0004',
-        jishu: '人工测绘',
-        fenceng: '公路',
-        leixing: '线',
-        name: '控制测量',
+        tongdao:'通道4',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'5分钟',
         state: '启用',
     },
     {
         id: 'D0005',
-        jishu: '人工测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '数据测图',
+        tongdao:'通道5',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'4分钟',
         state: '启用',
     },
     {
         id: 'D0006',
-        jishu: '电子测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '工程测量',
+        tongdao:'通道6',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'7分钟',
         state: '启用',
     },
+    {
+        id: 'D0007',
+        tongdao:'通道7',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'3分钟',
+        state: '启用',
+    },
+    {
+        id: 'D0008',
+        tongdao:'通道8',
+        touguang:'0.23',
+        duizhao:'0.56',
+        shijian:'10分钟',
+        state: '启用',
+    },
+    
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -82,25 +99,25 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '试验编号',
             dataIndex: 'id',
         },
         {
-            title: '测绘技术名称',
-            dataIndex: 'name',
+            title: '试验通道',
+            dataIndex: 'tongdao',
         },
         {
-            title: '技术类型',
-            dataIndex: 'jishu',
+            title: '透光值',
+            dataIndex: 'touguang',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据分层',
-            dataIndex: 'fenceng',
+            title: '对照值',
+            dataIndex: 'duizhao',
         },
         {
-            title: '几何类型',
-            dataIndex: 'leixing',
+            title: '检测时间',
+            dataIndex: 'shijian',
         },
 
         {
@@ -132,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测绘技术管理"
+                title="检测试验管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

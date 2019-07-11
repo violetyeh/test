@@ -19,59 +19,86 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: '20190711水系测绘指导服务',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        yaosu: '湖泊、水库、双线河流等',
-        state: '启用',
-        pinlv: 80,
+       id: '1',
+       zhonglei:'四环素类药物',
+       mingcheng:'四环素',
+       songjian:'广州动物源食品单位',
+       shengchan:'广州动物源食品生产单位',
+       chandi:'广州',
+       riqi:'2019年7月11日',
+       state: 1,
     },
     {
-        id: 'SER8201',
-        fenlei: '20190721高速公路测绘服务',
-        fenceng: '居民地',
-        leixing: '面、点',
-        yaosu: '湖泊、水库、双线河流等',
-        state: '启用',
-        pinlv: 73,
-    },
-    {
-        id: 'SER3921',
-        fenlei: 'C1829铁路区间测绘服务',
-        fenceng: '铁路',
-        leixing: '线',
-        yaosu: '标准轨铁路、窄轨铁路',
-        state: '启用',
-        pinlv: 92,
-    },
-    {
-        id: 'SER0029',
-        fenlei: 'G318国道测绘项目服务',
-        fenceng: '公路',
-        leixing: '线',
-        yaosu: '国道、省道、县道、乡道、其他公路',
-        state: '启用',
-        pinlv: 82,
-    },
-    {
-        id: 'SER2191',
-        fenlei: '重庆市测绘项目服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
-        state: '启用',
-        pinlv: 19,
-    },
-    {
-        id: 'SER3321',
-        fenlei: '四川省测绘项目(B)服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
-        state: '启用',
-        pinlv: 73,
-    },
+        id: '2',
+        zhonglei:'β受体激动剂类药物',
+        mingcheng:'诺氟沙星',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '3',
+        zhonglei:'喹诺酮类药物',
+        mingcheng:'洛美沙星',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '4',
+        zhonglei:'磺胺类药物',
+        mingcheng:'磺胺邻二甲氧嘧啶',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '5',
+        zhonglei:'四环素类药物',
+        mingcheng:'磺胺对甲氧嘧啶',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '6',
+        zhonglei:'四环素类药物',
+        mingcheng:'磺胺二甲基噁唑',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '7',
+        zhonglei:'喹诺酮类药物',
+        mingcheng:'莱克多巴胺',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+     {
+        id: '8',
+        zhonglei:'四环素类药物',
+        mingcheng:'磺胺甲噁唑',
+        songjian:'广州动物源食品单位',
+        shengchan:'广州动物源食品生产单位',
+        chandi:'广州',
+        riqi:'2019年7月11日',
+        state: 1,
+     },
+    
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -84,42 +111,39 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '通道',
             dataIndex: 'id',
         },
         {
-            title: '服务名称',
-            dataIndex: 'fenlei',
+            title: '样品种类',
+            dataIndex: 'zhonglei',
         },
         {
-            title: '服务进度',
-            dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
+            title: '样品名称',
+            dataIndex: 'mingcheng',
+            render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '技术要素类型',
-            dataIndex: 'yaosu',
-        },
-        {
-            title: '负责人',
-            dataIndex: 'fenceng',
+            title: '送检单位',
+            dataIndex: 'songjian',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
-
         {
-            title: '是否启用',
+            title: '样品生产单位',
+            dataIndex: 'shengchan',
+        },
+        {
+            title: '样品产地',
+            dataIndex: 'chandi',
+        },
+        {
+            title: '生产日期',
+            dataIndex: 'riqi',
+        },
+        {
+            title: '是否通过检测',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
+            render: () => <Switch checkedChildren="是" unCheckedChildren="否" />,
         },
         {
             title: '操作',
@@ -148,7 +172,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广服务管理"
+                title="检测分析数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

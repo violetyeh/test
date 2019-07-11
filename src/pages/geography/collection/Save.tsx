@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分类"
+                title="编辑对照试验数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,39 +44,39 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="数据编号" >
+                    <Form.Item key="id" label="试验编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="测绘技术名称" >
-                        {getFieldDecorator('name', {
-                            initialValue: currentItem.name,
+                    <Form.Item key="tongdao" label="试验通道" >
+                        {getFieldDecorator('tongdao', {
+                            initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="数据分层" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.fenceng,
+                    <Form.Item key="touguang" label="透光值" >
+                        {getFieldDecorator('touguang', {
+                            initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="几何类型" >
-                        {getFieldDecorator('leixing', {
-                            initialValue: currentItem.leixing,
+                    <Form.Item key="duizhao" label="对照值" >
+                        {getFieldDecorator('duizhao', {
+                            initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="技术类型" >
-                        {getFieldDecorator('jishu', {
-                            initialValue: currentItem.jishu,
+                    <Form.Item key="shijain" label="检测时间" >
+                        {getFieldDecorator('shijian', {
+                            initialValue: currentItem.shijian,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>
