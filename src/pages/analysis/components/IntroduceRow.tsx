@@ -35,7 +35,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={74+}
+          total={74}
           footer='今日无机元素检测分析: 76'
           contentHeight={46}
         >
