@@ -20,47 +20,47 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        mc: '白菜农残检测',
+        mc: 'GMY分析项目-花生过敏源分析',
         jd: 100,
-        cp: '白菜',
+        cp: '花生',
         ren: '王思佳',
         state: '启用',
     },
     {
         id: 'SER129256',
-        mc: '四季豆农残检测',
+        mc: 'GMY分析项目-玉米过敏源分析',
         jd: 16,
-        cp: '四季豆',
+        cp: '玉米',
         ren: '赵玉玉',
         state: '启用',
     },
     {
         id: 'SER129216',
-        mc: '豇豆农残检测',
+        mc: 'GMY分析项目-鸡蛋过敏源分析',
         jd: 100,
-        cp: '豇豆',
+        cp: '鸡蛋',
         ren: '王思佳',
         state: '启用',
     },
     {
         id: 'SER129261',
-        mc: '白菜农残检测',
+        mc: 'GMY分析项目-芒果过敏源分析',
         jd: 100,
-        cp: '白菜',
+        cp: '芒果',
         ren: '王思佳',
         state: '启用',
     },
     {
         id: 'SER129278',
-        mc: '丝瓜农残检测',
+        mc: 'GMY分析项目-大蒜过敏源分析',
         jd: 75,
-        cp: '丝瓜',
+        cp: '大蒜',
         ren: '赵宇',
         state: '启用',
     },
     {
         id: 'SER129206',
-        mc: '西瓜农残检测',
+        mc: 'GMY分析项目-西瓜过敏源分析',
         jd: 66,
         cp: '西瓜',
         ren: '刘婉怡',
@@ -68,15 +68,15 @@ const mockData = [
     },
     {
         id: 'SER129274',
-        mc: '白菜农残检测',
+        mc: 'GMY分析项目-土豆过敏源分析',
         jd: 100,
-        cp: '白菜',
+        cp: '土豆',
         ren: '王思佳',
         state: '启用',
     },
     {
         id: 'SER129203',
-        mc: '番茄农残检测',
+        mc: 'GMY分析项目-番茄过敏源分析',
         jd: 88,
         cp: '番茄',
         ren: '陈婉',
@@ -99,22 +99,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '农残检测名称',
+            title: '过敏源分析项目名称',
             dataIndex: 'mc',
         },
         {
-            title: '检测进度',
-            dataIndex: 'jd',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
-        },
-        {
-            title: '检测产品',
+            title: '分析食品',
             dataIndex: 'cp',
         },
         {
@@ -122,7 +111,16 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'ren',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
-        
+        {
+            title: '分析进度',
+            dataIndex: 'jd',
+            render: (text: number) =>
+                <div>
+                    <Tooltip title="3 done / 3 in progress / 4 to do">
+                        <Progress percent={text} successPercent={text / 2} type="circle" />
+                    </Tooltip>
+                </div>,
+        },
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -155,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测数据分析管理"
+                title="过敏源分析管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

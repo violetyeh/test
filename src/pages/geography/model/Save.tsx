@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测设置"
+                title="编辑过敏源分析设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lx" label="检测类型" >
+                    <Form.Item key="lx" label="过敏源分析类型" >
                         {getFieldDecorator('lx', {
                             initialValue: currentItem.lx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="检测负责人" >
+                    <Form.Item key="ren" label="过敏源分析负责人" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="js" label="检测技术类型" >
+                    <Form.Item key="js" label="过敏源分析技术类型" >
                         {getFieldDecorator('js', {
                             initialValue: currentItem.js,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="检测进度（%）" >
+                    <Form.Item key="process" label="过敏源分析进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

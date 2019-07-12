@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测分析数据信息"
+                title="编辑分析数据信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="农残检测名称" >
+                    <Form.Item key="mc" label="过敏源分析项目名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -65,7 +65,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cp" label="检测产品" >
+                    <Form.Item key="cp" label="分析食品" >
                         {getFieldDecorator('cp', {
                             initialValue: currentItem.cp,
                         })(

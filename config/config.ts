@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '样品检测分析管理',
+          name: '过敏源分析管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '检测设置管理',
+          name: '分析设置管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '检测分析数据管理',
+          name: '分析数据管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

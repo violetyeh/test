@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '农产品农药残留检测分析系统',
+  title: '食品中过敏源分析系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
