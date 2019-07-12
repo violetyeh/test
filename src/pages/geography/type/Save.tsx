@@ -44,37 +44,37 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="通道编号" >
+                    <Form.Item key="id" label="采样编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="样品名称" >
-                        {getFieldDecorator('mingcheng', {
-                            initialValue: currentItem.mingcheng,
+                    <Form.Item key="hj" label="抽样环节" >
+                        {getFieldDecorator('hj', {
+                            initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tg" label="透光率（%）" >
-                        {getFieldDecorator('tg', {
-                            initialValue: currentItem.tg,
+                    <Form.Item key="mc" label="样品名称" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yz" label="抑制率（%）" >
-                        {getFieldDecorator('yz', {
-                            initialValue: currentItem.yz,
+                    <Form.Item key="bs" label="标示生产企业省份" >
+                        {getFieldDecorator('bs', {
+                            initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jcy" label="检测员" >
-                        {getFieldDecorator('jcy', {
-                            initialValue: currentItem.jcy,
+                    <Form.Item key="bcy" label="被抽样单位省份" >
+                        {getFieldDecorator('bcy', {
+                            initialValue: currentItem.bcy,
                         })(
                             <Input />,
                         )}

@@ -19,70 +19,69 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '1',
-       mingcheng:'猪肉（肉类）',
-       tg:12,
-       yz:28,
-       jcy:'陈州',
+       id: 'GC1500330132',
+       hj:'流通',
+       mc:'五花腊肉',
+       bs:'湖南',
+       bcy:'湖北',
        state: 1,
     },
     {
-        id: '2',
-        mingcheng:'兔肉（肉类）',
-        tg:26,
-        yz:35,
-        jcy:'李梦琪',
+        id: 'GC1500330149',
+        hj:'流通',
+        mc:'土家瘦肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '3',
-        mingcheng:'茄子（蔬菜）',
-        tg:39,
-        yz:28,
-        jcy:'刘媛媛',
+        id: 'GC1500330136',
+        hj:'流通',
+        mc:'农家鸡肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '4',
-        mingcheng:'白菜（蔬菜）',
-        tg:42,
-        yz:28,
-        jcy:'李思思',
+        id: 'GC1500330147',
+        hj:'流通',
+        mc:'农家白菜',
+        bs:'浙江',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '5',
-        mingcheng:'胡萝卜（蔬菜）',
-        tg:77,
-        yz:63,
-        jcy:'葛春',
+        id: 'GC1500330122',
+        hj:'流通',
+        mc:'猪肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '6',
-        mingcheng:'鱼肉（肉类）',
-        tg:65,
-        yz:42,
-        jcy:'陈静婉',
+        id: 'GC1500330147',
+        hj:'流通',
+        mc:'兔肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '7',
-        mingcheng:'鸭肉（肉类）',
-        tg:26,
-        yz:78,
-        jcy:'王天乐',
+        id: 'GC1500330136',
+        hj:'流通',
+        mc:'鸭肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
      {
-        id: '18',
-        mingcheng:'鸡肉（肉类）',
-        tg:54,
-        yz:96,
-        jcy:'陈真',
+        id: 'GC1500330112',
+        hj:'流通',
+        mc:'鱼肉',
+        bs:'湖南',
+        bcy:'湖北',
         state: 1,
      },
-   
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -95,33 +94,30 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '通道',
+            title: '采样编号',
             dataIndex: 'id',
         },
         {
-            title: '样品名称',
-            dataIndex: 'mingcheng',
+            title: '抽样环节',
+            dataIndex: 'hj',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '透光率',
-            dataIndex: 'tg',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            title: '样品名称',
+            dataIndex: 'mc',
             
         },
         {
-            title: '抑制率',
-            dataIndex: 'yz',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            title: '标示生产企业省份',
+            dataIndex: 'bs',
         },
         {
-            title: '检测员',
-            dataIndex: 'jcy',
+            title: '被抽样单位省份',
+            dataIndex: 'bcy',
         },
-       
         {
-            title: '合格情况',
-            dataIndex: 'status',
+            title: '检验结论',
+            dataIndex: 'jl',
             render: () => <Switch checkedChildren="合格" unCheckedChildren="不合格" />,
         },
         {
@@ -151,7 +147,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="理化检测数据管理"
+                title="审核处置管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

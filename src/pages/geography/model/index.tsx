@@ -19,85 +19,86 @@ interface ModelState {
 
 const mockData = [
     {
-        zl: '肉类',
-        mc:'鸡肉',
-        sj:'食品理化检测单位',
-        xg:'0.2',
-        hl:'0.03',
-        time:'2019年6月11日17:02:02',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月12日',
+        bm:'监察局',
+        qk:'暂停生产',
         process: 100,
-        status: '启用',
+        
     },
     {
-        zl: '蔬菜',
-        mc:'白菜',
-        sj:'食品理化检测单位',
-        xg:'0.3',
-        hl:'0.13',
-        time:'2019年7月01日07:09:50',
-        process: 32,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'农产品生产单位',
+        riqi:'2019年7月02日',
+        bm:'监察局',
+        qk:'封存不合格食品',
+        process: 61,
+        
     },
     {
-        zl: '肉类',
-        mc:'猪肉',
-        sj:'食品理化检测单位',
-        xg:'0.1',
-        hl:'0.03',
-        time:'2019年7月02日09:10:13',
-        process: 28,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月03日',
+        bm:'监察局',
+        qk:'封存问题食品',
+        process: 74,
+        
     },
     {
-        zl: '肉类',
-        mc:'鸭肉',
-        sj:'食品理化检测单位',
-        xg:'0.12',
-        hl:'0.02',
-        time:'2019年7月03日17:11:42',
-        process: 100,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月04日',
+        bm:'监察局',
+        qk:'暂停生产',
+        process: 34,
+        
     },
     {
-        zl: '肉类',
-        mc:'兔肉',
-        sj:'食品理化检测单位',
-        xg:'0.2',
-        hl:'0.03',
-        time:'2019年7月04日16:21:46',
-        process: 99,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月05日',
+        bm:'监察局',
+        qk:'封存问题食品',
+        process: 42,
+        
     },
     {
-        zl: '蔬菜',
-        mc:'胡萝卜',
-        sj:'食品理化检测单位',
-        xg:'0.3',
-        hl:'0.01',
-        time:'2019年6月05日13:02:02',
-        process: 89,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月06日',
+        bm:'监察局',
+        qk:'暂停生产',
+        process: 66,
+        
     },
     {
-        zl: '蔬菜',
-        mc:'茄子',
-        sj:'食品理化检测单位',
-        xg:'0.2',
-        hl:'0.03',
-        time:'2019年6月05日08:12:56',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月07日',
+        bm:'监察局',
+        qk:'暂停生产',
         process: 78,
-        status: '启用',
+        
     },
     {
-        zl: '肉类',
-        mc:'鱼肉',
-        sj:'食品理化检测单位',
-        xg:'0.4',
-        hl:'0.04',
-        time:'2019年6月06日11:05:33',
-        process: 65,
-        status: '启用',
+        hj: '生产',
+        dw:'接触材料分析单位',
+        ren:'食品生产单位',
+        riqi:'2019年7月08日',
+        bm:'监察局',
+        qk:'封存不合格食品',
+        process: 56,
+        
     },
+    
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -109,45 +110,40 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '样品种类',
-            dataIndex: 'zl',
+            title: '处置环节',
+            dataIndex: 'hj',
         },
         {
-            title: '样品名称',
-            dataIndex: 'mc',
+            title: '填报单位',
+            dataIndex: 'dw',
         },
         {
-            title: '送检单位',
-            dataIndex: 'sj',
+            title: '填报人',
+            dataIndex: 'ren',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '吸光值',
-            dataIndex: 'xg',
+            title: '收到检验报告日期',
+            dataIndex: 'riqi',
         },
         {
-            title: '含量',
-            dataIndex: 'hl',
+            title: '负责核查处置部门',
+            dataIndex: 'bm',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '时间',
-            dataIndex: 'time',
+            title: '产品控制情况',
+            dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '检测结果进度',
+            title: '分析进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
-        {
-            title: '是否启用',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
-        },
-        {
+        { 
             title: '操作',
             render: (text, record) => (
                 <Fragment>
@@ -173,7 +169,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="理化检测设置"
+                title="材料分析设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

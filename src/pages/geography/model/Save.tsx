@@ -1,11 +1,11 @@
 import { Component } from "react";
 import { Form, Modal, Input, message, DatePicker } from "antd";
-import { FormComponentProps } from "antd/lib/form";
+import { FordwomponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
 import { Dispatch } from "redux";
 
-interface SaveProps extends FormComponentProps {
+interface SaveProps extends FordwomponentProps {
     dispatch?: Dispatch<any>;
     handleSaveVisible: () => void;
     currentItem: {};
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑理化检测设置"
+                title="编辑接触材料分析"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,44 +44,44 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="zl" label="样品种类" >
-                        {getFieldDecorator('zl', {
-                            initialValue: currentItem.zl,
+                    <Form.Item key="hj" label="处置环节" >
+                        {getFieldDecorator('hj', {
+                            initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="样品名称" >
-                        {getFieldDecorator('mc', {
-                            initialValue: currentItem.mc,
+                    <Form.Item key="dw" label="填报单位" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="送检单位" >
-                        {getFieldDecorator('sj', {
-                            initialValue: currentItem.sj,
+                    <Form.Item key="ren" label="填报人" >
+                        {getFieldDecorator('ren', {
+                            initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xg" label="吸光值" >
-                        {getFieldDecorator('xg', {
-                            initialValue: currentItem.xg,
+                    <Form.Item key="riqi" label="收到检验报告日期" >
+                        {getFieldDecorator('riqi', {
+                            initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hl" label="含量" >
-                        {getFieldDecorator('hl', {
-                            initialValue: currentItem.hl,
+                    <Form.Item key="bm" label="负责核查处置部门" >
+                        {getFieldDecorator('bm', {
+                            initialValue: currentItem.bm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="time" label="时间" >
-                        {getFieldDecorator('time', {
-                            initialValue: currentItem.time,
+                    <Form.Item key="qk" label="时间" >
+                        {getFieldDecorator('qk', {
+                            initialValue: currentItem.qk,
                         })(
                             <Input />,
                         )}
