@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '1',
-       mingcheng:'猪肉（肉类）',
-       tg:12,
-       yz:28,
-       jcy:'陈州',
-       state: 1,
-    },
-    {
-        id: '2',
-        mingcheng:'兔肉（肉类）',
-        tg:26,
-        yz:35,
-        jcy:'李梦琪',
-        state: 1,
-     },
-     {
         id: '3',
         mingcheng:'茄子（蔬菜）',
-        tg:39,
-        yz:28,
+        nd:49,
+        mg:28,
         jcy:'刘媛媛',
         state: 1,
      },
      {
         id: '4',
         mingcheng:'白菜（蔬菜）',
-        tg:42,
-        yz:28,
+        nd:22,
+        mg:28,
         jcy:'李思思',
         state: 1,
      },
      {
         id: '5',
         mingcheng:'胡萝卜（蔬菜）',
-        tg:77,
-        yz:63,
+        nd:17,
+        mg:63,
         jcy:'葛春',
         state: 1,
      },
      {
         id: '6',
         mingcheng:'鱼肉（肉类）',
-        tg:65,
-        yz:42,
+        nd:65,
+        mg:42,
         jcy:'陈静婉',
         state: 1,
      },
      {
         id: '7',
         mingcheng:'鸭肉（肉类）',
-        tg:26,
-        yz:78,
+        nd:26,
+        mg:78,
         jcy:'王天乐',
         state: 1,
      },
      {
         id: '18',
         mingcheng:'鸡肉（肉类）',
-        tg:54,
-        yz:96,
+        nd:54,
+        mg:96,
         jcy:'陈真',
         state: 1,
      },
+    {
+       id: '1',
+       mingcheng:'猪肉（肉类）',
+       nd:32,
+       mg:58,
+       jcy:'陈州',
+       state: 1,
+    },
+    {
+        id: '2',
+        mingcheng:'兔肉（肉类）',
+        nd:36,
+        mg:35,
+        jcy:'李梦琪',
+        state: 1,
+     },
+     
    
 ]
 
@@ -101,17 +102,17 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '样品名称',
             dataIndex: 'mingcheng',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="#AA8888">{text}</Tag>,
         },
         {
-            title: '透光率',
-            dataIndex: 'tg',
+            title: 'NIC浓度',
+            dataIndex: 'nd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
             
         },
         {
-            title: '抑制率',
-            dataIndex: 'yz',
+            title: '敏感度',
+            dataIndex: 'mg',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
@@ -151,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="理化检测数据管理"
+                title="检测数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

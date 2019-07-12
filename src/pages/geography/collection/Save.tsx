@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测参数"
+                title="编辑微生物检测参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,9 +51,9 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tiji1" label="试验体积" >
-                        {getFieldDecorator('tiji1', {
-                            initialValue: currentItem.tiji1,
+                    <Form.Item key="mc" label="试验体积" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
@@ -72,16 +72,9 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xisi" label="稀释倍数" >
-                        {getFieldDecorator('xisi', {
-                            initialValue: currentItem.xisi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="quxian" label="合格曲线" >
-                        {getFieldDecorator('quxian', {
-                            initialValue: currentItem.quxian,
+                    <Form.Item key="zb" label="微生物占比（%）" >
+                        {getFieldDecorator('zb', {
+                            initialValue: currentItem.zb,
                         })(
                             <Input />,
                         )}

@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,75 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SYBH1021',
-        tiji1:'101',
+        id: 'WSW21',
+        mc:'细菌',
         tiji2:'13.23',
         zhiliang:'8',
-        xisi:'13倍',
-        quxian:'600',
+        zb:30,
         state: '启用',
     },
     {
-        id: 'SYBH1022',
-        tiji1:'102',
+        id: 'WSW22',
+        mc:'病毒',
         tiji2:'23.23',
         zhiliang:'5',
-        xisi:'4倍',
-        quxian:'500',
+        zb:23,
         state: '启用',
     },
     {
-        id: 'SYBH1023',
-        tiji1:'103',
+        id: 'WSW23',
+        mc:'真菌',
         tiji2:'13',
         zhiliang:'1.56',
-        xisi:'3倍',
-        quxian:'323',
+        zb:3,
         state: '启用',
     },
     {
-        id: 'SYBH1024',
-        tiji1:'104',
+        id: 'WSW24',
+        mc:'放线菌',
         tiji2:'52',
         zhiliang:'0.56',
-        xisi:'5倍',
-        quxian:'231',
+        zb:5,
         state: '启用',
     },
     {
-        id: 'SYBH1025',
-        tiji1:'105',
+        id: 'WSW25',
+        mc:'立克次氏体',
         tiji2:'13.23',
         zhiliang:'0.56',
-        xisi:'4倍',
-        quxian:'978',
+        zb:1,
         state: '启用',
     },
     {
-        id: 'SYBH1026',
-        tiji1:'106',
+        id: 'WSW26',
+        mc:'支原体',
         tiji2:'13.23',
         zhiliang:'0.56',
-        xisi:'7倍',
-        quxian:'154',
+        zb:4,
         state: '启用',
     },
     {
-        id: 'SYBH1027',
-        tiji1:'107',
+        id: 'WSW27',
+        mc:'衣原体',
         tiji2:'13.23',
         zhiliang:'0.56',
-        xisi:'3倍',
-        quxian:'241',
+        zb:1,
         state: '启用',
     },
     {
-        id: 'SYBH1028',
-        tiji1:'108',
+        id: 'WSW28',
+        mc:'螺旋体',
         tiji2:'13.23',
         zhiliang:'0.56',
-        xisi:'10倍',
-        quxian:'321',
+        zb:3,
         state: '启用',
     },
     
@@ -107,32 +99,28 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '试验编号',
+            title: '检测编号',
             dataIndex: 'id',
         },
         {
-            title: '试验体积',
-            dataIndex: 'tiji1',
+            title: '微生物名称',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '测定体积',
+            title: '检测食物体积',
             dataIndex: 'tiji2',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '样品质量',
+            title: '食物质量',
             dataIndex: 'zhiliang',
         },
         {
-            title: '稀释倍数',
-            dataIndex: 'xisi',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            title: '微生物占比',
+            dataIndex: 'zb',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-        {
-            title: '合格曲线',
-            dataIndex: 'quxian',
-        },
-
         {
             title: '操作',
             render: (text, record) => (
@@ -162,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测参数管理"
+                title="微生物检测参数管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

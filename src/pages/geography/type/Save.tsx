@@ -58,16 +58,16 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tg" label="透光率（%）" >
-                        {getFieldDecorator('tg', {
-                            initialValue: currentItem.tg,
+                    <Form.Item key="nd" label="NIC浓度（%）" >
+                        {getFieldDecorator('nd', {
+                            initialValue: currentItem.nd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yz" label="抑制率（%）" >
-                        {getFieldDecorator('yz', {
-                            initialValue: currentItem.yz,
+                    <Form.Item key="mg" label="敏感度（%）" >
+                        {getFieldDecorator('mg', {
+                            initialValue: currentItem.mg,
                         })(
                             <Input />,
                         )}
