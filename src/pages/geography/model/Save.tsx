@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message, DatePicker } from "antd";
+import { Form, Modal, Input, message, renPicker } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑推广渠道信息"
+                title="编辑检测设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,48 +44,42 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="渠道ID" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="渠道名称" >
-                        {getFieldDecorator('pinlv', {
-                            initialValue: currentItem.pinlv,
+                    <Form.Item key="lx" label="检测类型" >
+                        {getFieldDecorator('lx', {
+                            initialValue: currentItem.lx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="渠道负责人" >
-                        {getFieldDecorator('date', {
-                            initialValue: currentItem.date,
+                    <Form.Item key="ren" label="检测负责人" >
+                        {getFieldDecorator('ren', {
+                            initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="测绘技术类型" >
-                        {getFieldDecorator('model', {
-                            initialValue: currentItem.model,
+                    <Form.Item key="js" label="检测技术类型" >
+                        {getFieldDecorator('js', {
+                            initialValue: currentItem.js,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="数据类型" >
-                        {getFieldDecorator('type', {
-                            initialValue: currentItem.type,
+                    <Form.Item key="process" label="检测进度（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
+                    
                 </Form>
             </Modal>
         );

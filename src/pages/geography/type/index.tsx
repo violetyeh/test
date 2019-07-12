@@ -20,58 +20,69 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: '20190711水系测绘指导服务',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        yaosu: '湖泊、水库、双线河流等',
+        mc: '白菜农残检测',
+        jd: 100,
+        cp: '白菜',
+        ren: '王思佳',
         state: '启用',
-        pinlv: 80,
     },
     {
-        id: 'SER8201',
-        fenlei: '20190721高速公路测绘服务',
-        fenceng: '居民地',
-        leixing: '面、点',
-        yaosu: '湖泊、水库、双线河流等',
+        id: 'SER129256',
+        mc: '四季豆农残检测',
+        jd: 16,
+        cp: '四季豆',
+        ren: '赵玉玉',
         state: '启用',
-        pinlv: 73,
     },
     {
-        id: 'SER3921',
-        fenlei: 'C1829铁路区间测绘服务',
-        fenceng: '铁路',
-        leixing: '线',
-        yaosu: '标准轨铁路、窄轨铁路',
+        id: 'SER129216',
+        mc: '豇豆农残检测',
+        jd: 100,
+        cp: '豇豆',
+        ren: '王思佳',
         state: '启用',
-        pinlv: 92,
     },
     {
-        id: 'SER0029',
-        fenlei: 'G318国道测绘项目服务',
-        fenceng: '公路',
-        leixing: '线',
-        yaosu: '国道、省道、县道、乡道、其他公路',
+        id: 'SER129261',
+        mc: '白菜农残检测',
+        jd: 100,
+        cp: '白菜',
+        ren: '王思佳',
         state: '启用',
-        pinlv: 82,
     },
     {
-        id: 'SER2191',
-        fenlei: '重庆市测绘项目服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'SER129278',
+        mc: '丝瓜农残检测',
+        jd: 75,
+        cp: '丝瓜',
+        ren: '赵宇',
         state: '启用',
-        pinlv: 19,
     },
     {
-        id: 'SER3321',
-        fenlei: '四川省测绘项目(B)服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'SER129206',
+        mc: '西瓜农残检测',
+        jd: 66,
+        cp: '西瓜',
+        ren: '刘婉怡',
         state: '启用',
-        pinlv: 73,
     },
+    {
+        id: 'SER129274',
+        mc: '白菜农残检测',
+        jd: 100,
+        cp: '白菜',
+        ren: '王思佳',
+        state: '启用',
+    },
+    {
+        id: 'SER129203',
+        mc: '番茄农残检测',
+        jd: 88,
+        cp: '番茄',
+        ren: '陈婉',
+        state: '启用',
+    },
+
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -88,12 +99,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '服务名称',
-            dataIndex: 'fenlei',
+            title: '农残检测名称',
+            dataIndex: 'mc',
         },
         {
-            title: '服务进度',
-            dataIndex: 'pinlv',
+            title: '检测进度',
+            dataIndex: 'jd',
             render: (text: number) =>
                 <div>
                     <Tooltip title="3 done / 3 in progress / 4 to do">
@@ -103,19 +114,15 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '技术要素类型',
-            dataIndex: 'yaosu',
+            title: '检测产品',
+            dataIndex: 'cp',
         },
         {
             title: '负责人',
-            dataIndex: 'fenceng',
+            dataIndex: 'ren',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
-
+        
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -148,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广服务管理"
+                title="检测数据分析管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

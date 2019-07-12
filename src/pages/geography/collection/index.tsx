@@ -24,52 +24,61 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: '人工测绘',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        name: '误差测量',
-        state: '启用',
+        lx:'农残检测',
+        yp:'白菜',
+        xx:'0mg/kg',
+        sx:'10mg/kg',
     },
     {
         id: 'D0002',
-        jishu: '电子测绘',
-        fenceng: '居民地',
-        leixing: '面、点',
-        name: 'CNSS定位与测量',
-        state: '启用',
+        lx:'农残检测',
+        yp:'茄子',
+        xx:'0mg/kg',
+        sx:'8mg/kg',
     },
     {
         id: 'D0003',
-        jishu: '智能测绘',
-        fenceng: '铁路',
-        leixing: '线',
-        name: '计算机测绘',
-        state: '启用',
+        lx:'农残检测',
+        yp:'豇豆',
+        xx:'0mg/kg',
+        sx:'8mg/kg',
     },
     {
         id: 'D0004',
-        jishu: '人工测绘',
-        fenceng: '公路',
-        leixing: '线',
-        name: '控制测量',
-        state: '启用',
+        lx:'农残检测',
+        yp:'四季豆',
+        xx:'0mg/kg',
+        sx:'6mg/kg',
     },
     {
         id: 'D0005',
-        jishu: '人工测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '数据测图',
-        state: '启用',
+        lx:'农残检测',
+        yp:'番茄',
+        xx:'0mg/kg',
+        sx:'15mg/kg',
     },
     {
         id: 'D0006',
-        jishu: '电子测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '工程测量',
-        state: '启用',
+        lx:'农残检测',
+        yp:'黄瓜',
+        xx:'0mg/kg',
+        sx:'20mg/kg',
     },
+    {
+        id: 'D0007',
+        lx:'农残检测',
+        yp:'南瓜',
+        xx:'0mg/kg',
+        sx:'8mg/kg',
+    },
+    {
+        id: 'D0008',
+        lx:'农残检测',
+        yp:'冬瓜',
+        xx:'0mg/kg',
+        sx:'5mg/kg',
+    },
+    
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -86,21 +95,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '测绘技术名称',
-            dataIndex: 'name',
+            title: '检测类型',
+            dataIndex: 'lx',
         },
         {
-            title: '技术类型',
-            dataIndex: 'jishu',
+            title: '农产品样品',
+            dataIndex: 'yp',
+            render: (text) => <Tag color="#ff8ee9">{text}</Tag>,
+        },
+        {
+            title: '下限',
+            dataIndex: 'xx',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据分层',
-            dataIndex: 'fenceng',
-        },
-        {
-            title: '几何类型',
-            dataIndex: 'leixing',
+            title: '上限',
+            dataIndex: 'sx',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
 
         {
@@ -132,7 +143,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测绘技术管理"
+                title="样品检测管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

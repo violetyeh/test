@@ -20,53 +20,73 @@ interface ModelState {
 const mockData = [
     {
         id: 'YIDS0191',
-        date: '陈光学',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '同多X，Y坐标，将地和物通过点、线、面方式进行表达',
+        lx: '二氧化硫检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 58,
         status: '启用',
-        pinlv: 'AE1292微信推广渠道',
-        process: 30,
     },
     {
-        id: 'YIDS2SI1',
-        date: '杜维',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '用方格来模拟实体',
+        id: 'YIDS0123',
+        lx: '过氧化氢检测',
+        ren: '李乐',
+        js: '机器检测',
+        process: 79,
         status: '启用',
-        pinlv: 'AQ2837微信公众号推广渠道',
-        process: 88,
     },
     {
-        id: 'YIDS01IOS',
-        date: '陈鹏屹',
-        model: '人工测量',
-        type: '线下推广',
-        remark: '官方权威测绘和发布的数据',
+        id: 'YIDS0186',
+        lx: '亚硝酸盐检测',
+        ren: '赵钱',
+        js: '人工检测',
+        process: 66,
         status: '启用',
-        pinlv: 'AY72829线下推广渠道',
-        process: 90,
+       
     },
     {
-        id: 'YSIW9s1',
-        date: '张磊',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '利用专业测绘仪器测绘数据所得',
+        id: 'YIDS0175',
+        lx: '二氧化硫检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 14,
         status: '启用',
-        pinlv: 'A1910百度推广渠道',
-        process: 70,
+       
     },
     {
-        id: 'YID80SJ',
-        date: '陈芙蓉',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '卫星实时采集数据',
+        id: 'YIDS0146',
+        lx: '甲醇检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 47,
         status: '启用',
-        pinlv: 'A29192广告推广渠道',
-        process: 67,
+       
+    },
+    {
+        id: 'YIDS0153',
+        lx: '二氧化硫检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 83,
+        status: '启用',
+       
+    },
+    {
+        id: 'YIDS0178',
+        lx: '二氧化硫检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 85,
+        status: '启用',
+       
+    },
+    {
+        id: 'YIDS0145',
+        lx: '二氧化硫检测',
+        ren: '王思卡',
+        js: '机器检测',
+        process: 65,
+        status: '启用',
+       
     },
 ]
 
@@ -79,30 +99,26 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '渠道名称',
-            dataIndex: 'pinlv',
+            title: '检测类型',
+            dataIndex: 'lx',
         },
         {
-            title: '渠道负责人',
-            dataIndex: 'date',
+            title: '检测负责人',
+            dataIndex: 'ren',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '测绘技术类型',
-            dataIndex: 'model',
-        },
-        {
-            title: '推广类型',
-            dataIndex: 'type',
+            title: '检测技术类型',
+            dataIndex: 'js',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '推广进度',
+            title: '检测进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -138,7 +154,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广渠道管理"
+                title="检测设置管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
