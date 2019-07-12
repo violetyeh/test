@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑理化检测数据"
+                title="编辑营养标签分析数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,37 +44,58 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="通道编号" >
+                    <Form.Item key="id" label="序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="样品名称" >
-                        {getFieldDecorator('mingcheng', {
-                            initialValue: currentItem.mingcheng,
+                    <Form.Item key="mc" label="产品名称" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tg" label="透光率（%）" >
-                        {getFieldDecorator('tg', {
-                            initialValue: currentItem.tg,
+                    <Form.Item key="gg" label="产品规格" >
+                        {getFieldDecorator('gg', {
+                            initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yz" label="抑制率（%）" >
-                        {getFieldDecorator('yz', {
-                            initialValue: currentItem.yz,
+                    <Form.Item key="hz" label="营养汇总" >
+                        {getFieldDecorator('hz', {
+                            initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jcy" label="检测员" >
-                        {getFieldDecorator('jcy', {
-                            initialValue: currentItem.jcy,
+                    <Form.Item key="yy" label="每百克营养" >
+                        {getFieldDecorator('yy', {
+                            initialValue: currentItem.yy,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="zhi" label="NRV值" >
+                        {getFieldDecorator('zhi', {
+                            initialValue: currentItem.zhi,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="wc" label="允许误差" >
+                        {getFieldDecorator('wc', {
+                            initialValue: currentItem.wc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jd" label="检测结果进度（%）" >
+                        {getFieldDecorator('jd', {
+                            initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}

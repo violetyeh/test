@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品理化检测分析系统',
+  title: '食品营养标签成分分析系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
