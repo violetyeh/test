@@ -24,65 +24,65 @@ interface TypeState {
 const mockData = [
     {
         id: 'WSW21',
-        mc:'细菌',
-        tiji2:'13.23',
-        zhiliang:'8',
+        mc:'S',
+        tiji2:'蛋白粉',
+        zhiliang:'100.00',
         zb:30,
         state: '启用',
     },
     {
         id: 'WSW22',
-        mc:'病毒',
-        tiji2:'23.23',
-        zhiliang:'5',
+        mc:'Fe',
+        tiji2:'蛋糕',
+        zhiliang:'100.00',
         zb:23,
         state: '启用',
     },
     {
         id: 'WSW23',
-        mc:'真菌',
-        tiji2:'13',
-        zhiliang:'1.56',
+        mc:'P',
+        tiji2:'面包',
+        zhiliang:'100.00',
         zb:3,
         state: '启用',
     },
     {
         id: 'WSW24',
-        mc:'放线菌',
-        tiji2:'52',
-        zhiliang:'0.56',
+        mc:'Fe',
+        tiji2:'糖果',
+        zhiliang:'100.00',
         zb:5,
         state: '启用',
     },
     {
         id: 'WSW25',
-        mc:'立克次氏体',
-        tiji2:'13.23',
-        zhiliang:'0.56',
+        mc:'P',
+        tiji2:'薯片',
+        zhiliang:'100.00',
         zb:1,
         state: '启用',
     },
     {
         id: 'WSW26',
-        mc:'支原体',
-        tiji2:'13.23',
-        zhiliang:'0.56',
+        mc:'Fe',
+        tiji2:'果冻',
+        zhiliang:'100.00',
         zb:4,
         state: '启用',
     },
     {
         id: 'WSW27',
-        mc:'衣原体',
-        tiji2:'13.23',
-        zhiliang:'0.56',
+        mc:'P',
+        tiji2:'方便面',
+        zhiliang:'100.00',
         zb:1,
         state: '启用',
     },
     {
         id: 'WSW28',
-        mc:'螺旋体',
-        tiji2:'13.23',
-        zhiliang:'0.56',
+        mc:'S',
+        tiji2:'鸡腿',
+        zhiliang:'100.00',
         zb:3,
         state: '启用',
     },
@@ -103,12 +103,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '微生物名称',
+            title: '无机元素名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '检测食物体积',
+            title: '检测食物',
             dataIndex: 'tiji2',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -117,7 +117,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'zhiliang',
         },
         {
-            title: '微生物占比',
+            title: '无机元素占比',
             dataIndex: 'zb',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="微生物检测参数管理"
+                title="无机元素检测参数管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

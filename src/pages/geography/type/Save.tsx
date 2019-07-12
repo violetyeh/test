@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑微生物检测数据"
+                title="编辑无机元素检测数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="通道编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -58,23 +58,16 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nd" label="NIC浓度（%）" >
-                        {getFieldDecorator('nd', {
-                            initialValue: currentItem.nd,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mg" label="敏感度（%）" >
-                        {getFieldDecorator('mg', {
-                            initialValue: currentItem.mg,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
                     <Form.Item key="jcy" label="检测员" >
                         {getFieldDecorator('jcy', {
                             initialValue: currentItem.jcy,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="hg" label="合格率（%）" >
+                        {getFieldDecorator('hg', {
+                            initialValue: currentItem.hg,
                         })(
                             <Input />,
                         )}

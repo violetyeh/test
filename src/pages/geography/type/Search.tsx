@@ -17,7 +17,7 @@ class Search extends Component<SearchProps, SearchState>{
             <Form layout='inline'>
                 <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                     <Col md={8} sm={24}>
-                        <Form.Item label="通道编号">
+                        <Form.Item label="编号">
                             {getFieldDecorator('id')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
@@ -29,7 +29,7 @@ class Search extends Component<SearchProps, SearchState>{
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加微生物检测数据</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加无机元素检测数据</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>

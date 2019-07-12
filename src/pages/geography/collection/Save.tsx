@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑微生物检测参数"
+                title="编辑无机元素检测参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="试验编号" >
+                    <Form.Item key="id" label="检验编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="试验体积" >
+                    <Form.Item key="mc" label="无机元素名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tiji2" label="测定体积" >
+                    <Form.Item key="tiji2" label="检测食物" >
                         {getFieldDecorator('tiji2', {
                             initialValue: currentItem.tiji2,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhiliang" label="样品质量" >
+                    <Form.Item key="zhiliang" label="食物质量" >
                         {getFieldDecorator('zhiliang', {
                             initialValue: currentItem.zhiliang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zb" label="微生物占比（%）" >
+                    <Form.Item key="zb" label="无机元素占比（%）" >
                         {getFieldDecorator('zb', {
                             initialValue: currentItem.zb,
                         })(

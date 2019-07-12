@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='微生物检测次数'
+          title='无机元素检测次数'
           action={
             <Tooltip
               title={
@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={382}
-          footer='今日微生物检测分析: 33'
+          total={74+}
+          footer='今日无机元素检测分析: 76'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>62%</span>
+            <span className={styles.trendText}>37%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>71%</span>
+            <span className={styles.trendText}>81%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(333).format('0,0')}
-          footer='今日分析：165'
+          total={numeral(746).format('0,0')}
+          footer='今日分析：274'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='微生物检测分析进度'
+          title='无机元素检测分析进度'
           action={
             <Tooltip
               title={
@@ -85,8 +85,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(866).format('0,0')}
-          footer='微生物检测分析进度：47%'
+          total={numeral(476).format('0,0')}
+          footer='无机元素检测分析进度：82%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />

@@ -19,70 +19,62 @@ interface TypeState {
 
 const mockData = [
     {
+        id: '1',
+        mingcheng:'猪肉（肉类）',
+        hg:98,
+        jcy:'陈州',
+        state: 1,
+     },
+     {
+         id: '2',
+         mingcheng:'兔肉（肉类）',
+         hg:100,
+         jcy:'李梦琪',
+         state: 1,
+      },
+    {
         id: '3',
         mingcheng:'茄子（蔬菜）',
-        nd:49,
-        mg:28,
+        hg:100,
         jcy:'刘媛媛',
         state: 1,
      },
      {
         id: '4',
         mingcheng:'白菜（蔬菜）',
-        nd:22,
-        mg:28,
+        hg:85,
         jcy:'李思思',
         state: 1,
      },
      {
         id: '5',
         mingcheng:'胡萝卜（蔬菜）',
-        nd:17,
-        mg:63,
+        hg:90,
         jcy:'葛春',
         state: 1,
      },
      {
         id: '6',
         mingcheng:'鱼肉（肉类）',
-        nd:65,
-        mg:42,
+        hg:100,
         jcy:'陈静婉',
         state: 1,
      },
      {
         id: '7',
         mingcheng:'鸭肉（肉类）',
-        nd:26,
-        mg:78,
+        hg:98,
         jcy:'王天乐',
         state: 1,
      },
      {
-        id: '18',
+        id: '8',
         mingcheng:'鸡肉（肉类）',
-        nd:54,
-        mg:96,
+        hg:76,
         jcy:'陈真',
         state: 1,
      },
-    {
-       id: '1',
-       mingcheng:'猪肉（肉类）',
-       nd:32,
-       mg:58,
-       jcy:'陈州',
-       state: 1,
-    },
-    {
-        id: '2',
-        mingcheng:'兔肉（肉类）',
-        nd:36,
-        mg:35,
-        jcy:'李梦琪',
-        state: 1,
-     },
-     
+    
    
 ]
 
@@ -96,7 +88,7 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '通道',
+            title: '编号',
             dataIndex: 'id',
         },
         {
@@ -105,21 +97,15 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="#AA8888">{text}</Tag>,
         },
         {
-            title: 'NIC浓度',
-            dataIndex: 'nd',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
-            
-        },
-        {
-            title: '敏感度',
-            dataIndex: 'mg',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
-        },
-        {
             title: '检测员',
             dataIndex: 'jcy',
+            render: (Text) => <Tag color="#ff0000">{Text}</Tag>
         },
-       
+        {
+            title: '合格率',
+            dataIndex: 'hg',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
+        },
         {
             title: '合格情况',
             dataIndex: 'status',
@@ -152,7 +138,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测数据管理"
+                title="检测分析数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '食品微生物检测参数',
+          name: '食品无机元素检测参数',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '微生物检测设置',
+          name: '无机元素检测设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
