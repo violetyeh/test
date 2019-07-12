@@ -44,28 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="hj" label="处置环节" >
+                    <Form.Item key="hj" label="检验项目名称" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="填报单位" >
+                    <Form.Item key="dw" label="添加剂检验部门" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="填报人" >
+                    <Form.Item key="ren" label="添加剂检验负责部门" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="收到检验报告日期" >
+                    <Form.Item key="riqi" label="添加剂检验日期" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
@@ -79,7 +79,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="qk" label="时间" >
+                    <Form.Item key="qk" label="食品控制情况" >
                         {getFieldDecorator('qk', {
                             initialValue: currentItem.qk,
                         })(

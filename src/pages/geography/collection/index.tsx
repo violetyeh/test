@@ -23,75 +23,75 @@ interface TypeState {
 
 const mockData = [
     {
-        id: '1001',
-        xm:'铬',
+        id: 'TJJ1001',
+        xm:'营养强化剂',
         jg:'0.1',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1002',
-        xm:'铅',
+        id: 'TJJ1002',
+        xm:'消泡剂',
         jg:'0.1',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1003',
-        xm:'总汞',
+        id: 'TJJ1003',
+        xm:'漂白剂',
         jg:'0.1',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1004',
-        xm:'黄曲霉毒素',
+        id: 'TJJ1004',
+        xm:'膨松剂',
         jg:'0.1',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1005',
-        xm:'氢氧化钠',
+        id: 'TJJ1005',
+        xm:'着色剂',
         jg:'0.1',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1006',
-        xm:'准邻苯二甲酸氢钾',
+        id: 'TJJ1006',
+        xm:'护色剂',
         jg:'0.3',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1007',
-        xm:'酚酞指示剂',
+        id: 'TJJ1007',
+        xm:'酶制剂',
         jg:'0.2',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     {
-        id: '1008',
-        xm:'浓盐酸',
+        id: 'TJJ1008',
+        xm:'增味剂',
         jg:'0.01',
         dw:'mg/kg',
         pd:'合格',
-        yj:'《食品安全国家标准》',
+        yj:'《GJAQ-食品添加剂国家安全规范》',
         state: '启用',
     },
     
@@ -111,11 +111,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检验项目',
+            title: '添加剂检验项目',
             dataIndex: 'xm',
         },
         {
-            title: '检验结果',
+            title: '添加剂检验结果',
             dataIndex: 'jg',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -129,7 +129,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '检验依据',
+            title: '添加剂检验依据',
             dataIndex: 'yj',
         },
 
@@ -162,7 +162,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测分析审核"
+                title="添加剂检测分析"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

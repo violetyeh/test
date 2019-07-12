@@ -19,67 +19,67 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'GC1500330132',
-       hj:'流通',
-       mc:'五花腊肉',
-       bs:'湖南',
-       bcy:'湖北',
+       id: 'J01132',
+       hj:'添加剂占比检验',
+       mc:'薯片',
+       bs:'速食品加工生产企业',
+       bcy:'浙江',
        state: 1,
     },
     {
-        id: 'GC1500330149',
-        hj:'流通',
-        mc:'土家瘦肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01149',
+        hj:'添加剂占比检验',
+        mc:'果冻',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330136',
-        hj:'流通',
-        mc:'农家鸡肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01136',
+        hj:'添加剂占比检验',
+        mc:'农家鸡肉罐头',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330147',
-        hj:'流通',
-        mc:'农家白菜',
-        bs:'浙江',
-        bcy:'湖北',
+        id: 'J01147',
+        hj:'添加剂占比检验',
+        mc:'黄桃罐头',
+        bs:'果冻加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330122',
-        hj:'流通',
-        mc:'猪肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01122',
+        hj:'添加剂占比检验',
+        mc:'猪肉罐头',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330147',
-        hj:'流通',
-        mc:'兔肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01147',
+        hj:'添加剂占比检验',
+        mc:'兔肉罐头',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330136',
-        hj:'流通',
-        mc:'鸭肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01136',
+        hj:'添加剂占比检验',
+        mc:'鸭肉罐头',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
      {
-        id: 'GC1500330112',
-        hj:'流通',
-        mc:'鱼肉',
-        bs:'湖南',
-        bcy:'湖北',
+        id: 'J01112',
+        hj:'添加剂占比检验',
+        mc:'鱼肉罐头',
+        bs:'速食品加工生产企业',
+        bcy:'浙江',
         state: 1,
      },
 ]
@@ -98,17 +98,17 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '抽样环节',
+            title: '检验过程',
             dataIndex: 'hj',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '样品名称',
+            title: '食品名称',
             dataIndex: 'mc',
-            
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '标示生产企业省份',
+            title: '生产企业',
             dataIndex: 'bs',
         },
         {
@@ -147,7 +147,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="审核处置管理"
+                title="添加剂处置管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

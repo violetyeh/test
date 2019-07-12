@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '接触材料检验分析审核',
+          name: '添加剂检验分析',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '接触材料分析过程',
+          name: '添加剂分析过程',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '接触材料审核处置管理',
+          name: '添加剂处置管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
