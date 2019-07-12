@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测分析数据"
+                title="编辑动物源食品分析数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="样品名称" >
+                    <Form.Item key="mingcheng" label="动物源食品名称" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="送检单位" >
+                    <Form.Item key="songjian" label="分析单位" >
                         {getFieldDecorator('songjian', {
                             initialValue: currentItem.songjian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="样品生产单位" >
+                    <Form.Item key="shengchan" label="动物源食品生产单位" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="chandi" label="样品产地" >
+                    <Form.Item key="chandi" label="动物源食品产地" >
                         {getFieldDecorator('chandi', {
                             initialValue: currentItem.chandi,
                         })(

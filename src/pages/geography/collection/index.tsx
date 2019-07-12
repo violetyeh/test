@@ -23,66 +23,66 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
-        tongdao:'通道1',
+        id: 'CFFX0201',
+        tongdao:'动物源性成分分析通道1',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'13分钟',
         state: '启用',
     },
     {
-        id: 'D0002',
-        tongdao:'通道2',
+        id: 'CFFX0202',
+        tongdao:'动物源性成分分析通道2',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'整粒',
         shijian:'4分钟',
         state: '启用',
     },
     {
-        id: 'D0003',
-        tongdao:'通道3',
+        id: 'CFFX0203',
+        tongdao:'动物源性成分分析通道3',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'3分钟',
         state: '启用',
     },
     {
-        id: 'D0004',
-        tongdao:'通道4',
+        id: 'CFFX0204',
+        tongdao:'动物源性成分分析通道4',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'5分钟',
         state: '启用',
     },
     {
-        id: 'D0005',
-        tongdao:'通道5',
+        id: 'CFFX0205',
+        tongdao:'动物源性成分分析通道5',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'4分钟',
         state: '启用',
     },
     {
-        id: 'D0006',
-        tongdao:'通道6',
+        id: 'CFFX0206',
+        tongdao:'动物源性成分分析通道6',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'7分钟',
         state: '启用',
     },
     {
-        id: 'D0007',
-        tongdao:'通道7',
+        id: 'CFFX0207',
+        tongdao:'动物源性成分分析通道7',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'3分钟',
         state: '启用',
     },
     {
-        id: 'D0008',
-        tongdao:'通道8',
+        id: 'CFFX0208',
+        tongdao:'动物源性成分分析通道8',
         touguang:'0.23',
-        duizhao:'0.56',
+        duizhao:'全果',
         shijian:'10分钟',
         state: '启用',
     },
@@ -99,24 +99,24 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '试验编号',
+            title: '分析编号',
             dataIndex: 'id',
         },
         {
-            title: '试验通道',
+            title: '分析通道',
             dataIndex: 'tongdao',
         },
         {
-            title: '透光值',
+            title: '限量（mg/kg）',
             dataIndex: 'touguang',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '对照值',
+            title: '测定部位',
             dataIndex: 'duizhao',
         },
         {
-            title: '检测时间',
+            title: '分析时间',
             dataIndex: 'shijian',
         },
 
@@ -149,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测试验管理"
+                title="成分分析管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
