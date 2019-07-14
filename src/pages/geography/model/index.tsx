@@ -19,82 +19,74 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: '环节06-生产',
-        dw:'食品接触材料分析单位',
+        hj: '新闻型',
+        dw:'www.xinwen.com',
         ren:'刘威',
-        riqi:'2019年7月12日',
-        bm:'安全局',
-        qk:'暂停生产',
+        riqi:'新闻内容页面',
+        qk:'王宇',
         process: 100,
         
     },
     {
-        hj: '环节04-加工',
-        dw:'食品检验分析单位',
+        hj: '网页型',
+        dw:'www.wangye.com',
         ren:'孟浩',
-        riqi:'2019年7月02日',
-        bm:'监察局',
-        qk:'封存不合格食品',
+        riqi:'网页内容页面',
+        qk:'孟念',
         process: 61,
         
     },
     {
-        hj: '环节01-材料',
-        dw:'农产品检验单位',
+        hj: '链接型',
+        dw:'www.lianjie.com',
         ren:'唐宇',
-        riqi:'2019年7月13日',
-        bm:'食品质量监督检验中心',
-        qk:'封存问题食品',
+        riqi:'链接内容页面',
+        qk:'文雯',
         process: 74,
         
     },
     {
-        hj: '环节02-配比',
-        dw:'接触材料分析单位',
+        hj: '资料下载',
+        dw:'www.ziliao.com',
         ren:'李白白',
-        riqi:'2019年7月14日',
-        bm:'食品安全第三方检验检测机构',
-        qk:'暂停生产',
+        riqi:'资料内容页面',
+        qk:'林树',
         process: 34,
         
     },
     {
-        hj: '环节03-称重',
-        dw:'农产品分析单位',
+        hj: '资料下载',
+        dw:'www.ziliao.com',
         ren:'明楼',
-        riqi:'2019年7月05日',
-        bm:'监察局',
-        qk:'封存问题食品',
+        riqi:'资料内容页面',
+        qk:'凌加',
         process: 42,
         
     },
     {
-        hj: '环节06-生产',
-        dw:'食品分析单位',
+        hj: '链接型',
+        dw:'www.lianjie.com',
         ren:'明玉',
-        riqi:'2019年7月06日',
-        bm:'食品安全检验检测信息共享中心',
-        qk:'暂停生产',
+        riqi:'链接内容页面',
+        qk:'张明',
         process: 66,
         
     },
     {
-        hj: '环节03-称重',
-        dw:'食品材料分析单位',
+        hj: '新闻型',
+        dw:'www.xinwen.com',
         ren:'刘茵茵',
-        riqi:'2019年7月07日',
-        bm:'食品安全第三方检验检测机构',
-        qk:'暂停生产',
+        riqi:'新闻内容页面',
+        qk:'钱明',
         process: 78,
         
     },
     {
-        hj: '环节04-加工',
-        dw:'接触材料分析单位',
+        hj: '网页型',
+        dw:'www.wangye.com',
         ren:'赵湾',
-        riqi:'2019年7月08日',
-        bm:'监察局',
-        qk:'封存不合格食品',
+        riqi:'网页内容页面',
+        qk:'李大发',
         process: 56,
         
     },
@@ -110,39 +102,39 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '处置环节',
+            title: '栏目状态',
+            dataIndex: 'status',
+            render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
+        },
+        {
+            title: '信息类型',
             dataIndex: 'hj',
         },
         {
-            title: '填报单位',
+            title: '链接地址',
             dataIndex: 'dw',
         },
         {
-            title: '填报人',
+            title: '发布人员',
             dataIndex: 'ren',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '收到检验报告日期',
+            title: '内容模板',
             dataIndex: 'riqi',
         },
         {
-            title: '负责核查处置部门',
-            dataIndex: 'bm',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
-        },
-        {
-            title: '产品控制情况',
+            title: '审核人员',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '分析进度',
+            title: '采集进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-
+        
         { 
             title: '操作',
             render: (text, record) => (
@@ -169,7 +161,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="材料分析设置"
+                title="数据信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

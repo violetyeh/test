@@ -23,75 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'JCCL023FX10364',
-        xm:'黄曲霉毒素',
-        jg:'0.1',
-        dw:'g/kg',
-        pd:'不合格',
-        yj:'《食品安全法律法规与标准》',
+        id: 'MBGL064',
+        xm:'网站头部',
+        jg:'head',
+        dw:'head.html',
+        pd:'2019年7月14日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10365',
-        xm:'氢氧化钠',
-        jg:'0.1',
-        dw:'g/kg',
-        pd:'合格',
-        yj:'《食品安全法规与标准》',
+        id: 'MBGL065',
+        xm:'网站底部',
+        jg:'bottom',
+        dw:'bottom.html',
+        pd:'2019年6月14日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10366',
-        xm:'准邻苯二甲酸氢钾',
-        jg:'0.3',
-        dw:'ug/kg',
-        pd:'合格',
-        yj:'《食品安全法》',
+        id: 'MBGL066',
+        xm:'网站子菜单',
+        jg:'nav',
+        dw:'nav.html',
+        pd:'2019年7月12日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10367',
-        xm:'酚酞指示剂',
-        jg:'0.2',
-        dw:'g/kg',
-        pd:'不合格',
-        yj:'《中华人民共和国食品卫生法》',
+        id: 'MBGL067',
+        xm:'网站首页',
+        jg:'index',
+        dw:'index.html',
+        pd:'2019年7月06日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10368',
-        xm:'浓盐酸',
-        jg:'0.01',
-        dw:'ug/kg',
-        pd:'合格',
-        yj:'《食品安全国家标准》',
+        id: 'MBGL068',
+        xm:'默认内页',
+        jg:'neiye',
+        dw:'neiye.html',
+        pd:'2019年7月04日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10361',
-        xm:'铬',
-        jg:'0.03',
-        dw:'mg/kg',
-        pd:'合格',
-        yj:'《食品法律法规文件汇编》',
+        id: 'MBGL061',
+        xm:'搜索结果',
+        jg:'jieguo',
+        dw:'jieguo.html',
+        pd:'2019年7月09日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10362',
-        xm:'铅',
-        jg:'0.04',
-        dw:'ug/kg',
-        pd:'不合格',
-        yj:'《食品安全国家标准》',
+        id: 'MBGL062',
+        xm:'默认按钮',
+        jg:'anniu',
+        dw:'anniu.html',
+        pd:'2019年7月10日',
         state: '启用',
     },
     {
-        id: 'JCCL023FX10363',
-        xm:'总汞',
-        jg:'0.15',
-        dw:'mg/kg',
-        pd:'合格',
-        yj:'《食品法律法规文件汇编》',
+        id: 'MBGL063',
+        xm:'默认跳转',
+        jg:'tiaozhuan',
+        dw:'tiaozhuan.html',
+        pd:'2019年7月07日',
         state: '启用',
     },
    
@@ -112,28 +104,24 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检验项目',
+            title: '模板标题',
             dataIndex: 'xm',
         },
         {
-            title: '检验结果',
+            title: '调用标识',
             dataIndex: 'jg',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '结果单位',
+            title: '模板文件',
             dataIndex: 'dw',
         },
         {
-            title: '结果判定',
+            title: '最后修改日期',
             dataIndex: 'pd',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
-        {
-            title: '检验依据',
-            dataIndex: 'yj',
-        },
-
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -163,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测分析审核"
+                title="模板管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

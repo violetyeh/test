@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测数据"
+                title="页面数据设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,39 +44,49 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="采样编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="抽样环节" >
+                    <Form.Item key="hj" label="自动播放" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="样品名称" >
+                    <Form.Item key="mc" label="完整菜单" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bs" label="标示生产企业省份" >
+                    <Form.Item key="bs" label="视窗模式" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="被抽样单位省份" >
+                    <Form.Item key="bcy" label="品质" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(
                             <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jl" label="数据采集" >
+                        {getFieldDecorator('jl', {
+                            initialValue: currentItem.jl,
+                        })(
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                               <Radio.Button value="a">自动</Radio.Button>
+                               <Radio.Button value="b">手动</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>

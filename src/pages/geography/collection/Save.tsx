@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分析审核信息"
+                title="编辑模板管理信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,41 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xm" label="检验项目" >
+                    <Form.Item key="xm" label="模板标题" >
                         {getFieldDecorator('xm', {
                             initialValue: currentItem.xm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="检验结果" >
+                    <Form.Item key="jg" label="调用标识" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="结果单位" >
+                    <Form.Item key="dw" label="模板文件" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pd" label="结果判定" >
+                    <Form.Item key="pd" label="最后修改日期" >
                         {getFieldDecorator('pd', {
                             initialValue: currentItem.pd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yj" label="检验依据" >
-                        {getFieldDecorator('yj', {
-                            initialValue: currentItem.yj,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                    
                 </Form>
             </Modal>
         );

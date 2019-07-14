@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '接触材料检验分析审核',
+          name: '模板管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '接触材料分析过程',
+          name: '信息管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '接触材料审核处置管理',
+          name: '页面数据设置',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

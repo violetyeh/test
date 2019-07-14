@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品与农产品接触材料分析系统',
+  title: '页面可视化的数据采集管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

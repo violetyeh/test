@@ -19,67 +19,67 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'GC1500330132',
-       hj:'流通',
-       mc:'五花腊肉',
-       bs:'北京',
-       bcy:'湖北',
+       id: 'YM02132',
+       hj:'是',
+       mc:'默认',
+       bs:'88%',
+       bcy:'高品质',
        state: 1,
     },
     {
-        id: 'GC1500330149',
-        hj:'收购',
-        mc:'土家瘦肉',
-        bs:'湖南',
-        bcy:'天津',
+        id: 'YM02149',
+        hj:'否',
+        mc:'自动显示菜单',
+        bs:'100%',
+        bcy:'低品质',
         state: 1,
      },
      {
-        id: 'GC1500330136',
-        hj:'流通',
-        mc:'农家鸡肉',
-        bs:'湖南',
-        bcy:'上海',
+        id: 'YM02136',
+        hj:'是',
+        mc:'点击显示菜单',
+        bs:'默认',
+        bcy:'高品质',
         state: 1,
      },
      {
-        id: 'GC1500330147',
-        hj:'检验',
-        mc:'农家白菜',
-        bs:'重庆',
-        bcy:'湖北',
+        id: 'YM02147',
+        hj:'人工操作',
+        mc:'默认',
+        bs:'100%',
+        bcy:'低品质',
         state: 1,
      },
      {
-        id: 'GC1500330122',
-        hj:'生产',
-        mc:'猪肉',
-        bs:'成都',
-        bcy:'湖北',
+        id: 'YM02122',
+        hj:'是',
+        mc:'默认显示菜单',
+        bs:'120%',
+        bcy:'低品质',
         state: 1,
      },
      {
-        id: 'GC1500330147',
-        hj:'流通',
-        mc:'兔肉',
-        bs:'湖南',
-        bcy:'安徽',
+        id: 'YM02147',
+        hj:'是',
+        mc:'点击显示菜单',
+        bs:'110%',
+        bcy:'高品质',
         state: 1,
      },
      {
-        id: 'GC1500330136',
-        hj:'生产',
-        mc:'鸭肉',
-        bs:'江苏',
-        bcy:'湖北',
+        id: 'YM02136',
+        hj:'否',
+        mc:'默认',
+        bs:'80%',
+        bcy:'低品质',
         state: 1,
      },
      {
-        id: 'GC1500330112',
-        hj:'流通',
-        mc:'鱼肉',
-        bs:'郑州',
-        bcy:'湖北',
+        id: 'YM02112',
+        hj:'是',
+        mc:'点击显示菜单',
+        bs:'默认',
+        bcy:'低品质',
         state: 1,
      },
 ]
@@ -94,31 +94,34 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '采样编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '抽样环节',
+            title: '自动播放',
             dataIndex: 'hj',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '样品名称',
+            title: '完整菜单',
             dataIndex: 'mc',
+            render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '标示生产企业省份',
+            title: '视窗模式',
             dataIndex: 'bs',
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '被抽样单位省份',
+            title: '品质',
             dataIndex: 'bcy',
+            render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '检验结论',
+            title: '数据采集',
             dataIndex: 'jl',
-            render: () => <Switch checkedChildren="合格" unCheckedChildren="不合格" />,
+            render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
         },
         {
             title: '操作',
@@ -147,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="审核处置管理"
+                title="页面数据设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
