@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑动物源食品分析数据"
+                title="编辑卷组信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,44 +44,59 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="通道编号" >
+                    <Form.Item key="id" label="卷组名" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="动物源食品名称" >
+                    <Form.Item key="zc" label="磁盘组成" >
+                        {getFieldDecorator('zc', {
+                            initialValue: currentItem.zc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="zhonglei" label="所属控制器" >
+                        {getFieldDecorator('zhonglei', {
+                            initialValue: currentItem.zhonglei,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mingcheng" label="阵列个数" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="分析单位" >
+                    <Form.Item key="songjian" label="逻辑卷个数" >
                         {getFieldDecorator('songjian', {
                             initialValue: currentItem.songjian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="动物源食品生产单位" >
+                    <Form.Item key="shengchan" label="快照计划个数" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="chandi" label="动物源食品产地" >
+                    <Form.Item key="chandi" label="总空间" >
                         {getFieldDecorator('chandi', {
                             initialValue: currentItem.chandi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="生产日期" >
-                        {getFieldDecorator('riqi', {
-                            initialValue: currentItem.riqi,
+                    
+                    <Form.Item key="process" label="空间利用率（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}

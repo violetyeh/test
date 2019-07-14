@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'CFFX0201',
-        tongdao:'GWYX025606分析通道',
-        touguang:'0.39',
-        duizhao:'全果',
-        shijian:'13分钟',
+        id: 'http://localhost:8000/',
+        tongdao:'12',
+        touguang:'279.40',
+        duizhao:'FREE',
+        shijian:'no',
         state: '启用',
     },
     {
-        id: 'CFFX0202',
-        tongdao:'GWYX025679分析通道',
-        touguang:'0.54',
-        duizhao:'整粒',
-        shijian:'4分钟',
+        id: 'http://localhost:8002/',
+        tongdao:'6',
+        touguang:'365.50',
+        duizhao:'FREE',
+        shijian:'ok',
         state: '启用',
     },
     {
-        id: 'CFFX0203',
-        tongdao:'GWYX025684分析通道',
-        touguang:'0.06',
-        duizhao:'整体',
-        shijian:'3分钟',
+        id: 'http://localhost:8001/',
+        tongdao:'5',
+        touguang:'200.60',
+        duizhao:'IMPLEMENT',
+        shijian:'no',
         state: '启用',
     },
     {
-        id: 'CFFX0204',
-        tongdao:'GWYX025963分析通道',
-        touguang:'0.27',
-        duizhao:'三分之一',
-        shijian:'5分钟',
+        id: 'http://localhost:8000/',
+        tongdao:'16',
+        touguang:'375.60',
+        duizhao:'FREE',
+        shijian:'ok',
         state: '启用',
     },
     {
-        id: 'CFFX0205',
-        tongdao:'GWYX025765分析通道',
-        touguang:'0.46',
-        duizhao:'十分之一',
-        shijian:'4分钟',
+        id: 'http://localhost:8003/',
+        tongdao:'3',
+        touguang:'193.50',
+        duizhao:'IMPLEMENT',
+        shijian:'no',
         state: '启用',
     },
     {
-        id: 'CFFX0206',
-        tongdao:'GWYX0256395分析通道',
-        touguang:'0.23',
-        duizhao:'整体',
-        shijian:'7分钟',
+        id: 'http://localhost:8002/',
+        tongdao:'3',
+        touguang:'200.00',
+        duizhao:'FREE',
+        shijian:'no',
         state: '启用',
     },
     {
-        id: 'CFFX0207',
-        tongdao:'GWYX025363分析通道',
-        touguang:'0.12',
-        duizhao:'二十分之一',
-        shijian:'3分钟',
+        id: 'http://localhost:8001/',
+        tongdao:'10',
+        touguang:'300.00',
+        duizhao:'IMPLEMENT',
+        shijian:'ok',
         state: '启用',
     },
     {
-        id: 'CFFX0208',
-        tongdao:'GWYX025854分析通道',
-        touguang:'0.36',
-        duizhao:'全果',
-        shijian:'10分钟',
+        id: 'http://localhost:8000/',
+        tongdao:'11',
+        touguang:'342.52',
+        duizhao:'FREE',
+        shijian:'ok',
         state: '启用',
     },
     
@@ -99,25 +99,26 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '分析编号',
+            title: '位置',
             dataIndex: 'id',
         },
         {
-            title: '分析通道',
+            title: '槽位',
             dataIndex: 'tongdao',
         },
         {
-            title: '限量（mg/kg）',
+            title: '容量（GB）',
             dataIndex: 'touguang',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '测定部位',
+            title: '属性',
             dataIndex: 'duizhao',
         },
         {
-            title: '分析时间',
+            title: '状态',
             dataIndex: 'shijian',
+            render: (text) => <Tag color="#ff9999">{text}</Tag>,
         },
 
         {
@@ -149,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="成分分析管理"
+                title="存储资源管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

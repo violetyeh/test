@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 食品分析数量: 500, 成分合格数: 400, 分析价格:1000, 分析合格率: 82 },
-  { label: '0.2', 食品分析数量: 900, 成分合格数: 600, 分析价格: 1300, 分析合格率: 63 },
-  { label: '0.3', 食品分析数量: 950, 成分合格数: 950, 分析价格: 500, 分析合格率: 75 },
-  { label: '0.4', 食品分析数量: 500, 成分合格数: 500, 分析价格: 390, 分析合格率: 56 },
-  { label: '0.5', 食品分析数量: 950, 成分合格数: 950, 分析价格: 520, 分析合格率: 66 },
-  { label: '0.6', 食品分析数量: 1950, 成分合格数: 634, 分析价格: 520, 分析合格率: 54 },
-  { label: '0.7', 食品分析数量: 950, 成分合格数: 685, 分析价格: 520, 分析合格率: 83 },
-  { label: '0.8', 食品分析数量: 1000, 成分合格数: 950, 分析价格: 520, 分析合格率: 75 },
-  { label: '0.9', 食品分析数量: 950, 成分合格数: 950, 分析价格: 520, 分析合格率: 81 },
-  { label: '1.0', 食品分析数量: 950, 成分合格数: 950, 分析价格: 520, 分析合格率: 83 },
-  { label: '未评分', 食品分析数量: 950, 成分合格数: 950, 分析价格: 520, 分析合格率: 64 },
+  { label: '0.1', 存储数据上限: 500, 存储数据数量: 400, 存储空间占比:90, 存储虚拟信息: 1000 },
+  { label: '0.2', 存储数据上限: 900, 存储数据数量: 600, 存储空间占比: 13, 存储虚拟信息: 1200 },
+  { label: '0.3', 存储数据上限: 950, 存储数据数量: 950, 存储空间占比: 50, 存储虚拟信息: 1100 },
+  { label: '0.4', 存储数据上限: 500, 存储数据数量: 500, 存储空间占比: 39, 存储虚拟信息: 1500 },
+  { label: '0.5', 存储数据上限: 950, 存储数据数量: 950, 存储空间占比: 52, 存储虚拟信息: 900 },
+  { label: '0.6', 存储数据上限: 1950, 存储数据数量: 634, 存储空间占比: 52, 存储虚拟信息: 3000 },
+  { label: '0.7', 存储数据上限: 950, 存储数据数量: 685, 存储空间占比: 52, 存储虚拟信息: 2600 },
+  { label: '0.8', 存储数据上限: 1000, 存储数据数量: 950, 存储空间占比: 52, 存储虚拟信息: 520 },
+  { label: '0.9', 存储数据上限: 950, 存储数据数量: 950, 存储空间占比: 52, 存储虚拟信息: 3100 },
+  { label: '1.0', 存储数据上限: 950, 存储数据数量: 950, 存储空间占比: 52, 存储虚拟信息: 1203 },
+  { label: '未评分', 存储数据上限: 950, 存储数据数量: 950, 存储空间占比: 52, 存储虚拟信息: 1420 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['食品分析数量', '成分合格数', '分析价格','分析合格率'], // 展开字段集
+  fields: ['存储数据上限', '存储数据数量', '存储空间占比','存储虚拟信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  分析合格率: {
+  存储虚拟信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '食品分析数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '成分合格数', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '分析价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '分析合格率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '存储数据上限', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '存储数据数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '存储空间占比', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '存储虚拟信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '分析合格率') {
+              if (geom.getYScale().field === value && value === '存储虚拟信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '分析合格率') {
+              } else if (geom.getYScale().field === 'value' && value !== '存储虚拟信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -110,7 +110,7 @@ const OfflineData = ({
             if (value === '样品数') {
               return '#41a2fc';
             }
-            if (value === '成分合格数') {
+            if (value === '存储数据数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*分析合格率" color="#fad248" size={3} />
+        <Geom type="line" position="label*存储虚拟信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );
