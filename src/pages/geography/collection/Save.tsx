@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="任务名称" >
+                    <Form.Item key="fl" label="过滤网址" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="目标IP" >
+                    <Form.Item key="mc" label="过滤内容" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="攻击类型" >
+                    <Form.Item key="ma" label="备注" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
