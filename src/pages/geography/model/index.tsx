@@ -22,7 +22,7 @@ const mockData = [
     {
         zl: '熟食类',
         mc:'面包',
-        sj:'食品无机元素检测单位',
+        sj:'食品安全第三方检验检测机构',
         zb:3.6,
         process: 100,
         status: '启用',
@@ -30,7 +30,7 @@ const mockData = [
     {
         zl: '零食类',
         mc:'果冻',
-        sj:'食品无机元素检测单位',
+        sj:'国家食品质量监督检验中心',
         zb:3,
         process: 99,
         status: '启用',
@@ -46,7 +46,7 @@ const mockData = [
     {
         zl: '零食类',
         mc:'饼干',
-        sj:'食品无机元素检测单位',
+        sj:'食品安全第三方检验检测机构',
         zb:2.2,
         process: 78,
         status: '启用',
@@ -54,7 +54,7 @@ const mockData = [
     {
         zl: '肉类',
         mc:'鱼肉',
-        sj:'食品无机元素检测单位',
+        sj:'食品安全检验检测单位',
         zb:2,
         process: 65,
         status: '启用',
@@ -62,7 +62,7 @@ const mockData = [
     {
         zl: '熟食类',
         mc:'火腿肠',
-        sj:'食品无机元素检测单位',
+        sj:'国家食品质量监督检验中心',
         zb:1,
         process: 100,
         status: '启用',
@@ -78,7 +78,7 @@ const mockData = [
     {
         zl: '肉类',
         mc:'猪肉',
-        sj:'食品无机元素检测单位',
+        sj:'食品安全检验检测单位',
         zb:2,
         process: 28,
         status: '启用',
