@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Card, Switch, Divider, message, Badge, Tag, Progress } from "antd";
+import { Card, Switch, Divider, message, Badge, Tag, Progress, Radio } from "antd";
 import Search from "./Search";
 import Save from "./Save";
 import styles from "../style.less";
@@ -19,83 +19,78 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: '环节06-生产',
-        dw:'食品接触材料分析单位',
+        lx: '主站',
+        mc:'登录地址',
         ren:'刘威',
         riqi:'2019年7月12日',
-        bm:'安全局',
-        qk:'暂停生产',
+        ml:'登录',
+        wz:'http://youxi.com#/./login',
         process: 100,
         
     },
     {
-        hj: '环节04-加工',
-        dw:'食品检验分析单位',
+        lx: '副站',
+        mc:'注册地址',
         ren:'孟浩',
         riqi:'2019年7月02日',
-        bm:'监察局',
-        qk:'封存不合格食品',
+        ml:'注册',
+        wz:'http://youxi.com#/./zhuce',
         process: 61,
         
     },
     {
-        hj: '环节01-材料',
-        dw:'农产品检验单位',
+        lx: '主站',
+        mc:'人员管理地址',
         ren:'唐宇',
         riqi:'2019年7月13日',
-        bm:'食品质量监督检验中心',
-        qk:'封存问题食品',
+        ml:'人员管理',
+        wz:'http://youxi.com#/./renyuan',
         process: 74,
         
     },
     {
-        hj: '环节02-配比',
-        dw:'接触材料分析单位',
+        lx: '副站',
+        mc:'权限管理地址',
         ren:'李白白',
         riqi:'2019年7月14日',
-        bm:'食品安全第三方检验检测机构',
-        qk:'暂停生产',
-        process: 34,
+        ml:'权限管理',
+        wz:'http://youxi.com#/./quanxian',
         
     },
     {
-        hj: '环节03-称重',
-        dw:'农产品分析单位',
+        lx: '副站',
+        mc:'密码修改地址',
         ren:'明楼',
         riqi:'2019年7月05日',
-        bm:'监察局',
-        qk:'封存问题食品',
-        process: 42,
+        ml:'密码修改',
+        wz:'http://youxi.com#/./xiugai',
         
     },
     {
-        hj: '环节06-生产',
-        dw:'食品分析单位',
+        lx: '副站',
+        mc:'添加用户地址',
         ren:'明玉',
         riqi:'2019年7月06日',
-        bm:'食品安全检验检测信息共享中心',
-        qk:'暂停生产',
-        process: 66,
+        ml:'添加用户',
+        wz:'http://youxi.com/#/./add',
         
     },
     {
-        hj: '环节03-称重',
-        dw:'食品材料分析单位',
+        lx: '主站',
+        mc:'操作地址',
         ren:'刘茵茵',
         riqi:'2019年7月07日',
-        bm:'食品安全第三方检验检测机构',
-        qk:'暂停生产',
-        process: 78,
+        ml:'操作',
+        wz:'http://youxi.com#/./caozuo',
         
     },
     {
-        hj: '环节04-加工',
-        dw:'接触材料分析单位',
+        lx: '主站',
+        mc:'修改编辑地址',
         ren:'赵湾',
         riqi:'2019年7月08日',
-        bm:'监察局',
-        qk:'封存不合格食品',
-        process: 56,
+        ml:'修改编辑',
+        wz:'http://youxi.com#/./xiugai',
         
     },
     
@@ -110,39 +105,35 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '处置环节',
-            dataIndex: 'hj',
+            title: 'URL类型',
+            dataIndex: 'lx',
+            
         },
         {
-            title: '填报单位',
-            dataIndex: 'dw',
+            title: 'URL名称',
+            dataIndex: 'mc',
         },
-        {
-            title: '填报人',
-            dataIndex: 'ren',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
-        },
+       
 
         {
-            title: '收到检验报告日期',
+            title: '创建日期',
             dataIndex: 'riqi',
         },
         {
-            title: '负责核查处置部门',
-            dataIndex: 'bm',
+            title: '网址',
+            dataIndex: 'wz',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '产品控制情况',
-            dataIndex: 'qk',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            title: 'URL目录',
+            dataIndex: 'ml',
         },
         {
-            title: '分析进度',
-            dataIndex: 'process',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            title: '创建人',
+            dataIndex: 'ren',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
-
+      
         { 
             title: '操作',
             render: (text, record) => (
@@ -169,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="材料分析设置"
+                title="URL管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

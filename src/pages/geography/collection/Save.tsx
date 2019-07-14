@@ -4,6 +4,7 @@ import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
 import { Dispatch } from "redux";
+import Radio from "antd/es/radio";
 
 interface SaveProps extends FormComponentProps {
     dispatch?: Dispatch<any>;
@@ -34,7 +35,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分析审核信息"
+                title="编辑URL过滤管理"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,37 +52,49 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xm" label="检验项目" >
-                        {getFieldDecorator('xm', {
-                            initialValue: currentItem.xm,
+                    <Form.Item key="mc" label="栏目名称" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="检验结果" >
-                        {getFieldDecorator('jg', {
-                            initialValue: currentItem.jg,
+                    <Form.Item key="bm" label="上级编码" >
+                        {getFieldDecorator('bm', {
+                            initialValue: currentItem.bm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="结果单位" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
+                    <Form.Item key="px" label="同级排序" >
+                        {getFieldDecorator('px', {
+                            initialValue: currentItem.px,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pd" label="结果判定" >
-                        {getFieldDecorator('pd', {
-                            initialValue: currentItem.pd,
+                    <Form.Item key="lj" label="外部链接" >
+                        {getFieldDecorator('lj', {
+                            initialValue: currentItem.lj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yj" label="检验依据" >
-                        {getFieldDecorator('yj', {
-                            initialValue: currentItem.yj,
+                    <Form.Item key="nr" label="内容类型" >
+                        {getFieldDecorator('nr', {
+                            initialValue: currentItem.nr,
+                        })(
+                            <Radio.Group >
+                                <Radio value={1}>文章</Radio>
+                                <Radio value={2}>相册</Radio>
+                                <Radio value={3}>视频</Radio>
+                                <Radio value={4}>链接</Radio>
+                            </Radio.Group >
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="过滤进度(%)" >
+                        {getFieldDecorator('status', {
+                            initialValue: currentItem.status,
                         })(
                             <Input />,
                         )}

@@ -1,11 +1,11 @@
 import { Component } from "react";
 import { Form, Modal, Input, message, Radio } from "antd";
-import { FormComponentProps } from "antd/lib/form";
+import { FordxomponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
 import { Dispatch } from "redux";
 
-interface SaveProps extends FormComponentProps {
+interface SaveProps extends FordxomponentProps {
     dispatch?: Dispatch<any>;
     handleSaveVisible: () => void;
     currentItem: {};
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测数据"
+                title="编辑备份恢复文件"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,42 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="采样编号" >
+                    <Form.Item key="id" label="ID" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="抽样环节" >
-                        {getFieldDecorator('hj', {
-                            initialValue: currentItem.hj,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mc" label="样品名称" >
+                    <Form.Item key="mc" label="名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bs" label="标示生产企业省份" >
-                        {getFieldDecorator('bs', {
-                            initialValue: currentItem.bs,
+                    <Form.Item key="lx" label="类型" >
+                        {getFieldDecorator('lx', {
+                            initialValue: currentItem.lx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="被抽样单位省份" >
+                    <Form.Item key="dx" label="大小" >
+                        {getFieldDecorator('dx', {
+                            initialValue: currentItem.dx,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="rq" label="日期" >
+                        {getFieldDecorator('rq', {
+                            initialValue: currentItem.rq,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jc" label="快速检测文件" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(

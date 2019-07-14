@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,76 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'JCCL023FX10364',
-        xm:'黄曲霉毒素',
-        jg:'0.1',
-        dw:'g/kg',
-        pd:'不合格',
-        yj:'《食品安全法律法规与标准》',
-        state: '启用',
+        id: 'URLGL0231',
+        mc:'节点31',
+        bm:'15',
+        px:'1',
+        lj:'http://www.lianjie.com',
+        nr:'文章',
+        status:96,
     },
     {
-        id: 'JCCL023FX10365',
-        xm:'氢氧化钠',
-        jg:'0.1',
-        dw:'g/kg',
-        pd:'合格',
-        yj:'《食品安全法规与标准》',
-        state: '启用',
+        id: 'URLGL0232',
+        mc:'节点03',
+        bm:'11',
+        px:'6',
+        lj:'http://www.ceshi.com',
+        nr:'相册',
+        status:88,
     },
     {
-        id: 'JCCL023FX10366',
-        xm:'准邻苯二甲酸氢钾',
-        jg:'0.3',
-        dw:'ug/kg',
-        pd:'合格',
-        yj:'《食品安全法》',
-        state: '启用',
+        id: 'URLGL0233',
+        mc:'节点06',
+        bm:'07',
+        px:'3',
+        lj:'http://www.shice.com',
+        nr:'视频',
+        status:74,
     },
     {
-        id: 'JCCL023FX10367',
-        xm:'酚酞指示剂',
-        jg:'0.2',
-        dw:'g/kg',
-        pd:'不合格',
-        yj:'《中华人民共和国食品卫生法》',
-        state: '启用',
+        id: 'URLGL0234',
+        mc:'节点12',
+        bm:'09',
+        px:'5',
+        lj:'http://www.yiersan.com',
+        nr:'链接',
+        status:16,
     },
     {
-        id: 'JCCL023FX10368',
-        xm:'浓盐酸',
-        jg:'0.01',
-        dw:'ug/kg',
-        pd:'合格',
-        yj:'《食品安全国家标准》',
-        state: '启用',
+        id: 'URLGL0235',
+        mc:'节点24',
+        bm:'07',
+        px:'3',
+        lj:'http://www.sanersan.com',
+        nr:'文章',
+        status:54,
     },
     {
-        id: 'JCCL023FX10361',
-        xm:'铬',
-        jg:'0.03',
-        dw:'mg/kg',
-        pd:'合格',
-        yj:'《食品法律法规文件汇编》',
-        state: '启用',
+        id: 'URLGL0236',
+        mc:'节点23',
+        bm:'05',
+        px:'2',
+        lj:'http://www.liuqiba.com',
+        nr:'相册',
+        status:71,
     },
     {
-        id: 'JCCL023FX10362',
-        xm:'铅',
-        jg:'0.04',
-        dw:'ug/kg',
-        pd:'不合格',
-        yj:'《食品安全国家标准》',
-        state: '启用',
+        id: 'URLGL0237',
+        mc:'节点07',
+        bm:'12',
+        px:'1',
+        lj:'http://www.bajiushi.com',
+        nr:'视频',
+        status:64,
     },
     {
-        id: 'JCCL023FX10363',
-        xm:'总汞',
-        jg:'0.15',
-        dw:'mg/kg',
-        pd:'合格',
-        yj:'《食品法律法规文件汇编》',
-        state: '启用',
+        id: 'URLGL0238',
+        mc:'节点06',
+        bm:'15',
+        px:'2',
+        lj:'http://www.shiyier.com',
+        nr:'链接',
+        status:59,
     },
    
     
@@ -112,28 +112,33 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检验项目',
-            dataIndex: 'xm',
-        },
-        {
-            title: '检验结果',
-            dataIndex: 'jg',
+            title: '栏目名称',
+            dataIndex: 'mc',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '结果单位',
-            dataIndex: 'dw',
+            title: '上级编码',
+            dataIndex: 'bm',
+            
         },
         {
-            title: '结果判定',
-            dataIndex: 'pd',
+            title: '同级排序',
+            dataIndex: 'px',
+        },
+        {
+            title: '外部链接',
+            dataIndex: 'lj',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '检验依据',
-            dataIndex: 'yj',
+            title: '内容类型',
+            dataIndex: 'nr',
         },
-
+        {
+            title: '过滤进度',
+            dataIndex: 'status',
+            render: (text) => <Progress percent={text} status="active" />,
+          },
         {
             title: '操作',
             render: (text, record) => (
@@ -163,7 +168,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测分析审核"
+                title="过滤内容栏目管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

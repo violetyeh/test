@@ -100,7 +100,7 @@ class Type extends Component<TypeProps, TypeState>{
         },
         {
             title: '名称',
-            dataIndex: 'lx',
+            dataIndex: 'mc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
@@ -119,6 +119,7 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '快速检测文件',
             dataIndex: 'jc',
+            render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
             title: '操作',
@@ -147,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="审核处置管理"
+                title="备份恢复管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
