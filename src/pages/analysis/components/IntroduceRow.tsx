@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='成分分析次数'
+          title='磁盘容量'
           action={
             <Tooltip
               title={
@@ -35,7 +35,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={534}
+          total={'274GB'}
           footer='今日成分分析: 46'
           contentHeight={46}
         >

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品中动物源性成分分析系统',
+  title: '存储虚拟化软件系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
