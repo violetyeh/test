@@ -37,7 +37,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           loading={loading}
           total={465}
           footer='今日接触材料分析: 215'
-          contentHeight={77}
+          contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 25 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
