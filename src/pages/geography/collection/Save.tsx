@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙任务信息"
+                title="编辑内容监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -73,16 +73,9 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="执行者" >
+                    <Form.Item key="nl" label="管理员" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dbz" label="任务状态" >
-                        {getFieldDecorator('dbz', {
-                            initialValue: currentItem.dbz,
                         })(
                             <Input />,
                         )}

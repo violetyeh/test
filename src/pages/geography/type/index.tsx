@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Progress, Tooltip, Tag } from "antd";
+import { Divider, message, Card, Switch, Progress, Tooltip, Tag, Checkbox } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'LDSM30121',
-       mc:'高',
-       gg:'CVE-2019-023',
-       hz:'This error occurred during the build time and cannot be dismissed.',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'LDSM30122',
-        mc:'中',
-        gg:'CVE-2019-016',
-        hz:'This screen is visible only in development.',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'LDSM30123',
-        mc:'低',
-        gg:'CVE-2019-065',
-        hz:' It will not appear if the app crashes in production.',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'LDSM30124',
-        mc:'高',
-        gg:'CVE-2019-071',
-        hz:'This error occurred during the build time and cannot be dismissed.',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'LDSM30125',
-        mc:'高',
-        gg:'CVE-2019-005',
-        hz:'This screen is visible only in development.',
-        jd:95,
-        state: 1,
-     },
-     {
-        id: 'LDSM30126',
-        mc:'中',
-        gg:'CVE-2019-004',
-        hz:'It will not appear if the app crashes in production.',
+        id: 'WLJK63126',
+        mc:'192.168.1.12',
+        gg:'不使用任何规则',
+        hz:'重要',
         jd:76,
         state: 1,
      },
      {
-        id: 'LDSM30127',
-        mc:'低',
-        gg:'CVE-2019-036',
-        hz:'This error occurred during the build time and cannot be dismissed.',
+        id: 'WLJK63127',
+        mc:'192.168.1.20',
+        gg:'网络安全规则',
+        hz:'一般',
         jd:100,
         state: 1,
      },
      {
-        id: 'LDSM30128',
-        mc:'低',
-        gg:'CVE-2019-041',
-        hz:'It will not appear if the app crashes in production.',
+        id: 'WLJK63128',
+        mc:'192.168.1.15',
+        gg:'不使用任何规则',
+        hz:'重要',
         jd:88,
         state: 1,
      }, 
+    {
+       id: 'WLJK63121',
+       mc:'192.168.1.02',
+       gg:'不使用任何规则',
+       hz:'一般',
+       jd:98,
+       state: 1,
+    },
+    {
+        id: 'WLJK63122',
+        mc:'192.168.1.63',
+        gg:'网络安全规则',
+        hz:'不重要',
+        jd:100,
+        state: 1,
+     },
+     {
+        id: 'WLJK63123',
+        mc:'192.168.1.71',
+        gg:'网络安全规则',
+        hz:' 重要',
+        jd:56,
+        state: 1,
+     },
+     {
+        id: 'WLJK63124',
+        mc:'192.168.1.1',
+        gg:'不使用任何规则',
+        hz:'一般',
+        jd:74,
+        state: 1,
+     },
+     {
+        id: 'WLJK63125',
+        mc:'192.168.1.03',
+        gg:'网络安全规则',
+        hz:'不重要',
+        jd:95,
+        state: 1,
+     },
+    
    
 ]
 
@@ -95,31 +96,41 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
+            title: '监控状态',
+            dataIndex: 'jk',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >监控</Checkbox>
+                </Fragment>
+            ),
+        },
+        {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '漏洞等级',
+            title: 'IP地址',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '漏洞VCE ID',
+            title: '所用规则',
             dataIndex: 'gg',
         },
         {
-            title: '漏洞描述',
+            title: '重点监控',
             dataIndex: 'hz',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '漏洞扫描进度',
+            title: '监控进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '安全情况',
+            title: '绑定状态',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="安全" unCheckedChildren="不安全" />,
+            render: () => <Switch checkedChildren="绑定" unCheckedChildren="未绑定" />,
         },
         {
             title: '操作',
@@ -148,7 +159,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="漏洞扫描管理"
+                title="网络监控管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

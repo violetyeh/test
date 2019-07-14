@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙软件手册',
+  title: '内网安全与网络行为管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Checkbox } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,68 +23,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'FHQ0121',
-        fl:'漏洞检测',
-        mc:'192.168.1.28',
-        ma:'漏洞利用',
-        nl:'张三石',
-        dbz:'正在检测中',
+        id: 'NRJK6121',
+        fl:'www.qq.com',
+        mc:'qq聊天',
+        ma:'信息过滤',
+        nl:'张文芳',
     },
     {
-        id: 'FHQ0135',
-        fl:'垃圾清除',
-        mc:'192.168.0.18',
-        ma:'协议暴力攻击',
+        id: 'NRJK6135',
+        fl:'www.xiao.com',
+        mc:'文件传输',
+        ma:'行为审计',
         nl:'王芳',
-        dbz:'正在清除中',
     },
     {
-        id: 'FHQ0138',
-        fl:'漏洞检测',
-        mc:'192.168.1.44',
-        ma:'漏洞利用',
+        id: 'NRJK6138',
+        fl:'www.yiersan.com',
+        mc:'银行账号',
+        ma:'行为审计',
         nl:'刘文',
-        dbz:'正在检测中',
     },
     {
-        id: 'FHQ0121',
-        fl:'病毒清除',
-        mc:'192.168.1.110',
-        ma:'病毒利用',
+        id: 'NRJK6121',
+        fl:'www.liuba.com',
+        mc:'淘宝密码',
+        ma:'行为审计',
         nl:'赵媛',
-        dbz:'正在清除中',
     },
     {
-        id: 'FHQ0137',
-        fl:'病毒攻击防守',
-        mc:'192.168.1.53',
-        ma:'协议暴力攻击',
+        id: 'NRJK6137',
+        fl:'www.qijiu.com',
+        mc:'淫秽字词',
+        ma:'信息过滤',
         nl:'刘冰',
-        dbz:'正在防守中',
     },
     {
-        id: 'FHQ0135',
-        fl:'病毒清除',
-        mc:'192.168.1.26',
-        ma:'病毒利用',
+        id: 'NRJK6135',
+        fl:'www.yisan.com',
+        mc:'远程登录',
+        ma:'行为审计',
         nl:'汪峰',
-        dbz:'正在清除中',
     },
     {
-        id: 'FHQ0164',
-        fl:'病毒检测',
-        mc:'192.168.1.17',
-        ma:'病毒利用',
+        id: 'NRJK6164',
+        fl:'www.wuliu.com',
+        mc:'传销暴力',
+        ma:'信息过滤',
         nl:'陈云',
-        dbz:'正在检测中',
     },
     {
-        id: 'FHQ0178',
-        fl:'漏洞清除',
-        mc:'192.168.1.14',
-        ma:'漏洞利用',
+        id: 'NRJK6178',
+        fl:'www.ersansi.com',
+        mc:'炒股信息',
+        ma:'行为审计',
         nl:'王安',
-        dbz:'正在清除中',
     },
     
 ]
@@ -99,32 +91,36 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
+            title: '禁止',
+            dataIndex: 'jz',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >禁止</Checkbox>
+                </Fragment>
+            ),
+        },
+        {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '任务名称',
+            title: '过滤网址',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '目标IP',
+            title: '过滤内容',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '攻击类型',
+            title: '备注',
             dataIndex: 'ma',
         },
        
         {
-            title: '执行者',
+            title: '管理员',
             dataIndex: 'nl',
-        },
-        {
-            title: '任务状态',
-            dataIndex: 'dbz',
-            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
             title: '操作',
@@ -155,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙任务管理"
+                title="内容监控管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

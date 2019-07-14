@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='防火墙防护次数'
+          title='客户端信息数量'
           action={
             <Tooltip
               title={
@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={634}
-          footer='今日防护: 133'
+          total={5236}
+          footer='今日监控信息: 3169'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>89%</span>
+            <span className={styles.trendText}>56%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>78%</span>
+            <span className={styles.trendText}>61%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='安全目标'
+          title='网络安全'
           action={
             <Tooltip
               title={
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(751).format('0,0')}
-          footer='今日漏洞检测：27'
+          total={numeral(4751).format('0,0')}
+          footer='内容过滤：1627'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='漏洞恢复进度'
+          title='信息过滤进度'
           action={
             <Tooltip
               title={
@@ -85,8 +85,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(566).format('0,0')}
-          footer='防火墙防护进度：89%'
+          total={numeral(5566).format('0,0')}
+          footer='过滤进度进度：72%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='防火墙安全效率'
+          title='安全效率'
           action={
             <Tooltip
               title={
@@ -106,16 +106,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="99%"
+          total="98%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>23%</span>
+                <span className={styles.trendText}>39%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>36%</span>
+                <span className={styles.trendText}>43%</span>
               </Trend>
             </div>
           }

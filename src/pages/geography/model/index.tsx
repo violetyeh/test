@@ -19,77 +19,70 @@ interface ModelState {
 
 const mockData = [
     {
+        id:'ZJSM023896',
+        cf:'192.168.1.41',
+        dw:'45/tcp',
+        jg:'网络信息过滤',
+        jx:'高级优先',
+        status: '启用',
+     },
+     {
+       id:'ZJSM023897',
+       cf:'192.168.1.08',
+       dw:'56/tcp',
+       jg:'用户行为审计',
+       jx:'高级优先',
+       status: '启用',
+    },
+    {
+        id:'ZJSM023898',
+        cf:'192.168.1.12',
+        dw:'23/tcp',
+        jg:'网络信息过滤',
+        jx:'低级优先',
+        status: '启用',
+     },
+    {
        id:'ZJSM023891',
        cf:'192.168.1.28',
-       jc:'6C:F0:49:8F:A5:39',
        dw:'38/tcp',
-       jg:'close',
-       jx:'netbios-ssn',
+       jg:'用户行为审计',
+       jx:'低级优先',
        status: '启用',
     },
     {
         id:'ZJSM023892',
         cf:'192.168.1.36',
-        jc:'7C:F0:19:8F:A5:Z4',
         dw:'46/tcp',
-        jg:'open',
-        jx:'http',
+        jg:'网络信息过滤',
+        jx:'低级优先',
         status: '启用',
      },
      {
         id:'ZJSM023893',
         cf:'192.168.1.115',
-        jc:'9C:K0:49:8F:A5:50',
         dw:'57/tcp',
-        jg:'close',
-        jx:'smtp',
+        jg:'用户行为审计',
+        jx:'高级优先',
         status: '启用',
      },
      {
         id:'ZJSM023894',
         cf:'192.168.1.025',
-        jc:'3C:F5:49:8F:G5:10',
         dw:'16/tcp',
-        jg:'open',
-        jx:'netbios-ssn',
+        jg:'网络信息过滤',
+        jx:'高级优先',
         status: '启用',
      },
      {
          id:'ZJSM023895',
          cf:'192.168.1.63',
-         jc:'6C:F0:49:8F:Q5:55',
          dw:'06/tcp',
-         jg:'close',
-         jx:'msrpc',
+         jg:'用户行为审计',
+         jx:'低级优先',
          status: '启用',
       },
-      {
-         id:'ZJSM023896',
-         cf:'192.168.1.41',
-         jc:'6Q:F0:49:8F:A5:74',
-         dw:'45/tcp',
-         jg:'open',
-         jx:'http',
-         status: '启用',
-      },
-      {
-        id:'ZJSM023897',
-        cf:'192.168.1.08',
-        jc:'6C:F1:49:8Q:A5:C6',
-        dw:'56/tcp',
-        jg:'close',
-        jx:'smtp',
-        status: '启用',
-     },
-     {
-         id:'ZJSM023898',
-         cf:'192.168.1.12',
-         jc:'1C:F0:D9:8F:A5:96',
-         dw:'23/tcp',
-         jg:'open',
-         jx:'telnet',
-         status: '启用',
-      },
+
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -107,25 +100,22 @@ class Model extends Component<ModelProps, ModelState>{
         {
             title: 'IP地址',
             dataIndex: 'cf',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: 'MAC地址',
-            dataIndex: 'jc',
-        },
-        {
-            title: '端口',
-            dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
-        },
-
-        {
-            title: '状态',
+            title: '管理状态',
             dataIndex: 'jg',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
             title: '服务',
             dataIndex: 'jx',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
+        },
+        {
+            title: '端口号',
+            dataIndex: 'dw',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
             title: '是否启用',
@@ -158,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="主机信息扫描"
+                title="本机信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
