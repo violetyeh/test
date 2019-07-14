@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='分析技术成熟度'
+          title='标签分析速度'
           action={
             <Tooltip
               title={

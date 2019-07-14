@@ -19,7 +19,7 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '1',
+       id: 'BQCF0121',
        mc:'三鲜馄饨',
        gg:'660.00',
        hz:'1800.00',
@@ -30,7 +30,7 @@ const mockData = [
        state: 1,
     },
     {
-        id: '2',
+        id: 'BQCF0122',
         mc:'猪肉（瘦）',
         gg:'1660.00',
         hz:'800.00',
@@ -41,7 +41,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '3',
+        id: 'BQCF0123',
         mc:'苹果',
         gg:'660.00',
         hz:'1700.00',
@@ -52,7 +52,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '4',
+        id: 'BQCF0124',
         mc:'纯牛奶',
         gg:'760.00',
         hz:'1870.00',
@@ -63,7 +63,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '5',
+        id: 'BQCF0125',
         mc:'可口可乐',
         gg:'660.00',
         hz:'1800.00',
@@ -74,7 +74,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '6',
+        id: 'BQCF0126',
         mc:'冰淇淋',
         gg:'660.00',
         hz:'1800.00',
@@ -85,7 +85,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '7',
+        id: 'BQCF0127',
         mc:'3+2饼干',
         gg:'660.00',
         hz:'1800.00',
@@ -96,7 +96,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: '8',
+        id: 'BQCF0128',
         mc:'黄桃罐头',
         gg:'660.00',
         hz:'1800.00',

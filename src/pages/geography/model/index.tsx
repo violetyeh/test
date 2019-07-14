@@ -19,7 +19,7 @@ interface ModelState {
 
 const mockData = [
     {
-       id:'1',
+       id:'YYCF0891',
        cf:'能量',
        jc:'nl',
        dw:'千焦（k）',
@@ -29,7 +29,7 @@ const mockData = [
        status: '启用',
     },
     {
-        id:'2',
+        id:'YYCF0892',
         cf:'脂肪',
         jc:'zf',
         dw:'克（g）',
@@ -39,7 +39,7 @@ const mockData = [
         status: '启用',
      },
      {
-        id:'3',
+        id:'YYCF0893',
         cf:'蛋白质',
         jc:'dbz',
         dw:'克（g）',
@@ -49,7 +49,7 @@ const mockData = [
         status: '启用',
      },
      {
-        id:'4',
+        id:'YYCF0894',
         cf:'叶酸',
         jc:'ys',
         dw:'千焦（k）',
@@ -59,7 +59,7 @@ const mockData = [
         status: '启用',
      },
      {
-         id:'5',
+         id:'YYCF0895',
          cf:'泛酸',
          jc:'fs',
          dw:'克（g）',
@@ -69,7 +69,7 @@ const mockData = [
          status: '启用',
       },
       {
-         id:'6',
+         id:'YYCF0896',
          cf:'蛋白质',
          jc:'dbz',
          dw:'克（g）',
@@ -79,7 +79,7 @@ const mockData = [
          status: '启用',
       },
       {
-        id:'7',
+        id:'YYCF0897',
         cf:'能量',
         jc:'nl',
         dw:'千焦（k）',
@@ -89,7 +89,7 @@ const mockData = [
         status: '启用',
      },
      {
-         id:'8',
+         id:'YYCF0898',
          cf:'脂肪',
          jc:'zf',
          dw:'克（g）',
