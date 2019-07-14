@@ -12,28 +12,29 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 接触材料分析数量: 800, 分析合格数: 800, 分析支付: 2600, 分析合格率: 100 },
-  { label: '0.2', 接触材料分析数量: 900, 分析合格数: 880, 分析支付: 1300, 分析合格率: 83 },
-  { label: '0.3', 接触材料分析数量: 950, 分析合格数: 950, 分析支付: 900, 分析合格率: 100 },
-  { label: '0.4', 接触材料分析数量: 500, 分析合格数: 500, 分析支付: 390, 分析合格率: 56 },
-  { label: '0.5', 接触材料分析数量: 1234, 分析合格数: 234, 分析支付: 1666, 分析合格率: 66 },
-  { label: '0.6', 接触材料分析数量: 1234, 分析合格数: 634, 分析支付: 666, 分析合格率: 54 },
-  { label: '0.7', 接触材料分析数量: 634, 分析合格数: 434, 分析支付: 1666, 分析合格率: 83 },
-  { label: '0.8', 接触材料分析数量: 1234, 分析合格数: 284, 分析支付: 666, 分析合格率: 75 },
-  { label: '0.9', 接触材料分析数量: 534, 分析合格数: 334, 分析支付: 236, 分析合格率: 81 },
-  { label: '1.0', 接触材料分析数量: 234, 分析合格数: 234, 分析支付: 786, 分析合格率: 83 },
-  { label: '未评分', 接触材料分析数量: 1234, 分析合格数: 1234, 分析支付: 1666, 分析合格率: 100 },
+  { label: '1月份', URL过滤信息: 819, 过滤数量: 819, 过滤速度每毫秒: 2619, 过滤效率: 119 },
+  { label: '2月份', URL过滤信息: 919, 过滤数量: 880, 过滤速度每毫秒: 1319, 过滤效率: 83 },
+  { label: '3月份', URL过滤信息: 950, 过滤数量: 950, 过滤速度每毫秒: 919, 过滤效率: 119 },
+  { label: '4月份', URL过滤信息: 519, 过滤数量: 519, 过滤速度每毫秒: 390, 过滤效率: 56 },
+  { label: '5月份', URL过滤信息: 1000, 过滤数量: 698, 过滤速度每毫秒: 1544, 过滤效率: 66 },
+  { label: '6月份', URL过滤信息: 1698, 过滤数量: 634, 过滤速度每毫秒: 515, 过滤效率: 54 },
+  { label: '7月份', URL过滤信息: 634, 过滤数量: 434, 过滤速度每毫秒: 1544, 过滤效率: 83 },
+  { label: '8月份', URL过滤信息: 1698, 过滤数量: 284, 过滤速度每毫秒: 512, 过滤效率: 75 },
+  { label: '9月份', URL过滤信息: 534, 过滤数量: 334, 过滤速度每毫秒: 236, 过滤效率: 81 },
+  { label: '10月份', URL过滤信息: 698, 过滤数量: 698, 过滤速度每毫秒: 786, 过滤效率: 83 },
+  { label: '11月份', URL过滤信息: 1698, 过滤数量: 1698, 过滤速度每毫秒: 1544, 过滤效率: 119 },
+  { label: '12月份', URL过滤信息: 1698, 过滤数量: 1698, 过滤速度每毫秒: 1544, 过滤效率: 119 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['接触材料分析数量', '分析合格数', '分析支付','分析合格率'], // 展开字段集
+  fields: ['URL过滤信息', '过滤数量', '过滤速度每毫秒','过滤效率'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  分析合格率: {
+  过滤效率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -62,15 +63,15 @@ const OfflineData = ({
   handleTabChange: (activeKey: string) => void;
 }) => (
     <Card loading={loading} className={styles.offlineCard} bordered={false} style={{ marginTop: 32 }}>
-      <Chart height={400} width={500} forceFit data={dv} scale={scale} padding="auto" onGetG2Instance={getG2Instance}>
+      <Chart height={419} width={519} forceFit data={dv} scale={scale} padding="auto" onGetG2Instance={getG2Instance}>
         <Legend
           custom
           allowAllCanceled
           items={[
-            { value: '接触材料分析数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '分析合格数', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '分析支付', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '分析合格率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: 'URL过滤信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '过滤数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '过滤速度每毫秒', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '过滤效率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +80,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '分析合格率') {
+              if (geom.getYScale().field === value && value === '过滤效率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '分析合格率') {
+              } else if (geom.getYScale().field === 'value' && value !== '过滤效率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -110,7 +111,7 @@ const OfflineData = ({
             if (value === '样品数') {
               return '#41a2fc';
             }
-            if (value === '分析合格数') {
+            if (value === '过滤数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +120,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*分析合格率" color="#fad248" size={3} />
+        <Geom type="line" position="label*过滤效率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );
