@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品与农产品接触材料分析系统',
+  title: 'URL过滤管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
