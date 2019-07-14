@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑食品成分表"
+                title="编辑防火墙任务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,49 +51,36 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="食物分类" >
+                    <Form.Item key="fl" label="任务名称" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="食物名称" >
+                    <Form.Item key="mc" label="目标IP" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="食物助记码" >
+                    <Form.Item key="ma" label="攻击类型" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bf" label="可食部分" >
-                        {getFieldDecorator('bf', {
-                            initialValue: currentItem.bf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="sf" label="水分" >
-                        {getFieldDecorator('sf', {
-                            initialValue: currentItem.sf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="nl" label="能量" >
+                   
+                    <Form.Item key="nl" label="执行者" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dbz" label="蛋白质" >
+                    <Form.Item key="dbz" label="任务状态" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(

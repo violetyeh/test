@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 营养成分数量: 1563, 常见营养成分数量: 1000, 标签分析价格: 600, 分析合格率: 82 },
-  { label: '0.2', 营养成分数量: 900, 常见营养成分数量: 880, 标签分析价格: 700, 分析合格率: 63 },
-  { label: '0.3', 营养成分数量: 950, 常见营养成分数量: 950, 标签分析价格: 800, 分析合格率: 75 },
-  { label: '0.4', 营养成分数量: 500, 常见营养成分数量: 500, 标签分析价格: 390, 分析合格率: 56 },
-  { label: '0.5', 营养成分数量: 234, 常见营养成分数量: 234, 标签分析价格: 1666, 分析合格率: 66 },
-  { label: '0.6', 营养成分数量: 1234, 常见营养成分数量: 634, 标签分析价格: 666, 分析合格率: 54 },
-  { label: '0.7', 营养成分数量: 634, 常见营养成分数量: 434, 标签分析价格: 1666, 分析合格率: 83 },
-  { label: '0.8', 营养成分数量: 234, 常见营养成分数量: 284, 标签分析价格: 666, 分析合格率: 75 },
-  { label: '0.9', 营养成分数量: 534, 常见营养成分数量: 334, 标签分析价格: 236, 分析合格率: 81 },
-  { label: '1.0', 营养成分数量: 234, 常见营养成分数量: 234, 标签分析价格: 786, 分析合格率: 83 },
-  { label: '未评分', 营养成分数量: 234, 常见营养成分数量: 234, 标签分析价格: 666, 分析合格率: 64 },
+  { label: '0.1', 防火墙防护次数: 1563, 检测漏洞数量: 1000, 恢复漏洞数量格: 1600, 发现病毒数量: 2082 },
+  { label: '0.2', 防火墙防护次数: 1900, 检测漏洞数量: 1880, 恢复漏洞数量格: 1700, 发现病毒数量: 1463 },
+  { label: '0.3', 防火墙防护次数: 1950, 检测漏洞数量: 1950, 恢复漏洞数量格: 1800, 发现病毒数量: 1075 },
+  { label: '0.4', 防火墙防护次数: 1500, 检测漏洞数量: 1500, 恢复漏洞数量格: 1390, 发现病毒数量: 2156 },
+  { label: '0.5', 防火墙防护次数: 1234, 检测漏洞数量: 1234, 恢复漏洞数量格: 1166, 发现病毒数量: 1266 },
+  { label: '0.6', 防火墙防护次数: 1234, 检测漏洞数量: 1634, 恢复漏洞数量格: 1666, 发现病毒数量: 1254 },
+  { label: '0.7', 防火墙防护次数: 1634, 检测漏洞数量: 1434, 恢复漏洞数量格: 1666, 发现病毒数量: 1283 },
+  { label: '0.8', 防火墙防护次数: 1234, 检测漏洞数量: 1284, 恢复漏洞数量格: 1666, 发现病毒数量: 2175 },
+  { label: '0.9', 防火墙防护次数: 1534, 检测漏洞数量: 1334, 恢复漏洞数量格: 1236, 发现病毒数量: 1281 },
+  { label: '1.0', 防火墙防护次数: 1234, 检测漏洞数量: 1234, 恢复漏洞数量格: 786, 发现病毒数量: 2183 },
+  { label: '未评分', 防火墙防护次数: 1234, 检测漏洞数量: 1234, 恢复漏洞数量格: 666, 发现病毒数量: 2164 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['营养成分数量', '常见营养成分数量', '标签分析价格','分析合格率'], // 展开字段集
+  fields: ['防火墙防护次数', '检测漏洞数量', '恢复漏洞数量格','发现病毒数量'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  分析合格率: {
+  发现病毒数量: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '营养成分数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '常见营养成分数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '标签分析价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '分析合格率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '防火墙防护次数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '检测漏洞数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '恢复漏洞数量格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '发现病毒数量', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '分析合格率') {
+              if (geom.getYScale().field === value && value === '发现病毒数量') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '分析合格率') {
+              } else if (geom.getYScale().field === 'value' && value !== '发现病毒数量') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -110,7 +110,7 @@ const OfflineData = ({
             if (value === '样品数') {
               return '#41a2fc';
             }
-            if (value === '常见营养成分数量') {
+            if (value === '检测漏洞数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*分析合格率" color="#fad248" size={3} />
+        <Geom type="line" position="label*发现病毒数量" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

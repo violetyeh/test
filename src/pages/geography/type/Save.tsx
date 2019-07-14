@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Select, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑营养标签分析数据"
+                title="编辑漏洞扫描信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,53 +51,46 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="产品名称" >
+                    <Form.Item key="mc" label="漏洞等级" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
-                            <Input />,
+                            <Select >
+                                <Select.Option value="jack">高</Select.Option>
+                                <Select.Option value="lucy">中</Select.Option>
+                                <Select.Option value="lucy">低</Select.Option>
+                            </Select>
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="产品规格" >
+                    <Form.Item key="gg" label="漏洞VCE ID" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="营养汇总" >
+                    <Form.Item key="hz" label="漏洞描述" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="每百克营养" >
-                        {getFieldDecorator('yy', {
-                            initialValue: currentItem.yy,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="zhi" label="NRV值" >
-                        {getFieldDecorator('zhi', {
-                            initialValue: currentItem.zhi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="wc" label="允许误差" >
-                        {getFieldDecorator('wc', {
-                            initialValue: currentItem.wc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jd" label="检测结果进度（%）" >
+                    <Form.Item key="jd" label="漏洞扫描进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="安全情况" >
+                        {getFieldDecorator('status', {
+                            initialValue: currentItem.status,
+                        })(
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                               <Radio.Button value="a">安全</Radio.Button>
+                               <Radio.Button value="b">不安全</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>

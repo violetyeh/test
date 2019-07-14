@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '食品成分表维护',
+          name: '防火墙任务管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '能量与营养成分名称设置',
+          name: '主机信息扫描报告',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '营养标签分析数据管理',
+          name: '漏洞扫描报告',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
