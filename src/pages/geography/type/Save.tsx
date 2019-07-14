@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -76,7 +76,10 @@ class Save extends Component<SaveProps, SaveState>{
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
-                            <Input />,
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">全检通过</Radio.Button>
+                                <Radio.Button value="b">快检通过</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>
