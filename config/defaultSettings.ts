@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙软件手册',
+  title: '防火墙软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
