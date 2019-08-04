@@ -18,67 +18,67 @@ interface ModelState {
 }
 
 const mockData = [
-    
     {
-        zl: '熟食类',
-        mc:'面包',
-        sj:'食品安全第三方检验检测机构',
-        zb:3.6,
-        process: 100,
-        status: '启用',
-    },
-    {
-        zl: '零食类',
-        mc:'果冻',
-        sj:'国家食品质量监督检验中心',
-        zb:3,
-        process: 99,
-        status: '启用',
-    },
-    {
-        zl: '蔬菜',
-        mc:'胡萝卜',
-        sj:'食品无机元素检测单位',
+        zl: '地下水',
+        mc:'固体颗粒物',
+        sj:'电法去离子（EDI）',
         zb:3.1,
         process: 89,
         status: '启用',
     },
     {
-        zl: '零食类',
-        mc:'饼干',
-        sj:'食品安全第三方检验检测机构',
+        zl: '地下水',
+        mc:'气体',
+        sj:'离子交换',
         zb:2.2,
         process: 78,
         status: '启用',
     },
     {
-        zl: '肉类',
-        mc:'鱼肉',
-        sj:'食品安全检验检测单位',
+        zl: '地表水',
+        mc:'无机物',
+        sj:'过滤',
+        zb:3.6,
+        process: 100,
+        status: '启用',
+    },
+    {
+        zl: '地下水',
+        mc:'有机物',
+        sj:'微孔过滤（超滤）',
+        zb:3,
+        process: 99,
+        status: '启用',
+    },
+    
+    {
+        zl: '地表水',
+        mc:'微生物',
+        sj:'反渗透',
         zb:2,
         process: 65,
         status: '启用',
     },
     {
-        zl: '熟食类',
-        mc:'火腿肠',
-        sj:'国家食品质量监督检验中心',
+        zl: '地表水',
+        mc:'有机物',
+        sj:'软化',
         zb:1,
         process: 100,
         status: '启用',
     },
     {
-        zl: '蔬菜',
-        mc:'白菜',
-        sj:'食品无机元素检测单位',
+        zl: '地下水',
+        mc:'无机物',
+        sj:'吸附',
         zb:3,
         process: 32,
         status: '启用',
     },
     {
-        zl: '肉类',
-        mc:'猪肉',
-        sj:'食品安全检验检测单位',
+        zl: '地表水',
+        mc:'固体颗粒物',
+        sj:'过滤',
         zb:2,
         process: 28,
         status: '启用',
@@ -94,25 +94,25 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '样品种类',
+            title: '源水',
             dataIndex: 'zl',
         },
         {
-            title: '样品名称',
+            title: '污染物类型',
             dataIndex: 'mc',
         },
         {
-            title: '送检单位',
+            title: '纯化水制备',
             dataIndex: 'sj',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '无机元素占比',
+            title: '污染物占比',
             dataIndex: 'zb',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '检测结果进度',
+            title: '监测结果进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="无机元素检测设置"
+                title="纯化水制水监测设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

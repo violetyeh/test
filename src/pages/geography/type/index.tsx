@@ -19,61 +19,62 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WJYSJC0231',
-        mingcheng:'猪肉（肉类）',
-        hg:98,
-        jcy:'陈州',
-        state: 1,
-     },
-     {
-         id: 'WJYSJC0232',
-         mingcheng:'兔肉（肉类）',
-         hg:100,
-         jcy:'李梦琪',
-         state: 1,
-      },
-    {
-        id: 'WJYSJC0233',
-        mingcheng:'茄子（蔬菜）',
-        hg:100,
-        jcy:'刘媛媛',
-        state: 1,
-     },
-     {
-        id: 'WJYSJC0234',
-        mingcheng:'白菜（蔬菜）',
-        hg:85,
-        jcy:'李思思',
-        state: 1,
-     },
-     {
-        id: 'WJYSJC0235',
-        mingcheng:'胡萝卜（蔬菜）',
-        hg:90,
-        jcy:'葛春',
-        state: 1,
-     },
-     {
-        id: 'WJYSJC0236',
-        mingcheng:'鱼肉（肉类）',
+        id: 'JCSJAA36',
+        mingcheng:'阴离子合成洗涤剂(mg/L)',
         hg:100,
         jcy:'陈静婉',
         state: 1,
      },
      {
-        id: 'WJYSJC0237',
-        mingcheng:'鸭肉（肉类）',
+        id: 'JCSJAA37',
+        mingcheng:'高锰酸盐指数(mg/L)',
         hg:98,
         jcy:'王天乐',
         state: 1,
      },
      {
-        id: 'WJYSJC0238',
-        mingcheng:'鸡肉（肉类）',
+        id: 'JCSJAA38',
+        mingcheng:'亚硝酸盐(以N计)(mg/L)',
         hg:76,
         jcy:'陈真',
         state: 1,
      },
+    {
+        id: 'JCSJAA31',
+        mingcheng:'色(度)）',
+        hg:98,
+        jcy:'陈州',
+        state: 1,
+     },
+     {
+         id: 'JCSJAA32',
+         mingcheng:'总硬度(以CaCO3,计)(mg/L)',
+         hg:100,
+         jcy:'李梦琪',
+         state: 1,
+      },
+    {
+        id: 'JCSJAA33',
+        mingcheng:'溶解性总固体(mg/L)',
+        hg:100,
+        jcy:'刘媛媛',
+        state: 1,
+     },
+     {
+        id: 'JCSJAA34',
+        mingcheng:'硫酸盐(mg/L)',
+        hg:85,
+        jcy:'李思思',
+        state: 1,
+     },
+     {
+        id: 'JCSJAA35',
+        mingcheng:'挥发性酚类(以苯酚计)(mg/L)',
+        hg:90,
+        jcy:'葛春',
+        state: 1,
+     },
+    
     
    
 ]
@@ -92,14 +93,14 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '样品名称',
+            title: '标准值项目',
             dataIndex: 'mingcheng',
-            render: (text) => <Tag color="#AA8888">{text}</Tag>,
+            render: (Text) => <Tag color="#ff0000">{Text}</Tag>,
         },
         {
-            title: '检测员',
+            title: '监测员',
             dataIndex: 'jcy',
-            render: (Text) => <Tag color="#ff0000">{Text}</Tag>
+            render: (text) => <Tag color="#AA8888">{text}</Tag>,
         },
         {
             title: '合格率',
@@ -138,7 +139,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测分析数据管理"
+                title="监测数据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

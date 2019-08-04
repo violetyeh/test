@@ -23,69 +23,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WJYS6321',
-        mc:'S',
-        tiji2:'蛋白粉',
-        zhiliang:'150.00',
-        zb:30,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6322',
-        mc:'Fe',
-        tiji2:'蛋糕',
-        zhiliang:'50.00',
-        zb:23,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6323',
-        mc:'P',
-        tiji2:'面包',
-        zhiliang:'100.00',
-        zb:3,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6324',
-        mc:'Fe',
-        tiji2:'糖果',
-        zhiliang:'110.00',
-        zb:5,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6325',
-        mc:'P',
-        tiji2:'薯片',
-        zhiliang:'30.00',
-        zb:1,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6326',
-        mc:'Fe',
-        tiji2:'果冻',
-        zhiliang:'20.00',
-        zb:4,
-        state: '启用',
-    },
-    {
-        id: 'WJYS6327',
-        mc:'P',
-        tiji2:'方便面',
+        id: 'CHUN0027',
+        mc:'砷',
+        tiji2:'纯化水样本YB01',
         zhiliang:'200.00',
         zb:1,
         state: '启用',
     },
     {
-        id: 'WJYS6328',
-        mc:'S',
-        tiji2:'鸡腿',
+        id: 'CHUN0028',
+        mc:'汞',
+        tiji2:'纯化水样本YB85',
         zhiliang:'250.00',
         zb:3,
         state: '启用',
     },
+    {
+        id: 'CHUN0021',
+        mc:'pH',
+        tiji2:'纯化水样本YB03',
+        zhiliang:'150.00',
+        zb:30,
+        state: '启用',
+    },
+    {
+        id: 'CHUN0022',
+        mc:'氨氮',
+        tiji2:'纯化水样本YB56',
+        zhiliang:'50.00',
+        zb:23,
+        state: '启用',
+    },
+    {
+        id: 'CHUN0023',
+        mc:'硝酸盐',
+        tiji2:'纯化水样本YB41',
+        zhiliang:'100.00',
+        zb:3,
+        state: '启用',
+    },
+    {
+        id: 'CHUN0024',
+        mc:'亚硝酸盐',
+        tiji2:'纯化水样本YB65',
+        zhiliang:'110.00',
+        zb:5,
+        state: '启用',
+    },
+    {
+        id: 'CHUN0025',
+        mc:'挥发性酚类',
+        tiji2:'纯化水样本YB14',
+        zhiliang:'30.00',
+        zb:1,
+        state: '启用',
+    },
+    {
+        id: 'CHUN0026',
+        mc:'氰化物',
+        tiji2:'纯化水样本YB04',
+        zhiliang:'20.00',
+        zb:4,
+        state: '启用',
+    },
+   
     
 ]
 
@@ -99,25 +100,25 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '检测编号',
+            title: '监测编号',
             dataIndex: 'id',
         },
         {
-            title: '无机元素名称',
+            title: '纯化水监测项目',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '检测食物',
+            title: '监测样本',
             dataIndex: 'tiji2',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '食物质量',
+            title: '样本量（mg）',
             dataIndex: 'zhiliang',
         },
         {
-            title: '无机元素占比',
+            title: '肉眼可见物占比',
             dataIndex: 'zb',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -150,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="无机元素检测参数管理"
+                title="监测参数管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

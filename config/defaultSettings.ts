@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品中无机元素检测分析系统',
+  title: '纯化水制水在线监测控制系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

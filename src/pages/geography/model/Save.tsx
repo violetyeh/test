@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑无机元素检测设置"
+                title="编辑纯化水制水监测设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="zl" label="样品种类" >
+                    <Form.Item key="zl" label="源水" >
                         {getFieldDecorator('zl', {
                             initialValue: currentItem.zl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="样品名称" >
+                    <Form.Item key="mc" label="污染物类型" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="送检单位" >
+                    <Form.Item key="sj" label="纯化水制备" >
                         {getFieldDecorator('sj', {
                             initialValue: currentItem.sj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zb" label="无机元素占比" >
+                    <Form.Item key="zb" label="污染物占比（%）" >
                         {getFieldDecorator('zb', {
                             initialValue: currentItem.zb,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="检测结果进度" >
+                    <Form.Item key="process" label="监测结果进度" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
