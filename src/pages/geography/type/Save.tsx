@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="页面数据设置"
+                title="网盘管理设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="自动播放" >
+                    <Form.Item key="hj" label="标题" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="完整菜单" >
+                    <Form.Item key="mc" label="上传时间" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bs" label="视窗模式" >
+                    <Form.Item key="bs" label="类别" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
@@ -79,13 +79,13 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jl" label="数据采集" >
+                    <Form.Item key="jl" label="是否已下载" >
                         {getFieldDecorator('jl', {
                             initialValue: currentItem.jl,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">自动</Radio.Button>
-                               <Radio.Button value="b">手动</Radio.Button>
+                               <Radio.Button value="a">已下载</Radio.Button>
+                               <Radio.Button value="b">未下载</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

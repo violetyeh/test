@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '页面可视化的数据采集管理系统',
+  title: '华云网盘管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

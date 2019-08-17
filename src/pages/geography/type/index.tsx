@@ -19,66 +19,66 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'YM02132',
-       hj:'是',
-       mc:'默认',
-       bs:'88%',
+       id: 'WP0032',
+       hj:'斗破苍穹',
+       mc:'2019-08-14',
+       bs:'视频库-动漫',
        bcy:'高品质',
        state: 1,
     },
     {
-        id: 'YM02149',
-        hj:'否',
-        mc:'自动显示菜单',
-        bs:'100%',
+        id: 'WP0049',
+        hj:'斗罗大陆',
+        mc:'2019-07-02',
+        bs:'视频库-动漫',
         bcy:'低品质',
         state: 1,
      },
      {
-        id: 'YM02136',
-        hj:'是',
-        mc:'点击显示菜单',
-        bs:'默认',
+        id: 'WP0036',
+        hj:'陈情令',
+        mc:'2019-08-11',
+        bs:'视频库-电视剧',
         bcy:'高品质',
         state: 1,
      },
      {
-        id: 'YM02147',
-        hj:'人工操作',
-        mc:'默认',
-        bs:'100%',
+        id: 'WP0047',
+        hj:'魔道祖师',
+        mc:'2019-08-12',
+        bs:'视频库-动漫',
         bcy:'低品质',
         state: 1,
      },
      {
-        id: 'YM02122',
-        hj:'是',
-        mc:'默认显示菜单',
-        bs:'120%',
+        id: 'WP0022',
+        hj:'源',
+        mc:'2019-08-05',
+        bs:'音频库-音乐',
         bcy:'低品质',
         state: 1,
      },
      {
-        id: 'YM02147',
-        hj:'是',
-        mc:'点击显示菜单',
-        bs:'110%',
+        id: 'WP0047',
+        hj:'朋友',
+        mc:'2019-08-04',
+        bs:'音频库-音乐',
         bcy:'高品质',
         state: 1,
      },
      {
-        id: 'YM02136',
-        hj:'否',
-        mc:'默认',
-        bs:'80%',
+        id: 'WP0036',
+        hj:'哪吒',
+        mc:'2019-08-12',
+        bs:'视频库-电影',
         bcy:'低品质',
         state: 1,
      },
      {
-        id: 'YM02112',
-        hj:'是',
-        mc:'点击显示菜单',
-        bs:'默认',
+        id: 'WP0012',
+        hj:'烈火英雄',
+        mc:'2019-08-02',
+        bs:'视频库-电影',
         bcy:'低品质',
         state: 1,
      },
@@ -98,18 +98,18 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '自动播放',
+            title: '标题',
             dataIndex: 'hj',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '完整菜单',
+            title: '上传时间',
             dataIndex: 'mc',
             render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '视窗模式',
+            title: '类别',
             dataIndex: 'bs',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
@@ -119,9 +119,9 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '数据采集',
+            title: '是否已下载',
             dataIndex: 'jl',
-            render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
+            render: () => <Switch checkedChildren="已下载" unCheckedChildren="未下载" />,
         },
         {
             title: '操作',
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="页面数据设置"
+                title="网盘管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

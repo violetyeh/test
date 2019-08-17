@@ -19,75 +19,75 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: '新闻型',
-        dw:'www.xinwen.com',
+        hj: '图片库',
+        dw:'刘亦菲剧照',
         ren:'刘威',
-        riqi:'新闻内容页面',
-        qk:'王宇',
-        process: 100,
+        riqi:'花木兰 刘亦菲',
+        qk:'.jpg',
+        process: 1,
         
     },
     {
-        hj: '网页型',
-        dw:'www.wangye.com',
+        hj: '音频库',
+        dw:'凉凉',
         ren:'孟浩',
-        riqi:'网页内容页面',
-        qk:'孟念',
-        process: 61,
+        riqi:'三生三世  张碧晨',
+        qk:'.mp3',
+        process: 0.5,
         
     },
     {
-        hj: '链接型',
-        dw:'www.lianjie.com',
+        hj: '视频库',
+        dw:'唐人街探案',
         ren:'唐宇',
-        riqi:'链接内容页面',
-        qk:'文雯',
-        process: 74,
+        riqi:'王宝强 刘昊然',
+        qk:'.mp4',
+        process: 2,
         
     },
     {
-        hj: '资料下载',
-        dw:'www.ziliao.com',
+        hj: '视频库',
+        dw:'泰囧',
         ren:'李白白',
-        riqi:'资料内容页面',
-        qk:'林树',
-        process: 34,
+        riqi:'王宝强 徐峥',
+        qk:'.mp4',
+        process: 1,
         
     },
     {
-        hj: '资料下载',
-        dw:'www.ziliao.com',
+        hj: '图片库',
+        dw:'王俊凯剧照',
         ren:'明楼',
-        riqi:'资料内容页面',
-        qk:'凌加',
-        process: 42,
+        riqi:'王俊凯',
+        qk:'.jpg',
+        process: 0.2,
         
     },
     {
-        hj: '链接型',
-        dw:'www.lianjie.com',
+        hj: '视频库',
+        dw:'我的少年时代',
         ren:'明玉',
-        riqi:'链接内容页面',
-        qk:'张明',
-        process: 66,
+        riqi:'王俊凯  王源',
+        qk:'.mp4',
+        process: 0.6,
         
     },
     {
-        hj: '新闻型',
-        dw:'www.xinwen.com',
+        hj: '图片库',
+        dw:'王源剧照',
         ren:'刘茵茵',
-        riqi:'新闻内容页面',
-        qk:'钱明',
-        process: 78,
+        riqi:'王源',
+        qk:'.jpg',
+        process: 0.8,
         
     },
     {
-        hj: '网页型',
-        dw:'www.wangye.com',
+        hj: '音频库',
+        dw:'白衣',
         ren:'赵湾',
-        riqi:'网页内容页面',
-        qk:'李大发',
-        process: 56,
+        riqi:'河图',
+        qk:'.mp3',
+        process: 0.7,
         
     },
     
@@ -102,35 +102,38 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '栏目状态',
+            title: '文档状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
         },
         {
-            title: '信息类型',
+            title: '所属分类',
             dataIndex: 'hj',
+            render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '链接地址',
+            title: '资源描述',
             dataIndex: 'dw',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '发布人员',
+            title: '上传用户',
             dataIndex: 'ren',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '内容模板',
+            title: '资源标签',
             dataIndex: 'riqi',
+            render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '审核人员',
+            title: '文件格式',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '采集进度',
+            title: '文件大小占比',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -161,7 +164,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="数据信息管理"
+                title="文档管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
