@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分析数据"
+                title="编辑政务投票"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,39 +44,52 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="分析编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="分析通道" >
+                    <Form.Item key="tongdao" label="发布人" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="touguang" label="限量（mg/kg）" >
+                    <Form.Item key="touguang" label="投票标题" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="测定部位" >
-                        {getFieldDecorator('duizhao', {
-                            initialValue: currentItem.duizhao,
+                    <Form.Item key="xq" label="详情" >
+                        {getFieldDecorator('xq', {
+                            initialValue: currentItem.xq,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijain" label="分析时间" >
-                        {getFieldDecorator('shijian', {
-                            initialValue: currentItem.shijian,
+                    <Form.Item key="duizhao" label="匿名投票结果" >
+                        {getFieldDecorator('duizhao', {
+                            initialValue: currentItem.duizhao,
                         })(
-                            <Input />,
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">允许</Radio.Button>
+                                <Radio.Button value="b">不允许</Radio.Button>
+                             </Radio.Group>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="zt" label="状态" >
+                        {getFieldDecorator('zt', {
+                            initialValue: currentItem.zt,
+                        })(
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">已投票</Radio.Button>
+                                <Radio.Button value="b">未投票</Radio.Button>
+                             </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>

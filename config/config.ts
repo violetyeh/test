@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '食品分析试验',
+          name: '政务投票管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '动物源性成分检测设置',
+          name: '办公任务设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '成分分析数据管理',
+          name: '政务办公维度管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

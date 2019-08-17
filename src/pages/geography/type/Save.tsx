@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑动物源食品分析数据"
+                title="编辑办公维度"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,46 +44,63 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="通道编号" >
+                    <Form.Item key="id" label="序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="动物源食品名称" >
+                    <Form.Item key="zhonglei" label="维度名称" >
+                        {getFieldDecorator('zhonglei', {
+                            initialValue: currentItem.zhonglei,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mingcheng" label="维度描述" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="分析单位" >
+                    <Form.Item key="songjian" label="是否为默认维度" >
                         {getFieldDecorator('songjian', {
                             initialValue: currentItem.songjian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="动物源食品生产单位" >
+                    <Form.Item key="shengchan" label="组织类型数量" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="chandi" label="动物源食品产地" >
+                    <Form.Item key="chandi" label="是否为独立组织" >
                         {getFieldDecorator('chandi', {
                             initialValue: currentItem.chandi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="生产日期" >
+                    <Form.Item key="riqi" label="政务日期" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="是否完成政务" >
+                        {getFieldDecorator('status', {
+                            initialValue: currentItem.status,
+                        })(
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">是</Radio.Button>
+                                <Radio.Button value="b">否</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>
