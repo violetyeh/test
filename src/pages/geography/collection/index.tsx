@@ -26,64 +26,64 @@ const mockData = [
         id: 'http://localhost:8000/',
         tongdao:'12',
         touguang:'279.40',
-        duizhao:'FREE',
-        shijian:'no',
+        duizhao:'明星照片',
+        shijian:'否',
         state: '启用',
     },
     {
         id: 'http://localhost:8002/',
         tongdao:'6',
         touguang:'365.50',
-        duizhao:'FREE',
-        shijian:'ok',
+        duizhao:'教学资源',
+        shijian:'是',
         state: '启用',
     },
     {
         id: 'http://localhost:8001/',
         tongdao:'5',
         touguang:'200.60',
-        duizhao:'IMPLEMENT',
-        shijian:'no',
+        duizhao:'电影',
+        shijian:'否',
         state: '启用',
     },
     {
         id: 'http://localhost:8000/',
         tongdao:'16',
         touguang:'375.60',
-        duizhao:'FREE',
-        shijian:'ok',
+        duizhao:'英语听力',
+        shijian:'是',
         state: '启用',
     },
     {
         id: 'http://localhost:8003/',
         tongdao:'3',
         touguang:'193.50',
-        duizhao:'IMPLEMENT',
-        shijian:'no',
+        duizhao:'电影',
+        shijian:'否',
         state: '启用',
     },
     {
         id: 'http://localhost:8002/',
         tongdao:'3',
         touguang:'200.00',
-        duizhao:'FREE',
-        shijian:'no',
+        duizhao:'教学资源',
+        shijian:'否',
         state: '启用',
     },
     {
         id: 'http://localhost:8001/',
         tongdao:'10',
         touguang:'300.00',
-        duizhao:'IMPLEMENT',
-        shijian:'ok',
+        duizhao:'音乐',
+        shijian:'是',
         state: '启用',
     },
     {
         id: 'http://localhost:8000/',
         tongdao:'11',
         touguang:'342.52',
-        duizhao:'FREE',
-        shijian:'ok',
+        duizhao:'教学资源',
+        shijian:'是',
         state: '启用',
     },
     
@@ -103,8 +103,9 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '槽位',
+            title: '资源大小（GB）',
             dataIndex: 'tongdao',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
             title: '容量（GB）',
@@ -112,13 +113,14 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '属性',
+            title: '资源类型',
             dataIndex: 'duizhao',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '状态',
+            title: '是否可存储',
             dataIndex: 'shijian',
-            render: (text) => <Tag color="#ff9999">{text}</Tag>,
+            render: (text) => <Tag color="#ff5555">{text}</Tag>,
         },
 
         {
@@ -150,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="存储资源管理"
+                title="分布式存储资源管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '存储虚拟化软件系统',
+  title: '华云分布式存储管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

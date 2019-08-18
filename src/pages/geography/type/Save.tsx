@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑卷组信息"
+                title="编辑空间存储利用信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="卷组名" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -65,21 +65,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="阵列个数" >
+                    <Form.Item key="mingcheng" label="已占空间" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="逻辑卷个数" >
+                    <Form.Item key="songjian" label="分布式逻辑卷个数" >
                         {getFieldDecorator('songjian', {
                             initialValue: currentItem.songjian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="快照计划个数" >
+                    <Form.Item key="shengchan" label="资源个数" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(

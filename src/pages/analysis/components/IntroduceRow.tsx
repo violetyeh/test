@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='磁盘容量'
+          title='存储空间容量'
           action={
             <Tooltip
               title={
@@ -36,16 +36,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={'274GB'}
-          footer='今日存储数据: 6346'
+          footer='今日存储大小: 43GB'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>85%</span>
+            <span className={styles.trendText}>65%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>74%</span>
+            <span className={styles.trendText}>44%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='磁盘存储数据上限'
+          title='存储数据上限'
           action={
             <Tooltip
               title={
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(5000).format('0,0')}
-          footer='今日存储数据：1885'
+          total={numeral(10000).format('0,0')}
+          footer='今日存储数据：6885'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='存储空间已占用'
+          title='存储空间占比'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(4496).format('0,0')}
-          footer='存储空间已占用：69%'
+          footer='存储空间占比：69%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='磁盘占用率'
+          title='存储占用率'
           action={
             <Tooltip
               title={
@@ -111,11 +111,11 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>77%</span>
+                <span className={styles.trendText}>67%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>69%</span>
+                <span className={styles.trendText}>59%</span>
               </Trend>
             </div>
           }

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑磁盘统计信息"
+                title="编辑磁盘空间"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sp" label="损坏盘数" >
+                    <Form.Item key="sp" label="磁盘内存大小（GB）" >
                         {getFieldDecorator('sp', {
                             initialValue: currentItem.sp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijian" label="游离盘数" >
+                    <Form.Item key="shijian" label="磁盘分类" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="biaozhun" label="热备盘数" >
+                    <Form.Item key="biaozhun" label="存储资源信息" >
                         {getFieldDecorator('biaozhun', {
                             initialValue: currentItem.biaozhun,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jiance" label="成员盘数" >
+                    <Form.Item key="jiance" label="磁盘盘数" >
                         {getFieldDecorator('jiance', {
                             initialValue: currentItem.jiance,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="存储占比空间（%）" >
+                    <Form.Item key="process" label="磁盘存储占比空间（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

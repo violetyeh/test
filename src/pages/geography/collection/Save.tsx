@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储资源"
+                title="编辑分布式存储资源"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="槽位" >
+                    <Form.Item key="tongdao" label="资源大小（GB）" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
@@ -65,14 +65,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="属性" >
+                    <Form.Item key="duizhao" label="资源类型" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijain" label="状态" >
+                    <Form.Item key="shijain" label="是否可存储" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
