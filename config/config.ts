@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '内容监控信息',
+          name: '运维监控信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '本机信息管理',
+          name: '终端运维管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '网络监控管理',
+          name: '网络运维管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

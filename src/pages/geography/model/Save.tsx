@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑本机信息"
+                title="编辑终端运维信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -75,6 +75,13 @@ class Save extends Component<SaveProps, SaveState>{
                     <Form.Item key="jx" label="服务" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="process" label="运维进度（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}

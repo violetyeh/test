@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '内网安全与网络行为管理系统',
+  title: '华云综合运维管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
