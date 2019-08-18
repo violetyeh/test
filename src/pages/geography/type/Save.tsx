@@ -44,42 +44,42 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="ID" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="名称" >
+                    <Form.Item key="mc" label="恢复文件名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lx" label="类型" >
+                    <Form.Item key="lx" label="恢复文件类型" >
                         {getFieldDecorator('lx', {
                             initialValue: currentItem.lx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dx" label="大小" >
+                    <Form.Item key="dx" label="恢复文件大小" >
                         {getFieldDecorator('dx', {
                             initialValue: currentItem.dx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="rq" label="日期" >
+                    <Form.Item key="rq" label="恢复文件日期" >
                         {getFieldDecorator('rq', {
                             initialValue: currentItem.rq,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="快速检测文件" >
+                    <Form.Item key="jc" label="快速检测恢复文件" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -87,6 +87,13 @@ class Save extends Component<SaveProps, SaveState>{
                                 <Radio.Button value="a">全检通过</Radio.Button>
                                 <Radio.Button value="b">快检通过</Radio.Button>
                             </Radio.Group>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="备份恢复进度（%）" >
+                        {getFieldDecorator('status', {
+                            initialValue: currentItem.status,
+                        })(
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>
