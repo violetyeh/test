@@ -19,78 +19,78 @@ interface ModelState {
 
 const mockData = [
     {
-        lx: '主站',
-        mc:'登录地址',
+        lx: 'Oracle',
+        mc:'192.168.0.219',
         ren:'刘威',
         riqi:'2019年7月12日',
-        ml:'登录',
-        wz:'http://youxi.com#/./login',
+        ml:'E:-备份-2019-08-18 项目图片',
+        wz:'图片',
         process: 100,
         
     },
     {
-        lx: '副站',
-        mc:'注册地址',
+        lx: 'Sybase',
+        mc:'192.168.0.347',
         ren:'孟浩',
         riqi:'2019年7月02日',
-        ml:'注册',
-        wz:'http://youxi.com#/./zhuce',
+        ml:'E:-备份-2019-08-18 项目表格信息',
+        wz:'表格',
         process: 61,
         
     },
     {
-        lx: '主站',
-        mc:'人员管理地址',
+        lx: 'Oracle',
+        mc:'192.168.0.01',
         ren:'唐宇',
         riqi:'2019年7月13日',
-        ml:'人员管理',
-        wz:'http://youxi.com#/./renyuan',
+        ml:'E:-备份-2019-08-18 项目会议录音',
+        wz:'会议录音',
         process: 74,
         
     },
     {
-        lx: '副站',
-        mc:'权限管理地址',
+        lx: 'Sybase',
+        mc:'192.168.0.005',
         ren:'李白白',
         riqi:'2019年7月14日',
-        ml:'权限管理',
-        wz:'http://youxi.com#/./quanxian',
+        ml:'E:-备份-2019-08-18 项目会议记录',
+        wz:'会议记录',
         
     },
     {
-        lx: '副站',
-        mc:'密码修改地址',
+        lx: 'Sybase',
+        mc:'192.168.0.354',
         ren:'明楼',
         riqi:'2019年7月05日',
-        ml:'密码修改',
-        wz:'http://youxi.com#/./xiugai',
+        ml:'E:-备份-2019-08-18 工作日志',
+        wz:'工作日志',
         
     },
     {
-        lx: '副站',
-        mc:'添加用户地址',
+        lx: 'Sybase',
+        mc:'192.168.0.014',
         ren:'明玉',
         riqi:'2019年7月06日',
-        ml:'添加用户',
-        wz:'http://youxi.com/#/./add',
+        ml:'E:-备份-2019-08-18 项目相关人员信息',
+        wz:'相关人员信息 ',
         
     },
     {
-        lx: '主站',
-        mc:'操作地址',
+        lx: 'Oracle',
+        mc:'192.168.0.027',
         ren:'刘茵茵',
         riqi:'2019年7月07日',
-        ml:'操作',
-        wz:'http://youxi.com#/./caozuo',
+        ml:'E:-备份-2019-08-18 项目资料',
+        wz:'项目资料',
         
     },
     {
-        lx: '主站',
-        mc:'修改编辑地址',
+        lx: 'Oracle',
+        mc:'192.168.0.023',
         ren:'赵湾',
         riqi:'2019年7月08日',
-        ml:'修改编辑',
-        wz:'http://youxi.com#/./xiugai',
+        ml:'E:-备份-2019-08-18 项目信息',
+        wz:'项目信息',
         
     },
     
@@ -105,31 +105,31 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'URL类型',
+            title: '数据库类型',
             dataIndex: 'lx',
             
         },
         {
-            title: 'URL名称',
+            title: '主站IP',
             dataIndex: 'mc',
         },
        
 
         {
-            title: '创建日期',
+            title: '备份日期',
             dataIndex: 'riqi',
         },
         {
-            title: '网址',
+            title: '备份类型',
             dataIndex: 'wz',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: 'URL目录',
+            title: '备份存放路径',
             dataIndex: 'ml',
         },
         {
-            title: '创建人',
+            title: '备份操作人',
             dataIndex: 'ren',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
@@ -160,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="URL管理"
+                title="备份任务管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

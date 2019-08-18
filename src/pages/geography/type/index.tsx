@@ -81,6 +81,7 @@ const mockData = [
          dx:'3654kb',
          rq:'2019年6月14日09:54:53',
          jc:'快检通过',
+         status:'23',
       },
      
 ]
@@ -121,6 +122,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'jc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
+        {
+            title: '备份恢复进度',
+            dataIndex: 'status',
+            render: (text) => <Progress percent={text} status="active" />,
+          },
         {
             title: '操作',
             render: (text, record) => (

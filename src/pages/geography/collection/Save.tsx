@@ -35,7 +35,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑URL过滤管理"
+                title="编辑数据信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,47 +52,47 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="栏目名称" >
+                    <Form.Item key="mc" label="名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bm" label="上级编码" >
+                    <Form.Item key="bm" label="保管期限" >
                         {getFieldDecorator('bm', {
                             initialValue: currentItem.bm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="px" label="同级排序" >
+                    <Form.Item key="px" label="档号" >
                         {getFieldDecorator('px', {
                             initialValue: currentItem.px,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lj" label="外部链接" >
+                    <Form.Item key="lj" label="备份日期" >
                         {getFieldDecorator('lj', {
                             initialValue: currentItem.lj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nr" label="内容类型" >
+                    <Form.Item key="nr" label="数据类型" >
                         {getFieldDecorator('nr', {
                             initialValue: currentItem.nr,
                         })(
                             <Radio.Group >
-                                <Radio value={1}>文章</Radio>
+                                <Radio value={1}>txt</Radio>
                                 <Radio value={2}>相册</Radio>
                                 <Radio value={3}>视频</Radio>
                                 <Radio value={4}>链接</Radio>
                             </Radio.Group >
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="过滤进度(%)" >
+                    <Form.Item key="status" label="备份进度(%)" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(

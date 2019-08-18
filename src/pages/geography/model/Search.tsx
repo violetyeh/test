@@ -17,19 +17,19 @@ class Search extends Component<SearchProps, SearchState>{
             <Form layout='inline'>
                 <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                     <Col md={8} sm={24}>
-                        <Form.Item label="URL类型">
+                        <Form.Item label="数据库类型">
                             {getFieldDecorator('lx')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="URL名称">
+                        <Form.Item label="主站IP">
                             {getFieldDecorator('mc')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加URL</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加备份任务</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>

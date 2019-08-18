@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '过滤内容管理',
+          name: '数据管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: 'URL管理',
+          name: '备份任务管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: 'URL备份恢复管理',
+          name: '备份恢复管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

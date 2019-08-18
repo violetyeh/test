@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑URL信息"
+                title="编辑备份任务"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,45 +44,45 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="lx" label="URL类型" >
+                    <Form.Item key="lx" label="数据库类型" >
                         {getFieldDecorator('lx', {
                             initialValue: currentItem.lx,
                         })(
                                 <Radio.Group >
-                                  <Radio value={1}>主站</Radio>
-                                  <Radio value={2}>副站</Radio>
+                                  <Radio value={1}>Oracle</Radio>
+                                  <Radio value={2}>Sybase</Radio>
                                 </Radio.Group>
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="URL名称" >
+                    <Form.Item key="mc" label="主站IP" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="创建人" >
+                    <Form.Item key="ren" label="备份操作人" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="创建日期" >
+                    <Form.Item key="riqi" label="备份日期" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="wz" label="网址" >
+                    <Form.Item key="wz" label="备份类型" >
                         {getFieldDecorator('wz', {
                             initialValue: currentItem.wz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ml" label="URL目录" >
+                    <Form.Item key="ml" label="备份存放路径" >
                         {getFieldDecorator('ml', {
                             initialValue: currentItem.ml,
                         })(

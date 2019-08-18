@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'URL过滤管理软件',
+  title: '华云云备份管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
