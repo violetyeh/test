@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品中动物源性成分分析系统',
+  title: '华云PKS管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

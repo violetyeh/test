@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,68 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'CFFX0201',
-        tongdao:'GWYX025606分析通道',
-        touguang:'0.39',
-        duizhao:'全果',
+        id: 'ZJ11101',
+        tongdao:'ZJ00606生产质检通道',
+        touguang:'进货入库检验',
+        duizhao:'让步放行',
         shijian:'13分钟',
         state: '启用',
+        jd:'23',
     },
     {
-        id: 'CFFX0202',
-        tongdao:'GWYX025679分析通道',
-        touguang:'0.54',
-        duizhao:'整粒',
+        id: 'ZJ11102',
+        tongdao:'ZJ00679生产质检通道',
+        touguang:'生产过程检验',
+        duizhao:'合格入库',
         shijian:'4分钟',
         state: '启用',
+        jd:'69',
     },
     {
-        id: 'CFFX0203',
-        tongdao:'GWYX025684分析通道',
-        touguang:'0.06',
-        duizhao:'整体',
+        id: 'ZJ11103',
+        tongdao:'ZJ00684生产质检通道',
+        touguang:'成品入库检验',
+        duizhao:'不合格退货',
         shijian:'3分钟',
         state: '启用',
+        jd:'100',
     },
     {
-        id: 'CFFX0204',
-        tongdao:'GWYX025963分析通道',
-        touguang:'0.27',
-        duizhao:'三分之一',
+        id: 'ZJ11104',
+        tongdao:'ZJ00963生产质检通道',
+        touguang:'成品出库检验',
+        duizhao:'不合格退货',
         shijian:'5分钟',
         state: '启用',
+        jd:'54',
     },
     {
-        id: 'CFFX0205',
-        tongdao:'GWYX025765分析通道',
-        touguang:'0.46',
-        duizhao:'十分之一',
+        id: 'ZJ11105',
+        tongdao:'ZJ00765生产质检通道',
+        touguang:'成品出库检验',
+        duizhao:'合格入库',
         shijian:'4分钟',
         state: '启用',
+        jd:'69',
     },
     {
-        id: 'CFFX0206',
-        tongdao:'GWYX0256395分析通道',
-        touguang:'0.23',
-        duizhao:'整体',
+        id: 'ZJ11106',
+        tongdao:'ZJ006395生产质检通道',
+        touguang:'成品入库检验',
+        duizhao:'不合格退货',
         shijian:'7分钟',
         state: '启用',
+        jd:'77',
     },
     {
-        id: 'CFFX0207',
-        tongdao:'GWYX025363分析通道',
-        touguang:'0.12',
-        duizhao:'二十分之一',
+        id: 'ZJ11107',
+        tongdao:'ZJ00363生产质检通道',
+        touguang:'生产过程检验',
+        duizhao:'合格入库',
         shijian:'3分钟',
         state: '启用',
+        jd:'62',
     },
     {
-        id: 'CFFX0208',
-        tongdao:'GWYX025854分析通道',
-        touguang:'0.36',
-        duizhao:'全果',
+        id: 'ZJ11108',
+        tongdao:'ZJ00854生产质检通道',
+        touguang:'进货入库检验',
+        duizhao:'让步放行',
         shijian:'10分钟',
         state: '启用',
+        jd:'84',
     },
     
 ]
@@ -99,25 +107,32 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '分析编号',
+            title: '生产质检编号',
             dataIndex: 'id',
         },
         {
-            title: '分析通道',
+            title: '生产质检通道',
             dataIndex: 'tongdao',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '限量（mg/kg）',
+            title: '质检名称',
             dataIndex: 'touguang',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '测定部位',
+            title: '操作',
             dataIndex: 'duizhao',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '分析时间',
+            title: '生产质检时间',
             dataIndex: 'shijian',
+        },
+        {
+            title: '生产质检进度',
+            dataIndex: 'jd',
+            render: (text) => <Progress percent={text} status="active" />,
         },
 
         {
@@ -149,7 +164,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="成分分析管理"
+                title="生产质检管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

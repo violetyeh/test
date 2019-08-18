@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分析数据"
+                title="编辑质检数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,37 +44,44 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="分析编号" >
+                    <Form.Item key="id" label="生产质检编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="分析通道" >
+                    <Form.Item key="tongdao" label="生产质检通道" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="touguang" label="限量（mg/kg）" >
+                    <Form.Item key="touguang" label="质检名称" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="测定部位" >
+                    <Form.Item key="duizhao" label="操作" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijain" label="分析时间" >
+                    <Form.Item key="shijain" label="生产质检时间" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jd" label="生产质检进度（%）" >
+                        {getFieldDecorator('jdn', {
+                            initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
