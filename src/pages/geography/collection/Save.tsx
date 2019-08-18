@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙任务信息"
+                title="编辑开发任务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="任务序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -58,14 +58,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="目标IP" >
+                    <Form.Item key="mc" label="IP地址" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="攻击类型" >
+                    <Form.Item key="ma" label="开发项目维护类型" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,16 +73,23 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="执行者" >
+                    <Form.Item key="nl" label="管理员" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dbz" label="任务状态" >
+                    <Form.Item key="dbz" label="维护状态" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jd" label="维护进度（%）" >
+                        {getFieldDecorator('jd', {
+                            initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}

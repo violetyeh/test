@@ -19,7 +19,7 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'LDSM30121',
+       id: 'KFLD000001',
        mc:'高',
        gg:'CVE-2019-023',
        hz:'This error occurred during the build time and cannot be dismissed.',
@@ -27,7 +27,7 @@ const mockData = [
        state: 1,
     },
     {
-        id: 'LDSM30122',
+        id: 'KFLD000002',
         mc:'中',
         gg:'CVE-2019-016',
         hz:'This screen is visible only in development.',
@@ -35,7 +35,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30123',
+        id: 'KFLD000003',
         mc:'低',
         gg:'CVE-2019-065',
         hz:' It will not appear if the app crashes in production.',
@@ -43,7 +43,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30124',
+        id: 'KFLD000004',
         mc:'高',
         gg:'CVE-2019-071',
         hz:'This error occurred during the build time and cannot be dismissed.',
@@ -51,7 +51,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30125',
+        id: 'KFLD000005',
         mc:'高',
         gg:'CVE-2019-005',
         hz:'This screen is visible only in development.',
@@ -59,7 +59,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30126',
+        id: 'KFLD000006',
         mc:'中',
         gg:'CVE-2019-004',
         hz:'It will not appear if the app crashes in production.',
@@ -67,7 +67,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30127',
+        id: 'KFLD000007',
         mc:'低',
         gg:'CVE-2019-036',
         hz:'This error occurred during the build time and cannot be dismissed.',
@@ -75,7 +75,7 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'LDSM30128',
+        id: 'KFLD000008',
         mc:'低',
         gg:'CVE-2019-041',
         hz:'It will not appear if the app crashes in production.',
@@ -99,9 +99,9 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '漏洞等级',
+            title: '开发漏洞等级',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="#cc2222">{text}</Tag>,
         },
         {
             title: '漏洞VCE ID',
@@ -110,6 +110,7 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '漏洞描述',
             dataIndex: 'hz',
+            render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
             title: '漏洞扫描进度',
@@ -148,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="漏洞扫描管理"
+                title="开发漏洞扫描管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

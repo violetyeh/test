@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message, DatePicker } from "antd";
+import { Form, Modal, Input, message, DatePicker, Radio } from "antd";
 import { ForcfomponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑主机扫描信息"
+                title="编辑开发运营信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -47,6 +47,13 @@ class Save extends Component<SaveProps, SaveState>{
                     <Form.Item key="id" label="序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mc" label="开发项目名称" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
@@ -79,11 +86,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="报告是否提交" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
-                            <Input />,
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">是</Radio.Button>
+                                <Radio.Button value="b">否</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                     

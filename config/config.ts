@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '防火墙任务管理',
+          name: '开发维护任务管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '主机信息扫描报告',
+          name: '开发运营信息报告',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '漏洞扫描报告',
+          name: '开发漏洞扫描',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

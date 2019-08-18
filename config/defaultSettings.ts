@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙软件',
+  title: '华云DevOps管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

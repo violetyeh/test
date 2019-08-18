@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑漏洞扫描信息"
+                title="编辑开发漏洞信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="漏洞等级" >
+                    <Form.Item key="mc" label="开发漏洞等级" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
