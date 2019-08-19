@@ -23,23 +23,23 @@ const mockData = [
        hj:'是',
        mc:'默认',
        bs:'88%',
-       bcy:'高品质',
+       bcy:'是',
        state: 1,
     },
     {
         id: 'YM02149',
         hj:'否',
-        mc:'自动显示菜单',
+        mc:'自动分析操作',
         bs:'100%',
-        bcy:'低品质',
+        bcy:'否',
         state: 1,
      },
      {
         id: 'YM02136',
         hj:'是',
-        mc:'点击显示菜单',
-        bs:'默认',
-        bcy:'高品质',
+        mc:'点击分析操作',
+        bs:'69%',
+        bcy:'是',
         state: 1,
      },
      {
@@ -47,23 +47,23 @@ const mockData = [
         hj:'人工操作',
         mc:'默认',
         bs:'100%',
-        bcy:'低品质',
+        bcy:'否',
         state: 1,
      },
      {
         id: 'YM02122',
         hj:'是',
-        mc:'默认显示菜单',
-        bs:'120%',
-        bcy:'低品质',
+        mc:'默认分析操作',
+        bs:'89%',
+        bcy:'否',
         state: 1,
      },
      {
         id: 'YM02147',
         hj:'是',
-        mc:'点击显示菜单',
-        bs:'110%',
-        bcy:'高品质',
+        mc:'点击分析操作',
+        bs:'86%',
+        bcy:'是',
         state: 1,
      },
      {
@@ -71,15 +71,15 @@ const mockData = [
         hj:'否',
         mc:'默认',
         bs:'80%',
-        bcy:'低品质',
+        bcy:'否',
         state: 1,
      },
      {
         id: 'YM02112',
         hj:'是',
-        mc:'点击显示菜单',
-        bs:'默认',
-        bcy:'低品质',
+        mc:'点击分析操作',
+        bs:'69%',
+        bcy:'否',
         state: 1,
      },
 ]
@@ -98,23 +98,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '自动播放',
+            title: '大数据自动采集',
             dataIndex: 'hj',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '完整菜单',
+            title: '分析设置',
             dataIndex: 'mc',
             render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '视窗模式',
+            title: '采集分析进度',
             dataIndex: 'bs',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '品质',
+            title: '采集是否完成',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="页面数据设置"
+                title="数据采集设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

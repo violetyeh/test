@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="页面数据设置"
+                title="数据采集设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="自动播放" >
+                    <Form.Item key="hj" label="大数据自动采集" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="完整菜单" >
+                    <Form.Item key="mc" label="分析设置" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bs" label="视窗模式" >
+                    <Form.Item key="bs" label="采集分析进度" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="品质" >
+                    <Form.Item key="bcy" label="采集是否完成" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(

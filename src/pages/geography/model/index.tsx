@@ -19,6 +19,33 @@ interface ModelState {
 
 const mockData = [
     {
+        hj: '链接型',
+        dw:'www.lianjie.com',
+        ren:'明玉',
+        riqi:'链接内容页面',
+        qk:'张明',
+        process: 66,
+        
+    },
+    {
+        hj: '新闻型',
+        dw:'www.xinwen.com',
+        ren:'刘茵茵',
+        riqi:'新闻内容页面',
+        qk:'钱明',
+        process: 78,
+        
+    },
+    {
+        hj: '网页型',
+        dw:'www.wangye.com',
+        ren:'赵湾',
+        riqi:'网页内容页面',
+        qk:'李大发',
+        process: 56,
+        
+    },
+    {
         hj: '新闻型',
         dw:'www.xinwen.com',
         ren:'刘威',
@@ -63,33 +90,7 @@ const mockData = [
         process: 42,
         
     },
-    {
-        hj: '链接型',
-        dw:'www.lianjie.com',
-        ren:'明玉',
-        riqi:'链接内容页面',
-        qk:'张明',
-        process: 66,
-        
-    },
-    {
-        hj: '新闻型',
-        dw:'www.xinwen.com',
-        ren:'刘茵茵',
-        riqi:'新闻内容页面',
-        qk:'钱明',
-        process: 78,
-        
-    },
-    {
-        hj: '网页型',
-        dw:'www.wangye.com',
-        ren:'赵湾',
-        riqi:'网页内容页面',
-        qk:'李大发',
-        process: 56,
-        
-    },
+    
     
 ]
 
@@ -102,30 +103,30 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '栏目状态',
+            title: '状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
         },
         {
-            title: '信息类型',
+            title: '数据信息类型',
             dataIndex: 'hj',
         },
         {
-            title: '链接地址',
+            title: '数据链接地址',
             dataIndex: 'dw',
         },
         {
-            title: '发布人员',
+            title: '数据采集负责人员',
             dataIndex: 'ren',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '内容模板',
+            title: '数据详细页面',
             dataIndex: 'riqi',
         },
         {
-            title: '审核人员',
+            title: '数据分析负责人员',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
@@ -161,7 +162,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="数据信息管理"
+                title="数据详细管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '模板管理',
+          name: '大数据采集来源管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '信息管理',
+          name: '数据详细管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '页面数据设置',
+          name: '数据采集设置',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

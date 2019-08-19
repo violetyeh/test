@@ -24,64 +24,64 @@ interface TypeState {
 const mockData = [
     {
         id: 'MBGL064',
-        xm:'网站头部',
-        jg:'head',
+        xm:'用户信息',
+        jg:'find',
         dw:'head.html',
         pd:'2019年7月14日',
         state: '启用',
     },
     {
         id: 'MBGL065',
-        xm:'网站底部',
-        jg:'bottom',
+        xm:'网页浏览量',
+        jg:'search',
         dw:'bottom.html',
         pd:'2019年6月14日',
         state: '启用',
     },
     {
         id: 'MBGL066',
-        xm:'网站子菜单',
-        jg:'nav',
+        xm:'新用户量',
+        jg:'find',
         dw:'nav.html',
         pd:'2019年7月12日',
         state: '启用',
     },
     {
         id: 'MBGL067',
-        xm:'网站首页',
-        jg:'index',
+        xm:'用户年龄段',
+        jg:'find',
         dw:'index.html',
         pd:'2019年7月06日',
         state: '启用',
     },
     {
         id: 'MBGL068',
-        xm:'默认内页',
-        jg:'neiye',
+        xm:'用户购买意愿',
+        jg:'search',
         dw:'neiye.html',
         pd:'2019年7月04日',
         state: '启用',
     },
     {
         id: 'MBGL061',
-        xm:'搜索结果',
-        jg:'jieguo',
+        xm:'购买人数',
+        jg:'search',
         dw:'jieguo.html',
         pd:'2019年7月09日',
         state: '启用',
     },
     {
         id: 'MBGL062',
-        xm:'默认按钮',
-        jg:'anniu',
+        xm:'浏览页面10分钟以上',
+        jg:'search',
         dw:'anniu.html',
         pd:'2019年7月10日',
         state: '启用',
     },
     {
         id: 'MBGL063',
-        xm:'默认跳转',
-        jg:'tiaozhuan',
+        xm:'用户注册量',
+        jg:'find',
         dw:'tiaozhuan.html',
         pd:'2019年7月07日',
         state: '启用',
@@ -104,20 +104,21 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '模板标题',
+            title: '大数据信息',
             dataIndex: 'xm',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '调用标识',
+            title: '采集标识',
             dataIndex: 'jg',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '模板文件',
+            title: '采集来源',
             dataIndex: 'dw',
         },
         {
-            title: '最后修改日期',
+            title: '采集日期',
             dataIndex: 'pd',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
@@ -151,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="模板管理"
+                title="大数据采集来源管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
