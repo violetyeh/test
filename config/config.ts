@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '食品成分表维护',
+          name: '订单维护',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '能量与营养成分名称设置',
+          name: '订单数据设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '营养标签分析数据管理',
+          name: '订单计费管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

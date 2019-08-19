@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '食品营养标签成分分析系统',
+  title: 'IDC自动订单计费系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

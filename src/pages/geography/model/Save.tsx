@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑能量与营养成分名称"
+                title="设置订单数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,42 +51,42 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="能量和营养成分" >
+                    <Form.Item key="cf" label="预约时间" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="简称" >
+                    <Form.Item key="jc" label="通知预约结束时间（分钟）" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="表达单位" >
+                    <Form.Item key="dw" label="机器名" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="修约间隔" >
+                    <Form.Item key="jg" label="网卡地址" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="'0'界限值（每100g或100ml）" >
+                    <Form.Item key="jx" label="IP地址" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhi" label="NRV值" >
+                    <Form.Item key="zhi" label="用户余额（元）" >
                         {getFieldDecorator('zhi', {
                             initialValue: currentItem.zhi,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑营养标签分析数据"
+                title="设置订单计费"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,49 +51,36 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="产品名称" >
+                    <Form.Item key="mc" label="电脑类别" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="产品规格" >
+                    <Form.Item key="gg" label="计费（小时/元）" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="营养汇总" >
+                    <Form.Item key="hz" label="上机实时数量" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="每百克营养" >
+                    <Form.Item key="yy" label="每小时用户变化量（人数）" >
                         {getFieldDecorator('yy', {
                             initialValue: currentItem.yy,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhi" label="NRV值" >
-                        {getFieldDecorator('zhi', {
-                            initialValue: currentItem.zhi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="wc" label="允许误差" >
-                        {getFieldDecorator('wc', {
-                            initialValue: currentItem.wc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jd" label="检测结果进度（%）" >
+                   
+                    <Form.Item key="jd" label="上机占比（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
