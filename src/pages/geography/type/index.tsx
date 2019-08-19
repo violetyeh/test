@@ -19,68 +19,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: '已经格式化',
-        yaosu: '正常',
+        id: 'S-A-N-1292',
+        fenlei: '不在线',
+        yaosu: '是',
         state: '启用',
-        pinlv: 53,
-        sj:'500分钟',
+        pinlv: '0x75FDFS5DF4G',
+        sj:'3500',
     },
     {
-        id: 'SER8201',
-        fenlei: '未格式化 ',
-        yaosu: '警告',
+        id: 'S-A-N-8201',
+        fenlei: '在线 ',
+        yaosu: '是',
         state: '启用',
-        pinlv: 64,
-        sj:'600分钟',
+        pinlv: '0xX9C8DFS5SDF',
+        sj:'2500',
     },
     {
-        id: 'SER3921',
-        fenlei: '使用中',
-        yaosu: '异常',
+        id: 'S-A-N-3921',
+        fenlei: '在线',
+        yaosu: '否',
         state: '启用',
-        pinlv: 92,
-        sj:'800分钟',
+        pinlv: '0x7XDF5DSX2C',
+        sj:'1500',
     },
     {
-        id: 'SER0029',
-        fenlei: '已经格式化',
-        yaosu: '正常',
+        id: 'S-A-N-0029',
+        fenlei: '不在线',
+        yaosu: '是',
         state: '启用',
-        pinlv: 82,
-        sj:'600分钟',
+        pinlv: '0x63XC4D5DS5F',
+        sj:'1600',
     },
     {
-        id: 'SER2191',
-        fenlei: '未格式化',
-        yaosu: '异常',
+        id: 'S-A-N-2191',
+        fenlei: '在线',
+        yaosu: '否',
         state: '启用',
-        pinlv: 19,
-        sj:'800分钟',
+        pinlv: '0x34ASWDVC85',
+        sj:'2800',
     },
     {
-        id: 'SER3321',
-        fenlei: '使用中',
-        yaosu: '正常',
+        id: 'S-A-N-3321',
+        fenlei: '在线',
+        yaosu: '是',
         state: '启用',
-        pinlv: 63,
-        sj:'600分钟',
+        pinlv: '0xA8S9DS5D2F',
+        sj:'1600',
     },
     {
-        id: 'SER2136',
-        fenlei: '已经格式化',
-        yaosu: '异常',
+        id: 'S-A-N-2136',
+        fenlei: '不在线',
+        yaosu: '否',
         state: '启用',
-        pinlv: 19,
-        sj:'800分钟',
+        pinlv: '0x73ADF56D5202S',
+        sj:'8500',
     },
     {
-        id: 'SER3354',
-        fenlei: '已经格式化',
-        yaosu: '正常',
+        id: 'S-A-N-3354',
+        fenlei: '不在线',
+        yaosu: '是',
         state: '启用',
-        pinlv: 54,
-        sj:'600分钟',
+        pinlv: '0x73A5D6FD52X4F',
+        sj:'6050',
     },
 ]
 
@@ -97,34 +97,29 @@ class Type extends Component<TypeProps, TypeState>{
             title: '编号',
             dataIndex: 'id',
         },
+       
+        {
+            title: 'GUID',
+            dataIndex: 'pinlv',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
+        },
+        {
+            title: '是否分配',
+            dataIndex: 'yaosu',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        {
+            title: '容量(GB)',
+            dataIndex: 'sj',
+        }, 
         {
             title: '状态',
             dataIndex: 'fenlei',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
-        {
-            title: '监控进度',
-            dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
-        },
-        {
-            title: '容量状态',
-            dataIndex: 'yaosu',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
-        },
-        {
-            title: '容量宽限时间',
-            dataIndex: 'sj',
-        },
 
         {
-            title: '是否启用',
+            title: '永久保留',
             dataIndex: 'status',
             render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
         },
@@ -155,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="数据中心配额管理"
+                title="数据资源属性管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑卷组监控信息"
+                title="编辑存储池信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="型号" >
+                    <Form.Item key="pinlv" label="名称" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="状态" >
+                    <Form.Item key="date" label="物理卷" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="物理容量（MB）" >
-                        {getFieldDecorator('model', {
-                            initialValue: currentItem.model,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="type" label="容量（MB）" >
+                    <Form.Item key="type" label="数据中心块大小（M）" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="可用容量空间（%）" >
+                    <Form.Item key="process" label="存储池空间（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

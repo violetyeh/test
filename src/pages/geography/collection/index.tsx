@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,76 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
+        id: 'SJ-CC-01',
         jishu: '15',
-        fenceng: '16',
-        leixing: '12',
+        fenceng: '2000.5666MB',
+        leixing: '1200.3210MB',
         name:'30',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'2.50GHz',
     },
     {
-        id: 'D0002',
-        jishu: '20',
-        fenceng: '20',
-        leixing: '14',
+        id: 'SJ-CC-02',
+        jishu: '27',
+        fenceng: '2014.2145MB',
+        leixing: '1436.3589MB',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv02',
+        lg:'3.00GHz',
     },
     {
-        id: 'D0003',
-        jishu: '25',
-        fenceng: '14',
-        leixing: '10',
+        id: 'SJ-CC-03',
+        jishu: '27',
+        fenceng: '1064.2347MB',
+        leixing: '1078.3654MB',
         name:'16',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'0.50GHz',
     },
     {
-        id: 'D0004',
+        id: 'SJ-CC-04',
         jishu: '15',
-        fenceng: '6',
-        leixing: '9',
+        fenceng: '6302.2142MB',
+        leixing: '1936.2415MB',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv03',
+        lg:'2.00GHz',
     },
     {
-        id: 'D0005',
-        jishu: '20',
-        fenceng: '5',
-        leixing: '9',
+        id: 'SJ-CC-05',
+        jishu: '25',
+        fenceng: '2312.2456MB',
+        leixing: '1232.6543MB',
         name:'10',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'1.50GHz',
     },
     {
-        id: 'D0006',
-        jishu: '10',
-        fenceng: '6',
-        leixing: '17',
+        id: 'SJ-CC-06',
+        jishu: '13',
+        fenceng: '2587.4235MB',
+        leixing: '3002.2542MB',
         name:'16',
         state: '启用',
-        lg:'逻辑卷 lv04',
+        lg:'3.50GHz',
     },
     {
-        id: 'D0007',
-        jishu: '15',
-        fenceng: '16',
-        leixing: '12',
+        id: 'SJ-CC-07',
+        jishu: '17',
+        fenceng: '1102.3625MB',
+        leixing: '1242.1258MB',
         name:'14',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'2.00GHz',
     },
     {
-        id: 'D0008',
-        jishu: '20',
-        fenceng: '12',
-        leixing: '10',
+        id: 'SJ-CC-08',
+        jishu: '24',
+        fenceng: '1258.6574MB',
+        leixing: '1018.3247MB',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv05',
+        lg:'2.50GHz',
     },
 ]
 
@@ -110,29 +110,30 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '逻辑卷',
+            title: '处理器主频',
             dataIndex: 'lg',
-            render: (text) => <Tag color="black">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
 
         },
         {
-            title: '端口号',
+            title: '处理器占用率',
             dataIndex: 'jishu',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '会话空闲超时（秒）',
+            title: '物理缓存',
             dataIndex: 'fenceng',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '数据空闲超时（秒）',
+            title: '空闲缓存',
             dataIndex: 'leixing',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '连接超时（秒）',
+            title: '缓存占用率',
             dataIndex: 'name',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
             title: '状态',
@@ -169,7 +170,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="数据中心设置管理"
+                title="数据存储接口设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

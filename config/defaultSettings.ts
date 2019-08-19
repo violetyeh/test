@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '数据中心智能监控软件',
+  title: '大数据存储多数据中心管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
