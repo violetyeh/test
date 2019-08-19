@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告投放信息"
+                title="编辑数据中心信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="广告商铺" >
+                    <Form.Item key="lg" label="逻辑卷" >
+                        {getFieldDecorator('lg', {
+                            initialValue: currentItem.lg,
+                        })(
+                            <Input/>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jishu" label="端口号" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="广告资源分类" >
+                    <Form.Item key="fenceng" label="会话空闲超时（秒）" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="求购信息" >
+                    <Form.Item key="leixing" label="数据空闲超时（秒）" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
@@ -73,7 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="name" label="自媒体项目代理" >
+                    <Form.Item key="name" label="连接超时（秒）" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(

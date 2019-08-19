@@ -20,59 +20,67 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: '东莞石龙国际电子城楼体LED屏广告',
-        yaosu: '广告人聚会',
+        fenlei: '已经格式化',
+        yaosu: '正常',
         state: '启用',
         pinlv: 53,
+        sj:'500分钟',
     },
     {
         id: 'SER8201',
-        fenlei: '包茂高速延安北出口单立柱广告 ',
-        yaosu: '广告人访谈',
+        fenlei: '未格式化 ',
+        yaosu: '警告',
         state: '启用',
         pinlv: 64,
+        sj:'600分钟',
     },
     {
         id: 'SER3921',
-        fenlei: '南航报纸航空旅游报广告',
-        yaosu: '广告人脉圈',
+        fenlei: '使用中',
+        yaosu: '异常',
         state: '启用',
         pinlv: 92,
+        sj:'800分钟',
     },
     {
         id: 'SER0029',
-        fenlei: '广东科技报（图文、软文广告）',
-        yaosu: '广告人招聘',
+        fenlei: '已经格式化',
+        yaosu: '正常',
         state: '启用',
         pinlv: 82,
+        sj:'600分钟',
     },
     {
         id: 'SER2191',
-        fenlei: '低价销售南方都市报所有版面的广告',
-        yaosu: '广告人脉圈',
+        fenlei: '未格式化',
+        yaosu: '异常',
         state: '启用',
         pinlv: 19,
+        sj:'800分钟',
     },
     {
         id: 'SER3321',
-        fenlei: '石家庄双面广告塔量身定制',
-        yaosu: '广告人招聘',
+        fenlei: '使用中',
+        yaosu: '正常',
         state: '启用',
         pinlv: 63,
+        sj:'600分钟',
     },
     {
         id: 'SER2136',
-        fenlei: '南京数字有线电视epg广告资源供应',
-        yaosu: '广告人脉圈',
+        fenlei: '已经格式化',
+        yaosu: '异常',
         state: '启用',
         pinlv: 19,
+        sj:'800分钟',
     },
     {
         id: 'SER3354',
-        fenlei: '苏州小区宣传栏广告媒体',
-        yaosu: '广告人招聘',
+        fenlei: '已经格式化',
+        yaosu: '正常',
         state: '启用',
         pinlv: 54,
+        sj:'600分钟',
     },
 ]
 
@@ -90,11 +98,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告推广服务名称',
+            title: '状态',
             dataIndex: 'fenlei',
+            render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '服务进度',
+            title: '监控进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -105,8 +114,13 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '广告圈子',
+            title: '容量状态',
             dataIndex: 'yaosu',
+            render: (text) => <Tag color="#f50">{text}</Tag>,
+        },
+        {
+            title: '容量宽限时间',
+            dataIndex: 'sj',
         },
 
         {
@@ -141,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="广告推广服务管理"
+                title="数据中心配额管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

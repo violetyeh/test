@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '广告投放推广平台',
+  title: '数据中心智能监控软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -24,67 +24,75 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: '户外广告公司',
-        fenceng: '户外/高速/地图',
-        leixing: '我要买广告',
-        name:'报纸广告在线采购',
+        jishu: '15',
+        fenceng: '16',
+        leixing: '12',
+        name:'30',
         state: '启用',
+        lg:'逻辑卷 lv01',
     },
     {
         id: 'D0002',
-        jishu: '电视广告公司',
-        fenceng: '电视/卫视/央视',
-        leixing: '求购信息大全',
-        name:'电视广告在线采购',
+        jishu: '20',
+        fenceng: '20',
+        leixing: '14',
+        name:'15',
         state: '启用',
+        lg:'逻辑卷 lv02',
     },
     {
         id: 'D0003',
-        jishu: '广播广告公司',
-        fenceng: '广播/交通/省广',
-        leixing: '我要买广告',
-        name:'广播广告在线采购',
+        jishu: '25',
+        fenceng: '14',
+        leixing: '10',
+        name:'16',
         state: '启用',
+        lg:'逻辑卷 lv01',
     },
     {
         id: 'D0004',
-        jishu: '报纸广告公司',
-        fenceng: '报纸/晚报/北京',
-        leixing: '求购信息大全',
-        name:'报纸广告在线采购',
+        jishu: '15',
+        fenceng: '6',
+        leixing: '9',
+        name:'15',
         state: '启用',
+        lg:'逻辑卷 lv03',
     },
     {
         id: 'D0005',
-        jishu: '杂志广告公司',
-        fenceng: '杂志/航机/时尚',
-        leixing: '我要买广告',
-        name:'户外广告在线采购',
+        jishu: '20',
+        fenceng: '5',
+        leixing: '9',
+        name:'10',
         state: '启用',
+        lg:'逻辑卷 lv01',
     },
     {
         id: 'D0006',
-        jishu: '广告制作公司',
-        fenceng: 'LED/屏主/广告主',
-        leixing: '发布广告求购',
-        name:'报纸广告在线采购',
+        jishu: '10',
+        fenceng: '6',
+        leixing: '17',
+        name:'16',
         state: '启用',
+        lg:'逻辑卷 lv04',
     },
     {
         id: 'D0007',
-        jishu: '广告策划公司',
-        fenceng: '网络广告/DSP',
-        leixing: '求购信息大全',
-        name:'电视广告在线采购',
+        jishu: '15',
+        fenceng: '16',
+        leixing: '12',
+        name:'14',
         state: '启用',
+        lg:'逻辑卷 lv01',
     },
     {
         id: 'D0008',
-        jishu: '广告设备公司',
-        fenceng: '自媒体/公众号/微博',
-        leixing: '求购信息大全',
-        name:'报纸广告在线采购',
+        jishu: '20',
+        fenceng: '12',
+        leixing: '10',
+        name:'15',
         state: '启用',
+        lg:'逻辑卷 lv05',
     },
 ]
 
@@ -102,22 +110,35 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告商铺',
+            title: '逻辑卷',
+            dataIndex: 'lg',
+            render: (text) => <Tag color="black">{text}</Tag>,
+
+        },
+        {
+            title: '端口号',
             dataIndex: 'jishu',
         },
         {
-            title: '广告资源分类',
+            title: '会话空闲超时（秒）',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '求购信息',
+            title: '数据空闲超时（秒）',
             dataIndex: 'leixing',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '自媒体项目代理',
+            title: '连接超时（秒）',
             dataIndex: 'name',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
+        {
+            title: '状态',
+            dataIndex: 'status',
+            render: (text) => <Switch checkedChildren="激活" unCheckedChildren="禁用" />,
+          },
 
         {
             title: '操作',
@@ -148,7 +169,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="广告投放管理"
+                title="数据中心设置管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

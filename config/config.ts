@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告投放管理',
+          name: '数据中心设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '广告推广渠道管理',
+          name: '卷组监控管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '广告推广服务管理',
+          name: '数据中心配额管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

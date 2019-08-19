@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告推广渠道信息"
+                title="编辑卷组监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,37 +44,44 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="渠道编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="广告渠道名称" >
+                    <Form.Item key="pinlv" label="型号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="渠道负责人" >
+                    <Form.Item key="date" label="状态" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="广告行业" >
+                    <Form.Item key="model" label="物理容量（MB）" >
                         {getFieldDecorator('model', {
                             initialValue: currentItem.model,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="推广类型" >
+                    <Form.Item key="type" label="容量（MB）" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="process" label="可用容量空间（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
