@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分类"
+                title="编辑应用实时数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="数据编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="测绘技术名称" >
+                    <Form.Item key="name" label="访问用户实时量" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="数据分层" >
+                    <Form.Item key="fenceng" label="用户类型" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="几何类型" >
+                    <Form.Item key="leixing" label="登录用户实时量" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="技术类型" >
+                    <Form.Item key="jishu" label="页面浏览实时量" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(

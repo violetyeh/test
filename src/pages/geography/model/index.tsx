@@ -19,54 +19,67 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'YIDS0191',
+        id: 'YH0020191',
+        date: '陈学',
+        model: 'android',
+        type: '47',
+        status: '启用',
+        pinlv: '中国',
+        process: 2,
+    },
+    {
+        id: 'YH0022SI1',
+        date: '杜小维',
+        model: 'iPhone',
+        type: '79',
+        status: '启用',
+        pinlv: '中国',
+        process: 6,
+    },
+    {
+        id: 'YH0020191',
         date: '陈光学',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '同多X，Y坐标，将地和物通过点、线、面方式进行表达',
+        model: 'WEB',
+        type: '102',
         status: '启用',
-        pinlv: 'AE1292微信推广渠道',
-        process: 30,
+        pinlv: '国外',
+        process: 3,
     },
     {
-        id: 'YIDS2SI1',
+        id: 'YH0022SI1',
         date: '杜维',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '用方格来模拟实体',
+        model: 'iPhone',
+        type: '66',
         status: '启用',
-        pinlv: 'AQ2837微信公众号推广渠道',
-        process: 88,
+        pinlv: '国外',
+        process: 8,
     },
     {
-        id: 'YIDS01IOS',
+        id: 'YH00201IOS',
         date: '陈鹏屹',
-        model: '人工测量',
-        type: '线下推广',
-        remark: '官方权威测绘和发布的数据',
+        model: 'android',
+        type: '100',
         status: '启用',
-        pinlv: 'AY72829线下推广渠道',
-        process: 90,
+        pinlv: '中国',
+        process: 9,
     },
     {
         id: 'YSIW9s1',
         date: '张磊',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '利用专业测绘仪器测绘数据所得',
+        model: 'iPhone',
+        type: '102',
         status: '启用',
-        pinlv: 'A1910百度推广渠道',
-        process: 70,
+        pinlv: '国外',
+        process: 7,
     },
     {
         id: 'YID80SJ',
         date: '陈芙蓉',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '卫星实时采集数据',
+        model: 'WEB',
+        type: '59',
         status: '启用',
-        pinlv: 'A29192广告推广渠道',
-        process: 67,
+        pinlv: '中国',
+        process: 6,
     },
 ]
 
@@ -83,26 +96,27 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '渠道名称',
+            title: '地区',
             dataIndex: 'pinlv',
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '渠道负责人',
+            title: '用户名',
             dataIndex: 'date',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '测绘技术类型',
+            title: '上次访问设备',
             dataIndex: 'model',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '推广类型',
+            title: '近30天访问次数',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '推广进度',
+            title: '用户活跃占比',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -138,7 +152,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广渠道管理"
+                title="用户轨迹查看"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

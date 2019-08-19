@@ -23,51 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
-        jishu: '人工测绘',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        name: '误差测量',
+        id: 'SSSJ02301',
+        jishu: '2300',
+        fenceng: '游客',
+        leixing: '1256',
+        name: '1201',
         state: '启用',
     },
     {
-        id: 'D0002',
-        jishu: '电子测绘',
-        fenceng: '居民地',
-        leixing: '面、点',
-        name: 'CNSS定位与测量',
+        id: 'SSSJ02302',
+        jishu: '1233',
+        fenceng: '应用新用户',
+        leixing: '1506',
+        name: '1024',
         state: '启用',
     },
     {
-        id: 'D0003',
-        jishu: '智能测绘',
-        fenceng: '铁路',
-        leixing: '线',
-        name: '计算机测绘',
+        id: 'SSSJ02303',
+        jishu: '1500',
+        fenceng: '应用老用户',
+        leixing: '1304',
+        name: '1204',
         state: '启用',
     },
     {
-        id: 'D0004',
-        jishu: '人工测绘',
-        fenceng: '公路',
-        leixing: '线',
-        name: '控制测量',
+        id: 'SSSJ02304',
+        jishu: '1623',
+        fenceng: '游客',
+        leixing: '1507',
+        name: '1299',
         state: '启用',
     },
     {
-        id: 'D0005',
-        jishu: '人工测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '数据测图',
+        id: 'SSSJ02305',
+        jishu: '1749',
+        fenceng: '应用新用户',
+        leixing: '1324',
+        name: '1105',
         state: '启用',
     },
     {
-        id: 'D0006',
-        jishu: '电子测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '工程测量',
+        id: 'SSSJ02306',
+        jishu: '1204',
+        fenceng: '应用老用户',
+        leixing: '1308',
+        name: '1058',
+        state: '启用',
+    },
+    {
+        id: 'SSSJ02307',
+        jishu: '1749',
+        fenceng: '应用新用户',
+        leixing: '1323',
+        name: '1127',
+        state: '启用',
+    },
+    {
+        id: 'SSSJ02308',
+        jishu: '1654',
+        fenceng: '应用老用户',
+        leixing: '1438',
+        name: '1518',
         state: '启用',
     },
 ]
@@ -82,24 +98,24 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '测绘技术名称',
+            title: '访问用户实时量',
             dataIndex: 'name',
         },
         {
-            title: '技术类型',
+            title: '登录用户实时量',
             dataIndex: 'jishu',
+        },
+        {
+            title: '用户类型',
+            dataIndex: 'fenceng',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据分层',
-            dataIndex: 'fenceng',
-        },
-        {
-            title: '几何类型',
+            title: '页面浏览实时量',
             dataIndex: 'leixing',
         },
 
@@ -132,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测绘技术管理"
+                title="实时用户管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

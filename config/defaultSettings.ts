@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '人脸识别门禁控制系统',
+  title: '大数据平台应用分析系统软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

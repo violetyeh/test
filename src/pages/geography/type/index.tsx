@@ -19,58 +19,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: '20190711水系测绘指导服务',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        yaosu: '湖泊、水库、双线河流等',
+        id: 'BL0230001023',
+        fenlei: 'register',
+        fenceng: '用户注册次数',
+        yaosu: '用户注册',
         state: '启用',
         pinlv: 80,
+        wd:'用户年龄段 注册渠道',
     },
     {
-        id: 'SER8201',
-        fenlei: '20190721高速公路测绘服务',
-        fenceng: '居民地',
-        leixing: '面、点',
-        yaosu: '湖泊、水库、双线河流等',
+        id: 'BL0230008201',
+        fenlei: 'order',
+        fenceng: '用户浏览产品页面的次数',
+        yaosu: '产品详情页面浏览',
         state: '启用',
         pinlv: 73,
+        wd:'产品ID 产品名称 产品类别',
     },
     {
-        id: 'SER3921',
-        fenlei: 'C1829铁路区间测绘服务',
-        fenceng: '铁路',
-        leixing: '线',
-        yaosu: '标准轨铁路、窄轨铁路',
+        id: 'BL0230001292',
+        fenlei: 'find',
+        fenceng: '用户查看应用主要功能',
+        yaosu: '功能查看',
+        state: '启用',
+        pinlv: 80,
+        wd:'产品ID 产品名称 ',
+    },
+    {
+        id: 'BL0230008201',
+        fenlei: 'test',
+        fenceng: '游客用户试用应用功能',
+        yaosu: '游客第一次使用应用',
+        state: '启用',
+        pinlv: 73,
+        wd:'产品ID 产品名称 产品类别',
+    },
+    {
+        id: 'BL0230003921',
+        fenlei: 'new',
+        fenceng: '老用户分享应用给新用户',
+        yaosu: '推荐新用户',
         state: '启用',
         pinlv: 92,
+        wd:'产品ID  产品类别',
     },
     {
-        id: 'SER0029',
-        fenlei: 'G318国道测绘项目服务',
-        fenceng: '公路',
-        leixing: '线',
-        yaosu: '国道、省道、县道、乡道、其他公路',
+        id: 'BL0230000029',
+        fenlei: 'use',
+        fenceng: '老用户使用应用',
+        yaosu: '应用使用频率',
         state: '启用',
         pinlv: 82,
+        wd:' 产品名称 产品类别',
     },
     {
-        id: 'SER2191',
-        fenlei: '重庆市测绘项目服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'BL0230002191',
+        fenlei: 'use',
+        fenceng: '游客再次使用应用',
+        yaosu: '游客使用',
         state: '启用',
         pinlv: 19,
+        wd:'产品ID 产品名称 ',
     },
     {
-        id: 'SER3321',
-        fenlei: '四川省测绘项目(B)服务',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        yaosu: '各级行政区、各级行政境界线',
+        id: 'BL0230003321',
+        fenlei: 'login',
+        fenceng: '游客注册登录应用',
+        yaosu: '新的用户使用应用',
         state: '启用',
         pinlv: 73,
+        wd:'产品ID  产品类别',
     },
 ]
 
@@ -88,11 +106,26 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '服务名称',
+            title: '标识符',
             dataIndex: 'fenlei',
         },
+       
         {
-            title: '服务进度',
+            title: '名称',
+            dataIndex: 'yaosu',
+            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
+        },
+        {
+            title: '描述',
+            dataIndex: 'fenceng',
+        },
+        {
+            title: '维度',
+            dataIndex: 'wd',
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
+        },
+        {
+            title: '用户变量占比',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -100,22 +133,7 @@ class Type extends Component<TypeProps, TypeState>{
                         <Progress percent={text} successPercent={text / 2} type="circle" />
                     </Tooltip>
                 </div>,
-
         },
-        {
-            title: '技术要素类型',
-            dataIndex: 'yaosu',
-        },
-        {
-            title: '负责人',
-            dataIndex: 'fenceng',
-            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
-        },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
-
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -148,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广服务管理"
+                title="应用级变量管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
