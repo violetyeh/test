@@ -19,53 +19,53 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: 'GGSJ广告系统架构设计',
+        id: 'TD-S-BC00092',
+        fenlei: 'GGSJ068线路调度设备',
         pinlv: 80,
-        yaosu: '系统操作不卡顿',
+        yaosu: '设备操作不卡顿',
         fenceng: '孟凡',
         state: '启用',
        
     },
     {
-        id: 'SER1271',
-        fenlei: 'GGSJ014广告系统架构设计',
+        id: 'TD-S-BC00071',
+        fenlei: 'GGSJ014网络调度设备',
         pinlv: 32,
-        yaosu: '系统操作流畅',
+        yaosu: '设备操作流畅',
         fenceng: '王石',
         state: '启用',
        
     },
     {
-        id: 'SER1228',
-        fenlei: 'GGSJ023广告系统架构设计',
+        id: 'TD-S-BC00028',
+        fenlei: 'GGSJ023电路调度设备',
         pinlv: 65,
-        yaosu: '系统操作不卡顿',
+        yaosu: '设备操作不卡顿',
         fenceng: '钱萌',
         state: '启用',
        
     },
     {
-        id: 'SER1264',
-        fenlei: 'GGSJ47广告系统架构设计',
+        id: 'TD-S-BC00064',
+        fenlei: 'GGSJ47交换调度设备',
         pinlv: 42,
-        yaosu: '按钮点击有效',
+        yaosu: '操作有效',
         fenceng: '张琼凡',
         state: '启用',
        
     },
     {
-        id: 'SER1278',
-        fenlei: 'GGSJ36广告系统架构设计',
+        id: 'TD-S-BC00078',
+        fenlei: 'GGSJ36线路调度设备',
         pinlv: 56,
-        yaosu: '系统操作不卡顿',
+        yaosu: '设备操作不卡顿',
         fenceng: '孟思三',
         state: '启用',
        
     },
     {
-        id: 'SER1226',
-        fenlei: 'GGSJ12广告系统架构设计',
+        id: 'TD-S-BC00026',
+        fenlei: 'GGSJ12网络调度设备',
         pinlv: 12,
         yaosu: '界面操作流畅',
         fenceng: '王思',
@@ -73,8 +73,8 @@ const mockData = [
        
     },
     {
-        id: 'SER1224',
-        fenlei: 'GGSJ09广告系统架构设计',
+        id: 'TD-S-BC00024',
+        fenlei: 'GGSJ09线路调度设备',
         pinlv: 26,
         yaosu: '界面操作不卡顿',
         fenceng: '陈思凡',
@@ -82,10 +82,10 @@ const mockData = [
        
     },
     {
-        id: 'SER1223',
-        fenlei: 'GGSJ05广告系统架构设计',
+        id: 'TD-S-BC00023',
+        fenlei: 'GGSJ05线路调度设备',
         pinlv: 33,
-        yaosu: '系统操作不卡顿',
+        yaosu: '设备操作不卡顿',
         fenceng: '张凡',
         state: '启用',
        
@@ -107,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '架构设计名称',
+            title: '调度设备名称',
             dataIndex: 'fenlei',
         },
         {
-            title: '架构进度',
+            title: '调度进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,19 +122,14 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '架构设计技术要素',
+            title: '调度设备状态',
             dataIndex: 'yaosu',
         },
         {
-            title: '负责人',
+            title: '调度负责人',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
-
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -167,7 +162,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="架构剖析管理"
+                title="调度设备管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

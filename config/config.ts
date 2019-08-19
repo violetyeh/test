@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告系统架构流程',
+          name: '多线路智能调度',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '广告系统架构设计',
+          name: '网络调度数据',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '广告系统架构剖析',
+          name: '调度设备管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

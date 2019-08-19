@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 架构信息: 280, 设计信息: 280, 架构价格: 2260, 总收益率: 12 },
-  { label: '0.2', 架构信息: 180, 设计信息: 180, 架构价格: 1300, 总收益率: 13 },
-  { label: '0.3', 架构信息: 950, 设计信息: 950, 架构价格: 900, 总收益率: 15 },
-  { label: '0.4', 架构信息: 500, 设计信息: 500, 架构价格: 390, 总收益率: 11 },
-  { label: '0.5', 架构信息: 170, 设计信息: 170, 架构价格: 1500, 总收益率: 23 },
-  { label: '0.6', 架构信息: 170, 设计信息: 170, 架构价格: 2010, 总收益率: 56 },
-  { label: '0.7', 架构信息: 170, 设计信息: 170, 架构价格: 1000, 总收益率: 17 },
-  { label: '0.8', 架构信息: 170, 设计信息: 170, 架构价格: 1000, 总收益率: 24 },
-  { label: '0.9', 架构信息: 170, 设计信息: 170, 架构价格: 1600, 总收益率: 16 },
-  { label: '1.0', 架构信息: 170, 设计信息: 170, 架构价格: 1500, 总收益率: 18 },
-  { label: '未评分', 架构信息: 170, 设计信息: 170, 架构价格: 100, 总收益率: 12 },
+  { label: '0.1', 调度信息: 280, 调度目标量: 280, 资源信息数据: 2260, 设备管理信息: 1022 },
+  { label: '0.2', 调度信息: 180, 调度目标量: 180, 资源信息数据: 1300, 设备管理信息: 1033 },
+  { label: '0.3', 调度信息: 950, 调度目标量: 950, 资源信息数据: 900, 设备管理信息: 515 },
+  { label: '0.4', 调度信息: 500, 调度目标量: 500, 资源信息数据: 390, 设备管理信息: 611 },
+  { label: '0.5', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1500, 设备管理信息: 723 },
+  { label: '0.6', 调度信息: 170, 调度目标量: 170, 资源信息数据: 2010, 设备管理信息: 456 },
+  { label: '0.7', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1000, 设备管理信息: 517 },
+  { label: '0.8', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1000, 设备管理信息: 624 },
+  { label: '0.9', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1600, 设备管理信息: 716 },
+  { label: '1.0', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1500, 设备管理信息: 418 },
+  { label: '未评分', 调度信息: 170, 调度目标量: 170, 资源信息数据: 100, 设备管理信息: 112 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['架构信息', '设计信息', '架构价格'], // 展开字段集
+  fields: ['调度信息', '调度目标量', '资源信息数据','设备管理信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  总收益率: {
+  设备管理信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '架构信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '设计信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '架构价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '总收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '调度信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '调度目标量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '资源信息数据', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '设备管理信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '总收益率') {
+              if (geom.getYScale().field === value && value === '设备管理信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '总收益率') {
+              } else if (geom.getYScale().field === 'value' && value !== '设备管理信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '放款应还本金') {
+            if (value === '调度数量') {
               return '#2b6cbb';
             }
-            if (value === '价格') {
+            if (value === '设备') {
               return '#41a2fc';
             }
-            if (value === '收益') {
+            if (value === '网络') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*总收益率" color="#fad248" size={3} />
+        <Geom type="line" position="label*设备管理信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Select, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,68 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
-        jishu: 'WZ12356JG架构广告位位置',
+        id: 'TD-ZOP00231',
+        jishu: 'WZ12356JG调度线路',
         fenceng: '张宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '电路调度',
+        name: '调度完成',
         state: '启用',
+        jd:'100',
     },
     {
-        id: 'D0002',
-        jishu: 'WZ16356JG架构广告位位置',
+        id: 'TD-ZOP00232',
+        jishu: 'WZ16356JG调度线路',
         fenceng: '孟凡',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '电路调度',
+        name: '调度中',
         state: '启用',
+        jd:'68',
     },
     {
-        id: 'D0003',
-        jishu: 'WZ12656JG架构广告位位置',
+        id: 'TD-ZOP00233',
+        jishu: 'WZ12656JG调度线路',
         fenceng: '程思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '基站调度',
+        name: '调度中',
         state: '启用',
+        jd:'43',
     },
     {
-        id: 'D0004',
-        jishu: 'WZ12746JG架构广告位位置',
+        id: 'TD-ZOP00234',
+        jishu: 'WZ12746JG调度线路',
         fenceng: '齐天',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '网络调度',
+        name: '调度完成',
         state: '启用',
+        jd:'100',
     },
     {
-        id: 'D0005',
-        jishu: 'WZ12366JG架构广告位位置',
+        id: 'TD-ZOP00235',
+        jishu: 'WZ12366JG调度线路',
         fenceng: '钱偲',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '线路调度',
+        name: '调度中',
         state: '启用',
+        jd:'79',
     },
     {
-        id: 'D0006',
-        jishu: 'WZ11256JG架构广告位位置',
+        id: 'TD-ZOP00236',
+        jishu: 'WZ11256JG调度线路',
         fenceng: '孟宇思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '网络调度',
+        name: '调度中',
         state: '启用',
+        jd:'19',
     },
     {
-        id: 'D0007',
-        jishu: 'WZ112JG架构广告位位置',
+        id: 'TD-ZOP00237',
+        jishu: 'WZ112JG调度线路',
         fenceng: '方艳',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '交换调度',
+        name: '未进行调度',
         state: '启用',
+        jd:'0',
     },
     {
-        id: 'D0008',
-        jishu: 'WZ11856JG架构广告位位置',
+        id: 'TD-ZOP00238',
+        jishu: 'WZ11856JG调度线路',
         fenceng: '姜宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '网络调度',
+        name: '调度中',
         state: '启用',
+        jd:'56',
     },
 ]
 
@@ -102,21 +110,28 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告主',
+            title: '调度负责人',
             dataIndex: 'fenceng',
         },
         {
-            title: '广告位',
+            title: '调度线路',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
+        
         {
-            title: '售卖类型',
-            dataIndex: 'name',
+            title: ' 调度类型',
+            dataIndex: 'leixing',
         },
         {
-            title: ' 广告样式',
-            dataIndex: 'leixing',
+            title: '处理状态',
+            dataIndex: 'name',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        {
+            title: '调度进度',
+            dataIndex: 'jd',
+            render: (text) => <Progress percent={text} status="active" />,
         },
 
         {
@@ -148,7 +163,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="架构技术管理"
+                title="多线路调度管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
