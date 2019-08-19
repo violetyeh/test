@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '精准广告投放系统',
+  title: '基础大数据智能获取配置管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
