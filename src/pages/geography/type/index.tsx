@@ -20,72 +20,72 @@ interface TypeState {
 const mockData = [
     {
         id: 'TD-S-BC00092',
-        fenlei: 'GGSJ068线路调度设备',
-        pinlv: 80,
-        yaosu: '设备操作不卡顿',
+        fenlei: '192.168.11.05',
+        pinlv: '80',
+        yaosu: '5',
         fenceng: '孟凡',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00071',
-        fenlei: 'GGSJ014网络调度设备',
-        pinlv: 32,
-        yaosu: '设备操作流畅',
+        fenlei: '192.168.03.06',
+        pinlv: '32',
+        yaosu: '2',
         fenceng: '王石',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00028',
-        fenlei: 'GGSJ023电路调度设备',
-        pinlv: 65,
-        yaosu: '设备操作不卡顿',
+        fenlei: '192.168.02.01',
+        pinlv: '65',
+        yaosu: '5',
         fenceng: '钱萌',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00064',
-        fenlei: 'GGSJ47交换调度设备',
-        pinlv: 42,
-        yaosu: '操作有效',
+        fenlei: '192.168.36.20',
+        pinlv: '42',
+        yaosu: '0.5',
         fenceng: '张琼凡',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00078',
-        fenlei: 'GGSJ36线路调度设备',
-        pinlv: 56,
-        yaosu: '设备操作不卡顿',
+        fenlei: '192.168.12.54',
+        pinlv: '56',
+        yaosu: '5',
         fenceng: '孟思三',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00026',
-        fenlei: 'GGSJ12网络调度设备',
-        pinlv: 12,
-        yaosu: '界面操作流畅',
+        fenlei: '192.168.23.64',
+        pinlv: '12',
+        yaosu: '1',
         fenceng: '王思',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00024',
-        fenlei: 'GGSJ09线路调度设备',
-        pinlv: 26,
-        yaosu: '界面操作不卡顿',
+        fenlei: '192.168.88.05',
+        pinlv: '26',
+        yaosu: '7',
         fenceng: '陈思凡',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00023',
-        fenlei: 'GGSJ05线路调度设备',
-        pinlv: 33,
-        yaosu: '设备操作不卡顿',
+        fenlei: '192.168.1.15',
+        pinlv: '33',
+        yaosu: '5',
         fenceng: '张凡',
         state: '启用',
        
@@ -107,26 +107,21 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '调度设备名称',
+            title: '地址',
             dataIndex: 'fenlei',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '调度进度',
+            title: '流量报警（Mbps）',
             dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
+           
         },
         {
-            title: '调度设备状态',
+            title: 'SYN频率报警（包/秒）',
             dataIndex: 'yaosu',
         },
         {
-            title: '调度负责人',
+            title: '管理员',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
@@ -162,7 +157,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="调度设备管理"
+                title="主机参数设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

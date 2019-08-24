@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'CDN智能调度系统',
+  title: '基于云计算的CDN抗拒绝服务系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '多线路智能调度',
+          name: '连接监控',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '网络调度数据',
+          name: '攻击日志',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '调度设备管理',
+          name: '主机参数设置',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

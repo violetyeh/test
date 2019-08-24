@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 调度信息: 280, 调度目标量: 280, 资源信息数据: 2260, 设备管理信息: 1022 },
-  { label: '0.2', 调度信息: 180, 调度目标量: 180, 资源信息数据: 1300, 设备管理信息: 1033 },
-  { label: '0.3', 调度信息: 950, 调度目标量: 950, 资源信息数据: 900, 设备管理信息: 515 },
-  { label: '0.4', 调度信息: 500, 调度目标量: 500, 资源信息数据: 390, 设备管理信息: 611 },
-  { label: '0.5', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1500, 设备管理信息: 723 },
-  { label: '0.6', 调度信息: 170, 调度目标量: 170, 资源信息数据: 2010, 设备管理信息: 456 },
-  { label: '0.7', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1000, 设备管理信息: 517 },
-  { label: '0.8', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1000, 设备管理信息: 624 },
-  { label: '0.9', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1600, 设备管理信息: 716 },
-  { label: '1.0', 调度信息: 170, 调度目标量: 170, 资源信息数据: 1500, 设备管理信息: 418 },
-  { label: '未评分', 调度信息: 170, 调度目标量: 170, 资源信息数据: 100, 设备管理信息: 112 },
+  { label: '0.1', 防护服务信息: 280, 防护服务目标量: 280, 攻击事件信息: 2260, 连接监控信息: 1022 },
+  { label: '0.2', 防护服务信息: 180, 防护服务目标量: 180, 攻击事件信息: 1300, 连接监控信息: 1033 },
+  { label: '0.3', 防护服务信息: 950, 防护服务目标量: 950, 攻击事件信息: 900, 连接监控信息: 515 },
+  { label: '0.4', 防护服务信息: 500, 防护服务目标量: 500, 攻击事件信息: 390, 连接监控信息: 611 },
+  { label: '0.5', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 1500, 连接监控信息: 723 },
+  { label: '0.6', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 201, 连接监控信息: 456 },
+  { label: '0.7', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 1000, 连接监控信息: 517 },
+  { label: '0.8', 防护服务信息: 566, 防护服务目标量: 366, 攻击事件信息: 1000, 连接监控信息: 624 },
+  { label: '0.9', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 1600, 连接监控信息: 716 },
+  { label: '1.0', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 1500, 连接监控信息: 418 },
+  { label: '未评分', 防护服务信息: 566, 防护服务目标量: 566, 攻击事件信息: 100, 连接监控信息: 112 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['调度信息', '调度目标量', '资源信息数据','设备管理信息'], // 展开字段集
+  fields: ['防护服务信息', '防护服务目标量', '攻击事件信息','连接监控信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  设备管理信息: {
+  连接监控信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '调度信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '调度目标量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '资源信息数据', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '设备管理信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '防护服务信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '防护服务目标量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '攻击事件信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '连接监控信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '设备管理信息') {
+              if (geom.getYScale().field === value && value === '连接监控信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '设备管理信息') {
+              } else if (geom.getYScale().field === 'value' && value !== '连接监控信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '调度数量') {
+            if (value === '防护服务数量') {
               return '#2b6cbb';
             }
-            if (value === '设备') {
+            if (value === '设备信息') {
               return '#41a2fc';
             }
-            if (value === '网络') {
+            if (value === '网络信息') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*设备管理信息" color="#fad248" size={3} />
+        <Geom type="line" position="label*连接监控信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );
