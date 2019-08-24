@@ -19,67 +19,67 @@ interface ModelState {
 
 const mockData = [
     {
-        id:'IPID006',
-        cf:'192.168.1.41',
+        id:'IPC-NUM-006',
+        cf:'10.100.200.1-10.100.200.200',
         dw:'255.255.255.0',
         jg:'192.168.1.058',
-        jx:'Auto Create Subnet',
+        jx:'eth1',
         status: '启用',
      },
      {
-       id:'IPID007',
-       cf:'192.168.1.08',
+       id:'IPC-NUM-007',
+       cf:'10.100.200.1-10.100.200.100',
        dw:'255.255.255.1',
        jg:'192.168.1.067',
-       jx:'Automatic Delete Subnet',
+       jx:'eth3',
        status: '启用',
     },
     {
-        id:'IPID008',
-        cf:'192.168.1.12',
+        id:'IPC-NUM-008',
+        cf:'10.100.200.1-10.100.200.150',
         dw:'255.255.255.0',
         jg:'192.168.1.047',
-        jx:'Automatically adding subnets',
+        jx:'eth6',
         status: '启用',
      },
     {
-       id:'IPID001',
-       cf:'192.168.1.28',
+       id:'IPC-NUM-001',
+       cf:'10.100.200.1-10.100.200.300',
        dw:'255.255.255.2',
        jg:'192.168.1.036',
-       jx:'Automatically adding subnet segments',
+       jx:'eth5',
        status: '启用',
     },
     {
-        id:'IPID002',
-        cf:'192.168.1.36',
+        id:'IPC-NUM-002',
+        cf:'10.100.200.1-10.100.200.220',
         dw:'255.255.255.1',
         jg:'192.168.1.05',
-        jx:'Automatic deletion of subnet segments',
+        jx:'eth4',
         status: '启用',
      },
      {
-        id:'IPID003',
-        cf:'192.168.1.115',
+        id:'IPC-NUM-003',
+        cf:'10.100.200.1-10.100.200.210',
         dw:'255.255.255.0',
         jg:'192.168.1.021',
-        jx:'Automatic Delete Subnet',
+        jx:'eth3',
         status: '启用',
      },
      {
-        id:'IPID004',
-        cf:'192.168.1.025',
+        id:'IPC-NUM-004',
+        cf:'10.100.200.1-10.100.200.210',
         dw:'255.255.255.1',
         jg:'192.168.1.023',
-        jx:'Automatically create subnet segments',
+        jx:'eth2',
         status: '启用',
      },
      {
-         id:'IPID005',
-         cf:'192.168.1.63',
+         id:'IPC-NUM-005',
+         cf:'10.100.200.1-10.100.200.200',
          dw:'255.255.255.0',
          jg:'192.168.1.108',
-         jx:'Auto Create Subnet',
+         jx:'eth1',
          status: '启用',
       },
 
@@ -98,24 +98,24 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: 'IP范围开始',
+            title: 'IP池',
             dataIndex: 'cf',
-            render: (text) => <Tag color="green">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: 'IP范围结束',
-            dataIndex: 'jg',
-            render: (text) => <Tag color="red">{text}</Tag>,
-        },
-        {
-            title: '描述',
-            dataIndex: 'jx',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
-        },
-        {
-            title: '掩码',
+            title: '子网掩码',
             dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="MAGENTA">{text}</Tag>,
+        },
+        {
+            title: '数据通讯口（VxLan）',
+            dataIndex: 'jx',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
+        },
+        {
+            title: '数据通信IP',
+            dataIndex: 'jg',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
             title: '是否启用',
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="IP管理"
+                title="IP池管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

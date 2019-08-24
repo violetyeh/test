@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑IP信息"
+                title="编辑IP池信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,34 +51,36 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP范围开始" >
+                    <Form.Item key="cf" label="IP池" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="IP范围结束" >
-                        {getFieldDecorator('jg', {
-                            initialValue: currentItem.jg,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jx" label="描述" >
-                        {getFieldDecorator('jx', {
-                            initialValue: currentItem.jx,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dw" label="掩码" >
+                    <Form.Item key="dw" label="子网掩码" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="jx" label="数据通讯口（VxLan）" >
+                        {getFieldDecorator('jx', {
+                            initialValue: currentItem.jx,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jg" label="数据通信IP" >
+                        {getFieldDecorator('jg', {
+                            initialValue: currentItem.jg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    
+                   
                     
                     
                     

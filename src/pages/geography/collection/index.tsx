@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag, Checkbox } from "antd";
+import { Divider, message, Card, Switch, Tag, Checkbox, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,60 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WL021',
+        id: 'STJ-ZT-NM-0021',
         fl:'00E74S5S5A6Z',
-        mc:'192.168.1.07',
-        ma:'192.168.1.107',
-        nl:'Cloud Times',
+        mc:'205 . 205 . 255 .07',
+        ma:'255 . 255 . 255 .107',
+        cpu:'67',
+        nc:'34',
+        io:'12',
     },
     {
-        id: 'WL035',
+        id: 'STJ-ZT-NM-0035',
         fl:'00E6F4D5S8E7',
-        mc:'192.168.1.05',
-        ma:'192.168.1.105',
-        nl:'Windows XP',
+        mc:'205 . 205 . 255 .05',
+        ma:'255 . 255 . 255 .105',
+        cpu:'56',
+        nc:'39',
+        io:'24',
     },
     {
-        id: 'WL038',
+        id: 'STJ-ZT-NM-0038',
         fl:'00E1A2A3X5D5',
-        mc:'192.168.1.33',
-        ma:'192.168.1.133',
-        nl:'Windows XP',
+        mc:'205 . 205 . 255 .33',
+        ma:'255 . 255 . 255 .133',
+        cpu:'27',
+        nc:'16',
+        io:'24',
     },
     {
-        id: 'WL021',
+        id: 'STJ-ZT-NM-0021',
         fl:'00E8A9Z6X5A2',
-        mc:'192.168.1.02',
-        ma:'192.168.1.102',
-        nl:'Windows XP',
+        mc:'200 . 200 . 255 .02',
+        ma:'255 . 255 . 255 .102',
+        cpu:'36',
+        nc:'22',
+        io:'17',
     },
     {
-        id: 'WL037',
+        id: 'STJ-ZT-NM-0037',
         fl:'00E5Z4A6D5S5',
-        mc:'192.168.1.42',
-        ma:'192.168.1.142',
-        nl:'Cloud Times',
+        mc:'200 . 200 . 255 .42',
+        ma:'255 . 255 . 255 .142',
+        cpu:'15',
+        nc:'24',
+        io:'6',
     },
     {
-        id: 'WL035',
+        id: 'STJ-ZT-NM-0035',
         fl:'00EC5V6D4S5A',
-        mc:'192.168.1.35',
-        ma:'192.168.1.635',
-        nl:'Cloud Times',
+        mc:'200 . 200 . 255 .35',
+        ma:'255 . 255 . 255 .635',
+        cpu:'25',
+        nc:'12',
+        io:'3',
     },
     {
-        id: 'WL064',
+        id: 'STJ-ZT-NM-0064',
         fl:'56ZZX2DS1W5D',
-        mc:'192.168.1.33',
-        ma:'192.168.1.733',
-        nl:'Cloud Times',
+        mc:'200 . 200 . 255 .33',
+        ma:'255 . 255 . 255 .733',
+        cpu:'36',
+        nc:'2',
+        io:'13',
     },
     {
-        id: 'WL078',
+        id: 'STJ-ZT-NM-0078',
         fl:'00E0423GD52S',
-        mc:'192.168.1.55',
-        ma:'192.168.1.255',
-        nl:'Windows XP',
+        mc:'200 . 200 . 255 .55',
+        ma:'255 . 255 . 255 .255',
+        cpu:'10',
+        nc:'34',
+        io:'5',
     },
     
 ]
@@ -96,33 +112,35 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: 'MAC地址',
+            title: '虚拟序列号',
             dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '集群IP',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '子网',
+            title: '子网掩码',
             dataIndex: 'ma',
         },
+        {
+            title: 'CPU',
+            dataIndex: 'cpu',
+            render: (text) => <Progress percent={text} status="active" />,
+        },
+        {
+            title: '内存',
+            dataIndex: 'nc',
+            render: (text) => <Progress percent={text} status="active" />,
+        },
+        {
+            title: 'I/O繁忙度',
+            dataIndex: 'io',
+            render: (text) => <Progress percent={text} status="active" />,
+        },
        
-        {
-            title: '操作系统',
-            dataIndex: 'nl',
-        },
-        {
-            title: '禁止',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >禁止</Checkbox>
-                </Fragment>
-            ),
-        },
         {
             title: '操作',
             render: (text, record) => (
@@ -152,7 +170,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="网络管理"
+                title="实体机状态管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

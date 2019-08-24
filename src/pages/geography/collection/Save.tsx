@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络信息"
+                title="编辑实体机状态信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -73,9 +73,23 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="操作系统" >
-                        {getFieldDecorator('nl', {
-                            initialValue: currentItem.nl,
+                    <Form.Item key="cpu" label="CPU(%)" >
+                        {getFieldDecorator('cpu', {
+                            initialValue: currentItem.cpu,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="nc" label="内存(%)" >
+                        {getFieldDecorator('nc', {
+                            initialValue: currentItem.nc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="io" label="I/O繁忙度(%)" >
+                        {getFieldDecorator('io', {
+                            initialValue: currentItem.io,
                         })(
                             <Input />,
                         )}
