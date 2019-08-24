@@ -18,67 +18,68 @@ interface TypeState {
 }
 
 const mockData = [
-    {
-       id: 'LDSM30121',
-       mc:'高',
-       gg:'CVE-2019-023',
-       hz:'This error occurred during the build time and cannot be dismissed.',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'LDSM30122',
-        mc:'中',
-        gg:'CVE-2019-016',
-        hz:'This screen is visible only in development.',
-        jd:100,
-        state: 1,
-     },
+    
      {
-        id: 'LDSM30123',
-        mc:'低',
-        gg:'CVE-2019-065',
-        hz:' It will not appear if the app crashes in production.',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'LDSM30124',
-        mc:'高',
+        id: 'LANJIE0000024',
+        mc:'恶意病毒',
         gg:'CVE-2019-071',
-        hz:'This error occurred during the build time and cannot be dismissed.',
+        hz:'文件传输',
         jd:74,
         state: 1,
      },
      {
-        id: 'LDSM30125',
-        mc:'高',
+        id: 'LANJIE0000025',
+        mc:'暴力',
         gg:'CVE-2019-005',
-        hz:'This screen is visible only in development.',
+        hz:'远程登录',
         jd:95,
         state: 1,
      },
      {
-        id: 'LDSM30126',
-        mc:'中',
+        id: 'LANJIE0000026',
+        mc:'赌博',
         gg:'CVE-2019-004',
-        hz:'It will not appear if the app crashes in production.',
+        hz:'即时通讯',
         jd:76,
         state: 1,
      },
      {
-        id: 'LDSM30127',
-        mc:'低',
-        gg:'CVE-2019-036',
-        hz:'This error occurred during the build time and cannot be dismissed.',
+        id: 'LANJIE0000021',
+        mc:'暴力',
+        gg:'CVE-2019-023',
+        hz:'VOIP',
+        jd:98,
+        state: 1,
+     },
+     {
+         id: 'LANJIE0000022',
+         mc:'恶意网站',
+         gg:'CVE-2019-016',
+         hz:'股票软件',
+         jd:100,
+         state: 1,
+      },
+      {
+         id: 'LANJIE0000023',
+         mc:'色情',
+         gg:'CVE-2019-065',
+         hz:' 电子邮件',
+         jd:56,
+         state: 1,
+      },
+     {
+        id: 'LANJIE0000027',
+        mc:'色情',
+        gg:'CVE-2019-044',
+        hz:'WEB',
         jd:100,
         state: 1,
      },
      {
-        id: 'LDSM30128',
-        mc:'低',
+        id: 'LANJIE0000028',
+        mc:'色情',
         gg:'CVE-2019-041',
-        hz:'It will not appear if the app crashes in production.',
+        hz:'P2P',
         jd:88,
         state: 1,
      }, 
@@ -99,20 +100,21 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '漏洞等级',
+            title: 'URL分类库',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '漏洞VCE ID',
+            title: '控制类型',
             dataIndex: 'gg',
         },
         {
-            title: '漏洞描述',
+            title: '应用协议',
             dataIndex: 'hz',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '漏洞扫描进度',
+            title: '拦截报告上传进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -148,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="漏洞扫描管理"
+                title="拦截报告管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

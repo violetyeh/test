@@ -23,69 +23,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'FHQ0121',
-        fl:'漏洞检测',
-        mc:'192.168.1.28',
-        ma:'漏洞利用',
-        nl:'张三石',
-        dbz:'正在检测中',
-    },
-    {
-        id: 'FHQ0135',
-        fl:'垃圾清除',
-        mc:'192.168.0.18',
-        ma:'协议暴力攻击',
-        nl:'王芳',
-        dbz:'正在清除中',
-    },
-    {
-        id: 'FHQ0138',
-        fl:'漏洞检测',
-        mc:'192.168.1.44',
-        ma:'漏洞利用',
-        nl:'刘文',
-        dbz:'正在检测中',
-    },
-    {
-        id: 'FHQ0121',
-        fl:'病毒清除',
-        mc:'192.168.1.110',
-        ma:'病毒利用',
-        nl:'赵媛',
-        dbz:'正在清除中',
-    },
-    {
-        id: 'FHQ0137',
-        fl:'病毒攻击防守',
-        mc:'192.168.1.53',
-        ma:'协议暴力攻击',
-        nl:'刘冰',
-        dbz:'正在防守中',
-    },
-    {
-        id: 'FHQ0135',
+        id: 'FHQ-010035',
         fl:'病毒清除',
         mc:'192.168.1.26',
-        ma:'病毒利用',
+        ma:'只禁止列表中MAC地址接入',
         nl:'汪峰',
-        dbz:'正在清除中',
+        dbz:'使用动态获取的DNS',
     },
     {
-        id: 'FHQ0164',
+        id: 'FHQ-010064',
         fl:'病毒检测',
         mc:'192.168.1.17',
-        ma:'病毒利用',
+        ma:'只允许列表中MAC地址接入',
         nl:'陈云',
-        dbz:'正在检测中',
+        dbz:'使用静态获取的DNS',
     },
     {
-        id: 'FHQ0178',
+        id: 'FHQ-010078',
         fl:'漏洞清除',
         mc:'192.168.1.14',
-        ma:'漏洞利用',
+        ma:'只允许列表中MAC地址接入',
         nl:'王安',
-        dbz:'正在清除中',
+        dbz:'使用动态获取的DNS',
     },
+    {
+        id: 'FHQ-010021',
+        fl:'漏洞检测',
+        mc:'192.168.1.28',
+        ma:'只禁止列表中MAC地址接入',
+        nl:'张三石',
+        dbz:'使用静态获取的DNS',
+    },
+    {
+        id: 'FHQ-010035',
+        fl:'垃圾清除',
+        mc:'192.168.0.18',
+        ma:'只允许列表中MAC地址接入',
+        nl:'王芳',
+        dbz:'使用动态获取的DNS',
+    },
+    {
+        id: 'FHQ-010038',
+        fl:'漏洞检测',
+        mc:'192.168.1.44',
+        ma:'只允许列表中MAC地址接入',
+        nl:'刘文',
+        dbz:'使用静态获取的DNS',
+    },
+    {
+        id: 'FHQ-010021',
+        fl:'病毒清除',
+        mc:'192.168.1.110',
+        ma:'只禁止列表中MAC地址接入',
+        nl:'赵媛',
+        dbz:'使用动态获取的DNS',
+    },
+    {
+        id: 'FHQ-010037',
+        fl:'病毒攻击防守',
+        mc:'192.168.1.53',
+        ma:'只允许列表中MAC地址接入',
+        nl:'刘冰',
+        dbz:'使用静态获取的DNS',
+    },
+  
     
 ]
 
@@ -102,27 +103,33 @@ class Type extends Component<TypeProps, TypeState>{
             title: '序号',
             dataIndex: 'id',
         },
-        {
-            title: '任务名称',
-            dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '目标IP',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
-        },
-        {
-            title: '攻击类型',
-            dataIndex: 'ma',
-        },
        
         {
-            title: '执行者',
+            title: 'MAC地址过滤开启',
+            dataIndex: 'status',
+            render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
+          },
+        {
+            title: '过滤规则',
+            dataIndex: 'ma',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        {
+            title: '防火墙操作',
+            dataIndex: 'fl',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
+        },
+        {
+            title: 'IP地址',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
+        },
+        {
+            title: ' 管理员',
             dataIndex: 'nl',
         },
         {
-            title: '任务状态',
+            title: 'DNS方式',
             dataIndex: 'dbz',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
@@ -155,7 +162,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙任务管理"
+                title="防火墙设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

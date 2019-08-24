@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑漏洞扫描信息"
+                title="编辑拦截报告信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,32 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="漏洞等级" >
+                    <Form.Item key="mc" label="URL分类库" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
-                            <Select >
-                                <Select.Option value="jack">高</Select.Option>
-                                <Select.Option value="lucy">中</Select.Option>
-                                <Select.Option value="lucy">低</Select.Option>
-                            </Select>
+                            <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="漏洞VCE ID" >
+                    <Form.Item key="gg" label="控制类型" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="漏洞描述" >
+                    <Form.Item key="hz" label="应用协议" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="漏洞扫描进度（%）" >
+                    <Form.Item key="jd" label="拦截报告上传进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

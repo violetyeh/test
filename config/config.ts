@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '防火墙任务管理',
+          name: '防火墙设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '主机信息扫描报告',
+          name: '主机配置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '漏洞扫描报告',
+          name: '拦截报告',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

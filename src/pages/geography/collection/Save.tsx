@@ -51,21 +51,8 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="任务名称" >
-                        {getFieldDecorator('fl', {
-                            initialValue: currentItem.fl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mc" label="目标IP" >
-                        {getFieldDecorator('mc', {
-                            initialValue: currentItem.mc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="ma" label="攻击类型" >
+                    
+                    <Form.Item key="ma" label="过滤规则" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,14 +60,30 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="执行者" >
+                   
+                    <Form.Item key="fl" label="防火墙操作" >
+                        {getFieldDecorator('fl', {
+                            initialValue: currentItem.fl,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mc" label="IP地址" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="nl" label="管理员" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dbz" label="任务状态" >
+                    
+                    <Form.Item key="dbz" label="DNS方式" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(

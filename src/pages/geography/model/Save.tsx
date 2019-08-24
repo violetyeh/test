@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑主机扫描信息"
+                title="编辑主机配置信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="设备标识" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
@@ -72,14 +72,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="状态" >
+                    <Form.Item key="jg" label="cpu占用率（%）" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="内存使用率（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
