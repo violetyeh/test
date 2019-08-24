@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '大数据采集智能分析系统',
+  title: '大数据预警分析平台软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑数据详细信息"
+                title="编辑数据预警信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,42 +44,36 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="hj" label="数据信息类型" >
+                    <Form.Item key="hj" label="数据类别" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="数据链接地址" >
+                    <Form.Item key="dw" label="预警方式" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="数据采集负责人员" >
+                    <Form.Item key="ren" label="数据表名" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="数据详细页面" >
-                        {getFieldDecorator('riqi', {
-                            initialValue: currentItem.riqi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="qk" label="数据分析负责人员" >
+                   
+                    <Form.Item key="qk" label="预警管理员" >
                         {getFieldDecorator('qk', {
                             initialValue: currentItem.qk,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="采集进度（%）" >
+                    <Form.Item key="process" label="预警进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

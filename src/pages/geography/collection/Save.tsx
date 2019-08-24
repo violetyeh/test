@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑大数据采集来源信息"
+                title="编辑大数据信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xm" label="大数据信息" >
+                    <Form.Item key="xm" label="数据名称" >
                         {getFieldDecorator('xm', {
                             initialValue: currentItem.xm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="采集标识" >
+                    <Form.Item key="jg" label="数据信息" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="采集来源" >
+                    <Form.Item key="dw" label="数据表" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pd" label="采集日期" >
+                    <Form.Item key="pd" label="日期" >
                         {getFieldDecorator('pd', {
                             initialValue: currentItem.pd,
                         })(

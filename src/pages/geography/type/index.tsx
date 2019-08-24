@@ -19,66 +19,66 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'YM02132',
+       id: 'SJ-YJ-FX-0032',
        hj:'是',
        mc:'默认',
-       bs:'88%',
+       bs:'88',
        bcy:'是',
        state: 1,
     },
     {
-        id: 'YM02149',
+        id: 'SJ-YJ-FX-0049',
         hj:'否',
         mc:'自动分析操作',
-        bs:'100%',
+        bs:'100',
         bcy:'否',
         state: 1,
      },
      {
-        id: 'YM02136',
+        id: 'SJ-YJ-FX-0036',
         hj:'是',
         mc:'点击分析操作',
-        bs:'69%',
+        bs:'69',
         bcy:'是',
         state: 1,
      },
      {
-        id: 'YM02147',
+        id: 'SJ-YJ-FX-0047',
         hj:'人工操作',
         mc:'默认',
-        bs:'100%',
+        bs:'100',
         bcy:'否',
         state: 1,
      },
      {
-        id: 'YM02122',
+        id: 'SJ-YJ-FX-0022',
         hj:'是',
         mc:'默认分析操作',
-        bs:'89%',
+        bs:'89',
         bcy:'否',
         state: 1,
      },
      {
-        id: 'YM02147',
+        id: 'SJ-YJ-FX-0047',
         hj:'是',
         mc:'点击分析操作',
-        bs:'86%',
+        bs:'86',
         bcy:'是',
         state: 1,
      },
      {
-        id: 'YM02136',
+        id: 'SJ-YJ-FX-0036',
         hj:'否',
         mc:'默认',
-        bs:'80%',
+        bs:'80',
         bcy:'否',
         state: 1,
      },
      {
-        id: 'YM02112',
+        id: 'SJ-YJ-FX-0012',
         hj:'是',
         mc:'点击分析操作',
-        bs:'69%',
+        bs:'69',
         bcy:'否',
         state: 1,
      },
@@ -98,28 +98,29 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '大数据自动采集',
+            title: '自动分析',
             dataIndex: 'hj',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
             title: '分析设置',
             dataIndex: 'mc',
-            render: (text) => <Tag color="green">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
             
         },
         {
-            title: '采集分析进度',
-            dataIndex: 'bs',
-            render: (text) => <Tag color="blue">{text}</Tag>,
-        },
-        {
-            title: '采集是否完成',
+            title: '完成预警分析',
             dataIndex: 'bcy',
-            render: (text) => <Tag color="purple">{text}</Tag>,
+            render: (text) => <Tag color="PURPLE">{text}</Tag>,
         },
         {
-            title: '数据采集',
+            title: '分析进度',
+            dataIndex: 'bs',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
+        },
+       
+        {
+            title: '数据预警',
             dataIndex: 'jl',
             render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
         },
@@ -150,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="数据采集设置"
+                title="预警分析设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
