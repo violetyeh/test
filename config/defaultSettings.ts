@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云敏捷网络管理平台',
+  title: '华云SDN管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

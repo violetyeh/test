@@ -20,66 +20,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'NET-006',
-        mc:'192 . 168 . 1 . 12',
-        gg:'255 . 255 . 255 . 1',
+        mc:'设备编号',
+        gg:'主用端口',
         hz:'192 . 168 . 1 . 106',
-        jd:'202 . 106 . 0 . 157',
+        jd:'控制命令',
         state: 1,
      },
      {
         id: 'NET-007',
-        mc:'192 . 168 . 1 . 20',
-        gg:'255 . 255 . 255 . 0',
+        mc:'终端配置容量信息码',
+        gg:'备用IP地址',
         hz:'192 . 168 . 1 . 105',
-        jd:'202 . 106 . 5 . 245',
+        jd:'数据转发',
         state: 1,
      },
      {
         id: 'NET-008',
-        mc:'192 . 168 . 1 . 15',
-        gg:'255 . 255 . 255 . 1',
+        mc:'终端通信规约',
+        gg:'主用端口',
         hz:'192 . 168 . 1 . 013',
-        jd:'202 . 106 . 1 . 101',
+        jd:'自定义帧',
         state: 1,
      }, 
     {
        id: 'NET-001',
-       mc:'192 . 168 . 1 . 02',
-       gg:'255 . 255 . 255 . 1',
+       mc:'终端硬件',
+       gg:'备用端口',
        hz:'192 . 168 . 1 . 107',
-       jd:'202 . 106 . 3 . 2',
+       jd:'数据转发',
        state: 1,
     },
     {
         id: 'NET-002',
-        mc:'192 . 168 . 1 . 63',
-        gg:'255 . 255 . 255 . 0',
+        mc:'设备编号',
+        gg:'主用IP地址',
         hz:'192 . 168 . 1 . 15',
-        jd:'202 . 106 . 0 . 0',
+        jd:'自定义帧',
         state: 1,
      },
      {
         id: 'NET-003',
-        mc:'192 . 168 . 1 . 71',
-        gg:'255 . 255 . 255 . 0',
+        mc:'终端规约信息',
+        gg:'主用IP地址',
         hz:' 192 . 168 . 1 . 12',
-        jd:'202 . 106 . 3 . 5',
+        jd:'复位命令',
         state: 1,
      },
      {
         id: 'NET-004',
-        mc:'192 . 168 . 1 . 1',
-        gg:'255 . 255 . 255 . 1',
+        mc:'终端硬件版本号',
+        gg:'主用端口',
         hz:'192 . 168 . 1 . 1',
-        jd:'202 . 106 . 1 . 10',
+        jd:'控制命令',
         state: 1,
      },
      {
         id: 'NET-005',
-        mc:'192 . 168 . 1 . 03',
-        gg:'255 . 255 . 255 . 0',
+        mc:'设备编号',
+        gg:'主用IP地址',
         hz:'192 . 168 . 1 . 21',
-        jd:'202 . 106 . 0 . 20',
+        jd:'复位命令',
         state: 1,
      },
     
@@ -95,42 +95,39 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '自动获取服务器地址',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >自动</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: 'IP地址',
+            title: '数据项',
             dataIndex: 'mc',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '子网掩码',
+            title: '数据内容',
             dataIndex: 'gg',
         },
         {
-            title: '默认网关',
+            title: '主站地址',
             dataIndex: 'hz',
-            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '首选DNS服务器',
+            title: '功能选择',
             dataIndex: 'jd',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '绑定状态',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="绑定" unCheckedChildren="未绑定" />,
+            title: '是否在线',
+            dataIndex: 'jk',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >是</Checkbox>
+                </Fragment>
+            ),
         },
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -158,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="设备网络信息"
+                title="数据内容管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

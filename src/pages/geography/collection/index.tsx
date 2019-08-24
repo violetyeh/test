@@ -23,60 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WL021',
-        fl:'00E74S5S5A6Z',
-        mc:'192.168.1.07',
+        id: 'ZD-0021',
+        fl:'CJ564-测试终端1',
+        mc:'1507',
         ma:'192.168.1.107',
-        nl:'Cloud Times',
+        nl:'GPRS/CDMA',
+        cs:'COM4,1200-e-8-1',
+        cd:'16',
     },
     {
-        id: 'WL035',
-        fl:'00E6F4D5S8E7',
-        mc:'192.168.1.05',
+        id: 'ZD-0035',
+        fl:'CJ564-测试终端2',
+        mc:'1305',
         ma:'192.168.1.105',
-        nl:'Windows XP',
+        nl:'本机串口',
+        cs:'COM4,1201-e-5-1',
+        cd:'16',
     },
     {
-        id: 'WL038',
-        fl:'00E1A2A3X5D5',
-        mc:'192.168.1.33',
+        id: 'ZD-0038',
+        fl:'CJ564-测试终端3',
+        mc:'1993',
         ma:'192.168.1.133',
-        nl:'Windows XP',
+        nl:'本机串口',
+        cs:'COM5,1358-e-8-1',
+        cd:'18',
     },
     {
-        id: 'WL021',
-        fl:'00E8A9Z6X5A2',
-        mc:'192.168.1.02',
+        id: 'ZD-0021',
+        fl:'CJ564-测试终端4',
+        mc:'1902',
         ma:'192.168.1.102',
-        nl:'Windows XP',
+        nl:'本机串口',
+        cs:'COM4,1500-e-8-6',
+        cd:'8',
     },
     {
-        id: 'WL037',
-        fl:'00E5Z4A6D5S5',
-        mc:'192.168.1.42',
+        id: 'ZD-0037',
+        fl:'CJ564-测试终端5',
+        mc:'1942',
         ma:'192.168.1.142',
-        nl:'Cloud Times',
+        nl:'GPRS/CDMA',
+        cs:'COM1,1450-f-5-1',
+        cd:'16',
     },
     {
-        id: 'WL035',
-        fl:'00EC5V6D4S5A',
-        mc:'192.168.1.35',
+        id: 'ZD-0035',
+        fl:'CJ564-测试终端6',
+        mc:'1735',
         ma:'192.168.1.635',
-        nl:'Cloud Times',
+        nl:'GPRS/CDMA',
+        cs:'COM4,1200-m-7-1',
+        cd:'16',
     },
     {
-        id: 'WL064',
-        fl:'56ZZX2DS1W5D',
-        mc:'192.168.1.33',
+        id: 'ZD-0064',
+        fl:'CJ564-测试终端7',
+        mc:'1333',
         ma:'192.168.1.733',
-        nl:'Cloud Times',
+        nl:'GPRS/CDMA',
+        cs:'COM4,1960-e-8-1',
+        cd:'18',
     },
     {
-        id: 'WL078',
-        fl:'00E0423GD52S',
-        mc:'192.168.1.55',
+        id: 'ZD-0078',
+        fl:'CJ564-测试终端8',
+        mc:'1304',
         ma:'192.168.1.255',
-        nl:'Windows XP',
+        nl:'本机串口',
+        cs:'COM4,1240-x-8-1',
+        cd:'12',
     },
     
 ]
@@ -90,39 +106,57 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+        {
+            title: '是否在检',
+            dataIndex: 'jz',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >是</Checkbox>
+                </Fragment>
+            ),
+        },
         
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: 'MAC地址',
+            title: '被检终端',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '行政区码',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '子网',
+            title: '终端地址',
             dataIndex: 'ma',
         },
        
         {
-            title: '操作系统',
+            title: '通讯方式',
             dataIndex: 'nl',
         },
         {
-            title: '禁止',
+            title: '通讯参数',
+            dataIndex: 'cs',
+        },
+        {
+            title: 'Tpv有效',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >禁止</Checkbox>
+                  <Checkbox >有效</Checkbox>
                 </Fragment>
             ),
         },
+        {
+            title: '密码长度',
+            dataIndex: 'cd',
+        },
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -152,7 +186,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="网络管理"
+                title="设置终端参数"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

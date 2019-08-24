@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络信息"
+                title="设置终端参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="MAC地址" >
+                    <Form.Item key="fl" label="被检终端" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="IP地址" >
+                    <Form.Item key="mc" label="行政区码" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="子网" >
+                    <Form.Item key="ma" label="终端地址" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,14 +73,29 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="操作系统" >
+                    <Form.Item key="nl" label="通讯方式" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                </Form>
+                <Form.Item key="cs" label="通讯参数" >
+                        {getFieldDecorator('cs', {
+                            initialValue: currentItem.cs,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+               
+                <Form.Item key="cd" label="密码长度" >
+                        {getFieldDecorator('cd', {
+                            initialValue: currentItem.cd,
+                        })(
+                            <Input />,
+                        )}
+                 </Form.Item>
+                 </Form>
             </Modal>
         );
     }

@@ -19,69 +19,70 @@ interface ModelState {
 
 const mockData = [
     {
+        id:'IPID001',
+        cf:'告警延时',
+        dw:'201次',
+        jg:'192.168.1.036',
+        jx:'60min',
+        status: '启用',
+     },
+     {
+         id:'IPID002',
+         cf:'限电时间',
+         dw:'324次',
+         jg:'192.168.1.05',
+         jx:'30min',
+         status: '启用',
+      },
+      {
+         id:'IPID003',
+         cf:'告警时间',
+         dw:'336次',
+         jg:'192.168.1.021',
+         jx:'25min',
+         status: '启用',
+      },
+      {
+         id:'IPID004',
+         cf:'通讯网络线路故障',
+         dw:'211次',
+         jg:'192.168.1.023',
+         jx:'50min',
+         status: '启用',
+      },
+      {
+          id:'IPID005',
+          cf:'告警延时时间',
+          dw:'251次',
+          jg:'192.168.1.108',
+          jx:'30min',
+          status: '启用',
+       },
+    {
         id:'IPID006',
-        cf:'192.168.1.41',
-        dw:'255.255.255.0',
+        cf:'限电时间',
+        dw:'241次',
         jg:'192.168.1.058',
-        jx:'Auto Create Subnet',
+        jx:'30min',
         status: '启用',
      },
      {
        id:'IPID007',
-       cf:'192.168.1.08',
-       dw:'255.255.255.1',
+       cf:'告警时间',
+       dw:'324次',
        jg:'192.168.1.067',
-       jx:'Automatic Delete Subnet',
+       jx:'50min',
        status: '启用',
     },
     {
         id:'IPID008',
-        cf:'192.168.1.12',
-        dw:'255.255.255.0',
+        cf:'网络线路故障',
+        dw:'420次',
         jg:'192.168.1.047',
-        jx:'Automatically adding subnets',
+        jx:'40min',
         status: '启用',
      },
-    {
-       id:'IPID001',
-       cf:'192.168.1.28',
-       dw:'255.255.255.2',
-       jg:'192.168.1.036',
-       jx:'Automatically adding subnet segments',
-       status: '启用',
-    },
-    {
-        id:'IPID002',
-        cf:'192.168.1.36',
-        dw:'255.255.255.1',
-        jg:'192.168.1.05',
-        jx:'Automatic deletion of subnet segments',
-        status: '启用',
-     },
-     {
-        id:'IPID003',
-        cf:'192.168.1.115',
-        dw:'255.255.255.0',
-        jg:'192.168.1.021',
-        jx:'Automatic Delete Subnet',
-        status: '启用',
-     },
-     {
-        id:'IPID004',
-        cf:'192.168.1.025',
-        dw:'255.255.255.1',
-        jg:'192.168.1.023',
-        jx:'Automatically create subnet segments',
-        status: '启用',
-     },
-     {
-         id:'IPID005',
-         cf:'192.168.1.63',
-         dw:'255.255.255.0',
-         jg:'192.168.1.108',
-         jx:'Auto Create Subnet',
-         status: '启用',
-      },
+    
 
 ]
 
@@ -98,24 +99,23 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: 'IP范围开始',
+            title: '监测项目',
             dataIndex: 'cf',
-            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: 'IP范围结束',
+            title: '终端地址',
             dataIndex: 'jg',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '描述',
+            title: '抄收间隔时间',
             dataIndex: 'jx',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '掩码',
+            title: '抄收次数',
             dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="MAGENTA">{text}</Tag>,
         },
         {
             title: '是否启用',
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="IP管理"
+                title="监测管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

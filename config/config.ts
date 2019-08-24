@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '网络管理',
+          name: '设置终端参数',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: 'IP管理',
+          name: '监测管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '设备网络信息',
+          name: '数据内容管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
