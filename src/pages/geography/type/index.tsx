@@ -19,67 +19,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WLJK63126',
-        mc:'192.168.1.12',
-        gg:'不使用任何规则',
-        hz:'重要',
-        jd:76,
+        id: 'NET-006',
+        mc:'192 . 168 . 1 . 12',
+        gg:'255 . 255 . 255 . 1',
+        hz:'192 . 168 . 1 . 106',
+        jd:'202 . 106 . 0 . 157',
         state: 1,
      },
      {
-        id: 'WLJK63127',
-        mc:'192.168.1.20',
-        gg:'网络安全规则',
-        hz:'一般',
-        jd:100,
+        id: 'NET-007',
+        mc:'192 . 168 . 1 . 20',
+        gg:'255 . 255 . 255 . 0',
+        hz:'192 . 168 . 1 . 105',
+        jd:'202 . 106 . 5 . 245',
         state: 1,
      },
      {
-        id: 'WLJK63128',
-        mc:'192.168.1.15',
-        gg:'不使用任何规则',
-        hz:'重要',
-        jd:88,
+        id: 'NET-008',
+        mc:'192 . 168 . 1 . 15',
+        gg:'255 . 255 . 255 . 1',
+        hz:'192 . 168 . 1 . 013',
+        jd:'202 . 106 . 1 . 101',
         state: 1,
      }, 
     {
-       id: 'WLJK63121',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
+       id: 'NET-001',
+       mc:'192 . 168 . 1 . 02',
+       gg:'255 . 255 . 255 . 1',
+       hz:'192 . 168 . 1 . 107',
+       jd:'202 . 106 . 3 . 2',
        state: 1,
     },
     {
-        id: 'WLJK63122',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
+        id: 'NET-002',
+        mc:'192 . 168 . 1 . 63',
+        gg:'255 . 255 . 255 . 0',
+        hz:'192 . 168 . 1 . 15',
+        jd:'202 . 106 . 0 . 0',
         state: 1,
      },
      {
-        id: 'WLJK63123',
-        mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
-        jd:56,
+        id: 'NET-003',
+        mc:'192 . 168 . 1 . 71',
+        gg:'255 . 255 . 255 . 0',
+        hz:' 192 . 168 . 1 . 12',
+        jd:'202 . 106 . 3 . 5',
         state: 1,
      },
      {
-        id: 'WLJK63124',
-        mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
-        jd:74,
+        id: 'NET-004',
+        mc:'192 . 168 . 1 . 1',
+        gg:'255 . 255 . 255 . 1',
+        hz:'192 . 168 . 1 . 1',
+        jd:'202 . 106 . 1 . 10',
         state: 1,
      },
      {
-        id: 'WLJK63125',
-        mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:95,
+        id: 'NET-005',
+        mc:'192 . 168 . 1 . 03',
+        gg:'255 . 255 . 255 . 0',
+        hz:'192 . 168 . 1 . 21',
+        jd:'202 . 106 . 0 . 20',
         state: 1,
      },
     
@@ -96,11 +96,11 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '监控状态',
+            title: '自动获取服务器地址',
             dataIndex: 'jk',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >监控</Checkbox>
+                  <Checkbox >自动</Checkbox>
                 </Fragment>
             ),
         },
@@ -114,18 +114,17 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '所用规则',
+            title: '子网掩码',
             dataIndex: 'gg',
         },
         {
-            title: '重点监控',
+            title: '默认网关',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '监控进度',
+            title: '首选DNS服务器',
             dataIndex: 'jd',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
             title: '绑定状态',
@@ -159,7 +158,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络监控管理"
+                title="设备网络信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络监控信息"
+                title="编辑设备网络信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,21 +58,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="所用规则" >
+                    <Form.Item key="gg" label="子网掩码" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="重点监控" >
+                    <Form.Item key="hz" label="默认网关" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="监控进度（%）" >
+                    <Form.Item key="jd" label="首选DNS服务器" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

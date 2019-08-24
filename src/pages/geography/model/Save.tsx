@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑本机信息"
+                title="编辑IP信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,34 +51,36 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="IP范围开始" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="端口号" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
+                    <Form.Item key="jg" label="IP范围结束" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="描述" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="dw" label="掩码" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    
+                    
                     
                 </Form>
             </Modal>

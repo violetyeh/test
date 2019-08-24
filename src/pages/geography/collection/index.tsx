@@ -23,60 +23,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'NRJK6121',
-        fl:'www.qq.com',
-        mc:'qq聊天',
-        ma:'信息过滤',
-        nl:'张文芳',
+        id: 'WL021',
+        fl:'00E74S5S5A6Z',
+        mc:'192.168.1.07',
+        ma:'192.168.1.107',
+        nl:'Cloud Times',
     },
     {
-        id: 'NRJK6135',
-        fl:'www.xiao.com',
-        mc:'文件传输',
-        ma:'行为审计',
-        nl:'王芳',
+        id: 'WL035',
+        fl:'00E6F4D5S8E7',
+        mc:'192.168.1.05',
+        ma:'192.168.1.105',
+        nl:'Windows XP',
     },
     {
-        id: 'NRJK6138',
-        fl:'www.yiersan.com',
-        mc:'银行账号',
-        ma:'行为审计',
-        nl:'刘文',
+        id: 'WL038',
+        fl:'00E1A2A3X5D5',
+        mc:'192.168.1.33',
+        ma:'192.168.1.133',
+        nl:'Windows XP',
     },
     {
-        id: 'NRJK6121',
-        fl:'www.liuba.com',
-        mc:'淘宝密码',
-        ma:'行为审计',
-        nl:'赵媛',
+        id: 'WL021',
+        fl:'00E8A9Z6X5A2',
+        mc:'192.168.1.02',
+        ma:'192.168.1.102',
+        nl:'Windows XP',
     },
     {
-        id: 'NRJK6137',
-        fl:'www.qijiu.com',
-        mc:'淫秽字词',
-        ma:'信息过滤',
-        nl:'刘冰',
+        id: 'WL037',
+        fl:'00E5Z4A6D5S5',
+        mc:'192.168.1.42',
+        ma:'192.168.1.142',
+        nl:'Cloud Times',
     },
     {
-        id: 'NRJK6135',
-        fl:'www.yisan.com',
-        mc:'远程登录',
-        ma:'行为审计',
-        nl:'汪峰',
+        id: 'WL035',
+        fl:'00EC5V6D4S5A',
+        mc:'192.168.1.35',
+        ma:'192.168.1.635',
+        nl:'Cloud Times',
     },
     {
-        id: 'NRJK6164',
-        fl:'www.wuliu.com',
-        mc:'传销暴力',
-        ma:'信息过滤',
-        nl:'陈云',
+        id: 'WL064',
+        fl:'56ZZX2DS1W5D',
+        mc:'192.168.1.33',
+        ma:'192.168.1.733',
+        nl:'Cloud Times',
     },
     {
-        id: 'NRJK6178',
-        fl:'www.ersansi.com',
-        mc:'炒股信息',
-        ma:'行为审计',
-        nl:'王安',
+        id: 'WL078',
+        fl:'00E0423GD52S',
+        mc:'192.168.1.55',
+        ma:'192.168.1.255',
+        nl:'Windows XP',
     },
     
 ]
@@ -90,6 +90,30 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+        
+        {
+            title: '序号',
+            dataIndex: 'id',
+        },
+        {
+            title: 'MAC地址',
+            dataIndex: 'fl',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+        },
+        {
+            title: 'IP地址',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+        },
+        {
+            title: '子网',
+            dataIndex: 'ma',
+        },
+       
+        {
+            title: '操作系统',
+            dataIndex: 'nl',
+        },
         {
             title: '禁止',
             dataIndex: 'jz',
@@ -98,29 +122,6 @@ class Type extends Component<TypeProps, TypeState>{
                   <Checkbox >禁止</Checkbox>
                 </Fragment>
             ),
-        },
-        {
-            title: '序号',
-            dataIndex: 'id',
-        },
-        {
-            title: '过滤网址',
-            dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '过滤内容',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
-        },
-        {
-            title: '备注',
-            dataIndex: 'ma',
-        },
-       
-        {
-            title: '管理员',
-            dataIndex: 'nl',
         },
         {
             title: '操作',
@@ -151,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="内容监控管理"
+                title="网络管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
