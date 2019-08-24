@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络监控信息"
+                title="编辑安全管理信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,6 +51,13 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="gg" label="设备名称" >
+                        {getFieldDecorator('gg', {
+                            initialValue: currentItem.gg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                     <Form.Item key="mc" label="IP地址" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
@@ -58,21 +65,15 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="所用规则" >
-                        {getFieldDecorator('gg', {
-                            initialValue: currentItem.gg,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="hz" label="重点监控" >
+                   
+                    <Form.Item key="hz" label="说明" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="监控进度（%）" >
+                    <Form.Item key="jd" label="威胁检测进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

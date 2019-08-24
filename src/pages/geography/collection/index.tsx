@@ -23,58 +23,58 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'NRJK6121',
-        fl:'www.qq.com',
-        mc:'qq聊天',
+        id: 'WXNR000021',
+        fl:'eth2.100',
+        mc:'10.50.0.3/54',
         ma:'信息过滤',
         nl:'张文芳',
     },
     {
-        id: 'NRJK6135',
-        fl:'www.xiao.com',
-        mc:'文件传输',
+        id: 'WXNR000035',
+        fl:'eth2.200',
+        mc:'10.50.0.0/01',
         ma:'行为审计',
         nl:'王芳',
     },
     {
-        id: 'NRJK6138',
-        fl:'www.yiersan.com',
-        mc:'银行账号',
+        id: 'WXNR000038',
+        fl:'eth2.310',
+        mc:'10.50.0.1/32',
         ma:'行为审计',
         nl:'刘文',
     },
     {
-        id: 'NRJK6121',
-        fl:'www.liuba.com',
-        mc:'淘宝密码',
+        id: 'WXNR000021',
+        fl:'eth2.199',
+        mc:'10.50.0.1/52',
         ma:'行为审计',
         nl:'赵媛',
     },
     {
-        id: 'NRJK6137',
-        fl:'www.qijiu.com',
-        mc:'淫秽字词',
+        id: 'WXNR000037',
+        fl:'eth2.215',
+        mc:'10.50.0.0/16',
         ma:'信息过滤',
         nl:'刘冰',
     },
     {
-        id: 'NRJK6135',
-        fl:'www.yisan.com',
-        mc:'远程登录',
+        id: 'WXNR000035',
+        fl:'eth2.177',
+        mc:'10.50.0.0/16',
         ma:'行为审计',
         nl:'汪峰',
     },
     {
-        id: 'NRJK6164',
-        fl:'www.wuliu.com',
-        mc:'传销暴力',
+        id: 'WXNR000064',
+        fl:'eth2.023',
+        mc:'10.50.0.16/52',
         ma:'信息过滤',
         nl:'陈云',
     },
     {
-        id: 'NRJK6178',
-        fl:'www.ersansi.com',
-        mc:'炒股信息',
+        id: 'WXNR000078',
+        fl:'eth2.014',
+        mc:'10.50.0.2/32',
         ma:'行为审计',
         nl:'王安',
     },
@@ -104,22 +104,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '过滤网址',
+            title: 'VLAN接口',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '过滤内容',
+            title: '目标网络',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '备注',
+            title: '检测操作',
             dataIndex: 'ma',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '管理员',
+            title: '检测管理员',
             dataIndex: 'nl',
         },
         {
@@ -151,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="内容监控管理"
+                title="威胁内容信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

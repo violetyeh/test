@@ -21,64 +21,64 @@ const mockData = [
     {
         id: 'WLJK63126',
         mc:'192.168.1.12',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'西区防火墙',
+        hz:'入侵攻击事件',
         jd:76,
         state: 1,
      },
      {
         id: 'WLJK63127',
         mc:'192.168.1.20',
-        gg:'网络安全规则',
-        hz:'一般',
+        gg:'人事部防火墙',
+        hz:'设备管理日志',
         jd:100,
         state: 1,
      },
      {
         id: 'WLJK63128',
         mc:'192.168.1.15',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'西区防火墙',
+        hz:'入侵攻击事件',
         jd:88,
         state: 1,
      }, 
     {
        id: 'WLJK63121',
        mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
+       gg:'西区防火墙',
+       hz:'设备管理日志',
        jd:98,
        state: 1,
     },
     {
         id: 'WLJK63122',
         mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
+        gg:'人事部防火墙',
+        hz:'用户访问日志',
         jd:100,
         state: 1,
      },
      {
         id: 'WLJK63123',
         mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
+        gg:'人事部防火墙',
+        hz:' 入侵攻击事件',
         jd:56,
         state: 1,
      },
      {
         id: 'WLJK63124',
         mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
+        gg:'财务部防火墙',
+        hz:'设备管理日志',
         jd:74,
         state: 1,
      },
      {
         id: 'WLJK63125',
         mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
+        gg:'西区防火墙',
+        hz:'用户访问日志',
         jd:95,
         state: 1,
      },
@@ -95,35 +95,28 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '监控状态',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >监控</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
+        },
+        {
+            title: '设备名称',
+            dataIndex: 'gg',
         },
         {
             title: 'IP地址',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
+       
         {
-            title: '所用规则',
-            dataIndex: 'gg',
-        },
-        {
-            title: '重点监控',
+            title: '说明',
             dataIndex: 'hz',
-            render: (text) => <Tag color="green">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '监控进度',
+            title: '威胁检测进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -159,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络监控管理"
+                title="安全管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

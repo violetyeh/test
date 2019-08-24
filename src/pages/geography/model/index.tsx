@@ -21,65 +21,65 @@ const mockData = [
     {
         id:'ZJSM023896',
         cf:'192.168.1.41',
-        dw:'45/tcp',
+        dw:'外网口',
         jg:'网络信息过滤',
-        jx:'高级优先',
+        jx:'攻击/扫描/地址欺骗等日志',
         status: '启用',
      },
      {
        id:'ZJSM023897',
        cf:'192.168.1.08',
-       dw:'56/tcp',
+       dw:'任意网口',
        jg:'用户行为审计',
-       jx:'高级优先',
+       jx:'攻击/扫描/地址欺骗等日志',
        status: '启用',
     },
     {
         id:'ZJSM023898',
         cf:'192.168.1.12',
-        dw:'23/tcp',
+        dw:'内网口',
         jg:'网络信息过滤',
-        jx:'低级优先',
+        jx:'本地安全日志',
         status: '启用',
      },
     {
        id:'ZJSM023891',
        cf:'192.168.1.28',
-       dw:'38/tcp',
+       dw:'外网口',
        jg:'用户行为审计',
-       jx:'低级优先',
+       jx:'本地安全日志',
        status: '启用',
     },
     {
         id:'ZJSM023892',
         cf:'192.168.1.36',
-        dw:'46/tcp',
+        dw:'任意网口',
         jg:'网络信息过滤',
-        jx:'低级优先',
+        jx:'本地安全日志',
         status: '启用',
      },
      {
         id:'ZJSM023893',
         cf:'192.168.1.115',
-        dw:'57/tcp',
+        dw:'内网口',
         jg:'用户行为审计',
-        jx:'高级优先',
+        jx:'攻击/扫描/地址欺骗等日志',
         status: '启用',
      },
      {
         id:'ZJSM023894',
         cf:'192.168.1.025',
-        dw:'16/tcp',
+        dw:'外网口',
         jg:'网络信息过滤',
-        jx:'高级优先',
+        jx:'数据包流速超限日志',
         status: '启用',
      },
      {
          id:'ZJSM023895',
          cf:'192.168.1.63',
-         dw:'06/tcp',
+         dw:'任意网口',
          jg:'用户行为审计',
-         jx:'低级优先',
+         jx:'本地安全日志',
          status: '启用',
       },
 
@@ -98,25 +98,25 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: 'IP地址',
+            title: '服务器地址',
             dataIndex: 'cf',
-            render: (text) => <Tag color="green">{text}</Tag>,
+        },
+        {
+            title: '区域',
+            dataIndex: 'dw',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
             title: '管理状态',
             dataIndex: 'jg',
+            render: (text) => <Tag color="green">{text}</Tag>,
+        },
+        {
+            title: '发送日志',
+            dataIndex: 'jx',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
-        {
-            title: '服务',
-            dataIndex: 'jx',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
-        },
-        {
-            title: '端口号',
-            dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
-        },
+        
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="本机信息管理"
+                title="威胁审计检测"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

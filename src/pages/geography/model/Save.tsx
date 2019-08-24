@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑本机信息"
+                title="编辑威胁审计检测"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="服务器地址" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="端口号" >
+                    <Form.Item key="dw" label="区域" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
@@ -72,7 +72,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="发送日志" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

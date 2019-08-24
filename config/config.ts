@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '内容监控信息',
+          name: '威胁内容信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '本机信息管理',
+          name: '威胁审计检测',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '网络监控管理',
+          name: '安全管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
