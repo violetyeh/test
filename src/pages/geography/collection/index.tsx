@@ -23,69 +23,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZD20038',
-        fl:'http://www.yiersan.com',
-        mc:'银行账号',
-        ma:'行为审计',
-        nl:'刘文',
-        status:'27',
-    },
-    {
-        id: 'ZD20021',
-        fl:'http://www.liuba.com',
-        mc:'淘宝密码',
-        ma:'行为审计',
-        nl:'赵媛',
-        status:'100',
-    },
-    {
-        id: 'ZD20037',
-        fl:'http://www.qijiu.com',
-        mc:'淫秽字词',
-        ma:'信息违规检测',
-        nl:'刘冰',
-        status:'71',
-    },
-    {
-        id: 'ZD20035',
-        fl:'http://www.yisan.com',
-        mc:'远程登录',
-        ma:'行为审计',
-        nl:'汪峰',
-        status:'99',
-    },
-    {
-        id: 'ZD20064',
-        fl:'http://www.wuliu.com',
-        mc:'传销暴力',
-        ma:'信息违规检测',
-        nl:'陈云',
-        status:'39',
-    },
-    {
-        id: 'ZD20078',
-        fl:'http://www.ersansi.com',
-        mc:'炒股信息',
-        ma:'行为审计',
-        nl:'王安',
-        status:'100',
-    },
-    {
-        id: 'ZD20021',
-        fl:'http://www.qq.com',
-        mc:'qq聊天',
-        ma:'信息违规检测',
+        id: 'ZW12WL021',
+        fl:'http://www.zhengwei.com',
+        mc:'政委任命信息',
+        ma:'政府',
         nl:'张文芳',
         status:'78',
     },
     {
-        id: 'ZD20035',
-        fl:'http://www.xiao.com',
-        mc:'文件传输',
-        ma:'行为审计',
+        id: 'ZW12WL035',
+        fl:'http://www.jishengban.com',
+        mc:'计生办信息传',
+        ma:'计生办',
         nl:'王芳',
         status:'56',
     },
+    {
+        id: 'ZW12WL038',
+        fl:'http://www.zhengwu.com',
+        mc:'二胎政策',
+        ma:'计生办',
+        nl:'刘文',
+        status:'27',
+    },
+    {
+        id: 'ZW12WL021',
+        fl:'http://www.gongan.com',
+        mc:'公安网上查询',
+        ma:'公安局',
+        nl:'赵媛',
+        status:'100',
+    },
+    {
+        id: 'ZW12WL037',
+        fl:'http://www.shizheng.com',
+        mc:'市政局终端信息',
+        ma:'市政局',
+        nl:'刘冰',
+        status:'71',
+    },
+    {
+        id: 'ZW12WL035',
+        fl:'http://www.tudiju.com',
+        mc:'土地局征地信息',
+        ma:'土地局',
+        nl:'汪峰',
+        status:'99',
+    },
+    {
+        id: 'ZW12WL064',
+        fl:'http://www.cunwei.com',
+        mc:'村委会议信息',
+        ma:'村委会',
+        nl:'陈云',
+        status:'39',
+    },
+    {
+        id: 'ZW12WL078',
+        fl:'http://www.zhengfu.com',
+        mc:'政府计生办信息',
+        ma:'计生办',
+        nl:'王安',
+        status:'100',
+    },
+    
  
     
 ]
@@ -99,6 +100,34 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+        
+        {
+            title: '序号',
+            dataIndex: 'id',
+        },
+        {
+            title: '运维政务信息',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        {
+            title: '部门',
+            dataIndex: 'ma',
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
+        },
+        {
+            title: '政务运维网址',
+            dataIndex: 'fl',
+            render: (text) => <Tag color="blue">{text}</Tag>,
+        },
+        
+       
+       
+        {
+            title: '政务网络管理员',
+            dataIndex: 'nl',
+        },
+        
         {
             title: '是否禁止',
             dataIndex: 'jz',
@@ -108,35 +137,6 @@ class Type extends Component<TypeProps, TypeState>{
                 </Fragment>
             ),
         },
-        {
-            title: '序号',
-            dataIndex: 'id',
-        },
-        {
-            title: '运维监控网址',
-            dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '运维监控内容',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
-        },
-        {
-            title: '备注',
-            dataIndex: 'ma',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
-        },
-       
-        {
-            title: '管理员',
-            dataIndex: 'nl',
-        },
-        {
-            title: '进度',
-            dataIndex: 'status',
-            render: (text) => <Progress percent={text} status="active" />,
-          },
         {
             title: '操作',
             render: (text, record) => (
@@ -166,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运维监控管理"
+                title="政务网络信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

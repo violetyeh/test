@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑终端运维信息"
+                title="编辑网络终端信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="终端地址" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
@@ -65,28 +65,34 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
+                    <Form.Item key="jg" label="所有终端数量" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="在线终端数量" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="运维进度（%）" >
+                    <Form.Item key="process" label="在线比例（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    
+                    <Form.Item key="zt" label="终端状态" >
+                        {getFieldDecorator('zt', {
+                            initialValue: currentItem.zt,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                 </Form>
             </Modal>
         );

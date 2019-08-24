@@ -20,96 +20,87 @@ interface ModelState {
 const mockData = [
     
    
-     {
-        id:'zd094',
-        cf:'192.168.1.025',
-        dw:'16/tcp',
-        jg:'网络信息过滤',
-        jx:'高级优先',
-        process:'13',
+    {
+        id:'WLZD-001',
+        cf:'192.168.1.28',
+        dw:'38/tcp',
+        jg:'3000',
+        jx:'2301',
+        process:'85',
         status: '启用',
+        zt:'正常',
      },
      {
-         id:'zd095',
-         cf:'192.168.1.63',
-         dw:'06/tcp',
-         jg:'用户行为审计',
-         jx:'低级优先',
-         process:'68',
+         id:'WLZD-002',
+         cf:'192.168.1.36',
+         dw:'46/tcp',
+         jg:'1527',
+         jx:'1527',
+         process:'100',
          status: '启用',
+         zt:'异常',
       },
+      {
+         id:'WLZD-003',
+         cf:'192.168.1.115',
+         dw:'57/tcp',
+         jg:'1300',
+         jx:'1209',
+         process:'79',
+         status: '启用',
+         zt:'正常',
+      },
+      {
+         id:'WLZD-004',
+         cf:'192.168.1.025',
+         dw:'16/tcp',
+         jg:'1423',
+         jx:'1324',
+         process:'86',
+         status: '启用',
+         zt:'正常',
+      },
+      {
+          id:'WLZD-005',
+          cf:'192.168.1.63',
+          dw:'06/tcp',
+          jg:'1155',
+          jx:'1021',
+          process:'74',
+          status: '启用',
+          zt:'异常',
+       },
     {
-        id:'zd096',
+        id:'WLZD-006',
         cf:'192.168.1.41',
         dw:'45/tcp',
-        jg:'网络信息过滤',
-        jx:'高级优先',
-        process:'54',
+        jg:'1302',
+        jx:'1201',
+        process:'89',
         status: '启用',
+        zt:'正常',
      },
      {
-       id:'zd097',
+       id:'WLZD-007',
        cf:'192.168.1.08',
        dw:'56/tcp',
-       jg:'用户行为审计',
-       jx:'高级优先',
+       jg:'1365',
+       jx:'1298',
        process:'99',
        status: '启用',
+       zt:'正常',
     },
     {
-        id:'zd098',
+        id:'WLZD-008',
         cf:'192.168.1.12',
         dw:'23/tcp',
-        jg:'网络信息过滤',
-        jx:'低级优先',
-        process:'46',
+        jg:'1456',
+        jx:'1308',
+        process:'78',
         status: '启用',
+        zt:'异常',
      },
-    {
-       id:'zd091',
-       cf:'192.168.1.28',
-       dw:'38/tcp',
-       jg:'用户行为审计',
-       jx:'低级优先',
-       process:'100',
-       status: '启用',
-    },
-    {
-        id:'zd092',
-        cf:'192.168.1.36',
-        dw:'46/tcp',
-        jg:'网络信息过滤',
-        jx:'低级优先',
-        process:'88',
-        status: '启用',
-     },
-     {
-        id:'zd093',
-        cf:'192.168.1.115',
-        dw:'57/tcp',
-        jg:'用户行为审计',
-        jx:'高级优先',
-        process:'79',
-        status: '启用',
-     },
-     {
-        id:'zd094',
-        cf:'192.168.1.025',
-        dw:'16/tcp',
-        jg:'网络信息过滤',
-        jx:'高级优先',
-        process:'46',
-        status: '启用',
-     },
-     {
-         id:'zd095',
-         cf:'192.168.1.63',
-         dw:'06/tcp',
-         jg:'用户行为审计',
-         jx:'低级优先',
-         process:'23',
-         status: '启用',
-      },
+   
 
 ]
 
@@ -126,17 +117,17 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: 'IP地址',
+            title: '终端地址',
             dataIndex: 'cf',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '管理状态',
+            title: '所有终端数量',
             dataIndex: 'jg',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '服务',
+            title: '在线终端数量',
             dataIndex: 'jx',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
@@ -146,9 +137,15 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '运维进度',
+            title: '在线比例',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
+        
+        },
+        {
+            title: '终端状态',
+            dataIndex: 'zt',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         
         },
         {
@@ -182,7 +179,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="终端运维管理"
+                title="网络终端管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

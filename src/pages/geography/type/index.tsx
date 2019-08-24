@@ -19,69 +19,62 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'YW006',
-        mc:'192.168.1.12',
+        id: 'ZW-YW-WL-001',
+        mc:'通信终端中断次数',
         gg:'不使用任何规则',
-        hz:'重要',
+        hz:'服务器',
+        jd:98,
+     },
+     {
+         id: 'ZW-YW-WL-002',
+         mc:'终端通信中断最大时间',
+         gg:'网络安全规则',
+         hz:'服务器',
+         jd:100,
+      },
+      {
+         id: 'ZW-YW-WL-003',
+         mc:'终端通信中断最小时间',
+         gg:'网络安全规则',
+         hz:' 路由器',
+         jd:56,
+      },
+      {
+         id: 'ZW-YW-WL-004',
+         mc:'参数异常',
+         gg:'不使用任何规则',
+         hz:'路由器',
+         jd:74,
+      },
+      {
+         id: 'ZW-YW-WL-005',
+         mc:'定值异常',
+         gg:'网络安全规则',
+         hz:'服务器',
+         jd:95,
+      },
+    {
+        id: 'ZW-YW-WL-006',
+        mc:'终端通信通道延迟最大时间',
+        gg:'不使用任何规则',
+        hz:'路由器',
         jd:76,
-        state: 1,
      },
      {
-        id: 'YW007',
-        mc:'192.168.1.20',
+        id: 'ZW-YW-WL-007',
+        mc:'终端通信通道延迟最小时间',
         gg:'网络安全规则',
-        hz:'一般',
+        hz:'服务器',
         jd:100,
-        state: 1,
      },
      {
-        id: 'YW008',
-        mc:'192.168.1.15',
+        id: 'ZW-YW-WL-008',
+        mc:'终端在线率',
         gg:'不使用任何规则',
-        hz:'重要',
+        hz:'路由器',
         jd:88,
-        state: 1,
      }, 
-    {
-       id: 'YW001',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'YW002',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW003',
-        mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'YW004',
-        mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'YW005',
-        mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:95,
-        state: 1,
-     },
+   
     
    
 ]
@@ -95,6 +88,32 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+       
+        {
+            title: '序号',
+            dataIndex: 'id',
+        },
+        {
+            title: '运维项目',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+         {
+            title: '节点类型',
+            dataIndex: 'hz',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        {
+            title: '运维规则',
+            dataIndex: 'gg',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
+        },
+       
+        {
+            title: '运维进度',
+            dataIndex: 'jd',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
+        },
         {
             title: '运维状态',
             dataIndex: 'jk',
@@ -104,35 +123,7 @@ class Type extends Component<TypeProps, TypeState>{
                 </Fragment>
             ),
         },
-        {
-            title: '序号',
-            dataIndex: 'id',
-        },
-        {
-            title: 'IP地址',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="red">{text}</Tag>,
-        },
-        {
-            title: '运维规则',
-            dataIndex: 'gg',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
-        },
-        {
-            title: '重点运维',
-            dataIndex: 'hz',
-            render: (text) => <Tag color="green">{text}</Tag>,
-        },
-        {
-            title: '运维进度',
-            dataIndex: 'jd',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
-        },
-        {
-            title: '网络状态',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="安全" unCheckedChildren="危险" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -160,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络运维管理"
+                title="运维管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云综合运维管理平台',
+  title: '政务网络运维平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
