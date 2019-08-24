@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '资源分类',
+          name: '容器配置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '文档管理',
+          name: '私有网络管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '网盘管理',
+          name: '对等连接',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

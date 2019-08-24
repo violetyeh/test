@@ -19,67 +19,67 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'WP0032',
-       hj:'斗破苍穹',
-       mc:'2019-08-14',
-       bs:'视频库-动漫',
-       bcy:'高品质',
+       id: 'DUIDENG-00032',
+       hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
+       mc:'华南地区（广州）',
+       bs:'其它账号',
+       bcy:'1201k/s',
        state: 1,
     },
     {
-        id: 'WP0049',
-        hj:'斗罗大陆',
-        mc:'2019-07-02',
-        bs:'视频库-动漫',
-        bcy:'低品质',
+        id: 'DUIDENG-00049',
+        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
+        mc:'华北地区（北京）',
+        bs:'我的账号',
+        bcy:'无上限',
         state: 1,
      },
      {
-        id: 'WP0036',
-        hj:'陈情令',
-        mc:'2019-08-11',
-        bs:'视频库-电视剧',
-        bcy:'高品质',
+        id: 'DUIDENG-00036',
+        hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
+        mc:'华南地区（广州）',
+        bs:'我的账号',
+        bcy:'1201k/s',
         state: 1,
      },
      {
-        id: 'WP0047',
-        hj:'魔道祖师',
-        mc:'2019-08-12',
-        bs:'视频库-动漫',
-        bcy:'低品质',
+        id: 'DUIDENG-00047',
+        hj:'vpc-bu3ei113(test02|172.16.0.0/20)',
+        mc:'华北地区（北京）',
+        bs:'其它账号',
+        bcy:'无上限',
         state: 1,
      },
      {
-        id: 'WP0022',
-        hj:'源',
-        mc:'2019-08-05',
-        bs:'音频库-音乐',
-        bcy:'低品质',
+        id: 'DUIDENG-00022',
+        hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
+        mc:'西南地区（重庆）',
+        bs:'我的账号',
+        bcy:'无上限',
         state: 1,
      },
      {
-        id: 'WP0047',
-        hj:'朋友',
-        mc:'2019-08-04',
-        bs:'音频库-音乐',
-        bcy:'高品质',
+        id: 'DUIDENG-00047',
+        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
+        mc:'华南地区（广州）',
+        bs:'其它账号',
+        bcy:'1201k/s',
         state: 1,
      },
      {
-        id: 'WP0036',
-        hj:'哪吒',
-        mc:'2019-08-12',
-        bs:'视频库-电影',
-        bcy:'低品质',
+        id: 'DUIDENG-00036',
+        hj:'vpc-bu3ei113(test02|172.16.0.0/20)',
+        mc:'华东地区（上海）',
+        bs:'其它账号',
+        bcy:'无上限',
         state: 1,
      },
      {
-        id: 'WP0012',
-        hj:'烈火英雄',
-        mc:'2019-08-02',
-        bs:'视频库-电影',
-        bcy:'低品质',
+        id: 'DUIDENG-00012',
+        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
+        mc:'西南地区（成都）',
+        bs:'我的账号',
+        bcy:'无上限',
         state: 1,
      },
 ]
@@ -98,30 +98,31 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '标题',
-            dataIndex: 'hj',
-            render: (text) => <Tag color="red">{text}</Tag>,
-        },
-        {
-            title: '上传时间',
+            title: '本端地域',
             dataIndex: 'mc',
             render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '类别',
+            title: '本端网络',
+            dataIndex: 'hj',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        
+        {
+            title: '对端账号',
             dataIndex: 'bs',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '品质',
+            title: '带宽上限',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '是否已下载',
+            title: '计费模式',
             dataIndex: 'jl',
-            render: () => <Switch checkedChildren="已下载" unCheckedChildren="未下载" />,
+            render: () => <Switch checkedChildren="免费" unCheckedChildren="收费" />,
         },
         {
             title: '操作',
@@ -150,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网盘管理"
+                title="对等连接"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

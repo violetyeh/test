@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云网盘管理平台',
+  title: '容器管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -19,75 +19,75 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: '图片库',
-        dw:'刘亦菲剧照',
+        hj: 'vpc-k9ffk5ad test01',
+        dw:'10.0.0.0/16',
         ren:'刘威',
-        riqi:'花木兰 刘亦菲',
-        qk:'.jpg',
-        process: 1,
+        riqi:'0.25核',
+        qk:'0.25GB',
+        process: 31,
         
     },
     {
-        hj: '音频库',
-        dw:'凉凉',
+        hj: 'vpc-bu3ei1l3 test02',
+        dw:'172.16.0.0/20',
         ren:'孟浩',
-        riqi:'三生三世  张碧晨',
-        qk:'.mp3',
-        process: 0.5,
+        riqi:'4核',
+        qk:'2GB',
+        process: 65,
         
     },
     {
-        hj: '视频库',
-        dw:'唐人街探案',
+        hj: 'vpc-oiejnydh  test03 ',
+        dw:'172.16.0.0/22',
         ren:'唐宇',
-        riqi:'王宝强 刘昊然',
-        qk:'.mp4',
-        process: 2,
+        riqi:'2核',
+        qk:'1.25GB',
+        process: 42,
         
     },
     {
-        hj: '视频库',
-        dw:'泰囧',
+        hj: 'vpc-50f5o6yx  test04',
+        dw:'192.168.0.0/20',
         ren:'李白白',
-        riqi:'王宝强 徐峥',
-        qk:'.mp4',
-        process: 1,
+        riqi:'1核',
+        qk:'1GB',
+        process: 51,
         
     },
     {
-        hj: '图片库',
-        dw:'王俊凯剧照',
+        hj: 'vpc-k9ffk5ad test05',
+        dw:'10.0.0.0/19',
         ren:'明楼',
-        riqi:'王俊凯',
-        qk:'.jpg',
-        process: 0.2,
+        riqi:'1核',
+        qk:'0.75GB',
+        process:82,
         
     },
     {
-        hj: '视频库',
-        dw:'我的少年时代',
+        hj: 'vpc-bu3ei1l3 test06',
+        dw:'192.168.0.0/18',
         ren:'明玉',
-        riqi:'王俊凯  王源',
-        qk:'.mp4',
-        process: 0.6,
+        riqi:'0.5核',
+        qk:'0.25GB',
+        process: 76,
         
     },
     {
-        hj: '图片库',
-        dw:'王源剧照',
+        hj: 'vpc-oiejnydh  test07',
+        dw:'10.0.0.0/15',
         ren:'刘茵茵',
-        riqi:'王源',
-        qk:'.jpg',
-        process: 0.8,
+        riqi:'0.5核',
+        qk:'0.5GB',
+        process:65,
         
     },
     {
-        hj: '音频库',
-        dw:'白衣',
+        hj: 'vpc-50f5o6yx  test08',
+        dw:'10.0.0.0/14',
         ren:'赵湾',
-        riqi:'河图',
-        qk:'.mp3',
-        process: 0.7,
+        riqi:'0.25核',
+        qk:'0.25GB',
+        process: 45,
         
     },
     
@@ -101,39 +101,35 @@ class Model extends Component<ModelProps, ModelState>{
     }
 
     columns: ColumnProps<any>[] = [
+       
         {
-            title: '文档状态',
-            dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
-        },
-        {
-            title: '所属分类',
+            title: '编号',
             dataIndex: 'hj',
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '资源描述',
+            title: 'CIDR',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '上传用户',
+            title: '管理人',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '资源标签',
+            title: 'CPU',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '文件格式',
+            title: '内存',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '文件大小占比',
+            title: '网络效率',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -164,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="文档管理"
+                title="私有网络管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

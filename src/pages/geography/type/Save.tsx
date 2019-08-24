@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="网盘管理设置"
+                title="对等连接设置"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,41 +51,42 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="标题" >
-                        {getFieldDecorator('hj', {
-                            initialValue: currentItem.hj,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mc" label="上传时间" >
+                    <Form.Item key="mc" label="本端地域" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bs" label="类别" >
+                    <Form.Item key="hj" label="本端网络" >
+                        {getFieldDecorator('hj', {
+                            initialValue: currentItem.hj,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                   
+                    <Form.Item key="bs" label="对端账号" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="品质" >
+                    <Form.Item key="bcy" label="带宽上限" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jl" label="是否已下载" >
+                    <Form.Item key="jl" label="计费模式" >
                         {getFieldDecorator('jl', {
                             initialValue: currentItem.jl,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">已下载</Radio.Button>
-                               <Radio.Button value="b">未下载</Radio.Button>
+                               <Radio.Button value="a">免费</Radio.Button>
+                               <Radio.Button value="b">收费</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>
