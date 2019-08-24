@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZWTP1201',
+        id: 'SX-DB-ID-0001',
         tongdao:'张媛',
-        touguang:'食品安全社会共治',
-        xq:'市市场监管局开展“你点我检”专项...',
-        duizhao:'允许',
-        zt:'已投票',
+        touguang:'粮食收购许可申请',
+        xq:'2358745684@qq.com',
+        duizhao:'政府办公室',
+        zt:'未办结',
     },
     {
-        id: 'ZWTP1202',
+        id: 'SX-DB-ID-0002',
         tongdao:'陈涛',
-        touguang:'特色农产品保障再加码',
-        xq:'对纳入试点范围的地方优势特色...',
-        duizhao:'不允许',
-        zt:'未投票',
+        touguang:'烟花爆竹经营许可申请',
+        xq:'365471547@qq.com',
+        duizhao:'工商局',
+        zt:'已办结',
     },
     {
-        id: 'ZWTP1203',
+        id: 'SX-DB-ID-0003',
         tongdao:'孟明',
-        touguang:'国家税务总局推出十条便民办税缴费新举措',
-        xq:'这十条新举措包括推行税收优惠清单式...',
-        duizhao:'不允许',
-        zt:'已投票',
+        touguang:'老年优待证申请',
+        xq:'626854789@qq.com',
+        duizhao:'工商局',
+        zt:'未受理',
     },
     {
-        id: 'ZWTP1204',
+        id: 'SX-DB-ID-0004',
         tongdao:'赵燕',
-        touguang:'治理违规涉企收费将建立长效机制',
-        xq:'推动违规涉企收费治理规范化、法治化...',
-        duizhao:'允许',
-        zt:'已投票',
+        touguang:'会计资格从业证书核发申请',
+        xq:'36457895@qq.com',
+        duizhao:'政府办公室',
+        zt:'待补正',
     },
     {
-        id: 'ZWTP1205',
+        id: 'SX-DB-ID-0005',
         tongdao:'钱前',
-        touguang:'明年起ETC单卡用户不再享受ETC通行费优惠',
-        xq:'对ETC车辆给予不小于5%的车辆通行费...',
-        duizhao:'不允许',
-        zt:'未投票',
+        touguang:'政府投资项目审批申请',
+        xq:'15647895@qq.com',
+        duizhao:'工商局',
+        zt:'已受理',
     },
     {
-        id: 'ZWTP1206',
+        id: 'SX-DB-ID-0006',
         tongdao:'胡艳',
-        touguang:'国办印发指导意见促进平台经济规范健康发展',
-        xq:'《意见》提出了五个方面政策措施。...',
-        duizhao:'允许',
-        zt:'已投票',
+        touguang:'经济规范政策',
+        xq:'13654789@qq.com.',
+        duizhao:'政府办公室',
+        zt:'未受理',
     },
     {
-        id: 'ZWTP1207',
+        id: 'SX-DB-ID-0007',
         tongdao:'罗蒙',
-        touguang:'传统节庆',
-        xq:'在清明、端午、中秋等传统节庆日，您... ',
-        duizhao:'不允许',
-        zt:'已投票',
+        touguang:'节假日规定申请',
+        xq:'23568745@qq.com ',
+        duizhao:'工商局',
+        zt:'未受理',
     },
     {
-        id: 'ZWTP1208',
+        id: 'SX-DB-ID-0008',
         tongdao:'姜丝',
-        touguang:'社区活动',
-        xq:'本市各社区开展了形式多样的科教、文体... ',
-        duizhao:'不允许',
-        zt:'已投票',
+        touguang:'社区活动开展资格申请',
+        xq:'37258965@qq.com ',
+        duizhao:'政府办公室',
+        zt:'未受理',
     },
     
 ]
@@ -99,31 +99,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '办件编号',
             dataIndex: 'id',
         },
+        
         {
-            title: '发布人',
-            dataIndex: 'tongdao',
-        },
-        {
-            title: '投票标题',
+            title: '事项名称',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
+       
         {
-            title: '详情',
-            dataIndex: 'xq',
-        },
-        {
-            title: '匿名投票结果',
+            title: '受理部门',
             dataIndex: 'duizhao',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '状态',
+            title: '受理状态',
             dataIndex: 'zt',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
+        },
+        {
+            title: '管理员',
+            dataIndex: 'tongdao',
+        },
+        {
+            title: 'E-mail',
+            dataIndex: 'xq',
         },
         {
             title: '操作',
@@ -154,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="政务投票管理"
+                title="行政许可事项"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

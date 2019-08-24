@@ -19,77 +19,78 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'BGID12',
-        sp:'个人文件柜',
-        shijian:'档案-文件管理',
-        biaozhun:'管理员',
-        jiance:'郑峰',
-        process: 88,
-        status: '启用',
-    },
-    {
-        id: 'BGID13',
-        sp:'政务邮件',
-        shijian:'邮件-新修订《纳税服务投诉管理办法》 ',
-        biaozhun:'书记',
-        jiance:'王媛',
-        process: 99,
-        status: '启用',
-    },
-    {
-        id: 'BGID14',
-        sp:'事务提醒',
-        shijian:'事务-会议提醒',
-        biaozhun:'政协会长',
-        jiance:'刘琦歌',
-        process: 5,
-        status: '启用',
-    },
-    {
-        id: 'BGID15',
-        sp:'便签',
-        shijian:'提醒下午三点有个会议',
-        biaozhun:'人大代表',
-        jiance:'李武雨',
-        process: 95,
-        status: '启用',
-    },
-    {
-        id: 'BGID16',
-        sp:'即时通讯',
-        shijian:'通讯簿*',
-        biaozhun:'书记',
-        jiance:'王可可',
-        process: 100,
-        status: '启用',
-    },
-    {
-        id: 'BGID17',
-        sp:'办公委托',
-        shijian:'有关区县道路维修...',
-        biaozhun:'管理员',
+        id: 'CER0000007',
+        sp:'督办事项',
+        shijian:'政府投资项目审批申请',
+        biaozhun:'2019年8月16日',
         jiance:'吴启拉',
         process: 60,
         status: '启用',
     },
     {
-        id: 'BGID18',
-        sp:'办公日志',
-        shijian:'档案-归档日志',
-        biaozhun:'文员',
+        id: 'CER0000008',
+        sp:'待办事项',
+        shijian:'会计资格从业证书核发申请',
+        biaozhun:'2019年8月15日',
         jiance:'赵元乐',
         process: 40,
         status: '启用',
     },
     {
-        id: 'BGID19',
-        sp:'日程安排',
-        shijian:'2019年7月11日日程安排',
-        biaozhun:'书记',
+        id: 'CER0000009',
+        sp:'已办事项',
+        shijian:'老年优待证申请',
+        biaozhun:'2019年8月24日',
         jiance:'王可媛',
         process: 30,
         status: '启用',
     },
+    {
+        id: 'CER0000002',
+        sp:'受理任务',
+        shijian:'粮食收购许可申请',
+        biaozhun:'2019年8月21日',
+        jiance:'郑峰',
+        process: 88,
+        status: '启用',
+    },
+    {
+        id: 'CER0000003',
+        sp:'待办事项',
+        shijian:'烟花爆竹经营许可申请 ',
+        biaozhun:'2019年8月20日',
+        jiance:'王媛',
+        process: 99,
+        status: '启用',
+    },
+    {
+        id: 'CER0000004',
+        sp:'已办事项',
+        shijian:'社区活动开展资格申请',
+        biaozhun:'2019年8月19日',
+        jiance:'刘琦歌',
+        process: 5,
+        status: '启用',
+    },
+    {
+        id: 'CER0000005',
+        sp:'督办事项',
+        shijian:'节假日规定申请',
+        biaozhun:'2019年8月18日',
+        jiance:'李武雨',
+        process: 95,
+        status: '启用',
+    },
+    {
+        id: 'CER0000006',
+        sp:'受理任务',
+        shijian:'经济规范政策',
+        biaozhun:'2019年8月17日',
+        jiance:'王可可',
+        process: 100,
+        status: '启用',
+    },
+    
    
     
 ]
@@ -103,30 +104,30 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '办公编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '办公名称',
+            title: '分类',
             dataIndex: 'sp',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '描述',
+            title: '事项名称',
             dataIndex: 'shijian',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '办公角色',
+            title: '提交日期',
             dataIndex: 'biaozhun',
-            render: (text) => <Tag color="gray">{text}</Tag>,
         },
         {
-            title: '上级领导',
+            title: '申请人',
             dataIndex: 'jiance',
-            render: (text) => <Tag color="brown">{text}</Tag>,
+            render: (text) => <Tag color="BROWN">{text}</Tag>,
         },
         {
-            title: '办公进度',
+            title: '事项办理进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -162,7 +163,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="办公任务设置"
+                title="事项办理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

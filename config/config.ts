@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '政务投票管理',
+          name: '行政许可事项',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '办公任务设置',
+          name: '事项办理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '政务办公维度管理',
+          name: '综合监察',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

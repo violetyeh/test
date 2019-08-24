@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑政务投票"
+                title="编辑行政许可事项"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,52 +44,53 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="办件编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="发布人" >
-                        {getFieldDecorator('tongdao', {
-                            initialValue: currentItem.tongdao,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="touguang" label="投票标题" >
+                    
+                    <Form.Item key="touguang" label="事项名称" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xq" label="详情" >
-                        {getFieldDecorator('xq', {
-                            initialValue: currentItem.xq,
+                   
+                    <Form.Item key="duizhao" label="受理部门" >
+                        {getFieldDecorator('duizhao', {
+                            initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="匿名投票结果" >
-                        {getFieldDecorator('duizhao', {
-                            initialValue: currentItem.duizhao,
-                        })(
-                            <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">允许</Radio.Button>
-                                <Radio.Button value="b">不允许</Radio.Button>
-                             </Radio.Group>,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="zt" label="状态" >
+                    <Form.Item key="zt" label="受理状态" >
                         {getFieldDecorator('zt', {
                             initialValue: currentItem.zt,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">已投票</Radio.Button>
-                                <Radio.Button value="b">未投票</Radio.Button>
+                                <Radio.Button value="a">未办结</Radio.Button>
+                                <Radio.Button value="b">已办结</Radio.Button>
+                                <Radio.Button value="c">未受理</Radio.Button>
+                                <Radio.Button value="d">已受理</Radio.Button>
                              </Radio.Group>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="tongdao" label="管理员" >
+                        {getFieldDecorator('tongdao', {
+                            initialValue: currentItem.tongdao,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="xq" label="E-mail" >
+                        {getFieldDecorator('xq', {
+                            initialValue: currentItem.xq,
+                        })(
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>

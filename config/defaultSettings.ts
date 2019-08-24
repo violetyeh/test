@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云政务办公平台',
+  title: '政务一窗平台系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
