@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云分布式存储管理平台',
+  title: 'BMC服务器管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

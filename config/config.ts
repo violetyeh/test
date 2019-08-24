@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '分布式存储资源',
+          name: '虚拟机管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '磁盘空间信息',
+          name: '存储管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '空间存储利用管理',
+          name: '事件管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

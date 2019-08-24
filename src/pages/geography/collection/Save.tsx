@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑分布式存储资源"
+                title="编辑虚拟机信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="位置" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="资源大小（GB）" >
+                    <Form.Item key="tongdao" label="内部名称" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="touguang" label="容量（GB）" >
+                    <Form.Item key="touguang" label="显示名称" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="资源类型" >
+                    <Form.Item key="duizhao" label="区域名称" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijain" label="是否可存储" >
+                    <Form.Item key="shijain" label="状态" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑磁盘空间"
+                title="编辑存储信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,42 +44,36 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="位置" >
+                    <Form.Item key="id" label="名称" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sp" label="磁盘内存大小（GB）" >
+                    <Form.Item key="sp" label="类型" >
                         {getFieldDecorator('sp', {
                             initialValue: currentItem.sp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijian" label="磁盘分类" >
+                    <Form.Item key="shijian" label="虚拟机平台" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="biaozhun" label="存储资源信息" >
+                    <Form.Item key="biaozhun" label="VM显示名称" >
                         {getFieldDecorator('biaozhun', {
                             initialValue: currentItem.biaozhun,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jiance" label="磁盘盘数" >
-                        {getFieldDecorator('jiance', {
-                            initialValue: currentItem.jiance,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="process" label="磁盘存储占比空间（%）" >
+                   
+                    <Form.Item key="process" label="存储占比（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

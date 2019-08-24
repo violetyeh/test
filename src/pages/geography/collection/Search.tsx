@@ -17,19 +17,19 @@ class Search extends Component<SearchProps, SearchState>{
             <Form layout='inline'>
                 <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                     <Col md={8} sm={24}>
-                        <Form.Item label="位置">
+                        <Form.Item label="编号">
                             {getFieldDecorator('id')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="资源类型">
+                        <Form.Item label="内部名称">
                             {getFieldDecorator('duizhao')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加分布式存储资源</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加虚拟机信息</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>
