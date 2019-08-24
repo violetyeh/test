@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
+        id: 'YW001',
+        mc:'字符审计',
+        gg:'AD域认证',
+        hz:'未开启',
+        jd:98,
+        state: 1,
+     },
+     {
+         id: 'YW002',
+         mc:'SNMP服务',
+         gg:'本地认证',
+         hz:'正在运行',
+         jd:100,
+         state: 1,
+      },
+      {
+         id: 'YW003',
+         mc:'监控服务',
+         gg:'RADIUS认证',
+         hz:' 暂停运行',
+         jd:56,
+         state: 1,
+      },
+      {
+         id: 'YW004',
+         mc:'字符审计',
+         gg:'AD域认证',
+         hz:'未开启',
+         jd:74,
+         state: 1,
+      },
+      {
+         id: 'YW005',
+         mc:'图形审计',
+         gg:'本地认证',
+         hz:'正在运行',
+         jd:95,
+         state: 1,
+      },
+    {
         id: 'YW006',
         mc:'192.168.1.12',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'监控服务',
+        hz:'暂停运行',
         jd:76,
         state: 1,
      },
      {
         id: 'YW007',
-        mc:'192.168.1.20',
-        gg:'网络安全规则',
-        hz:'一般',
+        mc:'图形审计',
+        gg:'本地认证',
+        hz:'未开启',
         jd:100,
         state: 1,
      },
      {
         id: 'YW008',
-        mc:'192.168.1.15',
-        gg:'不使用任何规则',
-        hz:'重要',
+        mc:'SNMP服务',
+        gg:'RADIUS',
+        hz:'暂停运行',
         jd:88,
         state: 1,
      }, 
-    {
-       id: 'YW001',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'YW002',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW003',
-        mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'YW004',
-        mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'YW005',
-        mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:95,
-        state: 1,
-     },
+   
     
    
 ]
@@ -95,43 +96,44 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '运维状态',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >正在运维</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: 'IP地址',
+            title: '服务名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '运维规则',
+            title: '认证模式',
             dataIndex: 'gg',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '重点运维',
+            title: '开启证书认证',
+            dataIndex: 'jk',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >开启</Checkbox>
+                </Fragment>
+            ),
+        },
+        {
+            title: '运行状态',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '运维进度',
+            title: '运行进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '网络状态',
+            title: '运行状态控制',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="安全" unCheckedChildren="危险" />,
+            render: () => <Switch checkedChildren="控制中" unCheckedChildren="未控制" />,
         },
         {
             title: '操作',
@@ -160,7 +162,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络运维管理"
+                title="服务管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

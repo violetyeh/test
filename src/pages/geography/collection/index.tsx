@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZD20038',
-        fl:'http://www.yiersan.com',
-        mc:'银行账号',
-        ma:'行为审计',
-        nl:'刘文',
-        status:'27',
+        id: 'ZJXX00038',
+        fl:'192 . 168 . 1 . 105',
+        mc:'Windows Server 2008',
+        ma:'VNC',
+        nl:'2347',
+        status:'34',
     },
     {
-        id: 'ZD20021',
-        fl:'http://www.liuba.com',
-        mc:'淘宝密码',
-        ma:'行为审计',
-        nl:'赵媛',
+        id: 'ZJXX00021',
+        fl:'192 . 168 . 1 . 01',
+        mc:'Windows XP',
+        ma:'FTP',
+        nl:'1257',
         status:'100',
     },
     {
-        id: 'ZD20037',
-        fl:'http://www.qijiu.com',
-        mc:'淫秽字词',
-        ma:'信息违规检测',
-        nl:'刘冰',
-        status:'71',
-    },
-    {
-        id: 'ZD20035',
-        fl:'http://www.yisan.com',
-        mc:'远程登录',
-        ma:'行为审计',
-        nl:'汪峰',
-        status:'99',
-    },
-    {
-        id: 'ZD20064',
-        fl:'http://www.wuliu.com',
-        mc:'传销暴力',
-        ma:'信息违规检测',
-        nl:'陈云',
-        status:'39',
-    },
-    {
-        id: 'ZD20078',
-        fl:'http://www.ersansi.com',
-        mc:'炒股信息',
-        ma:'行为审计',
-        nl:'王安',
-        status:'100',
-    },
-    {
-        id: 'ZD20021',
-        fl:'http://www.qq.com',
-        mc:'qq聊天',
-        ma:'信息违规检测',
-        nl:'张文芳',
+        id: 'ZJXX00037',
+        fl:'192 . 168 . 1 . 302',
+        mc:'Windows Server 2012',
+        ma:'RDP',
+        nl:'6341',
         status:'78',
     },
     {
-        id: 'ZD20035',
-        fl:'http://www.xiao.com',
-        mc:'文件传输',
-        ma:'行为审计',
-        nl:'王芳',
+        id: 'ZJXX00035',
+        fl:'192 . 168 . 1 . 478',
+        mc:'Windows 7/8 /10',
+        ma:'VNC',
+        nl:'7542',
+        status:'99',
+    },
+    {
+        id: 'ZJXX00064',
+        fl:'192 . 168 . 1 . 356',
+        mc:'Windows Server 2008/2012',
+        ma:'RDP',
+        nl:'2156',
+        status:'39',
+    },
+    {
+        id: 'ZJXX00078',
+        fl:'192 . 168 . 1 . 255',
+        mc:'Windows Server 2008',
+        ma:'FDP',
+        nl:'3321',
+        status:'100',
+    },
+    {
+        id: 'ZJXX00021',
+        fl:'192 . 168 . 1 . 412',
+        mc:'Windows 7/8 /10',
+        ma:'RDP',
+        nl:'4476',
+        status:'78',
+    },
+    {
+        id: 'ZJXX00035',
+        fl:'192 . 168 . 1 . 231',
+        mc:'Windows XP',
+        ma:'SSH',
+        nl:'3389',
         status:'56',
     },
  
@@ -99,41 +99,33 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '是否禁止',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >禁止</Checkbox>
-                </Fragment>
-            ),
-        },
+        
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '运维监控网址',
+            title: '主机地址',
             dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '运维监控内容',
+            title: '操作系统',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="Cyan">{text}</Tag>,
         },
         {
-            title: '备注',
+            title: '网络协议',
             dataIndex: 'ma',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
        
         {
-            title: '管理员',
+            title: '服务端口',
             dataIndex: 'nl',
         },
         {
-            title: '进度',
+            title: '服务进度',
             dataIndex: 'status',
             render: (text) => <Progress percent={text} status="active" />,
           },
@@ -166,7 +158,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运维监控管理"
+                title="主机信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

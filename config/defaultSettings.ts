@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云综合运维管理平台',
+  title: '华云堡垒机系统软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
