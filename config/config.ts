@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '威胁内容信息',
+          name: '防火墙参数设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '威胁审计检测',
+          name: '安全属性',
           path: '/model',
           icon: 'fund',
           component: './geography/model',

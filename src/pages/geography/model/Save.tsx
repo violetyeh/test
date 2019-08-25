@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑威胁审计检测"
+                title="编辑安全属性"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,34 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="服务器地址" >
-                        {getFieldDecorator('cf', {
-                            initialValue: currentItem.cf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dw" label="区域" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
-                        {getFieldDecorator('jg', {
-                            initialValue: currentItem.jg,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jx" label="发送日志" >
+                    <Form.Item key="jx" label="防火墙标识" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="cf" label="IP地址" >
+                        {getFieldDecorator('cf', {
+                            initialValue: currentItem.cf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="dw" label="僵死连接超时（秒）" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jg" label="僵死连接最大数目" >
+                        {getFieldDecorator('jg', {
+                            initialValue: currentItem.jg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    
                     
                 </Form>
             </Modal>

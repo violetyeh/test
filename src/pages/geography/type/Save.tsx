@@ -51,9 +51,16 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="设备名称" >
+                    <Form.Item key="gg" label="协议名称" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="hz" label="黑名单" >
+                        {getFieldDecorator('hz', {
+                            initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
@@ -66,14 +73,8 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="hz" label="说明" >
-                        {getFieldDecorator('hz', {
-                            initialValue: currentItem.hz,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jd" label="威胁检测进度（%）" >
+                  
+                    <Form.Item key="jd" label="漏洞检测进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

@@ -22,62 +22,64 @@ interface TypeState {
 }
 
 const mockData = [
+
     {
-        id: 'WXNR000021',
-        fl:'eth2.100',
-        mc:'10.50.0.3/54',
-        ma:'信息过滤',
-        nl:'张文芳',
-    },
-    {
-        id: 'WXNR000035',
-        fl:'eth2.200',
-        mc:'10.50.0.0/01',
-        ma:'行为审计',
-        nl:'王芳',
-    },
-    {
-        id: 'WXNR000038',
-        fl:'eth2.310',
-        mc:'10.50.0.1/32',
-        ma:'行为审计',
+        id: 'APLO-000038',
+        fl:'http',
+        mc:'192.168.1.32',
+        ma:'Smurf',
         nl:'刘文',
     },
     {
-        id: 'WXNR000021',
-        fl:'eth2.199',
-        mc:'10.50.0.1/52',
-        ma:'行为审计',
+        id: 'APLO-000021',
+        fl:'ftp',
+        mc:'192.168.1.2',
+        ma:'Ping Sweep',
         nl:'赵媛',
     },
     {
-        id: 'WXNR000037',
-        fl:'eth2.215',
-        mc:'10.50.0.0/16',
-        ma:'信息过滤',
+        id: 'APLO-000037',
+        fl:'sql',
+        mc:'192.168.1.120',
+        ma:'Ip Spoof',
         nl:'刘冰',
     },
     {
-        id: 'WXNR000035',
-        fl:'eth2.177',
-        mc:'10.50.0.0/16',
-        ma:'行为审计',
+        id: 'APLO-000035',
+        fl:'rtsp',
+        mc:'192.168.1.301',
+        ma:'Tear Drop',
         nl:'汪峰',
     },
     {
-        id: 'WXNR000064',
-        fl:'eth2.023',
-        mc:'10.50.0.16/52',
-        ma:'信息过滤',
+        id: 'APLO-000064',
+        fl:'http',
+        mc:'192.168.1.102',
+        ma:'Smurf',
         nl:'陈云',
     },
     {
-        id: 'WXNR000078',
-        fl:'eth2.014',
-        mc:'10.50.0.2/32',
-        ma:'行为审计',
+        id: 'APLO-000078',
+        fl:'ftp',
+        mc:'192.168.1.02',
+        ma:'Land',
         nl:'王安',
     },
+    {
+        id: 'APLO-000021',
+        fl:'ftp',
+        mc:'192.168.1.54',
+        ma:'Ip Spoof',
+        nl:'张文芳',
+    },
+    {
+        id: 'APLO-000035',
+        fl:'nail',
+        mc:'192.168.1.01',
+        ma:'Ping Sweep',
+        nl:'王芳',
+    },
+
     
 ]
 
@@ -90,6 +92,31 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+       
+        {
+            title: '序号',
+            dataIndex: 'id',
+        },
+        {
+            title: '模块名称',
+            dataIndex: 'fl',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+        },
+        {
+            title: '受保护的机器',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="blue">{text}</Tag>,
+        },
+        {
+            title: '攻击类型',
+            dataIndex: 'ma',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+       
+        {
+            title: '管理员',
+            dataIndex: 'nl',
+        },
         {
             title: '禁止',
             dataIndex: 'jz',
@@ -98,30 +125,6 @@ class Type extends Component<TypeProps, TypeState>{
                   <Checkbox >禁止</Checkbox>
                 </Fragment>
             ),
-        },
-        {
-            title: '序号',
-            dataIndex: 'id',
-        },
-        {
-            title: 'VLAN接口',
-            dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '目标网络',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="blue">{text}</Tag>,
-        },
-        {
-            title: '检测操作',
-            dataIndex: 'ma',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
-       
-        {
-            title: '检测管理员',
-            dataIndex: 'nl',
         },
         {
             title: '操作',
@@ -152,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="威胁内容信息"
+                title="防火墙参数设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

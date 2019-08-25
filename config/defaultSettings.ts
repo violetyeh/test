@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙威胁检测管理系统',
+  title: '计算机网络防火墙安全管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
