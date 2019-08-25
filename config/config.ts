@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '实体机状态管理',
+          name: '集群管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: 'IP池管理',
+          name: '资源池管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '网络信息',
+          name: '云主机配置管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

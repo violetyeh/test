@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑IP池信息"
+                title="编辑资源池信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,34 +51,42 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP池" >
-                        {getFieldDecorator('cf', {
-                            initialValue: currentItem.cf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dw" label="子网掩码" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jx" label="数据通讯口（VxLan）" >
-                        {getFieldDecorator('jx', {
-                            initialValue: currentItem.jx,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="数据通信IP" >
+                    <Form.Item key="jg" label="IP地址" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="cf" label="内存（%）" >
+                        {getFieldDecorator('cf', {
+                            initialValue: currentItem.cf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="cpu" label="CPU（%）" >
+                        {getFieldDecorator('cpu', {
+                            initialValue: currentItem.cpu,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="dw" label="日志服务器" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jx" label="内存上限（MB）" >
+                        {getFieldDecorator('jx', {
+                            initialValue: currentItem.jx,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                  
                     
                    
                     

@@ -19,67 +19,75 @@ interface ModelState {
 
 const mockData = [
     {
-        id:'IPC-NUM-006',
-        cf:'10.100.200.1-10.100.200.200',
+        id:'ZY-ID06',
+        cf:'36',
+        cpu:'23',
         dw:'255.255.255.0',
         jg:'192.168.1.058',
-        jx:'eth1',
+        jx:'3021',
         status: '启用',
      },
      {
-       id:'IPC-NUM-007',
-       cf:'10.100.200.1-10.100.200.100',
+       id:'ZY-ID07',
+       cf:'21',
+       cpu:'6',
        dw:'255.255.255.1',
        jg:'192.168.1.067',
-       jx:'eth3',
+       jx:'3023',
        status: '启用',
     },
     {
-        id:'IPC-NUM-008',
-        cf:'10.100.200.1-10.100.200.150',
+        id:'ZY-ID08',
+        cf:'36',
+        cpu:'41',
         dw:'255.255.255.0',
         jg:'192.168.1.047',
-        jx:'eth6',
+        jx:'3026',
         status: '启用',
      },
     {
-       id:'IPC-NUM-001',
-       cf:'10.100.200.1-10.100.200.300',
+       id:'ZY-ID01',
+       cf:'20',
+       cpu:'25',
        dw:'255.255.255.2',
        jg:'192.168.1.036',
-       jx:'eth5',
+       jx:'3025',
        status: '启用',
     },
     {
-        id:'IPC-NUM-002',
-        cf:'10.100.200.1-10.100.200.220',
+        id:'ZY-ID02',
+        cf:'14',
+        cpu:'17',
         dw:'255.255.255.1',
         jg:'192.168.1.05',
-        jx:'eth4',
+        jx:'3024',
         status: '启用',
      },
      {
-        id:'IPC-NUM-003',
-        cf:'10.100.200.1-10.100.200.210',
+        id:'ZY-ID03',
+        cf:'14',
+        cpu:'5',
         dw:'255.255.255.0',
         jg:'192.168.1.021',
-        jx:'eth3',
+        jx:'3023',
         status: '启用',
      },
      {
-        id:'IPC-NUM-004',
-        cf:'10.100.200.1-10.100.200.210',
+        id:'ZY-ID04',
+        cf:'25',
+        cpu:'63',
         dw:'255.255.255.1',
         jg:'192.168.1.023',
-        jx:'eth2',
+        jx:'3022',
         status: '启用',
      },
      {
-         id:'IPC-NUM-005',
-         cf:'10.100.200.1-10.100.200.200',
+         id:'ZY-ID05',
+         cf:'35',
+         cpu:'20',
          dw:'255.255.255.0',
          jg:'192.168.1.108',
-         jx:'eth1',
+         jx:'3021',
          status: '启用',
       },
 
@@ -98,25 +106,31 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: 'IP池',
-            dataIndex: 'cf',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: '子网掩码',
-            dataIndex: 'dw',
-            render: (text) => <Tag color="MAGENTA">{text}</Tag>,
-        },
-        {
-            title: '数据通讯口（VxLan）',
-            dataIndex: 'jx',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
-        },
-        {
-            title: '数据通信IP',
+            title: 'IP地址',
             dataIndex: 'jg',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
+        {
+            title: '内存',
+            dataIndex: 'cf',
+            render: (text) => <Progress percent={text} status="active" />,
+        },
+        {
+            title: 'CPU',
+            dataIndex: 'cpu',
+            render: (text) => <Progress percent={text} status="active" />,
+        },
+        {
+            title: '日志服务器',
+            dataIndex: 'dw',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        {
+            title: '内存上限（MB）',
+            dataIndex: 'jx',
+            render: (text) => <Tag color="blue">{text}</Tag>,
+        },
+        
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -148,7 +162,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="IP池管理"
+                title="资源池管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

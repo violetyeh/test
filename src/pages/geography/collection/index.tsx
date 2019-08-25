@@ -23,77 +23,78 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'STJ-ZT-NM-0021',
-        fl:'00E74S5S5A6Z',
-        mc:'205 . 205 . 255 .07',
-        ma:'255 . 255 . 255 .107',
-        cpu:'67',
-        nc:'34',
-        io:'12',
-    },
-    {
-        id: 'STJ-ZT-NM-0035',
-        fl:'00E6F4D5S8E7',
-        mc:'205 . 205 . 255 .05',
-        ma:'255 . 255 . 255 .105',
-        cpu:'56',
-        nc:'39',
-        io:'24',
-    },
-    {
-        id: 'STJ-ZT-NM-0038',
-        fl:'00E1A2A3X5D5',
-        mc:'205 . 205 . 255 .33',
-        ma:'255 . 255 . 255 .133',
-        cpu:'27',
-        nc:'16',
-        io:'24',
-    },
-    {
-        id: 'STJ-ZT-NM-0021',
-        fl:'00E8A9Z6X5A2',
-        mc:'200 . 200 . 255 .02',
-        ma:'255 . 255 . 255 .102',
-        cpu:'36',
-        nc:'22',
-        io:'17',
-    },
-    {
         id: 'STJ-ZT-NM-0037',
-        fl:'00E5Z4A6D5S5',
+        fl:'机房TEST06',
         mc:'200 . 200 . 255 .42',
-        ma:'255 . 255 . 255 .142',
+        ma:'电信',
         cpu:'15',
         nc:'24',
         io:'6',
     },
     {
         id: 'STJ-ZT-NM-0035',
-        fl:'00EC5V6D4S5A',
+        fl:'机房TEST01',
         mc:'200 . 200 . 255 .35',
-        ma:'255 . 255 . 255 .635',
+        ma:'联通',
         cpu:'25',
         nc:'12',
         io:'3',
     },
     {
         id: 'STJ-ZT-NM-0064',
-        fl:'56ZZX2DS1W5D',
+        fl:'机房TEST07',
         mc:'200 . 200 . 255 .33',
-        ma:'255 . 255 . 255 .733',
+        ma:'移动',
         cpu:'36',
         nc:'2',
         io:'13',
     },
     {
         id: 'STJ-ZT-NM-0078',
-        fl:'00E0423GD52S',
+        fl:'机房TEST08',
         mc:'200 . 200 . 255 .55',
-        ma:'255 . 255 . 255 .255',
+        ma:'电信',
         cpu:'10',
         nc:'34',
         io:'5',
     },
+    {
+        id: 'STJ-ZT-NM-0021',
+        fl:'机房TEST02',
+        mc:'205 . 205 . 255 .07',
+        ma:'电信',
+        cpu:'67',
+        nc:'34',
+        io:'12',
+    },
+    {
+        id: 'STJ-ZT-NM-0035',
+        fl:'机房TEST03',
+        mc:'205 . 205 . 255 .05',
+        ma:'联通',
+        cpu:'56',
+        nc:'39',
+        io:'24',
+    },
+    {
+        id: 'STJ-ZT-NM-0038',
+        fl:'机房TEST04',
+        mc:'205 . 205 . 255 .33',
+        ma:'电信',
+        cpu:'27',
+        nc:'16',
+        io:'24',
+    },
+    {
+        id: 'STJ-ZT-NM-0021',
+        fl:'机房TEST05',
+        mc:'200 . 200 . 255 .02',
+        ma:'移动',
+        cpu:'36',
+        nc:'22',
+        io:'17',
+    },
+
     
 ]
 
@@ -112,33 +113,28 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '虚拟序列号',
+            title: '机房名称',
             dataIndex: 'fl',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '集群IP',
+            title: '主控服务地址',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '子网掩码',
+            title: '线路类型',
             dataIndex: 'ma',
         },
         {
-            title: 'CPU',
-            dataIndex: 'cpu',
-            render: (text) => <Progress percent={text} status="active" />,
+            title: '物理存储容量',
+            dataIndex: 'cpu', 
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '内存',
-            dataIndex: 'nc',
-            render: (text) => <Progress percent={text} status="active" />,
-        },
-        {
-            title: 'I/O繁忙度',
-            dataIndex: 'io',
-            render: (text) => <Progress percent={text} status="active" />,
+            title: '虚拟存储容量',
+            dataIndex: 'nc', 
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
        
         {
@@ -170,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="实体机状态管理"
+                title="集群管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

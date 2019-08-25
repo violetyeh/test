@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 主机信息: 3563, 网口信息: 1000, CPU信息 : 1600, 端口繁忙度 : 3082 },
-  { label: '0.2', 主机信息: 1900, 网口信息: 2880, CPU信息 : 1700, 端口繁忙度 : 1463 },
-  { label: '0.3', 主机信息: 1950, 网口信息: 1950, CPU信息 : 1800, 端口繁忙度 : 1075 },
-  { label: '0.4', 主机信息: 1500, 网口信息: 1500, CPU信息 : 1390, 端口繁忙度 : 2156 },
-  { label: '0.5', 主机信息: 1234, 网口信息: 1234, CPU信息 : 1166, 端口繁忙度 : 1266 },
-  { label: '0.6', 主机信息: 1234, 网口信息: 2634, CPU信息 : 1666, 端口繁忙度 : 1254 },
-  { label: '0.7', 主机信息: 3634, 网口信息: 1434, CPU信息 : 1666, 端口繁忙度 : 1283 },
-  { label: '0.8', 主机信息: 1234, 网口信息: 4284, CPU信息 : 1666, 端口繁忙度 : 2175 },
-  { label: '0.9', 主机信息: 1534, 网口信息: 1334, CPU信息 : 2236, 端口繁忙度 : 1281 },
-  { label: '1.0', 主机信息: 1234, 网口信息: 3234, CPU信息 : 786, 端口繁忙度 :1183 },
-  { label: '未评分', 主机信息: 2234, 网口信息: 4234, CPU信息 : 1666, 端口繁忙度 : 3164 },
+  { label: '0.1', 云主机信息: 3563, 内存容量: 1000, 资源池信息 : 1600, 机房信息 : 3082 },
+  { label: '0.2', 云主机信息: 1900, 内存容量: 2880, 资源池信息 : 1700, 机房信息 : 1463 },
+  { label: '0.3', 云主机信息: 1950, 内存容量: 1950, 资源池信息 : 1800, 机房信息 : 1075 },
+  { label: '0.4', 云主机信息: 1500, 内存容量: 1500, 资源池信息 : 1390, 机房信息 : 2156 },
+  { label: '0.5', 云主机信息: 4215, 内存容量: 4215, 资源池信息 : 1166, 机房信息 : 1266 },
+  { label: '0.6', 云主机信息: 4215, 内存容量: 2634, 资源池信息 : 2010, 机房信息 : 1254 },
+  { label: '0.7', 云主机信息: 3634, 内存容量: 1434, 资源池信息 : 2010, 机房信息 : 1283 },
+  { label: '0.8', 云主机信息: 4215, 内存容量: 4284, 资源池信息 : 2010, 机房信息 : 2175 },
+  { label: '0.9', 云主机信息: 1534, 内存容量: 1334, 资源池信息 : 2236, 机房信息 : 1281 },
+  { label: '1.0', 云主机信息: 4215, 内存容量: 3234, 资源池信息 : 786, 机房信息 :1183 },
+  { label: '未评分', 云主机信息: 2234, 内存容量: 4234, 资源池信息 : 2010, 机房信息 : 3164 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['主机信息', '网口信息', 'CPU信息','端口繁忙度' ], // 展开字段集
+  fields: ['云主机信息', '内存容量', '资源池信息','机房信息' ], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  端口繁忙度 : {
+  机房信息 : {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '主机信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '网口信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: 'CPU信息 ', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '端口繁忙度' , marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '云主机信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '内存容量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '资源池信息 ', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '机房信息' , marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value ===  '端口繁忙度') {
+              if (geom.getYScale().field === value && value ===  '机房信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '端口繁忙度') {
+              } else if (geom.getYScale().field === 'value' && value !== '机房信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === 'IP数量') {
+            if (value === '网卡数量') {
               return '#2b6cbb';
             }
-            if (value === 'IP池') {
+            if (value === '资源池') {
               return '#41a2fc';
             }
-            if (value === '网口信息') {
+            if (value === '内存容量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*I/O繁忙度" color="#fad248" size={3} />
+        <Geom type="line" position="label*机房信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

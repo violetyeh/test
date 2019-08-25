@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'VxLan管理平台',
+  title: '云主机管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

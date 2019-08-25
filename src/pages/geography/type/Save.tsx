@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络信息"
+                title="编辑云主机配置信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,48 +51,48 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="网口名称" >
+                    <Form.Item key="mc" label="方案名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="网口类型" >
+                    <Form.Item key="gg" label="CPU(个)" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="IP/子网掩码" >
+                    <Form.Item key="hz" label="内存（MB）" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="网关" >
+                    <Form.Item key="jd" label="硬盘（G）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sl" label="网口数量" >
+                    <Form.Item key="sl" label="网卡（个）" >
                         {getFieldDecorator('sl', {
                             initialValue: currentItem.sl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="连接状态" >
+                    <Form.Item key="status" label="配置状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">连接正常</Radio.Button>
-                               <Radio.Button value="b">连接异常</Radio.Button>
+                               <Radio.Button value="a">配置成功</Radio.Button>
+                               <Radio.Button value="b">配置失败</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>
