@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑拦截报告信息"
+                title="编辑安全检测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,41 +51,41 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="URL分类库" >
+                    <Form.Item key="mc" label="防火墙名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="控制类型" >
+                    <Form.Item key="gg" label="防火墙调试级别" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="应用协议" >
+                    <Form.Item key="hz" label="权限" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="拦截报告上传进度（%）" >
+                    <Form.Item key="jd" label="安全检测进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="安全情况" >
+                    <Form.Item key="status" label="访问权限" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">安全</Radio.Button>
-                               <Radio.Button value="b">不安全</Radio.Button>
+                               <Radio.Button value="a">允许访问</Radio.Button>
+                               <Radio.Button value="b">不允许</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

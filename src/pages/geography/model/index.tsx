@@ -20,73 +20,73 @@ interface ModelState {
 const mockData = [
     {
        id:'ZJ-001',
-       cf:'d8e2ds6f5sdf12df15sdf45sdf4',
-       jc:'6C:F0:49:8F:A5:39',
-       dw:'34/tcp',
-       jg:'36',
+       cf:'254.76',
+       jc:'3X:F0:49:8F:A5:39',
+       dw:'组（254.88，254.123）',
+       jg:'升级机器',
        jx:'42',
        status: '启用',
     },
     {
         id:'ZJ-002',
-        cf:'a2sd1a5sd5f45a1d2a1d5ad15a',
-        jc:'7C:F0:19:8F:A5:Z4',
-        dw:'52/tcp',
-        jg:'61',
+        cf:'254.88',
+        jc:'5V:F0:19:8F:A5:Z4',
+        dw:'节点<internet>IP<172.168.254.108>',
+        jg:'TELNET管理器',
         jx:'52',
         status: '启用',
      },
      {
         id:'ZJ-003',
-        cf:'sa5d454f5e48f4s2c12xc12d1f',
+        cf:'254.36',
         jc:'9C:K0:49:8F:A5:50',
-        dw:'57/tcp',
-        jg:'28',
+        dw:'节点<internet>IP<172.168.254.102>',
+        jg:'升级机器',
         jx:'91',
         status: '启用',
      },
      {
         id:'ZJ-004',
-        cf:'a2sda21f5s5a5s1d2ffs5s4da51',
+        cf:'254.12',
         jc:'3C:F5:49:8F:G5:10',
-        dw:'16/tcp',
-        jg:'47',
+        dw:'组（254.88，254.168）',
+        jg:'TELNET管理器',
         jx:'63',
         status: '启用',
      },
      {
          id:'ZJ-005',
-         cf:'a21sd5af51x2z1xcs2d1f5s5df',
+         cf:'254.52',
          jc:'6C:F0:49:8F:Q5:55',
-         dw:'06/tcp',
-         jg:'15',
+         dw:'节点<internet>IP<172.168.254.321>',
+         jg:'TELNET管理器',
          jx:'38',
          status: '启用',
       },
       {
          id:'ZJ-006',
-         cf:'asd45asf4s12zs1d5a4d5a1x7a9',
+         cf:'254.94',
          jc:'6Q:F0:49:8F:A5:74',
-         dw:'45/tcp',
-         jg:'29',
+         dw:'节点<internet>IP<172.168.254.174>',
+         jg:'升级机器',
          jx:'54',
          status: '启用',
       },
       {
         id:'ZJ-007',
-        cf:'a3sda212sd1f5as1d2a1d2d6g8',
+        cf:'254.64',
         jc:'6C:F1:49:8Q:A5:C6',
-        dw:'56/tcp',
-        jg:'36',
+        dw:'组（254.88，254.253）',
+        jg:'GUI管理器',
         jx:'34',
         status: '启用',
      },
      {
          id:'ZJ-008',
-         cf:'s2f5g4t7hsd5s8d9f33v2ss5',
+         cf:'254.31',
          jc:'1C:F0:D9:8F:A5:96',
-         dw:'23/tcp',
-         jg:'53',
+         dw:'节点<internet>IP<172.168.254.88>',
+         jg:'GUI管理器',
          jx:'84',
          status: '启用',
       },
@@ -105,28 +105,31 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '设备标识',
+            title: '对象名称',
             dataIndex: 'cf',
+            render: (text) => <Tag color="black">{text}</Tag>,
         },
+        
         {
-            title: 'MAC地址',
-            dataIndex: 'jc',
-        },
-        {
-            title: '端口',
+            title: '描述',
             dataIndex: 'dw',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
+        {
+            title: '防火墙物理地址',
+            dataIndex: 'jc',
+        },
 
         {
-            title: 'cpu占用率（%）',
+            title: '登录类型',
             dataIndex: 'jg',
-            render: (text) => <Progress percent={text} status="active" />,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '内存使用率（%）',
+            title: '防火墙配置进度（%）',
             dataIndex: 'jx',
-            render: (text) => <Progress percent={text} status="active" />,
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
+
         },
         {
             title: '是否启用',
@@ -159,7 +162,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="主机配置"
+                title="防火墙配置管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙任务信息"
+                title="编辑防火墙安全规则"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,45 +51,37 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    
-                    <Form.Item key="ma" label="过滤规则" >
-                        {getFieldDecorator('ma', {
-                            initialValue: currentItem.ma,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                   
-                   
-                    <Form.Item key="fl" label="防火墙操作" >
-                        {getFieldDecorator('fl', {
-                            initialValue: currentItem.fl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mc" label="IP地址" >
-                        {getFieldDecorator('mc', {
-                            initialValue: currentItem.mc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="nl" label="管理员" >
+                    <Form.Item key="nl" label="规则名" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    
-                    <Form.Item key="dbz" label="DNS方式" >
-                        {getFieldDecorator('dbz', {
-                            initialValue: currentItem.dbz,
+                    <Form.Item key="ma" label="源地址" >
+                        {getFieldDecorator('ma', {
+                            initialValue: currentItem.ma,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="mc" label="目的地址" >
+                        {getFieldDecorator('mc', {
+                            initialValue: currentItem.mc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                   
+                    <Form.Item key="fl" label="服务" >
+                        {getFieldDecorator('fl', {
+                            initialValue: currentItem.fl,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                   
+                    
                 </Form>
             </Modal>
         );

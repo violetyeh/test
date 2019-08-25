@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Checkbox } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -23,68 +23,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'FHQ-010035',
-        fl:'病毒清除',
+        id: 'AQGZE-00035',
+        fl:'任意',
         mc:'192.168.1.26',
-        ma:'只禁止列表中MAC地址接入',
-        nl:'汪峰',
-        dbz:'使用动态获取的DNS',
+        ma:'192.168.1.08',
+        nl:'PF1',
     },
     {
-        id: 'FHQ-010064',
+        id: 'AQGZE-00064',
         fl:'病毒检测',
         mc:'192.168.1.17',
-        ma:'只允许列表中MAC地址接入',
-        nl:'陈云',
-        dbz:'使用静态获取的DNS',
+        ma:'192.168.1.07',
+        nl:'PF2',
     },
     {
-        id: 'FHQ-010078',
-        fl:'漏洞清除',
-        mc:'192.168.1.14',
-        ma:'只允许列表中MAC地址接入',
-        nl:'王安',
-        dbz:'使用动态获取的DNS',
-    },
-    {
-        id: 'FHQ-010021',
-        fl:'漏洞检测',
-        mc:'192.168.1.28',
-        ma:'只禁止列表中MAC地址接入',
-        nl:'张三石',
-        dbz:'使用静态获取的DNS',
-    },
-    {
-        id: 'FHQ-010035',
-        fl:'垃圾清除',
-        mc:'192.168.0.18',
-        ma:'只允许列表中MAC地址接入',
-        nl:'王芳',
-        dbz:'使用动态获取的DNS',
-    },
-    {
-        id: 'FHQ-010038',
-        fl:'漏洞检测',
-        mc:'192.168.1.44',
-        ma:'只允许列表中MAC地址接入',
-        nl:'刘文',
-        dbz:'使用静态获取的DNS',
-    },
-    {
-        id: 'FHQ-010021',
+        id: 'AQGZE-00078',
         fl:'病毒清除',
-        mc:'192.168.1.110',
-        ma:'只禁止列表中MAC地址接入',
-        nl:'赵媛',
-        dbz:'使用动态获取的DNS',
+        mc:'192.168.1.14',
+        ma:'192.168.1.06',
+        nl:'PF3',
     },
     {
-        id: 'FHQ-010037',
-        fl:'病毒攻击防守',
+        id: 'AQGZE-00021',
+        fl:'安全检测',
+        mc:'192.168.1.28',
+        ma:'192.168.1.05',
+        nl:'PF4',
+    },
+    {
+        id: 'AQGZE-00035',
+        fl:'任意',
+        mc:'192.168.0.18',
+        ma:'192.168.1.04',
+        nl:'PF5',
+    },
+    {
+        id: 'AQGZE-00038',
+        fl:'安全检测',
+        mc:'192.168.1.44',
+        ma:'192.168.1.03',
+        nl:'PF6',
+    },
+    {
+        id: 'AQGZE-00021',
+        fl:'安全过滤',
+        mc:'192.168.1.110',
+        ma:'192.168.1.02',
+        nl:'PF7',
+    },
+    {
+        id: 'AQGZE-00037',
+        fl:'任意',
         mc:'192.168.1.53',
-        ma:'只允许列表中MAC地址接入',
-        nl:'刘冰',
-        dbz:'使用静态获取的DNS',
+        ma:'192.168.1.01',
+        nl:'PF8',
     },
   
     
@@ -105,33 +97,39 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: 'MAC地址过滤开启',
-            dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
-          },
+            title: ' 规则名',
+            dataIndex: 'nl',
+        },
         {
-            title: '过滤规则',
+            title: '源地址',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
+        
         {
-            title: '防火墙操作',
-            dataIndex: 'fl',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: 'IP地址',
+            title: '目的地址',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: ' 管理员',
-            dataIndex: 'nl',
+            title: '服务',
+            dataIndex: 'fl',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
+
         {
-            title: 'DNS方式',
+            title: '类型',
+            dataIndex: 'status',
+            render: (text) => <Switch checkedChildren="认证" unCheckedChildren="包过滤" />,
+          },
+        {
+            title: '生效',
             dataIndex: 'dbz',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >生效</Checkbox>
+                </Fragment>
+            ),
         },
         {
             title: '操作',
@@ -162,7 +160,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙设置"
+                title="防火墙安全规则"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
