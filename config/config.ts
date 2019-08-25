@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '运维监控信息',
+          name: '全局控制',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '终端运维管理',
+          name: 'WEB应用防护管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
@@ -151,7 +151,7 @@ export default {
         },
        
         {
-          path: 'system',
+          path: '安全信息',
           name: '系统设置',
           icon: 'setting',
           routes: [

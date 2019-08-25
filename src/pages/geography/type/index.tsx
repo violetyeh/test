@@ -19,69 +19,78 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'YW006',
+        id: 'FH-01',
+        mc:'192.168.1.02',
+        gg:'不使用任何规则',
+        hz:'在线',
+        jd:98,
+        state: 1,
+        mac:'00-9X-6G-7B-4D-5F-6S',
+     },
+     {
+         id: 'FH-02',
+         mc:'192.168.1.63',
+         gg:'网络安全规则',
+         hz:'在线',
+         jd:100,
+         state: 1,
+         mac:'00-7V-6G-5F-6A-5F-6S',
+      },
+      {
+         id: 'FH-03',
+         mc:'192.168.1.71',
+         gg:'网络安全规则',
+         hz:' 不在线',
+         jd:56,
+         state: 1,
+         mac:'00-0T-6G-5C-4D-5F-6S',
+      },
+      {
+         id: 'FH-04',
+         mc:'192.168.1.1',
+         gg:'不使用任何规则',
+         hz:'在线',
+         jd:74,
+         state: 1,
+         mac:'00-5G-6G-5F-4D-5F-6S',
+      },
+      {
+         id: 'FH-05',
+         mc:'192.168.1.03',
+         gg:'网络安全规则',
+         hz:'在线',
+         jd:95,
+         state: 1,
+         mac:'00-0T-6G-5F-4D-5F-6S',
+      },
+    {
+        id: 'FH-06',
         mc:'192.168.1.12',
         gg:'不使用任何规则',
-        hz:'重要',
+        hz:'不在线',
         jd:76,
         state: 1,
+        mac:'00-6A-6G-1Z-4D-5F-6S',
      },
      {
-        id: 'YW007',
+        id: 'FH-07',
         mc:'192.168.1.20',
         gg:'网络安全规则',
-        hz:'一般',
+        hz:'在线',
         jd:100,
         state: 1,
+        mac:'00-3V-6G-5F-9A-5F-6S',
      },
      {
-        id: 'YW008',
+        id: 'FH-08',
         mc:'192.168.1.15',
         gg:'不使用任何规则',
-        hz:'重要',
+        hz:'不在线',
         jd:88,
         state: 1,
+        mac:'00-5F-6G-8V-4D-5F-6S',
      }, 
-    {
-       id: 'YW001',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'YW002',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW003',
-        mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'YW004',
-        mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'YW005',
-        mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:95,
-        state: 1,
-     },
+ 
     
    
 ]
@@ -95,15 +104,7 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '运维状态',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >正在运维</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
@@ -114,17 +115,22 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '运维规则',
+            title: 'MAC地址',
+            dataIndex: 'mac',
+            render: (text) => <Tag color="red">{text}</Tag>,
+        },
+        {
+            title: '防护规则',
             dataIndex: 'gg',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '重点运维',
+            title: '状态',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '运维进度',
+            title: '防护进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -132,6 +138,15 @@ class Type extends Component<TypeProps, TypeState>{
             title: '网络状态',
             dataIndex: 'status',
             render: () => <Switch checkedChildren="安全" unCheckedChildren="危险" />,
+        },
+        {
+            title: '防护状态',
+            dataIndex: 'jk',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >正在防护</Checkbox>
+                </Fragment>
+            ),
         },
         {
             title: '操作',
@@ -160,7 +175,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络运维管理"
+                title="安全信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

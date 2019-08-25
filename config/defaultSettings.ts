@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云综合运维管理平台',
+  title: '基于云计算的WEB应用防护系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

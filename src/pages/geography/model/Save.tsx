@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑终端运维信息"
+                title="编辑WEB应用防护"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,6 +51,13 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="jg" label="WEB活动" >
+                        {getFieldDecorator('jg', {
+                            initialValue: currentItem.jg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                     <Form.Item key="cf" label="IP地址" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
@@ -58,28 +65,23 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="端口号" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
-                        {getFieldDecorator('jg', {
-                            initialValue: currentItem.jg,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="协议" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="运维进度（%）" >
+                    <Form.Item key="dw" label="访问时间" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    
+                    
+                    <Form.Item key="process" label="防护进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
