@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'YW006',
+        id: 'LOCALHOST1',
+        mc:'192.168.1.02',
+        gg:'normal',
+        hz:'是',
+        jd:98,
+        state: 1,
+     },
+     {
+         id: 'LOCALHOST2',
+         mc:'192.168.1.63',
+         gg:'default',
+         hz:'是',
+         jd:100,
+         state: 1,
+      },
+      {
+         id: 'LOCALHOST3',
+         mc:'192.168.1.71',
+         gg:'default',
+         hz:' 否',
+         jd:56,
+         state: 1,
+      },
+      {
+         id: 'LOCALHOST4',
+         mc:'192.168.1.1',
+         gg:'normal',
+         hz:'是',
+         jd:74,
+         state: 1,
+      },
+      {
+         id: 'LOCALHOST5',
+         mc:'192.168.1.03',
+         gg:'default',
+         hz:'是',
+         jd:95,
+         state: 1,
+      },
+     
+    {
+        id: 'LOCALHOST6',
         mc:'192.168.1.12',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'normal',
+        hz:'否',
         jd:76,
         state: 1,
      },
      {
-        id: 'YW007',
+        id: 'LOCALHOST7',
         mc:'192.168.1.20',
-        gg:'网络安全规则',
-        hz:'一般',
+        gg:'default',
+        hz:'是',
         jd:100,
         state: 1,
      },
      {
-        id: 'YW008',
+        id: 'LOCALHOST8',
         mc:'192.168.1.15',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'normal',
+        hz:'否',
         jd:88,
         state: 1,
      }, 
-    {
-       id: 'YW001',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'YW002',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW003',
-        mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'YW004',
-        mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'YW005',
-        mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:95,
-        state: 1,
-     },
     
    
 ]
@@ -95,17 +96,9 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+       
         {
-            title: '运维状态',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >正在运维</Checkbox>
-                </Fragment>
-            ),
-        },
-        {
-            title: '序号',
+            title: '机器名称',
             dataIndex: 'id',
         },
         {
@@ -114,24 +107,24 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '运维规则',
+            title: '机器策略',
             dataIndex: 'gg',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '重点运维',
+            title: '是否使用私有策略',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '运维进度',
+            title: '审计进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '网络状态',
+            title: '受控状态',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="安全" unCheckedChildren="危险" />,
+            render: () => <Switch checkedChildren="受控正常" unCheckedChildren="受控异常" />,
         },
         {
             title: '操作',
@@ -160,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络运维管理"
+                title="机器属性管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

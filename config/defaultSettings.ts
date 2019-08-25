@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云综合运维管理平台',
+  title: '预防DDOS攻击警报系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

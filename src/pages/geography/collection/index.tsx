@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'ZD20038',
-        fl:'http://www.yiersan.com',
-        mc:'银行账号',
-        ma:'行为审计',
-        nl:'刘文',
+        fl:'198.102.1.02',
+        mc:'Windows 2007',
+        ma:'512（M）',
+        nl:'目标www.wwe',
         status:'27',
     },
     {
         id: 'ZD20021',
-        fl:'http://www.liuba.com',
-        mc:'淘宝密码',
-        ma:'行为审计',
-        nl:'赵媛',
+        fl:'198.102.1.101',
+        mc:'Windows 2008',
+        ma:'128（M）',
+        nl:'目标www.bdsd',
         status:'100',
     },
     {
         id: 'ZD20037',
-        fl:'http://www.qijiu.com',
-        mc:'淫秽字词',
-        ma:'信息违规检测',
-        nl:'刘冰',
+        fl:'198.102.1.104',
+        mc:'Windows XP',
+        ma:'2040（M）',
+        nl:'目标www.asda',
         status:'71',
     },
     {
         id: 'ZD20035',
-        fl:'http://www.yisan.com',
-        mc:'远程登录',
-        ma:'行为审计',
-        nl:'汪峰',
+        fl:'198.102.1.188',
+        mc:'Windows 2007',
+        ma:'447（M）',
+        nl:'目标www.awewa',
         status:'99',
     },
     {
         id: 'ZD20064',
-        fl:'http://www.wuliu.com',
-        mc:'传销暴力',
-        ma:'信息违规检测',
-        nl:'陈云',
+        fl:'198.102.1.203',
+        mc:'Windows 2008',
+        ma:'68（M）',
+        nl:'目标www.sweer',
         status:'39',
     },
     {
         id: 'ZD20078',
-        fl:'http://www.ersansi.com',
-        mc:'炒股信息',
-        ma:'行为审计',
-        nl:'王安',
+        fl:'198.102.1.102',
+        mc:'Windows 2007',
+        ma:'128（M）',
+        nl:'目标www.sadf',
         status:'100',
     },
     {
         id: 'ZD20021',
-        fl:'http://www.qq.com',
-        mc:'qq聊天',
-        ma:'信息违规检测',
-        nl:'张文芳',
+        fl:'198.102.1.02',
+        mc:'Windows 2008',
+        ma:'68（M）',
+        nl:'目标www.jsds',
         status:'78',
     },
     {
         id: 'ZD20035',
-        fl:'http://www.xiao.com',
-        mc:'文件传输',
-        ma:'行为审计',
-        nl:'王芳',
+        fl:'198.102.1.136',
+        mc:'Windows XP',
+        ma:'128（M）',
+        nl:'目标www.jonh100',
         status:'56',
     },
  
@@ -99,41 +99,32 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '是否禁止',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >禁止</Checkbox>
-                </Fragment>
-            ),
-        },
+        
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '运维监控网址',
+            title: 'IP地址',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '运维监控内容',
+            title: '系统类型',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '备注',
+            title: '内存',
             dataIndex: 'ma',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
        
         {
-            title: '管理员',
+            title: '攻击状态',
             dataIndex: 'nl',
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '进度',
+            title: '内存空间',
             dataIndex: 'status',
             render: (text) => <Progress percent={text} status="active" />,
           },
@@ -166,7 +157,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运维监控管理"
+                title="主机管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
