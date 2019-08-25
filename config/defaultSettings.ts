@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云综合运维管理平台',
+  title: '信息流量检测DDOS自动保护系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

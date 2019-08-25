@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZD20038',
-        fl:'http://www.yiersan.com',
-        mc:'银行账号',
-        ma:'行为审计',
+        id: 'em38',
+        fl:'网桥1',
+        mc:'接内网',
+        ma:'增强型',
         nl:'刘文',
-        status:'27',
+        status:'异常',
     },
     {
-        id: 'ZD20021',
-        fl:'http://www.liuba.com',
-        mc:'淘宝密码',
-        ma:'行为审计',
+        id: 'em21',
+        fl:'监控模式',
+        mc:'接外网',
+        ma:'增强型',
         nl:'赵媛',
-        status:'100',
+        status:'正常',
     },
     {
-        id: 'ZD20037',
-        fl:'http://www.qijiu.com',
-        mc:'淫秽字词',
-        ma:'信息违规检测',
+        id: 'em37',
+        fl:'网桥1',
+        mc:'接内网',
+        ma:'BSD',
         nl:'刘冰',
-        status:'71',
+        status:'正常',
     },
     {
-        id: 'ZD20035',
-        fl:'http://www.yisan.com',
-        mc:'远程登录',
-        ma:'行为审计',
+        id: 'em35',
+        fl:'网桥2',
+        mc:'接内网',
+        ma:'增强型',
         nl:'汪峰',
-        status:'99',
+        status:'异常',
     },
     {
-        id: 'ZD20064',
-        fl:'http://www.wuliu.com',
-        mc:'传销暴力',
-        ma:'信息违规检测',
+        id: 'em64',
+        fl:'网桥1',
+        mc:'接外网',
+        ma:'BSD',
         nl:'陈云',
-        status:'39',
+        status:'正常',
     },
     {
-        id: 'ZD20078',
-        fl:'http://www.ersansi.com',
-        mc:'炒股信息',
-        ma:'行为审计',
+        id: 'em78',
+        fl:'监控模式',
+        mc:'接内网',
+        ma:'增强型',
         nl:'王安',
-        status:'100',
+        status:'正常',
     },
     {
-        id: 'ZD20021',
-        fl:'http://www.qq.com',
-        mc:'qq聊天',
-        ma:'信息违规检测',
+        id: 'em21',
+        fl:'网桥2',
+        mc:'接外网',
+        ma:'BSD',
         nl:'张文芳',
-        status:'78',
+        status:'异常',
     },
     {
-        id: 'ZD20035',
-        fl:'http://www.xiao.com',
-        mc:'文件传输',
-        ma:'行为审计',
+        id: 'em35',
+        fl:'网桥1',
+        mc:'接内网',
+        ma:'增强型',
         nl:'王芳',
-        status:'56',
+        status:'正常',
     },
  
     
@@ -99,31 +99,23 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+        
         {
-            title: '是否禁止',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >禁止</Checkbox>
-                </Fragment>
-            ),
-        },
-        {
-            title: '序号',
+            title: '接口名称',
             dataIndex: 'id',
         },
         {
-            title: '运维监控网址',
+            title: '应用模式',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '运维监控内容',
+            title: '接入位置',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '备注',
+            title: '驱动类型',
             dataIndex: 'ma',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
@@ -133,9 +125,9 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'nl',
         },
         {
-            title: '进度',
+            title: '状态',
             dataIndex: 'status',
-            render: (text) => <Progress percent={text} status="active" />,
+            render: (text) => <Tag color="#ff0000">{text}</Tag>,
           },
         {
             title: '操作',
@@ -166,7 +158,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运维监控管理"
+                title="数据接口信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

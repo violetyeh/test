@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑运维监控信息"
+                title="编辑数据接口信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,28 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="接口名称" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="运维监控网址" >
+                    <Form.Item key="fl" label="应用模式" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="运维监控内容" >
+                    <Form.Item key="mc" label="接入位置" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="备注" >
+                    <Form.Item key="ma" label="驱动类型" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -80,7 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="进度（%）" >
+                    <Form.Item key="status" label="状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(

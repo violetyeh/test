@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑终端运维信息"
+                title="编辑流量控制信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,42 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="通道名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="端口号" >
+                    <Form.Item key="dw" label="通道类型" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
+                    <Form.Item key="jg" label="通道路径" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="服务" >
+                    <Form.Item key="jx" label="通道带宽（kb/s）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="运维进度（%）" >
-                        {getFieldDecorator('process', {
-                            initialValue: currentItem.process,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    
+                   
                 </Form>
             </Modal>
         );

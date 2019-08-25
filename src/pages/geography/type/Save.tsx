@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络运维信息"
+                title="编辑策略组配置信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,28 +58,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="运维规则" >
+                    <Form.Item key="jk" label="路径" >
+                        {getFieldDecorator('jk', {
+                            initialValue: currentItem.jk,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="gg" label="内网地址" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="重点运维" >
+                    <Form.Item key="hz" label="协议" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="运维进度（%）" >
+                    <Form.Item key="jd" label="配置进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="网络状态" >
+                    <Form.Item key="status" label="流量状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(

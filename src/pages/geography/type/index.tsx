@@ -19,69 +19,78 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'YW006',
+        id: 'CL-00006',
         mc:'192.168.1.12',
-        gg:'不使用任何规则',
-        hz:'重要',
+        gg:'myoffice',
+        hz:'伪IE下载',
         jd:76,
         state: 1,
+        jk:'任意下行路径',
      },
      {
-        id: 'YW007',
-        mc:'192.168.1.20',
-        gg:'网络安全规则',
-        hz:'一般',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW008',
-        mc:'192.168.1.15',
-        gg:'不使用任何规则',
-        hz:'重要',
-        jd:88,
-        state: 1,
-     }, 
-    {
-       id: 'YW001',
-       mc:'192.168.1.02',
-       gg:'不使用任何规则',
-       hz:'一般',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'YW002',
-        mc:'192.168.1.63',
-        gg:'网络安全规则',
-        hz:'不重要',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'YW003',
+        id: 'CL-00003',
         mc:'192.168.1.71',
-        gg:'网络安全规则',
-        hz:' 重要',
+        gg:'any',
+        hz:' 伪IE下载',
         jd:56,
         state: 1,
+        jk:'任意上行路径',
      },
      {
-        id: 'YW004',
+        id: 'CL-00004',
         mc:'192.168.1.1',
-        gg:'不使用任何规则',
-        hz:'一般',
+        gg:'myoffice',
+        hz:'P2P下载',
         jd:74,
         state: 1,
+        jk:'任意上行路径',
      },
      {
-        id: 'YW005',
+        id: 'CL-00005',
         mc:'192.168.1.03',
-        gg:'网络安全规则',
-        hz:'不重要',
+        gg:'any',
+        hz:'任意协议',
         jd:95,
         state: 1,
+        jk:'任意上行路径',
      },
+     {
+        id: 'CL-00007',
+        mc:'192.168.1.20',
+        gg:'any',
+        hz:'P2P下载',
+        jd:100,
+        state: 1,
+        jk:'任意上行路径',
+     },
+     {
+        id: 'CL-00008',
+        mc:'192.168.1.15',
+        gg:'myoffice',
+        hz:'伪IE下载',
+        jd:88,
+        state: 1,
+        jk:'任意下行路径',
+     }, 
+    {
+       id: 'CL-00001',
+       mc:'192.168.1.02',
+       gg:'myoffice',
+       hz:'P2P下载',
+       jd:98,
+       state: 1,
+       jk:'任意上行路径',
+    },
+    {
+        id: 'CL-00002',
+        mc:'192.168.1.63',
+        gg:'any',
+        hz:'任意协议',
+        jd:100,
+        state: 1,
+        jk:'任意下行路径',
+     },
+   
     
    
 ]
@@ -95,15 +104,7 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '运维状态',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >正在运维</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
@@ -114,22 +115,27 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '运维规则',
+            title: '路径',
+            dataIndex: 'jk',
+           
+        },
+        {
+            title: '内网地址',
             dataIndex: 'gg',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '重点运维',
+            title: '协议',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '运维进度',
+            title: '配置进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '网络状态',
+            title: '流量状态',
             dataIndex: 'status',
             render: () => <Switch checkedChildren="安全" unCheckedChildren="危险" />,
         },
@@ -160,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="网络运维管理"
+                title="策略组配置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
