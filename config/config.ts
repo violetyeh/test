@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '数据存储接口设置',
+          name: '存储服务管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '存储池管理',
+          name: '存储文件信息',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '数据资源属性管理',
+          name: '存储终端信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

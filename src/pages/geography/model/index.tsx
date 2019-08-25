@@ -19,67 +19,67 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'YID8S0J',
-        date: 'RAID组1',
+        id: 'WJ0008S0J',
+        date: '218.207.107.21',
         type: '17',
         status: '启用',
-        pinlv: 'StorPool1',
+        pinlv: 'TESTUSER1',
         process: 23,
     },
     {
-        id: 'YID72IK',
-        date: 'RAID组2',
+        id: 'WJ00072IK',
+        date: '218.207.107.03',
         type: '15',
         status: '启用',
-        pinlv: 'StorPool2',
+        pinlv: 'TESTUSER2',
         process: 54,
     },
     {
-        id: 'YID63JJ',
-        date: 'RAID组3',
+        id: 'WJ00063JJ',
+        date: '218.207.107.17',
         type: '10',
         status: '启用',
-        pinlv: 'StorPool3',
+        pinlv: 'TESTUSER3',
         process: 44,
     },
     {
-        id: 'YIDS0191',
-        date: 'RAID组4',
+        id: 'WJ0000191',
+        date: '218.207.107.12',
         type: '18',
         status: '启用',
-        pinlv: 'StorPool4',
+        pinlv: 'TESTUSER4',
         process: 30,
     },
     {
-        id: 'YIDS2SI1',
-        date: 'RAID组5',
+        id: 'WJ0002SI1',
+        date: '218.207.107.05',
         type: '11',
         status: '启用',
-        pinlv: 'StorPool5',
+        pinlv: 'TESTUSER5',
         process: 88,
     },
     {
-        id: 'YIDS01IOS',
-        date: 'RAID组6',
+        id: 'WJ00001IOS',
+        date: '218.207.107.56',
         type: '56',
         status: '启用',
-        pinlv: 'StorPool6',
+        pinlv: 'TESTUSER6',
         process: 90,
     },
     {
         id: 'YSIW9s1',
-        date: 'RAID组7',
+        date: '218.207.107.24',
         type: '11',
         status: '启用',
-        pinlv: 'StorPool7',
+        pinlv: 'TESTUSER7',
         process: 70,
     },
     {
-        id: 'YID80SJ',
-        date: 'RAID组8',
+        id: 'WJ00080SJ',
+        date: '218.207.107.36',
         type: '11',
         status: '启用',
-        pinlv: 'StorPool8',
+        pinlv: 'TESTUSER8',
         process: 67,
     },
    
@@ -98,22 +98,21 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '名称',
+            title: '所属用户',
             dataIndex: 'pinlv',
-            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '物理卷',
+            title: '终端域名',
             dataIndex: 'date',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '数据中心块大小（M）',
+            title: '文件大小（M）',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '存储池空间',
+            title: '剩余空间',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -149,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="存储池管理"
+                title="存储文件信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="数据存储接口设置"
+                title="存储服务管理"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,36 +51,37 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="处理器主频" >
+                    <Form.Item key="lg" label="存储码流" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="处理器占用率(%)" >
-                        {getFieldDecorator('jishu', {
-                            initialValue: currentItem.jishu,
-                        })(
-                            <Input/>,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="fenceng" label="物理缓存" >
+                    <Form.Item key="fenceng" label="7天" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="空闲缓存" >
+                    <Form.Item key="leixing" label="15天" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="jishu" label="视频存储进度(%)" >
+                        {getFieldDecorator('jishu', {
+                            initialValue: currentItem.jishu,
+                        })(
+                            <Input/>,
+                        )}
+                    </Form.Item>
+                   
                     
-                    <Form.Item key="name" label="缓存占用率(%)" >
+                    <Form.Item key="name" label="存储器占用率(%)" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(

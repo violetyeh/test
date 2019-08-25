@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '大数据存储多数据中心管理系统',
+  title: '视频云存储管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

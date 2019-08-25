@@ -12,23 +12,23 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 大数据信息条数: 27030, 数据存储数量: 10800, 存储日志信息: 21060, 存储容量: 35105 },
-  { label: '0.2', 大数据信息条数: 13510, 数据存储数量: 14900, 存储日志信息: 10300, 存储容量: 31050 },
-  { label: '0.3', 大数据信息条数: 19530, 数据存储数量: 15935, 存储日志信息: 10900, 存储容量: 35105 },
-  { label: '0.4', 大数据信息条数: 13520, 数据存储数量: 15350, 存储日志信息: 39321, 存储容量: 41050 },
-  { label: '0.5', 大数据信息条数: 45670, 数据存储数量: 21170, 存储日志信息: 30321, 存储容量: 35105 },
-  { label: '0.6', 大数据信息条数: 11370, 数据存储数量: 17270, 存储日志信息: 32110, 存储容量: 53500 },
-  { label: '0.7', 大数据信息条数: 22270, 数据存储数量: 16170, 存储日志信息: 11105, 存储容量: 61050 },
-  { label: '0.8', 大数据信息条数: 31170, 数据存储数量: 14362, 存储日志信息:10300, 存储容量: 71050 },
-  { label: '0.9', 大数据信息条数: 45167, 数据存储数量: 22170, 存储日志信息: 20321, 存储容量: 61050 },
-  { label: '1.0', 大数据信息条数: 42170, 数据存储数量: 42170, 存储日志信息: 10321, 存储容量: 53500 },
-  { label: '未评分', 大数据信息条数: 22170, 数据存储数量: 45147, 存储日志信息: 16321, 存储容量: 35105 },
+  { label: '0.1', 视频大小: 127, 视频存储数量: 108, 存储日志信息: 160, 存储容量: 105 },
+  { label: '0.2', 视频大小: 123, 视频存储数量: 149, 存储日志信息: 300, 存储容量: 310 },
+  { label: '0.3', 视频大小: 195, 视频存储数量: 159, 存储日志信息: 900, 存储容量: 105 },
+  { label: '0.4', 视频大小: 111, 视频存储数量: 153, 存储日志信息: 393, 存储容量: 410 },
+  { label: '0.5', 视频大小: 456, 视频存储数量: 154, 存储日志信息: 303, 存储容量: 105 },
+  { label: '0.6', 视频大小: 113, 视频存储数量: 172, 存储日志信息: 310, 存储容量: 530 },
+  { label: '0.7', 视频大小: 222, 视频存储数量: 161, 存储日志信息: 105, 存储容量: 610 },
+  { label: '0.8', 视频大小: 311, 视频存储数量: 362, 存储日志信息:300, 存储容量: 710 },
+  { label: '0.9', 视频大小: 167, 视频存储数量: 244, 存储日志信息: 203, 存储容量: 610 },
+  { label: '1.0', 视频大小: 434, 视频存储数量: 412, 存储日志信息: 103, 存储容量: 530 },
+  { label: '未评分', 视频大小: 212, 视频存储数量: 147, 存储日志信息: 163, 存储容量: 105 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['大数据信息条数', '数据存储数量', '存储日志信息','存储容量'], // 展开字段集
+  fields: ['视频大小', '视频存储数量', '存储日志信息','存储容量'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
@@ -62,13 +62,13 @@ const OfflineData = ({
   handleTabChange: (activeKey: string) => void;
 }) => (
     <Card loading={loading} className={styles.offlineCard} bordered={false} style={{ marginTop: 32 }}>
-      <Chart height={400} width={350} forceFit data={dv} scale={scale} padding="auto" onGetG2Instance={getG2Instance}>
+      <Chart height={400} width={3} forceFit data={dv} scale={scale} padding="auto" onGetG2Instance={getG2Instance}>
         <Legend
           custom
           allowAllCanceled
           items={[
-            { value: '大数据信息条数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '数据存储数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '视频大小', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '视频存储数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
             { value: '存储日志信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
             { value: '存储容量', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
