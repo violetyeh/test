@@ -23,51 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
-        jishu: '人工测绘',
-        fenceng: '水系',
-        leixing: '面、点、线',
-        name: '误差测量',
+        id: 'CEL0001',
+        jishu: 's230（16.632）',
+        fenceng: 's231（42.242）',
+        leixing: '无限制',
+        name: 'BLH',
         state: '启用',
     },
     {
-        id: 'D0002',
-        jishu: '电子测绘',
-        fenceng: '居民地',
-        leixing: '面、点',
-        name: 'CNSS定位与测量',
+        id: 'CEL0002',
+        jishu: 's350（13.214）',
+        fenceng: 's351（36.612）',
+        leixing: '无限制',
+        name: 'xyh',
         state: '启用',
     },
     {
-        id: 'D0003',
-        jishu: '智能测绘',
-        fenceng: '铁路',
-        leixing: '线',
-        name: '计算机测绘',
+        id: 'CEL0003',
+        jishu: 's412（31.451）',
+        fenceng: 's413（57.421）',
+        leixing: '无限制',
+        name: 'BLH',
         state: '启用',
     },
     {
-        id: 'D0004',
-        jishu: '人工测绘',
-        fenceng: '公路',
-        leixing: '线',
-        name: '控制测量',
+        id: 'CEL0004',
+        jishu: 's315（85.235）',
+        fenceng: 's316（94.423）',
+        leixing: '无限制',
+        name: 'xyh',
         state: '启用',
     },
     {
-        id: 'D0005',
-        jishu: '人工测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '数据测图',
+        id: 'CEL0005',
+        jishu: 's315（27.235）',
+        fenceng: 's316（53.123）',
+        leixing: '有限制',
+        name: 'xyh',
         state: '启用',
     },
     {
-        id: 'D0006',
-        jishu: '电子测绘',
-        fenceng: '行政境界',
-        leixing: '点、线、面',
-        name: '工程测量',
+        id: 'CEL0006',
+        jishu: 's302（10.238）',
+        fenceng: 's303（25.421）',
+        leixing: '有限制',
+        name: 'BLH',
+        state: '启用',
+    },
+    {
+        id: 'CEL0007',
+        jishu: 's325（27.471）',
+        fenceng: 's326（47.571）',
+        leixing: '有限制',
+        name: 'xyh',
+        state: '启用',
+    },
+    {
+        id: 'CEL0008',
+        jishu: 's315（16.235）',
+        fenceng: 's316（26.435）',
+        leixing: '有限制',
+        name: 'BLH',
         state: '启用',
     },
 ]
@@ -86,20 +102,21 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '测绘技术名称',
+            title: '坐标格式',
             dataIndex: 'name',
         },
         {
-            title: '技术类型',
+            title: '起点位置',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据分层',
+            title: '终点位置',
             dataIndex: 'fenceng',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '几何类型',
+            title: '承载限值',
             dataIndex: 'leixing',
         },
 
@@ -132,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测绘技术管理"
+                title="测量配置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

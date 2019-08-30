@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '人脸识别门禁控制系统',
+  title: '基于公路工程的GIS地理信息系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

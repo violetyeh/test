@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑推广渠道信息"
+                title="编辑静态道路信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,39 +51,39 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="渠道名称" >
+                    <Form.Item key="pinlv" label="公路名称" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="渠道负责人" >
+                    <Form.Item key="date" label="公路类型" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="测绘技术类型" >
+                    <Form.Item key="model" label="是否单行道" >
                         {getFieldDecorator('model', {
                             initialValue: currentItem.model,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="数据类型" >
+                    <Form.Item key="type" label="是否立交" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
+                    <Form.Item key="remark" label="桥梁、隧道占比（%）" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.remark,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>

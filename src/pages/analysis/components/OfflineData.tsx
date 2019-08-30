@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 测绘信息: 2800, 推广价格: 2800, 服务价格: 2260, 总收益率: 2 },
-  { label: '0.2', 测绘信息: 1800, 推广价格: 1800, 服务价格: 1300, 总收益率: 3 },
-  { label: '0.3', 测绘信息: 950, 推广价格: 950, 服务价格: 900, 总收益率: 5 },
-  { label: '0.4', 测绘信息: 500, 推广价格: 500, 服务价格: -390, 总收益率: 1 },
-  { label: '0.5', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.6', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.7', 测绘信息: 170, 推广价格: 170, 服务价格: -100, 总收益率: 3 },
-  { label: '0.8', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '0.9', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '1.0', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
-  { label: '未评分', 测绘信息: 170, 推广价格: 170, 服务价格: 100, 总收益率: 3 },
+  { label: '0.1', 公路工程数量: 2800, 地理信息: 2800, 增加公路信息数量: 2260, 已完善地理信息数量: 2000 },
+  { label: '0.2', 公路工程数量: 1800, 地理信息: 1800, 增加公路信息数量: 1300, 已完善地理信息数量: 3000 },
+  { label: '0.3', 公路工程数量: 950, 地理信息: 950, 增加公路信息数量: 900, 已完善地理信息数量: 5000 },
+  { label: '0.4', 公路工程数量: 500, 地理信息: 500, 增加公路信息数量: 390, 已完善地理信息数量: 1000 },
+  { label: '0.5', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 3000 },
+  { label: '0.6', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 1234 },
+  { label: '0.7', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 5213 },
+  { label: '0.8', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 6868 },
+  { label: '0.9', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 1452 },
+  { label: '1.0', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 1023 },
+  { label: '未评分', 公路工程数量: 170, 地理信息: 170, 增加公路信息数量: 100, 已完善地理信息数量: 2103 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['测绘信息', '推广价格', '服务价格'], // 展开字段集
+  fields: ['公路工程数量', '地理信息', '增加公路信息数量','已完善地理信息数量'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  总收益率: {
+  已完善地理信息数量: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '测绘信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '推广价格', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '服务价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '总收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '公路工程数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '地理信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '增加公路信息数量', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '已完善地理信息数量', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '总收益率') {
+              if (geom.getYScale().field === value && value === '已完善地理信息数量') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '总收益率') {
+              } else if (geom.getYScale().field === 'value' && value !== '已完善地理信息数量') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '放款应还本金') {
+            if (value === '道路车道数') {
               return '#2b6cbb';
             }
-            if (value === '价格') {
+            if (value === '车道长度') {
               return '#41a2fc';
             }
-            if (value === '收益') {
+            if (value === '路面宽度') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*总收益率" color="#fad248" size={3} />
+        <Geom type="line" position="label*已完善地理信息数量" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

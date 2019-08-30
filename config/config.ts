@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '测绘技术管理',
+          name: '测量配置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '推广渠道管理',
+          name: '静态道路信息',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '推广服务管理',
+          name: '实时道路信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

@@ -20,53 +20,66 @@ interface ModelState {
 const mockData = [
     {
         id: 'YIDS0191',
-        date: '陈光学',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '同多X，Y坐标，将地和物通过点、线、面方式进行表达',
+        date: '乡道',
+        model: '正向单向通行',
+        type: '否',
         status: '启用',
-        pinlv: 'AE1292微信推广渠道',
-        process: 30,
+        pinlv: '081乡道',
+        process: 3,
     },
     {
         id: 'YIDS2SI1',
-        date: '杜维',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '用方格来模拟实体',
+        date: '县道',
+        model: '不通',
+        type: '否',
         status: '启用',
-        pinlv: 'AQ2837微信公众号推广渠道',
-        process: 88,
+        pinlv: '盘龙路',
+        process: 8,
+    },
+    {
+        id: 'YIDS0122',
+        date: '省道',
+        model: '正向单向通行',
+        type: '否',
+        status: '启用',
+        pinlv: '袁茄路',
+        process: 3,
+    },
+    {
+        id: 'YIDS2S12',
+        date: '县道',
+        model: '逆向单向通行',
+        type: '否',
+        status: '启用',
+        pinlv: '翼龙路',
+        process: 8,
     },
     {
         id: 'YIDS01IOS',
-        date: '陈鹏屹',
-        model: '人工测量',
-        type: '线下推广',
-        remark: '官方权威测绘和发布的数据',
+        date: '县道',
+        model: '双向通行',
+        type: '是',
         status: '启用',
-        pinlv: 'AY72829线下推广渠道',
-        process: 90,
+        pinlv: '长江二路',
+        process: 9,
     },
     {
         id: 'YSIW9s1',
-        date: '张磊',
-        model: '电子测量',
-        type: '线上推广',
-        remark: '利用专业测绘仪器测绘数据所得',
+        date: '省道',
+        model: '逆向单向通行',
+        type: '否',
         status: '启用',
-        pinlv: 'A1910百度推广渠道',
-        process: 70,
+        pinlv: '富洲路',
+        process: 7,
     },
     {
         id: 'YID80SJ',
-        date: '陈芙蓉',
-        model: '人工测量',
-        type: '线上推广',
-        remark: '卫星实时采集数据',
+        date: '国道',
+        model: '双向通行',
+        type: '否',
         status: '启用',
-        pinlv: 'A29192广告推广渠道',
-        process: 67,
+        pinlv: '石小路',
+        process: 6,
     },
 ]
 
@@ -83,26 +96,26 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '渠道名称',
+            title: '公路名称',
             dataIndex: 'pinlv',
         },
         {
-            title: '渠道负责人',
+            title: '公路类型',
             dataIndex: 'date',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '测绘技术类型',
+            title: '是否单行道',
             dataIndex: 'model',
         },
         {
-            title: '推广类型',
+            title: '是否立交',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '推广进度',
+            title: '桥梁、隧道占比',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -138,7 +151,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="推广渠道管理"
+                title="静态道路信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
