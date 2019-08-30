@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '防火墙参数设置',
+          name: '工程信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '安全属性',
+          name: '检测数据管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安全管理',
+          name: '检测任务管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

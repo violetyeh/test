@@ -24,59 +24,59 @@ interface TypeState {
 const mockData = [
 
     {
-        id: 'APLO-000038',
-        fl:'http',
-        mc:'192.168.1.32',
-        ma:'Smurf',
+        id: 'GC-GL-0038',
+        fl:'成都公路隧道中心工程',
+        mc:'成都检测公司',
+        ma:'隧道剖面检测',
         nl:'刘文',
     },
     {
-        id: 'APLO-000021',
-        fl:'ftp',
-        mc:'192.168.1.2',
-        ma:'Ping Sweep',
+        id: 'GC-GL-0021',
+        fl:'甘肃公路隧道中心工程',
+        mc:'甘肃检测公司',
+        ma:'基桩检测',
         nl:'赵媛',
     },
     {
-        id: 'APLO-000037',
-        fl:'sql',
-        mc:'192.168.1.120',
-        ma:'Ip Spoof',
+        id: 'GC-GL-0037',
+        fl:'云南公路隧道中心工程',
+        mc:'云南检测公司',
+        ma:'隧道剖面检测',
         nl:'刘冰',
     },
     {
-        id: 'APLO-000035',
-        fl:'rtsp',
-        mc:'192.168.1.301',
-        ma:'Tear Drop',
+        id: 'GC-GL-0035',
+        fl:'北京公路隧道中心工程',
+        mc:'北京检测公司',
+        ma:'浇筑材料检测',
         nl:'汪峰',
     },
     {
-        id: 'APLO-000064',
-        fl:'http',
-        mc:'192.168.1.102',
-        ma:'Smurf',
+        id: 'GC-GL-0064',
+        fl:'广州公路隧道中心工程',
+        mc:'广州检测公司',
+        ma:'基桩检测',
         nl:'陈云',
     },
     {
-        id: 'APLO-000078',
-        fl:'ftp',
-        mc:'192.168.1.02',
-        ma:'Land',
+        id: 'GC-GL-0078',
+        fl:'深圳公路隧道中心工程',
+        mc:'深圳检测公司',
+        ma:'浇筑材料检测',
         nl:'王安',
     },
     {
-        id: 'APLO-000021',
-        fl:'ftp',
-        mc:'192.168.1.54',
-        ma:'Ip Spoof',
+        id: 'GC-GL-0021',
+        fl:'重庆公路隧道中心工程',
+        mc:'重庆检测公司',
+        ma:'隧道剖面检测',
         nl:'张文芳',
     },
     {
-        id: 'APLO-000035',
-        fl:'nail',
-        mc:'192.168.1.01',
-        ma:'Ping Sweep',
+        id: 'GC-GL-0035',
+        fl:'上海公路隧道中心工程',
+        mc:'上海检测公司',
+        ma:'基桩检测',
         nl:'王芳',
     },
 
@@ -98,31 +98,31 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '模块名称',
+            title: '工程名称',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '受保护的机器',
+            title: '检测单位',
             dataIndex: 'mc',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '攻击类型',
+            title: '检测类型',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '管理员',
+            title: '检测人员',
             dataIndex: 'nl',
         },
         {
-            title: '禁止',
+            title: '状态',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >禁止</Checkbox>
+                  <Checkbox >检测中</Checkbox>
                 </Fragment>
             ),
         },
@@ -155,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙参数设置"
+                title="工程信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

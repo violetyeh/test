@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙参数"
+                title="编辑工程信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="模块名称" >
+                    <Form.Item key="fl" label="工程名称" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="受保护的机器" >
+                    <Form.Item key="mc" label="检测单位" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="攻击类型" >
+                    <Form.Item key="ma" label="检测类型" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,7 +73,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="管理员" >
+                    <Form.Item key="nl" label="检测人员" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(

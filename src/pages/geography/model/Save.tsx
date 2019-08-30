@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑安全属性"
+                title="编辑检测数据"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="防火墙标识" >
+                    <Form.Item key="jx" label="隧道" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="IP地址" >
+                    <Form.Item key="cf" label="设备" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="僵死连接超时（秒）" >
+                    <Form.Item key="dw" label="样品类型" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="僵死连接最大数目" >
+                    <Form.Item key="jg" label="实际检测数量" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(

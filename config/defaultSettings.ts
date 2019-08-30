@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '计算机网络防火墙安全管理软件',
+  title: '公路隧道施工质量检测及评价系统软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
