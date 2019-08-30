@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙安全规则"
+                title="编辑检测参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,29 +51,30 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="规则名" >
+                    <Form.Item key="nl" label="等级类型" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="源地址" >
-                        {getFieldDecorator('ma', {
-                            initialValue: currentItem.ma,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mc" label="目的地址" >
+                    <Form.Item key="mc" label="项目" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="ma" label="本次检测参数" >
+                        {getFieldDecorator('ma', {
+                            initialValue: currentItem.ma,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                    
-                    <Form.Item key="fl" label="服务" >
+                   
+                    <Form.Item key="fl" label="参数对应设备" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '计算机安全信息防火墙检测系统',
+  title: '公路环境参数自动检测系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

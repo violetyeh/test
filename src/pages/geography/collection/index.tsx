@@ -24,59 +24,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'AQGZE-00035',
-        fl:'任意',
-        mc:'192.168.1.26',
-        ma:'192.168.1.08',
-        nl:'PF1',
+        fl:'钢筋位置测定仪',
+        mc:'结构混凝土',
+        ma:'钢筋位置及保护层厚度',
+        nl:'公路工程-综合丙级',
     },
     {
         id: 'AQGZE-00064',
-        fl:'病毒检测',
-        mc:'192.168.1.17',
-        ma:'192.168.1.07',
-        nl:'PF2',
+        fl:'加速磨光机',
+        mc:'集料',
+        ma:'磨光值',
+        nl:'公路工程-综合甲级',
     },
     {
         id: 'AQGZE-00078',
-        fl:'病毒清除',
-        mc:'192.168.1.14',
-        ma:'192.168.1.06',
-        nl:'PF3',
+        fl:'基桩超声检测仪',
+        mc:'地基基桩',
+        ma:'基装完整性',
+        nl:'公路工程-综合甲级',
     },
     {
         id: 'AQGZE-00021',
-        fl:'安全检测',
-        mc:'192.168.1.28',
-        ma:'192.168.1.05',
-        nl:'PF4',
+        fl:'万能材料试验机',
+        mc:'钢筋（含接头）',
+        ma:'屈服强度，伸长度，抗拉强度',
+        nl:'公路工程-综合乙级',
     },
     {
         id: 'AQGZE-00035',
-        fl:'任意',
-        mc:'192.168.0.18',
-        ma:'192.168.1.04',
-        nl:'PF5',
+        fl:'基桩超声检测仪',
+        mc:'地基基桩',
+        ma:'基装完整性',
+        nl:'公路工程-综合甲级',
     },
     {
         id: 'AQGZE-00038',
-        fl:'安全检测',
-        mc:'192.168.1.44',
-        ma:'192.168.1.03',
-        nl:'PF6',
+        fl:'基桩超声检测仪',
+        mc:'地基基础',
+        ma:'基装完整性',
+        nl:'公路工程-综合丙级',
     },
     {
         id: 'AQGZE-00021',
-        fl:'安全过滤',
-        mc:'192.168.1.110',
-        ma:'192.168.1.02',
-        nl:'PF7',
+        fl:'加速磨光机',
+        mc:'集料',
+        ma:'磨光值',
+        nl:'公路工程-综合甲级',
     },
     {
         id: 'AQGZE-00037',
-        fl:'任意',
-        mc:'192.168.1.53',
-        ma:'192.168.1.01',
-        nl:'PF8',
+        fl:'钢筋位置测定仪',
+        mc:'结构混凝土',
+        ma:'钢筋位置及保护层厚度',
+        nl:'公路工程-综合乙级',
     },
   
     
@@ -97,40 +97,33 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: ' 规则名',
+            title: '等级类型',
             dataIndex: 'nl',
         },
-        {
-            title: '源地址',
-            dataIndex: 'ma',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
+        
         
         {
-            title: '目的地址',
+            title: '项目',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '服务',
+            title: '本次检测参数',
+            dataIndex: 'ma',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        {
+            title: '参数对应设备',
             dataIndex: 'fl',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
 
         {
-            title: '类型',
+            title: '检测状态',
             dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="认证" unCheckedChildren="包过滤" />,
+            render: (text) => <Switch checkedChildren="完成" unCheckedChildren="未完成" />,
           },
-        {
-            title: '生效',
-            dataIndex: 'dbz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >生效</Checkbox>
-                </Fragment>
-            ),
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -160,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙安全规则"
+                title="检测参数核查"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

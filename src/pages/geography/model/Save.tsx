@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑防火墙配置信息"
+                title="编辑质量动态监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="对象名称" >
+                    <Form.Item key="cf" label="项目名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="描述" >
+                    <Form.Item key="dw" label="龄期（d）" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="防火墙物理地址" >
+                    <Form.Item key="jc" label="强度等级" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jg" label="登录类型" >
+                    <Form.Item key="jg" label="受压面积（mm²）" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="防火墙配置进度（%）" >
+                    <Form.Item key="jx" label="质量监控进度（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

@@ -21,65 +21,65 @@ const mockData = [
     
      {
         id: 'FANG0024',
-        mc:'ANQUAN',
-        gg:'1',
-        hz:'高级管理',
+        mc:'绕城高速公路',
+        gg:'开挖至-6.1m（深6.1m）',
+        hz:'20',
         jd:74,
         state: 1,
      },
      {
         id: 'FANG0025',
-        mc:'HUOQ',
-        gg:'5',
-        hz:'高级管理',
+        mc:'跃进路',
+        gg:'拆除1支撑',
+        hz:'20',
         jd:95,
         state: 1,
      },
      {
         id: 'FANG0026',
-        mc:'ANQUAN',
-        gg:'4',
-        hz:'安全审计',
+        mc:'新南路',
+        gg:'在-5m（深5m）处加撑',
+        hz:'15',
         jd:76,
         state: 1,
      },
      {
         id: 'FANG0021',
-        mc:'HUOQ',
-        gg:'3',
-        hz:'安全审计',
+        mc:'万寿路',
+        gg:'开挖至-6.6m（深6.6m）',
+        hz:'15',
         jd:98,
         state: 1,
      },
      {
          id: 'FANG0022',
-         mc:'FANG',
-         gg:'6',
-         hz:'高级管理',
+         mc:'五四路',
+         gg:'在-5.4m（深5.4m）处换撑',
+         hz:'20',
          jd:100,
          state: 1,
       },
       {
          id: 'FANG0023',
-         mc:'TOPSEA',
-         gg:'5',
-         hz:'安全审计',
+         mc:'石青支路',
+         gg:'开挖至-5m（深5m）',
+         hz:'15',
          jd:56,
          state: 1,
       },
      {
         id: 'FANG0027',
-        mc:'TOPSEA',
-        gg:'4',
-        hz:'高级管理',
+        mc:'石杨路',
+        gg:'在-4.4m（深4.4m）处加撑',
+        hz:'10',
         jd:100,
         state: 1,
      },
      {
         id: 'FANG0028',
-        mc:'TOPSEA',
-        gg:'1',
-        hz:'安全审计',
+        mc:'桥鸿路',
+        gg:'开挖至-6m（深6m）',
+        hz:'15',
         jd:88,
         state: 1,
      }, 
@@ -100,28 +100,28 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '防火墙名称',
+            title: '公路名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '防火墙调试级别',
+            title: '工况状态',
             dataIndex: 'gg',
         },
         {
-            title: '权限',
+            title: '地面超载（Kpa）',
             dataIndex: 'hz',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '安全检测进度',
+            title: '检测进度',
             dataIndex: 'jd',
             render: (text) => <Progress percent={text} status="active" />,
         },
         {
-            title: '访问权限',
+            title: '自动检测',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="允许访问" unCheckedChildren="不允许" />,
+            render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
         },
         {
             title: '操作',
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安全检测管理"
+                title="公路环境参数管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

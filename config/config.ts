@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '防火墙安全规则',
+          name: '检测参数核查',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '防火墙配置管理',
+          name: '质量动态监控',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安全检测管理',
+          name: '公路环境参数管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
