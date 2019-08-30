@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告投放信息管理',
+          name: '公路交通阻断信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '广告投放资源管理',
+          name: '基础数据',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '广告投放数据管理',
+          name: '养护日常巡查管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

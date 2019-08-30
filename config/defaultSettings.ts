@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '广告投放资源管理系统',
+  title: '公路养护检测管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

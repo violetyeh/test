@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message } from "antd";
+import { Form, Modal, Input, message, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告投放信息"
+                title="编辑公路交通阻断信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="ID" >
+                    <Form.Item key="id" label="路线编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="搜索广告" >
+                    <Form.Item key="fenceng" label="路线名称" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
@@ -59,7 +59,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="name" label="信息流广告" >
+                    <Form.Item key="name" label="阻断起点桩号" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
@@ -67,18 +67,22 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="leixing" label="社交广告" >
+                    <Form.Item key="leixing" label="阻断止点桩号" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="广告投放" >
+                    <Form.Item key="jishu" label="状态" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Radio.Group defaultValue="a" buttonStyle="solid">
+                                <Radio.Button value="a">待审批</Radio.Button>
+                                <Radio.Button value="b">已审批</Radio.Button>
+                                <Radio.Button value="b">审批不通过</Radio.Button>
+                            </Radio.Group>,
                         )}
                     </Form.Item>
                 </Form>

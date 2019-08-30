@@ -20,73 +20,73 @@ interface TypeState {
 const mockData = [
     {
         id: 'TFSJ010292',
-        fenlei: 'TFSJ投放广告数据',
+        fenlei: '该县巡检机构',
         pinlv: 50,
         yaosu: '100万-200万',
-        fenceng: '化妆品',
+        fenceng: '王源',
         state: '启用',
        
     },
     {
         id: 'TFSJ010271',
-        fenlei: 'TFSJ014投放广告数据',
+        fenlei: '该省巡检机构',
         pinlv: 62,
         yaosu: '50万-100万',
-        fenceng: '化妆品',
+        fenceng: '刘艺',
         state: '启用',
        
     },
     {
         id: 'TFSJ010228',
-        fenlei: 'TFSJ023投放广告数据',
+        fenlei: '该县巡检机构',
         pinlv: 65,
         yaosu: '100万-200万',
-        fenceng: '珠宝',
+        fenceng: '李毅',
         state: '启用',
        
     },
     {
         id: 'TFSJ010264',
-        fenlei: 'TFSJ47投放广告数据',
+        fenlei: '第三方巡检机构',
         pinlv: 42,
         yaosu: '10万-50万',
-        fenceng: '化妆品',
+        fenceng: '赵丽',
         state: '启用',
        
     },
     {
         id: 'TFSJ010278',
-        fenlei: 'TFSJ36投放广告数据',
+        fenlei: '第三方巡检机构',
         pinlv: 56,
         yaosu: '100万-200万',
-        fenceng: '医药',
+        fenceng: '孟非',
         state: '启用',
        
     },
     {
         id: 'TFSJ010226',
-        fenlei: 'TFSJ12投放广告数据',
+        fenlei: '第三方巡检机构',
         pinlv: 12,
         yaosu: '10万-50万',
-        fenceng: '家居',
+        fenceng: '江大',
         state: '启用',
        
     },
     {
         id: 'TFSJ010224',
-        fenlei: 'TFSJ09投放广告数据',
+        fenlei: '该县巡检机构',
         pinlv: 26,
         yaosu: '50万-100万',
-        fenceng: '房产',
+        fenceng: '汪峰',
         state: '启用',
        
     },
     {
         id: 'TFSJ010223',
-        fenlei: 'TFSJ05投放广告数据',
+        fenlei: '第三方巡检机构',
         pinlv: 33,
         yaosu: '100万-200万',
-        fenceng: '装修',
+        fenceng: '张三三',
         state: '启用',
        
     },
@@ -107,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告数据',
+            title: '巡检机构',
             dataIndex: 'fenlei',
         },
         {
-            title: '投放进度',
+            title: '巡检进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,19 +122,15 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '投放预算',
+            title: '养护预算',
             dataIndex: 'yaosu',
         },
         {
-            title: '广告类别',
+            title: '巡检负责人',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
-
+       
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -167,7 +163,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="投放数据管理"
+                title="养护日常巡查管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

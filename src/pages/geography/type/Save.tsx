@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告投放数据信息"
+                title="编辑养护日常巡查"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="广告数据" >
+                    <Form.Item key="fenlei" label="巡检机构" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="投放进度（%）" >
+                    <Form.Item key="pinlv" label="巡检进度（%）" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="投放预算" >
+                    <Form.Item key="yaosu" label="养护预算" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="广告类别" >
+                    <Form.Item key="fenceng" label="巡检负责人" >
                         {getFieldDecorator('fenceng', {
                             initialValue: currentItem.fenceng,
                         })(

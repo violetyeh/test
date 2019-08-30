@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'D0001',
-        fenceng: '百度搜索广告',
-        name: '今日头条信息流',
-        leixing: '腾讯社交广告',
-        jishu: '线上投放',
+        id: 'LUMC0211',
+        fenceng: '大兴路',
+        name: '3404.141',
+        leixing: '3404.151',
+        jishu: '待审批',
         state: '启用',
     },
     {
-        id: 'D0002',
-        fenceng: '神马搜索广告',
-        name: 'UC头条信息流',
-        leixing: '陌陌广告',
-        jishu: '线上投放',
+        id: 'LUMC0212',
+        fenceng: '海滨路',
+        name: '3405.111',
+        leixing: '3405.121',
+        jishu: '待审批',
         state: '启用',
     },
     {
-        id: 'D0003',
-        fenceng: '360搜索广告',
-        name: '一点资讯信息流',
-        leixing: '朋友圈广告',
-        jishu: '线上投放',
+        id: 'LUMC0213',
+        fenceng: '红石路',
+        name: '3404.121',
+        leixing: '3404.131',
+        jishu: '待审批',
         state: '启用',
     },
     {
-        id: 'D0004',
-        fenceng: '搜狗搜索广告',
-        name: '网易新闻信息流',
-        leixing: 'QQ空间广告',
-        jishu: '线上投放',
+        id: 'LUMC0214',
+        fenceng: '华怡路',
+        name: '3102.125',
+        leixing: '3102.135',
+        jishu: '已审批',
         state: '启用',
     },
     {
-        id: 'D0005',
-        fenceng: '谷歌搜索广告',
-        name: '抖音广告信息流',
-        leixing: '新浪微博广告',
-        jishu: '线上投放',
+        id: 'LUMC0215',
+        fenceng: '金家岩路',
+        name: '3256.021',
+        leixing: '3256.031',
+        jishu: '待审批',
         state: '启用',
     },
     {
-        id: 'D0006',
-        fenceng: '必应搜索广告',
-        name: '快手广告信息流',
-        leixing: '微信公众号广告',
-        jishu: '线上投放',
+        id: 'LUMC0216',
+        fenceng: '岚园路',
+        name: '3106.231',
+        leixing: '3106.241',
+        jishu: '审批不通过',
         state: '启用',
     },
     {
-        id: 'D0007',
-        fenceng: '2345搜索广告',
-        name: '百度信息流',
-        leixing: '腾讯社交广告',
-        jishu: '线上投放',
+        id: 'LUMC0217',
+        fenceng: '民权路',
+        name: '3021.025',
+        leixing: '3021.035',
+        jishu: '已审批',
         state: '启用',
     },
     {
-        id: 'D0008',
-        fenceng: '火狐搜索广告',
-        name: '今日头条信息流',
-        leixing: '腾讯社交广告',
-        jishu: '线上投放',
+        id: 'LUMC0218',
+        fenceng: '青年路',
+        name: '3103.042',
+        leixing: '3103.052',
+        jishu: '待审批',
         state: '启用',
     },
    
@@ -99,23 +99,23 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '路线编号',
             dataIndex: 'id',
         },
         {
-            title: '搜索广告',
+            title: '路线名称',
             dataIndex: 'fenceng',
         },
         {
-            title: '信息流广告',
+            title: '阻断起点桩号',
             dataIndex: 'name',
         },
         {
-            title: ' 社交广告',
+            title: ' 阻断止点桩号',
             dataIndex: 'leixing',
         },
         {
-            title: '广告投放',
+            title: '状态',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="投放信息管理"
+                title="公路交通阻断信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
