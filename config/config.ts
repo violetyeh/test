@@ -132,7 +132,7 @@ export default {
           component: './analysis',
         },
         {
-          name: '威胁内容信息',
+          name: '基本信息设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',

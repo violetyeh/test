@@ -24,57 +24,57 @@ interface TypeState {
 const mockData = [
     {
         id: 'WXNR000021',
-        fl:'eth2.100',
-        mc:'10.50.0.3/54',
+        fl:'#1公路基桩检测',
+        mc:'PILE#1',
         ma:'信息过滤',
         nl:'张文芳',
     },
     {
         id: 'WXNR000035',
-        fl:'eth2.200',
-        mc:'10.50.0.0/01',
+        fl:'#2公路基桩检测',
+        mc:'PILE#2',
         ma:'行为审计',
         nl:'王芳',
     },
     {
         id: 'WXNR000038',
-        fl:'eth2.310',
-        mc:'10.50.0.1/32',
+        fl:'#3公路基桩检测',
+        mc:'PILE#3',
         ma:'行为审计',
         nl:'刘文',
     },
     {
         id: 'WXNR000021',
-        fl:'eth2.199',
-        mc:'10.50.0.1/52',
+        fl:'#4公路基桩检测',
+        mc:'PILE#4',
         ma:'行为审计',
         nl:'赵媛',
     },
     {
         id: 'WXNR000037',
-        fl:'eth2.215',
-        mc:'10.50.0.0/16',
+        fl:'#5公路基桩检测',
+        mc:'PILE#5',
         ma:'信息过滤',
         nl:'刘冰',
     },
     {
         id: 'WXNR000035',
-        fl:'eth2.177',
-        mc:'10.50.0.0/16',
+        fl:'#6公路基桩检测',
+        mc:'PILE#6',
         ma:'行为审计',
         nl:'汪峰',
     },
     {
         id: 'WXNR000064',
-        fl:'eth2.023',
-        mc:'10.50.0.16/52',
+        fl:'#7公路基桩检测',
+        mc:'PILE#7',
         ma:'信息过滤',
         nl:'陈云',
     },
     {
         id: 'WXNR000078',
-        fl:'eth2.014',
-        mc:'10.50.0.2/32',
+        fl:'#8公路基桩检测',
+        mc:'PILE#8',
         ma:'行为审计',
         nl:'王安',
     },
@@ -104,12 +104,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: 'VLAN接口',
+            title: '工程名',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '目标网络',
+            title: '桩号',
             dataIndex: 'mc',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
@@ -152,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="威胁内容信息"
+                title="基本信息设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

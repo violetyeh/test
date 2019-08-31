@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙威胁检测管理系统',
+  title: '公路基桩检测信息管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
