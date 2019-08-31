@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'em38',
-        fl:'网桥1',
-        mc:'接内网',
-        ma:'增强型',
+        id: '01',
+        fl:'大桥区公路局',
+        mc:'大桥线（s361）南开至西边段改造工程',
+        ma:'大桥线管理局',
         nl:'刘文',
-        status:'异常',
+        status:'未施工',
     },
     {
-        id: 'em21',
-        fl:'监控模式',
-        mc:'接外网',
-        ma:'增强型',
+        id: '02',
+        fl:'施工单位甲',
+        mc:'南滨线（s361）大平至西边段改造工程',
+        ma:'南滨线管理局',
         nl:'赵媛',
-        status:'正常',
+        status:'施工中',
     },
     {
-        id: 'em37',
-        fl:'网桥1',
-        mc:'接内网',
-        ma:'BSD',
+        id: '03',
+        fl:'梦海区公路局',
+        mc:'梦海线（s361）梦园至南边段改造工程',
+        ma:'梦海线管理局',
         nl:'刘冰',
-        status:'正常',
+        status:'施工中',
     },
     {
-        id: 'em35',
-        fl:'网桥2',
-        mc:'接内网',
-        ma:'增强型',
+        id: '04',
+        fl:'忘曲区公路局',
+        mc:'忘曲线（s361）古谭至西边段改造工程',
+        ma:'忘曲线管理局',
         nl:'汪峰',
-        status:'异常',
+        status:'未施工',
     },
     {
-        id: 'em64',
-        fl:'网桥1',
-        mc:'接外网',
-        ma:'BSD',
+        id: '05',
+        fl:'三水区公路局',
+        mc:'三水线（s361）乐水至南边段改造工程',
+        ma:'三水线管理局',
         nl:'陈云',
-        status:'正常',
+        status:'施工中',
     },
     {
-        id: 'em78',
-        fl:'监控模式',
-        mc:'接内网',
-        ma:'增强型',
+        id: '06',
+        fl:'顺德区公路局',
+        mc:'南滨线（s361）大平至西边段改造工程',
+        ma:'南滨线管理局',
         nl:'王安',
-        status:'正常',
+        status:'施工中',
     },
     {
-        id: 'em21',
-        fl:'网桥2',
-        mc:'接外网',
-        ma:'BSD',
+        id: '07',
+        fl:'南海区公路局',
+        mc:'盐南线（s361）乐平至南边段改造工程',
+        ma:'盐南线管理局',
         nl:'张文芳',
-        status:'异常',
+        status:'未施工',
     },
     {
-        id: 'em35',
-        fl:'网桥1',
-        mc:'接内网',
-        ma:'增强型',
+        id: '08',
+        fl:'高明区公路局',
+        mc:'盐南线（s361）乐平至南边段改造工程',
+        ma:'盐南线管理局',
         nl:'王芳',
-        status:'正常',
+        status:'施工中',
     },
  
     
@@ -101,21 +101,21 @@ class Type extends Component<TypeProps, TypeState>{
     columns: ColumnProps<any>[] = [
         
         {
-            title: '接口名称',
+            title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '应用模式',
+            title: '施工单位',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '接入位置',
+            title: '项目名称',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '驱动类型',
+            title: '管理处',
             dataIndex: 'ma',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
@@ -158,7 +158,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="数据接口信息"
+                title="施工单位信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑流量控制信息"
+                title="编辑物料检测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,30 +51,38 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="通道名称" >
+                    <Form.Item key="cf" label="施工单位" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="通道类型" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="通道路径" >
+                    
+                    <Form.Item key="jg" label="工程名称" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="通道带宽（kb/s）" >
+                    <Form.Item key="jx" label="物料类型" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="dw" label="压碎值（%）" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="xs" label="吸水率（%）" >
+                        {getFieldDecorator('xs', {
+                            initialValue: currentItem.xs,
                         })(
                             <Input />,
                         )}

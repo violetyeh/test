@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '信息流量检测DDOS自动保护系统',
+  title: '公路试验检测通用管理平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
