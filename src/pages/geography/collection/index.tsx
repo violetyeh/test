@@ -26,56 +26,56 @@ const mockData = [
         id: 'WXNR000021',
         fl:'#1公路基桩检测',
         mc:'PILE#1',
-        ma:'信息过滤',
+        ma:'26.00',
         nl:'张文芳',
     },
     {
         id: 'WXNR000035',
         fl:'#2公路基桩检测',
         mc:'PILE#2',
-        ma:'行为审计',
+        ma:'25.00',
         nl:'王芳',
     },
     {
         id: 'WXNR000038',
         fl:'#3公路基桩检测',
         mc:'PILE#3',
-        ma:'行为审计',
+        ma:'27.00',
         nl:'刘文',
     },
     {
         id: 'WXNR000021',
         fl:'#4公路基桩检测',
         mc:'PILE#4',
-        ma:'行为审计',
+        ma:'26.00',
         nl:'赵媛',
     },
     {
         id: 'WXNR000037',
         fl:'#5公路基桩检测',
         mc:'PILE#5',
-        ma:'信息过滤',
+        ma:'25.00',
         nl:'刘冰',
     },
     {
         id: 'WXNR000035',
         fl:'#6公路基桩检测',
         mc:'PILE#6',
-        ma:'行为审计',
+        ma:'26.00',
         nl:'汪峰',
     },
     {
         id: 'WXNR000064',
         fl:'#7公路基桩检测',
         mc:'PILE#7',
-        ma:'信息过滤',
+        ma:'30.00',
         nl:'陈云',
     },
     {
         id: 'WXNR000078',
         fl:'#8公路基桩检测',
         mc:'PILE#8',
-        ma:'行为审计',
+        ma:'25.00',
         nl:'王安',
     },
     
@@ -91,11 +91,11 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '禁止',
+            title: '检测状态',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >禁止</Checkbox>
+                  <Checkbox >检测中</Checkbox>
                 </Fragment>
             ),
         },
@@ -114,13 +114,13 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '检测操作',
+            title: '桩长（m）',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '检测管理员',
+            title: '检测人员',
             dataIndex: 'nl',
         },
         {

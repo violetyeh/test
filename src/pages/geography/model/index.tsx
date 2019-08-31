@@ -20,66 +20,66 @@ interface ModelState {
 const mockData = [
     {
         id:'ZJSM023896',
-        cf:'192.168.1.41',
-        dw:'外网口',
-        jg:'网络信息过滤',
-        jx:'攻击/扫描/地址欺骗等日志',
+        cf:'1.41',
+        dw:'21.0',
+        jg:'公路JTG/T F81-01',
+        jx:'扇测法',
         status: '启用',
      },
      {
        id:'ZJSM023897',
-       cf:'192.168.1.08',
-       dw:'任意网口',
-       jg:'用户行为审计',
-       jx:'攻击/扫描/地址欺骗等日志',
+       cf:'1.08',
+       dw:'21.1',
+       jg:'公路JTG/T F81-02',
+       jx:'扇测法',
        status: '启用',
     },
     {
         id:'ZJSM023898',
-        cf:'192.168.1.12',
-        dw:'内网口',
-        jg:'网络信息过滤',
-        jx:'本地安全日志',
+        cf:'1.12',
+        dw:'20.0',
+        jg:'公路JTG/T F81-03',
+        jx:'平测法',
         status: '启用',
      },
     {
        id:'ZJSM023891',
-       cf:'192.168.1.28',
-       dw:'外网口',
-       jg:'用户行为审计',
-       jx:'本地安全日志',
+       cf:'1.28',
+       dw:'21.3',
+       jg:'公路JTG/T F81-04',
+       jx:'平测法',
        status: '启用',
     },
     {
         id:'ZJSM023892',
-        cf:'192.168.1.36',
-        dw:'任意网口',
-        jg:'网络信息过滤',
-        jx:'本地安全日志',
+        cf:'1.36',
+        dw:'21.0',
+        jg:'公路JTG/T F81-05',
+        jx:'平测法',
         status: '启用',
      },
      {
         id:'ZJSM023893',
-        cf:'192.168.1.115',
-        dw:'内网口',
-        jg:'用户行为审计',
-        jx:'攻击/扫描/地址欺骗等日志',
+        cf:'1.115',
+        dw:'20.0',
+        jg:'公路JTG/T F81-06',
+        jx:'扇测法',
         status: '启用',
      },
      {
         id:'ZJSM023894',
-        cf:'192.168.1.025',
-        dw:'外网口',
-        jg:'网络信息过滤',
-        jx:'数据包流速超限日志',
+        cf:'1.025',
+        dw:'20.1',
+        jg:'公路JTG/T F81-07',
+        jx:'斜测法',
         status: '启用',
      },
      {
          id:'ZJSM023895',
-         cf:'192.168.1.63',
-         dw:'任意网口',
-         jg:'用户行为审计',
-         jx:'本地安全日志',
+         cf:'1.63',
+         dw:'20.0',
+         jg:'公路JTG/T F81-08',
+         jx:'平测法',
          status: '启用',
       },
 
@@ -97,26 +97,26 @@ class Model extends Component<ModelProps, ModelState>{
             title: '序号',
             dataIndex: 'id',
         },
+       
         {
-            title: '服务器地址',
-            dataIndex: 'cf',
-        },
-        {
-            title: '区域',
-            dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
-        },
-        {
-            title: '管理状态',
+            title: '测试规范',
             dataIndex: 'jg',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '发送日志',
+            title: '测试方法',
             dataIndex: 'jx',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
-        
+        {
+            title: '采样间隔（μs）',
+            dataIndex: 'cf',
+        },
+        {
+            title: '发射脉宽（μs）',
+            dataIndex: 'dw',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
+        },
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="威胁审计检测"
+                title="参数设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

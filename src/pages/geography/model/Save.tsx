@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑威胁审计检测"
+                title="编辑参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="服务器地址" >
-                        {getFieldDecorator('cf', {
-                            initialValue: currentItem.cf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dw" label="区域" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jg" label="管理状态" >
+                    
+                    <Form.Item key="jg" label="测试规范" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="发送日志" >
+                    <Form.Item key="jx" label="测试方法" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    
+                    <Form.Item key="cf" label="采样间隔（μs）" >
+                        {getFieldDecorator('cf', {
+                            initialValue: currentItem.cf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="dw" label="发射脉宽（μs）" >
+                        {getFieldDecorator('dw', {
+                            initialValue: currentItem.dw,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                 </Form>
             </Modal>
         );

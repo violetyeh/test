@@ -138,13 +138,13 @@ export default {
           component: './geography/collection',
         },
         {
-          name: '威胁审计检测',
+          name: '参数设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安全管理',
+          name: '基桩信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

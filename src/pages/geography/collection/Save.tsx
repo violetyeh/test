@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="VLAN接口" >
+                    <Form.Item key="fl" label="工程名" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="目标网络" >
+                    <Form.Item key="mc" label="桩号" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="检测操作" >
+                    <Form.Item key="ma" label="桩长（m）" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,7 +73,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="nl" label="检测管理员" >
+                    <Form.Item key="nl" label="检测人员" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
