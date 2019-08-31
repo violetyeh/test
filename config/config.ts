@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '虚拟机管理',
+          name: '施工单位管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '存储管理',
+          name: '安全质量预警',
           path: '/model',
           icon: 'fund',
           component: './geography/model',

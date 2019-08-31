@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 服务器信息: 1700, 虚拟机数量: 1500, 存储空间信息:2390, 实例信息: 1100 },
-  { label: '0.2', 服务器信息: 1900, 虚拟机数量: 2600, 存储空间信息: 4113, 实例信息: 1200 },
-  { label: '0.3', 服务器信息: 1950, 虚拟机数量: 3950, 存储空间信息: 3250, 实例信息: 1100 },
-  { label: '0.4', 服务器信息: 5100, 虚拟机数量: 1500, 存储空间信息: 2139, 实例信息: 1500 },
-  { label: '0.5', 服务器信息: 2510, 虚拟机数量: 1950, 存储空间信息: 4652, 实例信息: 900 },
-  { label: '0.6', 服务器信息: 1950, 虚拟机数量: 4634, 存储空间信息: 2252, 实例信息: 3000 },
-  { label: '0.7', 服务器信息: 1950, 虚拟机数量: 2685, 存储空间信息: 1152, 实例信息: 2600 },
-  { label: '0.8', 服务器信息: 1020, 虚拟机数量: 3950, 存储空间信息: 1152, 实例信息: 520 },
-  { label: '0.9', 服务器信息: 2350, 虚拟机数量: 1950, 存储空间信息: 2252, 实例信息: 3100 },
-  { label: '1.0', 服务器信息: 3150, 虚拟机数量: 1950, 存储空间信息: 3112, 实例信息: 1203 },
-  { label: '未评分', 服务器信息: 1150, 虚拟机数量: 1950, 存储空间信息: 1052, 实例信息: 1420 },
+  { label: '0.1', 施工监理数量: 1700, 监理项目信息: 1500, 监理信息:2390, 监理安全率: 1100 },
+  { label: '0.2', 施工监理数量: 1900, 监理项目信息: 2600, 监理信息: 4113, 监理安全率: 1200 },
+  { label: '0.3', 施工监理数量: 1950, 监理项目信息: 3950, 监理信息: 3250, 监理安全率: 1100 },
+  { label: '0.4', 施工监理数量: 5100, 监理项目信息: 1500, 监理信息: 2139, 监理安全率: 1500 },
+  { label: '0.5', 施工监理数量: 2510, 监理项目信息: 1950, 监理信息: 4652, 监理安全率: 900 },
+  { label: '0.6', 施工监理数量: 1950, 监理项目信息: 4634, 监理信息: 2252, 监理安全率: 3000 },
+  { label: '0.7', 施工监理数量: 1950, 监理项目信息: 2685, 监理信息: 1152, 监理安全率: 2600 },
+  { label: '0.8', 施工监理数量: 1020, 监理项目信息: 3950, 监理信息: 1152, 监理安全率: 520 },
+  { label: '0.9', 施工监理数量: 2350, 监理项目信息: 1950, 监理信息: 2252, 监理安全率: 3100 },
+  { label: '1.0', 施工监理数量: 3150, 监理项目信息: 1950, 监理信息: 3112, 监理安全率: 1203 },
+  { label: '未评分', 施工监理数量: 1150, 监理项目信息: 1950, 监理信息: 1052, 监理安全率: 1420 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['服务器信息', '虚拟机数量', '存储空间信息','实例信息'], // 展开字段集
+  fields: ['施工监理数量', '监理项目信息', '监理信息','监理安全率'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  实例信息: {
+  监理安全率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '服务器信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '虚拟机数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '存储空间信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '实例信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '施工监理数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '监理项目信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '监理信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '监理安全率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '实例信息') {
+              if (geom.getYScale().field === value && value === '监理安全率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '实例信息') {
+              } else if (geom.getYScale().field === 'value' && value !== '监理安全率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '服务器信息') {
+            if (value === '施工监理数量') {
               return '#2b6cbb';
             }
-            if (value === '新增虚拟机') {
+            if (value === '新增项目') {
               return '#41a2fc';
             }
-            if (value === '虚拟机数量') {
+            if (value === '监理项目信息') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*实例信息" color="#fad248" size={3} />
+        <Geom type="line" position="label*监理安全率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

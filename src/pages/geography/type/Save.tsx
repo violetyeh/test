@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑事件信息"
+                title="编辑安全质量预警信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,29 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zc" label="说明" >
+                    <Form.Item key="zc" label="类别" >
                         {getFieldDecorator('zc', {
                             initialValue: currentItem.zc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhonglei" label="级别" >
+                    <Form.Item key="zhonglei" label="危险源内容" >
                         {getFieldDecorator('zhonglei', {
                             initialValue: currentItem.zhonglei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="TYPE" >
+                    <Form.Item key="mingcheng" label="危险源程度" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="songjian" label="域" >
-                        {getFieldDecorator('songjian', {
-                            initialValue: currentItem.songjian,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="shengchan" label="账户" >
+                    
+                    <Form.Item key="shengchan" label="负责管理员" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(

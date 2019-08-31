@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储信息"
+                title="编辑施工监理信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,28 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="名称" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sp" label="类型" >
+                    <Form.Item key="sp" label="单位工程" >
                         {getFieldDecorator('sp', {
                             initialValue: currentItem.sp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijian" label="虚拟机平台" >
+                    <Form.Item key="shijian" label="当前阶段" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="biaozhun" label="VM显示名称" >
+                    <Form.Item key="biaozhun" label="备案情况" >
                         {getFieldDecorator('biaozhun', {
                             initialValue: currentItem.biaozhun,
                         })(
@@ -73,7 +73,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="process" label="存储占比（%）" >
+                    <Form.Item key="process" label="备案进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

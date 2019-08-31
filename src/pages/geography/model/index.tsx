@@ -19,66 +19,66 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'ROOT-01',
-        sp:'ROOT100',
-        shijian:'Virtual Box',
-        biaozhun:'BMC Server001',
+        id: 'JLGC-01',
+        sp:'施工监理工程00',
+        shijian:'桩基',
+        biaozhun:'备案中',
         process: 63,
         status: '启用',
     },
     {
-        id: 'ROOT-02',
-        sp:'ROOT102',
-        shijian:'Virtual Box',
-        biaozhun:'BMC Server002',
+        id: 'JLGC-02',
+        sp:'施工监理工程02',
+        shijian:'基坑',
+        biaozhun:'备案中',
         process: 54,
         status: '启用',
     },
     {
-        id: 'ROOT-03',
-        sp:'ROOT101',
-        shijian:'Virtual PC',
-        biaozhun:'BMC Server003',
-        process: 10,
+        id: 'JLGC-03',
+        sp:'施工监理工程01',
+        shijian:'基础',
+        biaozhun:'已备案',
+        process: 100,
         status: '启用',
     },
     {
-        id: 'ROOT-04',
-        sp:'ROOT105',
-        shijian:'VMware',
-        biaozhun:'BMC Server004',
+        id: 'JLGC-04',
+        sp:'施工监理工程05',
+        shijian:'主体',
+        biaozhun:'备案中',
         process: 5,
         status: '启用',
     },
     {
-        id: 'ROOT-05',
-        sp:'ROOT101',
-        shijian:'Virtual Box',
-        biaozhun:'BMC Server005',
+        id: 'JLGC-05',
+        sp:'施工监理工程01',
+        shijian:'装饰装修',
+        biaozhun:'备案中',
         process: 16,
         status: '启用',
     },
     {
-        id: 'ROOT-06',
-        sp:'ROOT103',
-        shijian:'VMware',
-        biaozhun:'BMC Server006',
-        process: 60,
+        id: 'JLGC-06',
+        sp:'施工监理工程03',
+        shijian:'施工准备',
+        biaozhun:'未备案',
+        process: 0,
         status: '启用',
     },
     {
-        id: 'ROOT-07',
-        sp:'ROOT105',
-        shijian:'Virtual PC',
-        biaozhun:'BMC Server007',
-        process: 40,
+        id: 'JLGC-07',
+        sp:'施工监理工程05',
+        shijian:'基坑',
+        biaozhun:'已备案',
+        process: 100,
         status: '启用',
     },
     {
-        id: 'ROOT-08',
-        sp:'ROOT103',
-        shijian:'KVM',
-        biaozhun:'BMC Server008',
+        id: 'JLGC-08',
+        sp:'施工监理工程03',
+        shijian:'施工准备',
+        biaozhun:'备案中',
         process: 30,
         status: '启用',
     },
@@ -95,26 +95,26 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '名称',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '类型',
+            title: '单位工程',
             dataIndex: 'sp',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '虚拟机平台',
+            title: '当前阶段',
             dataIndex: 'shijian',
-            render: (text) => <Tag color="blue">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: 'VM显示名称',
+            title: '备案情况',
             dataIndex: 'biaozhun',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '存储占比',
+            title: '备案进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -150,7 +150,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="存储管理"
+                title="施工监理管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

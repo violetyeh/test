@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'BMC服务器管理平台',
+  title: '施工监理安全质量预警系统软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
