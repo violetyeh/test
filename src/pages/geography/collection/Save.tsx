@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="存储服务管理"
+                title="编辑监控点"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="存储码流" >
+                    <Form.Item key="lg" label="路口IP" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="7天" >
+                    <Form.Item key="fenceng" label="路口名称" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="15天" >
+                    <Form.Item key="leixing" label="路口代码" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="视频存储进度(%)" >
+                    <Form.Item key="jishu" label="监控存储进度(%)" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
@@ -81,7 +81,7 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                     
-                    <Form.Item key="name" label="存储器占用率(%)" >
+                    <Form.Item key="name" label="监控存储占用率(%)" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(

@@ -20,67 +20,67 @@ interface ModelState {
 const mockData = [
     {
         id: 'WJ0008S0J',
-        date: '218.207.107.21',
-        type: '17',
+        date: '2019年8月26日10:56:21',
+        type: '逆向行驶',
         status: '启用',
-        pinlv: 'TESTUSER1',
-        process: 23,
+        pinlv: '冀C666A',
+        process: '小型汽车',
     },
     {
         id: 'WJ00072IK',
-        date: '218.207.107.03',
-        type: '15',
+        date: '2019年8月27日06:23:03',
+        type: '醉酒驾驶',
         status: '启用',
-        pinlv: 'TESTUSER2',
-        process: 54,
+        pinlv: '冀C63K6',
+        process: '小型汽车',
     },
     {
         id: 'WJ00063JJ',
-        date: '218.207.107.17',
-        type: '10',
+        date: '2019年8月28日21:48:17',
+        type: '肇事逃逸',
         status: '启用',
-        pinlv: 'TESTUSER3',
-        process: 44,
+        pinlv: '渝A52B6',
+        process: '面包车',
     },
     {
         id: 'WJ0000191',
-        date: '218.207.107.12',
-        type: '18',
+        date: '2019年8月29日20:37:12',
+        type: '醉酒驾驶',
         status: '启用',
-        pinlv: 'TESTUSER4',
-        process: 30,
+        pinlv: '渝A23M6',
+        process: '大货车',
     },
     {
         id: 'WJ0002SI1',
-        date: '218.207.107.05',
-        type: '11',
+        date: '2019年8月30日08:12:05',
+        type: '超速',
         status: '启用',
-        pinlv: 'TESTUSER5',
-        process: 88,
+        pinlv: '沪C66A6',
+        process: '小型越野车',
     },
     {
         id: 'WJ00001IOS',
-        date: '218.207.107.56',
-        type: '56',
+        date: '2019年8月31日09:02:56',
+        type: '醉酒驾驶',
         status: '启用',
-        pinlv: 'TESTUSER6',
-        process: 90,
+        pinlv: '津B25B3',
+        process: '小型汽车',
     },
     {
         id: 'YSIW9s1',
-        date: '218.207.107.24',
-        type: '11',
+        date: '2019年8月31日11:08:24',
+        type: '疲劳驾驶',
         status: '启用',
-        pinlv: 'TESTUSER7',
-        process: 70,
+        pinlv: '京E110MK',
+        process: '小型越野车',
     },
     {
         id: 'WJ00080SJ',
-        date: '218.207.107.36',
-        type: '11',
+        date: '2019年8月31日14:11:36',
+        type: '超速',
         status: '启用',
-        pinlv: 'TESTUSER8',
-        process: 67,
+        pinlv: '京NLU686',
+        process: '大型汽车',
     },
    
 ]
@@ -98,23 +98,22 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '所属用户',
+            title: '车牌号码',
             dataIndex: 'pinlv',
         },
         {
-            title: '终端域名',
+            title: '加入时间',
             dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '文件大小（M）',
+            title: '加入原因',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '剩余空间',
+            title: '号码种类',
             dataIndex: 'process',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
         {
@@ -148,7 +147,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="存储文件信息"
+                title="管理黑名单"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

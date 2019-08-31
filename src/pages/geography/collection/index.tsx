@@ -24,75 +24,75 @@ interface TypeState {
 const mockData = [
     {
         id: 'SPCC-1012001',
-        jishu: '100',
-        fenceng: '166GB',
-        leixing: '210GB',
-        name:'30',
+        jishu: '85',
+        fenceng: '太平',
+        leixing: 'KHDM-210',
+        name:'20',
         state: '启用',
-        lg:'1280*720(720P) ,1.5GB码流',
+        lg:'198 . 207 . 107 . 07',
     },
     {
         id: 'SPCC-1012002',
-        jishu: '85',
-        fenceng: '145GB',
-        leixing: '289GB',
-        name:'15',
+        jishu: '99',
+        fenceng: '五点梅',
+        leixing: 'KHDM-289',
+        name:'22',
         state: '启用',
-        lg:'1920*1080(1080P),2GB码流',
+        lg:'198 . 207 . 107 . 08',
     },
     {
         id: 'SPCC-1012003',
         jishu: '100',
-        fenceng: '147GB',
-        leixing: '154GB',
+        fenceng: '新联',
+        leixing: 'KHDM-154',
         name:'16',
         state: '启用',
-        lg:'1280*720(720P) ,1.5GB码流',
+        lg:'198 . 207 . 107 . 01',
     },
     {
         id: 'SPCC-1012004',
         jishu: '100',
-        fenceng: '242GB',
-        leixing: '315GB',
+        fenceng: '厚街',
+        leixing: 'KHDM-315',
         name:'15',
         state: '启用',
-        lg:'1920*1080(1080P),2GB码流',
+        lg:'198 . 207 . 107 . 06',
     },
     {
         id: 'SPCC-1012005',
         jishu: '100',
-        fenceng: '256GB',
-        leixing: '343GB',
+        fenceng: '石鼓',
+        leixing: 'KHDM-343',
         name:'10',
         state: '启用',
-        lg:'1280*720(720P) ,1.5GB码流',
+        lg:'1280*720(720P) ,1.5码流',
     },
     {
         id: 'SPCC-1012006',
         jishu: '98',
-        fenceng: '235GB',
-        leixing: '342GB',
+        fenceng: '道滘',
+        leixing: 'KHDM-342',
         name:'16',
         state: '启用',
-        lg:'1920*1080(1080P),2GB码流',
+        lg:'198 . 207 . 107 . 03',
     },
     {
         id: 'SPCC-1012007',
         jishu: '88',
-        fenceng: '125GB',
-        leixing: '258GB',
+        fenceng: '望牛墩',
+        leixing: 'KHDM-258',
         name:'14',
         state: '启用',
-        lg:'1280*720(720P) ,2GB码流',
+        lg:'198 . 207 . 107 . 05',
     },
     {
         id: 'SPCC-1012008',
         jishu: '24',
-        fenceng: '174GB',
-        leixing: '247GB',
+        fenceng: '麻涌',
+        leixing: 'KHDM-247',
         name:'15',
         state: '启用',
-        lg:'1920*1080(1080P),4GB码流',
+        lg:'198 . 207 . 107 . 03',
     },
 ]
 
@@ -110,29 +110,29 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '存储码流',
+            title: '路口IP',
             dataIndex: 'lg',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
 
         },
         
         {
-            title: '7天',
+            title: '路口名称',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '15天',
+            title: '路口代码',
             dataIndex: 'leixing',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '视频存储进度',
+            title: '监控存储进度',
             dataIndex: 'jishu',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '存储器占用率',
+            title: '监控存储占用率',
             dataIndex: 'name',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -171,7 +171,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="存储服务管理"
+                title="监控点管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

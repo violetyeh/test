@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储文件信息"
+                title="编辑黑名单信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="所属用户" >
+                    <Form.Item key="pinlv" label="车牌号码" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="终端域名" >
+                    <Form.Item key="date" label="加入时间" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="文件大小（M）" >
+                    <Form.Item key="type" label="加入原因" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="剩余空间（%）" >
+                    <Form.Item key="process" label="号码种类" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储终端信息"
+                title="编辑事故状况"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="终端ID" >
+                    <Form.Item key="id" label="ID" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,35 +52,29 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="终端端口" >
+                    <Form.Item key="pinlv" label="高速公路" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="是否在线" >
+                    <Form.Item key="yaosu" label="是否可通行" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="容量(GB)" >
-                        {getFieldDecorator('sj', {
-                            initialValue: currentItem.sj,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="fenlei" label="终端传输速度（K/秒）" >
+                   
+                    <Form.Item key="fenlei" label="道路状况" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="state" label="终端状态检测时间" >
+                    <Form.Item key="state" label="道路检测时间" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(
