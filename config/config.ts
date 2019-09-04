@@ -138,13 +138,13 @@ export default {
           component: './geography/collection',
         },
         {
-          name: '安全质量预警',
+          name: '施工监理管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '事件管理',
+          name: '安全质量预警',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
