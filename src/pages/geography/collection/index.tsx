@@ -23,76 +23,76 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SPCC-1012001',
-        jishu: '85',
-        fenceng: '太平',
-        leixing: 'KHDM-210',
+        id: 'YSCL101',
+        jishu: '2019年8月20日08:48:16',
+        fenceng: '90',
+        leixing: '运输车辆-210',
         name:'20',
         state: '启用',
-        lg:'198 . 207 . 107 . 07',
+        lg:' 京NLU686',
     },
     {
-        id: 'SPCC-1012002',
-        jishu: '99',
-        fenceng: '五点梅',
-        leixing: 'KHDM-289',
+        id: 'YSCL102',
+        jishu: '2019年8月21日09:49:11',
+        fenceng: '85',
+        leixing: '运输车辆-289',
         name:'22',
         state: '启用',
-        lg:'198 . 207 . 107 . 08',
+        lg:' 京E110MK',
     },
     {
-        id: 'SPCC-1012003',
-        jishu: '100',
-        fenceng: '新联',
-        leixing: 'KHDM-154',
+        id: 'YSCL103',
+        jishu: '2019年8月22日10:50:07',
+        fenceng: '80',
+        leixing: '运输车辆-154',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 01',
+        lg:' 津B25B3',
     },
     {
-        id: 'SPCC-1012004',
-        jishu: '100',
-        fenceng: '厚街',
-        leixing: 'KHDM-315',
+        id: 'YSCL104',
+        jishu: '2019年8月23日14:51:02',
+        fenceng: '100',
+        leixing: '运输车辆-315',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 06',
+        lg:' 沪C66A6',
     },
     {
-        id: 'SPCC-1012005',
-        jishu: '100',
-        fenceng: '石鼓',
-        leixing: 'KHDM-343',
+        id: 'YSCL105',
+        jishu: '2019年8月24日12:52:57',
+        fenceng: '120',
+        leixing: '运输车辆-343',
         name:'10',
         state: '启用',
-        lg:'1280*720(720P) ,1.5码流',
+        lg:'渝A23M6',
     },
     {
-        id: 'SPCC-1012006',
-        jishu: '98',
-        fenceng: '道滘',
-        leixing: 'KHDM-342',
+        id: 'YSCL106',
+        jishu: '2019年9月1日13:53:47',
+        fenceng: '115',
+        leixing: '运输车辆-342',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:' 渝A52B6',
     },
     {
-        id: 'SPCC-1012007',
-        jishu: '88',
-        fenceng: '望牛墩',
-        leixing: 'KHDM-258',
+        id: 'YSCL107',
+        jishu: '2019年9月2日14:54:42',
+        fenceng: '90',
+        leixing: '运输车辆-258',
         name:'14',
         state: '启用',
-        lg:'198 . 207 . 107 . 05',
+        lg:'冀C63K6',
     },
     {
-        id: 'SPCC-1012008',
-        jishu: '24',
-        fenceng: '麻涌',
-        leixing: 'KHDM-247',
+        id: 'YSCL108',
+        jishu: '2019年9月3日15:55:24',
+        fenceng: '80',
+        leixing: '运输车辆-247',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:'冀C666A',
     },
 ]
 
@@ -110,38 +110,37 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '路口IP',
+            title: '车牌号',
             dataIndex: 'lg',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
 
         },
         
         {
-            title: '路口名称',
+            title: '车速（KM/h）',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '路口代码',
+            title: '内部编号',
             dataIndex: 'leixing',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '监控存储进度',
+            title: '最新时间',
             dataIndex: 'jishu',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
+       
         {
-            title: '监控存储占用率',
-            dataIndex: 'name',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            title: '定位',
+            render: (text, record) => (
+                <Fragment>
+                    <a onClick={() => this.edit(record)}>定位操作</a>
+                    <Divider type="vertical" />
+                </Fragment>
+            ),
         },
-        {
-            title: '状态',
-            dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="激活" unCheckedChildren="禁用" />,
-          },
-
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -171,7 +170,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="监控点管理"
+                title="运输车辆监控管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

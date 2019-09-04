@@ -19,68 +19,76 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'WJ0008S0J',
+        id: 'YSD108S0J',
         date: '2019年8月26日10:56:21',
-        type: '逆向行驶',
+        type: '浙江',
         status: '启用',
         pinlv: '冀C666A',
-        process: '小型汽车',
+        process: '湖北',
+        name:'赵媛',
     },
     {
-        id: 'WJ00072IK',
+        id: 'YSD1072IK',
         date: '2019年8月27日06:23:03',
-        type: '醉酒驾驶',
+        type: '湖南',
         status: '启用',
         pinlv: '冀C63K6',
-        process: '小型汽车',
+        process: '浙江',
+        name:'姜娜楠',
     },
     {
-        id: 'WJ00063JJ',
+        id: 'YSD1063JJ',
         date: '2019年8月28日21:48:17',
-        type: '肇事逃逸',
+        type: '重庆',
         status: '启用',
         pinlv: '渝A52B6',
-        process: '面包车',
+        process: '湖南',
+        name:'江南',
     },
     {
-        id: 'WJ0000191',
+        id: 'YSD100191',
         date: '2019年8月29日20:37:12',
-        type: '醉酒驾驶',
+        type: '重庆',
         status: '启用',
         pinlv: '渝A23M6',
-        process: '大货车',
+        process: '广东',
+        name:'孟杰',
     },
     {
-        id: 'WJ0002SI1',
+        id: 'YSD102SI1',
         date: '2019年8月30日08:12:05',
-        type: '超速',
+        type: '上海',
         status: '启用',
         pinlv: '沪C66A6',
-        process: '小型越野车',
+        process: '重庆',
+        name:'王强',
     },
     {
-        id: 'WJ00001IOS',
+        id: 'YSD1001IOS',
         date: '2019年8月31日09:02:56',
-        type: '醉酒驾驶',
+        type: '北京',
         status: '启用',
         pinlv: '津B25B3',
-        process: '小型汽车',
+        process: '上海',
+        name:'赵刚',
     },
     {
-        id: 'YSIW9s1',
+        id: 'YSD10W9s1',
         date: '2019年8月31日11:08:24',
-        type: '疲劳驾驶',
+        type: '重庆',
         status: '启用',
         pinlv: '京E110MK',
-        process: '小型越野车',
+        process: '云南',
+        name:'陈梦',
     },
     {
-        id: 'WJ00080SJ',
+        id: 'YSD1080SJ',
         date: '2019年8月31日14:11:36',
-        type: '超速',
+        type: '上海',
         status: '启用',
         pinlv: '京NLU686',
-        process: '大型汽车',
+        process: '广州',
+        name:'王三',
     },
    
 ]
@@ -94,28 +102,33 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '运输单编号',
             dataIndex: 'id',
         },
         {
             title: '车牌号码',
             dataIndex: 'pinlv',
-        },
-        {
-            title: '加入时间',
-            dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '加入原因',
+            title: '运输时间',
+            dataIndex: 'date',
+        },
+        {
+            title: '出发地',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '号码种类',
+            title: '目的地',
             dataIndex: 'process',
+            render: (text) => <Tag color="#f50">{text}</Tag>,
         },
-
+        {
+            title: '收货人姓名',
+            dataIndex: 'name',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -147,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="管理黑名单"
+                title="管理运输业务数据"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

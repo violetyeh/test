@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑黑名单信息"
+                title="编辑运输业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="运输单编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -58,32 +58,32 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="加入时间" >
+                    <Form.Item key="date" label="运输时间" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="加入原因" >
+                    <Form.Item key="type" label="出发地" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="号码种类" >
+                    <Form.Item key="process" label="目的地" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
+                    <Form.Item key="name" label="收货人姓名" >
+                        {getFieldDecorator('name', {
+                            initialValue: currentItem.name,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>

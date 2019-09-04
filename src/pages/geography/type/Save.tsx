@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑事故状况"
+                title="编辑车辆定位"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,35 +52,43 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="高速公路" >
+                    <Form.Item key="pinlv" label="车牌号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="是否可通行" >
-                        {getFieldDecorator('yaosu', {
-                            initialValue: currentItem.yaosu,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
-                   
-                    <Form.Item key="fenlei" label="道路状况" >
-                        {getFieldDecorator('fenlei', {
-                            initialValue: currentItem.fenlei,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="state" label="道路检测时间" >
+                    <Form.Item key="state" label="到达时间" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    <Form.Item key="state1" label="离开时间" >
+                        {getFieldDecorator('state1', {
+                            initialValue: currentItem.state1,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="yaosu" label="停留时间（h）" >
+                        {getFieldDecorator('yaosu', {
+                            initialValue: currentItem.yaosu,
+                        })(
+                            <Input/>,
+                        )}
+                    </Form.Item>
+                   
+                    <Form.Item key="fenlei" label="地址" >
+                        {getFieldDecorator('fenlei', {
+                            initialValue: currentItem.fenlei,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                   
                 </Form>
             </Modal>
         );

@@ -20,59 +20,67 @@ interface TypeState {
 const mockData = [
     {
         id: 'ZDID1292',
-        fenlei: '车辆逆行',
-        yaosu: '是',
+        fenlei: '都市龙泉驿区',
+        yaosu: '2.64',
         state: '2019年8月17日17:42:19',
-        pinlv: 'DF4G',
+        state1:'2019年8月17日19:43:47',
+        pinlv: '云A2DF4G',
     },
     {
         id: 'ZDID8201',
-        fenlei: '道路塌陷 ',
-        yaosu: '是',
+        fenlei: '云南省大理白族自治州漾濞彝族自治县上平坡线 ',
+        yaosu: '1.59',
         state: '2019年8月18日09:02:13',
-        pinlv: '5SDF',
+        state1:'2019年8月18日10:11:24',
+        pinlv: '黑H35SDF',
     },
     {
         id: 'ZDID3921',
-        fenlei: '非法变道',
-        yaosu: '否',
+        fenlei: '成都市青白江区青东路',
+        yaosu: '2.15',
         state: '2019年8月09日10:11:06',
-        pinlv: 'SX2C',
+        state1:'2019年8月09日12:00:00',
+        pinlv: '湘B1SX2C',
     },
     {
         id: 'ZDID0029',
-        fenlei: '车辆逆行',
-        yaosu: '是',
+        fenlei: '甘肃省酒泉市肃州区果园镇滨河北路',
+        yaosu: '2.14',
         state: '2019年8月10日11:34:02',
-        pinlv: 'DS5F',
+        state1:'2019年8月10日13:20:14',
+        pinlv: '鄂D1DS5F',
     },
     {
         id: 'ZDID2191',
-        fenlei: '车辆拥堵',
-        yaosu: '否',
+        fenlei: '大理白族自治州漾濞彝族自治县320国道南50米',
+        yaosu: '2.21',
         state: '2019年8月11日14:41:58',
-        pinlv: 'VC85',
+        state1:'2019年8月11日16:30:05',
+        pinlv: '冀B3VC85',
     },
     {
         id: 'ZDID3321',
-        fenlei: '异物抛撒',
-        yaosu: '是',
+        fenlei: '云南省大理白族自治州大理市平坡镇杭瑞高速公路',
+        yaosu: '1.36',
         state: '2019年8月12日20:04:53',
-        pinlv: '5D2F',
+        state1:'2019年8月12日21:16:24',
+        pinlv: '沪C25D2F',
     },
     {
         id: 'ZDID2136',
-        fenlei: '异常停车',
-        yaosu: '否',
+        fenlei: '张掖市肃南裕固族自治县二一五省道',
+        yaosu: '0.3',
         state: '2019年8月13日21:14:48',
-        pinlv: '202S',
+        state1:'2019年8月13日21:34:54',
+        pinlv: '冀A1202S',
     },
     {
         id: 'ZDID3354',
-        fenlei: '交通事故',
-        yaosu: '是',
+        fenlei: '云南省大理白族自治州大理市平坡镇杭瑞高速公路',
+        yaosu: '0.68',
         state: '2019年8月25日18:41:37',
-        pinlv: '2X4F',
+        state1:'2019年8月25日19:08:47',
+        pinlv: '渝A12X4F',
     },
 ]
 
@@ -91,35 +99,40 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '高速公路',
+            title: '车牌号',
             dataIndex: 'pinlv',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '是否可通行',
+            title: '到达时间',
+            dataIndex: 'state',
+        },
+        {
+            title: '离开时间',
+            dataIndex: 'state1',
+        },
+        {
+            title: '停留时间（h）',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
-            title: '实时报警提示',
+            title: '实时定位',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >报警提示</Checkbox>
+                  <Checkbox >定位</Checkbox>
                 </Fragment>
             ),
         },
         {
-            title: '道路状况',
+            title: '地址',
             dataIndex: 'fenlei',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
 
-        {
-            title: '道路检测时间',
-            dataIndex: 'state',
-        },
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -147,7 +160,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="事故状况信息"
+                title="车辆定位信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
