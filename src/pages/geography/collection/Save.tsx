@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑测量配置"
+                title="编辑运输路线"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="ID" >
+                    <Form.Item key="id" label="路线编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="坐标格式" >
+                    <Form.Item key="name" label="查看地图" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="起点位置" >
+                    <Form.Item key="jishu" label="起始地" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="终点位置" >
+                    <Form.Item key="fenceng" label="目的地" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="承载限值" >
+                    <Form.Item key="leixing" label="公里数" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(

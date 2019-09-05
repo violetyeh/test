@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'CEL0001',
-        jishu: 's230（16.632）',
-        fenceng: 's231（42.242）',
-        leixing: '无限制',
-        name: 'BLH',
+        id: 'LX001',
+        jishu: '上海',
+        fenceng: '浙江',
+        leixing: '142',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684071920&di=2f4c7494b4723cc8875582d746614be2&imgtype=0&src=http%3A%2F%2Fi4.hexunimg.cn%2F2013-11-23%2F159957846.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0002',
-        jishu: 's350（13.214）',
-        fenceng: 's351（36.612）',
-        leixing: '无限制',
-        name: 'xyh',
+        id: 'LX002',
+        jishu: '北京',
+        fenceng: '南京',
+        leixing: '166',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684126327&di=f0c8719df9b1b44d46cb66e9b9a109e6&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fnews%2Ftransform%2F20151113%2F1Yys-fxksqis4780478.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0003',
-        jishu: 's412（31.451）',
-        fenceng: 's413（57.421）',
-        leixing: '无限制',
-        name: 'BLH',
+        id: 'LX003',
+        jishu: '重庆',
+        fenceng: '浙江',
+        leixing: '160',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684001288&di=2ff300551fffd37458ee0ff06706dbc4&imgtype=0&src=http%3A%2F%2Fimages.china.cn%2Fnews%2Fattachement%2Fjpg%2Fsite3%2F20101214%2F8315822060192708995.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0004',
-        jishu: 's315（85.235）',
-        fenceng: 's316（94.423）',
-        leixing: '无限制',
-        name: 'xyh',
+        id: 'LX004',
+        jishu: '渝北',
+        fenceng: '璧山',
+        leixing: '36',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567683931223&di=6fa0c61b0f5d87b3fe489088c00f0a62&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ffinance%2Fcrawl%2F122%2Fw550h372%2F20180920%2FgMYC-hiixpup1769407.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0005',
-        jishu: 's315（27.235）',
-        fenceng: 's316（53.123）',
-        leixing: '有限制',
-        name: 'xyh',
+        id: 'LX005',
+        jishu: '江津',
+        fenceng: '合川',
+        leixing: '45',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567683931223&di=6fa0c61b0f5d87b3fe489088c00f0a62&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ffinance%2Fcrawl%2F122%2Fw550h372%2F20180920%2FgMYC-hiixpup1769407.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0006',
-        jishu: 's302（10.238）',
-        fenceng: 's303（25.421）',
-        leixing: '有限制',
-        name: 'BLH',
+        id: 'LX006',
+        jishu: '重庆',
+        fenceng: '湖南',
+        leixing: '96',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684001288&di=2ff300551fffd37458ee0ff06706dbc4&imgtype=0&src=http%3A%2F%2Fimages.china.cn%2Fnews%2Fattachement%2Fjpg%2Fsite3%2F20101214%2F8315822060192708995.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0007',
-        jishu: 's325（27.471）',
-        fenceng: 's326（47.571）',
-        leixing: '有限制',
-        name: 'xyh',
+        id: 'LX007',
+        jishu: '厦门',
+        fenceng: '浙江',
+        leixing: '89',
+        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684171088&di=907b3fac915d9ba59abdc3891338061d&imgtype=0&src=http%3A%2F%2Fwww.gmw.cn%2Fimages%2F2005-09%2F09%2Fxin_110902092121187147043.jpg',
         state: '启用',
     },
     {
-        id: 'CEL0008',
-        jishu: 's315（16.235）',
-        fenceng: 's316（26.435）',
-        leixing: '有限制',
-        name: 'BLH',
+        id: 'LX008',
+        jishu: '长沙',
+        fenceng: '成都',
+        leixing: '110',
+        name: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2605272276,2067597409&fm=26&gp=0.jpg',
         state: '启用',
     },
 ]
@@ -98,25 +98,28 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '路线编号',
             dataIndex: 'id',
         },
         {
-            title: '坐标格式',
+            title: '查看地图',
             dataIndex: 'name',
+            render: (text) => {
+                return <img src={text} height={80} width={100} />;
+            },
         },
         {
-            title: '起点位置',
+            title: '起始地',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '终点位置',
+            title: '目的地',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '承载限值',
+            title: '公里数',
             dataIndex: 'leixing',
         },
 
@@ -149,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测量配置"
+                title="运输路线管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
