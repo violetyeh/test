@@ -19,75 +19,75 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'SJ-JF-0121',
-       mc:'普通电脑',
-       gg:'3',
-       hz:'75',
-       yy:'+3',
-       jd:98,
+       id: '渝C9SJ21',
+       mc:'黄',
+       gg:'豪华',
+       hz:'否',
+       yy:'3',
+       jd:2,
        state: 1,
     },
     {
-        id: 'SJ-JF-0122',
-        mc:'电竞用电脑',
-        gg:'5',
-        hz:'8',
-        yy:'-1',
-        jd:100,
+        id: '渝C8SJ22',
+        mc:'绿',
+        gg:'普通',
+        hz:'否',
+        yy:'1',
+        jd:1,
         state: 1,
      },
      {
-        id: 'SJ-JF-0123',
-        mc:'电竞用电脑',
-        gg:'5',
-        hz:'17',
-        yy:'0',
-        jd:56,
+        id: '渝C1J23',
+        mc:'绿',
+        gg:'普通',
+        hz:'是',
+        yy:'2',
+        jd:2,
         state: 1,
      },
      {
-        id: 'SJ-JF-0124',
-        mc:'普通电脑',
-        gg:'3',
-        hz:'77',
-        yy:'+9',
-        jd:74,
+        id: '渝C1SJ24',
+        mc:'黄',
+        gg:'豪华',
+        hz:'否',
+        yy:'3',
+        jd:1,
         state: 1,
      },
      {
-        id: 'SJ-JF-0125',
-        mc:'电竞用电脑',
-        gg:'5',
-        hz:'60',
-        yy:'-2',
-        jd:95,
+        id: '渝C3SJ25',
+        mc:'绿',
+        gg:'普通',
+        hz:'否',
+        yy:'2',
+        jd:3,
         state: 1,
      },
      {
-        id: 'SJ-JF-0126',
-        mc:'包房电脑',
-        gg:'10',
-        hz:'75',
-        yy:'+1',
-        jd:76,
+        id: '渝C2SJ26',
+        mc:'黄',
+        gg:'豪华',
+        hz:'否',
+        yy:'1',
+        jd:2,
         state: 1,
      },
      {
-        id: 'SJ-JF-0127',
-        mc:'电竞用电脑',
-        gg:'5',
-        hz:'75',
-        yy:'+6',
-        jd:100,
+        id: '渝C1SJ27',
+        mc:'绿',
+        gg:'普通',
+        hz:'否',
+        yy:'6',
+        jd:2,
         state: 1,
      },
      {
-        id: 'SJ-JF-0128',
-        mc:'普通电脑',
-        gg:'3',
-        hz:'80',
-        yy:'+3',
-        jd:88,
+        id: '渝C0SJ28',
+        mc:'黄',
+        gg:'豪华',
+        hz:'是',
+        yy:'3',
+        jd:3,
         state: 1,
      },
    
@@ -103,37 +103,32 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '车牌号',
             dataIndex: 'id',
         },
         {
-            title: '电脑类别',
+            title: '车牌颜色',
             dataIndex: 'mc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '计费（小时/元）',
+            title: '客车类型',
             dataIndex: 'gg',
         },
         {
-            title: '上机实时数量',
+            title: '是否临时',
             dataIndex: 'hz',
         },
         {
-            title: '每小时用户变化量(人数)',
+            title: '燃油费',
             dataIndex: 'yy',
         },
         
         {
-            title: '上机占比',
+            title: '站务费',
             dataIndex: 'jd',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-        {
-            title: '状态',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="空闲中" unCheckedChildren="上机中" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -161,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="订单计费管理"
+                title="车辆信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

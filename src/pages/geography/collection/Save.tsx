@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑订单信息"
+                title="编辑售票业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,16 +44,52 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="班次" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="计算机名称" >
+                    <Form.Item key="fl" label="线路" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                   
+                    <Form.Item key="ma" label="座位数" >
+                        {getFieldDecorator('ma', {
+                            initialValue: currentItem.ma,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="bf" label="发车时间" >
+                        {getFieldDecorator('bf', {
+                            initialValue: currentItem.bf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="sf" label="总余票" >
+                        {getFieldDecorator('sf', {
+                            initialValue: currentItem.sf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="nl" label="车型" >
+                        {getFieldDecorator('nl', {
+                            initialValue: currentItem.nl,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="dbz" label="票价" >
+                        {getFieldDecorator('dbz', {
+                            initialValue: currentItem.dbz,
                         })(
                             <Input />,
                         )}
@@ -61,41 +97,6 @@ class Save extends Component<SaveProps, SaveState>{
                     <Form.Item key="mc" label="状态" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="ma" label="IP地址" >
-                        {getFieldDecorator('ma', {
-                            initialValue: currentItem.ma,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="bf" label="上机时间" >
-                        {getFieldDecorator('bf', {
-                            initialValue: currentItem.bf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="sf" label="网速流量" >
-                        {getFieldDecorator('sf', {
-                            initialValue: currentItem.sf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="nl" label="下机时间" >
-                        {getFieldDecorator('nl', {
-                            initialValue: currentItem.nl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dbz" label="价格（小时/元）" >
-                        {getFieldDecorator('dbz', {
-                            initialValue: currentItem.dbz,
                         })(
                             <Input />,
                         )}
