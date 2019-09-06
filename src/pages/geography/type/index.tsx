@@ -19,60 +19,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZDID1292',
+        id: 'YS-BH-1292',
         fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月17日17:42:19',
-        pinlv: 'DF4G',
+        yaosu: '正常驾驶',
+        state: '安全',
+        pinlv: '高速公路',
     },
     {
-        id: 'ZDID8201',
+        id: 'YS-BH-8201',
         fenlei: '道路塌陷 ',
-        yaosu: '是',
-        state: '2019年8月18日09:02:13',
-        pinlv: '5SDF',
+        yaosu: '醉酒驾驶',
+        state: '危险',
+        pinlv: '普通公路',
     },
     {
-        id: 'ZDID3921',
+        id: 'YS-BH-3921',
         fenlei: '非法变道',
-        yaosu: '否',
-        state: '2019年8月09日10:11:06',
-        pinlv: 'SX2C',
+        yaosu: '正常驾驶',
+        state: '安全',
+        pinlv: '高速公路',
     },
     {
-        id: 'ZDID0029',
+        id: 'YS-BH-0029',
         fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月10日11:34:02',
-        pinlv: 'DS5F',
+        yaosu: '正常驾驶',
+        state: '危险',
+        pinlv: '高速公路',
     },
     {
-        id: 'ZDID2191',
+        id: 'YS-BH-2191',
         fenlei: '车辆拥堵',
-        yaosu: '否',
-        state: '2019年8月11日14:41:58',
-        pinlv: 'VC85',
+        yaosu: '疲劳驾驶',
+        state: '安全',
+        pinlv: '普通公路',
     },
     {
-        id: 'ZDID3321',
+        id: 'YS-BH-3321',
         fenlei: '异物抛撒',
-        yaosu: '是',
-        state: '2019年8月12日20:04:53',
-        pinlv: '5D2F',
+        yaosu: '打电话驾驶',
+        state: '危险',
+        pinlv: '高速公路',
     },
     {
-        id: 'ZDID2136',
+        id: 'YS-BH-2136',
         fenlei: '异常停车',
-        yaosu: '否',
-        state: '2019年8月13日21:14:48',
-        pinlv: '202S',
+        yaosu: '正常驾驶',
+        state: '安全',
+        pinlv: '普通公路',
     },
     {
-        id: 'ZDID3354',
+        id: 'YS-BH-3354',
         fenlei: '交通事故',
-        yaosu: '是',
-        state: '2019年8月25日18:41:37',
-        pinlv: '2X4F',
+        yaosu: '正常驾驶',
+        state: '安全',
+        pinlv: '高速公路',
     },
 ]
 
@@ -86,39 +86,41 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
-            dataIndex: 'id',
-        },
-       
-        {
-            title: '高速公路',
-            dataIndex: 'pinlv',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
-        },
-        {
-            title: '是否可通行',
-            dataIndex: 'yaosu',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
-        
-        {
-            title: '实时报警提示',
+            title: '安全预警',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >报警提示</Checkbox>
+                  <Checkbox >预警</Checkbox>
                 </Fragment>
             ),
         },
         {
-            title: '道路状况',
+            title: '运输线路编号',
+            dataIndex: 'id',
+        },
+       
+        {
+            title: '道路类型',
+            dataIndex: 'pinlv',
+            render: (text) => <Tag color="blue">{text}</Tag>,
+        },
+        {
+            title: '驾驶人状态监测',
+            dataIndex: 'yaosu',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        
+        
+        {
+            title: '预警原因',
             dataIndex: 'fenlei',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
 
         {
-            title: '道路检测时间',
+            title: '盲区检测',
             dataIndex: 'state',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
             title: '操作',
@@ -147,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="事故状况信息"
+                title="安全预警设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

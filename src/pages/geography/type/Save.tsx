@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑事故状况"
+                title="设置安全预警参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="ID" >
+                    <Form.Item key="id" label="运输线路编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,29 +52,29 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="高速公路" >
+                    <Form.Item key="pinlv" label="道路类型" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="是否可通行" >
+                    <Form.Item key="yaosu" label="驾驶人状态监测" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
-                            <Input.TextArea rows={2} />,
+                            <Input/>,
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="fenlei" label="道路状况" >
+                    <Form.Item key="fenlei" label="预警原因" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="state" label="道路检测时间" >
+                    <Form.Item key="state" label="盲区检测" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(

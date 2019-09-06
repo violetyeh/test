@@ -19,69 +19,70 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'WJ0008S0J',
-        date: '2019年8月26日10:56:21',
-        type: '逆向行驶',
-        status: '启用',
-        pinlv: '冀C666A',
-        process: '小型汽车',
-    },
-    {
-        id: 'WJ00072IK',
-        date: '2019年8月27日06:23:03',
-        type: '醉酒驾驶',
-        status: '启用',
-        pinlv: '冀C63K6',
-        process: '小型汽车',
-    },
-    {
-        id: 'WJ00063JJ',
+        id: 'YJ-63JJ',
         date: '2019年8月28日21:48:17',
-        type: '肇事逃逸',
+        type: '车距过近报警',
         status: '启用',
         pinlv: '渝A52B6',
-        process: '面包车',
+        process: '孙晔',
     },
     {
-        id: 'WJ0000191',
+        id: 'YJ-0191',
         date: '2019年8月29日20:37:12',
-        type: '醉酒驾驶',
+        type: '车道偏离报警',
         status: '启用',
         pinlv: '渝A23M6',
-        process: '大货车',
+        process: '方木宁',
     },
     {
-        id: 'WJ0002SI1',
+        id: 'YJ-2SI1',
         date: '2019年8月30日08:12:05',
-        type: '超速',
+        type: '超速报警',
         status: '启用',
         pinlv: '沪C66A6',
-        process: '小型越野车',
+        process: '江云',
     },
     {
-        id: 'WJ00001IOS',
+        id: 'YJ-01IOS',
         date: '2019年8月31日09:02:56',
-        type: '醉酒驾驶',
+        type: '前向碰撞报警',
         status: '启用',
         pinlv: '津B25B3',
-        process: '小型汽车',
+        process: '方雅',
     },
     {
-        id: 'YSIW9s1',
+        id: 'YS-IW9s1',
         date: '2019年8月31日11:08:24',
-        type: '疲劳驾驶',
+        type: '疲劳驾驶报警',
         status: '启用',
         pinlv: '京E110MK',
-        process: '小型越野车',
+        process: '孟慧业',
     },
     {
-        id: 'WJ00080SJ',
+        id: 'YJ-80SJ',
         date: '2019年8月31日14:11:36',
-        type: '超速',
+        type: '超速报警',
         status: '启用',
         pinlv: '京NLU686',
-        process: '大型汽车',
+        process: '钱来科',
     },
+    {
+        id: 'YJ-8S0J',
+        date: '2019年8月26日10:56:21',
+        type: '疲劳驾驶报警',
+        status: '启用',
+        pinlv: '冀C666A',
+        process: '赵云峰',
+    },
+    {
+        id: 'YJ-72IK',
+        date: '2019年8月27日06:23:03',
+        type: '前向碰撞报警',
+        status: '启用',
+        pinlv: '冀C63K6',
+        process: '王梦洁',
+    },
+  
    
 ]
 
@@ -100,19 +101,19 @@ class Model extends Component<ModelProps, ModelState>{
         {
             title: '车牌号码',
             dataIndex: 'pinlv',
-        },
-        {
-            title: '加入时间',
-            dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '加入原因',
-            dataIndex: 'type',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            title: '预警时间',
+            dataIndex: 'date',
         },
         {
-            title: '号码种类',
+            title: '预警类型',
+            dataIndex: 'type',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        {
+            title: '驾驶人',
             dataIndex: 'process',
         },
 
@@ -147,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="管理黑名单"
+                title="安全预警管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

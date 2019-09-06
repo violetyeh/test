@@ -24,75 +24,75 @@ interface TypeState {
 const mockData = [
     {
         id: 'SPCC-1012001',
-        jishu: '85',
+        jishu: '左转',
         fenceng: '太平',
-        leixing: 'KHDM-210',
+        leixing: '拥挤路段',
         name:'20',
         state: '启用',
-        lg:'198 . 207 . 107 . 07',
+        lg:'测试路口 07',
     },
     {
         id: 'SPCC-1012002',
-        jishu: '99',
+        jishu: '直行',
         fenceng: '五点梅',
-        leixing: 'KHDM-289',
+        leixing: '事故多发路段',
         name:'22',
         state: '启用',
-        lg:'198 . 207 . 107 . 08',
+        lg:'测试路口 08',
     },
     {
         id: 'SPCC-1012003',
-        jishu: '100',
+        jishu: '调头',
         fenceng: '新联',
-        leixing: 'KHDM-154',
+        leixing: '绿波干线',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 01',
+        lg:'测试路口 01',
     },
     {
         id: 'SPCC-1012004',
-        jishu: '100',
+        jishu: '人行B',
         fenceng: '厚街',
-        leixing: 'KHDM-315',
+        leixing: '绿波干线',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 06',
+        lg:'测试路口 06',
     },
     {
         id: 'SPCC-1012005',
-        jishu: '100',
+        jishu: '人行A',
         fenceng: '石鼓',
-        leixing: 'KHDM-343',
+        leixing: '事故多发路段',
         name:'10',
         state: '启用',
-        lg:'1280*720(720P) ,1.5码流',
+        lg:'测试路口00',
     },
     {
         id: 'SPCC-1012006',
-        jishu: '98',
+        jishu: '右转',
         fenceng: '道滘',
-        leixing: 'KHDM-342',
+        leixing: '拥挤路段',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:'测试路口 03',
     },
     {
         id: 'SPCC-1012007',
-        jishu: '88',
+        jishu: '左转',
         fenceng: '望牛墩',
-        leixing: 'KHDM-258',
+        leixing: '绿波干线',
         name:'14',
         state: '启用',
-        lg:'198 . 207 . 107 . 05',
+        lg:'测试路口 05',
     },
     {
         id: 'SPCC-1012008',
-        jishu: '24',
+        jishu: '直行',
         fenceng: '麻涌',
-        leixing: 'KHDM-247',
+        leixing: '绿波干线',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:'测试路口 03',
     },
 ]
 
@@ -110,7 +110,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '路口IP',
+            title: '所在路口',
             dataIndex: 'lg',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
 
@@ -122,19 +122,18 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '路口代码',
+            title: '线路类型',
             dataIndex: 'leixing',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '监控存储进度',
+            title: '方案配置',
             dataIndex: 'jishu',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '监控存储占用率',
+            title: '配置进度',
             dataIndex: 'name',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
+            render: (text) => <Progress percent={text} status="active" />,
         },
         {
             title: '状态',
@@ -171,7 +170,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="监控点管理"
+                title="道路运输环境管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -22,14 +22,14 @@ class Search extends Component<SearchProps, SearchState>{
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="路口IP">
+                        <Form.Item label="路口名称">
                             {getFieldDecorator('lg')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加监控点</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加道路运输环境</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>

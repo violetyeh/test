@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '基于高速公路事故安全检测系统',
+  title: '泰禾道路运输安全预警管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
