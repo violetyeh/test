@@ -23,66 +23,66 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'RQ0004',
-        xm:'容器test001',
-        jg:'breaking/kubernetes-dashboard-amd64',
-        dw:'用户公开',
+        id: 'XL-BH-04',
+        xm:'成都',
+        jg:'江津',
+        dw:'300',
         pd:'2019年7月14日',
         state: '启用',
     },
     {
-        id: 'RQ0005',
-        xm:'容器test002',
-        jg:'qcloud/ubuntu',
-        dw:'用户公开',
+        id: 'XL-BH-05',
+        xm:'攀枝花',
+        jg:'成都',
+        dw:'210',
         pd:'2019年6月14日',
         state: '启用',
     },
     {
-        id: 'RQ0006',
-        xm:'容器test003',
-        jg:'qcloud/nginx',
-        dw:'用户私有',
+        id: 'XL-BH-06',
+        xm:'潼南',
+        jg:'合川',
+        dw:'150',
         pd:'2019年7月12日',
         state: '启用',
     },
     {
-        id: 'RQ0007',
-        xm:'容器test004',
-        jg:'qcloud/centos',
-        dw:'用户私有',
+        id: 'XL-BH-07',
+        xm:'江津',
+        jg:'永川',
+        dw:'80',
         pd:'2019年7月06日',
         state: '启用',
     },
     {
-        id: 'RQ0008',
-        xm:'容器test005',
-        jg:'tkeimages/coredns',
-        dw:'用户公开',
+        id: 'XL-BH-08',
+        xm:'湖南',
+        jg:'浙江',
+        dw:'260',
         pd:'2019年7月04日',
         state: '启用',
     },
     {
-        id: 'RQ0001',
-        xm:'容器test006',
-        jg:'hunter/ronald',
-        dw:'用户私有',
+        id: 'XL-BH-01',
+        xm:'南京',
+        jg:'长沙',
+        dw:'200',
         pd:'2019年7月09日',
         state: '启用',
     },
     {
-        id: 'RQ0002',
-        xm:'容器test007',
-        jg:'wind/centos-kafka',
-        dw:'用户公开',
+        id: 'XL-BH-02',
+        xm:'璧山',
+        jg:'昆明',
+        dw:'300',
         pd:'2019年7月10日',
         state: '启用',
     },
     {
-        id: 'RQ0003',
-        xm:'容器test008',
-        jg:'klei-tools/addon-resizer',
-        dw:'用户公开',
+        id: 'XL-BH-03',
+        xm:'重庆',
+        jg:'云南',
+        dw:'120',
         pd:'2019年7月07日',
         state: '启用',
     },
@@ -100,26 +100,26 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '线路编号',
             dataIndex: 'id',
         },
         {
-            title: '容器名称',
+            title: '起始城市',
             dataIndex: 'xm',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '容器镜像',
+            title: '到达城市',
             dataIndex: 'jg',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '类型',
+            title: '车票价格（元）',
             dataIndex: 'dw',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '容器创建日期',
+            title: '发车日期',
             dataIndex: 'pd',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
@@ -153,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="容器配置管理"
+                title="线路信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

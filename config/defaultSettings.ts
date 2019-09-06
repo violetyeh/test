@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '容器管理平台',
+  title: '泰禾长途汽车管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

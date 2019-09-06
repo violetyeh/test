@@ -19,67 +19,67 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'DUIDENG-00032',
-       hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
-       mc:'华南地区（广州）',
-       bs:'其它账号',
-       bcy:'1201k/s',
+       id: 'ticketNO00032',
+       hj:'合川',
+       mc:'busNO19',
+       bs:'江津',
+       bcy:'2019年9月5日',
        state: 1,
     },
     {
-        id: 'DUIDENG-00049',
-        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
-        mc:'华北地区（北京）',
-        bs:'我的账号',
-        bcy:'无上限',
+        id: 'ticketNO00049',
+        hj:'永川',
+        mc:'busNO18',
+        bs:'合川',
+        bcy:'2019年9月4日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00036',
-        hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
-        mc:'华南地区（广州）',
-        bs:'我的账号',
-        bcy:'1201k/s',
+        id: 'ticketNO00036',
+        hj:'江津',
+        mc:'busNO17',
+        bs:'永川',
+        bcy:'2019年9月3日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00047',
-        hj:'vpc-bu3ei113(test02|172.16.0.0/20)',
-        mc:'华北地区（北京）',
-        bs:'其它账号',
-        bcy:'无上限',
+        id: 'ticketNO00047',
+        hj:'长沙',
+        mc:'busNO16',
+        bs:'成都',
+        bcy:'2019年9月2日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00022',
-        hj:'vpc-50f5o6 yx(test04|10.0.0.0/19)',
-        mc:'西南地区（重庆）',
-        bs:'我的账号',
-        bcy:'无上限',
+        id: 'ticketNO00022',
+        hj:'重庆',
+        mc:'busNO15',
+        bs:'长沙',
+        bcy:'2019年9月1日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00047',
-        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
-        mc:'华南地区（广州）',
-        bs:'其它账号',
-        bcy:'1201k/s',
+        id: 'ticketNO00047',
+        hj:'蒲元',
+        mc:'busNO14',
+        bs:'成都',
+        bcy:'2019年9月7日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00036',
-        hj:'vpc-bu3ei113(test02|172.16.0.0/20)',
-        mc:'华东地区（上海）',
-        bs:'其它账号',
-        bcy:'无上限',
+        id: 'ticketNO00036',
+        hj:'汶川',
+        mc:'busNO13',
+        bs:'广谱',
+        bcy:'2019年9月8日',
         state: 1,
      },
      {
-        id: 'DUIDENG-00012',
-        hj:'vpc-oiejnydh(test03|192.168.0.0/20)',
-        mc:'西南地区（成都）',
-        bs:'我的账号',
-        bcy:'无上限',
+        id: 'ticketNO00012',
+        hj:'重庆',
+        mc:'busNO12',
+        bs:'成都',
+        bcy:'2019年9月6日',
         state: 1,
      },
 ]
@@ -94,35 +94,35 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '车票编号',
             dataIndex: 'id',
         },
         {
-            title: '本端地域',
+            title: '汽车编号',
             dataIndex: 'mc',
             render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '本端网络',
+            title: '起始城市',
             dataIndex: 'hj',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         
         {
-            title: '对端账号',
+            title: '到达城市',
             dataIndex: 'bs',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '带宽上限',
+            title: '购票日期',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '计费模式',
+            title: '是否过期',
             dataIndex: 'jl',
-            render: () => <Switch checkedChildren="免费" unCheckedChildren="收费" />,
+            render: () => <Switch checkedChildren="否" unCheckedChildren="是" />,
         },
         {
             title: '操作',
@@ -151,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="对等连接"
+                title="车票信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

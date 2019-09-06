@@ -19,75 +19,75 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: 'vpc-k9ffk5ad test01',
-        dw:'10.0.0.0/16',
+        hj: 'CTQC01201',
+        dw:'特大型客车(长度大于12米)',
         ren:'刘威',
-        riqi:'0.25核',
-        qk:'0.25GB',
-        process: 31,
+        riqi:'80',
+        qk:'有',
+        process: 1,
         
     },
     {
-        hj: 'vpc-bu3ei1l3 test02',
-        dw:'172.16.0.0/20',
+        hj: 'CTQC01202',
+        dw:'大型客车(长度为9-12米)',
         ren:'孟浩',
-        riqi:'4核',
-        qk:'2GB',
-        process: 65,
+        riqi:'60',
+        qk:'无',
+        process: 5,
         
     },
     {
-        hj: 'vpc-oiejnydh  test03 ',
-        dw:'172.16.0.0/22',
+        hj: 'CTQC01203 ',
+        dw:'特大型客车(长度大于12米)',
         ren:'唐宇',
-        riqi:'2核',
-        qk:'1.25GB',
-        process: 42,
+        riqi:'80',
+        qk:'有',
+        process: 2,
         
     },
     {
-        hj: 'vpc-50f5o6yx  test04',
-        dw:'192.168.0.0/20',
+        hj: 'CTQC01204',
+        dw:'大型客车(长度为9-12米)',
         ren:'李白白',
-        riqi:'1核',
-        qk:'1GB',
-        process: 51,
+        riqi:'60',
+        qk:'无',
+        process: 1,
         
     },
     {
-        hj: 'vpc-k9ffk5ad test05',
-        dw:'10.0.0.0/19',
+        hj: 'CTQC01205',
+        dw:'中型客车(长度为6-9米)',
         ren:'明楼',
-        riqi:'1核',
-        qk:'0.75GB',
-        process:82,
+        riqi:'40',
+        qk:'有',
+        process:8,
         
     },
     {
-        hj: 'vpc-bu3ei1l3 test06',
-        dw:'192.168.0.0/18',
+        hj: 'CTQC01206',
+        dw:'小于6米的小型客车',
         ren:'明玉',
-        riqi:'0.5核',
-        qk:'0.25GB',
-        process: 76,
+        riqi:'30',
+        qk:'无',
+        process: 7,
         
     },
     {
-        hj: 'vpc-oiejnydh  test07',
-        dw:'10.0.0.0/15',
+        hj: 'CTQC01207',
+        dw:'中型客车(长度为6-9米)',
         ren:'刘茵茵',
-        riqi:'0.5核',
-        qk:'0.5GB',
-        process:65,
+        riqi:'40',
+        qk:'有',
+        process:6,
         
     },
     {
-        hj: 'vpc-50f5o6yx  test08',
-        dw:'10.0.0.0/14',
+        hj: 'CTQC01208',
+        dw:'大型客车(长度为9-12米)',
         ren:'赵湾',
-        riqi:'0.25核',
-        qk:'0.25GB',
-        process: 45,
+        riqi:'60',
+        qk:'有',
+        process: 4,
         
     },
     
@@ -103,33 +103,33 @@ class Model extends Component<ModelProps, ModelState>{
     columns: ColumnProps<any>[] = [
        
         {
-            title: '编号',
+            title: '长途汽车编号',
             dataIndex: 'hj',
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: 'CIDR',
+            title: '长途汽车车型',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '管理人',
+            title: '驾驶员',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: 'CPU',
+            title: '汽车座位数量',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '内存',
+            title: '有无空调',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '网络效率',
+            title: '汽车磨损度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -160,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="私有网络管理"
+                title="长途汽车信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

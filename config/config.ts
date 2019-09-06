@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '容器配置',
+          name: '线路信息管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '私有网络管理',
+          name: '长途汽车信息管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '对等连接',
+          name: '车票信息管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

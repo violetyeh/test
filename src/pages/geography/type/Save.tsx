@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="对等连接设置"
+                title="编辑车票信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,21 +44,21 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="车票编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="本端地域" >
+                    <Form.Item key="mc" label="汽车编号" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="本端网络" >
+                    <Form.Item key="hj" label="起始城市" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
@@ -66,27 +66,27 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="bs" label="对端账号" >
+                    <Form.Item key="bs" label="到达城市" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="带宽上限" >
+                    <Form.Item key="bcy" label="购票日期" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jl" label="计费模式" >
+                    <Form.Item key="jl" label="是否过期" >
                         {getFieldDecorator('jl', {
                             initialValue: currentItem.jl,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">免费</Radio.Button>
-                               <Radio.Button value="b">收费</Radio.Button>
+                               <Radio.Button value="a">是</Radio.Button>
+                               <Radio.Button value="b">否</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>
