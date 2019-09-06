@@ -23,93 +23,94 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'BC21',
-        fl:'璧渝线',
-        mc:'已检',
+        id: 'SPBC0035',
+        fl:'成都',
+        mc:'暂停售票',
+        ma:'30',
+        bf:'2019年9月06日09:14:25',
+        sf:'10',
+        nl:'江津',
+        dbz:'8',
+        state: '启用',
+    },
+    {
+        id: 'SPBC0064',
+        fl:'铜川',
+        mc:'暂停售票',
         ma:'35',
-        bf:'2019年7月19日18:53:25',
-        sf:'6',
-        nl:'豪华',
+        bf:'2019年9月07日19:14:27',
+        sf:'15',
+        nl:'上海',
+        dbz:'8',
+        state: '启用',
+    },
+    {
+        id: 'SPBC0078',
+        fl:'北京',
+        mc:'暂停售票',
+        ma:'21',
+        bf:'2019年9月08日15:13:47',
+        sf:'10',
+        nl:'包头',
         dbz:'5',
         state: '启用',
     },
     {
-        id: 'BC35',
-        fl:'永璧线',
-        mc:'未检',
+        id: 'SPBC0021',
+        fl:'璧山',
+        mc:'暂停售票',
+        ma:'35',
+        bf:'2019年9月19日18:53:25',
+        sf:'6',
+        nl:'青杠',
+        dbz:'5',
+        state: '启用',
+    },
+    {
+        id: 'SPBC0035',
+        fl:'永川',
+        mc:'售票中',
         ma:'30',
-        bf:'2019年7月20日12:03:25',
+        bf:'2019年9月20日12:03:25',
         sf:'7',
-        nl:'普通',
+        nl:'璧山',
         dbz:'3',
         state: '启用',
     },
     {
-        id: 'BC38',
-        fl:'永合线',
-        mc:'已检',
+        id: 'SPBC0038',
+        fl:'永川',
+        mc:'暂停售票',
         ma:'35',
-        bf:'2019年7月22日08:56:45',
+        bf:'2019年9月22日08:56:45',
         sf:'1',
-        nl:'普通',
+        nl:'合川',
         dbz:'5',
         state: '启用',
     },
     {
-        id: 'BC21',
-        fl:'合璧线',
-        mc:'未检',
+        id: 'SPBC0021',
+        fl:'合川',
+        mc:'售票中',
         ma:'30',
-        bf:'2019年7月23日16:23:11',
+        bf:'2019年9月23日16:23:11',
         sf:'4',
-        nl:'豪华',
+        nl:'璧山',
         dbz:'8',
         state: '启用',
     },
     {
-        id: 'BC37',
-        fl:'合津线',
-        mc:'已检',
+        id: 'SPBC0037',
+        fl:'合川',
+        mc:'暂停售票',
         ma:'36',
-        bf:'2019年8月01日20:53:25',
+        bf:'2019年9月01日20:53:25',
         sf:'15',
-        nl:'普通',
+        nl:'江津',
         dbz:'5',
         state: '启用',
     },
-    {
-        id: 'BC35',
-        fl:'津璧线',
-        mc:'已检',
-        ma:'30',
-        bf:'2019年8月06日09:14:25',
-        sf:'10',
-        nl:'豪华',
-        dbz:'8',
-        state: '启用',
-    },
-    {
-        id: 'BC64',
-        fl:'铜川线',
-        mc:'已检',
-        ma:'35',
-        bf:'2019年8月07日19:14:27',
-        sf:'15',
-        nl:'豪华',
-        dbz:'8',
-        state: '启用',
-    },
-    {
-        id: 'BC78',
-        fl:'威铜线',
-        mc:'已检',
-        ma:'21',
-        bf:'2019年8月08日15:13:47',
-        sf:'10',
-        nl:'豪华',
-        dbz:'5',
-        state: '启用',
-    },
+
     
 ]
 
@@ -123,18 +124,23 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '班次',
+            title: '班次编号',
             dataIndex: 'id',
         },
         {
-            title: '线路',
+            title: '出发地',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
-       
+        {
+            title: '目的地',
+            dataIndex: 'nl',
+            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+        },
         {
             title: '座位数',
             dataIndex: 'ma',
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
             title: '发车时间',
@@ -142,21 +148,20 @@ class Type extends Component<TypeProps, TypeState>{
            
         },
         {
-            title: '总余票',
+            title: '余票',
             dataIndex: 'sf',
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
-        {
-            title: '车型',
-            dataIndex: 'nl',
-        },
+       
         {
             title: '票价',
             dataIndex: 'dbz',
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
             title: '状态',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
             title: '操作',
@@ -187,7 +192,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="售票业务"
+                title="售票管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

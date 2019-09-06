@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑售票业务信息"
+                title="编辑售票信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,21 +44,27 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="班次" >
+                    <Form.Item key="id" label="班次编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="线路" >
+                    <Form.Item key="fl" label="出发地" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                   
+                    <Form.Item key="nl" label="目的地" >
+                        {getFieldDecorator('nl', {
+                            initialValue: currentItem.nl,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                     <Form.Item key="ma" label="座位数" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
@@ -73,20 +79,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sf" label="总余票" >
+                    <Form.Item key="sf" label="余票" >
                         {getFieldDecorator('sf', {
                             initialValue: currentItem.sf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="车型" >
-                        {getFieldDecorator('nl', {
-                            initialValue: currentItem.nl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
                     <Form.Item key="dbz" label="票价" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,

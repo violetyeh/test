@@ -19,72 +19,72 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '渝C9SJ21',
-       mc:'黄',
-       gg:'豪华',
+       id: 'PL-9SJ21',
+       mc:'2019-09-06',
+       gg:'残疾座',
        hz:'否',
        yy:'3',
        jd:2,
        state: 1,
     },
     {
-        id: '渝C8SJ22',
-        mc:'绿',
-        gg:'普通',
+        id: 'PL-8SJ22',
+        mc:'2019-09-07',
+        gg:'二人座',
         hz:'否',
         yy:'1',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C1J23',
-        mc:'绿',
-        gg:'普通',
+        id: 'PL-1J23',
+        mc:'2019-09-07',
+        gg:'靠卫生间',
         hz:'是',
         yy:'2',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ24',
-        mc:'黄',
-        gg:'豪华',
+        id: 'PL-1SJ24',
+        mc:'2019-09-09',
+        gg:'带桌板',
         hz:'否',
         yy:'3',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C3SJ25',
-        mc:'绿',
-        gg:'普通',
+        id: 'PL-3SJ25',
+        mc:'2019-09-08',
+        gg:'三人座',
         hz:'否',
         yy:'2',
         jd:3,
         state: 1,
      },
      {
-        id: '渝C2SJ26',
-        mc:'黄',
-        gg:'豪华',
+        id: 'PL-2SJ26',
+        mc:'2019-09-06',
+        gg:'二人座',
         hz:'否',
         yy:'1',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ27',
-        mc:'绿',
-        gg:'普通',
+        id: 'PL-1SJ27',
+        mc:'2019-09-07',
+        gg:'靠过道',
         hz:'否',
         yy:'6',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C0SJ28',
-        mc:'黄',
-        gg:'豪华',
+        id: 'PL-0SJ28',
+        mc:'2019-09-06',
+        gg:'靠窗',
         hz:'是',
         yy:'3',
         jd:3,
@@ -103,30 +103,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车牌号',
+            title: '票号',
             dataIndex: 'id',
         },
         {
-            title: '车牌颜色',
+            title: '出发时间',
             dataIndex: 'mc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '客车类型',
+            title: '座位属性',
             dataIndex: 'gg',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '是否临时',
+            title: '是否已发车',
             dataIndex: 'hz',
         },
         {
-            title: '燃油费',
+            title: '购买票数',
             dataIndex: 'yy',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         
         {
-            title: '站务费',
-            dataIndex: 'jd',
+            title: '手续费',
+            dataIndex: 'jd', 
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         
         {
@@ -156,7 +159,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车辆信息管理"
+                title="票务信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

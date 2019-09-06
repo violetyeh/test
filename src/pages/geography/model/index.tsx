@@ -19,85 +19,86 @@ interface ModelState {
 
 const mockData = [
     {
-       id:'BC01',
+        id:'K43B06',
+        cf:'18',
+        jc:'5',
+        dw:'普通客车',
+        jg:'8',
+        jx:'55',
+        zhi:'渝C96V20',
+        status: '启用',
+     },
+     {
+       id:'K43B07',
+       cf:'25',
+       jc:'4',
+       dw:'空调快车',
+       jg:'1',
+       jx:'96',
+       zhi:'渝C23B84',
+       status: '启用',
+    },
+    {
+        id:'K43B08',
+        cf:'24',
+        jc:'4',
+        dw:'空调快车',
+        jg:'0',
+        jx:'100',
+        zhi:'渝C11A60',
+        status: '启用',
+     },
+    {
+       id:'K43B01',
        cf:'24',
-       jc:'22',
-       dw:'30',
+       jc:'2',
+       dw:'空调快车',
        jg:'2',
        jx:'91',
        zhi:'渝C20184',
        status: '启用',
     },
     {
-        id:'BC02',
+        id:'K43B02',
         cf:'30',
-        jc:'30',
-        dw:'34',
+        jc:'3',
+        dw:'普通客车',
         jg:'0',
         jx:'100',
         zhi:'渝C35Z60',
         status: '启用',
      },
      {
-        id:'BC03',
+        id:'K43B03',
         cf:'18',
-        jc:'18',
-        dw:'30',
+        jc:'8',
+        dw:'空调快车',
         jg:'0',
         jx:'100',
         zhi:'渝C45120',
         status: '启用',
      },
      {
-        id:'BC04',
+        id:'K43B04',
         cf:'30',
-        jc:'29',
-        dw:'30',
+        jc:'2',
+        dw:'普通客车',
         jg:'1',
         jx:'96',
         zhi:'渝C11524',
         status: '启用',
      },
      {
-         id:'BC05',
+         id:'K43B05',
          cf:'25',
-         jc:'25',
-         dw:'34',
+         jc:'5',
+         dw:'普通客车',
          jg:'0',
          jx:'100',
          zhi:'渝C33630',
          status: '启用',
       },
-      {
-         id:'BC06',
-         cf:'18',
-         jc:'10',
-         dw:'34',
-         jg:'8',
-         jx:'55',
-         zhi:'渝C96V20',
-         status: '启用',
-      },
-      {
-        id:'BC07',
-        cf:'25',
-        jc:'24',
-        dw:'30',
-        jg:'1',
-        jx:'96',
-        zhi:'渝C23B84',
-        status: '启用',
-     },
-     {
-         id:'BC08',
-         cf:'24',
-         jc:'24',
-         dw:'30',
-         jg:'0',
-         jx:'100',
-         zhi:'渝C11A60',
-         status: '启用',
-      },
+
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -113,41 +114,37 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >已检</Checkbox>
+                  <Checkbox >售票中</Checkbox>
                 </Fragment>
             ),
         },
         {
-            title: '班次',
+            title: '车次',
             dataIndex: 'id',
         },
         {
-            title: '座数',
+            title: '车型',
             dataIndex: 'dw',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '售票数',
+            title: '普通座',
             dataIndex: 'cf',
         },
         {
-            title: '检票数',
+            title: '一等座',
             dataIndex: 'jc',
         },
         {
-            title: '人数差',
+            title: '二等座',
             dataIndex: 'jg',
         },
         {
-            title: '实载率',
+            title: '实到乘客',
             dataIndex: 'jx', 
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-        {
-            title: '应班车牌号',
-            dataIndex: 'zhi',
-            render: (text) => <Tag color="#f50000">{text}</Tag>,
-        },
+       
         {
             title: '是否启用',
             dataIndex: 'status',
@@ -179,7 +176,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="客运调度"
+                title="车次信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

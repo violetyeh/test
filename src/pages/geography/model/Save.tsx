@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置客运调度"
+                title="编辑车次信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,55 +44,50 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="班次" >
+                    <Form.Item key="id" label="车次" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="座数" >
-                        {getFieldDecorator('cf', {
-                            initialValue: currentItem.cf,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jc" label="售票数" >
-                        {getFieldDecorator('jc', {
-                            initialValue: currentItem.jc,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dw" label="检票数" >
+                    <Form.Item key="dw" label="车型" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="人数差" >
+                    <Form.Item key="cf" label="普通座" >
+                        {getFieldDecorator('cf', {
+                            initialValue: currentItem.cf,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jc" label="一等座" >
+                        {getFieldDecorator('jc', {
+                            initialValue: currentItem.jc,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    
+                    <Form.Item key="jg" label="二等座" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="实载率(%)" >
+                    <Form.Item key="jx" label="实到乘客(%)" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhi" label="应班车牌号" >
-                        {getFieldDecorator('zhi', {
-                            initialValue: currentItem.zhi,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                    
                 </Form>
             </Modal>
         );
