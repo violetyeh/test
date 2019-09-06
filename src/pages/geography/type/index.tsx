@@ -20,73 +20,73 @@ interface TypeState {
 const mockData = [
     {
         id: 'JZGG010278',
-        fenlei: 'JZGG36广告17秒',
+        fenlei: '管理员',
         pinlv: 56,
-        yaosu: '腾讯',
-        fenceng: '医药行业',
+        yaosu: '自助购票机客服',
+        fenceng: '20',
         state: '启用',
        
     },
     {
         id: 'JZGG010226',
-        fenlei: 'JZGG12广告16秒',
+        fenlei: '客服',
         pinlv: 12,
-        yaosu: '小红书',
-        fenceng: '家居行业',
+        yaosu: '未分组',
+        fenceng: '50',
         state: '启用',
        
     },
     {
         id: 'JZGG010224',
-        fenlei: 'JZGG09广告30秒',
+        fenlei: '管理员',
         pinlv: 26,
-        yaosu: '淘宝',
-        fenceng: '房产行业',
+        yaosu: 'APP购票客服',
+        fenceng: '50',
         state: '启用',
        
     },
     {
         id: 'JZGG010223',
-        fenlei: 'JZGG05广告10秒',
+        fenlei: '客服',
         pinlv: 33,
-        yaosu: '腾讯',
-        fenceng: '装修行业',
+        yaosu: '自助购票机客服',
+        fenceng: '20',
         state: '启用',
        
     },
     {
         id: 'JZGG010292',
-        fenlei: 'JZGG广告10秒',
+        fenlei: '客服',
         pinlv: 50,
-        yaosu: '腾讯',
-        fenceng: '化妆品行业',
+        yaosu: '自助购票机客服',
+        fenceng: '20',
         state: '启用',
        
     },
     {
         id: 'JZGG010271',
-        fenlei: 'JZGG014广告20秒',
+        fenlei: '客服',
         pinlv: 62,
-        yaosu: '淘宝',
-        fenceng: '化妆品行业',
+        yaosu: 'APP购票客服',
+        fenceng: '30',
         state: '启用',
        
     },
     {
         id: 'JZGG010228',
-        fenlei: 'JZGG023广告15秒',
+        fenlei: '客服',
         pinlv: 65,
-        yaosu: '腾讯',
-        fenceng: '珠宝行业',
+        yaosu: '自助购票机客服',
+        fenceng: '20',
         state: '启用',
        
     },
     {
         id: 'JZGG010264',
-        fenlei: 'JZGG47广告10秒',
+        fenlei: '管理员',
         pinlv: 42,
-        yaosu: '小红书',
-        fenceng: '化妆品行业',
+        yaosu: '未分组',
+        fenceng: '50',
         state: '启用',
        
     },
@@ -106,17 +106,17 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '精准广告数据',
+            title: '角色',
             dataIndex: 'fenlei',
         },
        
         {
-            title: '投放媒体',
+            title: '所属分组',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '精准分类',
+            title: '接待人数',
             dataIndex: 'fenceng',
         },
         // {
@@ -124,7 +124,7 @@ class Type extends Component<TypeProps, TypeState>{
         //     dataIndex: 'leixing',
         // },
         {
-            title: '投放进度',
+            title: '分配进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -167,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="投放数据管理"
+                title="客服分配设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

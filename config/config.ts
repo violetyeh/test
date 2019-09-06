@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '精准广告投放信息管理',
+          name: '购票访客信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '精准广告投放操作管理',
+          name: '客服管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '精准广告投放数据管理',
+          name: '客服分配设置',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
