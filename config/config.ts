@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '行政许可事项',
+          name: '准驾车型管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '事项办理',
+          name: '学员信息管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '综合监察',
+          name: '培训记录申请',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

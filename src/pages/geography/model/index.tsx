@@ -19,72 +19,72 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'CER0000007',
-        sp:'督办事项',
-        shijian:'政府投资项目审批申请',
+        id: 'JX-XY-ID-07',
+        sp:'新学员',
+        shijian:'学驾中',
         biaozhun:'2019年8月16日',
         jiance:'吴启拉',
         process: 60,
         status: '启用',
     },
     {
-        id: 'CER0000008',
-        sp:'待办事项',
-        shijian:'会计资格从业证书核发申请',
+        id: 'JX-XY-ID-08',
+        sp:'老学员',
+        shijian:'考驾中',
         biaozhun:'2019年8月15日',
         jiance:'赵元乐',
         process: 40,
         status: '启用',
     },
     {
-        id: 'CER0000009',
-        sp:'已办事项',
-        shijian:'老年优待证申请',
+        id: 'JX-XY-ID-09',
+        sp:'老学员',
+        shijian:'考驾中',
         biaozhun:'2019年8月24日',
         jiance:'王可媛',
         process: 30,
         status: '启用',
     },
     {
-        id: 'CER0000002',
-        sp:'受理任务',
-        shijian:'粮食收购许可申请',
+        id: 'JX-XY-ID-02',
+        sp:'新学员',
+        shijian:'学驾中',
         biaozhun:'2019年8月21日',
         jiance:'郑峰',
         process: 88,
         status: '启用',
     },
     {
-        id: 'CER0000003',
-        sp:'待办事项',
-        shijian:'烟花爆竹经营许可申请 ',
+        id: 'JX-XY-ID-03',
+        sp:'老学员',
+        shijian:'考驾中 ',
         biaozhun:'2019年8月20日',
         jiance:'王媛',
         process: 99,
         status: '启用',
     },
     {
-        id: 'CER0000004',
-        sp:'已办事项',
-        shijian:'社区活动开展资格申请',
+        id: 'JX-XY-ID-04',
+        sp:'老学员',
+        shijian:'考驾中',
         biaozhun:'2019年8月19日',
         jiance:'刘琦歌',
         process: 5,
         status: '启用',
     },
     {
-        id: 'CER0000005',
-        sp:'督办事项',
-        shijian:'节假日规定申请',
+        id: 'JX-XY-ID-05',
+        sp:'新学员',
+        shijian:'学驾中',
         biaozhun:'2019年8月18日',
         jiance:'李武雨',
         process: 95,
         status: '启用',
     },
     {
-        id: 'CER0000006',
-        sp:'受理任务',
-        shijian:'经济规范政策',
+        id: 'JX-XY-ID-06',
+        sp:'新学员',
+        shijian:'学驾中',
         biaozhun:'2019年8月17日',
         jiance:'王可可',
         process: 100,
@@ -104,30 +104,30 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '学号',
             dataIndex: 'id',
         },
         {
-            title: '分类',
+            title: '学员类别',
             dataIndex: 'sp',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '事项名称',
+            title: '学员状态',
             dataIndex: 'shijian',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '提交日期',
+            title: '报名日期',
             dataIndex: 'biaozhun',
         },
         {
-            title: '申请人',
+            title: '学员姓名',
             dataIndex: 'jiance',
             render: (text) => <Tag color="BROWN">{text}</Tag>,
         },
         {
-            title: '事项办理进度',
+            title: '学驾进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -163,7 +163,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="事项办理"
+                title="学员信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

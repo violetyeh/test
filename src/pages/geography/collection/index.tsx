@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SX-DB-ID-0001',
+        id: 'A1',
         tongdao:'张媛',
-        touguang:'粮食收购许可申请',
-        xq:'2358745684@qq.com',
-        duizhao:'政府办公室',
-        zt:'未办结',
+        touguang:'大型客车',
+        xq:'2358',
+        duizhao:'A2、C1、C2、C3、C4、C5',
+        zt:'60',
     },
     {
-        id: 'SX-DB-ID-0002',
+        id: 'A2',
         tongdao:'陈涛',
-        touguang:'烟花爆竹经营许可申请',
-        xq:'365471547@qq.com',
-        duizhao:'工商局',
-        zt:'已办结',
+        touguang:'牵引车',
+        xq:'3654',
+        duizhao:'',
+        zt:'90',
     },
     {
-        id: 'SX-DB-ID-0003',
+        id: 'A3',
         tongdao:'孟明',
-        touguang:'老年优待证申请',
-        xq:'626854789@qq.com',
-        duizhao:'工商局',
-        zt:'未受理',
+        touguang:'城市公交车',
+        xq:'62685',
+        duizhao:'C1、C2、C3、C4、C5',
+        zt:'96',
     },
     {
-        id: 'SX-DB-ID-0004',
+        id: 'B1',
         tongdao:'赵燕',
-        touguang:'会计资格从业证书核发申请',
-        xq:'36457895@qq.com',
-        duizhao:'政府办公室',
-        zt:'待补正',
+        touguang:'中型客车',
+        xq:'3645',
+        duizhao:'C1、C2、C3、C4、M',
+        zt:'86',
     },
     {
-        id: 'SX-DB-ID-0005',
+        id: 'B2',
         tongdao:'钱前',
-        touguang:'政府投资项目审批申请',
-        xq:'15647895@qq.com',
-        duizhao:'工商局',
-        zt:'已受理',
+        touguang:'大型货车',
+        xq:'2564',
+        duizhao:'C1',
+        zt:'90',
     },
     {
-        id: 'SX-DB-ID-0006',
+        id: 'C1',
         tongdao:'胡艳',
-        touguang:'经济规范政策',
-        xq:'13654789@qq.com.',
-        duizhao:'政府办公室',
-        zt:'未受理',
+        touguang:'手动挡小型汽车',
+        xq:'2365.',
+        duizhao:'',
+        zt:'96',
     },
     {
-        id: 'SX-DB-ID-0007',
+        id: 'C2',
         tongdao:'罗蒙',
-        touguang:'节假日规定申请',
-        xq:'23568745@qq.com ',
-        duizhao:'工商局',
-        zt:'未受理',
+        touguang:'小型自动挡汽车',
+        xq:'2356 ',
+        duizhao:'',
+        zt:'96',
     },
     {
-        id: 'SX-DB-ID-0008',
+        id: 'C3',
         tongdao:'姜丝',
-        touguang:'社区活动开展资格申请',
-        xq:'37258965@qq.com ',
-        duizhao:'政府办公室',
-        zt:'未受理',
+        touguang:'低速载货汽车',
+        xq:'3725 ',
+        duizhao:'C4',
+        zt:'96',
     },
     
 ]
@@ -99,32 +99,32 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '办件编号',
+            title: '车型代码',
             dataIndex: 'id',
         },
         
         {
-            title: '事项名称',
+            title: '车型名称',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
        
         {
-            title: '受理部门',
+            title: '准予驾驶其他准驾车型',
             dataIndex: 'duizhao',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '受理状态',
+            title: '总学时',
             dataIndex: 'zt',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '管理员',
+            title: '教练',
             dataIndex: 'tongdao',
         },
         {
-            title: 'E-mail',
+            title: '定价',
             dataIndex: 'xq',
         },
         {
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="行政许可事项"
+                title="准驾车型管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

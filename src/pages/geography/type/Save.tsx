@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="综合监察信息"
+                title="编辑培训记录"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,63 +44,54 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="办件号" >
+                    <Form.Item key="id" label="申请类型" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhonglei" label="事项名称" >
+                    <Form.Item key="zhonglei" label="学驾类型" >
                         {getFieldDecorator('zhonglei', {
                             initialValue: currentItem.zhonglei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="所属部门" >
-                        {getFieldDecorator('mingcheng', {
-                            initialValue: currentItem.mingcheng,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="songjian" label="意见" >
+                    
+                    <Form.Item key="songjian" label="是否应急" >
                         {getFieldDecorator('songjian', {
                             initialValue: currentItem.songjian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shengchan" label="监察负责人" >
+                    <Form.Item key="shengchan" label="学员姓名" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="chandi" label="异常状态" >
+                    <Form.Item key="chandi" label="性别" >
                         {getFieldDecorator('chandi', {
                             initialValue: currentItem.chandi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="督办日期" >
+                    <Form.Item key="riqi" label="申请日期" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="督办状态" >
-                        {getFieldDecorator('status', {
-                            initialValue: currentItem.status,
+                    <Form.Item key="mingcheng" label="核实状态" >
+                        {getFieldDecorator('mingcheng', {
+                            initialValue: currentItem.mingcheng,
                         })(
-                            <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">已督办</Radio.Button>
-                                <Radio.Button value="b">未督办</Radio.Button>
-                            </Radio.Group>,
+                            <Input />,
                         )}
                     </Form.Item>
                 </Form>

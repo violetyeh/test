@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '政务一窗平台系统',
+  title: '泰禾驾培管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

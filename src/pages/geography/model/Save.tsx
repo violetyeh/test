@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑事项办理"
+                title="编辑学员信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,42 +44,42 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="学号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sp" label="分类" >
+                    <Form.Item key="sp" label="学员类别" >
                         {getFieldDecorator('sp', {
                             initialValue: currentItem.sp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijian" label="事项名称" >
+                    <Form.Item key="shijian" label="学员状态" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="biaozhun" label="提交日期" >
+                    <Form.Item key="biaozhun" label="报名日期" >
                         {getFieldDecorator('biaozhun', {
                             initialValue: currentItem.biaozhun,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jiance" label="申请人" >
+                    <Form.Item key="jiance" label="学员姓名" >
                         {getFieldDecorator('jiance', {
                             initialValue: currentItem.jiance,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="事项办理进度（%）" >
+                    <Form.Item key="process" label="学驾进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
