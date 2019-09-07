@@ -23,69 +23,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'A1',
+        id: 'JL02106',
+        tongdao:'胡艳',
+        touguang:'吴教练',
+        xq:'2365',
+        duizhao:'阶段1',
+        zt:'96',
+    },
+    {
+        id: 'JL02107',
+        tongdao:'罗蒙',
+        touguang:'李教练',
+        xq:'2356 ',
+        duizhao:'阶段2',
+        zt:'96',
+    },
+    {
+        id: 'JL02108',
+        tongdao:'姜丝',
+        touguang:'吴教练',
+        xq:'3725 ',
+        duizhao:'阶段1',
+        zt:'96',
+    },
+    {
+        id: 'JL02101',
         tongdao:'张媛',
-        touguang:'大型客车',
+        touguang:'张教练',
         xq:'2358',
-        duizhao:'A2、C1、C2、C3、C4、C5',
+        duizhao:'阶段2',
         zt:'60',
     },
     {
-        id: 'A2',
+        id: 'JL02102',
         tongdao:'陈涛',
-        touguang:'牵引车',
+        touguang:'吴教练',
         xq:'3654',
-        duizhao:'',
+        duizhao:'阶段1',
         zt:'90',
     },
     {
-        id: 'A3',
+        id: 'JL02103',
         tongdao:'孟明',
-        touguang:'城市公交车',
+        touguang:'吴教练',
         xq:'62685',
-        duizhao:'C1、C2、C3、C4、C5',
+        duizhao:'阶段2',
         zt:'96',
     },
     {
-        id: 'B1',
+        id: 'JL02104',
         tongdao:'赵燕',
-        touguang:'中型客车',
+        touguang:'李教练',
         xq:'3645',
-        duizhao:'C1、C2、C3、C4、M',
+        duizhao:'阶段1',
         zt:'86',
     },
     {
-        id: 'B2',
+        id: 'JL02105',
         tongdao:'钱前',
-        touguang:'大型货车',
+        touguang:'吴教练',
         xq:'2564',
-        duizhao:'C1',
+        duizhao:'阶段3',
         zt:'90',
     },
-    {
-        id: 'C1',
-        tongdao:'胡艳',
-        touguang:'手动挡小型汽车',
-        xq:'2365.',
-        duizhao:'',
-        zt:'96',
-    },
-    {
-        id: 'C2',
-        tongdao:'罗蒙',
-        touguang:'小型自动挡汽车',
-        xq:'2356 ',
-        duizhao:'',
-        zt:'96',
-    },
-    {
-        id: 'C3',
-        tongdao:'姜丝',
-        touguang:'低速载货汽车',
-        xq:'3725 ',
-        duizhao:'C4',
-        zt:'96',
-    },
+
     
 ]
 
@@ -99,32 +100,31 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车型代码',
+            title: '编号',
             dataIndex: 'id',
         },
-        
         {
-            title: '车型名称',
+            title: '学员姓名',
+            dataIndex: 'tongdao',
+        },
+        {
+            title: '教练姓名',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
        
         {
-            title: '准予驾驶其他准驾车型',
+            title: '培训阶段',
             dataIndex: 'duizhao',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
             title: '总学时',
             dataIndex: 'zt',
-            render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
+       
         {
-            title: '教练',
-            dataIndex: 'tongdao',
-        },
-        {
-            title: '定价',
+            title: '总里程',
             dataIndex: 'xq',
         },
         {
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="准驾车型管理"
+                title="培训计时计程管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

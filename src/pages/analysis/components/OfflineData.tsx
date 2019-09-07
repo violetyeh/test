@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 学员人数: 355, 教练车数量: 40, 教练人数:10, 学驾学费: 3082 },
-  { label: '0.2', 学员人数: 320, 教练车数量: 36, 教练人数: 13, 学驾学费: 4063 },
-  { label: '0.3', 学员人数: 395, 教练车数量: 39, 教练人数: 10, 学驾学费: 3075 },
-  { label: '0.4', 学员人数: 340, 教练车数量: 35, 教练人数: 28, 学驾学费: 3056 },
-  { label: '0.5', 学员人数: 395, 教练车数量: 39, 教练人数: 48, 学驾学费: 3066 },
-  { label: '0.6', 学员人数: 350, 教练车数量: 34, 教练人数: 23, 学驾学费: 3054 },
-  { label: '0.7', 学员人数: 390, 教练车数量: 85, 教练人数: 37, 学驾学费: 2083 },
-  { label: '0.8', 学员人数: 340, 教练车数量: 15, 教练人数: 46, 学驾学费: 3075 },
-  { label: '0.9', 学员人数: 395, 教练车数量: 35, 教练人数: 17, 学驾学费: 3081 },
-  { label: '1.0', 学员人数: 395, 教练车数量: 43, 教练人数: 15, 学驾学费: 3083 },
-  { label: '未评分', 学员人数: 390, 教练车数量: 76, 教练人数: 56, 学驾学费: 3064 },
+  { label: '0.1', 学员人数: 355, 平均学时: 140, 教练人数:10, 平均里程: 308 },
+  { label: '0.2', 学员人数: 320, 平均学时: 236, 教练人数: 13, 平均里程: 406 },
+  { label: '0.3', 学员人数: 395, 平均学时: 139, 教练人数: 10, 平均里程: 307 },
+  { label: '0.4', 学员人数: 340, 平均学时: 235, 教练人数: 28, 平均里程: 305 },
+  { label: '0.5', 学员人数: 395, 平均学时: 139, 教练人数: 48, 平均里程: 306 },
+  { label: '0.6', 学员人数: 350, 平均学时: 234, 教练人数: 23, 平均里程: 305 },
+  { label: '0.7', 学员人数: 390, 平均学时: 185, 教练人数: 37, 平均里程: 208 },
+  { label: '0.8', 学员人数: 340, 平均学时: 215, 教练人数: 46, 平均里程: 307 },
+  { label: '0.9', 学员人数: 395, 平均学时: 135, 教练人数: 17, 平均里程: 308 },
+  { label: '1.0', 学员人数: 395, 平均学时: 243, 教练人数: 15, 平均里程: 308 },
+  { label: '未评分', 学员人数: 390, 平均学时: 176, 教练人数: 56, 平均里程: 306 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['学员人数', '教练车数量', '教练人数','学驾学费'], // 展开字段集
+  fields: ['学员人数', '平均学时', '教练人数','平均里程'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  学驾学费: {
+  平均里程: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -68,9 +68,9 @@ const OfflineData = ({
           allowAllCanceled
           items={[
             { value: '学员人数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '教练车数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '平均学时', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
             { value: '教练人数', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '学驾学费', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '平均里程', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '学驾学费') {
+              if (geom.getYScale().field === value && value === '平均里程') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '学驾学费') {
+              } else if (geom.getYScale().field === 'value' && value !== '平均里程') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -107,10 +107,10 @@ const OfflineData = ({
             if (value === '学员人数') {
               return '#2b6cbb';
             }
-            if (value === '学驾学费') {
+            if (value === '平均里程') {
               return '#41a2fc';
             }
-            if (value === '教练车数量') {
+            if (value === '平均学时') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*学驾学费" color="#fad248" size={3} />
+        <Geom type="line" position="label*平均里程" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

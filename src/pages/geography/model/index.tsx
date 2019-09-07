@@ -19,73 +19,73 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'JX-XY-ID-07',
+        id: 'JSJC0307',
         sp:'新学员',
-        shijian:'学驾中',
-        biaozhun:'2019年8月16日',
+        shijian:'01:10:11',
+        biaozhun:'16（km）',
         jiance:'吴启拉',
         process: 60,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-08',
+        id: 'JSJC0308',
         sp:'老学员',
-        shijian:'考驾中',
-        biaozhun:'2019年8月15日',
+        shijian:'00:14:58',
+        biaozhun:'15（km）',
         jiance:'赵元乐',
         process: 40,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-09',
+        id: 'JSJC0309',
         sp:'老学员',
-        shijian:'考驾中',
-        biaozhun:'2019年8月24日',
+        shijian:'00:16:52',
+        biaozhun:'24（km）',
         jiance:'王可媛',
         process: 30,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-02',
+        id: 'JSJC0302',
         sp:'新学员',
-        shijian:'学驾中',
-        biaozhun:'2019年8月21日',
+        shijian:'01:05:30',
+        biaozhun:'21（km）',
         jiance:'郑峰',
         process: 88,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-03',
+        id: 'JSJC0303',
         sp:'老学员',
-        shijian:'考驾中 ',
-        biaozhun:'2019年8月20日',
+        shijian:'00:33:24 ',
+        biaozhun:'20（km）',
         jiance:'王媛',
         process: 99,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-04',
+        id: 'JSJC0304',
         sp:'老学员',
-        shijian:'考驾中',
-        biaozhun:'2019年8月19日',
+        shijian:'00:30:24',
+        biaozhun:'19（km）',
         jiance:'刘琦歌',
-        process: 5,
+        process: 95,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-05',
+        id: 'JSJC0305',
         sp:'新学员',
-        shijian:'学驾中',
-        biaozhun:'2019年8月18日',
+        shijian:'01:30:31',
+        biaozhun:'18（km）',
         jiance:'李武雨',
         process: 95,
         status: '启用',
     },
     {
-        id: 'JX-XY-ID-06',
+        id: 'JSJC0306',
         sp:'新学员',
-        shijian:'学驾中',
-        biaozhun:'2019年8月17日',
+        shijian:'01:00:23',
+        biaozhun:'17（km）',
         jiance:'王可可',
         process: 100,
         status: '启用',
@@ -104,21 +104,20 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '学号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
             title: '学员类别',
             dataIndex: 'sp',
-            render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '学员状态',
+            title: '本次计时',
             dataIndex: 'shijian',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '报名日期',
+            title: '本次里程',
             dataIndex: 'biaozhun',
         },
         {
@@ -127,9 +126,8 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="BROWN">{text}</Tag>,
         },
         {
-            title: '学驾进度',
+            title: '本次计费',
             dataIndex: 'process',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
         {
@@ -163,7 +161,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="学员信息管理"
+                title="费用管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

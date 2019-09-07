@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '准驾车型管理',
+          name: '培训计时计程管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '学员信息管理',
+          name: '费用管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '培训记录申请',
+          name: '车辆训练监控',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

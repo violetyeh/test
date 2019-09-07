@@ -19,85 +19,86 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '科目一报审',
-       zhonglei:'C2',
-       mingcheng:'已审核',
-       songjian:'否',
-       shengchan:'孟娜',
-       chandi:'女',
-       riqi:'2019年7月09日',
-       state: 1,
-    },
-    {
-        id: '科目二报审',
-        zhonglei:'C1',
-        mingcheng:'待批',
-        songjian:'是',
-        shengchan:'刘海波',
-        chandi:'男',
-        riqi:'2019年7月06日',
-        state: 1,
-     },
-     {
-        id: '科目三报审',
-        zhonglei:'C1',
-        mingcheng:'待批',
-        songjian:'是',
-        shengchan:'石桂艳',
-        chandi:'男',
-        riqi:'2019年6月11日',
-        state: 1,
-     },
-     {
-        id: '科目一报审',
-        zhonglei:'C1',
-        mingcheng:'已审核',
-        songjian:'否',
-        shengchan:'李琦',
-        chandi:'女',
-        riqi:'2019年6月30日',
-        state: 1,
-     },
-     {
-        id: '科目二报审',
-        zhonglei:'C2',
-        mingcheng:'待批',
-        songjian:'否',
-        shengchan:'陈云杰',
-        chandi:'女',
-        riqi:'2019年7月01日',
-        state: 1,
-     },
-     {
-        id: '科目三报审',
-        zhonglei:'C2',
-        mingcheng:'已审核',
-        songjian:'是',
+        id: '科目三',
+        zhonglei:'学A132B9',
+        mingcheng:'非计费模式',
+        songjian:'宋教练',
         shengchan:'张玲',
-        chandi:'女',
+        chandi:'28',
         riqi:'2019年7月13日',
         state: 1,
      },
      {
-        id: '科目一报审',
-        zhonglei:'C1',
-        mingcheng:'已审核',
-        songjian:'是',
+        id: '科目二',
+        zhonglei:'学A10201',
+        mingcheng:'非计费模式',
+        songjian:'宋教练',
         shengchan:'江米意',
-        chandi:'女',
+        chandi:'25',
         riqi:'2019年7月11日',
         state: 1,
      },
      {
-        id: '科目二报审',
-        zhonglei:'C1',
-        mingcheng:'待批',
-        songjian:'否',
+        id: '科目二',
+        zhonglei:'学A102BV',
+        mingcheng:'计费模式',
+        songjian:'李教练',
         shengchan:'王思琪',
-        chandi:'男',
+        chandi:'20',
         riqi:'2019年7月14日',
         state: 1,
      },
+    {
+       id: '科目二',
+       zhonglei:'学A10999',
+       mingcheng:'非计费模式',
+       songjian:'李教练',
+       shengchan:'孟娜',
+       chandi:'25',
+       riqi:'2019年7月09日',
+       state: 1,
+    },
+    {
+        id: '科目二',
+        zhonglei:'学A1078V',
+        mingcheng:'计费模式',
+        songjian:'宋教练',
+        shengchan:'刘海波',
+        chandi:'22',
+        riqi:'2019年7月06日',
+        state: 1,
+     },
+     {
+        id: '科目三',
+        zhonglei:'学A102B1',
+        mingcheng:'计费模式',
+        songjian:'宋教练',
+        shengchan:'石桂艳',
+        chandi:'21',
+        riqi:'2019年6月11日',
+        state: 1,
+     },
+     {
+        id: '科目二',
+        zhonglei:'学A10234',
+        mingcheng:'非计费模式',
+        songjian:'李教练',
+        shengchan:'李琦',
+        chandi:'25',
+        riqi:'2019年6月30日',
+        state: 1,
+     },
+     {
+        id: '科目二',
+        zhonglei:'学A15678',
+        mingcheng:'计费模式',
+        songjian:'李教练',
+        shengchan:'陈云杰',
+        chandi:'26',
+        riqi:'2019年7月01日',
+        state: 1,
+     },
+
     
 ]
 
@@ -111,36 +112,37 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '申请类型',
+            title: '训练科目',
             dataIndex: 'id',
         },
         {
-            title: '学驾类型',
+            title: '教练车牌号',
             dataIndex: 'zhonglei',
-            render: (text) => <Tag color="black">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
        
         {
-            title: '是否应急',
+            title: '当前教练',
             dataIndex: 'songjian',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '学员姓名',
+            title: '当前驾驶员',
             dataIndex: 'shengchan',
-        },
-        {
-            title: '性别',
-            dataIndex: 'chandi',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '申请日期',
+            title: '计时',
+            dataIndex: 'chandi',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
+        },
+        {
+            title: '开始时间',
             dataIndex: 'riqi',
         },
 
         {
-            title: '核实状态',
+            title: '当前模式',
             dataIndex: 'mingcheng',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
@@ -171,7 +173,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="培训记录申请"
+                title="车辆训练监控"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
