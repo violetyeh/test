@@ -19,81 +19,81 @@ interface ModelState {
 
 const mockData = [
     {
-       id:'BC01',
+       id:'BH0214501',
        cf:'24',
-       jc:'22',
-       dw:'30',
-       jg:'2',
+       jc:'王三业',
+       dw:'ZWH01',
+       jg:'有',
        jx:'91',
        zhi:'渝C20184',
        status: '启用',
     },
     {
-        id:'BC02',
+        id:'BH0214502',
         cf:'30',
-        jc:'30',
-        dw:'34',
-        jg:'0',
+        jc:'孟源',
+        dw:'ZWH05',
+        jg:'有',
         jx:'100',
         zhi:'渝C35Z60',
         status: '启用',
      },
      {
-        id:'BC03',
+        id:'BH0214503',
         cf:'18',
-        jc:'18',
-        dw:'30',
-        jg:'0',
+        jc:'吴代鑫',
+        dw:'ZWH09',
+        jg:'无',
         jx:'100',
         zhi:'渝C45120',
         status: '启用',
      },
      {
-        id:'BC04',
+        id:'BH0214504',
         cf:'30',
-        jc:'29',
-        dw:'30',
-        jg:'1',
+        jc:'郑晓艺',
+        dw:'ZWH10',
+        jg:'有',
         jx:'96',
         zhi:'渝C11524',
         status: '启用',
      },
      {
-         id:'BC05',
+         id:'BH0214505',
          cf:'25',
-         jc:'25',
-         dw:'34',
-         jg:'0',
+         jc:'刘言因',
+         dw:'ZWH13',
+         jg:'无',
          jx:'100',
          zhi:'渝C33630',
          status: '启用',
       },
       {
-         id:'BC06',
+         id:'BH0214506',
          cf:'18',
-         jc:'10',
-         dw:'34',
-         jg:'8',
+         jc:'赵垣垣',
+         dw:'ZWH27',
+         jg:'无',
          jx:'55',
          zhi:'渝C96V20',
          status: '启用',
       },
       {
-        id:'BC07',
+        id:'BH0214507',
         cf:'25',
-        jc:'24',
-        dw:'30',
-        jg:'1',
+        jc:'陈梦圆',
+        dw:'ZWH28',
+        jg:'无',
         jx:'96',
         zhi:'渝C23B84',
         status: '启用',
      },
      {
-         id:'BC08',
+         id:'BH0214508',
          cf:'24',
-         jc:'24',
-         dw:'30',
-         jg:'0',
+         jc:'张三元 ',
+         dw:'ZWH32',
+         jg:'有',
          jx:'100',
          zhi:'渝C11A60',
          status: '启用',
@@ -108,51 +108,35 @@ class Model extends Component<ModelProps, ModelState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '状态',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >已检</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '班次',
             dataIndex: 'id',
         },
         {
-            title: '座数',
+            title: '座位号',
             dataIndex: 'dw',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '售票数',
+            title: '票价（元）',
             dataIndex: 'cf',
         },
         {
-            title: '检票数',
+            title: '乘客姓名',
             dataIndex: 'jc',
         },
         {
-            title: '人数差',
+            title: '有无折扣',
             dataIndex: 'jg',
         },
+        
         {
-            title: '实载率',
-            dataIndex: 'jx', 
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
-        },
-        {
-            title: '应班车牌号',
+            title: '车牌号',
             dataIndex: 'zhi',
             render: (text) => <Tag color="#f50000">{text}</Tag>,
         },
-        {
-            title: '是否启用',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -179,7 +163,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="客运调度"
+                title="车票信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

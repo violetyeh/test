@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑售票业务信息"
+                title="编辑车次信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="班次" >
+                    <Form.Item key="id" label="车牌号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -59,7 +59,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="ma" label="座位数" >
+                    <Form.Item key="ma" label="额定人数" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,27 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sf" label="总余票" >
+                    <Form.Item key="sf" label="车次" >
                         {getFieldDecorator('sf', {
                             initialValue: currentItem.sf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="车型" >
-                        {getFieldDecorator('nl', {
-                            initialValue: currentItem.nl,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="dbz" label="票价" >
-                        {getFieldDecorator('dbz', {
-                            initialValue: currentItem.dbz,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                  
                     <Form.Item key="mc" label="状态" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,

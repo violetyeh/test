@@ -19,74 +19,74 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '渝C9SJ21',
-       mc:'黄',
-       gg:'豪华',
-       hz:'否',
-       yy:'3',
+       id: 'ZDZ-0149SJ21',
+       mc:'山东',
+       gg:'210',
+       hz:'已打印',
+       yy:'93',
        jd:2,
        state: 1,
     },
     {
-        id: '渝C8SJ22',
-        mc:'绿',
-        gg:'普通',
-        hz:'否',
-        yy:'1',
+        id: 'ZDZ-0148SJ22',
+        mc:'黑龙江',
+        gg:'150',
+        hz:'已打印',
+        yy:'91',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C1J23',
-        mc:'绿',
-        gg:'普通',
-        hz:'是',
-        yy:'2',
+        id: 'ZDZ-0141J23',
+        mc:'南京',
+        gg:'230',
+        hz:'已打印',
+        yy:'92',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ24',
-        mc:'黄',
-        gg:'豪华',
-        hz:'否',
-        yy:'3',
+        id: 'ZDZ-0141SJ24',
+        mc:'重庆',
+        gg:'60',
+        hz:'未打印',
+        yy:'93',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C3SJ25',
-        mc:'绿',
-        gg:'普通',
-        hz:'否',
-        yy:'2',
+        id: 'ZDZ-0143SJ25',
+        mc:'长沙',
+        gg:'90',
+        hz:'已打印',
+        yy:'92',
         jd:3,
         state: 1,
      },
      {
-        id: '渝C2SJ26',
-        mc:'黄',
-        gg:'豪华',
-        hz:'否',
-        yy:'1',
+        id: 'ZDZ-0142SJ26',
+        mc:'成都',
+        gg:'120',
+        hz:'未打印',
+        yy:'91',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ27',
-        mc:'绿',
-        gg:'普通',
-        hz:'否',
-        yy:'6',
+        id: 'ZDZ-0141SJ27',
+        mc:'浙江',
+        gg:'100',
+        hz:'已打印',
+        yy:'96',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C0SJ28',
-        mc:'黄',
-        gg:'豪华',
-        hz:'是',
-        yy:'3',
+        id: 'ZDZ-0140SJ28',
+        mc:'上海',
+        gg:'80',
+        hz:'已打印',
+        yy:'93',
         jd:3,
         state: 1,
      },
@@ -103,31 +103,30 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车牌号',
+            title: '终点站编号',
             dataIndex: 'id',
         },
         {
-            title: '车牌颜色',
+            title: '终点站名称',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#AA2222">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '客车类型',
+            title: '票价',
             dataIndex: 'gg',
         },
         {
-            title: '是否临时',
+            title: '票据打印',
             dataIndex: 'hz',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '燃油费',
+            title: '出票进度',
             dataIndex: 'yy',
+            render: (text) => <Progress percent={text} status="active" />,
         },
         
-        {
-            title: '站务费',
-            dataIndex: 'jd',
-        },
+       
         
         {
             title: '操作',
@@ -156,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车辆信息管理"
+                title="客运信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

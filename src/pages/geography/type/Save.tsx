@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置车辆信息"
+                title="设置客运信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="车牌号" >
+                    <Form.Item key="id" label="终点站编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="车牌颜色" >
+                    <Form.Item key="mc" label="终点站名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="客车类型" >
+                    <Form.Item key="gg" label="票价" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="是否临时" >
+                    <Form.Item key="hz" label="票据打印" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="燃油费" >
+                    <Form.Item key="yy" label="出票进度（%）" >
                         {getFieldDecorator('yy', {
                             initialValue: currentItem.yy,
                         })(
@@ -80,13 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jd" label="站务费" >
-                        {getFieldDecorator('jd', {
-                            initialValue: currentItem.jd,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
                 </Form>
             </Modal>
         );
