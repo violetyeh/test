@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SX-DB-ID-0001',
+        id: 'JL0001',
         tongdao:'张媛',
-        touguang:'粮食收购许可申请',
+        touguang:'交通法律法规',
         xq:'2358745684@qq.com',
-        duizhao:'政府办公室',
-        zt:'未办结',
+        duizhao:'客运公司部门',
+        zt:'刘思思',
     },
     {
-        id: 'SX-DB-ID-0002',
+        id: 'JL0002',
         tongdao:'陈涛',
-        touguang:'烟花爆竹经营许可申请',
+        touguang:'车辆使用制度',
         xq:'365471547@qq.com',
-        duizhao:'工商局',
-        zt:'已办结',
+        duizhao:'客车客运公司部门',
+        zt:'赵舒',
     },
     {
-        id: 'SX-DB-ID-0003',
+        id: 'JL0003',
         tongdao:'孟明',
-        touguang:'老年优待证申请',
+        touguang:'安全行为辨识',
         xq:'626854789@qq.com',
-        duizhao:'工商局',
-        zt:'未受理',
+        duizhao:'客运公司部门',
+        zt:'高明一',
     },
     {
-        id: 'SX-DB-ID-0004',
+        id: 'JL0004',
         tongdao:'赵燕',
-        touguang:'会计资格从业证书核发申请',
+        touguang:'交通法律法规',
         xq:'36457895@qq.com',
-        duizhao:'政府办公室',
-        zt:'待补正',
+        duizhao:'火车客运公司部门',
+        zt:'刘思思',
     },
     {
-        id: 'SX-DB-ID-0005',
+        id: 'JL0005',
         tongdao:'钱前',
-        touguang:'政府投资项目审批申请',
+        touguang:'车辆使用制度',
         xq:'15647895@qq.com',
-        duizhao:'工商局',
-        zt:'已受理',
+        duizhao:'客运公司部门',
+        zt:'李顺德',
     },
     {
-        id: 'SX-DB-ID-0006',
+        id: 'JL0006',
         tongdao:'胡艳',
-        touguang:'经济规范政策',
+        touguang:'交通法律法规',
         xq:'13654789@qq.com.',
-        duizhao:'政府办公室',
-        zt:'未受理',
+        duizhao:'客运公司部门',
+        zt:'高明一',
     },
     {
-        id: 'SX-DB-ID-0007',
+        id: 'JL0007',
         tongdao:'罗蒙',
-        touguang:'节假日规定申请',
+        touguang:'应急救援措施',
         xq:'23568745@qq.com ',
-        duizhao:'工商局',
-        zt:'未受理',
+        duizhao:'高铁客运公司部门',
+        zt:'高明一',
     },
     {
-        id: 'SX-DB-ID-0008',
+        id: 'JL0008',
         tongdao:'姜丝',
-        touguang:'社区活动开展资格申请',
+        touguang:'交通法律法规',
         xq:'37258965@qq.com ',
-        duizhao:'政府办公室',
-        zt:'未受理',
+        duizhao:'客运公司部门',
+        zt:'高明一',
     },
     
 ]
@@ -99,32 +99,32 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '办件编号',
+            title: '记录编号',
             dataIndex: 'id',
         },
         
         {
-            title: '事项名称',
+            title: '教育内容',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
        
         {
-            title: '受理部门',
+            title: '培训地点',
             dataIndex: 'duizhao',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '受理状态',
+            title: '培训老师',
             dataIndex: 'zt',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '管理员',
+            title: '受教育司机姓名',
             dataIndex: 'tongdao',
         },
         {
-            title: 'E-mail',
+            title: '司机联系方式',
             dataIndex: 'xq',
         },
         {
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="行政许可事项"
+                title="安全教育培训记录"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

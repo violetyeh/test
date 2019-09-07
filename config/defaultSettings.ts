@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '政务一窗平台系统',
+  title: '泰禾司机安全教育培训系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -19,9 +19,9 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'BJ-NUMBER-01',
-       zhonglei:'粮食收购许可申请',
-       mingcheng:'马额镇土地局',
+       id: 'KCBH01',
+       zhonglei:'冬季安全行车要领01',
+       mingcheng:'掌握冬季车辆设备的维护与保养知识',
        songjian:'同意',
        shengchan:'孟娜',
        chandi:'不许可',
@@ -29,9 +29,9 @@ const mockData = [
        state: 1,
     },
     {
-        id: 'BJ-NUMBER-02',
-        zhonglei:'老年优待证申请',
-        mingcheng:'三原县政府',
+        id: 'KCBH02',
+        zhonglei:'紧急状况处置方法01',
+        mingcheng:'了解常见事故的发生规律和预防措施',
         songjian:'不同意',
         shengchan:'刘海波',
         chandi:'不受理',
@@ -39,9 +39,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-03',
-        zhonglei:'政府投资项目审批申请',
-        mingcheng:'马额镇土地局',
+        id: 'KCBH03',
+        zhonglei:'近期事故通报分析01',
+        mingcheng:'分析全国典型道路交通事故的成因和影响',
         songjian:'不同意',
         shengchan:'石桂艳',
         chandi:'不受理',
@@ -49,9 +49,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-04',
-        zhonglei:'政府投资项目审批申请',
-        mingcheng:'马额镇土地局',
+        id: 'KCBH04',
+        zhonglei:'冬季安全行车要领02',
+        mingcheng:'了解冬季行车安全重点和注意事项',
         songjian:'同意',
         shengchan:'李琦',
         chandi:'不许可',
@@ -59,9 +59,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-05',
-        zhonglei:'粮食收购许可申请',
-        mingcheng:'马东村村委',
+        id: 'KCBH05',
+        zhonglei:'紧急状况处置方法02',
+        mingcheng:'掌握正确的急救方法',
         songjian:'同意',
         shengchan:'陈云杰',
         chandi:'不许可',
@@ -69,9 +69,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-06',
-        zhonglei:'粮食收购许可申请',
-        mingcheng:'三原县土地局',
+        id: 'KCBH06',
+        zhonglei:'冬季安全行车要领03',
+        mingcheng:'强化雨雾冰雪天环境下的驾驶操作能力及安全意识',
         songjian:'不同意',
         shengchan:'张玲',
         chandi:'不许可',
@@ -79,9 +79,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-07',
-        zhonglei:'烟花爆竹经营许可申请',
-        mingcheng:'三原县政府',
+        id: 'KCBH07',
+        zhonglei:'紧急状况处置方法03',
+        mingcheng:'培养驾驶应变的能力',
         songjian:'不同意',
         shengchan:'江米意',
         chandi:'不许可',
@@ -89,9 +89,9 @@ const mockData = [
         state: 1,
      },
      {
-        id: 'BJ-NUMBER-08',
-        zhonglei:'烟花爆竹经营许可申请',
-        mingcheng:'三原县土地局',
+        id: 'KCBH08',
+        zhonglei:'近期事故通报分析02',
+        mingcheng:'提高全员安全意识',
         songjian:'同意',
         shengchan:'王思琪',
         chandi:'不受理',
@@ -111,41 +111,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '办件号',
+            title: '课程编号',
             dataIndex: 'id',
         },
         {
-            title: '事项名称',
+            title: '课程名称',
             dataIndex: 'zhonglei',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '所属部门',
+            title: '课程要点',
             dataIndex: 'mingcheng',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
+        
         {
-            title: '意见',
-            dataIndex: 'songjian',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
-        {
-            title: '监察负责人',
+            title: '课程负责人',
             dataIndex: 'shengchan',
         },
+       
         {
-            title: '异常状态',
-            dataIndex: 'chandi',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
-        {
-            title: '督办日期',
+            title: '课程日期',
             dataIndex: 'riqi',
         },
         {
-            title: '督办状态',
+            title: '培训状态',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="已督办" unCheckedChildren="未督办" />,
+            render: () => <Switch checkedChildren="已培训" unCheckedChildren="未培训" />,
         },
         {
             title: '操作',
@@ -174,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="综合监察"
+                title="培训课程管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

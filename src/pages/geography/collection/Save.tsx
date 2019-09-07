@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑行政许可事项"
+                title="编辑记录"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="办件编号" >
+                    <Form.Item key="id" label="记录编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,7 +52,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="touguang" label="事项名称" >
+                    <Form.Item key="touguang" label="教育内容" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
@@ -60,33 +60,28 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="duizhao" label="受理部门" >
+                    <Form.Item key="duizhao" label="培训地点" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zt" label="受理状态" >
+                    <Form.Item key="zt" label="培训老师" >
                         {getFieldDecorator('zt', {
                             initialValue: currentItem.zt,
                         })(
-                            <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">未办结</Radio.Button>
-                                <Radio.Button value="b">已办结</Radio.Button>
-                                <Radio.Button value="c">未受理</Radio.Button>
-                                <Radio.Button value="d">已受理</Radio.Button>
-                             </Radio.Group>,
+                            <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="管理员" >
+                    <Form.Item key="tongdao" label="受教育司机姓名" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xq" label="E-mail" >
+                    <Form.Item key="xq" label="司机联系方式" >
                         {getFieldDecorator('xq', {
                             initialValue: currentItem.xq,
                         })(

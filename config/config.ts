@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '行政许可事项',
+          name: '安全教育培训记录',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '事项办理',
+          name: '培训效果评估',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '综合监察',
+          name: '培训课程管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
