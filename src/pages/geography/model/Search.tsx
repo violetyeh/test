@@ -17,12 +17,12 @@ class Search extends Component<SearchProps, SearchState>{
             <Form layout='inline'>
                 <Row gutter={{ md: 8, lg: 4, xl: 48 }}>
                     <Col md={8} sm={24}>
-                        <Form.Item label="车次">
+                        <Form.Item label="线路">
                             {getFieldDecorator('id')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="驾驶员">
+                        <Form.Item label="报班车辆">
                             {getFieldDecorator('cf')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Inbound and Outbound Stations',
+  title: '泰禾检验报班系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

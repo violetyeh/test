@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑安检信息"
+                title="证照检查信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="车辆" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="安检时间" >
+                    <Form.Item key="mc" label="检查时间" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="安检站" >
+                    <Form.Item key="gg" label="交强险" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="安检员" >
+                    <Form.Item key="hz" label="交强险" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="安检类型" >
+                    <Form.Item key="yy" label="承运人险" >
                         {getFieldDecorator('yy', {
                             initialValue: currentItem.yy,
                         })(
@@ -80,7 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jd" label="安检进度（%）" >
+                    <Form.Item key="jd" label="检查进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

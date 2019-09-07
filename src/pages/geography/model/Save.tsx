@@ -44,9 +44,16 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="车次" >
+                    <Form.Item key="id" label="线路" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="zhi" label="报班车辆" >
+                        {getFieldDecorator('zhi', {
+                            initialValue: currentItem.zhi,
                         })(
                             <Input />,
                         )}
@@ -65,28 +72,24 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="已检人数" >
+                    <Form.Item key="jc" label="免票儿童" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+
                     
-                    <Form.Item key="jg" label="实载人数" >
+                    <Form.Item key="jg" label="出站时间" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="乘客安检进度(%)" >
-                        {getFieldDecorator('jx', {
-                            initialValue: currentItem.jx,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
+                   
                     
                 </Form>
             </Modal>

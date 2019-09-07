@@ -19,77 +19,78 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'CL9SJ21',
-       mc:'2019-09-06',
-       gg:'长沙长途客运站',
-       hz:'李云杰',
-       yy:'复检',
+       id: 'ZZ-JC-0021',
+       mc:'2019-09-01',
+       gg:'未过期',
+       hz:'未过期',
+       yy:'不合格',
        jd:88,
        state: 1,
     },
     {
-        id: 'CL8SJ22',
-        mc:'2019-09-07',
-        gg:'成都长途客运站',
-        hz:'王石',
-        yy:'首检',
+        id: 'ZZ-JC-0022',
+        mc:'2019-09-02',
+        gg:'已过期',
+        hz:'未过期',
+        yy:'合格',
         jd:100,
         state: 1,
      },
      {
-        id: 'CL1J23',
+        id: 'ZZ-JC-0023',
         mc:'2019-09-07',
-        gg:'永川长途客运站',
-        hz:'李莎',
-        yy:'首检',
+        gg:'未过期',
+        hz:'未过期',
+        yy:'合格',
         jd:92,
         state: 1,
      },
      {
-        id: 'CL1SJ24',
-        mc:'2019-09-09',
-        gg:'合川长途客运站',
-        hz:'钱丽',
-        yy:'复检',
-        jd:91,
-        state: 1,
-     },
-     {
-        id: 'CL3SJ25',
-        mc:'2019-09-08',
-        gg:'沙坪坝长途客运站',
-        hz:'陈杰',
-        yy:'复检',
-        jd:83,
-        state: 1,
-     },
-     {
-        id: 'CL2SJ26',
+        id: 'ZZ-JC-0026',
         mc:'2019-09-06',
-        gg:'重庆长途客运站',
-        hz:'赵元',
-        yy:'首检',
+        gg:'未过期',
+        hz:'未过期',
+        yy:'合格',
         jd:72,
         state: 1,
      },
      {
-        id: 'CL1SJ27',
+        id: 'ZZ-JC-0027',
         mc:'2019-09-07',
-        gg:'江津长途客运站',
-        hz:'李伟',
-        yy:'复检',
+        gg:'未过期',
+        hz:'未过期',
+        yy:'不合格',
         jd:62,
         state: 1,
      },
      {
-        id: 'CL0SJ28',
+        id: 'ZZ-JC-0028',
         mc:'2019-09-06',
-        gg:'海安长途客运站',
-        hz:'王安',
-        yy:'首检',
+        gg:'已过期',
+        hz:'已过期',
+        yy:'合格',
         jd:93,
         state: 1,
      },
+     {
+        id: 'ZZ-JC-0024',
+        mc:'2019-09-09',
+        gg:'已过期',
+        hz:'已过期',
+        yy:'不合格',
+        jd:91,
+        state: 1,
+     },
+     {
+        id: 'ZZ-JC-0025',
+        mc:'2019-09-08',
+        gg:'未过期',
+        hz:'未过期',
+        yy:'不合格',
+        jd:83,
+        state: 1,
+     },
+   
    
 ]
 
@@ -103,30 +104,31 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车辆',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '安检时间',
+            title: '检查时间',
             dataIndex: 'mc',
         },
         {
-            title: '安检站',
+            title: '交强险',
             dataIndex: 'gg',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '安检员',
+            title: '商运险',
             dataIndex: 'hz',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '安检类型',
+            title: '承运人险',
             dataIndex: 'yy',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
-            title: '安检进度',
+            title: '检查进度',
             dataIndex: 'jd', 
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -158,7 +160,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安检信息"
+                title="证照检查信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

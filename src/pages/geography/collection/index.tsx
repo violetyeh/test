@@ -24,58 +24,58 @@ interface TypeState {
 const mockData = [
     {
         id: 'JCBH35',
-        fl:'外观',
-        mc:'合格',
-        nl:'车身外观、车内环境、视镜、刮水器、发动机、水箱',
+        fl:'超载检查',
+        mc:'实载人数符合',
+        nl:'超载或人数不符客车不出站',
         state: '启用',
     },
     {
         id: 'JCBH64',
-        fl:'制动系统',
-        mc:'合格',
-        nl:'气压表工作状况、制动管路密封性、制动系统自检、空气压缩机传动带',
+        fl:'证照检查',
+        mc:'证照齐全',
+        nl:'客车证牌照不齐全不出站',
         state: '启用',
     },
     {
         id: 'JCBH78',
-        fl:'转向系统',
-        mc:'合格',
-        nl:'转向机构及连接',
+        fl:'例检检查',
+        mc:'例检通过',
+        nl:'车辆安全例检不合格不出站',
         state: '启用',
     },
     {
         id: 'JCBH21',
-        fl:'传动系统',
-        mc:'合格',
-        nl:'传动机构及连接、自动变速器、液力缓速器密封性',
+        fl:'驾驶员检查',
+        mc:'驾驶员与所驾车辆相符',
+        nl:'驾驶员资格不符合要求或配备不足不出站',
         state: '启用',
     },
     {
         id: 'JCBH35',
-        fl:'照明、信号指示灯',
-        mc:'不合格',
-        nl:'前照灯、信号指示灯',
+        fl:'审核检查1',
+        mc:'驾驶员已安全承诺',
+        nl:'出站登记表未签字不出站',
         state: '启用',
     },
     {
         id: 'JCBH38',
-        fl:'轮胎',
-        mc:'合格',
-        nl:'轮胎、轮胎花纹深度、轮胎规格和花纹、轮胎气压、轮胎螺栓、螺母',
+        fl:'审核检查2',
+        mc:'签章齐全',
+        nl:'签章不齐全不出站',
         state: '启用',
     },
     {
         id: 'JCBH21',
-        fl:'悬架系统',
-        mc:'不合格',
-        nl:'弹性元件、U形螺栓螺母',
+        fl:'审核检查3',
+        mc:'行车安全已告知',
+        nl:'安全未告知不出站',
         state: '启用',
     },
     {
         id: 'JCBH37',
-        fl:'安全设施',
-        mc:'合格',
-        nl:'车门应急开关、安全顶窗、安全锤、灭火器',
+        fl:'乘客检查',
+        mc:'乘客全系好安全带',
+        nl:'乘客未系安全带不出站',
         state: '启用',
     },
 
@@ -103,13 +103,13 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '检查要求',
             dataIndex: 'nl',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
        
         {
             title: '检查结果',
             dataIndex: 'mc',
-            render: (text) => <Tag color="RED">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
             title: '操作',
@@ -140,7 +140,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="营运客车例检检查"
+                title="出站稽查"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

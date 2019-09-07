@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 到站汽车数量: 156, 进出站汽车数量: 100,安检客运汽车数量: 60, 安检效率: 98 },
-  { label: '0.2', 到站汽车数量: 90, 进出站汽车数量: 88,安检客运汽车数量: 70, 安检效率: 86 },
-  { label: '0.3', 到站汽车数量: 95, 进出站汽车数量: 90,安检客运汽车数量: 80, 安检效率: 97 },
-  { label: '0.4', 到站汽车数量: 50, 进出站汽车数量: 50,安检客运汽车数量: 39, 安检效率: 85 },
-  { label: '0.5', 到站汽车数量: 23, 进出站汽车数量: 34,安检客运汽车数量: 166, 安检效率: 96 },
-  { label: '0.6', 到站汽车数量: 123, 进出站汽车数量: 34,安检客运汽车数量: 66, 安检效率: 75 },
-  { label: '0.7', 到站汽车数量: 63, 进出站汽车数量: 34,安检客运汽车数量: 166, 安检效率: 88 },
-  { label: '0.8', 到站汽车数量: 23, 进出站汽车数量: 84,安检客运汽车数量: 66, 安检效率: 75},
-  { label: '0.9', 到站汽车数量: 53, 进出站汽车数量: 34,安检客运汽车数量: 26, 安检效率: 98 },
-  { label: '1.0', 到站汽车数量: 43, 进出站汽车数量: 24,安检客运汽车数量: 76, 安检效率: 78 },
-  { label: '未评分', 到站汽车数量: 43, 进出站汽车数量: 34,安检客运汽车数量: 66, 安检效率: 86 },
+  { label: '0.1', 客车总数量: 156, 报班汽车数量: 100,客运汽车数量: 160, 检验效率: 98 },
+  { label: '0.2', 客车总数量: 290, 报班汽车数量: 188,客运汽车数量: 170, 检验效率: 86 },
+  { label: '0.3', 客车总数量: 195, 报班汽车数量: 290,客运汽车数量: 180, 检验效率: 97 },
+  { label: '0.4', 客车总数量: 250, 报班汽车数量: 150,客运汽车数量: 139, 检验效率: 85 },
+  { label: '0.5', 客车总数量: 123, 报班汽车数量: 234,客运汽车数量: 166, 检验效率: 96 },
+  { label: '0.6', 客车总数量: 123, 报班汽车数量: 134,客运汽车数量: 166, 检验效率: 75 },
+  { label: '0.7', 客车总数量: 263, 报班汽车数量: 234,客运汽车数量: 166, 检验效率: 88 },
+  { label: '0.8', 客车总数量: 123, 报班汽车数量: 184,客运汽车数量: 166, 检验效率: 75},
+  { label: '0.9', 客车总数量: 253, 报班汽车数量: 234,客运汽车数量: 126, 检验效率: 98 },
+  { label: '1.0', 客车总数量: 143, 报班汽车数量: 124,客运汽车数量: 176, 检验效率: 78 },
+  { label: '未评分', 客车总数量: 243, 报班汽车数量: 234,客运汽车数量: 166, 检验效率: 86 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['到站汽车数量', '进出站汽车数量', '安检客运汽车数量','安检效率'], // 展开字段集
+  fields: ['客车总数量', '报班汽车数量', '客运汽车数量','检验效率'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  安检效率: {
+  检验效率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '到站汽车数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '进出站汽车数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '客车总数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '报班汽车数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
             { value: '发车数量', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '安检效率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '检验效率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '安检效率') {
+              if (geom.getYScale().field === value && value === '检验效率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '安检效率') {
+              } else if (geom.getYScale().field === 'value' && value !== '检验效率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -107,10 +107,10 @@ const OfflineData = ({
             if (value === '车辆数量') {
               return '#2b6cbb';
             }
-            if (value === '安检效率') {
+            if (value === '检验效率') {
               return '#41a2fc';
             }
-            if (value === '进出站汽车数量') {
+            if (value === '报班汽车数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*安检效率" color="#fad248" size={3} />
+        <Geom type="line" position="label*检验效率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );
