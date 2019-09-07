@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑拦截报告信息"
+                title="编辑报表信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="URL分类库" >
+                    <Form.Item key="mc" label="储物柜分类" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -65,27 +65,27 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="应用协议" >
+                    <Form.Item key="hz" label="物品类型" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="拦截报告上传进度（%）" >
+                    <Form.Item key="jd" label="储物柜利用率（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="安全情况" >
+                    <Form.Item key="status" label="取件情况" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">安全</Radio.Button>
-                               <Radio.Button value="b">不安全</Radio.Button>
+                               <Radio.Button value="a">已取件</Radio.Button>
+                               <Radio.Button value="b">未取件</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

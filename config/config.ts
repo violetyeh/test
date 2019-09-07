@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '防火墙设置',
+          name: '储物柜设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '主机配置',
+          name: '储物柜管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '拦截报告',
+          name: '储物柜报表',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'FHQ-010035',
-        fl:'病毒清除',
+        id: 'CWG-0035',
+        fl:'存物中',
         mc:'192.168.1.26',
-        ma:'只禁止列表中MAC地址接入',
+        ma:'密码打开',
         nl:'汪峰',
-        dbz:'使用动态获取的DNS',
+        dbz:'使用动态获取的密码',
     },
     {
-        id: 'FHQ-010064',
-        fl:'病毒检测',
+        id: 'CWG-0064',
+        fl:'存物中',
         mc:'192.168.1.17',
-        ma:'只允许列表中MAC地址接入',
+        ma:'扫码打开',
         nl:'陈云',
-        dbz:'使用静态获取的DNS',
+        dbz:'使用静态获取的密码',
     },
     {
-        id: 'FHQ-010078',
-        fl:'漏洞清除',
+        id: 'CWG-0078',
+        fl:'空闲中',
         mc:'192.168.1.14',
-        ma:'只允许列表中MAC地址接入',
+        ma:'密码打开',
         nl:'王安',
-        dbz:'使用动态获取的DNS',
+        dbz:'使用动态获取的密码',
     },
     {
-        id: 'FHQ-010021',
-        fl:'漏洞检测',
+        id: 'CWG-0021',
+        fl:'存物中',
         mc:'192.168.1.28',
-        ma:'只禁止列表中MAC地址接入',
+        ma:'扫码打开',
         nl:'张三石',
-        dbz:'使用静态获取的DNS',
+        dbz:'使用静态获取的密码',
     },
     {
-        id: 'FHQ-010035',
-        fl:'垃圾清除',
+        id: 'CWG-0035',
+        fl:'空闲中',
         mc:'192.168.0.18',
-        ma:'只允许列表中MAC地址接入',
+        ma:'密码打开',
         nl:'王芳',
-        dbz:'使用动态获取的DNS',
+        dbz:'使用动态获取的密码',
     },
     {
-        id: 'FHQ-010038',
-        fl:'漏洞检测',
+        id: 'CWG-0038',
+        fl:'存物中',
         mc:'192.168.1.44',
-        ma:'只允许列表中MAC地址接入',
+        ma:'密码打开',
         nl:'刘文',
-        dbz:'使用静态获取的DNS',
+        dbz:'使用静态获取的密码',
     },
     {
-        id: 'FHQ-010021',
-        fl:'病毒清除',
+        id: 'CWG-0021',
+        fl:'存物中',
         mc:'192.168.1.110',
-        ma:'只禁止列表中MAC地址接入',
+        ma:'扫码打开',
         nl:'赵媛',
-        dbz:'使用动态获取的DNS',
+        dbz:'使用动态获取的密码',
     },
     {
-        id: 'FHQ-010037',
-        fl:'病毒攻击防守',
+        id: 'CWG-0037',
+        fl:'空闲中',
         mc:'192.168.1.53',
-        ma:'只允许列表中MAC地址接入',
+        ma:'密码打开',
         nl:'刘冰',
-        dbz:'使用静态获取的DNS',
+        dbz:'使用静态获取的密码',
     },
   
     
@@ -100,22 +100,23 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
-            dataIndex: 'id',
-        },
-       
-        {
-            title: 'MAC地址过滤开启',
+            title: '储物柜状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
           },
         {
-            title: '过滤规则',
+            title: '储物柜编号',
+            dataIndex: 'id',
+        },
+       
+       
+        {
+            title: '开启操作',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '防火墙操作',
+            title: '空闲状态',
             dataIndex: 'fl',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
@@ -129,7 +130,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'nl',
         },
         {
-            title: 'DNS方式',
+            title: '密码方式',
             dataIndex: 'dbz',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
@@ -162,7 +163,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="防火墙设置"
+                title="储物柜设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

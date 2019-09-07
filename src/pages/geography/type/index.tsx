@@ -20,66 +20,66 @@ interface TypeState {
 const mockData = [
     
      {
-        id: 'LANJIE0000024',
-        mc:'恶意病毒',
-        gg:'CVE-2019-071',
-        hz:'文件传输',
+        id: 'CWG0000024',
+        mc:'快递',
+        gg:'实名制取物',
+        hz:'申通快递',
         jd:74,
         state: 1,
      },
      {
-        id: 'LANJIE0000025',
-        mc:'暴力',
-        gg:'CVE-2019-005',
-        hz:'远程登录',
+        id: 'CWG0000025',
+        mc:'快递',
+        gg:'实名制取物',
+        hz:'邮政快递',
         jd:95,
         state: 1,
      },
      {
-        id: 'LANJIE0000026',
-        mc:'赌博',
-        gg:'CVE-2019-004',
-        hz:'即时通讯',
+        id: 'CWG0000026',
+        mc:'游乐场',
+        gg:'未实名',
+        hz:'自带物品',
         jd:76,
         state: 1,
      },
      {
-        id: 'LANJIE0000021',
-        mc:'暴力',
-        gg:'CVE-2019-023',
-        hz:'VOIP',
+        id: 'CWG0000021',
+        mc:'商场',
+        gg:'未实名',
+        hz:'自带物品',
         jd:98,
         state: 1,
      },
      {
-         id: 'LANJIE0000022',
-         mc:'恶意网站',
-         gg:'CVE-2019-016',
-         hz:'股票软件',
+         id: 'CWG0000022',
+         mc:'超市',
+         gg:'未实名',
+         hz:'自带物品',
          jd:100,
          state: 1,
       },
       {
-         id: 'LANJIE0000023',
-         mc:'色情',
-         gg:'CVE-2019-065',
-         hz:' 电子邮件',
+         id: 'CWG0000023',
+         mc:'快递',
+         gg:'实名制取物',
+         hz:' 中通快递',
          jd:56,
          state: 1,
       },
      {
-        id: 'LANJIE0000027',
-        mc:'色情',
-        gg:'CVE-2019-044',
-        hz:'WEB',
+        id: 'CWG0000027',
+        mc:'快递',
+        gg:'实名制取物',
+        hz:'韵达快递',
         jd:100,
         state: 1,
      },
      {
-        id: 'LANJIE0000028',
-        mc:'色情',
-        gg:'CVE-2019-041',
-        hz:'P2P',
+        id: 'CWG0000028',
+        mc:'快递',
+        gg:'实名制取物',
+        hz:'申通快递',
         jd:88,
         state: 1,
      }, 
@@ -96,11 +96,11 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: 'URL分类库',
+            title: '储物柜分类',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
@@ -109,19 +109,19 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'gg',
         },
         {
-            title: '应用协议',
+            title: '物品类型',
             dataIndex: 'hz',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '拦截报告上传进度',
+            title: '储物柜利用率',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '安全情况',
+            title: '取件情况',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="安全" unCheckedChildren="不安全" />,
+            render: () => <Switch checkedChildren="已取件" unCheckedChildren="未取件" />,
         },
         {
             title: '操作',
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="拦截报告管理"
+                title="储物柜报表管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑主机配置信息"
+                title="编辑信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,28 +58,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="MAC地址" >
+                    <Form.Item key="jc" label="储物柜地址" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="端口" >
+                    <Form.Item key="dw" label="开柜标识" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="cpu占用率（%）" >
+                    <Form.Item key="jg" label="储物柜占用率（%）" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="内存使用率（%）" >
+                    <Form.Item key="jx" label="物品取走率（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 防火墙预警次数: 1563, 预警病毒数量: 1000, 预警反馈信息: 1600, 病毒恢复信息: 2082 },
-  { label: '0.2', 防火墙预警次数: 1900, 预警病毒数量: 1880, 预警反馈信息: 1700, 病毒恢复信息: 1463 },
-  { label: '0.3', 防火墙预警次数: 1950, 预警病毒数量: 1950, 预警反馈信息: 1800, 病毒恢复信息: 1075 },
-  { label: '0.4', 防火墙预警次数: 1500, 预警病毒数量: 1500, 预警反馈信息: 1390, 病毒恢复信息: 2156 },
-  { label: '0.5', 防火墙预警次数: 1234, 预警病毒数量: 1234, 预警反馈信息: 1166, 病毒恢复信息: 1266 },
-  { label: '0.6', 防火墙预警次数: 1234, 预警病毒数量: 1634, 预警反馈信息: 1666, 病毒恢复信息: 1254 },
-  { label: '0.7', 防火墙预警次数: 1634, 预警病毒数量: 1434, 预警反馈信息: 1666, 病毒恢复信息: 1283 },
-  { label: '0.8', 防火墙预警次数: 1234, 预警病毒数量: 1284, 预警反馈信息: 1666, 病毒恢复信息: 2175 },
-  { label: '0.9', 防火墙预警次数: 1534, 预警病毒数量: 1334, 预警反馈信息: 1236, 病毒恢复信息: 1281 },
-  { label: '1.0', 防火墙预警次数: 1234, 预警病毒数量: 1234, 预警反馈信息: 786, 病毒恢复信息: 2183 },
-  { label: '未评分', 防火墙预警次数: 1234, 预警病毒数量: 1234, 预警反馈信息: 666, 病毒恢复信息: 2164 },
+  { label: '0.1', 储物柜数量: 1563, 储物数量: 1000, 反复储物次数: 1600, 储物柜占用率: 208 },
+  { label: '0.2', 储物柜数量: 1900, 储物数量: 1880, 反复储物次数: 1700, 储物柜占用率: 146 },
+  { label: '0.3', 储物柜数量: 1950, 储物数量: 1950, 反复储物次数: 1800, 储物柜占用率: 107 },
+  { label: '0.4', 储物柜数量: 1500, 储物数量: 1500, 反复储物次数: 1390, 储物柜占用率: 215 },
+  { label: '0.5', 储物柜数量: 1234, 储物数量: 1234, 反复储物次数: 1166, 储物柜占用率: 126 },
+  { label: '0.6', 储物柜数量: 1234, 储物数量: 1634, 反复储物次数: 1666, 储物柜占用率: 125 },
+  { label: '0.7', 储物柜数量: 1634, 储物数量: 1434, 反复储物次数: 1666, 储物柜占用率: 128 },
+  { label: '0.8', 储物柜数量: 1234, 储物数量: 1284, 反复储物次数: 1666, 储物柜占用率: 217 },
+  { label: '0.9', 储物柜数量: 1534, 储物数量: 1334, 反复储物次数: 1236, 储物柜占用率: 128 },
+  { label: '1.0', 储物柜数量: 1234, 储物数量: 1234, 反复储物次数: 786, 储物柜占用率: 218},
+  { label: '未评分', 储物柜数量: 1234, 储物数量: 1234, 反复储物次数: 666, 储物柜占用率: 216 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['防火墙预警次数', '预警病毒数量', '预警反馈信息','病毒恢复信息'], // 展开字段集
+  fields: ['储物柜数量', '储物数量', '反复储物次数','储物柜占用率'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  病毒恢复信息: {
+  储物柜占用率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '防火墙预警次数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '预警病毒数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '预警反馈信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '病毒恢复信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '储物柜数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '储物数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '反复储物次数', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '储物柜占用率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '病毒恢复信息') {
+              if (geom.getYScale().field === value && value === '储物柜占用率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '病毒恢复信息') {
+              } else if (geom.getYScale().field === 'value' && value !== '储物柜占用率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -110,7 +110,7 @@ const OfflineData = ({
             if (value === '预警信息') {
               return '#41a2fc';
             }
-            if (value === '预警病毒数量') {
+            if (value === '储物数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*病毒恢复信息" color="#fad248" size={3} />
+        <Geom type="line" position="label*储物柜占用率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

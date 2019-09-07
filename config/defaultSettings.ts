@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '防火墙安全信息预警反馈系统',
+  title: '泰禾自助智能储物柜系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
