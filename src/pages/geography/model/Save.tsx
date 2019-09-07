@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑长途汽车信息"
+                title="编辑车次信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,42 +44,42 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="hj" label="长途汽车编号" >
+                    <Form.Item key="hj" label="编号" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="长途汽车车型" >
+                    <Form.Item key="dw" label="发车时刻" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="驾驶员" >
+                    <Form.Item key="ren" label="列车类别" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="汽车座位数量" >
+                    <Form.Item key="riqi" label="票价" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="qk" label="有无空调" >
+                    <Form.Item key="qk" label="沿途车站" >
                         {getFieldDecorator('qk', {
                             initialValue: currentItem.qk,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="汽车磨损度（%）" >
+                    <Form.Item key="process" label="余票占比（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

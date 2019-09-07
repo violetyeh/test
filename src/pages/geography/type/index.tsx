@@ -19,66 +19,66 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'ticketNO00032',
-       hj:'合川',
-       mc:'busNO19',
-       bs:'江津',
+       id: 'TZ00032',
+       hj:'赵玲玲',
+       mc:'不能把易燃易爆等危险品携带上车。',
+       bs:'G6001',
        bcy:'2019年9月5日',
        state: 1,
     },
     {
-        id: 'ticketNO00049',
-        hj:'永川',
-        mc:'busNO18',
-        bs:'合川',
+        id: 'TZ00049',
+        hj:'王梦洁',
+        mc:'特别注意检查自己的行李',
+        bs:'G9998',
         bcy:'2019年9月4日',
         state: 1,
      },
      {
-        id: 'ticketNO00036',
-        hj:'江津',
-        mc:'busNO17',
-        bs:'永川',
+        id: 'TZ00036',
+        hj:'江云云',
+        mc:'不要在车厢连接处逗留',
+        bs:'C1023',
         bcy:'2019年9月3日',
         state: 1,
      },
      {
-        id: 'ticketNO00047',
-        hj:'长沙',
-        mc:'busNO16',
-        bs:'成都',
+        id: 'TZ00047',
+        hj:'刘艳',
+        mc:'不要再车厢里来回穿行',
+        bs:'C1058',
         bcy:'2019年9月2日',
         state: 1,
      },
      {
-        id: 'ticketNO00022',
-        hj:'重庆',
-        mc:'busNO15',
-        bs:'长沙',
+        id: 'TZ00022',
+        hj:'王梦洁',
+        mc:'不能将废弃物扔出窗外，以免砸伤他人。',
+        bs:'D5041',
         bcy:'2019年9月1日',
         state: 1,
      },
      {
-        id: 'ticketNO00047',
-        hj:'蒲元',
-        mc:'busNO14',
-        bs:'成都',
+        id: 'TZ00047',
+        hj:'赵玲玲',
+        mc:'乘车时，不要将头、手伸出窗外',
+        bs:'Z5064',
         bcy:'2019年9月7日',
         state: 1,
      },
      {
-        id: 'ticketNO00036',
-        hj:'汶川',
-        mc:'busNO13',
-        bs:'广谱',
+        id: 'TZ00036',
+        hj:'张凤',
+        mc:'不能乱动车厢内的紧急制动阀和各种仪表，以免导致事故发生。',
+        bs:'Z5073',
         bcy:'2019年9月8日',
         state: 1,
      },
      {
-        id: 'ticketNO00012',
-        hj:'重庆',
-        mc:'busNO12',
-        bs:'成都',
+        id: 'TZ00012',
+        hj:'赵玲玲',
+        mc:'倒热水时不要过满，以免列车晃动热水溅出后烫伤人。',
+        bs:'T4901',
         bcy:'2019年9月6日',
         state: 1,
      },
@@ -94,33 +94,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车票编号',
+            title: '通知编号',
             dataIndex: 'id',
         },
         {
-            title: '汽车编号',
+            title: '通知事件',
             dataIndex: 'mc',
-            render: (text) => <Tag color="green">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
             
         },
         {
-            title: '起始城市',
+            title: '播报人',
             dataIndex: 'hj',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
-            title: '到达城市',
+            title: '车次',
             dataIndex: 'bs',
-            render: (text) => <Tag color="blue">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '购票日期',
+            title: '通知时间',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '是否过期',
+            title: '通报完成',
             dataIndex: 'jl',
             render: () => <Switch checkedChildren="否" unCheckedChildren="是" />,
         },
@@ -151,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车票信息管理"
+                title="乘车常识通报管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

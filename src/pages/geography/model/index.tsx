@@ -19,74 +19,74 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: 'CTQC01201',
-        dw:'特大型客车(长度大于12米)',
-        ren:'刘威',
+        hj: 'MESBH0231',
+        dw:'6:00',
+        ren:'G（高速动车）',
         riqi:'80',
-        qk:'有',
+        qk:'双寨站-扎麻隆站-石崖庄站',
         process: 1,
         
     },
     {
-        hj: 'CTQC01202',
-        dw:'大型客车(长度为9-12米)',
-        ren:'孟浩',
+        hj: 'MESBH0232',
+        dw:'6:15',
+        ren:'C（城际动车）',
         riqi:'60',
-        qk:'无',
+        qk:'成都--德阳--绵阳--江油--广元--略阳',
         process: 5,
         
     },
     {
-        hj: 'CTQC01203 ',
-        dw:'特大型客车(长度大于12米)',
-        ren:'唐宇',
+        hj: 'MESBH0233 ',
+        dw:'6:30',
+        ren:'D（普通动车）',
         riqi:'80',
-        qk:'有',
+        qk:'江油--广元--略阳--微县--宝鸡',
         process: 2,
         
     },
     {
-        hj: 'CTQC01204',
-        dw:'大型客车(长度为9-12米)',
-        ren:'李白白',
+        hj: 'MESBH0234',
+        dw:'7:00',
+        ren:'Z（直达特快）',
         riqi:'60',
-        qk:'无',
+        qk:'西安--渭南--华山--三门峡西',
         process: 1,
         
     },
     {
-        hj: 'CTQC01205',
-        dw:'中型客车(长度为6-9米)',
-        ren:'明楼',
+        hj: 'MESBH0235',
+        dw:'8:30',
+        ren:'T（特快）',
         riqi:'40',
-        qk:'有',
+        qk:'洛阳--新乡--汤阴--安阳--邯郸',
         process:8,
         
     },
     {
-        hj: 'CTQC01206',
-        dw:'小于6米的小型客车',
-        ren:'明玉',
+        hj: 'MESBH0236',
+        dw:'8:00',
+        ren:'K（快速）',
         riqi:'30',
-        qk:'无',
+        qk:'邯郸--沙河市--邢台--石家庄--定州',
         process: 7,
         
     },
     {
-        hj: 'CTQC01207',
-        dw:'中型客车(长度为6-9米)',
-        ren:'刘茵茵',
+        hj: 'MESBH0237',
+        dw:'9:30',
+        ren:'L（临客）',
         riqi:'40',
-        qk:'有',
+        qk:'汤阴--安阳--邯郸--沙河市--邢台',
         process:6,
         
     },
     {
-        hj: 'CTQC01208',
-        dw:'大型客车(长度为9-12米)',
-        ren:'赵湾',
+        hj: 'MESBH0238',
+        dw:'9:00',
+        ren:'Y（旅游列车）',
         riqi:'60',
-        qk:'有',
+        qk:'石家庄--定州--保定--高碑店--北京西',
         process: 4,
         
     },
@@ -103,33 +103,33 @@ class Model extends Component<ModelProps, ModelState>{
     columns: ColumnProps<any>[] = [
        
         {
-            title: '长途汽车编号',
+            title: '编号',
             dataIndex: 'hj',
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '长途汽车车型',
+            title: '发车时刻',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '驾驶员',
+            title: '列车类别',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '汽车座位数量',
+            title: '票价',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '有无空调',
+            title: '沿途车站',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '汽车磨损度',
+            title: '余票占比',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -160,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="长途汽车信息管理"
+                title="车次信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
