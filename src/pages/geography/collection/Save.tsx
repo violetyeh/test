@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="储物柜编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,7 +52,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="ma" label="过滤规则" >
+                    <Form.Item key="ma" label="开启操作" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -61,7 +61,7 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                    
-                    <Form.Item key="fl" label="防火墙操作" >
+                    <Form.Item key="fl" label="空闲状态" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
@@ -83,7 +83,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="dbz" label="DNS方式" >
+                    <Form.Item key="dbz" label="密码获取方式" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(

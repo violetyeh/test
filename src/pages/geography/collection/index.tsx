@@ -130,7 +130,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'nl',
         },
         {
-            title: '密码方式',
+            title: '密码获取方式',
             dataIndex: 'dbz',
             render: (text) => <Tag color="red">{text}</Tag>,
         },

@@ -104,7 +104,7 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '病毒数量') {
+            if (value === '储物柜数量') {
               return '#2b6cbb';
             }
             if (value === '预警信息') {
