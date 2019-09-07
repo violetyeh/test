@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾微信售票系统',
+  title: 'Inbound and Outbound Stations',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

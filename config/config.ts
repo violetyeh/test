@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '售票管理',
+          name: '营运客车例检检查',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '车次信息',
+          name: '报班车辆',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '票务信息',
+          name: '安检信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
