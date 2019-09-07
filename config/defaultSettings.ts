@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Inbound and Outbound Stations',
+  title: '泰禾客运汽车进出站风险检测系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
