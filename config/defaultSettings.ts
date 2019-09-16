@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '视频云存储管理系统',
+  title: '智能安防监控系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

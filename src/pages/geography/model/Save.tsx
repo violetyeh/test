@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储文件信息"
+                title="编辑监控设备信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="所属用户" >
+                    <Form.Item key="pinlv" label="设备型号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="终端域名" >
+                    <Form.Item key="date" label="IP地址" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="文件大小（M）" >
+                    <Form.Item key="type" label="监控设备存储量（GB）" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
@@ -77,13 +77,6 @@ class Save extends Component<SaveProps, SaveState>{
                             initialValue: currentItem.process,
                         })(
                             <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
-                        })(
-                            <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
                 </Form>

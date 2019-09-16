@@ -19,67 +19,67 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'WJ0008S0J',
+        id: 'JKSB-02358S0J',
         date: '218.207.107.21',
-        type: '17',
+        type: '50',
         status: '启用',
-        pinlv: 'TESTUSER1',
+        pinlv: '1路IP-Video',
         process: 23,
     },
     {
-        id: 'WJ00072IK',
+        id: 'JKSB-023572IK',
         date: '218.207.107.03',
-        type: '15',
+        type: '150',
         status: '启用',
-        pinlv: 'TESTUSER2',
+        pinlv: 'KMH4400式PCDVR',
         process: 54,
     },
     {
-        id: 'WJ00063JJ',
+        id: 'JKSB-023563JJ',
         date: '218.207.107.17',
-        type: '10',
+        type: '100',
         status: '启用',
-        pinlv: 'TESTUSER3',
+        pinlv: '4路IP-Video',
         process: 44,
     },
     {
-        id: 'WJ0000191',
+        id: 'JKSB-02350191',
         date: '218.207.107.12',
-        type: '18',
+        type: '60',
         status: '启用',
-        pinlv: 'TESTUSER4',
+        pinlv: '1路IP-Video',
         process: 30,
     },
     {
-        id: 'WJ0002SI1',
+        id: 'JKSB-02352SI1',
         date: '218.207.107.05',
-        type: '11',
+        type: '110',
         status: '启用',
-        pinlv: 'TESTUSER5',
+        pinlv: '嵌入式DVR',
         process: 88,
     },
     {
-        id: 'WJ00001IOS',
+        id: 'JKSB-023501IOS',
         date: '218.207.107.56',
-        type: '56',
+        type: '560',
         status: '启用',
-        pinlv: 'TESTUSER6',
+        pinlv: '4路IP-Video',
         process: 90,
     },
     {
-        id: 'YSIW9s1',
+        id: 'JKSB-02359s1',
         date: '218.207.107.24',
-        type: '11',
+        type: '110',
         status: '启用',
-        pinlv: 'TESTUSER7',
+        pinlv: 'KMH4400式PCDVR',
         process: 70,
     },
     {
-        id: 'WJ00080SJ',
+        id: 'JKSB-023580SJ',
         date: '218.207.107.36',
-        type: '11',
+        type: '50',
         status: '启用',
-        pinlv: 'TESTUSER8',
+        pinlv: '嵌入式DVR',
         process: 67,
     },
    
@@ -98,18 +98,18 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '所属用户',
+            title: '设备型号',
             dataIndex: 'pinlv',
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '终端域名',
+            title: 'IP地址',
             dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '文件大小（M）',
+            title: '监控设备存储量（GB）',
             dataIndex: 'type',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
             title: '剩余空间',
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="存储文件信息"
+                title="监控设备管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

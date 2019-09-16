@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '存储服务管理',
+          name: '监控视频管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '存储文件信息',
+          name: '监控设备管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '存储终端信息',
+          name: '安防终端信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

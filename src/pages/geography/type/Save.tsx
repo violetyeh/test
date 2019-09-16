@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑存储终端信息"
+                title="编辑安防终端信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -66,20 +66,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="容量(GB)" >
+                    <Form.Item key="sj" label="安防信息传输进度（%）" >
                         {getFieldDecorator('sj', {
                             initialValue: currentItem.sj,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="终端传输速度（K/秒）" >
-                        {getFieldDecorator('fenlei', {
-                            initialValue: currentItem.fenlei,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
                     <Form.Item key="state" label="终端状态检测时间" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
