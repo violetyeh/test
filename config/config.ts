@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '工程信息',
+          name: '规划管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '检测数据管理',
+          name: '规划通则',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '检测任务管理',
+          name: '编制管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

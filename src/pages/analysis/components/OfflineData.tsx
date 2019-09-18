@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 隧道质量信息: 2563, 样品检测数量: 1300, 检测进度: 1600, 样品检测信息: 2082 },
-  { label: '0.2', 隧道质量信息: 2900, 样品检测数量: 4880, 检测进度: 1700, 样品检测信息: 1463 },
-  { label: '0.3', 隧道质量信息: 4950, 样品检测数量: 1950, 检测进度: 3800, 样品检测信息: 1075 },
-  { label: '0.4', 隧道质量信息: 1500, 样品检测数量: 1500, 检测进度: 1390, 样品检测信息: 2156 },
-  { label: '0.5', 隧道质量信息: 1234, 样品检测数量: 1234, 检测进度: 1166, 样品检测信息: 1266 },
-  { label: '0.6', 隧道质量信息: 3234, 样品检测数量: 2634, 检测进度: 1666, 样品检测信息: 1254 },
-  { label: '0.7', 隧道质量信息: 3634, 样品检测数量: 1434, 检测进度: 1666, 样品检测信息: 1283 },
-  { label: '0.8', 隧道质量信息: 3634, 样品检测数量: 4284, 检测进度: 1666, 样品检测信息: 2175 },
-  { label: '0.9', 隧道质量信息: 5434, 样品检测数量: 1334, 检测进度: 2236, 样品检测信息: 1281 },
-  { label: '1.0', 隧道质量信息: 1234, 样品检测数量: 1234, 检测进度: 7861, 样品检测信息:1183 },
-  { label: '未评分', 隧道质量信息: 1234, 样品检测数量: 1234, 检测进度: 4666, 样品检测信息: 2164 },
+  { label: '0.1', 规划辅助: 2563, 辅助编制数量: 1300, 编制进度: 1600, 辅助详细信息: 2082 },
+  { label: '0.2', 规划辅助: 2900, 辅助编制数量: 4880, 编制进度: 1700, 辅助详细信息: 1463 },
+  { label: '0.3', 规划辅助: 4950, 辅助编制数量: 1950, 编制进度: 3800, 辅助详细信息: 1075 },
+  { label: '0.4', 规划辅助: 1500, 辅助编制数量: 1500, 编制进度: 1390, 辅助详细信息: 2156 },
+  { label: '0.5', 规划辅助: 1234, 辅助编制数量: 1234, 编制进度: 1166, 辅助详细信息: 1266 },
+  { label: '0.6', 规划辅助: 3234, 辅助编制数量: 2634, 编制进度: 1666, 辅助详细信息: 1254 },
+  { label: '0.7', 规划辅助: 3634, 辅助编制数量: 1434, 编制进度: 1666, 辅助详细信息: 1283 },
+  { label: '0.8', 规划辅助: 3634, 辅助编制数量: 4284, 编制进度: 1666, 辅助详细信息: 2175 },
+  { label: '0.9', 规划辅助: 5434, 辅助编制数量: 1334, 编制进度: 2236, 辅助详细信息: 1281 },
+  { label: '1.0', 规划辅助: 1234, 辅助编制数量: 1234, 编制进度: 7861, 辅助详细信息:1183 },
+  { label: '未评分', 规划辅助: 1234, 辅助编制数量: 1234, 编制进度: 4666, 辅助详细信息: 2164 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['隧道质量信息', '样品检测数量', '检测进度','样品检测信息'], // 展开字段集
+  fields: ['规划辅助', '辅助编制数量', '编制进度','辅助详细信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  样品检测信息: {
+  辅助详细信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '隧道质量信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '样品检测数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '检测进度', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '样品检测信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '规划辅助', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '辅助编制数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '编制进度', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '辅助详细信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '样品检测信息') {
+              if (geom.getYScale().field === value && value === '辅助详细信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '样品检测信息') {
+              } else if (geom.getYScale().field === 'value' && value !== '辅助详细信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -107,10 +107,10 @@ const OfflineData = ({
             if (value === '检测数量') {
               return '#2b6cbb';
             }
-            if (value === '隧道质量信息') {
+            if (value === '规划辅助') {
               return '#41a2fc';
             }
-            if (value === '样品检测数量') {
+            if (value === '辅助编制数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*样品检测信息" color="#fad248" size={3} />
+        <Geom type="line" position="label*辅助详细信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

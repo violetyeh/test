@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路隧道施工质量检测及评价系统软件',
+  title: '控制性详细规划辅助编制软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

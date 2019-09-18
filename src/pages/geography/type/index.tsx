@@ -20,65 +20,65 @@ interface TypeState {
 const mockData = [
     {
         id: 'APOI-0026',
-        mc:'YP-BH-12',
-        gg:'土的回弹模量试验',
-        hz:'路基填筑',
+        mc:'风格',
+        gg:'绿地',
+        hz:'城市轮廓线',
         jd:76,
         state: 1,
      },
      {
         id: 'APOI-0027',
-        mc:'YP-BH-20',
-        gg:'土的天然稠度试验',
-        hz:'隧道顶部填筑',
+        mc:'色彩',
+        gg:'水体',
+        hz:'标识以及无障碍系统',
         jd:100,
         state: 1,
      },
      {
         id: 'APOI-0028',
-        mc:'YP-BH-15',
-        gg:'土的烧失率试验',
-        hz:'路基填筑',
+        mc:'建筑群体组合空间关系',
+        gg:'商业',
+        hz:'城市轮廓线',
         jd:88,
         state: 1,
      }, 
     {
        id: 'APOI-0021',
-       mc:'YP-BH-02',
-       gg:'土的承载比',
-       hz:'路基填筑',
+       mc:'风格',
+       gg:'绿地',
+       hz:'街道',
        jd:98,
        state: 1,
     },
     {
         id: 'APOI-0022',
-        mc:'YP-BH-63',
-        gg:'土的颗粒分析试验',
-        hz:'隧道顶部填筑',
+        mc:'高度',
+        gg:'城市广场',
+        hz:'标志性建筑',
         jd:100,
         state: 1,
      },
      {
         id: 'APOI-0023',
-        mc:'YP-BH-71',
-        gg:'土的比重试验',
-        hz:'路基填筑',
+        mc:'高度',
+        gg:'办公',
+        hz:'标志性建筑',
         jd:56,
         state: 1,
      },
      {
         id: 'APOI-0024',
-        mc:'YP-BH-1',
-        gg:'土的密度试验',
-        hz:'隧道顶部填筑',
+        mc:'历史文化遗产保护提出控制',
+        gg:'居住',
+        hz:'夜间景观',
         jd:74,
         state: 1,
      },
      {
         id: 'APOI-0025',
-        mc:'YP-BH-03',
-        gg:'土的含水率试验',
-        hz:'路基填筑',
+        mc:'高度',
+        gg:'城市广场',
+        hz:'街道',
         jd:95,
         state: 1,
      },
@@ -101,32 +101,28 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检测名称',
+            title: '功能空间',
             dataIndex: 'gg',
-            render: (text) => <Tag color="black">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         
         {
-            title: '工程部位/用途',
+            title: '环境要素',
             dataIndex: 'hz',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '样品编号',
+            title: '建筑物属性',
             dataIndex: 'mc',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '质量检测进度',
+            title: '编制进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-        {
-            title: '检测结果',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="合格" unCheckedChildren="不合格" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -154,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测任务管理"
+                title="编制管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
