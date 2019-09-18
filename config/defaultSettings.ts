@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云敏捷网络管理平台',
+  title: '管线图纸辅助设计软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

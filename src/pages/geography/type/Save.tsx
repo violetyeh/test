@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑设备网络信息"
+                title="编辑工程量"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,41 +51,41 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="IP地址" >
+                    <Form.Item key="mc" label="平面布置" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="子网掩码" >
+                    <Form.Item key="gg" label="竖向设计" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="默认网关" >
+                    <Form.Item key="hz" label="设计工程图纸需要（张）" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="首选DNS服务器" >
+                    <Form.Item key="jd" label="成果输出" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="绑定状态" >
+                    <Form.Item key="status" label="输出状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">绑定</Radio.Button>
-                               <Radio.Button value="b">未绑定</Radio.Button>
+                               <Radio.Button value="a">输出</Radio.Button>
+                               <Radio.Button value="b">未输出</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

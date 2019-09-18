@@ -23,60 +23,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'WL021',
-        fl:'00E74S5S5A6Z',
-        mc:'192.168.1.07',
-        ma:'192.168.1.107',
-        nl:'Cloud Times',
+        id: 'ST021',
+        fl:'交互绘制管道',
+        mc:'圆形',
+        ma:'已有管线',
+        nl:'651',
     },
     {
-        id: 'WL035',
-        fl:'00E6F4D5S8E7',
-        mc:'192.168.1.05',
-        ma:'192.168.1.105',
-        nl:'Windows XP',
+        id: 'ST035',
+        fl:'自动绘制管道',
+        mc:'矩形',
+        ma:'插入符号',
+        nl:'771',
     },
     {
-        id: 'WL038',
-        fl:'00E1A2A3X5D5',
-        mc:'192.168.1.33',
-        ma:'192.168.1.133',
-        nl:'Windows XP',
+        id: 'ST038',
+        fl:'交互绘制管道',
+        mc:'矩形',
+        ma:'节点标注',
+        nl:'741',
     },
     {
-        id: 'WL021',
-        fl:'00E8A9Z6X5A2',
-        mc:'192.168.1.02',
-        ma:'192.168.1.102',
-        nl:'Windows XP',
+        id: 'ST021',
+        fl:'定义管道',
+        mc:'圆形',
+        ma:'坐标桩号标注',
+        nl:'574',
     },
     {
-        id: 'WL037',
-        fl:'00E5Z4A6D5S5',
-        mc:'192.168.1.42',
-        ma:'192.168.1.142',
-        nl:'Cloud Times',
+        id: 'ST037',
+        fl:'自动绘制管道',
+        mc:'矩形',
+        ma:'断面符号标注',
+        nl:'568s',
     },
     {
-        id: 'WL035',
-        fl:'00EC5V6D4S5A',
-        mc:'192.168.1.35',
-        ma:'192.168.1.635',
-        nl:'Cloud Times',
+        id: 'ST035',
+        fl:'定义管道',
+        mc:'矩形',
+        ma:'供回水标注',
+        nl:'704',
     },
     {
-        id: 'WL064',
-        fl:'56ZZX2DS1W5D',
-        mc:'192.168.1.33',
-        ma:'192.168.1.733',
-        nl:'Cloud Times',
+        id: 'ST064',
+        fl:'自动绘制管道',
+        mc:'圆形',
+        ma:'管道折角',
+        nl:'623',
     },
     {
-        id: 'WL078',
-        fl:'00E0423GD52S',
-        mc:'192.168.1.55',
-        ma:'192.168.1.255',
-        nl:'Windows XP',
+        id: 'ST078',
+        fl:'交互绘制管道',
+        mc:'圆形',
+        ma:'交叉管线统计',
+        nl:'545',
     },
     
 ]
@@ -96,30 +96,30 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: 'MAC地址',
+            title: '管道绘制方式',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '管道形状',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '子网',
+            title: '获取工序',
             dataIndex: 'ma',
         },
        
         {
-            title: '操作系统',
+            title: '管道里程（m）',
             dataIndex: 'nl',
         },
         {
-            title: '禁止',
+            title: '图纸识别',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >禁止</Checkbox>
+                  <Checkbox >识别</Checkbox>
                 </Fragment>
             ),
         },
@@ -152,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="网络管理"
+                title="地形图识别处理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
