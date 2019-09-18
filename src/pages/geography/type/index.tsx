@@ -20,72 +20,72 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: 'GGSJ广告系统架构设计',
+        fenlei: 'FDBZ规划编制',
         pinlv: 80,
-        yaosu: '系统操作不卡顿',
+        yaosu: '低压供电半径市中心区不大于100米，其它地区不大于250米；',
         fenceng: '孟凡',
         state: '启用',
        
     },
     {
         id: 'SER1271',
-        fenlei: 'GGSJ014广告系统架构设计',
+        fenlei: 'FDBZ014规划编制',
         pinlv: 32,
-        yaosu: '系统操作流畅',
+        yaosu: '不应设在地势低洼和可能积水的场所；',
         fenceng: '王石',
         state: '启用',
        
     },
     {
         id: 'SER1228',
-        fenlei: 'GGSJ023广告系统架构设计',
+        fenlei: 'FDBZ023规划编制',
         pinlv: 65,
-        yaosu: '系统操作不卡顿',
+        yaosu: '应满足现行国家规程、规范、规定的防火间距',
         fenceng: '钱萌',
         state: '启用',
        
     },
     {
         id: 'SER1264',
-        fenlei: 'GGSJ47广告系统架构设计',
+        fenlei: 'FDBZ47规划编制',
         pinlv: 42,
-        yaosu: '按钮点击有效',
+        yaosu: '站外应有设备运输通道且应有不少于两个抢修车辆停放位置；',
         fenceng: '张琼凡',
         state: '启用',
        
     },
     {
         id: 'SER1278',
-        fenlei: 'GGSJ36广告系统架构设计',
+        fenlei: 'FDBZ36规划编制',
         pinlv: 56,
-        yaosu: '系统操作不卡顿',
+        yaosu: '设备间下应设电缆夹层；',
         fenceng: '孟思三',
         state: '启用',
        
     },
     {
         id: 'SER1226',
-        fenlei: 'GGSJ12广告系统架构设计',
+        fenlei: 'FDBZ12规划编制',
         pinlv: 12,
-        yaosu: '界面操作流畅',
+        yaosu: '抗震设防烈度按本地设防烈度设计；',
         fenceng: '王思',
         state: '启用',
        
     },
     {
         id: 'SER1224',
-        fenlei: 'GGSJ09广告系统架构设计',
+        fenlei: 'FDBZ09规划编制',
         pinlv: 26,
-        yaosu: '界面操作不卡顿',
+        yaosu: '建筑类别三类(设计使用年限50年)； ',
         fenceng: '陈思凡',
         state: '启用',
        
     },
     {
         id: 'SER1223',
-        fenlei: 'GGSJ05广告系统架构设计',
+        fenlei: 'FDBZ05规划编制',
         pinlv: 33,
-        yaosu: '系统操作不卡顿',
+        yaosu: '地下电缆夹层防水等级2级； ',
         fenceng: '张凡',
         state: '启用',
        
@@ -107,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '架构设计名称',
+            title: '规划编制名称',
             dataIndex: 'fenlei',
         },
         {
-            title: '架构进度',
+            title: '设计进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,7 +122,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '架构设计技术要素',
+            title: '规划编制要素',
             dataIndex: 'yaosu',
         },
         {
@@ -167,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="架构剖析管理"
+                title="规划编制内容"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

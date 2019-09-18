@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: 'WZ12356JG架构广告位位置',
+        jishu: '国家标准《电力工程电缆设计规范》',
         fenceng: '张宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '规划设计',
+        name: '标准化 ',
         state: '启用',
     },
     {
         id: 'D0002',
-        jishu: 'WZ16356JG架构广告位位置',
+        jishu: '《南方电网公司10kV和35kV配网标准设计》',
         fenceng: '孟凡',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '规划设计',
+        name: '集团化 ',
         state: '启用',
     },
     {
         id: 'D0003',
-        jishu: 'WZ12656JG架构广告位位置',
+        jishu: '中国南方电网有限责任公司企业标准《中国南方电网城市配电网 技术导则》',
         fenceng: '程思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '建设',
+        name: '精细化 ',
         state: '启用',
     },
     {
         id: 'D0004',
-        jishu: 'WZ12746JG架构广告位位置',
+        jishu: '《电网标准化应用工作指导意见（试行）》',
         fenceng: '齐天',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '维护',
+        name: '集约化 ',
         state: '启用',
     },
     {
         id: 'D0005',
-        jishu: 'WZ12366JG架构广告位位置',
+        jishu: '《供电局有限公司配网安健环设施标准》',
         fenceng: '钱偲',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '规划设计',
+        name: '精细化 ',
         state: '启用',
     },
     {
         id: 'D0006',
-        jishu: 'WZ11256JG架构广告位位置',
+        jishu: '《中低压配电网规划设计技术原则（试行）》',
         fenceng: '孟宇思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '验收',
+        name: '标准化 ',
         state: '启用',
     },
     {
         id: 'D0007',
-        jishu: 'WZ112JG架构广告位位置',
+        jishu: '《南方电网公司10kV和35kV配网标准设计》',
         fenceng: '方艳',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '规划设计',
+        name: '精细化 ',
         state: '启用',
     },
     {
         id: 'D0008',
-        jishu: 'WZ11856JG架构广告位位置',
+        jishu: '《电网标准化应用工作指导意见（试行）》',
         fenceng: '姜宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '验收',
+        name: '精细化 ',
         state: '启用',
     },
 ]
@@ -102,20 +102,20 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '广告主',
+            title: '项目负责人',
             dataIndex: 'fenceng',
         },
         {
-            title: '广告位',
+            title: '设计法规标准',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '售卖类型',
+            title: '设计思路',
             dataIndex: 'name',
         },
         {
-            title: ' 广告样式',
+            title: ' 规划设计环节',
             dataIndex: 'leixing',
         },
 
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="架构技术管理"
+                title="设计依据管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

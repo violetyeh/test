@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 架构信息: 280, 设计信息: 280, 架构价格: 2260, 总收益率: 12 },
-  { label: '0.2', 架构信息: 180, 设计信息: 180, 架构价格: 1300, 总收益率: 13 },
-  { label: '0.3', 架构信息: 950, 设计信息: 950, 架构价格: 900, 总收益率: 15 },
-  { label: '0.4', 架构信息: 500, 设计信息: 500, 架构价格: 390, 总收益率: 11 },
-  { label: '0.5', 架构信息: 170, 设计信息: 170, 架构价格: 1500, 总收益率: 23 },
-  { label: '0.6', 架构信息: 170, 设计信息: 170, 架构价格: 2010, 总收益率: 56 },
-  { label: '0.7', 架构信息: 170, 设计信息: 170, 架构价格: 1000, 总收益率: 17 },
-  { label: '0.8', 架构信息: 170, 设计信息: 170, 架构价格: 1000, 总收益率: 24 },
-  { label: '0.9', 架构信息: 170, 设计信息: 170, 架构价格: 1600, 总收益率: 16 },
-  { label: '1.0', 架构信息: 170, 设计信息: 170, 架构价格: 1500, 总收益率: 18 },
-  { label: '未评分', 架构信息: 170, 设计信息: 170, 架构价格: 100, 总收益率: 12 },
+  { label: '0.1', 法规标准信息: 280, 设计信息: 280, 新增法规: 226, 设计进度: 92 },
+  { label: '0.2', 法规标准信息: 180, 设计信息: 180, 新增法规: 130, 设计进度: 83 },
+  { label: '0.3', 法规标准信息: 95, 设计信息: 95, 新增法规: 90, 设计进度: 95 },
+  { label: '0.4', 法规标准信息: 500, 设计信息: 500, 新增法规: 390, 设计进度: 81 },
+  { label: '0.5', 法规标准信息: 170, 设计信息: 170, 新增法规: 150, 设计进度: 93 },
+  { label: '0.6', 法规标准信息: 170, 设计信息: 170, 新增法规: 201, 设计进度: 56 },
+  { label: '0.7', 法规标准信息: 170, 设计信息: 170, 新增法规: 100, 设计进度: 77 },
+  { label: '0.8', 法规标准信息: 170, 设计信息: 170, 新增法规: 100, 设计进度: 84 },
+  { label: '0.9', 法规标准信息: 170, 设计信息: 170, 新增法规: 160, 设计进度: 86 },
+  { label: '1.0', 法规标准信息: 170, 设计信息: 170, 新增法规: 150, 设计进度: 98 },
+  { label: '未评分', 法规标准信息: 170, 设计信息: 170, 新增法规: 100, 设计进度: 72 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['架构信息', '设计信息', '架构价格'], // 展开字段集
+  fields: ['法规标准信息', '设计信息', '新增法规','设计进度'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  总收益率: {
+  设计进度: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '架构信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '法规标准信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
             { value: '设计信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '架构价格', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '总收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '新增法规', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '设计进度', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '总收益率') {
+              if (geom.getYScale().field === value && value === '设计进度') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '总收益率') {
+              } else if (geom.getYScale().field === 'value' && value !== '设计进度') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*总收益率" color="#fad248" size={3} />
+        <Geom type="line" position="label*设计进度" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

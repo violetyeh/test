@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '大型广告系统架构系统',
+  title: '规划设计法规标准信息平台系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
