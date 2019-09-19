@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路养护检测管理系统',
+  title: '叉口道路规划设计软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

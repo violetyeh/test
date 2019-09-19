@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '公路交通阻断信息',
+          name: '交叉口交通流',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '基础数据',
+          name: '道路功能分类',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '养护日常巡查管理',
+          name: '设计依据',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

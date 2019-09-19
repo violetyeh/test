@@ -19,77 +19,78 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'TFSJ010292',
-        fenlei: '该县巡检机构',
-        pinlv: 50,
-        yaosu: '100万-200万',
-        fenceng: '王源',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010271',
-        fenlei: '该省巡检机构',
-        pinlv: 62,
-        yaosu: '50万-100万',
-        fenceng: '刘艺',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010228',
-        fenlei: '该县巡检机构',
-        pinlv: 65,
-        yaosu: '100万-200万',
-        fenceng: '李毅',
-        state: '启用',
-       
-    },
-    {
-        id: 'TFSJ010264',
-        fenlei: '第三方巡检机构',
-        pinlv: 42,
-        yaosu: '10万-50万',
-        fenceng: '赵丽',
-        state: '启用',
-       
-    },
-    {
         id: 'TFSJ010278',
-        fenlei: '第三方巡检机构',
+        fenlei: '公路交通和标线设置规范 JTG',
         pinlv: 56,
-        yaosu: '100万-200万',
+        yaosu: '信号机',
         fenceng: '孟非',
         state: '启用',
        
     },
     {
         id: 'TFSJ010226',
-        fenlei: '第三方巡检机构',
+        fenlei: '道路交通信号倒计时显示器 GA',
         pinlv: 12,
-        yaosu: '10万-50万',
+        yaosu: '信号灯灯杆',
         fenceng: '江大',
         state: '启用',
        
     },
     {
         id: 'TFSJ010224',
-        fenlei: '该县巡检机构',
+        fenlei: '公路交通标志反膜  GB',
         pinlv: 26,
-        yaosu: '50万-100万',
+        yaosu: '指路标牌及分道标牌',
         fenceng: '汪峰',
         state: '启用',
        
     },
     {
         id: 'TFSJ010223',
-        fenlei: '第三方巡检机构',
+        fenlei: '公路车辆智能监测记录系统技术规范',
         pinlv: 33,
-        yaosu: '100万-200万',
+        yaosu: '护栏',
         fenceng: '张三三',
         state: '启用',
        
     },
+    {
+        id: 'TFSJ010292',
+        fenlei: '道路交通信号机 GA',
+        pinlv: 50,
+        yaosu: '护栏',
+        fenceng: '王源',
+        state: '启用',
+       
+    },
+    {
+        id: 'TFSJ010271',
+        fenlei: '道路交通信号灯 GB',
+        pinlv: 62,
+        yaosu: '指路标牌及分道标牌',
+        fenceng: '刘艺',
+        state: '启用',
+       
+    },
+    {
+        id: 'TFSJ010228',
+        fenlei: '道路交通信号灯设置与安装规范 GB',
+        pinlv: 65,
+        yaosu: '方向指示信号灯',
+        fenceng: '李毅',
+        state: '启用',
+       
+    },
+    {
+        id: 'TFSJ010264',
+        fenlei: '道路交通标志和标线 GB',
+        pinlv: 42,
+        yaosu: '信号灯灯杆',
+        fenceng: '赵丽',
+        state: '启用',
+       
+    },
+
     
 ]
 
@@ -107,11 +108,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '巡检机构',
+            title: '设计依据及标准',
             dataIndex: 'fenlei',
         },
         {
-            title: '巡检进度',
+            title: '设计进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,11 +123,11 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '养护预算',
+            title: '规划类型',
             dataIndex: 'yaosu',
         },
         {
-            title: '巡检负责人',
+            title: '负责人',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
@@ -163,7 +164,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="养护日常巡查管理"
+                title="设计依据"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

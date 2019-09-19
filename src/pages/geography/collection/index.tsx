@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'LUMC0211',
+        id: 'DKL0121',
         fenceng: '大兴路',
-        name: '3404.141',
-        leixing: '3404.151',
-        jishu: '待审批',
+        name: '中内车道',
+        leixing: '不小于40米',
+        jishu: '待规划',
         state: '启用',
     },
     {
-        id: 'LUMC0212',
+        id: 'DKL0122',
         fenceng: '海滨路',
-        name: '3405.111',
-        leixing: '3405.121',
-        jishu: '待审批',
+        name: '中外车道',
+        leixing: '20—24米',
+        jishu: '待规划',
         state: '启用',
     },
     {
-        id: 'LUMC0213',
+        id: 'DKL0123',
         fenceng: '红石路',
-        name: '3404.121',
-        leixing: '3404.131',
-        jishu: '待审批',
+        name: '中内车道',
+        leixing: '14—18米',
+        jishu: '待规划',
         state: '启用',
     },
     {
-        id: 'LUMC0214',
+        id: 'DKL0124',
         fenceng: '华怡路',
-        name: '3102.125',
-        leixing: '3102.135',
-        jishu: '已审批',
+        name: '中外车道',
+        leixing: '20—24米',
+        jishu: '已规划',
         state: '启用',
     },
     {
-        id: 'LUMC0215',
+        id: 'DKL0125',
         fenceng: '金家岩路',
-        name: '3256.021',
-        leixing: '3256.031',
-        jishu: '待审批',
+        name: '中线车道',
+        leixing: '14—18米',
+        jishu: '待规划',
         state: '启用',
     },
     {
-        id: 'LUMC0216',
+        id: 'DKL0126',
         fenceng: '岚园路',
-        name: '3106.231',
-        leixing: '3106.241',
-        jishu: '审批不通过',
+        name: '超车道',
+        leixing: '30—40米',
+        jishu: '规划不通过',
         state: '启用',
     },
     {
-        id: 'LUMC0217',
+        id: 'DKL0127',
         fenceng: '民权路',
-        name: '3021.025',
-        leixing: '3021.035',
-        jishu: '已审批',
+        name: '行车道',
+        leixing: '20—24米',
+        jishu: '已规划',
         state: '启用',
     },
     {
-        id: 'LUMC0218',
+        id: 'DKL0128',
         fenceng: '青年路',
-        name: '3103.042',
-        leixing: '3103.052',
-        jishu: '待审批',
+        name: '主线道',
+        leixing: '30—40米',
+        jishu: '待规划',
         state: '启用',
     },
    
@@ -99,19 +99,19 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '路线编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '路线名称',
+            title: '路口名称',
             dataIndex: 'fenceng',
         },
         {
-            title: '阻断起点桩号',
+            title: '车道类型',
             dataIndex: 'name',
         },
         {
-            title: ' 阻断止点桩号',
+            title: ' 进口道宽度',
             dataIndex: 'leixing',
         },
         {
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="公路交通阻断信息"
+                title="交叉口交通流"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
