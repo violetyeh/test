@@ -21,65 +21,73 @@ const mockData = [
     
      {
         id: 'FANG0024',
-        mc:'绕城高速公路',
-        gg:'开挖至-6.1m（深6.1m）',
-        hz:'20',
+        mc:'孤植',
+        gg:'落叶灌木',
+        hz:'4',
+        sg:'12',
         jd:74,
         state: 1,
      },
      {
         id: 'FANG0025',
-        mc:'跃进路',
-        gg:'拆除1支撑',
-        hz:'20',
+        mc:'列植',
+        gg:'花卉藤本',
+        hz:'5',
+        sg:'3',
         jd:95,
         state: 1,
      },
      {
         id: 'FANG0026',
-        mc:'新南路',
-        gg:'在-5m（深5m）处加撑',
-        hz:'15',
+        mc:'孤植',
+        gg:'落叶乔木',
+        hz:'4',
+        sg:'12',
         jd:76,
         state: 1,
      },
      {
         id: 'FANG0021',
-        mc:'万寿路',
-        gg:'开挖至-6.6m（深6.6m）',
-        hz:'15',
+        mc:'片植',
+        gg:'常绿灌木',
+        hz:'3',
+        sg:'15',
         jd:98,
         state: 1,
      },
      {
          id: 'FANG0022',
-         mc:'五四路',
-         gg:'在-5.4m（深5.4m）处换撑',
-         hz:'20',
+         mc:'孤植',
+         gg:'常绿乔木',
+         hz:'4',
+         sg:'9',
          jd:100,
          state: 1,
       },
       {
          id: 'FANG0023',
-         mc:'石青支路',
-         gg:'开挖至-5m（深5m）',
-         hz:'15',
+         mc:'片植',
+         gg:'常绿灌木',
+         hz:'5',
+         sg:'10',
          jd:56,
          state: 1,
       },
      {
         id: 'FANG0027',
-        mc:'石杨路',
-        gg:'在-4.4m（深4.4m）处加撑',
-        hz:'10',
+        mc:'列植',
+        gg:'落叶乔木',
+        hz:'3',
+        sg:'12',
         jd:100,
         state: 1,
      },
      {
         id: 'FANG0028',
-        mc:'桥鸿路',
-        gg:'开挖至-6m（深6m）',
-        hz:'15',
+        mc:'片植',
+        gg:'常绿乔木',
+        hz:'5',
+        sg:'8',
         jd:88,
         state: 1,
      }, 
@@ -100,29 +108,30 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '公路名称',
+            title: '种植方式',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '工况状态',
+            title: '植物类型',
             dataIndex: 'gg',
         },
         {
-            title: '地面超载（Kpa）',
+            title: '冠幅（米）',
             dataIndex: 'hz',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '检测进度',
+            title: '树高（米）',
+            dataIndex: 'sg',
+            render: (text) => <Tag color="RED">{text}</Tag>,
+        },
+        {
+            title: '设计进度',
             dataIndex: 'jd',
             render: (text) => <Progress percent={text} status="active" />,
         },
-        {
-            title: '自动检测',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
-        },
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -150,7 +159,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="公路环境参数管理"
+                title="种植设计"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

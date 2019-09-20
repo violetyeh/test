@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '检测参数核查',
+          name: '地形分析',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '质量动态监控',
+          name: '景观规划',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '公路环境参数管理',
+          name: '种植设计',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

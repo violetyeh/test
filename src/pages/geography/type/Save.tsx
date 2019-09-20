@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑公路环境参数信息"
+                title="编辑种植设计信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,44 +51,42 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="公路名称" >
+                    <Form.Item key="mc" label="种植方式" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="工况状态" >
+                    <Form.Item key="gg" label="植物类型" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="地面超载（Kpa）" >
+                    <Form.Item key="hz" label="冠幅（米）" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="检测进度（%）" >
+                    <Form.Item key="sg" label="树高（米）" >
+                        {getFieldDecorator('sg', {
+                            initialValue: currentItem.sg,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jd" label="设计进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="自动检测" >
-                        {getFieldDecorator('status', {
-                            initialValue: currentItem.status,
-                        })(
-                            <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">自动</Radio.Button>
-                               <Radio.Button value="b">手动</Radio.Button>
-                            </Radio.Group>,
-                        )}
-                    </Form.Item>
+                   
                 </Form>
             </Modal>
         );

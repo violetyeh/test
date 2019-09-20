@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑检测参数"
+                title="编辑地形信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="等级类型" >
+                    <Form.Item key="nl" label="坡度区间%" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="项目" >
+                    <Form.Item key="mc" label="层名" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="本次检测参数" >
+                    <Form.Item key="ma" label="平面面积" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -74,7 +74,7 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                    
-                    <Form.Item key="fl" label="参数对应设备" >
+                    <Form.Item key="fl" label="占总面积比（%）" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(

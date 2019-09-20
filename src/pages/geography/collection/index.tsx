@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag, Checkbox } from "antd";
+import { Divider, message, Card, Switch, Tag, Checkbox, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -24,59 +24,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'AQGZE-00035',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合丙级',
+        fl:'26.38',
+        mc:'坡度1',
+        ma:'21456.36',
+        nl:'0.00-37.59',
     },
     {
         id: 'AQGZE-00064',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        fl:'0.31',
+        mc:'坡度2',
+        ma:'2521.25',
+        nl:'37.59-75.18',
     },
     {
         id: 'AQGZE-00078',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        fl:'24.29',
+        mc:'坡度3',
+        ma:'32541.28',
+        nl:'75.18-112.76',
     },
     {
         id: 'AQGZE-00021',
-        fl:'万能材料试验机',
-        mc:'钢筋（含接头）',
-        ma:'屈服强度，伸长度，抗拉强度',
-        nl:'公路工程-综合乙级',
+        fl:'0.12',
+        mc:'坡度4',
+        ma:'1254.21',
+        nl:'112.76-150.35',
     },
     {
         id: 'AQGZE-00035',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        fl:'0.24',
+        mc:'坡度5',
+        ma:'2563.21',
+        nl:'150.35-187.79',
     },
     {
         id: 'AQGZE-00038',
-        fl:'基桩超声检测仪',
-        mc:'地基基础',
-        ma:'基装完整性',
-        nl:'公路工程-综合丙级',
+        fl:'29.35',
+        mc:'坡度6',
+        ma:'15642.36',
+        nl:'187.79-225.53',
     },
     {
         id: 'AQGZE-00021',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        fl:'31.25',
+        mc:'坡度7',
+        ma:'63254.12',
+        nl:'225.53-263.11',
     },
     {
         id: 'AQGZE-00037',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合乙级',
+        fl:'23.21',
+        mc:'坡度8',
+        ma:'7737.23',
+        nl:'263.11-300.70',
     },
   
     
@@ -97,25 +97,25 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '等级类型',
+            title: '坡度区间%',
             dataIndex: 'nl',
         },
         
         
         {
-            title: '项目',
+            title: '层名',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '本次检测参数',
+            title: '平面面积',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '参数对应设备',
+            title: '占总面积比（%）',
             dataIndex: 'fl',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
         {
@@ -153,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测参数核查"
+                title="地形分析"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

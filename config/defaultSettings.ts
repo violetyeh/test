@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路环境参数自动检测系统',
+  title: '景观平面规划设计软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
