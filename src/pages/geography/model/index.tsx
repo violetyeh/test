@@ -20,67 +20,67 @@ interface ModelState {
 const mockData = [
     {
         id: 'WJ0008S0J',
-        date: '2019年8月26日10:56:21',
-        type: '逆向行驶',
+        date: '街道名称',
+        type: '50',
         status: '启用',
-        pinlv: '冀C666A',
-        process: '小型汽车',
+        pinlv: '道路编号',
+        process: '0.3',
     },
     {
         id: 'WJ00072IK',
-        date: '2019年8月27日06:23:03',
-        type: '醉酒驾驶',
+        date: '路名牌',
+        type: '40',
         status: '启用',
-        pinlv: '冀C63K6',
-        process: '小型汽车',
+        pinlv: '分岔路口',
+        process: '0.4',
     },
     {
         id: 'WJ00063JJ',
-        date: '2019年8月28日21:48:17',
-        type: '肇事逃逸',
+        date: '入口预告',
+        type: '50',
         status: '启用',
-        pinlv: '渝A52B6',
-        process: '面包车',
+        pinlv: '互通式立交',
+        process: '0.3',
     },
     {
         id: 'WJ0000191',
-        date: '2019年8月29日20:37:12',
-        type: '醉酒驾驶',
+        date: '地点方向',
+        type: '60',
         status: '启用',
-        pinlv: '渝A23M6',
-        process: '大货车',
+        pinlv: '环形交叉路口',
+        process: '0.3',
     },
     {
         id: 'WJ0002SI1',
-        date: '2019年8月30日08:12:05',
-        type: '超速',
+        date: '公路编号',
+        type: '50',
         status: '启用',
-        pinlv: '沪C66A6',
-        process: '小型越野车',
+        pinlv: 'Y型交叉路口',
+        process: '0.4',
     },
     {
         id: 'WJ00001IOS',
-        date: '2019年8月31日09:02:56',
-        type: '醉酒驾驶',
+        date: '出口预告',
+        type: '30',
         status: '启用',
-        pinlv: '津B25B3',
-        process: '小型汽车',
+        pinlv: '丁字路口预告',
+        process: '0.3',
     },
     {
         id: 'YSIW9s1',
-        date: '2019年8月31日11:08:24',
-        type: '疲劳驾驶',
+        date: '高速起终点',
+        type: '45',
         status: '启用',
-        pinlv: '京E110MK',
-        process: '小型越野车',
+        pinlv: '十字路口预告',
+        process: '0.6',
     },
     {
         id: 'WJ00080SJ',
-        date: '2019年8月31日14:11:36',
-        type: '超速',
+        date: '里程牌',
+        type: '50',
         status: '启用',
-        pinlv: '京NLU686',
-        process: '大型汽车',
+        pinlv: '交叉路口预告',
+        process: '0.3',
     },
    
 ]
@@ -98,21 +98,21 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '车牌号码',
+            title: '自定义标志设计',
             dataIndex: 'pinlv',
         },
         {
-            title: '加入时间',
+            title: '交通设施',
             dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '加入原因',
+            title: '汉英高度 H （cm）',
             dataIndex: 'type',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '号码种类',
+            title: '汉英间距',
             dataIndex: 'process',
         },
 
@@ -147,7 +147,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="管理黑名单"
+                title="交通路标设计"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

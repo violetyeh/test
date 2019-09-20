@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '基于高速公路事故安全检测系统',
+  title: '城市交通设施规划设计系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

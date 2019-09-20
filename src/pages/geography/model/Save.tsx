@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑黑名单信息"
+                title="编辑交通路标信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose

@@ -20,59 +20,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'ZDID1292',
-        fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月17日17:42:19',
-        pinlv: 'DF4G',
+        fenlei: '左弯或向左合流',
+        yaosu: '非机动车禁驶线',
+        state: '出入口线',
+        pinlv: 'K0+0.00',
     },
     {
         id: 'ZDID8201',
-        fenlei: '道路塌陷 ',
-        yaosu: '是',
-        state: '2019年8月18日09:02:13',
-        pinlv: '5SDF',
+        fenlei: '左右转弯箭头 ',
+        yaosu: '对向车道分界线',
+        state: '非机动车位线',
+        pinlv: 'K1+110.00',
     },
     {
         id: 'ZDID3921',
-        fenlei: '非法变道',
-        yaosu: '否',
-        state: '2019年8月09日10:11:06',
-        pinlv: 'SX2C',
+        fenlei: '前方掉头箭头',
+        yaosu: '左弯待转区线',
+        state: '出租车位线',
+        pinlv: 'K0+0.00',
     },
     {
         id: 'ZDID0029',
-        fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月10日11:34:02',
-        pinlv: 'DS5F',
+        fenlei: '直行右转箭头',
+        yaosu: '禁止长时间停车线',
+        state: '残疾人专用车位线',
+        pinlv: 'K0+0.00',
     },
     {
         id: 'ZDID2191',
-        fenlei: '车辆拥堵',
-        yaosu: '否',
-        state: '2019年8月11日14:41:58',
-        pinlv: 'VC85',
+        fenlei: '前方右转箭头',
+        yaosu: '减速让行线',
+        state: '倾斜式车位线',
+        pinlv: 'K0+0.00',
     },
     {
         id: 'ZDID3321',
-        fenlei: '异物抛撒',
-        yaosu: '是',
-        state: '2019年8月12日20:04:53',
-        pinlv: '5D2F',
+        fenlei: '前方左转箭头',
+        yaosu: '禁止停车线',
+        state: '平行/垂直式车位线',
+        pinlv: 'K20+342.00',
     },
     {
         id: 'ZDID2136',
-        fenlei: '异常停车',
-        yaosu: '否',
-        state: '2019年8月13日21:14:48',
-        pinlv: '202S',
+        fenlei: '直行左转箭头',
+        yaosu: '停止线',
+        state: '车距确认',
+        pinlv: 'K40+236.00',
     },
     {
         id: 'ZDID3354',
-        fenlei: '交通事故',
-        yaosu: '是',
-        state: '2019年8月25日18:41:37',
-        pinlv: '2X4F',
+        fenlei: '直行箭头',
+        yaosu: '路口导向线',
+        state: '斑马线绘制',
+        pinlv: 'K0+0.00',
     },
 ]
 
@@ -86,39 +86,41 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
+            title: '状态',
+            dataIndex: 'jz',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >设计完成</Checkbox>
+                </Fragment>
+            ),
+        },
+        {
             title: 'ID',
             dataIndex: 'id',
         },
        
         {
-            title: '高速公路',
+            title: '起点桩号',
             dataIndex: 'pinlv',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '是否可通行',
+            title: '标线信息',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
+       
         {
-            title: '实时报警提示',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >报警提示</Checkbox>
-                </Fragment>
-            ),
-        },
-        {
-            title: '道路状况',
+            title: '速绘箭头',
             dataIndex: 'fenlei',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
 
         {
-            title: '道路检测时间',
+            title: '道路标线',
             dataIndex: 'state',
+            render: (text) => <Tag color="BLACK">{text}</Tag>,
         },
         {
             title: '操作',
@@ -147,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="事故状况信息"
+                title="平面设计"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

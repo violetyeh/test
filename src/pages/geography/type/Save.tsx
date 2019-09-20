@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑事故状况"
+                title="编辑平面设计"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,14 +52,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="高速公路" >
+                    <Form.Item key="pinlv" label="起点桩号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="是否可通行" >
+                    <Form.Item key="yaosu" label="标线信息" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
@@ -67,14 +67,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="fenlei" label="道路状况" >
+                    <Form.Item key="fenlei" label="速绘箭头" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="state" label="道路检测时间" >
+                    <Form.Item key="state" label="道路标线" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(
