@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置订单计费"
+                title="设置制图标准"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="电脑类别" >
+                    <Form.Item key="mc" label="标准引用" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="计费（小时/元）" >
+                    <Form.Item key="gg" label="专业名称" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="上机实时数量" >
+                    <Form.Item key="hz" label="初步设计图纸专业代码" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="每小时用户变化量（人数）" >
+                    <Form.Item key="yy" label="施工图图纸专业代码" >
                         {getFieldDecorator('yy', {
                             initialValue: currentItem.yy,
                         })(
@@ -80,7 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jd" label="上机占比（%）" >
+                    <Form.Item key="jd" label="发布进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

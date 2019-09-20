@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'IDC自动订单计费系统',
+  title: '设计制图标准化数据发布系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

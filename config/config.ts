@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '订单维护',
+          name: '制图规定',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '订单数据设置',
+          name: '各专业图纸编制',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '订单计费管理',
+          name: '制图标准设置',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
