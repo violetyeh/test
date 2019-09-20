@@ -144,7 +144,7 @@ export default {
           component: './geography/model',
         },
         {
-          name: '运输节点管理',
+          name: '道路绘制 ',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
