@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑车辆里程信息"
+                title="编辑道路设计信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="车牌号" >
+                    <Form.Item key="pinlv" label="道路线型" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="标准用时" >
+                    <Form.Item key="date" label="X" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="标准路桥费" >
+                    <Form.Item key="model" label="Y" >
                         {getFieldDecorator('model', {
                             initialValue: currentItem.model,
                         })(
@@ -79,9 +79,9 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="车辆使用率（%）" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
+                    <Form.Item key="process" label="设计进度（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}

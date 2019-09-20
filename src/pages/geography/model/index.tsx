@@ -24,8 +24,8 @@ const mockData = [
         model: '320.00',
         type: '2200.00',
         status: '启用',
-        pinlv: '渝A230I3',
-        process: 3,
+        pinlv: '基本型缓和曲线',
+        process: 85,
     },
     {
         id: 'YIDS2SI1',
@@ -33,8 +33,8 @@ const mockData = [
         model: '300.00',
         type: '1230.00',
         status: '启用',
-        pinlv: '浙B236K1',
-        process: 8,
+        pinlv: '同向复曲线',
+        process: 100,
     },
     {
         id: 'YIDS0122',
@@ -42,8 +42,8 @@ const mockData = [
         model: '623.00',
         type: '5002.00',
         status: '启用',
-        pinlv: '川A125A1',
-        process: 3,
+        pinlv: '基本型缓和曲线',
+        process: 73,
     },
     {
         id: 'YIDS2S12',
@@ -51,8 +51,8 @@ const mockData = [
         model: '400.00',
         type: '3500.00',
         status: '启用',
-        pinlv: '京A120B1',
-        process: 8,
+        pinlv: '凸型曲线',
+        process: 88,
     },
     {
         id: 'YIDS01IOS',
@@ -60,8 +60,8 @@ const mockData = [
         model: '456.00',
         type: '2320.00',
         status: '启用',
-        pinlv: '赣B23K63',
-        process: 9,
+        pinlv: '同向复曲线',
+        process: 69,
     },
     {
         id: 'YSIW9s1',
@@ -69,8 +69,8 @@ const mockData = [
         model: '236.00',
         type: '1300.00',
         status: '启用',
-        pinlv: '湘A113AA',
-        process: 7,
+        pinlv: '凸型曲线',
+        process: 77,
     },
     {
         id: 'YID80SJ',
@@ -78,8 +78,8 @@ const mockData = [
         model: '853.00',
         type: '2000.00',
         status: '启用',
-        pinlv: '渝B23Z14',
-        process: 6,
+        pinlv: '凸型曲线',
+        process: 86,
     },
 ]
 
@@ -96,18 +96,19 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '车牌号',
+            title: '道路线型',
             dataIndex: 'pinlv',
         },
         {
-            title: '标准用时',
+            title: 'X',
             dataIndex: 'date',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '标准路桥费',
+            title: 'Y',
             dataIndex: 'model',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
             title: '公里数',
@@ -115,7 +116,7 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '车辆使用率',
+            title: '设计进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -151,7 +152,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车辆里程统计"
+                title="道路设计"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

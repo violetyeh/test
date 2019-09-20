@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'LX001',
-        jishu: '上海',
-        fenceng: '浙江',
+        jishu: '道路',
+        fenceng: ' 1：1000',
         leixing: '142',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684071920&di=2f4c7494b4723cc8875582d746614be2&imgtype=0&src=http%3A%2F%2Fi4.hexunimg.cn%2F2013-11-23%2F159957846.jpg',
+        name: 'ROAD1',
         state: '启用',
     },
     {
         id: 'LX002',
-        jishu: '北京',
-        fenceng: '南京',
+        jishu: '绿化带',
+        fenceng: ' 1：500',
         leixing: '166',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684126327&di=f0c8719df9b1b44d46cb66e9b9a109e6&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fnews%2Ftransform%2F20151113%2F1Yys-fxksqis4780478.jpg',
+        name: 'ROAD2',
         state: '启用',
     },
     {
         id: 'LX003',
-        jishu: '重庆',
-        fenceng: '浙江',
+        jishu: '人行道',
+        fenceng: ' 1：1000',
         leixing: '160',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684001288&di=2ff300551fffd37458ee0ff06706dbc4&imgtype=0&src=http%3A%2F%2Fimages.china.cn%2Fnews%2Fattachement%2Fjpg%2Fsite3%2F20101214%2F8315822060192708995.jpg',
+        name: 'ROAD3',
         state: '启用',
     },
     {
         id: 'LX004',
-        jishu: '渝北',
-        fenceng: '璧山',
+        jishu: '道路中心线',
+        fenceng: ' 1：1000',
         leixing: '36',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567683931223&di=6fa0c61b0f5d87b3fe489088c00f0a62&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ffinance%2Fcrawl%2F122%2Fw550h372%2F20180920%2FgMYC-hiixpup1769407.jpg',
+        name: 'ROAD4',
         state: '启用',
     },
     {
         id: 'LX005',
-        jishu: '江津',
-        fenceng: '合川',
+        jishu: '副道路中心线',
+        fenceng: ' 1：500',
         leixing: '45',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567683931223&di=6fa0c61b0f5d87b3fe489088c00f0a62&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ffinance%2Fcrawl%2F122%2Fw550h372%2F20180920%2FgMYC-hiixpup1769407.jpg',
+        name: 'ROAD5',
         state: '启用',
     },
     {
         id: 'LX006',
-        jishu: '重庆',
-        fenceng: '湖南',
+        jishu: '人行横道线',
+        fenceng: ' 1：1000',
         leixing: '96',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684001288&di=2ff300551fffd37458ee0ff06706dbc4&imgtype=0&src=http%3A%2F%2Fimages.china.cn%2Fnews%2Fattachement%2Fjpg%2Fsite3%2F20101214%2F8315822060192708995.jpg',
+        name: 'ROAD6',
         state: '启用',
     },
     {
         id: 'LX007',
-        jishu: '厦门',
-        fenceng: '浙江',
+        jishu: '道路宽度标注',
+        fenceng: ' 1：1000',
         leixing: '89',
-        name: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684171088&di=907b3fac915d9ba59abdc3891338061d&imgtype=0&src=http%3A%2F%2Fwww.gmw.cn%2Fimages%2F2005-09%2F09%2Fxin_110902092121187147043.jpg',
+        name: 'ROAD7',
         state: '启用',
     },
     {
         id: 'LX008',
-        jishu: '长沙',
-        fenceng: '成都',
+        jishu: '道弧标注',
+        fenceng: ' 1：500',
         leixing: '110',
-        name: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2605272276,2067597409&fm=26&gp=0.jpg',
+        name: 'ROAD8',
         state: '启用',
     },
 ]
@@ -98,23 +98,20 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '路线编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '查看地图',
+            title: '图层名',
             dataIndex: 'name',
-            render: (text) => {
-                return <img src={text} height={80} width={100} />;
-            },
         },
         {
-            title: '起始地',
+            title: '图层含义',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '目的地',
+            title: '出图比例',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -152,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运输路线管理"
+                title="图层设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

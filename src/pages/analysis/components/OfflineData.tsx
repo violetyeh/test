@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 运输路线信息: 280, 运输车辆数量: 280, 增加车辆数量: 226, 已规划运输路线: 200 },
-  { label: '0.2', 运输路线信息: 180, 运输车辆数量: 180, 增加车辆数量: 130, 已规划运输路线: 300 },
-  { label: '0.3', 运输路线信息: 95, 运输车辆数量: 95, 增加车辆数量: 90, 已规划运输路线: 500 },
-  { label: '0.4', 运输路线信息: 500, 运输车辆数量: 500, 增加车辆数量: 390, 已规划运输路线: 100 },
-  { label: '0.5', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 300 },
-  { label: '0.6', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 123 },
-  { label: '0.7', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 521 },
-  { label: '0.8', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 686 },
-  { label: '0.9', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 145 },
-  { label: '1.0', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 102 },
-  { label: '未评分', 运输路线信息: 170, 运输车辆数量: 170, 增加车辆数量: 100, 已规划运输路线: 210 },
+  { label: '0.1', 道路总设计数量: 280, 道路规划信息: 280, 增加设计道路: 226, 已规划道路: 200 },
+  { label: '0.2', 道路总设计数量: 180, 道路规划信息: 180, 增加设计道路: 130, 已规划道路: 300 },
+  { label: '0.3', 道路总设计数量: 95, 道路规划信息: 95, 增加设计道路: 90, 已规划道路: 500 },
+  { label: '0.4', 道路总设计数量: 500, 道路规划信息: 500, 增加设计道路: 390, 已规划道路: 100 },
+  { label: '0.5', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 300 },
+  { label: '0.6', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 123 },
+  { label: '0.7', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 521 },
+  { label: '0.8', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 686 },
+  { label: '0.9', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 145 },
+  { label: '1.0', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 102 },
+  { label: '未评分', 道路总设计数量: 170, 道路规划信息: 170, 增加设计道路: 100, 已规划道路: 210 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['运输路线信息', '运输车辆数量', '增加车辆数量','已规划运输路线'], // 展开字段集
+  fields: ['道路总设计数量', '道路规划信息', '增加设计道路','已规划道路'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  已规划运输路线: {
+  已规划道路: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '运输路线信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '运输车辆数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '增加车辆数量', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '已规划运输路线', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '道路总设计数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '道路规划信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '增加设计道路', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '已规划道路', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '已规划运输路线') {
+              if (geom.getYScale().field === value && value === '已规划道路') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '已规划运输路线') {
+              } else if (geom.getYScale().field === 'value' && value !== '已规划道路') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,7 +104,7 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '运输车辆数量') {
+            if (value === '道路规划信息') {
               return '#2b6cbb';
             }
             if (value === '规划路线') {
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*已规划运输路线" color="#fad248" size={3} />
+        <Geom type="line" position="label*已规划道路" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

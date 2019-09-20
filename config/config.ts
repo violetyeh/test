@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '运输路线管理',
+          name: '图层设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '车辆里程统计',
+          name: '道路设计',
           path: '/model',
           icon: 'fund',
           component: './geography/model',

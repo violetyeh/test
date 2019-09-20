@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑运输节点信息"
+                title="编辑道路绘制"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,7 +52,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="节点名称" >
+                    <Form.Item key="pinlv" label="道路名称" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
@@ -67,14 +67,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="yaosu" label="车辆类型" >
+                    <Form.Item key="yaosu" label="板块名称" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="货物名称" >
+                    <Form.Item key="fenceng" label="宽度（M）" >
                         {getFieldDecorator('fenceng', {
                             initialValue: currentItem.fenceng,
                         })(
