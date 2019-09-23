@@ -20,8 +20,8 @@ interface ModelState {
 const mockData = [
     {
         id: 'BGID12',
-        sp:'个人文件柜',
-        shijian:'档案-文件管理',
+        sp:'业务管理',
+        shijian:'项目-业务管理',
         biaozhun:'管理员',
         jiance:'郑峰',
         process: 88,
@@ -29,9 +29,9 @@ const mockData = [
     },
     {
         id: 'BGID13',
-        sp:'政务邮件',
-        shijian:'邮件-新修订《纳税服务投诉管理办法》 ',
-        biaozhun:'书记',
+        sp:'业务邮件',
+        shijian:'邮件-有关食品供应交谈的详细情况 ',
+        biaozhun:'业务员',
         jiance:'王媛',
         process: 99,
         status: '启用',
@@ -40,7 +40,7 @@ const mockData = [
         id: 'BGID14',
         sp:'事务提醒',
         shijian:'事务-会议提醒',
-        biaozhun:'政协会长',
+        biaozhun:'经理',
         jiance:'刘琦歌',
         process: 5,
         status: '启用',
@@ -49,7 +49,7 @@ const mockData = [
         id: 'BGID15',
         sp:'便签',
         shijian:'提醒下午三点有个会议',
-        biaozhun:'人大代表',
+        biaozhun:'业务员',
         jiance:'李武雨',
         process: 95,
         status: '启用',
@@ -57,8 +57,8 @@ const mockData = [
     {
         id: 'BGID16',
         sp:'即时通讯',
-        shijian:'通讯簿*',
-        biaozhun:'书记',
+        shijian:'客户通讯簿*',
+        biaozhun:'总经理',
         jiance:'王可可',
         process: 100,
         status: '启用',
@@ -66,7 +66,7 @@ const mockData = [
     {
         id: 'BGID17',
         sp:'办公委托',
-        shijian:'有关区县道路维修...',
+        shijian:'供应商联系',
         biaozhun:'管理员',
         jiance:'吴启拉',
         process: 60,
@@ -76,7 +76,7 @@ const mockData = [
         id: 'BGID18',
         sp:'办公日志',
         shijian:'档案-归档日志',
-        biaozhun:'文员',
+        biaozhun:'业务员',
         jiance:'赵元乐',
         process: 40,
         status: '启用',
@@ -85,7 +85,7 @@ const mockData = [
         id: 'BGID19',
         sp:'日程安排',
         shijian:'2019年7月11日日程安排',
-        biaozhun:'书记',
+        biaozhun:'经理',
         jiance:'王可媛',
         process: 30,
         status: '启用',
@@ -103,11 +103,11 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '办公编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '办公名称',
+            title: '服务名称',
             dataIndex: 'sp',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
@@ -116,7 +116,7 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'shijian',
         },
         {
-            title: '办公角色',
+            title: '角色',
             dataIndex: 'biaozhun',
             render: (text) => <Tag color="gray">{text}</Tag>,
         },
@@ -126,7 +126,7 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="brown">{text}</Tag>,
         },
         {
-            title: '办公进度',
+            title: '服务进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -162,7 +162,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="办公任务设置"
+                title="业务服务"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

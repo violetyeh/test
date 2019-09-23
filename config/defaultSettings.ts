@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云政务办公平台',
+  title: '西牛企业业务服务平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

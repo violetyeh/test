@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑政务投票"
+                title="编辑业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,44 +51,44 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="发布人" >
+                    <Form.Item key="tongdao" label="业务员" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="touguang" label="投票标题" >
+                    <Form.Item key="touguang" label="业务项目" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xq" label="详情" >
+                    <Form.Item key="xq" label="客户名称" >
                         {getFieldDecorator('xq', {
                             initialValue: currentItem.xq,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="duizhao" label="匿名投票结果" >
+                    <Form.Item key="duizhao" label="业务审核" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">允许</Radio.Button>
-                                <Radio.Button value="b">不允许</Radio.Button>
+                                <Radio.Button value="a">审核</Radio.Button>
+                                <Radio.Button value="b">未审核</Radio.Button>
                              </Radio.Group>,
                         )}
                     </Form.Item>
-                    <Form.Item key="zt" label="状态" >
+                    <Form.Item key="zt" label="客户类型" >
                         {getFieldDecorator('zt', {
                             initialValue: currentItem.zt,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">已投票</Radio.Button>
-                                <Radio.Button value="b">未投票</Radio.Button>
+                                <Radio.Button value="a">老客户</Radio.Button>
+                                <Radio.Button value="b">新客户</Radio.Button>
                              </Radio.Group>,
                         )}
                     </Form.Item>

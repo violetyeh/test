@@ -20,8 +20,8 @@ interface TypeState {
 const mockData = [
     {
        id: 'WD0021',
-       zhonglei:'行政维度',
-       mingcheng:'相关行政维度信息',
+       zhonglei:'葫芦岛食品厂',
+       mingcheng:'很多食品',
        songjian:'是',
        shengchan:'3',
        chandi:'否',
@@ -30,8 +30,8 @@ const mockData = [
     },
     {
         id: 'WD0022',
-        zhonglei:'测试维度',
-        mingcheng:'相关测试维度信息',
+        zhonglei:'安阳灯泡厂',
+        mingcheng:'各种型号的灯泡',
         songjian:'否',
         shengchan:'6',
         chandi:'是',
@@ -40,8 +40,8 @@ const mockData = [
      },
      {
         id: 'WD0023',
-        zhonglei:'战略规划',
-        mingcheng:'相关战略规划信息',
+        zhonglei:'华太电池厂',
+        mingcheng:'各种号码的电池',
         songjian:'否',
         shengchan:'2',
         chandi:'否',
@@ -50,8 +50,8 @@ const mockData = [
      },
      {
         id: 'WD0024',
-        zhonglei:'信息资源',
-        mingcheng:'相关信息资源信息',
+        zhonglei:'华龙方便面厂',
+        mingcheng:'很多方便面品种',
         songjian:'是',
         shengchan:'1',
         chandi:'是',
@@ -60,8 +60,8 @@ const mockData = [
      },
      {
         id: 'WD0025',
-        zhonglei:'行政维度',
-        mingcheng:'相关行政维度信息',
+        zhonglei:'葫芦岛食品厂',
+        mingcheng:'很多食品',
         songjian:'是',
         shengchan:'5',
         chandi:'是',
@@ -70,8 +70,8 @@ const mockData = [
      },
      {
         id: 'WD0026',
-        zhonglei:'行政维度',
-        mingcheng:'相关行政维度信息',
+        zhonglei:'葫芦岛食品厂',
+        mingcheng:'很多食品',
         songjian:'否',
         shengchan:'4',
         chandi:'是',
@@ -80,8 +80,8 @@ const mockData = [
      },
      {
         id: 'WD0027',
-        zhonglei:'项目建设',
-        mingcheng:'相关项目建设信息',
+        zhonglei:'好滋味食品厂',
+        mingcheng:'很多小食品',
         songjian:'否',
         shengchan:'3',
         chandi:'否',
@@ -90,8 +90,8 @@ const mockData = [
      },
      {
         id: 'WD0028',
-        zhonglei:'服务流程',
-        mingcheng:'相关服务流程信息',
+        zhonglei:'华龙方便面厂',
+        mingcheng:'很多方便面品种',
         songjian:'是',
         shengchan:'7',
         chandi:'是',
@@ -115,38 +115,34 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '维度名称',
+            title: '客户名称',
             dataIndex: 'zhonglei',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
         {
-            title: '维度描述',
+            title: '备注信息',
             dataIndex: 'mingcheng',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '是否为默认维度',
+            title: '是否老客户',
             dataIndex: 'songjian',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '组织类型数量',
+            title: '业务来往次数',
             dataIndex: 'shengchan',
         },
         {
-            title: '是否为独立组织',
+            title: '是否为可发展客户',
             dataIndex: 'chandi',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '政务日期',
+            title: '首次交易日期',
             dataIndex: 'riqi',
         },
-        {
-            title: '是否完成政务',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="是" unCheckedChildren="否" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -174,7 +170,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="政务办公维度管理"
+                title="客户管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
