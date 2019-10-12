@@ -22,61 +22,62 @@ interface TypeState {
 }
 
 const mockData = [
-
     {
-        id: 'GC-GL-0038',
-        fl:'成都公路隧道中心工程',
-        mc:'成都检测公司',
-        ma:'隧道剖面检测',
-        nl:'刘文',
-    },
-    {
-        id: 'GC-GL-0021',
-        fl:'甘肃公路隧道中心工程',
-        mc:'甘肃检测公司',
-        ma:'基桩检测',
+        id: 'GC21',
+        fl:'道路建筑工程',
+        mc:'甘肃监理公司',
+        ma:'质量监理',
         nl:'赵媛',
     },
     {
-        id: 'GC-GL-0037',
-        fl:'云南公路隧道中心工程',
-        mc:'云南检测公司',
-        ma:'隧道剖面检测',
+        id: 'GC37',
+        fl:'大桥建筑工程',
+        mc:'云南监理公司',
+        ma:'进度监理',
         nl:'刘冰',
     },
     {
-        id: 'GC-GL-0035',
-        fl:'北京公路隧道中心工程',
-        mc:'北京检测公司',
-        ma:'浇筑材料检测',
+        id: 'GC35',
+        fl:'医院建筑工程',
+        mc:'北京监理公司',
+        ma:'安全监理',
         nl:'汪峰',
     },
     {
-        id: 'GC-GL-0064',
-        fl:'广州公路隧道中心工程',
-        mc:'广州检测公司',
-        ma:'基桩检测',
+        id: 'GC64',
+        fl:'园区建筑工程',
+        mc:'广州监理公司',
+        ma:'质量监理',
         nl:'陈云',
     },
     {
-        id: 'GC-GL-0078',
-        fl:'深圳公路隧道中心工程',
-        mc:'深圳检测公司',
-        ma:'浇筑材料检测',
+        id: 'GC78',
+        fl:'工业建筑工程',
+        mc:'深圳监理公司',
+        ma:'进度监理',
         nl:'王安',
     },
+
     {
-        id: 'GC-GL-0021',
-        fl:'重庆公路隧道中心工程',
-        mc:'重庆检测公司',
-        ma:'隧道剖面检测',
+        id: 'GC38',
+        fl:'学校建筑工程',
+        mc:'成都监理公司',
+        ma:'安全监理',
+        nl:'刘文',
+    },
+   
+    {
+        id: 'GC21',
+        fl:'商业建筑工程',
+        mc:'重庆监理公司',
+        ma:'质量监理',
         nl:'张文芳',
     },
     {
-        id: 'GC-GL-0035',
-        fl:'上海公路隧道中心工程',
-        mc:'上海检测公司',
-        ma:'基桩检测',
+        id: 'GC35',
+        fl:'隧道建筑工程',
+        mc:'上海监理公司',
+        ma:'安全监理',
         nl:'王芳',
     },
 
@@ -103,18 +104,18 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '检测单位',
+            title: '监理单位',
             dataIndex: 'mc',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '检测类型',
+            title: '监理类型',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '检测人员',
+            title: '监理人员',
             dataIndex: 'nl',
         },
         {
@@ -122,7 +123,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >检测中</Checkbox>
+                  <Checkbox >监理中</Checkbox>
                 </Fragment>
             ),
         },

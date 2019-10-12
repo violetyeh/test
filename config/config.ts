@@ -138,13 +138,13 @@ export default {
           component: './geography/collection',
         },
         {
-          name: '检测数据管理',
+          name: '无人机管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '检测任务管理',
+          name: '采用信息管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

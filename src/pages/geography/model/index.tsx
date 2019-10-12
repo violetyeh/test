@@ -19,69 +19,70 @@ interface ModelState {
 
 const mockData = [
     {
+        id:'AMM-01201',
+        cf:'#WRJ[COVI03]',
+        dw:'安全监理',
+        jg:'11',
+        jx:'#3QWSA无人机',
+        status: '启用',
+     },
+     {
+         id:'AMM-01202',
+         cf:'#WRJ[COVI03]',
+         dw:'人员监理',
+         jg:'15',
+         jx:'#3ASZX无人机',
+         status: '启用',
+      },
+      {
+         id:'AMM-01203',
+         cf:'#WRJ[COVI02]',
+         dw:'进度监理',
+         jg:'25',
+         jx:'#2ASZX无人机',
+         status: '启用',
+      },
+      {
+         id:'AMM-01204',
+         cf:'#WRJ[COVI00]',
+         dw:'安全监理',
+         jg:'15',
+         jx:'#0ASZX无人机',
+         status: '启用',
+      },
+      {
+          id:'AMM-01205',
+          cf:'#WRJ[COVI01]',
+          dw:'人员监理',
+          jg:'20',
+          jx:'#1ASZX无人机',
+          status: '启用',
+       },
+    {
         id:'AMM-01206',
-        cf:'[COVI00]右线COVI检测器',
-        dw:'外加剂',
+        cf:'#WRJ[COVI00]',
+        dw:'人员监理',
         jg:'15',
-        jx:'#0 塘朗山隧道右线',
+        jx:'#0QWSA无人机',
         status: '启用',
      },
      {
        id:'AMM-01207',
-       cf:'[COVI01]右线COVI检测器',
-       dw:'水泥',
+       cf:'#WRJ[COVI01]',
+       dw:'安全监理',
        jg:'5',
-       jx:'#1 塘朗山隧道右线',
+       jx:'#1QWSA无人机',
        status: '启用',
     },
     {
         id:'AMM-01208',
-        cf:'[COVI02]右线COVI检测器',
-        dw:'岩石',
+        cf:'#WRJ[COVI02]',
+        dw:'进度监理',
         jg:'8',
-        jx:'#2 塘朗山隧道右线',
+        jx:'#2QWSA无人机',
         status: '启用',
      },
-    {
-       id:'AMM-01201',
-       cf:'[COVI03]右线COVI检测器',
-       dw:'矿渣粉',
-       jg:'11',
-       jx:'#3 塘朗山隧道右线',
-       status: '启用',
-    },
-    {
-        id:'AMM-01202',
-        cf:'[COVI03]左线COVI检测器',
-        dw:'矿粉',
-        jg:'15',
-        jx:'#3 塘朗山隧道左线',
-        status: '启用',
-     },
-     {
-        id:'AMM-01203',
-        cf:'[COVI02]左线COVI检测器',
-        dw:'细集料',
-        jg:'25',
-        jx:'#2 塘朗山隧道左线',
-        status: '启用',
-     },
-     {
-        id:'AMM-01204',
-        cf:'[COVI00]左线COVI检测器',
-        dw:'粗集料',
-        jg:'15',
-        jx:'#0 塘朗山隧道左线',
-        status: '启用',
-     },
-     {
-         id:'AMM-01205',
-         cf:'[COVI01]左线COVI检测器',
-         dw:'土',
-         jg:'20',
-         jx:'#1 塘朗山隧道左线',
-         status: '启用',
-      },
+    
 
 ]
 
@@ -98,21 +99,21 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '隧道',
+            title: '无人机名称',
             dataIndex: 'jx',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '设备',
+            title: '型号',
             dataIndex: 'cf',
         },
         {
-            title: '样品类型',
+            title: '监理类型',
             dataIndex: 'dw',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
         {
-            title: '实际检测数量',
+            title: '监理信息数量',
             dataIndex: 'jg',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
@@ -149,7 +150,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测数据管理"
+                title="无人机管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路隧道施工质量检测及评价系统软件',
+  title: '长顺监理工程无人机信息采用系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

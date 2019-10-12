@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'APOI-0026',
-        mc:'YP-BH-12',
-        gg:'土的回弹模量试验',
-        hz:'路基填筑',
+        id: 'XXCY21',
+        mc:'一切顺利',
+        gg:'医院建筑工程二期',
+        hz:'#0QWSA无人机',
+        jd:98,
+        state: 1,
+     },
+     {
+         id: 'XXCY22',
+         mc:'进度拖延，工期内不能完成工程',
+         gg:'隧道建筑工程一期',
+         hz:'#0ASZX无人机',
+         jd:100,
+         state: 1,
+      },
+      {
+         id: 'XXCY23',
+         mc:'施工人员偷懒',
+         gg:'隧道建筑工程二期',
+         hz:'#2ASZX无人机',
+         jd:56,
+         state: 1,
+      },
+      {
+         id: 'XXCY24',
+         mc:'材料不合格',
+         gg:'桥梁建筑工程一期',
+         hz:'#1ASZX无人机',
+         jd:74,
+         state: 1,
+      },
+      {
+         id: 'XXCY25',
+         mc:'脚架出现安全质量问题，危害施工人员生命安全',
+         gg:'桥梁建筑工程二期',
+         hz:'#0ASZX无人机',
+         jd:95,
+         state: 1,
+      },
+    {
+        id: 'XXCY26',
+        mc:'施工人员积极工作',
+        gg:'学校建筑工程一期',
+        hz:'#3QWSA无人机',
         jd:76,
         state: 1,
      },
      {
-        id: 'APOI-0027',
-        mc:'YP-BH-20',
-        gg:'土的天然稠度试验',
-        hz:'隧道顶部填筑',
+        id: 'XXCY27',
+        mc:'地基未打好',
+        gg:'医院建筑工程一期',
+        hz:'#2QWSA无人机',
         jd:100,
         state: 1,
      },
      {
-        id: 'APOI-0028',
-        mc:'YP-BH-15',
-        gg:'土的烧失率试验',
-        hz:'路基填筑',
+        id: 'XXCY28',
+        mc:'进度提前，一切顺利',
+        gg:'学校建筑工程二期',
+        hz:'#1QWSA无人机',
         jd:88,
         state: 1,
      }, 
-    {
-       id: 'APOI-0021',
-       mc:'YP-BH-02',
-       gg:'土的承载比',
-       hz:'路基填筑',
-       jd:98,
-       state: 1,
-    },
-    {
-        id: 'APOI-0022',
-        mc:'YP-BH-63',
-        gg:'土的颗粒分析试验',
-        hz:'隧道顶部填筑',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'APOI-0023',
-        mc:'YP-BH-71',
-        gg:'土的比重试验',
-        hz:'路基填筑',
-        jd:56,
-        state: 1,
-     },
-     {
-        id: 'APOI-0024',
-        mc:'YP-BH-1',
-        gg:'土的密度试验',
-        hz:'隧道顶部填筑',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'APOI-0025',
-        mc:'YP-BH-03',
-        gg:'土的含水率试验',
-        hz:'路基填筑',
-        jd:95,
-        state: 1,
-     },
+   
     
    
 ]
@@ -101,31 +102,31 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检测名称',
+            title: '监理工程名称',
             dataIndex: 'gg',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
         
         {
-            title: '工程部位/用途',
+            title: '无人机名称',
             dataIndex: 'hz',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '样品编号',
+            title: '信息内容',
             dataIndex: 'mc',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '质量检测进度',
+            title: '监理进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '检测结果',
+            title: '采用结果',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="合格" unCheckedChildren="不合格" />,
+            render: () => <Switch checkedChildren="采用" unCheckedChildren="不采用" />,
         },
         {
             title: '操作',
@@ -154,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检测任务管理"
+                title="采用信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
