@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑安全质量预警信息"
+                title="编辑进度报告信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zc" label="类别" >
+                    <Form.Item key="zc" label="进度报告名称" >
                         {getFieldDecorator('zc', {
                             initialValue: currentItem.zc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhonglei" label="危险源内容" >
+                    <Form.Item key="zhonglei" label="进度报告内容" >
                         {getFieldDecorator('zhonglei', {
                             initialValue: currentItem.zhonglei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="危险源程度" >
+                    <Form.Item key="mingcheng" label="进度报告状态" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(

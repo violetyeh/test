@@ -19,69 +19,70 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'VG10651',
-       zc:'起重吊装工程',
-       zhonglei:'采用非常规起重设备、方法，且单件起吊重量在100KN及以上的起吊工程',
-       mingcheng:'很危险',
-       shengchan:'admin',
-       process:50,
-    },
-    {
-        id: 'VG10652',
-        zc:'其它',
-        zhonglei:'采用新技术、新工艺、新材料但无相关技术标准的危险性大的工程',
-        mingcheng:'很危险',
-        shengchan:'violet',
-        process:70,
-     },
-     {
-        id: 'VG10653',
-        zc:'安装拆卸工程',
-        zhonglei:'采用非常规起重设备、方法',
-        mingcheng:'一般危险',
-        shengchan:'adminuser',
-        process:90,
-     },
-     {
         id: 'VG10654',
-        zc:'其它 ',
-        zhonglei:'采用新技术、新工艺、新材料但无相关技术标准的危险性大的工程',
-        mingcheng:'超过一定规模',
+        zc:'海蓝假期一期工程进度报告 ',
+        zhonglei:'K0+000～K0+460段路面150mm级配碎石、300mm水泥稳定碎石施工全部完成。',
+        mingcheng:'未上报',
         shengchan:'test',
         process:99,
      },
      {
         id: 'VG10655',
-        zc:'爆破工程',
-        zhonglei:'采用爆破拆除的工程',
-        mingcheng:'一般危险',
+        zc:'海蓝假期二期工程进度报告',
+        zhonglei:'K0+000～K0+460段横穿路面强电管、弱电管、雨污管施工全部完成。',
+        mingcheng:'审核中',
         shengchan:'admin',
         process:50,
      },
      {
         id: 'VG10656',
-        zc:'拆除工程',
-        zhonglei:'采用爆破拆除的工程',
-        mingcheng:'超过一定规模',
+        zc:'海蓝假期三期工程进度报告',
+        zhonglei:'K0+000～紫金大道段、变电站～墨龙路段增加电缆沟施工完成。',
+        mingcheng:'未上报',
         shengchan:'example',
         process:60,
      },
      {
         id: 'VG10657',
-        zc:' 安装拆卸工程',
-        zhonglei:'采用非常规起重设备、方法',
-        mingcheng:'很危险',
+        zc:' 翡翠绿洲一期工程进度报告',
+        zhonglei:'K0+460段右幅混凝土路面浇筑完成。',
+        mingcheng:'已上报',
         shengchan:'test',
         process:43,
      },
      {
         id: 'VG10658',
-        zc:'起重吊装工程',
-        zhonglei:'采用非常规起重设备、方法，且单件起吊重量在100KN及以上的起吊工程',
-        mingcheng:'超过一定规模',
+        zc:'翡翠绿洲二期工程进度报告',
+        zhonglei:'工程施工进展顺利',
+        mingcheng:'未上报',
         shengchan:'admin',
         process:22,
      },
+    {
+       id: 'VG10651',
+       zc:'绿城国际一期工程进度报告',
+       zhonglei:'K0+000～K0+460段电缆沟、电力井，弱电管、弱电井施工全部完成。',
+       mingcheng:'已上报',
+       shengchan:'admin',
+       process:50,
+    },
+    {
+        id: 'VG10652',
+        zc:'绿城国际二期工程进度报告',
+        zhonglei:'K0+000～K0+460段雨水管、雨水井施工全部完成。',
+        mingcheng:'已上报',
+        shengchan:'violet',
+        process:70,
+     },
+     {
+        id: 'VG10653',
+        zc:'绿城国际三期工程进度报告',
+        zhonglei:'K0+000～K0+460段路基换填600mm片石、400mm土夹石施工全部完成。',
+        mingcheng:'审核中',
+        shengchan:'adminuser',
+        process:90,
+     },
+   
     
 ]
 
@@ -99,17 +100,17 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '类别',
+            title: '进度报告名称',
             dataIndex: 'zc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '危险源内容',
+            title: '进度报告内容',
             dataIndex: 'zhonglei',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '危险源程度',
+            title: '进度报告状态',
             dataIndex: 'mingcheng',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
@@ -152,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安全质量预警"
+                title="进度报告"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

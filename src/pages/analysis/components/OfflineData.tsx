@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 施工监理数量: 1700, 监理项目信息: 1500, 监理信息:2390, 监理安全率: 1100 },
-  { label: '0.2', 施工监理数量: 1900, 监理项目信息: 2600, 监理信息: 4113, 监理安全率: 1200 },
-  { label: '0.3', 施工监理数量: 1950, 监理项目信息: 3950, 监理信息: 3250, 监理安全率: 1100 },
-  { label: '0.4', 施工监理数量: 5100, 监理项目信息: 1500, 监理信息: 2139, 监理安全率: 1500 },
-  { label: '0.5', 施工监理数量: 2510, 监理项目信息: 1950, 监理信息: 4652, 监理安全率: 900 },
-  { label: '0.6', 施工监理数量: 1950, 监理项目信息: 4634, 监理信息: 2252, 监理安全率: 3000 },
-  { label: '0.7', 施工监理数量: 1950, 监理项目信息: 2685, 监理信息: 1152, 监理安全率: 2600 },
-  { label: '0.8', 施工监理数量: 1020, 监理项目信息: 3950, 监理信息: 1152, 监理安全率: 520 },
-  { label: '0.9', 施工监理数量: 2350, 监理项目信息: 1950, 监理信息: 2252, 监理安全率: 3100 },
-  { label: '1.0', 施工监理数量: 3150, 监理项目信息: 1950, 监理信息: 3112, 监理安全率: 1203 },
-  { label: '未评分', 施工监理数量: 1150, 监理项目信息: 1950, 监理信息: 1052, 监理安全率: 1420 },
+  { label: '0.1', 工程监理数量: 170, 工期数: 150, 监理信息:239, 工程进度: 11 },
+  { label: '0.2', 工程监理数量: 100, 工期数: 260, 监理信息: 411, 工程进度: 12 },
+  { label: '0.3', 工程监理数量: 150, 工期数: 395, 监理信息: 320, 工程进度: 11 },
+  { label: '0.4', 工程监理数量: 510, 工期数: 150, 监理信息: 219, 工程进度: 15 },
+  { label: '0.5', 工程监理数量: 250, 工期数: 195, 监理信息: 462, 工程进度: 9 },
+  { label: '0.6', 工程监理数量: 190, 工期数: 463, 监理信息: 222, 工程进度: 30 },
+  { label: '0.7', 工程监理数量: 150, 工期数: 268, 监理信息: 112, 工程进度: 26 },
+  { label: '0.8', 工程监理数量: 100, 工期数: 395, 监理信息: 152, 工程进度: 52 },
+  { label: '0.9', 工程监理数量: 250, 工期数: 195, 监理信息: 222, 工程进度: 31 },
+  { label: '1.0', 工程监理数量: 350, 工期数: 195, 监理信息: 312, 工程进度: 12 },
+  { label: '未评分', 工程监理数量: 115, 工期数: 195, 监理信息: 52, 工程进度: 14 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['施工监理数量', '监理项目信息', '监理信息','监理安全率'], // 展开字段集
+  fields: ['工程监理数量', '工期数', '监理信息','工程进度'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  监理安全率: {
+  工程进度: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '施工监理数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '监理项目信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '工程监理数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '工期数', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
             { value: '监理信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '监理安全率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '工程进度', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '监理安全率') {
+              if (geom.getYScale().field === value && value === '工程进度') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '监理安全率') {
+              } else if (geom.getYScale().field === 'value' && value !== '工程进度') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '施工监理数量') {
+            if (value === '工程监理数量') {
               return '#2b6cbb';
             }
             if (value === '新增项目') {
               return '#41a2fc';
             }
-            if (value === '监理项目信息') {
+            if (value === '工期数') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*监理安全率" color="#fad248" size={3} />
+        <Geom type="line" position="label*工程进度" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑施工单位信息"
+                title="编辑工程项目信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="单位名称" >
+                    <Form.Item key="tongdao" label="工程名称" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="touguang" label="合同编号" >
+                    <Form.Item key="touguang" label="项目计划状态" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(

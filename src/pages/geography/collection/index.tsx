@@ -23,69 +23,71 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'XNJ00007',
-        tongdao:'浙江建设集团有限公司',
-        touguang:'CZ01001',
-        duizhao:'胡落',
-        shijian:'停止监理',
-        state: '启用',
-    },
-    {
-        id: 'XNJ00006',
-        tongdao:'上海建筑工程总承包责任有限公司',
-        touguang:'CZ01002',
-        duizhao:'刘艺',
-        shijian:'正在监理中',
-        state: '启用',
-    },
-    {
-        id: 'XNJ00005',
-        tongdao:'上海建筑工程总承包责任有限公司',
-        touguang:'CZ01003',
-        duizhao:'杨子子',
-        shijian:'停止监理',
-        state: '启用',
-    },
-    {
-        id: 'XNJ000004',
-        tongdao:'浙江建设集团有限公司',
-        touguang:'CZ01004',
-        duizhao:'赵思明',
-        shijian:'正在监理中',
-        state: '启用',
-    },
-    {
-        id: 'XNJ00003',
-        tongdao:'上海建筑工程有限公司',
-        touguang:'CZ01005',
+        id: 'GCXM03',
+        tongdao:'汇景新城一期',
+        touguang:'未审核',
         duizhao:'王悦',
         shijian:'停止监理',
         state: '启用',
     },
     {
-        id: 'XNJ00002',
-        tongdao:'浙江建设集团有限公司',
-        touguang:'CZ01006',
+        id: 'GCXM02',
+        tongdao:'汇景新城二期',
+        touguang:'已审核',
         duizhao:'秦岚',
         shijian:'停止监理',
         state: '启用',
     },
     {
-        id: 'XNJ00001',
-        tongdao:'上海建筑工程总承包责任有限公司',
-        touguang:'CZ01007',
+        id: 'GCXM01',
+        tongdao:'汇景新城三期',
+        touguang:'未审核',
         duizhao:'宋明',
         shijian:'正在监理中',
         state: '启用',
     },
     {
-        id: 'XNJ00000',
-        tongdao:'上海建筑工程有限公司',
-        touguang:'CZ01008',
+        id: 'GCXM07',
+        tongdao:'山水田园一期',
+        touguang:'未审核',
+        duizhao:'胡落',
+        shijian:'停止监理',
+        state: '启用',
+    },
+    {
+        id: 'GCXM00',
+        tongdao:'山水田园二期',
+        touguang:'已审核',
         duizhao:'王三',
         shijian:'正在监理中',
         state: '启用',
     },
+    {
+        id: 'GCXM06',
+        tongdao:'翡翠绿洲一期',
+        touguang:'未审核',
+        duizhao:'刘艺',
+        shijian:'正在监理中',
+        state: '启用',
+    },
+    {
+        id: 'GCXM05',
+        tongdao:'翡翠绿洲二期',
+        touguang:'已审核',
+        duizhao:'杨子子',
+        shijian:'停止监理',
+        state: '启用',
+    },
+    {
+        id: 'GCXM004',
+        tongdao:'翡翠绿洲三期',
+        touguang:'未审核',
+        duizhao:'赵思明',
+        shijian:'正在监理中',
+        state: '启用',
+    },
+   
+  
     
 ]
 
@@ -103,12 +105,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '单位名称',
+            title: '工程名称',
             dataIndex: 'tongdao',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '合同编号',
+            title: '项目计划状态',
             dataIndex: 'touguang',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -152,7 +154,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="施工单位"
+                title="工程项目管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

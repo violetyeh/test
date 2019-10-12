@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '施工单位管理',
+          name: '工程项目管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '施工监理管理',
+          name: '进度监理管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安全质量预警',
+          name: '进度报告',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
