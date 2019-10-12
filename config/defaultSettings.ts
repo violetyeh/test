@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '施工监理安全质量预警系统软件',
+  title: '长顺基于BIM技术的工程进度监理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
