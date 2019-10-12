@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑物料检测信息"
+                title="编辑监理业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="施工单位" >
+                    <Form.Item key="cf" label="业务名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
@@ -59,28 +59,28 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="jg" label="工程名称" >
+                    <Form.Item key="jg" label="监理工程师" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="物料类型" >
+                    <Form.Item key="jx" label="监理联系电话" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="压碎值（%）" >
+                    <Form.Item key="dw" label="监理费浮动率（%）" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xs" label="吸水率（%）" >
+                    <Form.Item key="xs" label="监理进度（%）" >
                         {getFieldDecorator('xs', {
                             initialValue: currentItem.xs,
                         })(

@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '施工单位信息',
+          name: '工程单位信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '物料检测',
+          name: '监理业务管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '检验数据查询',
+          name: '监理数据查询',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

@@ -24,67 +24,67 @@ interface TypeState {
 const mockData = [
     {
         id: '01',
-        fl:'大桥区公路局',
-        mc:'大桥线（s361）南开至西边段改造工程',
-        ma:'大桥线管理局',
+        fl:'建管局',
+        mc:'市人民医院迁建工程',
+        ma:'14.21',
         nl:'刘文',
-        status:'未施工',
+        status:'未监理',
     },
     {
         id: '02',
-        fl:'施工单位甲',
-        mc:'南滨线（s361）大平至西边段改造工程',
-        ma:'南滨线管理局',
+        fl:'公路局',
+        mc:'大平至西边段改造工程',
+        ma:'36.21',
         nl:'赵媛',
-        status:'施工中',
+        status:'监理中',
     },
     {
         id: '03',
-        fl:'梦海区公路局',
-        mc:'梦海线（s361）梦园至南边段改造工程',
-        ma:'梦海线管理局',
+        fl:'梦海区',
+        mc:'梦海线改造工程',
+        ma:'2.35',
         nl:'刘冰',
-        status:'施工中',
+        status:'监理中',
     },
     {
         id: '04',
-        fl:'忘曲区公路局',
-        mc:'忘曲线（s361）古谭至西边段改造工程',
-        ma:'忘曲线管理局',
+        fl:'市区',
+        mc:'病房楼装修工程',
+        ma:'0.42',
         nl:'汪峰',
-        status:'未施工',
+        status:'未监理',
     },
     {
         id: '05',
-        fl:'三水区公路局',
-        mc:'三水线（s361）乐水至南边段改造工程',
-        ma:'三水线管理局',
+        fl:'生态园区',
+        mc:'余家岸组团一标',
+        ma:'5.36',
         nl:'陈云',
-        status:'施工中',
+        status:'监理中',
     },
     {
         id: '06',
-        fl:'顺德区公路局',
-        mc:'南滨线（s361）大平至西边段改造工程',
-        ma:'南滨线管理局',
+        fl:'顺德区',
+        mc:'天地永和二标',
+        ma:'10.23',
         nl:'王安',
-        status:'施工中',
+        status:'监理中',
     },
     {
         id: '07',
-        fl:'南海区公路局',
-        mc:'盐南线（s361）乐平至南边段改造工程',
-        ma:'盐南线管理局',
+        fl:'建管局',
+        mc:'情缘龙山',
+        ma:'30',
         nl:'张文芳',
-        status:'未施工',
+        status:'未监理',
     },
     {
         id: '08',
-        fl:'高明区公路局',
-        mc:'盐南线（s361）乐平至南边段改造工程',
-        ma:'盐南线管理局',
+        fl:'公路局',
+        mc:'加油站',
+        ma:'0.32',
         nl:'王芳',
-        status:'施工中',
+        status:'监理中',
     },
  
     
@@ -105,7 +105,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '施工单位',
+            title: '工程单位',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -115,13 +115,13 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '管理处',
+            title: '建筑面积（万平方米）',
             dataIndex: 'ma',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
        
         {
-            title: '管理员',
+            title: '监理员',
             dataIndex: 'nl',
         },
         {
@@ -158,7 +158,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="施工单位信息"
+                title="工程单位信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

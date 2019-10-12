@@ -19,77 +19,79 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'CL-00006',
-        mc:'公路试验检测#SY12',
-        gg:'铺料阶段',
-        hz:'施工单位',
-        jd:76,
+        id: 'CL-00001',
+        mc:'工程业务监理#SY02',
+        gg:'筑基阶段',
+        hz:'监理单位',
+        jd:98,
         state: 1,
-        jk:'中面层',
+        jk:'区建设工程监理',
      },
      {
+         id: 'CL-00002',
+         mc:'工程业务监理#SY63',
+         gg:'施工阶段',
+         hz:'施工单位',
+         jd:100,
+         state: 1,
+         jk:'市建设工程监理',
+      },
+      {
         id: 'CL-00003',
-        mc:'公路试验检测#SY71',
-        gg:'生产阶段',
-        hz:' 生产单位',
+        mc:'工程业务监理#SY71',
+        gg:'监理阶段',
+        hz:' 监理单位',
         jd:56,
         state: 1,
-        jk:'上面层',
+        jk:'县建设工程监理',
      },
      {
         id: 'CL-00004',
-        mc:'公路试验检测#SY1',
+        mc:'工程业务监理#SY1',
         gg:'筑基阶段',
         hz:'施工单位',
         jd:74,
         state: 1,
-        jk:'上面层',
+        jk:'市建设工程监理',
      },
      {
         id: 'CL-00005',
-        mc:'公路试验检测#SY03',
+        mc:'工程业务监理#SY03',
         gg:'铺料阶段',
         hz:'施工单位',
         jd:95,
         state: 1,
-        jk:'上面层',
+        jk:'区建设工程监理',
      },
+    {
+        id: 'CL-00006',
+        mc:'工程业务监理#SY12',
+        gg:'铺料阶段',
+        hz:'施工单位',
+        jd:76,
+        state: 1,
+        jk:'市建设工程监理',
+     },
+     
      {
         id: 'CL-00007',
-        mc:'公路试验检测#SY20',
-        gg:'生产阶段',
-        hz:'生产单位',
+        mc:'工程业务监理#SY20',
+        gg:'监理阶段',
+        hz:'监理单位',
         jd:100,
         state: 1,
-        jk:'下面层',
+        jk:'市建设工程监理',
      },
      {
         id: 'CL-00008',
-        mc:'公路试验检测#SY15',
+        mc:'工程业务监理#SY15',
         gg:'铺料阶段',
         hz:'施工单位',
         jd:88,
         state: 1,
-        jk:'中面层',
+        jk:'县建设工程监理',
      }, 
-    {
-       id: 'CL-00001',
-       mc:'公路试验检测#SY02',
-       gg:'筑基阶段',
-       hz:'生产单位',
-       jd:98,
-       state: 1,
-       jk:'上面层',
-    },
-    {
-        id: 'CL-00002',
-        mc:'公路试验检测#SY63',
-        gg:'施工阶段',
-        hz:'施工单位',
-        jd:100,
-        state: 1,
-        jk:'中面层',
-     },
+    
    
     
    
@@ -115,7 +117,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '面层',
+            title: '监理单位',
             dataIndex: 'jk',
            
         },
@@ -130,7 +132,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '检测进度',
+            title: '监理进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -162,7 +164,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="检验数据查询"
+                title="监理数据查询"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

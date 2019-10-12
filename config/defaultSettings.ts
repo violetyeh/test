@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路试验检测通用管理平台',
+  title: '长顺工程监理业务管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
