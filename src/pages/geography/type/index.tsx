@@ -25,8 +25,7 @@ const mockData = [
         hz:'1300',
         jd:76,
         state: 1,
-        zd:'1.00',
-        zdd:'3.00',
+        zd:'10.00',
      },
      {
         id: 'WLJK63127',
@@ -35,8 +34,7 @@ const mockData = [
         hz:'1500',
         jd:100,
         state: 1,
-        zd:'1.00',
-        zdd:'2.00',
+        zd:'30.00',
      },
      {
         id: 'WLJK63128',
@@ -45,8 +43,7 @@ const mockData = [
         hz:'1600',
         jd:88,
         state: 1,
-        zd:'2.00',
-        zdd:'3.00',
+        zd:'22.00',
      }, 
     {
        id: 'WLJK63121',
@@ -55,8 +52,7 @@ const mockData = [
        hz:'1400',
        jd:98,
        state: 1,
-       zd:'0.00',
-       zdd:'2.00',
+       zd:'25.00',
     },
     {
         id: 'WLJK63122',
@@ -65,8 +61,7 @@ const mockData = [
         hz:'1500',
         jd:100,
         state: 1,
-        zd:'1.00',
-        zdd:'2.00',
+        zd:'21.00',
      },
      {
         id: 'WLJK63123',
@@ -75,8 +70,7 @@ const mockData = [
         hz:' 1300',
         jd:56,
         state: 1,
-        zd:'0.00',
-        zdd:'1.00',
+        zd:'20.00',
      },
      {
         id: 'WLJK63124',
@@ -85,8 +79,7 @@ const mockData = [
         hz:'1200',
         jd:74,
         state: 1,
-        zd:'1.00',
-        zdd:'2.00',
+        zd:'21.00',
      },
      {
         id: 'WLJK63125',
@@ -95,8 +88,7 @@ const mockData = [
         hz:'1600',
         jd:95,
         state: 1,
-        zd:'0.00',
-        zdd:'1.00',
+        zd:'20.00',
      },
     
    
@@ -117,32 +109,28 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '施工桩号',
+            title: '施工节点',
             dataIndex: 'gg',
         },
         {
-            title: '施工桩长（m）',
+            title: '监理费（万元）',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
        
         {
-            title: '基桩尺寸（mm）',
+            title: '施工面积（m²）',
             dataIndex: 'hz',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '桩顶标高（m）',
+            title: '高（m）',
             dataIndex: 'zd',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
+       
         {
-            title: '桩端标高（m）',
-            dataIndex: 'zdd',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: '检测进度',
+            title: '管控进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -178,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="基桩信息"
+                title="综合管控"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

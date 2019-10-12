@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路基桩检测信息管理系统',
+  title: '长顺工程监理现场实时综合管控系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

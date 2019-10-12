@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑基桩信息"
+                title="编辑综合管控"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="施工桩号" >
+                    <Form.Item key="gg" label="施工节点" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="施工桩长（m）" >
+                    <Form.Item key="mc" label="监理费（万元）" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -66,28 +66,22 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="hz" label="基桩尺寸（mm）" >
+                    <Form.Item key="hz" label="施工面积（m²）" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zd" label="桩顶标高（m）" >
+                    <Form.Item key="zd" label="高（m）" >
                         {getFieldDecorator('zd', {
                             initialValue: currentItem.zd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zdd" label="桩端标高（m）" >
-                        {getFieldDecorator('zdd', {
-                            initialValue: currentItem.zdd,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jd" label="检测进度（%）" >
+                    
+                    <Form.Item key="jd" label="管控进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

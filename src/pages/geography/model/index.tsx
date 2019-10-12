@@ -20,66 +20,66 @@ interface ModelState {
 const mockData = [
     {
         id:'ZJSM023896',
-        cf:'1.41',
-        dw:'21.0',
-        jg:'公路JTG/T F81-01',
-        jx:'扇测法',
+        cf:'水力发电站工程',
+        dw:'一级',
+        jg:'工程监理JTG/T F81-01',
+        jx:'监理合同',
         status: '启用',
      },
      {
        id:'ZJSM023897',
-       cf:'1.08',
-       dw:'21.1',
-       jg:'公路JTG/T F81-02',
-       jx:'扇测法',
+       cf:'道路桥梁建筑工程',
+       dw:'一级',
+       jg:'工程监理JTG/T F81-02',
+       jx:'监理费用管理',
        status: '启用',
     },
     {
         id:'ZJSM023898',
-        cf:'1.12',
-        dw:'20.0',
-        jg:'公路JTG/T F81-03',
-        jx:'平测法',
+        cf:'水力发电站工程',
+        dw:'一级',
+        jg:'工程监理JTG/T F81-03',
+        jx:'监理成本管理',
         status: '启用',
      },
     {
        id:'ZJSM023891',
-       cf:'1.28',
-       dw:'21.3',
-       jg:'公路JTG/T F81-04',
-       jx:'平测法',
+       cf:'楼房建筑工程',
+       dw:'二级',
+       jg:'工程监理JTG/T F81-04',
+       jx:'监理规划细则',
        status: '启用',
     },
     {
         id:'ZJSM023892',
-        cf:'1.36',
-        dw:'21.0',
-        jg:'公路JTG/T F81-05',
-        jx:'平测法',
+        cf:'道路桥梁建筑工程',
+        dw:'一级',
+        jg:'工程监理JTG/T F81-05',
+        jx:'沟通管理',
         status: '启用',
      },
      {
         id:'ZJSM023893',
-        cf:'1.115',
-        dw:'20.0',
-        jg:'公路JTG/T F81-06',
-        jx:'扇测法',
+        cf:'道路桥梁建筑工程',
+        dw:'一级',
+        jg:'工程监理JTG/T F81-06',
+        jx:'质量控制',
         status: '启用',
      },
      {
         id:'ZJSM023894',
-        cf:'1.025',
-        dw:'20.1',
-        jg:'公路JTG/T F81-07',
-        jx:'斜测法',
+        cf:'楼房建筑工程',
+        dw:'二级',
+        jg:'工程监理JTG/T F81-07',
+        jx:'造价控制',
         status: '启用',
      },
      {
          id:'ZJSM023895',
-         cf:'1.63',
-         dw:'20.0',
-         jg:'公路JTG/T F81-08',
-         jx:'平测法',
+         cf:'水力发电站工程',
+         dw:'一级',
+         jg:'工程监理JTG/T F81-08',
+         jx:'进度控制',
          status: '启用',
       },
 
@@ -99,21 +99,21 @@ class Model extends Component<ModelProps, ModelState>{
         },
        
         {
-            title: '测试规范',
+            title: '监理规范',
             dataIndex: 'jg',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '测试方法',
+            title: '监理过程',
             dataIndex: 'jx',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '采样间隔（μs）',
+            title: '工程类别',
             dataIndex: 'cf',
         },
         {
-            title: '发射脉宽（μs）',
+            title: '工程等级',
             dataIndex: 'dw',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="参数设置"
+                title="监理设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
