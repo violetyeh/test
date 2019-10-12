@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路环境参数自动检测系统',
+  title: '长顺工程监理移动平台软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

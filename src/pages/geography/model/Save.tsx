@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑质量动态监控信息"
+                title="编辑项目信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,14 +58,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="龄期（d）" >
+                    <Form.Item key="dw" label="工期（天）" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="强度等级" >
+                    <Form.Item key="jc" label="主控项目" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jg" label="受压面积（mm²）" >
+                    <Form.Item key="jg" label="项目负责人" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="质量监控进度（%）" >
+                    <Form.Item key="jx" label="监理进度（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑公路环境参数信息"
+                title="编辑监理状况"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="公路名称" >
+                    <Form.Item key="mc" label="功能组名" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -65,21 +65,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="地面超载（Kpa）" >
+                    <Form.Item key="hz" label="备案审批情况" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="检测进度（%）" >
+                    <Form.Item key="jd" label="工程进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="自动检测" >
+                    <Form.Item key="status" label="自动监理" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(

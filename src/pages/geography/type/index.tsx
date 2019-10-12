@@ -18,68 +18,69 @@ interface TypeState {
 }
 
 const mockData = [
-    
-     {
-        id: 'FANG0024',
-        mc:'绕城高速公路',
-        gg:'开挖至-6.1m（深6.1m）',
-        hz:'20',
-        jd:74,
-        state: 1,
-     },
-     {
-        id: 'FANG0025',
-        mc:'跃进路',
-        gg:'拆除1支撑',
-        hz:'20',
-        jd:95,
-        state: 1,
-     },
-     {
-        id: 'FANG0026',
-        mc:'新南路',
-        gg:'在-5m（深5m）处加撑',
-        hz:'15',
-        jd:76,
-        state: 1,
-     },
-     {
+    {
         id: 'FANG0021',
-        mc:'万寿路',
-        gg:'开挖至-6.6m（深6.6m）',
-        hz:'15',
+        mc:'文件查阅',
+        gg:'未办理验收竣工的工程',
+        hz:'整改后同意',
         jd:98,
         state: 1,
      },
      {
          id: 'FANG0022',
-         mc:'五四路',
-         gg:'在-5.4m（深5.4m）处换撑',
-         hz:'20',
+         mc:'文件编辑',
+         gg:'半年度新增受监理工程',
+         hz:'不同意',
          jd:100,
          state: 1,
       },
       {
          id: 'FANG0023',
-         mc:'石青支路',
-         gg:'开挖至-5m（深5m）',
-         hz:'15',
+         mc:'文件审核',
+         gg:'半年度新增受监理工程',
+         hz:'整改后同意',
          jd:56,
          state: 1,
       },
+    
+     {
+        id: 'FANG0024',
+        mc:'项目审核',
+        gg:'受监理',
+        hz:'整改后同意',
+        jd:74,
+        state: 1,
+     },
+     {
+        id: 'FANG0025',
+        mc:'项目查阅',
+        gg:'半年度新增受监理工程',
+        hz:'不同意',
+        jd:95,
+        state: 1,
+     },
+     {
+        id: 'FANG0026',
+        mc:'项目编辑',
+        gg:'未办理施工图文件审查的工程',
+        hz:'一次同意',
+        jd:76,
+        state: 1,
+     },
+     
      {
         id: 'FANG0027',
-        mc:'石杨路',
-        gg:'在-4.4m（深4.4m）处加撑',
-        hz:'10',
+        mc:'监督编辑',
+        gg:'未办理施工图文件审查的工程',
+        hz:'整改后同意',
         jd:100,
         state: 1,
      },
      {
         id: 'FANG0028',
-        mc:'桥鸿路',
-        gg:'开挖至-6m（深6m）',
-        hz:'15',
+        mc:'监督审核',
+        gg:'未办理验收竣工的工程',
+        hz:'一次同意',
         jd:88,
         state: 1,
      }, 
@@ -100,7 +101,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '公路名称',
+            title: '功能组名',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
@@ -109,17 +110,17 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'gg',
         },
         {
-            title: '地面超载（Kpa）',
+            title: '备案审批情况',
             dataIndex: 'hz',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '检测进度',
+            title: '工程进度',
             dataIndex: 'jd',
             render: (text) => <Progress percent={text} status="active" />,
         },
         {
-            title: '自动检测',
+            title: '自动监理',
             dataIndex: 'status',
             render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
         },
@@ -150,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="公路环境参数管理"
+                title="监理状况管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

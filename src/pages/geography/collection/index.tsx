@@ -24,59 +24,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'AQGZE-00035',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合丙级',
+        fl:'13520',
+        mc:'达州金山顺街4号',
+        ma:'砖混',
+        nl:'恋园小区商住楼',
     },
     {
         id: 'AQGZE-00064',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        fl:'500',
+        mc:'春熙路12号',
+        ma:'框剪',
+        nl:'天大综合楼工程',
     },
     {
         id: 'AQGZE-00078',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        fl:'3000',
+        mc:'成都市黄田坝',
+        ma:'框剪',
+        nl:'132厂加工厂房',
     },
     {
         id: 'AQGZE-00021',
-        fl:'万能材料试验机',
-        mc:'钢筋（含接头）',
-        ma:'屈服强度，伸长度，抗拉强度',
-        nl:'公路工程-综合乙级',
+        fl:'24000',
+        mc:'成都二环路西三段',
+        ma:'砖混',
+        nl:'锦城名都',
     },
     {
         id: 'AQGZE-00035',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        fl:'120',
+        mc:'广安市庆华镇',
+        ma:'砖混',
+        nl:'锦绣游泳池工程',
     },
     {
         id: 'AQGZE-00038',
-        fl:'基桩超声检测仪',
-        mc:'地基基础',
-        ma:'基装完整性',
-        nl:'公路工程-综合丙级',
+        fl:'31000',
+        mc:'成都市建设路1号',
+        ma:'框剪',
+        nl:'万科金域南湾',
     },
     {
         id: 'AQGZE-00021',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        fl:'120',
+        mc:'双流县双华路',
+        ma:'框剪',
+        nl:'景峰公寓工程',
     },
     {
         id: 'AQGZE-00037',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合乙级',
+        fl:'2800',
+        mc:'四川省南充市人民北路',
+        ma:'砖混',
+        nl:'南充1号楼',
     },
   
     
@@ -97,29 +97,28 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '等级类型',
+            title: '工程名称',
             dataIndex: 'nl',
         },
         
         
         {
-            title: '项目',
+            title: '工程地址',
             dataIndex: 'mc',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '本次检测参数',
+            title: '建筑结构类型',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '参数对应设备',
+            title: '工程面积（m²）',
             dataIndex: 'fl',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
 
         {
-            title: '检测状态',
+            title: '监理状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="完成" unCheckedChildren="未完成" />,
           },
@@ -153,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测参数核查"
+                title="监理现场管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
