@@ -20,72 +20,72 @@ interface TypeState {
 const mockData = [
     {
         id: 'MTSJXX0223',
-        fenlei: 'JZGG05设备播放时长10秒',
+        fenlei: 'JZGG05装配式建筑支撑参数10mm',
         pinlv: 33,
-        yaosu: '电影预告片',
+        yaosu: '高处作业吊篮计算',
         fenceng: '600万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0292',
-        fenlei: 'JZGG设备播放时长10秒',
+        fenlei: 'JZGG装配式建筑支撑参数10mm',
         pinlv: 50,
-        yaosu: '电影预告片',
+        yaosu: '高处作业吊篮计算',
         fenceng: '200万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0271',
-        fenlei: 'JZGG014设备播放时长20秒',
+        fenlei: 'JZGG014装配式建筑支撑参数20mm',
         pinlv: 72,
-        yaosu: '服装广告',
+        yaosu: '附着式升降脚手架计算',
         fenceng: '200万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0228',
-        fenlei: 'JZGG023设备播放时长15秒',
+        fenlei: 'JZGG023装配式建筑支撑参数15mm',
         pinlv: 15,
-        yaosu: '电影预告片',
+        yaosu: '高处作业吊篮计算',
         fenceng: '300万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0264',
-        fenlei: 'JZGG47设备播放时长10秒',
+        fenlei: 'JZGG47装配式建筑支撑参数10mm',
         pinlv: 32,
-        yaosu: '珠宝广告',
+        yaosu: '外挂防护架计算',
         fenceng: '200万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0278',
-        fenlei: 'MTSJX设备播放时长17秒',
+        fenlei: 'MTSJX装配式建筑支撑参数17mm',
         pinlv: 56,
-        yaosu: '电影预告片',
+        yaosu: '高处作业吊篮计算',
         fenceng: '250万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0226',
-        fenlei: 'JZGG12设备播放时长16秒',
+        fenlei: 'JZGG12装配式建筑支撑参数16mm',
         pinlv: 12,
-        yaosu: '珠宝广告',
+        yaosu: '外挂防护架计算',
         fenceng: '1000万',
         state: '启用',
        
     },
     {
         id: 'MTSJXX0224',
-        fenlei: 'JZGG09设备播放时长30秒',
+        fenlei: 'JZGG09装配式建筑支撑参数30mm',
         pinlv: 26,
-        yaosu: '服装广告',
+        yaosu: '附着式升降脚手架计算',
         fenceng: '100万',
         state: '启用',
        
@@ -107,26 +107,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '媒体数据',
+            title: '架体设计参数',
             dataIndex: 'fenlei',
         },
        
         {
-            title: '媒体设备播放信息',
+            title: '工具式脚手架计算',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '收益',
+            title: '监理费用',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
-        // {
-        //     title: '几何类型',
-        //     dataIndex: 'leixing',
-        // },
+       
         {
-            title: '设备使用率',
+            title: '监理安全率',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -169,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="媒体数据管理"
+                title="装配式建筑管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

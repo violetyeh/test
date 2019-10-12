@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '楼宇媒体资源管理系统',
+  title: '长顺基于BIM技术的装配式建筑监理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

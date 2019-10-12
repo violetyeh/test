@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="媒体资源信息"
+                title="编辑安全监理信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="媒体资源名称" >
+                    <Form.Item key="pinlv" label="单位工程名称" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="资源来源渠道" >
+                    <Form.Item key="date" label="安全管理" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="设备日播资源数（广告：个）" >
+                    <Form.Item key="model" label="报警信息数" >
                         {getFieldDecorator('model', {
                             initialValue: currentItem.model,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="媒体设备启用时长（小时）" >
+                    <Form.Item key="type" label="监理设备启用时长（小时）" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="时长率（%）" >
+                    <Form.Item key="process" label="监理效率（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

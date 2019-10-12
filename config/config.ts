@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '楼宇媒体管理',
+          name: '工程信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '媒体资源管理',
+          name: '安全监理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '楼宇媒体数据管理',
+          name: '装配式建筑管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
