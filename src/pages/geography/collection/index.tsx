@@ -23,67 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'XL-BH-04',
-        xm:'成都',
-        jg:'江津',
-        dw:'300',
-        pd:'2019年7月14日',
+        id: 'DDID04',
+        xm:'中储物流测试客户001',
+        jg:'入库订单',
+        dw:'洗碗机',
+        pd:'2019年9月14日',
         state: '启用',
     },
     {
-        id: 'XL-BH-05',
-        xm:'攀枝花',
-        jg:'成都',
-        dw:'210',
-        pd:'2019年6月14日',
+        id: 'DDID05',
+        xm:'中储物流测试客户002',
+        jg:'出库订单',
+        dw:'吹风机',
+        pd:'2019年10月14日',
         state: '启用',
     },
     {
-        id: 'XL-BH-06',
-        xm:'潼南',
-        jg:'合川',
-        dw:'150',
-        pd:'2019年7月12日',
+        id: 'DDID06',
+        xm:'中储物流测试客户003',
+        jg:'运输订单',
+        dw:'手机',
+        pd:'2019年9月12日',
         state: '启用',
     },
     {
-        id: 'XL-BH-07',
-        xm:'江津',
-        jg:'永川',
-        dw:'80',
-        pd:'2019年7月06日',
+        id: 'DDID07',
+        xm:'中储物流测试客户004',
+        jg:'配送订单',
+        dw:'洗衣机',
+        pd:'2019年9月06日',
         state: '启用',
     },
     {
-        id: 'XL-BH-08',
-        xm:'湖南',
-        jg:'浙江',
-        dw:'260',
-        pd:'2019年7月04日',
+        id: 'DDID08',
+        xm:'中储物流测试客户005',
+        jg:'入库订单',
+        dw:'电视机',
+        pd:'2019年9月04日',
         state: '启用',
     },
     {
-        id: 'XL-BH-01',
-        xm:'南京',
-        jg:'长沙',
-        dw:'200',
-        pd:'2019年7月09日',
+        id: 'DDID01',
+        xm:'中储物流测试客户006',
+        jg:'出库订单',
+        dw:'衣柜',
+        pd:'2019年9月09日',
         state: '启用',
     },
     {
-        id: 'XL-BH-02',
-        xm:'璧山',
-        jg:'昆明',
-        dw:'300',
-        pd:'2019年7月10日',
+        id: 'DDID02',
+        xm:'中储物流测试客户007',
+        jg:'配送订单',
+        dw:'冰箱',
+        pd:'2019年9月10日',
         state: '启用',
     },
     {
-        id: 'XL-BH-03',
-        xm:'重庆',
-        jg:'云南',
-        dw:'120',
-        pd:'2019年7月07日',
+        id: 'DDID03',
+        xm:'中储物流测试客户008',
+        jg:'运输订单',
+        dw:'电脑',
+        pd:'2019年9月07日',
         state: '启用',
     },
    
@@ -100,26 +100,26 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '线路编号',
+            title: '订单号',
             dataIndex: 'id',
         },
         {
-            title: '起始城市',
+            title: '客户码',
             dataIndex: 'xm',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '到达城市',
+            title: '订单类型',
             dataIndex: 'jg',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '车票价格（元）',
+            title: '货物名称',
             dataIndex: 'dw',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '发车日期',
+            title: '发货日期',
             dataIndex: 'pd',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
@@ -153,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="线路信息管理"
+                title="通用列表"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

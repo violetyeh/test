@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 长途汽车数量: 154, 路线信息: 80, 售出车票: 45, 总销售额: 1000 },
-  { label: '0.2', 长途汽车数量: 190, 路线信息: 80, 售出车票: 13, 总销售额: 812 },
-  { label: '0.3', 长途汽车数量: 121, 路线信息: 90, 售出车票: 90, 总销售额: 1012 },
-  { label: '0.4', 长途汽车数量: 150, 路线信息: 50, 售出车票: 39, 总销售额: 524 },
-  { label: '0.5', 长途汽车数量: 123, 路线信息: 24, 售出车票: 50, 总销售额: 656},
-  { label: '0.6', 长途汽车数量: 112, 路线信息: 64, 售出车票: 66, 总销售额: 541 },
-  { label: '0.7', 长途汽车数量: 163, 路线信息: 44, 售出车票: 16, 总销售额: 878 },
-  { label: '0.8', 长途汽车数量: 123, 路线信息: 24, 售出车票: 66, 总销售额: 752 },
-  { label: '0.9', 长途汽车数量: 153, 路线信息: 34, 售出车票: 23, 总销售额: 841 },
-  { label: '1.0', 长途汽车数量: 123, 路线信息: 23, 售出车票: 78, 总销售额: 812 },
-  { label: '未评分', 长途汽车数量: 113, 路线信息: 13, 售出车票: 66, 总销售额: 1100 },
+  { label: '0.1', 船舶数量: 154, 航线信息: 80, 物流信息: 45, 货物信息: 100 },
+  { label: '0.2', 船舶数量: 190, 航线信息: 80, 物流信息: 13, 货物信息: 81 },
+  { label: '0.3', 船舶数量: 121, 航线信息: 90, 物流信息: 90, 货物信息: 101 },
+  { label: '0.4', 船舶数量: 150, 航线信息: 50, 物流信息: 39, 货物信息: 52 },
+  { label: '0.5', 船舶数量: 123, 航线信息: 24, 物流信息: 50, 货物信息: 65},
+  { label: '0.6', 船舶数量: 112, 航线信息: 64, 物流信息: 66, 货物信息: 54 },
+  { label: '0.7', 船舶数量: 163, 航线信息: 44, 物流信息: 16, 货物信息: 87 },
+  { label: '0.8', 船舶数量: 123, 航线信息: 24, 物流信息: 66, 货物信息: 75 },
+  { label: '0.9', 船舶数量: 153, 航线信息: 34, 物流信息: 23, 货物信息: 84 },
+  { label: '1.0', 船舶数量: 123, 航线信息: 23, 物流信息: 78, 货物信息: 82 },
+  { label: '未评分', 船舶数量: 113, 航线信息: 13, 物流信息: 66, 货物信息: 100 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['长途汽车数量', '路线信息', '售出车票','总销售额'], // 展开字段集
+  fields: ['船舶数量', '航线信息', '物流信息','货物信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  总销售额: {
+  货物信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '长途汽车数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '路线信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '售出车票', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '总销售额', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '船舶数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '航线信息', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '物流信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '货物信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '总销售额') {
+              if (geom.getYScale().field === value && value === '货物信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '总销售额') {
+              } else if (geom.getYScale().field === 'value' && value !== '货物信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '汽车数量') {
+            if (value === '船只数量') {
               return '#2b6cbb';
             }
-            if (value === '总销售额') {
+            if (value === '货物信息') {
               return '#41a2fc';
             }
-            if (value === '路线信息') {
+            if (value === '航线信息') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*总销售额" color="#fad248" size={3} />
+        <Geom type="line" position="label*货物信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

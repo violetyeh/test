@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑线路信息"
+                title="编辑通用列表"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="线路编号" >
+                    <Form.Item key="id" label="订单号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xm" label="起始城市" >
+                    <Form.Item key="xm" label="客户码" >
                         {getFieldDecorator('xm', {
                             initialValue: currentItem.xm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="到达城市" >
+                    <Form.Item key="jg" label="订单类型" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="车票价格（元）" >
+                    <Form.Item key="dw" label="货物名称" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pd" label="发车日期" >
+                    <Form.Item key="pd" label="发货日期" >
                         {getFieldDecorator('pd', {
                             initialValue: currentItem.pd,
                         })(

@@ -19,66 +19,66 @@ interface TypeState {
 
 const mockData = [
     {
-       id: 'ticketNO00032',
-       hj:'合川',
-       mc:'busNO19',
-       bs:'江津',
+       id: 'ZXX032',
+       hj:'冷冻箱',
+       mc:'40',
+       bs:'120',
        bcy:'2019年9月5日',
        state: 1,
     },
     {
-        id: 'ticketNO00049',
-        hj:'永川',
-        mc:'busNO18',
-        bs:'合川',
+        id: 'ZXX049',
+        hj:'重箱',
+        mc:'20',
+        bs:'80',
         bcy:'2019年9月4日',
         state: 1,
      },
      {
-        id: 'ticketNO00036',
-        hj:'江津',
-        mc:'busNO17',
-        bs:'永川',
+        id: 'ZXX036',
+        hj:'空箱',
+        mc:'45',
+        bs:'74',
         bcy:'2019年9月3日',
         state: 1,
      },
      {
-        id: 'ticketNO00047',
-        hj:'长沙',
-        mc:'busNO16',
-        bs:'成都',
+        id: 'ZXX047',
+        hj:'危险品',
+        mc:'40',
+        bs:'56',
         bcy:'2019年9月2日',
         state: 1,
      },
      {
-        id: 'ticketNO00022',
-        hj:'重庆',
-        mc:'busNO15',
-        bs:'长沙',
+        id: 'ZXX022',
+        hj:'冷冻箱',
+        mc:'20',
+        bs:'110',
         bcy:'2019年9月1日',
         state: 1,
      },
      {
-        id: 'ticketNO00047',
-        hj:'蒲元',
-        mc:'busNO14',
-        bs:'成都',
+        id: 'ZXX047',
+        hj:'危险品',
+        mc:'45',
+        bs:'74',
         bcy:'2019年9月7日',
         state: 1,
      },
      {
-        id: 'ticketNO00036',
-        hj:'汶川',
-        mc:'busNO13',
-        bs:'广谱',
+        id: 'ZXX036',
+        hj:'重箱',
+        mc:'40',
+        bs:'86',
         bcy:'2019年9月8日',
         state: 1,
      },
      {
-        id: 'ticketNO00012',
-        hj:'重庆',
-        mc:'busNO12',
-        bs:'成都',
+        id: 'ZXX012',
+        hj:'空箱',
+        mc:'20',
+        bs:'112',
         bcy:'2019年9月6日',
         state: 1,
      },
@@ -94,33 +94,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车票编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '汽车编号',
+            title: '尺寸',
             dataIndex: 'mc',
             render: (text) => <Tag color="green">{text}</Tag>,
             
         },
         {
-            title: '起始城市',
+            title: '类型',
             dataIndex: 'hj',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         
         {
-            title: '到达城市',
+            title: '进口总数',
             dataIndex: 'bs',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '购票日期',
+            title: '靠泊日期',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '是否过期',
+            title: '是否中转',
             dataIndex: 'jl',
             render: () => <Switch checkedChildren="否" unCheckedChildren="是" />,
         },
@@ -151,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车票信息管理"
+                title="卸船箱数"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑车票信息"
+                title="编辑卸船箱数信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,21 +44,21 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="车票编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="汽车编号" >
+                    <Form.Item key="mc" label="尺寸" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="起始城市" >
+                    <Form.Item key="hj" label="类型" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
@@ -66,21 +66,21 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="bs" label="到达城市" >
+                    <Form.Item key="bs" label="进口总数" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="购票日期" >
+                    <Form.Item key="bcy" label="靠泊日期" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jl" label="是否过期" >
+                    <Form.Item key="jl" label="是否中转" >
                         {getFieldDecorator('jl', {
                             initialValue: currentItem.jl,
                         })(

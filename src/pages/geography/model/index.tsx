@@ -19,75 +19,75 @@ interface ModelState {
 
 const mockData = [
     {
-        hj: 'CTQC01201',
-        dw:'特大型客车(长度大于12米)',
+        hj: 'PCID01',
+        dw:'出口',
         ren:'刘威',
-        riqi:'80',
-        qk:'有',
-        process: 1,
+        riqi:'CHUAN80',
+        qk:'中型',
+        process: 91,
         
     },
     {
-        hj: 'CTQC01202',
-        dw:'大型客车(长度为9-12米)',
+        hj: 'PCID02',
+        dw:'进口',
         ren:'孟浩',
-        riqi:'60',
-        qk:'无',
-        process: 5,
+        riqi:'CHUAN60',
+        qk:'小型',
+        process: 35,
         
     },
     {
-        hj: 'CTQC01203 ',
-        dw:'特大型客车(长度大于12米)',
+        hj: 'PCID03 ',
+        dw:'进口',
         ren:'唐宇',
-        riqi:'80',
-        qk:'有',
-        process: 2,
+        riqi:'CHUAN80',
+        qk:'中型',
+        process: 100,
         
     },
     {
-        hj: 'CTQC01204',
-        dw:'大型客车(长度为9-12米)',
+        hj: 'PCID04',
+        dw:'出口',
         ren:'李白白',
-        riqi:'60',
-        qk:'无',
-        process: 1,
+        riqi:'CHUAN60',
+        qk:'小型',
+        process: 51,
         
     },
     {
-        hj: 'CTQC01205',
-        dw:'中型客车(长度为6-9米)',
+        hj: 'PCID05',
+        dw:'进口',
         ren:'明楼',
-        riqi:'40',
-        qk:'有',
-        process:8,
+        riqi:'CHUAN40',
+        qk:'中型',
+        process:68,
         
     },
     {
-        hj: 'CTQC01206',
-        dw:'小于6米的小型客车',
+        hj: 'PCID06',
+        dw:'进口',
         ren:'明玉',
-        riqi:'30',
-        qk:'无',
-        process: 7,
+        riqi:'CHUAN30',
+        qk:'小型',
+        process: 97,
         
     },
     {
-        hj: 'CTQC01207',
-        dw:'中型客车(长度为6-9米)',
+        hj: 'PCID07',
+        dw:'出口',
         ren:'刘茵茵',
-        riqi:'40',
-        qk:'有',
-        process:6,
+        riqi:'CHUAN40',
+        qk:'中型',
+        process:96,
         
     },
     {
-        hj: 'CTQC01208',
-        dw:'大型客车(长度为9-12米)',
+        hj: 'PCID08',
+        dw:'进口',
         ren:'赵湾',
-        riqi:'60',
-        qk:'有',
-        process: 4,
+        riqi:'CHUAN60',
+        qk:'中型',
+        process: 94,
         
     },
     
@@ -103,33 +103,33 @@ class Model extends Component<ModelProps, ModelState>{
     columns: ColumnProps<any>[] = [
        
         {
-            title: '长途汽车编号',
+            title: '批次编号',
             dataIndex: 'hj',
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '长途汽车车型',
+            title: '进出口',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '驾驶员',
+            title: '管理员',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '汽车座位数量',
+            title: '船名称',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '有无空调',
+            title: '货柜箱型',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '汽车磨损度',
+            title: '装箱进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -154,13 +154,13 @@ class Model extends Component<ModelProps, ModelState>{
     }
 
     delete = (record: any) => {
-        message.error('核心数据，无法删除');
+        message.error('核心数据，小型法删除');
     }
     render() {
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="长途汽车信息管理"
+                title="批次管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
