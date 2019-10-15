@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='安全预警信息'
+          title='运输调度监控信息'
           action={
             <Tooltip
               title={
@@ -36,7 +36,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={111}
-          footer='今日预警: 56'
+          footer='今日调度信息: 56'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='运输公路条数'
+          title='运输车辆信息'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(256).format('0,0')}
-          footer='预警进度：84%'
+          footer='装卸进度：84%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='安全到达占比'
+          title='港口船舶占比'
           action={
             <Tooltip
               title={
@@ -106,16 +106,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="99%"
+          total="56%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>23%</span>
+                <span className={styles.trendText}>39%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>21%</span>
+                <span className={styles.trendText}>20%</span>
               </Trend>
             </div>
           }

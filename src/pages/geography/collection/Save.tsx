@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑道路运输环境"
+                title="编辑港口车辆信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="车队编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="所在路口" >
+                    <Form.Item key="lg" label="车牌号" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="路口名称" >
+                    <Form.Item key="fenceng" label="自重" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="线路类型" >
+                    <Form.Item key="leixing" label="IC卡编号" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="方案配置" >
+                    <Form.Item key="jishu" label="额定载荷" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
@@ -81,7 +81,7 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                     
-                    <Form.Item key="name" label="配置进度(%)" >
+                    <Form.Item key="name" label="来港次数" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(

@@ -20,59 +20,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'YS-BH-1292',
-        fenlei: '车辆逆行',
-        yaosu: '正常驾驶',
+        fenlei: '2500',
+        yaosu: '内贸',
         state: '安全',
-        pinlv: '高速公路',
+        pinlv: '船舶来港运输',
     },
     {
         id: 'YS-BH-8201',
-        fenlei: '道路塌陷 ',
-        yaosu: '醉酒驾驶',
-        state: '危险',
-        pinlv: '普通公路',
+        fenlei: '3000 ',
+        yaosu: '外贸',
+        state: '超重危险',
+        pinlv: '船舶离港运输',
     },
     {
         id: 'YS-BH-3921',
-        fenlei: '非法变道',
-        yaosu: '正常驾驶',
+        fenlei: '3200',
+        yaosu: '内贸',
         state: '安全',
-        pinlv: '高速公路',
+        pinlv: '船舶运输',
     },
     {
         id: 'YS-BH-0029',
-        fenlei: '车辆逆行',
-        yaosu: '正常驾驶',
-        state: '危险',
-        pinlv: '高速公路',
+        fenlei: '3000',
+        yaosu: '内贸',
+        state: '油量低',
+        pinlv: '船舶离港运输',
     },
     {
         id: 'YS-BH-2191',
-        fenlei: '车辆拥堵',
-        yaosu: '疲劳驾驶',
+        fenlei: '2800',
+        yaosu: '外贸',
         state: '安全',
-        pinlv: '普通公路',
+        pinlv: '船舶运输',
     },
     {
         id: 'YS-BH-3321',
-        fenlei: '异物抛撒',
-        yaosu: '打电话驾驶',
-        state: '危险',
-        pinlv: '高速公路',
+        fenlei: '3000',
+        yaosu: '外贸',
+        state: '超重危险',
+        pinlv: '船舶来港运输',
     },
     {
         id: 'YS-BH-2136',
-        fenlei: '异常停车',
-        yaosu: '正常驾驶',
+        fenlei: '2500',
+        yaosu: '内贸',
         state: '安全',
-        pinlv: '普通公路',
+        pinlv: '船舶运输',
     },
     {
         id: 'YS-BH-3354',
-        fenlei: '交通事故',
-        yaosu: '正常驾驶',
+        fenlei: '3000',
+        yaosu: '内贸',
         state: '安全',
-        pinlv: '高速公路',
+        pinlv: '船舶运输',
     },
 ]
 
@@ -86,11 +86,11 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '安全预警',
+            title: '监控状态',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >预警</Checkbox>
+                  <Checkbox >监控中</Checkbox>
                 </Fragment>
             ),
         },
@@ -100,25 +100,25 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '道路类型',
+            title: '运输类型',
             dataIndex: 'pinlv',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '驾驶人状态监测',
+            title: '内/外贸',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         
         {
-            title: '预警原因',
+            title: '载重（T）',
             dataIndex: 'fenlei',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
 
         {
-            title: '盲区检测',
+            title: '状态提示',
             dataIndex: 'state',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
@@ -149,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安全预警设置"
+                title="船舶运输管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

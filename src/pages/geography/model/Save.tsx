@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑安全预警信息"
+                title="编辑码头作业监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="车牌号码" >
+                    <Form.Item key="pinlv" label="当前作业线" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="预警时间" >
+                    <Form.Item key="date" label="监控时间" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="预警类型" >
+                    <Form.Item key="type" label="管理状态" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="驾驶人" >
+                    <Form.Item key="process" label="作业管理员" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

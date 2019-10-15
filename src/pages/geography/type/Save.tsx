@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置安全预警参数"
+                title="编辑船舶运输信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,14 +52,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="道路类型" >
+                    <Form.Item key="pinlv" label="运输类型" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="驾驶人状态监测" >
+                    <Form.Item key="yaosu" label="内/外贸" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
@@ -67,14 +67,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="fenlei" label="预警原因" >
+                    <Form.Item key="fenlei" label="载重（T）" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="state" label="盲区检测" >
+                    <Form.Item key="state" label="状态提示" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(
