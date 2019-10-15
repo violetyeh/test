@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾自助智能储物柜系统',
+  title: '远程计算机优化仓储管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

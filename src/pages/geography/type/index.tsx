@@ -20,66 +20,66 @@ interface TypeState {
 const mockData = [
     
      {
-        id: 'CWG0000024',
-        mc:'快递',
-        gg:'实名制取物',
-        hz:'申通快递',
+        id: 'CK00024',
+        mc:'C0仓库01',
+        gg:'到货通知单批量导入',
+        hz:'商品物资',
         jd:74,
         state: 1,
      },
      {
-        id: 'CWG0000025',
-        mc:'快递',
-        gg:'实名制取物',
-        hz:'邮政快递',
+        id: 'CK00025',
+        mc:'C0仓库02',
+        gg:'货位容量查询',
+        hz:'工程物资',
         jd:95,
         state: 1,
      },
      {
-        id: 'CWG0000026',
-        mc:'游乐场',
-        gg:'未实名',
-        hz:'自带物品',
+        id: 'CK00026',
+        mc:'C0仓库03',
+        gg:'货位查询',
+        hz:'办公物资',
         jd:76,
         state: 1,
      },
      {
-        id: 'CWG0000021',
-        mc:'商场',
-        gg:'未实名',
-        hz:'自带物品',
+        id: 'CK00021',
+        mc:'C0仓库04',
+        gg:'货物称重',
+        hz:'修理物资',
         jd:98,
         state: 1,
      },
      {
-         id: 'CWG0000022',
-         mc:'超市',
-         gg:'未实名',
-         hz:'自带物品',
+         id: 'CK00022',
+         mc:'C0仓库05',
+         gg:'收货单录入',
+         hz:'工程物资',
          jd:100,
          state: 1,
       },
       {
-         id: 'CWG0000023',
-         mc:'快递',
-         gg:'实名制取物',
-         hz:' 中通快递',
+         id: 'CK00023',
+         mc:'C0仓库06',
+         gg:'收货查询',
+         hz:' 办公物资',
          jd:56,
          state: 1,
       },
      {
-        id: 'CWG0000027',
-        mc:'快递',
-        gg:'实名制取物',
-        hz:'韵达快递',
+        id: 'CK00027',
+        mc:'C0仓库07',
+        gg:'收货质检',
+        hz:'工程物资',
         jd:100,
         state: 1,
      },
      {
-        id: 'CWG0000028',
-        mc:'快递',
-        gg:'实名制取物',
-        hz:'申通快递',
+        id: 'CK00028',
+        mc:'C0仓库08',
+        gg:'到货通知',
+        hz:'办公物资',
         jd:88,
         state: 1,
      }, 
@@ -100,12 +100,12 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '储物柜分类',
+            title: '存货仓库',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '控制类型',
+            title: '仓储环节',
             dataIndex: 'gg',
         },
         {
@@ -114,14 +114,14 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '储物柜利用率',
+            title: '仓储率',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '取件情况',
+            title: '仓储情况',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="已取件" unCheckedChildren="未取件" />,
+            render: () => <Switch checkedChildren="已存满" unCheckedChildren="未存满" />,
         },
         {
             title: '操作',
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="储物柜报表管理"
+                title="储物报表管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

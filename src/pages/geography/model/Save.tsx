@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑信息"
+                title="编辑仓储信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="设备标识" >
+                    <Form.Item key="cf" label="仓库类型" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="储物柜地址" >
+                    <Form.Item key="jc" label="货位排放" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="开柜标识" >
+                    <Form.Item key="dw" label="货物属性" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="储物柜占用率（%）" >
+                    <Form.Item key="jg" label="仓库占用率（%）" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="物品取走率（%）" >
+                    <Form.Item key="jx" label="物资存入率（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="储物柜分类" >
+                    <Form.Item key="mc" label="存货仓库" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="控制类型" >
+                    <Form.Item key="gg" label="仓储环节" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
@@ -72,20 +72,20 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="储物柜利用率（%）" >
+                    <Form.Item key="jd" label="仓储率（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="取件情况" >
+                    <Form.Item key="status" label="仓储情况" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">已取件</Radio.Button>
-                               <Radio.Button value="b">未取件</Radio.Button>
+                               <Radio.Button value="a">已存满</Radio.Button>
+                               <Radio.Button value="b">未存满</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

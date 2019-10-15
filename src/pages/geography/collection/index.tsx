@@ -23,68 +23,68 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'CWG-0035',
+        id: 'CK035',
         fl:'存物中',
-        mc:'192.168.1.26',
-        ma:'密码打开',
+        mc:'海安',
+        ma:'工余料仓库',
         nl:'汪峰',
-        dbz:'使用动态获取的密码',
+        dbz:'其它物资',
     },
     {
-        id: 'CWG-0064',
+        id: 'CK064',
         fl:'存物中',
-        mc:'192.168.1.17',
-        ma:'扫码打开',
+        mc:'海门',
+        ma:'综合仓库',
         nl:'陈云',
-        dbz:'使用静态获取的密码',
+        dbz:'工程物资',
     },
     {
-        id: 'CWG-0078',
+        id: 'CK078',
         fl:'空闲中',
-        mc:'192.168.1.14',
-        ma:'密码打开',
+        mc:'崇川区',
+        ma:'备品备件库',
         nl:'王安',
-        dbz:'使用动态获取的密码',
+        dbz:'其它物资',
     },
     {
-        id: 'CWG-0021',
+        id: 'CK021',
         fl:'存物中',
-        mc:'192.168.1.28',
-        ma:'扫码打开',
+        mc:'海安',
+        ma:'工余料仓库',
         nl:'张三石',
-        dbz:'使用静态获取的密码',
+        dbz:'工程物资',
     },
     {
-        id: 'CWG-0035',
+        id: 'CK035',
         fl:'空闲中',
-        mc:'192.168.0.18',
-        ma:'密码打开',
+        mc:'崇川区',
+        ma:'崇川区仓库',
         nl:'王芳',
-        dbz:'使用动态获取的密码',
+        dbz:'其它物资',
     },
     {
-        id: 'CWG-0038',
+        id: 'CK038',
         fl:'存物中',
-        mc:'192.168.1.44',
-        ma:'密码打开',
+        mc:'海安',
+        ma:'工余料仓库',
         nl:'刘文',
-        dbz:'使用静态获取的密码',
+        dbz:'工程物资',
     },
     {
-        id: 'CWG-0021',
+        id: 'CK021',
         fl:'存物中',
-        mc:'192.168.1.110',
-        ma:'扫码打开',
+        mc:'海门',
+        ma:'综合仓库',
         nl:'赵媛',
-        dbz:'使用动态获取的密码',
+        dbz:'其它物资',
     },
     {
-        id: 'CWG-0037',
+        id: 'CK037',
         fl:'空闲中',
-        mc:'192.168.1.53',
-        ma:'密码打开',
+        mc:'海安',
+        ma:'备品备件库',
         nl:'刘冰',
-        dbz:'使用静态获取的密码',
+        dbz:'工程物资',
     },
   
     
@@ -100,28 +100,28 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '储物柜状态',
+            title: '仓库状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
           },
         {
-            title: '储物柜编号',
+            title: '仓库编号',
             dataIndex: 'id',
         },
        
        
         {
-            title: '开启操作',
+            title: '仓库名称',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '空闲状态',
+            title: '仓库状态',
             dataIndex: 'fl',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '仓库地址',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
@@ -130,7 +130,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'nl',
         },
         {
-            title: '密码获取方式',
+            title: '物料类型',
             dataIndex: 'dbz',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
@@ -163,7 +163,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="储物柜设置"
+                title="仓库管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

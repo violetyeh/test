@@ -22,7 +22,7 @@ class Search extends Component<SearchProps, SearchState>{
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="储物柜分类">
+                        <Form.Item label="存货仓库">
                             {getFieldDecorator('mc')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>

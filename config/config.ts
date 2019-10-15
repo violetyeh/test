@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '储物柜设置',
+          name: '仓库管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '储物柜管理',
+          name: '仓储设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '储物柜报表',
+          name: '储物报表',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

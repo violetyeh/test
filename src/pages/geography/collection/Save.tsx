@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑储物柜信息"
+                title="编辑仓库信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="储物柜编号" >
+                    <Form.Item key="id" label="仓库编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,7 +52,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="ma" label="开启操作" >
+                    <Form.Item key="ma" label="仓库名称" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -61,14 +61,14 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                    
-                    <Form.Item key="fl" label="空闲状态" >
+                    <Form.Item key="fl" label="仓库状态" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="IP地址" >
+                    <Form.Item key="mc" label="仓库地址" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -83,7 +83,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="dbz" label="密码获取方式" >
+                    <Form.Item key="dbz" label="物料类型" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(
