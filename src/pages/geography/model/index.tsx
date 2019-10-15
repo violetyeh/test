@@ -20,64 +20,64 @@ interface ModelState {
 const mockData = [
     {
         id: 'JKSB-02358S0J',
-        date: '218.207.107.21',
-        type: '50',
+        date: '多功能箱数据采集处理单元',
+        type: 'PM2.5/PM10 ',
         status: '启用',
         pinlv: '1路IP-Video',
         process: 23,
     },
     {
         id: 'JKSB-023572IK',
-        date: '218.207.107.03',
-        type: '150',
+        date: '颗粒物传感器',
+        type: 'PM3/PM10 ',
         status: '启用',
         pinlv: 'KMH4400式PCDVR',
         process: 54,
     },
     {
         id: 'JKSB-023563JJ',
-        date: '218.207.107.17',
-        type: '100',
+        date: '风速、风向 传感器',
+        type: 'PM2.6/PM10 ',
         status: '启用',
         pinlv: '4路IP-Video',
         process: 44,
     },
     {
         id: 'JKSB-02350191',
-        date: '218.207.107.12',
-        type: '60',
+        date: '大气温湿度 传感器',
+        type: 'PM2.5/PM10 ',
         status: '启用',
         pinlv: '1路IP-Video',
         process: 30,
     },
     {
         id: 'JKSB-02352SI1',
-        date: '218.207.107.05',
-        type: '110',
+        date: '多功能箱数据采集处理单元',
+        type: 'PM2.6/PM10 ',
         status: '启用',
         pinlv: '嵌入式DVR',
         process: 88,
     },
     {
         id: 'JKSB-023501IOS',
-        date: '218.207.107.56',
-        type: '560',
+        date: '大气温湿度 传感器',
+        type: 'PM2.5/PM10 ',
         status: '启用',
         pinlv: '4路IP-Video',
         process: 90,
     },
     {
         id: 'JKSB-02359s1',
-        date: '218.207.107.24',
-        type: '110',
+        date: '风速、风向 传感器',
+        type: 'PM2.5/PM10 ',
         status: '启用',
         pinlv: 'KMH4400式PCDVR',
         process: 70,
     },
     {
         id: 'JKSB-023580SJ',
-        date: '218.207.107.36',
-        type: '50',
+        date: '颗粒物传感器',
+        type: 'PM2.5/PM10 ',
         status: '启用',
         pinlv: '嵌入式DVR',
         process: 67,
@@ -98,21 +98,22 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '设备型号',
+            title: '监控设备型号',
             dataIndex: 'pinlv',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '设备',
             dataIndex: 'date',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '监控设备存储量（GB）',
+            title: '粒径通道',
             dataIndex: 'type',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '剩余空间',
+            title: '气象测量精度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -148,7 +149,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="监控设备管理"
+                title="粉尘监控管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

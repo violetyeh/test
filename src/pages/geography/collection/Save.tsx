@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="监控视频管理"
+                title="编辑噪音检测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="监控区域" >
+                    <Form.Item key="lg" label="检测地点" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="自动删除设置" >
+                    <Form.Item key="fenceng" label="分辨率" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="监控视频大小" >
+                    <Form.Item key="leixing" label="测量范围" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
@@ -73,7 +73,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="name" label="存储占用率(%)" >
+                    <Form.Item key="name" label="噪音频率范围" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑安防终端信息"
+                title="编辑数据采集信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="终端ID" >
+                    <Form.Item key="id" label="ID" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,21 +52,21 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="终端端口" >
+                    <Form.Item key="pinlv" label="测量范围" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="是否在线" >
+                    <Form.Item key="yaosu" label="自身噪声" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="安防信息传输进度（%）" >
+                    <Form.Item key="sj" label="处理进度（%）" >
                         {getFieldDecorator('sj', {
                             initialValue: currentItem.sj,
                         })(
@@ -74,7 +74,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="state" label="终端状态检测时间" >
+                    <Form.Item key="state" label="最大误差" >
                         {getFieldDecorator('state', {
                             initialValue: currentItem.state,
                         })(

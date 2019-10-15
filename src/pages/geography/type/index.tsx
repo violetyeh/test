@@ -21,66 +21,58 @@ const mockData = [
     
     {
         id: 'ZDID2136',
-        fenlei: '1563k/秒',
-        yaosu: '否',
-        state: '2019年8月13日21:14:48',
-        pinlv: '202S',
+        yaosu: '小于25dB',
+        state: '0.5dB',
+        pinlv: '30-125dB',
         sj:'85',
     },
     {
         id: 'ZDID3354',
-        fenlei: '1563k/秒',
-        yaosu: '是',
-        state: '2019年8月25日18:41:37',
-        pinlv: '2X4F',
+        yaosu: '小于35dB',
+        state: '1dB',
+        pinlv: '30-130dB',
         sj:'60',
     },
     {
         id: 'ZDID1292',
-        fenlei: '1063k/秒',
-        yaosu: '是',
-        state: '2019年8月17日17:42:19',
-        pinlv: 'DF4G',
+        yaosu: '小于30dB',
+        state: '1dB',
+        pinlv: '25-130dB',
         sj:'80',
     },
     {
         id: 'ZDID8201',
-        fenlei: '1023k/秒 ',
-        yaosu: '是',
-        state: '2019年8月18日09:02:13',
-        pinlv: '5SDF',
+        yaosu: '小于35dB',
+        state: '0.5dB',
+        pinlv: '30-130dB',
         sj:'100',
     },
     {
         id: 'ZDID3921',
-        fenlei: '1241k/秒',
-        yaosu: '否',
-        state: '2019年8月09日10:11:06',
-        pinlv: 'SX2C',
+        yaosu: '小于35dB',
+        state: '1dB',
+        pinlv: '30-130dB',
         sj:'15',
     },
     {
         id: 'ZDID0029',
-        fenlei: '1563k/秒',
-        yaosu: '是',
-        state: '2019年8月10日11:34:02',
-        pinlv: 'DS5F',
+        yaosu: '小于25dB',
+        state: '1dB',
+        pinlv: '30-125dB',
         sj:'16',
     },
     {
         id: 'ZDID2191',
-        fenlei: '1241k/秒',
-        yaosu: '否',
-        state: '2019年8月11日14:41:58',
-        pinlv: 'VC85',
+        yaosu: '小于30dB',
+        state: '0.5dB',
+        pinlv: '25-130dB',
         sj:'28',
     },
     {
         id: 'ZDID3321',
-        fenlei: '1241k/秒',
-        yaosu: '是',
-        state: '2019年8月12日20:04:53',
-        pinlv: '5D2F',
+        yaosu: '小于35dB',
+        state: '1dB',
+        pinlv: '30-130dB',
         sj:'16',
     },
 ]
@@ -94,39 +86,31 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '安防报警',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >报警</Checkbox>
-                </Fragment>
-            ),
-        },
+       
 
         {
-            title: '终端ID',
+            title: 'ID',
             dataIndex: 'id',
         },
        
         {
-            title: '终端端口',
+            title: '测量范围',
             dataIndex: 'pinlv',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '是否在线',
+            title: '自身噪声',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '安防信息传输进度',
+            title: '处理进度',
             dataIndex: 'sj',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         }, 
        
         {
-            title: '终端状态检测时间',
+            title: '最大误差',
             dataIndex: 'state',
         },
         {
@@ -156,7 +140,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安防终端信息"
+                title="数据采集处理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

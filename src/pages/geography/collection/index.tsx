@@ -25,74 +25,74 @@ const mockData = [
     {
         id: 'JKSP-0211',
         jishu: '100',
-        fenceng: '20天',
-        leixing: '210M',
-        name:'22',
+        fenceng: '0.2dB',
+        leixing: '30dB~120dB',
+        name:'20Hz~12kHz',
         state: '启用',
-        lg:'监控区域-茶水间',
+        lg:'市政工程-噪音检测区域01',
     },
     {
         id: 'JKSP-0212',
         jishu: '85',
-        fenceng: '10天',
-        leixing: '289M',
-        name:'13',
+        fenceng: '0.1dB',
+        leixing: '20dB~120dB',
+        name:'20Hz~12.5kHz',
         state: '启用',
-        lg:'监控区域-办公室',
+        lg:'市政工程-噪音检测区域02',
     },
     {
         id: 'JKSP-0213',
         jishu: '100',
-        fenceng: '10天',
-        leixing: '154M',
-        name:'16',
+        fenceng: '0.1dB',
+        leixing: '30dB~120dB',
+        name:'20Hz~12.5kHz',
         state: '启用',
-        lg:'监控区域-二楼楼梯',
+        lg:'市政工程-噪音检测区域03',
     },
     {
         id: 'JKSP-0214',
         jishu: '100',
-        fenceng: '15天',
-        leixing: '315M',
-        name:'15',
+        fenceng: '0.2dB',
+        leixing: '30dB~120dB',
+        name:'20Hz~13kHz',
         state: '启用',
-        lg:'监控区域-一楼电梯',
+        lg:'市政工程-噪音检测区域04',
     },
     {
         id: 'JKSP-0215',
         jishu: '100',
-        fenceng: '15天',
-        leixing: '343M',
-        name:'10',
+        fenceng: '0.1dB',
+        leixing: '20dB~120dB',
+        name:'20Hz~12.5kHz',
         state: '启用',
-        lg:'监控区域-会议室',
+        lg:'市政工程-噪音检测区域05',
     },
     {
         id: 'JKSP-0216',
         jishu: '98',
-        fenceng: '30天',
-        leixing: '342M',
-        name:'16',
+        fenceng: '0.1dB',
+        leixing: '30dB~125dB',
+        name:'20Hz~12kHz',
         state: '启用',
-        lg:'监控区域-东门',
+        lg:'市政工程-噪音检测区域06',
     },
     {
         id: 'JKSP-0217',
         jishu: '88',
-        fenceng: '5天',
-        leixing: '258M',
-        name:'14',
+        fenceng: '0.2dB',
+        leixing: '35dB~120dB',
+        name:'25Hz~12.5kHz',
         state: '启用',
-        lg:'监控区域-大门',
+        lg:'市政工程-噪音检测区域07',
     },
     {
         id: 'JKSP-0218',
         jishu: '24',
-        fenceng: '7天',
-        leixing: '247M',
-        name:'15',
+        fenceng: '0.1dB',
+        leixing: '30dB~120dB',
+        name:'20Hz~12.5kHz',
         state: '启用',
-        lg:'监控区域-走廊',
+        lg:'市政工程-噪音检测区域08',
     },
 ]
 
@@ -110,27 +110,26 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '监控区域',
+            title: '检测地点',
             dataIndex: 'lg',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
 
         },
         
         {
-            title: '自动删除设置',
+            title: '分辨率',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '监控视频大小',
+            title: '测量范围',
             dataIndex: 'leixing',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
        
         {
-            title: '存储占用率',
+            title: '噪音频率范围',
             dataIndex: 'name',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
             title: '状态',
@@ -167,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="监控视频管理"
+                title="噪音检测管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

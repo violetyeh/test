@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '监控视频管理',
+          name: '噪音检测管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '监控设备管理',
+          name: '数据采集处理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',

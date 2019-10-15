@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监控设备信息"
+                title="编辑粉尘监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="设备型号" >
+                    <Form.Item key="pinlv" label="监控设备型号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="IP地址" >
+                    <Form.Item key="date" label="设备" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="监控设备存储量（GB）" >
+                    <Form.Item key="type" label="粒径通道" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="剩余空间（%）" >
+                    <Form.Item key="process" label="气象测量精度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
