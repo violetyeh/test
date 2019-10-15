@@ -19,53 +19,9 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'YSD108S0J',
-        date: '2019年8月26日10:56:21',
-        type: '浙江',
-        status: '启用',
-        pinlv: '冀C666A',
-        process: '湖北',
-        name:'赵媛',
-    },
-    {
-        id: 'YSD1072IK',
-        date: '2019年8月27日06:23:03',
-        type: '湖南',
-        status: '启用',
-        pinlv: '冀C63K6',
-        process: '浙江',
-        name:'姜娜楠',
-    },
-    {
-        id: 'YSD1063JJ',
-        date: '2019年8月28日21:48:17',
-        type: '重庆',
-        status: '启用',
-        pinlv: '渝A52B6',
-        process: '湖南',
-        name:'江南',
-    },
-    {
-        id: 'YSD100191',
-        date: '2019年8月29日20:37:12',
-        type: '重庆',
-        status: '启用',
-        pinlv: '渝A23M6',
-        process: '广东',
-        name:'孟杰',
-    },
-    {
-        id: 'YSD102SI1',
-        date: '2019年8月30日08:12:05',
-        type: '上海',
-        status: '启用',
-        pinlv: '沪C66A6',
-        process: '重庆',
-        name:'王强',
-    },
-    {
         id: 'YSD1001IOS',
-        date: '2019年8月31日09:02:56',
+        date: '2019年9月31日09:02:56',
+        date1: '2019年10月2日07:08:42',
         type: '北京',
         status: '启用',
         pinlv: '津B25B3',
@@ -74,7 +30,8 @@ const mockData = [
     },
     {
         id: 'YSD10W9s1',
-        date: '2019年8月31日11:08:24',
+        date: '2019年9月31日11:08:24',
+        date1: '2019年10月2日21:13:22',
         type: '重庆',
         status: '启用',
         pinlv: '京E110MK',
@@ -83,13 +40,65 @@ const mockData = [
     },
     {
         id: 'YSD1080SJ',
-        date: '2019年8月31日14:11:36',
+        date: '2019年9月31日14:11:36',
+        date1: '2019年10月2日19:13:22',
         type: '上海',
         status: '启用',
         pinlv: '京NLU686',
         process: '广州',
         name:'王三',
     },
+    {
+        id: 'YSD108S0J',
+        date: '2019年9月26日10:56:21',
+        date1: '2019年10月1日09:03:02',
+        type: '浙江',
+        status: '启用',
+        pinlv: '冀C666A',
+        process: '湖北',
+        name:'赵媛',
+    },
+    {
+        id: 'YSD1072IK',
+        date: '2019年9月27日06:23:03',
+        date1: '2019年10月2日109:10:34',
+        type: '湖南',
+        status: '启用',
+        pinlv: '冀C63K6',
+        process: '浙江',
+        name:'姜娜楠',
+    },
+    {
+        id: 'YSD1063JJ',
+        date: '2019年9月28日21:48:17',
+        date1: '2019年10月2日17:33:04',
+        type: '重庆',
+        status: '启用',
+        pinlv: '渝A52B6',
+        process: '湖南',
+        name:'江南',
+    },
+    {
+        id: 'YSD100191',
+        date: '2019年9月29日20:37:12',
+        date1: '2019年10月2日24:00:04',
+        type: '重庆',
+        status: '启用',
+        pinlv: '渝A23M6',
+        process: '广东',
+        name:'孟杰',
+    },
+    {
+        id: 'YSD102SI1',
+        date: '2019年9月30日08:12:05',
+        date1: '2019年10月3日07:00:14',
+        type: '上海',
+        status: '启用',
+        pinlv: '沪C66A6',
+        process: '重庆',
+        name:'王强',
+    },
+
    
 ]
 
@@ -117,12 +126,16 @@ class Model extends Component<ModelProps, ModelState>{
         {
             title: '出发地',
             dataIndex: 'type',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
             title: '目的地',
             dataIndex: 'process',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="green">{text}</Tag>,
+        },
+         {
+            title: '收货时间',
+            dataIndex: 'date1',
         },
         {
             title: '收货人姓名',
@@ -160,7 +173,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="管理运输业务数据"
+                title="运输动态管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

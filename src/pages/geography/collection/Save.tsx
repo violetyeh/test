@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑运输车辆监控信息"
+                title="编辑货物运输车辆信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,7 +58,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="车速（KM/h）" >
+                    <Form.Item key="sj" label="司机" >
+                        {getFieldDecorator('sj', {
+                            initialValue: currentItem.sj,
+                        })(
+                            <Input/>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="fenceng" label="运输货物" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(

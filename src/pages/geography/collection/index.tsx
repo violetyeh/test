@@ -23,76 +23,84 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'YSCL101',
-        jishu: '2019年8月20日08:48:16',
-        fenceng: '90',
+        id: 'HWYS101',
+        jishu: '2019年9月20日08:48:16',
+        fenceng: '大米',
         leixing: '运输车辆-210',
         name:'20',
         state: '启用',
         lg:' 京NLU686',
+        sj:'秦天宇',
     },
     {
-        id: 'YSCL102',
-        jishu: '2019年8月21日09:49:11',
-        fenceng: '85',
+        id: 'HWYS102',
+        jishu: '2019年9月21日09:49:11',
+        fenceng: '番茄',
         leixing: '运输车辆-289',
         name:'22',
         state: '启用',
         lg:' 京E110MK',
+        sj:'李鹏',
     },
     {
-        id: 'YSCL103',
-        jishu: '2019年8月22日10:50:07',
-        fenceng: '80',
+        id: 'HWYS103',
+        jishu: '2019年9月22日10:50:07',
+        fenceng: '土豆',
         leixing: '运输车辆-154',
         name:'16',
         state: '启用',
         lg:' 津B25B3',
+        sj:'赵飞',
     },
     {
-        id: 'YSCL104',
-        jishu: '2019年8月23日14:51:02',
-        fenceng: '100',
+        id: 'HWYS104',
+        jishu: '2019年9月23日14:51:02',
+        fenceng: '衣柜',
         leixing: '运输车辆-315',
         name:'15',
         state: '启用',
         lg:' 沪C66A6',
+        sj:'刘王宇',
     },
     {
-        id: 'YSCL105',
-        jishu: '2019年8月24日12:52:57',
-        fenceng: '120',
+        id: 'HWYS105',
+        jishu: '2019年9月24日12:52:57',
+        fenceng: '冰箱',
         leixing: '运输车辆-343',
         name:'10',
         state: '启用',
         lg:'渝A23M6',
+        sj:'秦汉',
     },
     {
-        id: 'YSCL106',
-        jishu: '2019年9月1日13:53:47',
-        fenceng: '115',
+        id: 'HWYS106',
+        jishu: '2019年10月1日13:53:47',
+        fenceng: '饮料',
         leixing: '运输车辆-342',
         name:'16',
         state: '启用',
         lg:' 渝A52B6',
+        sj:'陈宇',
     },
     {
-        id: 'YSCL107',
-        jishu: '2019年9月2日14:54:42',
-        fenceng: '90',
+        id: 'HWYS107',
+        jishu: '2019年10月2日14:54:42',
+        fenceng: '罐头',
         leixing: '运输车辆-258',
         name:'14',
         state: '启用',
         lg:'冀C63K6',
+        sj:'刘磊',
     },
     {
-        id: 'YSCL108',
-        jishu: '2019年9月3日15:55:24',
-        fenceng: '80',
+        id: 'HWYS108',
+        jishu: '2019年10月3日15:55:24',
+        fenceng: '电视机',
         leixing: '运输车辆-247',
         name:'15',
         state: '启用',
         lg:'冀C666A',
+        sj:'王三',
     },
 ]
 
@@ -115,9 +123,13 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="BLUE">{text}</Tag>,
 
         },
+        {
+            title: '司机',
+            dataIndex: 'sj',
+        },
         
         {
-            title: '车速（KM/h）',
+            title: '运输货物',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
@@ -131,15 +143,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'jishu',
         },
        
-        {
-            title: '定位',
-            render: (text, record) => (
-                <Fragment>
-                    <a onClick={() => this.edit(record)}>定位操作</a>
-                    <Divider type="vertical" />
-                </Fragment>
-            ),
-        },
+       
         
         {
             title: '操作',
@@ -170,7 +174,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="运输车辆监控管理"
+                title="货物运输车辆管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='运输业务数量'
+          title='货物运输数量（车）'
           action={
             <Tooltip
               title={
@@ -36,16 +36,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={524}
-          footer='今日业务: 136'
+          footer='今日货物: 25'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>36%</span>
+            <span className={styles.trendText}>1%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>47%</span>
+            <span className={styles.trendText}>3%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='运输车辆数量'
+          title='总运输车辆数量'
           action={
             <Tooltip
               title={
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(324).format('0,0')}
-          footer='今日运输车辆数量：56'
+          total={numeral(420).format('0,0')}
+          footer='货物运输车辆数量：30'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='实时定位信息'
+          title='实时跟踪信息'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(321).format('0,0')}
-          footer='路程进度：85%'
+          footer='运输进度：85%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -106,16 +106,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="78%"
+          total="82%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>54%</span>
+                <span className={styles.trendText}>33%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>59%</span>
+                <span className={styles.trendText}>24%</span>
               </Trend>
             </div>
           }

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑运输业务信息"
+                title="编辑运输动态信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -75,6 +75,13 @@ class Save extends Component<SaveProps, SaveState>{
                     <Form.Item key="process" label="目的地" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="date1" label="收货时间" >
+                        {getFieldDecorator('date1', {
+                            initialValue: currentItem.date1,
                         })(
                             <Input />,
                         )}

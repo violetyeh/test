@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑车辆定位"
+                title="编辑货物跟踪信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -55,6 +55,13 @@ class Save extends Component<SaveProps, SaveState>{
                     <Form.Item key="pinlv" label="车牌号" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="fenlei" label="地址" >
+                        {getFieldDecorator('fenlei', {
+                            initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
@@ -81,13 +88,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="fenlei" label="地址" >
-                        {getFieldDecorator('fenlei', {
-                            initialValue: currentItem.fenlei,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
                    
                 </Form>
             </Modal>
