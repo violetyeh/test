@@ -138,13 +138,13 @@ export default {
           component: './geography/collection',
         },
         {
-          name: '数据采集处理',
+          name: '粉尘监控管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安防终端信息',
+          name: '数据采集处理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
