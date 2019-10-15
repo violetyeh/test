@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑黑名单信息"
+                title="编辑车辆信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,14 +58,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="加入时间" >
+                    <Form.Item key="date" label="是否黑名单" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="加入原因" >
+                    <Form.Item key="type" label="原因" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(

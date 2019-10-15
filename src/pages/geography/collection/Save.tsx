@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监控点"
+                title="编辑监控信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="路口IP" >
+                    <Form.Item key="lg" label="高速监控点IP" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
                             <Input/>,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="路口名称" >
+                    <Form.Item key="fenceng" label="高速路名称" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="路口代码" >
+                    <Form.Item key="leixing" label="高速路代码" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(

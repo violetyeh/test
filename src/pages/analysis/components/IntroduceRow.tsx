@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='高速公路事故数量'
+          title='高速公路监控信息'
           action={
             <Tooltip
               title={
@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={53}
-          footer='今日事故: 24'
+          total={241}
+          footer='今日信息: 95'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>12%</span>
+            <span className={styles.trendText}>22%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>28%</span>
+            <span className={styles.trendText}>34%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -65,7 +65,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(500).format('0,0')}
-          footer='今日事故高速公路：89'
+          footer='历史事故：189'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='安全检测进度'
+          title='高速公路疏通进度'
           action={
             <Tooltip
               title={

@@ -19,61 +19,62 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'ZDID1292',
-        fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月17日17:42:19',
-        pinlv: 'DF4G',
-    },
-    {
-        id: 'ZDID8201',
-        fenlei: '道路塌陷 ',
-        yaosu: '是',
-        state: '2019年8月18日09:02:13',
-        pinlv: '5SDF',
-    },
-    {
-        id: 'ZDID3921',
-        fenlei: '非法变道',
-        yaosu: '否',
-        state: '2019年8月09日10:11:06',
-        pinlv: 'SX2C',
-    },
-    {
-        id: 'ZDID0029',
-        fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年8月10日11:34:02',
-        pinlv: 'DS5F',
-    },
-    {
-        id: 'ZDID2191',
+        id: 'BJ02191',
         fenlei: '车辆拥堵',
         yaosu: '否',
-        state: '2019年8月11日14:41:58',
+        state: '2019年10月11日14:41:58',
         pinlv: 'VC85',
     },
     {
-        id: 'ZDID3321',
+        id: 'BJ03321',
         fenlei: '异物抛撒',
         yaosu: '是',
-        state: '2019年8月12日20:04:53',
+        state: '2019年10月12日20:04:53',
         pinlv: '5D2F',
     },
     {
-        id: 'ZDID2136',
+        id: 'BJ02136',
         fenlei: '异常停车',
         yaosu: '否',
-        state: '2019年8月13日21:14:48',
+        state: '2019年10月13日21:14:48',
         pinlv: '202S',
     },
     {
-        id: 'ZDID3354',
+        id: 'BJ03354',
         fenlei: '交通事故',
         yaosu: '是',
-        state: '2019年8月25日18:41:37',
+        state: '2019年10月25日18:41:37',
         pinlv: '2X4F',
     },
+    {
+        id: 'BJ01292',
+        fenlei: '车辆逆行',
+        yaosu: '是',
+        state: '2019年10月17日17:42:19',
+        pinlv: 'DF4G',
+    },
+    {
+        id: 'BJ08201',
+        fenlei: '道路塌陷 ',
+        yaosu: '是',
+        state: '2019年10月18日09:02:13',
+        pinlv: '5SDF',
+    },
+    {
+        id: 'BJ03921',
+        fenlei: '非法变道',
+        yaosu: '否',
+        state: '2019年10月09日10:11:06',
+        pinlv: 'SX2C',
+    },
+    {
+        id: 'BJ00029',
+        fenlei: '车辆逆行',
+        yaosu: '是',
+        state: '2019年10月10日11:34:02',
+        pinlv: 'DS5F',
+    },
+ 
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -86,9 +87,15 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
-            dataIndex: 'id',
+            title: '实时报警提示',
+            dataIndex: 'jz',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >报警提示</Checkbox>
+                </Fragment>
+            ),
         },
+       
        
         {
             title: '高速公路',
@@ -101,15 +108,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
-        {
-            title: '实时报警提示',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >报警提示</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '道路状况',
             dataIndex: 'fenlei',
@@ -117,7 +116,7 @@ class Type extends Component<TypeProps, TypeState>{
         },
 
         {
-            title: '道路检测时间',
+            title: '监控报警时间',
             dataIndex: 'state',
         },
         {
@@ -147,7 +146,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="事故状况信息"
+                title="事故管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
