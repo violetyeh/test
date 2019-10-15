@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '管线图纸辅助设计软件',
+  title: '车辆感应式隧道照明控制系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

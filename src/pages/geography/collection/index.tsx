@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag, Checkbox } from "antd";
+import { Divider, message, Card, Switch, Tag, Checkbox, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -24,59 +24,59 @@ interface TypeState {
 const mockData = [
     {
         id: 'ST021',
-        fl:'交互绘制管道',
-        mc:'圆形',
-        ma:'已有管线',
-        nl:'651',
+        fl:'龙山隧道',
+        mc:'18:00',
+        ma:'6:00',
+        nl:'100',
     },
     {
         id: 'ST035',
-        fl:'自动绘制管道',
-        mc:'矩形',
-        ma:'插入符号',
-        nl:'771',
+        fl:'云山隧道',
+        mc:'17:30',
+        ma:'6:00',
+        nl:'89',
     },
     {
         id: 'ST038',
-        fl:'交互绘制管道',
-        mc:'矩形',
-        ma:'节点标注',
-        nl:'741',
+        fl:'六合隧道',
+        mc:'17:30',
+        ma:'6:30',
+        nl:'90',
     },
     {
         id: 'ST021',
-        fl:'定义管道',
-        mc:'圆形',
-        ma:'坐标桩号标注',
-        nl:'574',
+        fl:'青云隧道',
+        mc:'18:00',
+        ma:'7:00',
+        nl:'99',
     },
     {
         id: 'ST037',
-        fl:'自动绘制管道',
-        mc:'矩形',
-        ma:'断面符号标注',
-        nl:'568s',
+        fl:'井岗隧道',
+        mc:'17:30',
+        ma:'6:00',
+        nl:'100',
     },
     {
         id: 'ST035',
-        fl:'定义管道',
-        mc:'矩形',
-        ma:'供回水标注',
-        nl:'704',
+        fl:'大堰隧道',
+        mc:'18:30',
+        ma:'6:00',
+        nl:'97',
     },
     {
         id: 'ST064',
-        fl:'自动绘制管道',
-        mc:'圆形',
-        ma:'管道折角',
-        nl:'623',
+        fl:'流峰隧道',
+        mc:'18:00',
+        ma:'6:30',
+        nl:'80',
     },
     {
         id: 'ST078',
-        fl:'交互绘制管道',
-        mc:'圆形',
-        ma:'交叉管线统计',
-        nl:'545',
+        fl:'陕弯隧道',
+        mc:'18:00',
+        ma:'6:00',
+        nl:'98',
     },
     
 ]
@@ -96,30 +96,31 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '管道绘制方式',
+            title: '隧道名称',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '管道形状',
+            title: '开灯时间',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
-            title: '获取工序',
+            title: '关灯时间',
             dataIndex: 'ma',
         },
        
         {
-            title: '管道里程（m）',
+            title: '开灯率',
             dataIndex: 'nl',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '图纸识别',
+            title: '自动控制',
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >识别</Checkbox>
+                  <Checkbox >自动</Checkbox>
                 </Fragment>
             ),
         },
@@ -152,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="地形图识别处理"
+                title="照明控制"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

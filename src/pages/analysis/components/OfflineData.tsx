@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 管线信息: 2563, 管线长度: 1000, 设计图纸数量 : 1600, 修改数据次数: 2082 },
-  { label: '0.2', 管线信息: 1900, 管线长度: 2880, 设计图纸数量 : 1700, 修改数据次数: 1463 },
-  { label: '0.3', 管线信息: 1950, 管线长度: 1950, 设计图纸数量 : 1800, 修改数据次数: 1075 },
-  { label: '0.4', 管线信息: 1500, 管线长度: 1500, 设计图纸数量 : 1390, 修改数据次数: 2156 },
-  { label: '0.5', 管线信息: 1234, 管线长度: 1234, 设计图纸数量 : 1166, 修改数据次数: 1266 },
-  { label: '0.6', 管线信息: 1234, 管线长度: 2634, 设计图纸数量 : 1666, 修改数据次数: 1254 },
-  { label: '0.7', 管线信息: 3634, 管线长度: 1434, 设计图纸数量 : 1666, 修改数据次数: 1283 },
-  { label: '0.8', 管线信息: 1234, 管线长度: 4284, 设计图纸数量 : 1666, 修改数据次数: 2175 },
-  { label: '0.9', 管线信息: 1534, 管线长度: 1334, 设计图纸数量 : 2236, 修改数据次数: 1281 },
-  { label: '1.0', 管线信息: 1234, 管线长度: 1234, 设计图纸数量 : 786, 修改数据次数:5183 },
-  { label: '未评分', 管线信息: 1234, 管线长度: 1234, 设计图纸数量 : 4666, 修改数据次数: 2164 },
+  { label: '0.1', 隧道照明信息: 2563, 隧道长度: 1000, 灯光故障信息 : 1600, 控制设备: 2082 },
+  { label: '0.2', 隧道照明信息: 1900, 隧道长度: 2880, 灯光故障信息 : 1700, 控制设备: 1463 },
+  { label: '0.3', 隧道照明信息: 1950, 隧道长度: 1950, 灯光故障信息 : 1800, 控制设备: 1075 },
+  { label: '0.4', 隧道照明信息: 1500, 隧道长度: 1500, 灯光故障信息 : 1390, 控制设备: 2156 },
+  { label: '0.5', 隧道照明信息: 1234, 隧道长度: 1234, 灯光故障信息 : 1166, 控制设备: 1266 },
+  { label: '0.6', 隧道照明信息: 1234, 隧道长度: 2634, 灯光故障信息 : 1666, 控制设备: 1254 },
+  { label: '0.7', 隧道照明信息: 3634, 隧道长度: 1434, 灯光故障信息 : 1666, 控制设备: 1283 },
+  { label: '0.8', 隧道照明信息: 1234, 隧道长度: 4284, 灯光故障信息 : 1666, 控制设备: 2175 },
+  { label: '0.9', 隧道照明信息: 1534, 隧道长度: 1334, 灯光故障信息 : 2236, 控制设备: 1281 },
+  { label: '1.0', 隧道照明信息: 1234, 隧道长度: 1234, 灯光故障信息 : 786, 控制设备:5183 },
+  { label: '未评分', 隧道照明信息: 1234, 隧道长度: 1234, 灯光故障信息 : 4666, 控制设备: 2164 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['管线信息', '管线长度', '设计图纸数量','修改数据次数'], // 展开字段集
+  fields: ['隧道照明信息', '隧道长度', '灯光故障信息','控制设备'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  修改数据次数: {
+  控制设备: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '管线信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '管线长度', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '设计图纸数量 ', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '修改数据次数', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '隧道照明信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '隧道长度', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '灯光故障信息 ', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '控制设备', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '修改数据次数') {
+              if (geom.getYScale().field === value && value === '控制设备') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '修改数据次数') {
+              } else if (geom.getYScale().field === 'value' && value !== '控制设备') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '图纸数量') {
+            if (value === '路灯数量') {
               return '#2b6cbb';
             }
-            if (value === '管线信息') {
+            if (value === '隧道照明信息') {
               return '#41a2fc';
             }
-            if (value === '管线长度') {
+            if (value === '隧道长度') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*修改数据次数" color="#fad248" size={3} />
+        <Geom type="line" position="label*控制设备" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

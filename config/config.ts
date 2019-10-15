@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '地形图识别处理',
+          name: '照明控制',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '管道设计',
+          name: '监控点管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '工程量统计',
+          name: '设备管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

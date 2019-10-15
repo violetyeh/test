@@ -20,66 +20,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'GDAO-006',
-        mc:' 自动布管',
-        gg:' 定义管径',
+        mc:' 电能表',
+        gg:' 自动',
         hz:' 16',
-        jd:' 输出材料表',
+        jd:' 允许',
         state: 1,
      },
      {
         id: 'GDAO-007',
-        mc:' 交互布管',
-        gg:' 定义井地面标高',
+        mc:' DWS-8088',
+        gg:' 自动',
         hz:' 10',
-        jd:' 输出图例表',
+        jd:' 允许',
         state: 1,
      },
      {
         id: 'GDAO-008',
-        mc:' 定给水管',
-        gg:' 定义管高',
+        mc:' MODEN',
+        gg:' 遥控',
         hz:' 13',
-        jd:' 输出平面图',
+        jd:' 允许',
         state: 1,
      }, 
     {
        id: 'GDAO-001',
-       mc:' 自动布管',
-       gg:' 定义井地面标高',
+       mc:' DMS-TRA',
+       gg:' 遥控',
        hz:' 17',
-       jd:' 输出图例表',
+       jd:' 禁止',
        state: 1,
     },
     {
         id: 'GDAO-002',
-        mc:' 定给水管',
-        gg:' 定义管径',
+        mc:' 电能表',
+        gg:' 自动',
         hz:' 15',
-        jd:' 输出平面图',
+        jd:' 允许',
         state: 1,
      },
      {
         id: 'GDAO-003',
-        mc:' 定给水管',
-        gg:' 定义管高',
+        mc:' DMS-TRA',
+        gg:' 自动',
         hz:'  12',
-        jd:' 输出材料表',
+        jd:' 允许',
         state: 1,
      },
      {
         id: 'GDAO-004',
-        mc:' 交互布管',
-        gg:' 定义井地面标高',
+        mc:' MODEN',
+        gg:' 手动',
         hz:' 1',
-        jd:' 输出图例表',
+        jd:' 禁止',
         state: 1,
      },
      {
         id: 'GDAO-005',
-        mc:' 自动布管',
-        gg:' 定义管径',
+        mc:' DWS-8088',
+        gg:' 遥控',
         hz:' 21',
-        jd:' 输出材料表',
+        jd:' 允许',
         state: 1,
      },
     
@@ -95,41 +95,42 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '自动获取图纸',
-            dataIndex: 'jk',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >自动</Checkbox>
-                </Fragment>
-            ),
-        },
+       
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '平面布置',
+            title: '设备名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '竖向设计',
+            title: '转换开关',
             dataIndex: 'gg',
         },
         {
-            title: '设计工程图纸需要（张）',
+            title: '通道',
             dataIndex: 'hz',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '成果输出',
+            title: '通道告警',
             dataIndex: 'jd',
         },
         {
             title: '输出状态',
             dataIndex: 'status',
             render: () => <Switch checkedChildren="输出" unCheckedChildren="未输出" />,
+        },
+        {
+            title: '设备自动巡检',
+            dataIndex: 'jk',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >自动</Checkbox>
+                </Fragment>
+            ),
         },
         {
             title: '操作',
@@ -158,7 +159,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="工程量统计"
+                title="设备管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

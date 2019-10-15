@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑管道设计信息"
+                title="编辑监控点信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="工程名" >
+                    <Form.Item key="cf" label="监控点名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="测绘坐标X" >
+                    <Form.Item key="jg" label="隧道照明段" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="测绘坐标Y" >
+                    <Form.Item key="jx" label="反馈信息" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="出图比例" >
+                    <Form.Item key="dw" label="告警栏" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
