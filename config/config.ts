@@ -132,7 +132,7 @@ export default {
           component: './analysis',
         },
         {
-          name: '运输路线管理',
+          name: '运输车辆管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
@@ -144,7 +144,7 @@ export default {
           component: './geography/model',
         },
         {
-          name: '运输节点管理',
+          name: '车辆调度管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

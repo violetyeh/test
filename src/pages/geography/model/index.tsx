@@ -19,24 +19,6 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'YIDS0191',
-        date: '33.00',
-        model: '320.00',
-        type: '2200.00',
-        status: '启用',
-        pinlv: '渝A230I3',
-        process: 3,
-    },
-    {
-        id: 'YIDS2SI1',
-        date: '25.00',
-        model: '300.00',
-        type: '1230.00',
-        status: '启用',
-        pinlv: '浙B236K1',
-        process: 8,
-    },
-    {
         id: 'YIDS0122',
         date: '60.00',
         model: '623.00',
@@ -81,6 +63,25 @@ const mockData = [
         pinlv: '渝B23Z14',
         process: 6,
     },
+    {
+        id: 'YIDS0191',
+        date: '33.00',
+        model: '320.00',
+        type: '2200.00',
+        status: '启用',
+        pinlv: '渝A230I3',
+        process: 3,
+    },
+    {
+        id: 'YIDS2SI1',
+        date: '25.00',
+        model: '300.00',
+        type: '1230.00',
+        status: '启用',
+        pinlv: '浙B236K1',
+        process: 8,
+    },
+
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -105,10 +106,6 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
-        {
-            title: '标准路桥费',
-            dataIndex: 'model',
-        },
         {
             title: '公里数',
             dataIndex: 'type',

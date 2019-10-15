@@ -65,13 +65,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="标准路桥费" >
-                        {getFieldDecorator('model', {
-                            initialValue: currentItem.model,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                 
                     <Form.Item key="type" label="公里数" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
@@ -79,9 +73,9 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="车辆使用率（%）" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
+                    <Form.Item key="process" label="车辆使用率（%）" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}

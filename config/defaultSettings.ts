@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾道路运输路线规划设计系统',
+  title: '场内运输车辆调度管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

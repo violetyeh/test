@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={65}
-          footer='增加运输车辆: 82'
+          total={200}
+          footer='增加运输车辆: 77'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>33%</span>
+            <span className={styles.trendText}>23%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>44%</span>
+            <span className={styles.trendText}>16%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='增加路线'
+          title='增加货物'
           action={
             <Tooltip
               title={
@@ -65,7 +65,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(136).format('0,0')}
-          footer='路线信息：112'
+          footer='货物信息：112'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(230).format('0,0')}
-          footer='进度：65%'
+          footer='调度进度：65%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='规划完成度'
+          title='调度完成度'
           action={
             <Tooltip
               title={
@@ -111,11 +111,11 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>1%</span>
+                <span className={styles.trendText}>3%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>2%</span>
+                <span className={styles.trendText}>6%</span>
               </Trend>
             </div>
           }

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑运输路线"
+                title="编辑运输车辆信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,35 +44,35 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="路线编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="查看地图" >
+                    <Form.Item key="name" label="车辆名称" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="起始地" >
+                    <Form.Item key="jishu" label="司机姓名" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="目的地" >
+                    <Form.Item key="fenceng" label="司机手机号" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="公里数" >
+                    <Form.Item key="leixing" label="当前状态" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
