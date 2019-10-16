@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑架构设计信息"
+                title="编辑策划设计信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="广告活动" >
+                    <Form.Item key="pinlv" label="广告方案" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="广告订单" >
+                    <Form.Item key="date" label="广告目标市场" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
@@ -72,27 +72,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="广告定向" >
+                    <Form.Item key="type" label="公交线路选择" >
                         {getFieldDecorator('type', {
                             initialValue: currentItem.type,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="架构进度（%）" >
+                    <Form.Item key="process" label="策划进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
+                    
                 </Form>
             </Modal>
         );

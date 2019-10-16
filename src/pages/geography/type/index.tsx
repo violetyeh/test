@@ -20,72 +20,72 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: 'GGSJ广告系统架构设计',
+        fenlei: 'GGSJ公交候车亭灯箱广告策划设计',
         pinlv: 80,
-        yaosu: '系统操作不卡顿',
+        yaosu: '直击人心，给客户留下深刻印象',
         fenceng: '孟凡',
         state: '启用',
        
     },
     {
         id: 'SER1271',
-        fenlei: 'GGSJ014广告系统架构设计',
+        fenlei: 'GGSJ014公交候车亭灯箱广告策划设计',
         pinlv: 32,
-        yaosu: '系统操作流畅',
+        yaosu: '广告目标人群明确',
         fenceng: '王石',
         state: '启用',
        
     },
     {
         id: 'SER1228',
-        fenlei: 'GGSJ023广告系统架构设计',
+        fenlei: 'GGSJ023公交候车亭灯箱广告策划设计',
         pinlv: 65,
-        yaosu: '系统操作不卡顿',
+        yaosu: '直击人心，给客户留下深刻印象',
         fenceng: '钱萌',
         state: '启用',
        
     },
     {
         id: 'SER1264',
-        fenlei: 'GGSJ47广告系统架构设计',
+        fenlei: 'GGSJ47公交候车亭灯箱广告策划设计',
         pinlv: 42,
-        yaosu: '按钮点击有效',
+        yaosu: '简洁明了，吸引客户',
         fenceng: '张琼凡',
         state: '启用',
        
     },
     {
         id: 'SER1278',
-        fenlei: 'GGSJ36广告系统架构设计',
+        fenlei: 'GGSJ36公交候车亭灯箱广告策划设计',
         pinlv: 56,
-        yaosu: '系统操作不卡顿',
+        yaosu: '广告目标人群明确',
         fenceng: '孟思三',
         state: '启用',
        
     },
     {
         id: 'SER1226',
-        fenlei: 'GGSJ12广告系统架构设计',
+        fenlei: 'GGSJ12公交候车亭灯箱广告策划设计',
         pinlv: 12,
-        yaosu: '界面操作流畅',
+        yaosu: '简洁明了，吸引客户',
         fenceng: '王思',
         state: '启用',
        
     },
     {
         id: 'SER1224',
-        fenlei: 'GGSJ09广告系统架构设计',
+        fenlei: 'GGSJ09公交候车亭灯箱广告策划设计',
         pinlv: 26,
-        yaosu: '界面操作不卡顿',
+        yaosu: '直击人心，给客户留下深刻印象',
         fenceng: '陈思凡',
         state: '启用',
        
     },
     {
         id: 'SER1223',
-        fenlei: 'GGSJ05广告系统架构设计',
+        fenlei: 'GGSJ05公交候车亭灯箱广告策划设计',
         pinlv: 33,
-        yaosu: '系统操作不卡顿',
+        yaosu: '简洁明了，吸引客户',
         fenceng: '张凡',
         state: '启用',
        
@@ -107,11 +107,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '架构设计名称',
+            title: '广告策划名称',
             dataIndex: 'fenlei',
         },
         {
-            title: '架构进度',
+            title: '策划进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -122,7 +122,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '架构设计技术要素',
+            title: '策划要求',
             dataIndex: 'yaosu',
         },
         {
@@ -167,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="架构剖析管理"
+                title="策划要求"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

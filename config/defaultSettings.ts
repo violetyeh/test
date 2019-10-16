@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '大型广告系统架构系统',
+  title: '公交候车亭灯箱广告策划系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'D0001',
-        jishu: 'WZ12356JG架构广告位位置',
+        jishu: 'WZ12356JG公交站广告位位置',
         fenceng: '张宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '高档',
+        name: '智能家居广告',
         state: '启用',
     },
     {
         id: 'D0002',
-        jishu: 'WZ16356JG架构广告位位置',
+        jishu: 'WZ16356JG公交站广告位位置',
         fenceng: '孟凡',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '高端',
+        name: '奢侈品广告',
         state: '启用',
     },
     {
         id: 'D0003',
-        jishu: 'WZ12656JG架构广告位位置',
+        jishu: 'WZ12656JG公交站广告位位置',
         fenceng: '程思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '简洁',
+        name: '求职广告',
         state: '启用',
     },
     {
         id: 'D0004',
-        jishu: 'WZ12746JG架构广告位位置',
+        jishu: 'WZ12746JG公交站广告位位置',
         fenceng: '齐天',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '简洁',
+        name: '招聘广告',
         state: '启用',
     },
     {
         id: 'D0005',
-        jishu: 'WZ12366JG架构广告位位置',
+        jishu: 'WZ12366JG公交站广告位位置',
         fenceng: '钱偲',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '华丽',
+        name: '电影宣传广告',
         state: '启用',
     },
     {
         id: 'D0006',
-        jishu: 'WZ11256JG架构广告位位置',
+        jishu: 'WZ11256JG公交站广告位位置',
         fenceng: '孟宇思',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '高端',
+        name: '奢侈品广告',
         state: '启用',
     },
     {
         id: 'D0007',
-        jishu: 'WZ112JG架构广告位位置',
+        jishu: 'WZ112JG公交站广告位位置',
         fenceng: '方艳',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '详细',
+        name: '招租广告',
         state: '启用',
     },
     {
         id: 'D0008',
-        jishu: 'WZ11856JG架构广告位位置',
+        jishu: 'WZ11856JG公交站广告位位置',
         fenceng: '姜宇',
-        leixing: '线上广告',
-        name: '广告招商',
+        leixing: '简洁',
+        name: '手机广告',
         state: '启用',
     },
 ]
@@ -108,15 +108,17 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '广告位',
             dataIndex: 'jishu',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '售卖类型',
+            title: '设计广告类型',
             dataIndex: 'name',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
             title: ' 广告样式',
             dataIndex: 'leixing',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
 
         {
@@ -148,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="架构技术管理"
+                title="广告定位"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
