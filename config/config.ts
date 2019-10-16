@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '精准广告投放信息管理',
+          name: '广告信息管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '精准广告投放操作管理',
+          name: '广告滚动管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '精准广告投放数据管理',
+          name: '广告数据管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

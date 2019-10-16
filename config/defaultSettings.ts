@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '精准广告投放系统',
+  title: '物联网智能滚动系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

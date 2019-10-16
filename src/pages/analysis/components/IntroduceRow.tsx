@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='精准广告投放次数'
+          title='广告滚动次数'
           action={
             <Tooltip
               title={
@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={282}
-          footer='今日投放管理: 23'
+          total={63}
+          footer='今日滚动管理: 12'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>12%</span>
+            <span className={styles.trendText}>24%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>11%</span>
+            <span className={styles.trendText}>37%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(2123).format('0,0')}
-          footer='今日投放管理：92'
+          total={numeral(200).format('0,0')}
+          footer='今日滚动管理：50'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='精准广告投放进度'
+          title='广告滚动进度'
           action={
             <Tooltip
               title={
@@ -85,8 +85,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(2302).format('0,0')}
-          footer='精准广告投放进度：90%'
+          total={numeral(10).format('0,0')}
+          footer='广告滚动进度：65%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -106,16 +106,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="68%"
+          total="75%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>32%</span>
+                <span className={styles.trendText}>41%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>41%</span>
+                <span className={styles.trendText}>21%</span>
               </Trend>
             </div>
           }
