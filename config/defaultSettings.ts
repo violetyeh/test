@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾道路运输车辆实时定位系统',
+  title: '货物运输动态跟踪系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
