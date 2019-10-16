@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Modal, Input, message, DatePicker } from "antd";
+import { Form, Modal, Input, message, DatePicker, Radio } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import React from "react";
 import styles from '../style.less';
@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告推广渠道信息"
+                title="编辑广告宣传频道信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,48 +44,52 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="渠道编号" >
+                    <Form.Item key="id" label="宣传渠道" >
                         {getFieldDecorator('id', {
-                            initialValue: currentItem.id,
+                        initialValue: currentItem.id,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="广告渠道名称" >
-                        {getFieldDecorator('pinlv', {
-                            initialValue: currentItem.pinlv,
+                    <Form.Item key="creator" label="类型" >
+                        {getFieldDecorator('creator', {
+                        initialValue: currentItem.creator,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="渠道负责人" >
+                    <Form.Item key="project" label="广告商品名称" >
+                        {getFieldDecorator('project', {
+                        initialValue: currentItem.project,
+                        })(
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="渠道开关" >
+                        {getFieldDecorator('status', {
+                        initialValue: currentItem.status,
+                        })(
+                        <Radio.Group defaultValue="a" buttonStyle="solid">
+                            <Radio.Button value="a">开</Radio.Button>
+                            <Radio.Button value="b">关</Radio.Button>
+                        </Radio.Group>,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="date" label="频道负责人" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="广告行业" >
-                        {getFieldDecorator('model', {
-                            initialValue: currentItem.model,
+                    <Form.Item key="process" label="发布进度(%)" >
+                        {getFieldDecorator('process', {
+                            initialValue: currentItem.process,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="推广类型" >
-                        {getFieldDecorator('type', {
-                            initialValue: currentItem.type,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="remark" label="备注信息" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.remark,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
+                    
                 </Form>
             </Modal>
         );

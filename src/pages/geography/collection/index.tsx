@@ -22,70 +22,79 @@ interface TypeState {
 }
 
 const mockData = [
-    {
-        id: 'D0001',
-        jishu: '户外广告公司',
-        fenceng: '户外/高速/地图',
-        leixing: '我要买广告',
-        name:'报纸广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0002',
-        jishu: '电视广告公司',
-        fenceng: '电视/卫视/央视',
-        leixing: '求购信息大全',
-        name:'电视广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0003',
-        jishu: '广播广告公司',
-        fenceng: '广播/交通/省广',
-        leixing: '我要买广告',
-        name:'广播广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0004',
-        jishu: '报纸广告公司',
-        fenceng: '报纸/晚报/北京',
-        leixing: '求购信息大全',
-        name:'报纸广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0005',
-        jishu: '杂志广告公司',
-        fenceng: '杂志/航机/时尚',
-        leixing: '我要买广告',
-        name:'户外广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0006',
-        jishu: '广告制作公司',
-        fenceng: 'LED/屏主/广告主',
-        leixing: '发布广告求购',
-        name:'报纸广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0007',
-        jishu: '广告策划公司',
-        fenceng: '网络广告/DSP',
-        leixing: '求购信息大全',
-        name:'电视广告在线采购',
-        state: '启用',
-    },
-    {
-        id: 'D0008',
-        jishu: '广告设备公司',
-        fenceng: '自媒体/公众号/微博',
-        leixing: '求购信息大全',
-        name:'报纸广告在线采购',
-        state: '启用',
-    },
+   
+      {
+        id: '商业广告',
+        name: '百雀羚系列',
+        type: 'P',
+        date: '化妆品',
+        creator: '百雀羚',
+        column:'10秒广告',
+        status: 10,
+      },
+      {
+        id: '公益广告',
+        name: '公安部',
+        type: 'v0890',
+        date: '公益',
+        creator: '警民同心 平安春节',
+        column:'30秒广告',
+        status: 30,
+      },
+      {
+        id: '公益广告',
+        name: 'CCTV',
+        type: 'v0891',
+        date: '公益',
+        creator: '战斗英雄张富清',
+        column:'17秒广告',
+        status: 17,
+      },
+      {
+        id: '珠宝广告',
+        name: '周六福',
+        type: 'P',
+        date: '珠宝',
+        creator: '黄金',
+        column:'20秒广告',
+        status: 20,
+      },
+      {
+        id: '珠宝广告',
+        name: '周六福',
+        type: 'P',
+        date: '珠宝',
+        creator: '钻石',
+        column:'15秒广告',
+        status: 15,
+      },
+      {
+        id: '商业广告',
+        name: 'OLAY净白系列',
+        type: 'P',
+        date: '化妆品',
+        creator: 'OLAY',
+        column:'30秒广告',
+        status: 30,
+      },
+      {
+        id: '商业广告',
+        name: 'SK-II系列',
+        type: 'P',
+        date: '化妆品',
+        creator: 'SK-II',
+        column:'9秒广告',
+        status: 9,
+      },
+      {
+        id: '商业广告',
+        name: '佰草集系列',
+        type: 'P',
+        date: '化妆品',
+        creator: '佰草集',
+        column:'16秒广告',
+        status: 16,
+      },
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -98,26 +107,36 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '广告类型',
             dataIndex: 'id',
-        },
-        {
-            title: '广告商铺',
-            dataIndex: 'jishu',
-        },
-        {
-            title: '广告资源分类',
-            dataIndex: 'fenceng',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
-        },
-        {
-            title: '求购信息',
-            dataIndex: 'leixing',
-        },
-        {
-            title: '自媒体项目代理',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
+          },
+          {
+            title: '名称',
             dataIndex: 'name',
-        },
+          },
+          {
+            title: '版本',
+            dataIndex: 'type',
+          },
+          {
+            title: '上级分类',
+            dataIndex: 'date',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
+          },
+          {
+            title: '下级分类',
+            dataIndex: 'creator',
+            render: (text) => <Tag color="magenta">{text}</Tag>,
+          },
+          {
+            title: '栏目类型',
+            dataIndex: 'column',
+          },
+          {
+            title: '定义长度（秒）',
+            dataIndex: 'status',
+          },
 
         {
             title: '操作',
@@ -148,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="广告投放管理"
+                title="电视广告管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

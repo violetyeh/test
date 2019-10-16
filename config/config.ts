@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '广告投放管理',
+          name: '电视广告管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '广告推广渠道管理',
+          name: '广告宣传频道管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '广告推广服务管理',
+          name: '广告播放管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

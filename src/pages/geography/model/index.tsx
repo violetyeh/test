@@ -19,79 +19,69 @@ interface ModelState {
 
 const mockData = [
     {
-        id: 'YID8S0J',
-        date: '姜宇',
-        model: '广告标识',
-        type: '线上推广',
-        status: '启用',
-        pinlv: 'A29166视频推广渠道',
-        process: 23,
-    },
-    {
-        id: 'YID72IK',
-        date: '孟凡',
-        model: '广告招代理',
-        type: '线上推广',
-        status: '启用',
-        pinlv: 'A29153广告推广渠道',
-        process: 54,
-    },
-    {
-        id: 'YID63JJ',
-        date: '陈瑶瑶',
-        model: '广告招代理',
-        type: '线上推广',
-        status: '启用',
-        pinlv: 'A29192广告推广渠道',
-        process: 44,
-    },
-    {
-        id: 'YIDS0191',
-        date: '陈光学',
-        model: '广告招标',
-        type: '线上推广',
-        remark: '同多X，Y坐标，将地和物通过点、线、面方式进行表达',
-        status: '启用',
-        pinlv: 'AE1292微信推广渠道',
-        process: 30,
-    },
-    {
-        id: 'YIDS2SI1',
-        date: '杜维',
-        model: '广告展会',
-        type: '线上推广',
-        remark: '用方格来模拟实体',
-        status: '启用',
-        pinlv: 'AQ2837微信公众号推广渠道',
-        process: 88,
-    },
-    {
-        id: 'YIDS01IOS',
-        date: '陈鹏屹',
-        model: '广告活动',
-        type: '线下推广',
-        status: '启用',
-        pinlv: 'AY72829线下推广渠道',
-        process: 90,
-    },
-    {
-        id: 'YSIW9s1',
-        date: '张磊',
-        model: '广告监测',
-        type: '线上推广',
-        status: '启用',
-        pinlv: 'A1910百度推广渠道',
-        process: 70,
-    },
-    {
-        id: 'YID80SJ',
-        date: '陈芙蓉',
-        model: '广告招代理',
-        type: '线上推广',
-        status: '启用',
-        pinlv: 'A29192广告推广渠道',
-        process: 67,
-    },
+        id: '地方电视台',
+        creator: '浙江电视台',
+        project: '手机',
+        status: 1,
+        date:'刘四方',
+        process:'86',
+      },
+      {
+        id: '地方电视台',
+        creator: '重庆电视台',
+        project: '火锅',
+        status: 1,
+        date:'秦雨田',
+        process:'100',
+      },
+      {
+        id: '地方电视台',
+        creator: '湖南电视台',
+        project: '感冒药',
+        status: 1,
+        date:'王思雅',
+        process:'62',
+      },
+      {
+        id: '中央电视台',
+        creator: '中央二台',
+        project: '手机',
+        status: 1,
+        date:'陈兆宇',
+        process:'74',
+      },
+      {
+        id: '中央电视台',
+        creator: '中央一台',
+        project: '牙膏',
+        status: 1,
+        date:'陆万',
+        process:'85',
+      },
+      {
+        id: '中央电视台',
+        creator: '新闻频道',
+        project: '公益广告',
+        status: 1,
+        date:'赵宇',
+        process:'42',
+      },
+      {
+        id: '购物频道',
+        creator: '服饰购物频道',
+        project: '连衣裙',
+        status: 1,
+        date:'陈宗',
+        process:'76',
+      },
+      {
+        id: '购物频道',
+        creator: '家电购物频道',
+        project: '电视机',
+        status: 1,
+        date:'王明芳',
+        process:'98',
+      },
    
 ]
 
@@ -103,39 +93,34 @@ class Model extends Component<ModelProps, ModelState>{
     }
 
     columns: ColumnProps<any>[] = [
+       
         {
-            title: '编号',
+            title: '宣传频道',
             dataIndex: 'id',
-        },
+          },
+          {
+            title: '类型',
+            dataIndex: 'creator',
+          },
+          {
+            title: '广告商品名称',
+            dataIndex: 'project',
+          },
+          {
+            title: '频道开关',
+            dataIndex: 'status',
+            render: (text) => (<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />),
+          },
         {
-            title: '广告渠道名称',
-            dataIndex: 'pinlv',
-        },
-        {
-            title: '渠道负责人',
+            title: '频道负责人',
             dataIndex: 'date',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '广告行业',
-            dataIndex: 'model',
-        },
-        {
-            title: '推广类型',
-            dataIndex: 'type',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
-        },
-        {
-            title: '推广进度',
+            title: '发布进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
-        },
-
-        {
-            title: '是否启用',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
         },
         {
             title: '操作',
@@ -163,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="广告推广渠道管理"
+                title="广告宣传频道管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑推广服务信息"
+                title="编辑广告播放信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,32 +44,32 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="数据编号" >
                         {getFieldDecorator('id', {
-                            initialValue: currentItem.id,
+                        initialValue: currentItem.id,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="广告推广服务名称" >
-                        {getFieldDecorator('fenlei', {
-                            initialValue: currentItem.fenlei,
+                    <Form.Item key="time" label="广告播放时间" >
+                        {getFieldDecorator('time', {
+                        initialValue: currentItem.time,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="服务进度（%）" >
-                        {getFieldDecorator('pinlv', {
-                            initialValue: currentItem.pinlv,
+                    <Form.Item key="type" label="电视名称" >
+                        {getFieldDecorator('type', {
+                        initialValue: currentItem.type,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="广告圈子" >
-                        {getFieldDecorator('yaosu', {
-                            initialValue: currentItem.yaosu,
+                    <Form.Item key="creator" label="电视内容" >
+                        {getFieldDecorator('creator', {
+                        initialValue: currentItem.creator,
                         })(
-                            <Input.TextArea rows={2} />,
+                        <Input />,
                         )}
                     </Form.Item>
                 </Form>

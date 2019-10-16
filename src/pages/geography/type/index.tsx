@@ -19,61 +19,61 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'SER1292',
-        fenlei: '东莞石龙国际电子城楼体LED屏广告',
-        yaosu: '广告人聚会',
-        state: '启用',
-        pinlv: 53,
-    },
-    {
-        id: 'SER8201',
-        fenlei: '包茂高速延安北出口单立柱广告 ',
-        yaosu: '广告人访谈',
-        state: '启用',
-        pinlv: 64,
-    },
-    {
-        id: 'SER3921',
-        fenlei: '南航报纸航空旅游报广告',
-        yaosu: '广告人脉圈',
-        state: '启用',
-        pinlv: 92,
-    },
-    {
-        id: 'SER0029',
-        fenlei: '广东科技报（图文、软文广告）',
-        yaosu: '广告人招聘',
-        state: '启用',
-        pinlv: 82,
-    },
-    {
-        id: 'SER2191',
-        fenlei: '低价销售南方都市报所有版面的广告',
-        yaosu: '广告人脉圈',
-        state: '启用',
-        pinlv: 19,
-    },
-    {
-        id: 'SER3321',
-        fenlei: '石家庄双面广告塔量身定制',
-        yaosu: '广告人招聘',
-        state: '启用',
-        pinlv: 63,
-    },
-    {
-        id: 'SER2136',
-        fenlei: '南京数字有线电视epg广告资源供应',
-        yaosu: '广告人脉圈',
-        state: '启用',
-        pinlv: 19,
-    },
-    {
-        id: 'SER3354',
-        fenlei: '苏州小区宣传栏广告媒体',
-        yaosu: '广告人招聘',
-        state: '启用',
-        pinlv: 54,
-    },
+        id: 'SJ20101',
+        time:'2019-10-01',
+        type: '中央一套',
+        creator: '化妆品广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20102',
+        time:'2019-10-01',
+        type: '湖南一套',
+        creator: '珠宝广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20103',
+        time:'2019-10-02',
+        type: '中央二套',
+        creator: '公益广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20104',
+        time:'2019-10-02',
+        type: '湖南一套',
+        creator: '化妆品广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20105',
+        time:'2019-10-03',
+        type: '湖南一套',
+        creator: '化妆品广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20106',
+        time:'2019-10-04',
+        type: '湖南一套',
+        creator: '汽车广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20107',
+        time:'2019-10-03',
+        type: '湖南一套',
+        creator: '医药广告',
+        status: 1,
+      },
+      {
+        id: 'SJ20108',
+        time:'2019-10-03',
+        type: '湖南一套',
+        creator: '农药广告',
+        status: 1,
+      },
 ]
 
 class Type extends Component<TypeProps, TypeState>{
@@ -86,34 +86,28 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '数据编号',
             dataIndex: 'id',
-        },
-        {
-            title: '广告推广服务名称',
-            dataIndex: 'fenlei',
-        },
-        {
-            title: '服务进度',
-            dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
-        },
-        {
-            title: '广告圈子',
-            dataIndex: 'yaosu',
-        },
-
-        {
-            title: '是否启用',
+          },
+          {
+            title: '广告播放日期',
+            dataIndex: 'time',
+          },
+          {
+            title: '电视名称',
+            dataIndex: 'type',
+            render: (text) => <Tag color="green">{text}</Tag>,
+          },
+          {
+            title: '电视内容',
+            dataIndex: 'creator',
+            render: (text) => <Tag color="red">{text}</Tag>,
+          },
+          {
+            title: '是否成功发布',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
-        },
+            render: (text) => <Switch checkedChildren="成功" unCheckedChildren="失败" />,
+          },
         {
             title: '操作',
             render: (text, record) => (
@@ -141,7 +135,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="广告推广服务管理"
+                title="广告播放管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

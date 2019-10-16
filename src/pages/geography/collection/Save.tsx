@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告投放信息"
+                title="编辑电视广告信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,40 +44,53 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="广告类型" >
                         {getFieldDecorator('id', {
-                            initialValue: currentItem.id,
+                        initialValue: currentItem.id,
                         })(
-                            <Input />,
+                        <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="广告商铺" >
-                        {getFieldDecorator('jishu', {
-                            initialValue: currentItem.jishu,
-                        })(
-                            <Input.TextArea rows={2} />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="fenceng" label="广告资源分类" >
-                        {getFieldDecorator('remark', {
-                            initialValue: currentItem.fenceng,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="leixing" label="求购信息" >
-                        {getFieldDecorator('leixing', {
-                            initialValue: currentItem.leixing,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    
-                    <Form.Item key="name" label="自媒体项目代理" >
+                    <Form.Item key="name" label="名称" >
                         {getFieldDecorator('name', {
-                            initialValue: currentItem.name,
+                        initialValue: currentItem.name,
                         })(
-                            <Input />,
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="type" label="版本" >
+                        {getFieldDecorator('type', {
+                        initialValue: currentItem.type,
+                        })(
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="date" label="上级分类" >
+                        {getFieldDecorator('date', {
+                        initialValue: currentItem.date,
+                        })(
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="creator" label="下级分类" >
+                        {getFieldDecorator('creator', {
+                        initialValue: currentItem.creator,
+                        })(
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="column" label="栏目类型" >
+                        {getFieldDecorator('column', {
+                        initialValue: currentItem.column,
+                        })(
+                        <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="status" label="定义长度（秒）" >
+                        {getFieldDecorator('status', {
+                        initialValue: currentItem.status,
+                        })(
+                        <Input />,
                         )}
                     </Form.Item>
                 </Form>
