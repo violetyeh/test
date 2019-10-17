@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监测参数"
+                title="编辑流量监测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="纯化水监测项目" >
+                    <Form.Item key="sj" label="监测时间" >
+                        {getFieldDecorator('sj', {
+                            initialValue: currentItem.sj,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mc" label="蓄水池入口瞬时流量（t）" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tiji2" label="监测样本" >
+                    <Form.Item key="tiji2" label="清水池出口累计流量（t）" >
                         {getFieldDecorator('tiji2', {
                             initialValue: currentItem.tiji2,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhiliang" label="样本量（mg）" >
+                    <Form.Item key="zhiliang" label="今日进水量（t）" >
                         {getFieldDecorator('zhiliang', {
                             initialValue: currentItem.zhiliang,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zb" label="肉眼可见物占比（%）" >
+                    <Form.Item key="zb" label="本月进水量（t）" >
                         {getFieldDecorator('zb', {
                             initialValue: currentItem.zb,
                         })(

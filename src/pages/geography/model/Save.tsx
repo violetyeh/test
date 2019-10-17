@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑纯化水制水监测设置"
+                title="编辑水质监测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="zl" label="源水" >
+                    <Form.Item key="zl" label="水质仪编号" >
                         {getFieldDecorator('zl', {
                             initialValue: currentItem.zl,
                         })(
@@ -58,7 +58,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="纯化水制备" >
+                    <Form.Item key="sj" label="净水操作" >
                         {getFieldDecorator('sj', {
                             initialValue: currentItem.sj,
                         })(

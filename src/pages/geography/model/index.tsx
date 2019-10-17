@@ -19,7 +19,7 @@ interface ModelState {
 
 const mockData = [
     {
-        zl: '地下水',
+        zl: 'SZY018',
         mc:'固体颗粒物',
         sj:'电法去离子（EDI）',
         zb:3.1,
@@ -27,7 +27,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地下水',
+        zl: 'SZY019',
         mc:'气体',
         sj:'离子交换',
         zb:2.2,
@@ -35,7 +35,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地表水',
+        zl: 'SZY020',
         mc:'无机物',
         sj:'过滤',
         zb:3.6,
@@ -43,7 +43,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地下水',
+        zl: 'SZY021',
         mc:'有机物',
         sj:'微孔过滤（超滤）',
         zb:3,
@@ -52,7 +52,7 @@ const mockData = [
     },
     
     {
-        zl: '地表水',
+        zl: 'SZY022',
         mc:'微生物',
         sj:'反渗透',
         zb:2,
@@ -60,7 +60,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地表水',
+        zl: 'SZY023',
         mc:'有机物',
         sj:'软化',
         zb:1,
@@ -68,7 +68,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地下水',
+        zl: 'SZY024',
         mc:'无机物',
         sj:'吸附',
         zb:3,
@@ -76,7 +76,7 @@ const mockData = [
         status: '启用',
     },
     {
-        zl: '地表水',
+        zl: 'SZY025',
         mc:'固体颗粒物',
         sj:'过滤',
         zb:2,
@@ -94,7 +94,7 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '源水',
+            title: '水质仪编号',
             dataIndex: 'zl',
         },
         {
@@ -102,7 +102,7 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'mc',
         },
         {
-            title: '纯化水制备',
+            title: '净水操作',
             dataIndex: 'sj',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="纯化水制水监测设置"
+                title="水质监测"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

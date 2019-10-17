@@ -22,14 +22,14 @@ class Search extends Component<SearchProps, SearchState>{
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
-                        <Form.Item label="标准值项目">
+                        <Form.Item label="加压泵三相电流">
                             {getFieldDecorator('mingcheng')(<Input placeholder="请输入" />)}
                         </Form.Item>
                     </Col>
                     <Col md={8} sm={24}>
                         <div style={{ overflow: 'hidden' }}>
                             <div style={{ float: 'right', marginBottom: 24 }}>
-                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加监测数据</Button>
+                                <Button icon="plus" htmlType="button" onClick={handleSave}>添加电量监测信息</Button>
                                 <Divider type="vertical" />
                                 <Button icon="search" type="primary" htmlType="submit">查询</Button>
                                 <Button style={{ marginLeft: 8 }} onClick={() => { }}>重置</Button>

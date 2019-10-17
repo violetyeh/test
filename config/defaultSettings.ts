@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '纯化水制水在线监测控制系统',
+  title: '安全供水定时监测系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

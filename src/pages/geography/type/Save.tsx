@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监测数据"
+                title="编辑电量监测信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mingcheng" label="标准值项目" >
+                    <Form.Item key="mingcheng" label="加压泵三相电流" >
                         {getFieldDecorator('mingcheng', {
                             initialValue: currentItem.mingcheng,
                         })(
@@ -65,7 +65,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hg" label="合格率（%）" >
+                    <Form.Item key="state" label="吨水耗电量（KV/h）" >
+                        {getFieldDecorator('state', {
+                            initialValue: currentItem.state,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="hg" label="监测进度（%）" >
                         {getFieldDecorator('hg', {
                             initialValue: currentItem.hg,
                         })(
