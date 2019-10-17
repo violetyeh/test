@@ -19,72 +19,72 @@ interface TypeState {
 
 const mockData = [
     {
-       id: '渝C9SJ21',
-       mc:'黄',
-       gg:'豪华',
+       id: 'ID9SJ21',
+       mc:'居民用水',
+       gg:'5',
        hz:'否',
        yy:'3',
        jd:2,
        state: 1,
     },
     {
-        id: '渝C8SJ22',
-        mc:'绿',
-        gg:'普通',
-        hz:'否',
+        id: 'ID8SJ22',
+        mc:'工业用水',
+        gg:'3.7',
+        hz:'是',
         yy:'1',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C1J23',
-        mc:'绿',
-        gg:'普通',
+        id: 'ID1J23',
+        mc:'工业用水',
+        gg:'3.7',
         hz:'是',
         yy:'2',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ24',
-        mc:'黄',
-        gg:'豪华',
-        hz:'否',
+        id: 'ID1SJ24',
+        mc:'居民用水',
+        gg:'3.7',
+        hz:'是',
         yy:'3',
         jd:1,
         state: 1,
      },
      {
-        id: '渝C3SJ25',
-        mc:'绿',
-        gg:'普通',
+        id: 'ID3SJ25',
+        mc:'工业用水',
+        gg:'6',
         hz:'否',
         yy:'2',
-        jd:3,
+        jd:1,
         state: 1,
      },
      {
-        id: '渝C2SJ26',
-        mc:'黄',
-        gg:'豪华',
-        hz:'否',
+        id: 'ID2SJ26',
+        mc:'居民用水',
+        gg:'3.7',
+        hz:'是',
         yy:'1',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C1SJ27',
-        mc:'绿',
-        gg:'普通',
-        hz:'否',
-        yy:'6',
+        id: 'ID1SJ27',
+        mc:'工业用水',
+        gg:'3.7',
+        hz:'是',
+        yy:'1',
         jd:2,
         state: 1,
      },
      {
-        id: '渝C0SJ28',
-        mc:'黄',
-        gg:'豪华',
+        id: 'ID0SJ28',
+        mc:'居民用水',
+        gg:'3.7',
         hz:'是',
         yy:'3',
         jd:3,
@@ -103,29 +103,29 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '车牌号',
+            title: '水费编号',
             dataIndex: 'id',
         },
         {
-            title: '车牌颜色',
+            title: '水费类型名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '客车类型',
+            title: '基本水价',
             dataIndex: 'gg',
         },
         {
-            title: '是否临时',
+            title: '是否正常',
             dataIndex: 'hz',
         },
         {
-            title: '燃油费',
+            title: '排污费',
             dataIndex: 'yy',
         },
         
         {
-            title: '站务费',
+            title: '附加费',
             dataIndex: 'jd',
         },
         
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车辆信息管理"
+                title="水费管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

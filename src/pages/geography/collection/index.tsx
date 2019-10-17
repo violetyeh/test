@@ -23,91 +23,67 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'BC21',
-        fl:'璧渝线',
-        mc:'已检',
-        ma:'35',
-        bf:'2019年7月19日18:53:25',
-        sf:'6',
-        nl:'豪华',
-        dbz:'5',
+        id: 'WTID0156321',
+        fl:'陈永华',
+        ma:'居民用水',
+        bf:'2019年9月19日18:53:25',
+        sf:'17256423016',
         state: '启用',
     },
     {
-        id: 'BC35',
-        fl:'永璧线',
-        mc:'未检',
-        ma:'30',
-        bf:'2019年7月20日12:03:25',
-        sf:'7',
-        nl:'普通',
-        dbz:'3',
+        id: 'WTID0156335',
+        fl:'张永',
+        ma:'办公楼用水',
+        bf:'2019年9月20日12:03:25',
+        sf:'1516662347',
         state: '启用',
     },
     {
-        id: 'BC38',
-        fl:'永合线',
-        mc:'已检',
-        ma:'35',
-        bf:'2019年7月22日08:56:45',
-        sf:'1',
-        nl:'普通',
-        dbz:'5',
+        id: 'WTID0156338',
+        fl:'刘永合',
+        ma:'居民用水',
+        bf:'2019年9月22日08:56:45',
+        sf:'15765432101',
         state: '启用',
     },
     {
-        id: 'BC21',
-        fl:'合璧线',
-        mc:'未检',
-        ma:'30',
-        bf:'2019年7月23日16:23:11',
-        sf:'4',
-        nl:'豪华',
-        dbz:'8',
+        id: 'WTID0156321',
+        fl:'卫璧',
+        ma:'工地用水',
+        bf:'2019年9月23日16:23:11',
+        sf:'1307234154',
         state: '启用',
     },
     {
-        id: 'BC37',
-        fl:'合津线',
-        mc:'已检',
-        ma:'36',
+        id: 'WTID0156337',
+        fl:'陆合',
+        ma:'居民用水',
         bf:'2019年8月01日20:53:25',
-        sf:'15',
-        nl:'普通',
-        dbz:'5',
+        sf:'15178852415',
         state: '启用',
     },
     {
-        id: 'BC35',
-        fl:'津璧线',
-        mc:'已检',
-        ma:'30',
+        id: 'WTID0156335',
+        fl:'陈津',
+        ma:'居民用水',
         bf:'2019年8月06日09:14:25',
-        sf:'10',
-        nl:'豪华',
-        dbz:'8',
+        sf:'12325632110',
         state: '启用',
     },
     {
-        id: 'BC64',
-        fl:'铜川线',
-        mc:'已检',
-        ma:'35',
+        id: 'WTID0156364',
+        fl:'赵川',
+        ma:'居民用水',
         bf:'2019年8月07日19:14:27',
-        sf:'15',
-        nl:'豪华',
-        dbz:'8',
+        sf:'17256324515',
         state: '启用',
     },
     {
-        id: 'BC78',
-        fl:'威铜线',
-        mc:'已检',
-        ma:'21',
+        id: 'WTID0156378',
+        fl:'王威铜',
+        ma:'居民用水',
         bf:'2019年8月08日15:13:47',
-        sf:'10',
-        nl:'豪华',
-        dbz:'5',
+        sf:'15326472010',
         state: '启用',
     },
     
@@ -123,41 +99,30 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '班次',
+            title: '客户卡号',
             dataIndex: 'id',
         },
         {
-            title: '线路',
+            title: '客户姓名',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
        
         {
-            title: '座位数',
+            title: '用水类型',
             dataIndex: 'ma',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '发车时间',
+            title: '开户时间',
             dataIndex: 'bf',
            
         },
         {
-            title: '总余票',
+            title: '联系电话',
             dataIndex: 'sf',
         },
-        {
-            title: '车型',
-            dataIndex: 'nl',
-        },
-        {
-            title: '票价',
-            dataIndex: 'dbz',
-        },
-        {
-            title: '状态',
-            dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
-        },
+       
         {
             title: '操作',
             render: (text, record) => (
@@ -187,7 +152,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="售票业务"
+                title="客户信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

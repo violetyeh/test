@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾客运综合管理系统',
+  title: '自来水终端客户管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

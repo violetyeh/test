@@ -22,81 +22,105 @@ const mockData = [
        id:'BC01',
        cf:'24',
        jc:'22',
-       dw:'30',
+       dw:'小区',
        jg:'2',
        jx:'91',
        zhi:'渝C20184',
        status: '启用',
+       mc:'80.5',
+       nl:'30以下',
+       dbz:'3.5',
     },
     {
         id:'BC02',
         cf:'30',
         jc:'30',
-        dw:'34',
-        jg:'0',
+        dw:'工地',
+        jg:'25',
         jx:'100',
         zhi:'渝C35Z60',
         status: '启用',
+        mc:'计算中',
+        nl:'40',
+        dbz:'3.3',
      },
      {
         id:'BC03',
         cf:'18',
         jc:'18',
-        dw:'30',
-        jg:'0',
+        dw:'小区',
+        jg:'3',
         jx:'100',
         zhi:'渝C45120',
         status: '启用',
+        mc:'70',
+        nl:'35',
+        dbz:'3.5',
      },
      {
         id:'BC04',
         cf:'30',
         jc:'29',
-        dw:'30',
-        jg:'1',
+        dw:'工地',
+        jg:'15',
         jx:'96',
         zhi:'渝C11524',
         status: '启用',
+        mc:'计算中',
+        nl:'30以下',
+        dbz:'3.8',
      },
      {
          id:'BC05',
          cf:'25',
          jc:'25',
-         dw:'34',
-         jg:'0',
+         dw:'小区',
+         jg:'1',
          jx:'100',
          zhi:'渝C33630',
          status: '启用',
+         mc:'147',
+         nl:'42',
+         dbz:'3.5',
       },
       {
          id:'BC06',
          cf:'18',
          jc:'10',
-         dw:'34',
+         dw:'工地',
          jg:'8',
          jx:'55',
          zhi:'渝C96V20',
          status: '启用',
+         mc:'69',
+         nl:'30以下',
+         dbz:'3.7',
       },
       {
         id:'BC07',
         cf:'25',
         jc:'24',
-        dw:'30',
-        jg:'1',
+        dw:'小区',
+        jg:'2',
         jx:'96',
         zhi:'渝C23B84',
         status: '启用',
+        mc:'74',
+        nl:'30以下',
+        dbz:'3.8',
      },
      {
          id:'BC08',
          cf:'24',
          jc:'24',
-         dw:'30',
-         jg:'0',
+         dw:'小区',
+         jg:'3',
          jx:'100',
          zhi:'渝C11A60',
          status: '启用',
+         nl:'30以下',
+         dbz:'3.5',
+         mc:'100.5',
       },
 ]
 
@@ -108,45 +132,39 @@ class Model extends Component<ModelProps, ModelState>{
     }
 
     columns: ColumnProps<any>[] = [
+        
         {
-            title: '状态',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >已检</Checkbox>
-                </Fragment>
-            ),
-        },
-        {
-            title: '班次',
+            title: '卡号',
             dataIndex: 'id',
         },
         {
-            title: '座数',
+            title: '用户地址',
             dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
+        
         {
-            title: '售票数',
-            dataIndex: 'cf',
-        },
-        {
-            title: '检票数',
-            dataIndex: 'jc',
-        },
-        {
-            title: '人数差',
+            title: '用水人数',
             dataIndex: 'jg',
         },
         {
-            title: '实载率',
+            title: '用水率',
             dataIndex: 'jx', 
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
+       
         {
-            title: '应班车牌号',
-            dataIndex: 'zhi',
-            render: (text) => <Tag color="#f50000">{text}</Tag>,
+            title: '购买量（立方）',
+            dataIndex: 'nl',
+        },
+        {
+            title: '单价',
+            dataIndex: 'dbz',
+        },
+        {
+            title: '总金额（元）',
+            dataIndex: 'mc',
+            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
         {
             title: '是否启用',
@@ -179,7 +197,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="客运调度"
+                title="用水管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

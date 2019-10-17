@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '售票业务',
+          name: '客户信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '客运调度',
+          name: '用水管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '车辆信息管理',
+          name: '水费管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
