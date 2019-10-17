@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑数据中心配额信息"
+                title="编辑调峰信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -58,21 +58,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="监控进度（%）" >
+                    <Form.Item key="pinlv" label="调峰进度（%）" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="容量状态" >
+                    <Form.Item key="yaosu" label="管道流量状态" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sj" label="容量宽限时间" >
+                    <Form.Item key="sj" label="自来水容量时间" >
                         {getFieldDecorator('sj', {
                             initialValue: currentItem.sj,
                         })(

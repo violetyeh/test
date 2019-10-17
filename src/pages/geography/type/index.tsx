@@ -20,7 +20,7 @@ interface TypeState {
 const mockData = [
     {
         id: 'SER1292',
-        fenlei: '已经格式化',
+        fenlei: '已经调峰',
         yaosu: '正常',
         state: '启用',
         pinlv: 53,
@@ -28,7 +28,7 @@ const mockData = [
     },
     {
         id: 'SER8201',
-        fenlei: '未格式化 ',
+        fenlei: '未调峰 ',
         yaosu: '警告',
         state: '启用',
         pinlv: 64,
@@ -44,7 +44,7 @@ const mockData = [
     },
     {
         id: 'SER0029',
-        fenlei: '已经格式化',
+        fenlei: '已经调峰',
         yaosu: '正常',
         state: '启用',
         pinlv: 82,
@@ -52,7 +52,7 @@ const mockData = [
     },
     {
         id: 'SER2191',
-        fenlei: '未格式化',
+        fenlei: '未调峰',
         yaosu: '异常',
         state: '启用',
         pinlv: 19,
@@ -68,7 +68,7 @@ const mockData = [
     },
     {
         id: 'SER2136',
-        fenlei: '已经格式化',
+        fenlei: '已经调峰',
         yaosu: '异常',
         state: '启用',
         pinlv: 19,
@@ -76,7 +76,7 @@ const mockData = [
     },
     {
         id: 'SER3354',
-        fenlei: '已经格式化',
+        fenlei: '已经调峰',
         yaosu: '正常',
         state: '启用',
         pinlv: 54,
@@ -103,7 +103,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '监控进度',
+            title: '调峰进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -114,12 +114,12 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '容量状态',
+            title: '管道流量状态',
             dataIndex: 'yaosu',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '容量宽限时间',
+            title: '自来水容量时间',
             dataIndex: 'sj',
         },
 
@@ -155,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="数据中心配额管理"
+                title="调峰信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

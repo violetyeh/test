@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '数据中心设置',
+          name: '自来水实时数据',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '卷组监控管理',
+          name: '控制器参数',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '数据中心配额管理',
+          name: '调峰信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

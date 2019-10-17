@@ -29,7 +29,7 @@ const mockData = [
         leixing: '12',
         name:'30',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'1',
     },
     {
         id: 'D0002',
@@ -38,7 +38,7 @@ const mockData = [
         leixing: '14',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv02',
+        lg:'2',
     },
     {
         id: 'D0003',
@@ -47,7 +47,7 @@ const mockData = [
         leixing: '10',
         name:'16',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'1',
     },
     {
         id: 'D0004',
@@ -56,7 +56,7 @@ const mockData = [
         leixing: '9',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv03',
+        lg:'3',
     },
     {
         id: 'D0005',
@@ -65,7 +65,7 @@ const mockData = [
         leixing: '9',
         name:'10',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'1',
     },
     {
         id: 'D0006',
@@ -74,7 +74,7 @@ const mockData = [
         leixing: '17',
         name:'16',
         state: '启用',
-        lg:'逻辑卷 lv04',
+        lg:'4',
     },
     {
         id: 'D0007',
@@ -83,7 +83,7 @@ const mockData = [
         leixing: '12',
         name:'14',
         state: '启用',
-        lg:'逻辑卷 lv01',
+        lg:'1',
     },
     {
         id: 'D0008',
@@ -92,7 +92,7 @@ const mockData = [
         leixing: '10',
         name:'15',
         state: '启用',
-        lg:'逻辑卷 lv05',
+        lg:'5',
     },
 ]
 
@@ -106,31 +106,31 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '管道编号',
             dataIndex: 'id',
         },
         {
-            title: '逻辑卷',
+            title: '管路流量（立方米/时）',
             dataIndex: 'lg',
             render: (text) => <Tag color="black">{text}</Tag>,
 
         },
         {
-            title: '端口号',
+            title: '水仓水位（米）',
             dataIndex: 'jishu',
         },
         {
-            title: '会话空闲超时（秒）',
+            title: '正压（MPA）',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '数据空闲超时（秒）',
+            title: '负压（MPA）',
             dataIndex: 'leixing',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '连接超时（秒）',
+            title: '运行总时间（时）',
             dataIndex: 'name',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -169,7 +169,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="数据中心设置管理"
+                title="自来水实时数据"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

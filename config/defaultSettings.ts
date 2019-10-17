@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '数据中心智能监控软件',
+  title: '自来水智能调峰控制系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
