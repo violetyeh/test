@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置多线路调度"
+                title="设置水压采集信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,36 +51,43 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="调度负责人" >
+                    <Form.Item key="fenceng" label="数据负责人" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="调度线路" >
+                    <Form.Item key="jishu" label="监测管线" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="处理状态" >
-                        {getFieldDecorator('name', {
-                            initialValue: currentItem.name,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                    
                    
-                    <Form.Item key="leixing" label="调度类型" >
+                    <Form.Item key="leixing" label="监测点" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    
+                    <Form.Item key="name" label="数据采集状态" >
+                        {getFieldDecorator('name', {
+                            initialValue: currentItem.name,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="jd" label="采集进度（%）" >
+                        {getFieldDecorator('jd', {
+                            initialValue: currentItem.jd,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
                 </Form>
             </Modal>
         );

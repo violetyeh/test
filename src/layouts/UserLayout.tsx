@@ -47,10 +47,10 @@ const UserLayout: React.SFC<UserLayoutProps> = props => {
             <div className={styles.header}>
               <Link to="/">
                 {/* <img alt="logo" className={styles.logo} src={logo} /> */}
-                <span className={styles.title}>CDN智能调度系统</span>
+                <span className={styles.title}>水压数据采集监测系统</span>
               </Link>
             </div>
-            <div className={styles.desc}>Corporate Data Network System</div>
+            <div className={styles.desc}>Hydraulic Pressure System</div>
           </div>
           {children}
         </div>

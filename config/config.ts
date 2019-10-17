@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '多线路智能调度',
+          name: '水压采集',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '网络调度数据',
+          name: '监测参数',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '调度设备管理',
+          name: '监测对象',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

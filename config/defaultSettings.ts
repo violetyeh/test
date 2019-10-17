@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'CDN智能调度系统',
+  title: '水压数据采集监测系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

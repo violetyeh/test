@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑网络调度数据"
+                title="编辑监测参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,42 +51,36 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="调度线路" >
+                    <Form.Item key="pinlv" label="名称" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gl" label="线路管理" >
+                    <Form.Item key="gl" label="量程" >
                         {getFieldDecorator('gl', {
                             initialValue: currentItem.gl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="调度线路" >
+                    <Form.Item key="date" label="精度" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="model" label="调度设置" >
+                    <Form.Item key="model" label="输入信号" >
                         {getFieldDecorator('model', {
                             initialValue: currentItem.model,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="调度定向" >
-                        {getFieldDecorator('type', {
-                            initialValue: currentItem.type,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="process" label="调度进度（%）" >
+                   
+                    <Form.Item key="process" label="监测进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

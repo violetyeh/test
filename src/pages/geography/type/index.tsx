@@ -19,73 +19,74 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'TD-S-BC00092',
-        fenlei: 'GGSJ068线路调度设备',
-        pinlv: 80,
-        yaosu: '设备操作不卡顿',
-        fenceng: '孟凡',
-        state: '启用',
-       
-    },
-    {
         id: 'TD-S-BC00071',
-        fenlei: 'GGSJ014网络调度设备',
+        fenlei: '0.31',
         pinlv: 32,
-        yaosu: '设备操作流畅',
+        yaosu: '阀门关闭',
         fenceng: '王石',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00028',
-        fenlei: 'GGSJ023电路调度设备',
+        fenlei: '0.36',
         pinlv: 65,
-        yaosu: '设备操作不卡顿',
+        yaosu: '阀门开启',
         fenceng: '钱萌',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00064',
-        fenlei: 'GGSJ47交换调度设备',
+        fenlei: '0.42',
         pinlv: 42,
-        yaosu: '操作有效',
+        yaosu: '阀门关闭',
         fenceng: '张琼凡',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00078',
-        fenlei: 'GGSJ36线路调度设备',
+        fenlei: '0.4',
         pinlv: 56,
-        yaosu: '设备操作不卡顿',
+        yaosu: '阀门开启',
         fenceng: '孟思三',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00026',
-        fenlei: 'GGSJ12网络调度设备',
+        fenlei: '0.3',
         pinlv: 12,
-        yaosu: '界面操作流畅',
+        yaosu: '阀门关闭',
         fenceng: '王思',
         state: '启用',
        
     },
     {
+        id: 'TD-S-BC00092',
+        fenlei: '0.25',
+        pinlv: 80,
+        yaosu: '阀门开启',
+        fenceng: '孟凡',
+        state: '启用',
+       
+    },
+    
+    {
         id: 'TD-S-BC00024',
-        fenlei: 'GGSJ09线路调度设备',
+        fenlei: '0.35',
         pinlv: 26,
-        yaosu: '界面操作不卡顿',
+        yaosu: '阀门关闭',
         fenceng: '陈思凡',
         state: '启用',
        
     },
     {
         id: 'TD-S-BC00023',
-        fenlei: 'GGSJ05线路调度设备',
+        fenlei: '0.35',
         pinlv: 33,
-        yaosu: '设备操作不卡顿',
+        yaosu: '阀门开启',
         fenceng: '张凡',
         state: '启用',
        
@@ -107,26 +108,19 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '调度设备名称',
+            title: '管道压力（MPA）',
             dataIndex: 'fenlei',
         },
         {
-            title: '调度进度',
+            title: '管道流量（m³/h）',
             dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
-
         },
         {
-            title: '调度设备状态',
+            title: '管道阀门状态',
             dataIndex: 'yaosu',
         },
         {
-            title: '调度负责人',
+            title: '负责人',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
@@ -162,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="调度设备管理"
+                title="监测对象"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

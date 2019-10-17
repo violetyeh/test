@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑调度设备信息"
+                title="编辑监测对象信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="调度设备名称" >
+                    <Form.Item key="fenlei" label="管道压力（MPA）" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="pinlv" label="调度进度（%）" >
+                    <Form.Item key="pinlv" label="管道流量（m³/h）" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="调度设备状态" >
+                    <Form.Item key="yaosu" label="管道阀门状态" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input.TextArea rows={2} />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="调度负责人" >
+                    <Form.Item key="fenceng" label="负责人" >
                         {getFieldDecorator('fenceng', {
                             initialValue: currentItem.fenceng,
                         })(

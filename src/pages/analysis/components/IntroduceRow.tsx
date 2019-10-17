@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='调度次数'
+          title='监测次数'
           action={
             <Tooltip
               title={
@@ -36,7 +36,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={368}
-          footer='今日调度: 161'
+          footer='今日监测: 161'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='调度目标'
+          title='监测目标'
           action={
             <Tooltip
               title={
@@ -65,7 +65,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(323).format('0,0')}
-          footer='今日调度：56'
+          footer='水压信息：56'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='调度进度'
+          title='采集进度'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(179).format('0,0')}
-          footer='调度进度：64%'
+          footer='监测进度：64%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='调度进度'
+          title='分析进度'
           action={
             <Tooltip
               title={
@@ -106,7 +106,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="88%"
+          total="65%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
