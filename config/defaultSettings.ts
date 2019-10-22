@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '长株高速公路MTC联网收费系统',
+  title: '长株高速公路电子不停车收费系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
