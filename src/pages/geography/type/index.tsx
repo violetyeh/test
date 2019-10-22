@@ -18,6 +18,30 @@ interface TypeState {
 }
 
 const mockData = [
+    {
+        id: 'FANG0023',
+        mc:'石青高速公路',
+        gg:'开挖至-5m（深5m）',
+        hz:'15',
+        jd:56,
+        state: 1,
+     },
+    {
+       id: 'FANG0027',
+       mc:'石杨高速公路',
+       gg:'在-4.4m（深4.4m）处加撑',
+       hz:'10',
+       jd:100,
+       state: 1,
+    },
+    {
+       id: 'FANG0028',
+       mc:'桥鸿高速公路',
+       gg:'开挖至-6m（深6m）',
+       hz:'15',
+       jd:88,
+       state: 1,
+    }, 
     
      {
         id: 'FANG0024',
@@ -29,7 +53,7 @@ const mockData = [
      },
      {
         id: 'FANG0025',
-        mc:'跃进路',
+        mc:'跃进高速公路',
         gg:'拆除1支撑',
         hz:'20',
         jd:95,
@@ -37,7 +61,7 @@ const mockData = [
      },
      {
         id: 'FANG0026',
-        mc:'新南路',
+        mc:'新南高速公路',
         gg:'在-5m（深5m）处加撑',
         hz:'15',
         jd:76,
@@ -45,7 +69,7 @@ const mockData = [
      },
      {
         id: 'FANG0021',
-        mc:'万寿路',
+        mc:'万寿高速公路',
         gg:'开挖至-6.6m（深6.6m）',
         hz:'15',
         jd:98,
@@ -53,36 +77,13 @@ const mockData = [
      },
      {
          id: 'FANG0022',
-         mc:'五四路',
+         mc:'五四高速公路',
          gg:'在-5.4m（深5.4m）处换撑',
          hz:'20',
          jd:100,
          state: 1,
       },
-      {
-         id: 'FANG0023',
-         mc:'石青支路',
-         gg:'开挖至-5m（深5m）',
-         hz:'15',
-         jd:56,
-         state: 1,
-      },
-     {
-        id: 'FANG0027',
-        mc:'石杨路',
-        gg:'在-4.4m（深4.4m）处加撑',
-        hz:'10',
-        jd:100,
-        state: 1,
-     },
-     {
-        id: 'FANG0028',
-        mc:'桥鸿路',
-        gg:'开挖至-6m（深6m）',
-        hz:'15',
-        jd:88,
-        state: 1,
-     }, 
+
    
 ]
 
@@ -100,7 +101,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '公路名称',
+            title: '高速公路名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
@@ -116,7 +117,7 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '检测进度',
             dataIndex: 'jd',
-            render: (text) => <Progress percent={text} status="active" />,
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
             title: '自动检测',
@@ -150,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="公路环境参数管理"
+                title="环境参数管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路环境参数自动检测系统',
+  title: '长株高速公路道路桥梁健康监测系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='公路环境检测次数'
+          title='健康监测次数'
           action={
             <Tooltip
               title={
@@ -36,7 +36,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={3652}
-          footer='今日检测: 2541'
+          footer='今日健康监测: 2541'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='公路环境参数信息'
+          title='公路高速公路桥梁信息'
           action={
             <Tooltip
               title={
@@ -65,7 +65,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(5236).format('0,0')}
-          footer='今日参数检测：2427'
+          footer='今日参数健康监测：2427'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='检测进度'
+          title='健康监测进度'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(5469).format('0,0')}
-          footer='检测进度：74%'
+          footer='健康监测进度：82%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='环境参数检测效率'
+          title='高速公路桥梁健康监测效率'
           action={
             <Tooltip
               title={
@@ -106,16 +106,16 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total="62%"
+          total="95%"
           footer={
             <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
               <Trend flag="up" style={{ marginRight: 16 }}>
                 <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>38%</span>
+                <span className={styles.trendText}>3%</span>
               </Trend>
               <Trend flag="down">
                 <FormattedMessage id="analysis.analysis.day" defaultMessage="Weekly Changes" />
-                <span className={styles.trendText}>40%</span>
+                <span className={styles.trendText}>11%</span>
               </Trend>
             </div>
           }

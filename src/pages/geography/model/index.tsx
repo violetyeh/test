@@ -19,33 +19,6 @@ interface ModelState {
 
 const mockData = [
     {
-       id:'ZJ-001',
-       cf:'水泥胶砂抗折强度',
-       jc:'41.0',
-       dw:'2',
-       jg:'41x41',
-       jx:'42',
-       status: '启用',
-    },
-    {
-        id:'ZJ-002',
-        cf:'水泥胶砂抗压强度',
-        jc:'41.3',
-        dw:'3',
-        jg:'40x40',
-        jx:'52',
-        status: '启用',
-     },
-     {
-        id:'ZJ-003',
-        cf:'水泥净浆抗折强度',
-        jc:'41.6',
-        dw:'7',
-        jg:'41x41',
-        jx:'91',
-        status: '启用',
-     },
-     {
         id:'ZJ-004',
         cf:'水泥净浆抗压强度',
         jc:'42.1',
@@ -90,6 +63,34 @@ const mockData = [
          jx:'84',
          status: '启用',
       },
+    {
+       id:'ZJ-001',
+       cf:'水泥胶砂抗折强度',
+       jc:'41.0',
+       dw:'2',
+       jg:'41x41',
+       jx:'42',
+       status: '启用',
+    },
+    {
+        id:'ZJ-002',
+        cf:'水泥胶砂抗压强度',
+        jc:'41.3',
+        dw:'3',
+        jg:'40x40',
+        jx:'52',
+        status: '启用',
+     },
+     {
+        id:'ZJ-003',
+        cf:'水泥净浆抗折强度',
+        jc:'41.6',
+        dw:'7',
+        jg:'41x41',
+        jx:'91',
+        status: '启用',
+     },
+
 ]
 
 class Model extends Component<ModelProps, ModelState>{
@@ -105,8 +106,9 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '项目名称',
+            title: '监测项目',
             dataIndex: 'cf',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
@@ -161,7 +163,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="质量动态监控"
+                title="健康监测"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

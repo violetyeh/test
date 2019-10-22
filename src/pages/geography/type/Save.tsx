@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑公路环境参数信息"
+                title="编辑环境参数信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="公路名称" >
+                    <Form.Item key="mc" label="高速公路名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(

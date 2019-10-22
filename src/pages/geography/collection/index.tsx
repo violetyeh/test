@@ -23,61 +23,62 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'AQGZE-00035',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合丙级',
-    },
-    {
-        id: 'AQGZE-00064',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
-    },
-    {
-        id: 'AQGZE-00078',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
-    },
-    {
-        id: 'AQGZE-00021',
-        fl:'万能材料试验机',
-        mc:'钢筋（含接头）',
-        ma:'屈服强度，伸长度，抗拉强度',
-        nl:'公路工程-综合乙级',
-    },
-    {
-        id: 'AQGZE-00035',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
-    },
-    {
         id: 'AQGZE-00038',
         fl:'基桩超声检测仪',
         mc:'地基基础',
         ma:'基装完整性',
-        nl:'公路工程-综合丙级',
+        nl:'道路桥梁监测#JC320',
     },
     {
         id: 'AQGZE-00021',
         fl:'加速磨光机',
         mc:'集料',
         ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        nl:'道路桥梁监测#JC051',
     },
     {
         id: 'AQGZE-00037',
         fl:'钢筋位置测定仪',
         mc:'结构混凝土',
         ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合乙级',
+        nl:'道路桥梁监测#JC023',
     },
+    {
+        id: 'AQGZE-00035',
+        fl:'钢筋位置测定仪',
+        mc:'结构混凝土',
+        ma:'钢筋位置及保护层厚度',
+        nl:'道路桥梁监测#JC320',
+    },
+    {
+        id: 'AQGZE-00064',
+        fl:'加速磨光机',
+        mc:'集料',
+        ma:'磨光值',
+        nl:'道路桥梁监测#JC051',
+    },
+    {
+        id: 'AQGZE-00078',
+        fl:'基桩超声检测仪',
+        mc:'地基基桩',
+        ma:'基装完整性',
+        nl:'道路桥梁监测#JC051',
+    },
+    {
+        id: 'AQGZE-00021',
+        fl:'万能材料试验机',
+        mc:'钢筋（含接头）',
+        ma:'屈服强度，伸长度，抗拉强度',
+        nl:'道路桥梁监测#JC023',
+    },
+    {
+        id: 'AQGZE-00035',
+        fl:'基桩超声检测仪',
+        mc:'地基基桩',
+        ma:'基装完整性',
+        nl:'道路桥梁监测#JC051',
+    },
+
   
     
 ]
@@ -97,25 +98,26 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '等级类型',
+            title: '监测项目',
             dataIndex: 'nl',
+            render: (text) => <Tag color="#000000">{text}</Tag>,
         },
         
         
         {
             title: '项目',
             dataIndex: 'mc',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
+            render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
             title: '本次检测参数',
             dataIndex: 'ma',
-            render: (text) => <Tag color="RED">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
             title: '参数对应设备',
             dataIndex: 'fl',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
 
         {
@@ -153,7 +155,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测参数核查"
+                title="监测参数设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
