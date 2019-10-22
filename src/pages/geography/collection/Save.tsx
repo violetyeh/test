@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="班次" >
+                    <Form.Item key="id" label="终端编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="线路" >
+                    <Form.Item key="fl" label="高速路" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
@@ -59,21 +59,21 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="ma" label="座位数" >
+                    <Form.Item key="ma" label="IP地址" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bf" label="发车时间" >
+                    <Form.Item key="bf" label="收费时间" >
                         {getFieldDecorator('bf', {
                             initialValue: currentItem.bf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sf" label="总余票" >
+                    <Form.Item key="sf" label="收费车道车辆" >
                         {getFieldDecorator('sf', {
                             initialValue: currentItem.sf,
                         })(
@@ -87,7 +87,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dbz" label="票价" >
+                    <Form.Item key="dbz" label="费用" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(
