@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '交通流量',
+          name: '收费站车道管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '收费业务',
+          name: '收费记录查询',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '收费明细',
+          name: '车道交易流水',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

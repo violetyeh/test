@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑收费业务信息"
+                title="编辑收费记录信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="缴款单号" >
+                    <Form.Item key="id" label="车道消息序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="网络名称" >
+                    <Form.Item key="cf" label="班次" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
@@ -65,7 +65,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="分中心名称" >
+                    <Form.Item key="jc" label="出入口" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jg" label="收费员编号" >
+                    <Form.Item key="jg" label="车道号" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="收费进度（%）" >
+                    <Form.Item key="jx" label="卡类型" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

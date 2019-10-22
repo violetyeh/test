@@ -23,61 +23,62 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'GSSF035',
-        fl:'524辆',
-        mc:'233辆',
-        ma:'200辆',
-        nl:'#3高速收费站',
+        id: 'CAR01221',
+        fl:'小汽车',
+        mc:'IOID125',
+        ma:'渝A10Y88',
+        nl:'2',
     },
     {
-        id: 'GSSF064',
-        fl:'496辆',
-        mc:'205辆',
-        ma:'154辆',
-        nl:'#2高速收费站',
+        id: 'CAR01235',
+        fl:'小汽车',
+        mc:'IOID142',
+        ma:'渝A10101',
+        nl:'5',
     },
     {
-        id: 'GSSF078',
-        fl:'327辆',
-        mc:'168辆',
-        ma:'132辆',
-        nl:'#2高速收费站',
+        id: 'CAR01238',
+        fl:'面包车',
+        mc:'IOID236',
+        ma:'渝A10198',
+        nl:'3',
     },
     {
-        id: 'GSSF021',
-        fl:'412辆',
-        mc:'125辆',
-        ma:'88辆',
-        nl:'#1高速收费站',
+        id: 'CAR01221',
+        fl:'大货车',
+        mc:'IOID254',
+        ma:'渝A10154',
+        nl:'5',
     },
     {
-        id: 'GSSF035',
-        fl:'521辆',
-        mc:'142辆',
-        ma:'101辆',
-        nl:'#2高速收费站',
+        id: 'CAR01237',
+        fl:'面包车',
+        mc:'IOID156',
+        ma:'渝A10B98',
+        nl:'2',
     },
     {
-        id: 'GSSF038',
-        fl:'352辆',
-        mc:'236辆',
-        ma:'198辆',
-        nl:'#3高速收费站',
+        id: 'CAR01235',
+        fl:'面包车',
+        mc:'IOID233',
+        ma:'渝A10200',
+        nl:'3',
     },
     {
-        id: 'GSSF021',
-        fl:'451辆',
-        mc:'254辆',
-        ma:'154辆',
-        nl:'#2高速收费站',
+        id: 'CAR01264',
+        fl:'小汽车',
+        mc:'IOID205',
+        ma:'渝A10154',
+        nl:'5',
     },
     {
-        id: 'GSSF037',
-        fl:'365辆',
-        mc:'156辆',
-        ma:'98辆',
-        nl:'#1高速收费站',
+        id: 'CAR01278',
+        fl:'大货车',
+        mc:'IOID168',
+        ma:'渝A10132',
+        nl:'5',
     },
+
   
     
 ]
@@ -92,36 +93,33 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '车道号',
             dataIndex: 'id',
         },
        
         {
-            title: '收费站名称',
+            title: '车辆数量',
             dataIndex: 'nl',
         },
         
         
         {
-            title: '车道小时交通量',
+            title: '卡号',
             dataIndex: 'mc',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '收费站出入口日交通量',
+            title: '车牌号',
             dataIndex: 'ma',
-            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '全线各站交通量',
+            title: '车型',
             dataIndex: 'fl',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
 
         {
-            title: '交通流量状态',
+            title: '车道模式',
             dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="多" unCheckedChildren="少"  defaultChecked/>,
+            render: (text) => <Switch checkedChildren="关闭" unCheckedChildren="开启"  defaultChecked/>,
           },
         
         {
@@ -153,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="交通流量"
+                title="收费站车道管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

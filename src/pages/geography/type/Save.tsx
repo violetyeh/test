@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑收费明细信息"
+                title="编辑车道交易流水"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,48 +44,48 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="交易流水序号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="收费站名称" >
+                    <Form.Item key="mc" label="卡号" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="交易号" >
+                    <Form.Item key="gg" label="交易时间" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="车型" >
+                    <Form.Item key="hz" label="记录类型" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="收费（元）" >
+                    <Form.Item key="jd" label="交易效率(%)" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="联网收费" >
+                    <Form.Item key="status" label="是否透支" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid" >
-                               <Radio.Button value="a" >联网</Radio.Button>
-                               <Radio.Button value="b">未联网</Radio.Button>
+                               <Radio.Button value="a" >否</Radio.Button>
+                               <Radio.Button value="b">是</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

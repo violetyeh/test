@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑交通流量"
+                title="编辑收费站车道信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,28 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="车道号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="收费站名称" >
+                    <Form.Item key="nl" label="车辆数量" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="车道小时交通量" >
+                    <Form.Item key="mc" label="卡号" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="收费站出入口日交通量" >
+                    <Form.Item key="ma" label="车牌号" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -74,7 +74,7 @@ class Save extends Component<SaveProps, SaveState>{
                     </Form.Item>
                    
                    
-                    <Form.Item key="fl" label="全线各站交通量" >
+                    <Form.Item key="fl" label="车型" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(

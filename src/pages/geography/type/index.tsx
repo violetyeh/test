@@ -20,66 +20,66 @@ interface TypeState {
 const mockData = [
     
      {
-        id: 'FANG0024',
-        mc:'绕城收费站',
-        gg:'JYH018',
-        hz:'大货车',
+        id: 'JYLS0144',
+        mc:'32541256',
+        gg:'2019年10月22日13:52:06',
+        hz:'正常',
         jd:74,
         state: 1,
      },
      {
-        id: 'FANG0025',
-        mc:'跃进收费站',
-        gg:'JYH019',
-        hz:'面包车',
+        id: 'JYLS0145',
+        mc:'52478596',
+        gg:'2019年10月22日13:56:10',
+        hz:'正常',
         jd:95,
         state: 1,
      },
      {
-        id: 'FANG0026',
-        mc:'新南收费站',
-        gg:'JYH020',
-        hz:'小货车',
+        id: 'JYLS0146',
+        mc:'25416341',
+        gg:'2019年10月22日14:00:13',
+        hz:'异常',
         jd:76,
         state: 1,
      },
      {
-        id: 'FANG0021',
-        mc:'万寿收费站',
-        gg:'JYH021',
-        hz:'小汽车',
+        id: 'JYLS0141',
+        mc:'23564152',
+        gg:'2019年10月22日14:06:17',
+        hz:'正常',
         jd:98,
         state: 1,
      },
      {
-         id: 'FANG0022',
-         mc:'开源收费站',
-         gg:'JYH022',
-         hz:'越野车',
+         id: 'JYLS0142',
+         mc:'112354155',
+         gg:'2019年10月22日14:10:21',
+         hz:'异常',
          jd:100,
          state: 1,
       },
       {
-         id: 'FANG0023',
-         mc:'清水台收费站',
-         gg:'JYH023',
-         hz:'面包车',
+         id: 'JYLS0143',
+         mc:'556234154',
+         gg:'2019年10月22日14:15:25',
+         hz:'正常',
          jd:56,
          state: 1,
       },
      {
-        id: 'FANG0027',
-        mc:'蒲河收费站',
-        gg:'JYH025',
-        hz:'大货车',
+        id: 'JYLS0147',
+        mc:'35647125',
+        gg:'2019年10月22日14:24:00',
+        hz:'正常',
         jd:100,
         state: 1,
      },
      {
-        id: 'FANG0028',
-        mc:'王家沟收费站',
-        gg:'JYH024',
-        hz:'小汽车',
+        id: 'JYLS0148',
+        mc:'12345678',
+        gg:'2019年10月22日14:31:55',
+        hz:'正常',
         jd:88,
         state: 1,
      }, 
@@ -96,31 +96,31 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '交易流水序号',
             dataIndex: 'id',
         },
         {
-            title: '收费站名称',
+            title: '卡号',
             dataIndex: 'mc',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '交易号',
+            title: '交易时间',
             dataIndex: 'gg',
         },
         {
-            title: '车型',
+            title: '记录类型',
             dataIndex: 'hz',
-            render: (text) => <Tag color="RED">{text}</Tag>,
+            render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '收费（元）',
+            title: '交易效率',
             dataIndex: 'jd',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '联网收费',
+            title: '是否透支',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="联网" unCheckedChildren="未联网" defaultChecked/>,
+            render: () => <Switch checkedChildren="否" unCheckedChildren="是" defaultChecked/>,
         },
         {
             title: '操作',
@@ -149,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="收费明细"
+                title="车道交易流水"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
