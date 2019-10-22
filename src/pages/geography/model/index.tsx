@@ -19,74 +19,74 @@ interface ModelState {
 
 const mockData = [
     {
-       id:'ZJ-001',
-       cf:'水泥胶砂抗折强度',
-       jc:'41.0',
-       dw:'2',
-       jg:'41x41',
+       id:'JKDH365214001',
+       cf:'沈四高速',
+       jc:'铁岭分中心',
+       dw:'王家沟4收费站',
+       jg:'ID0201',
        jx:'42',
        status: '启用',
     },
     {
-        id:'ZJ-002',
-        cf:'水泥胶砂抗压强度',
-        jc:'41.3',
-        dw:'3',
-        jg:'40x40',
+        id:'JKDH365214002',
+        cf:'丁家高速',
+        jc:'璧渝分中心',
+        dw:'丁家1收费站',
+        jg:'ID0202',
         jx:'52',
         status: '启用',
      },
      {
-        id:'ZJ-003',
-        cf:'水泥净浆抗折强度',
-        jc:'41.6',
-        dw:'7',
-        jg:'41x41',
+        id:'JKDH365214003',
+        cf:'沈四高速',
+        jc:'铁岭分中心',
+        dw:'王家沟3收费站',
+        jg:'ID0203',
         jx:'91',
         status: '启用',
      },
      {
-        id:'ZJ-004',
-        cf:'水泥净浆抗压强度',
-        jc:'42.1',
-        dw:'2',
-        jg:'40x40',
+        id:'JKDH365214004',
+        cf:'成渝高速',
+        jc:'铁岭分中心',
+        dw:'李家沟1收费站',
+        jg:'ID0204',
         jx:'63',
         status: '启用',
      },
      {
-         id:'ZJ-005',
-         cf:'水泥净浆抗压强度',
-         jc:'42.5',
-         dw:'5',
-         jg:'40x40',
+         id:'JKDH365214005',
+         cf:'沈四高速',
+         jc:'铁岭分中心',
+         dw:'王家沟2收费站',
+         jg:'ID0205',
          jx:'38',
          status: '启用',
       },
       {
-         id:'ZJ-006',
-         cf:'水泥砂浆抗压强度',
-         jc:'42.3',
-         dw:'3',
-         jg:'41x41',
+         id:'JKDH365214006',
+         cf:'丁家高速',
+         jc:'璧渝分中心',
+         dw:'丁家2收费站',
+         jg:'ID0206',
          jx:'54',
          status: '启用',
       },
       {
-        id:'ZJ-007',
-        cf:'水泥胶砂抗折强度',
-        jc:'41.2',
-        dw:'6',
-        jg:'42x42',
+        id:'JKDH365214007',
+        cf:'成渝高速',
+        jc:'铁岭分中心',
+        dw:'陈家湾收费站',
+        jg:'ID0207',
         jx:'34',
         status: '启用',
      },
      {
-         id:'ZJ-008',
-         cf:'水泥胶砂抗压强度',
-         jc:'42.5',
-         dw:'7',
-         jg:'40x40',
+         id:'JKDH365214008',
+         cf:'沈四高速',
+         jc:'铁岭分中心',
+         dw:'王家沟1收费站',
+         jg:'ID0208',
          jx:'84',
          status: '启用',
       },
@@ -101,31 +101,31 @@ class Model extends Component<ModelProps, ModelState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '序号',
+            title: '缴款单号',
             dataIndex: 'id',
         },
         {
-            title: '项目名称',
+            title: '网络名称',
             dataIndex: 'cf',
         },
         
         {
-            title: '龄期（d）',
+            title: '收费站名称',
             dataIndex: 'dw',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '强度等级',
+            title: '分中心名称',
             dataIndex: 'jc',
         },
 
         {
-            title: '受压面积（mm²）',
+            title: '收费员编号',
             dataIndex: 'jg',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '质量监控进度（%）',
+            title: '收费进度',
             dataIndex: 'jx',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
 
@@ -133,7 +133,7 @@ class Model extends Component<ModelProps, ModelState>{
         {
             title: '是否启用',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" />,
+            render: () => <Switch checkedChildren="启用" unCheckedChildren="禁用" defaultChecked />,
         },
         {
             title: '操作',
@@ -161,7 +161,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="质量动态监控"
+                title="收费业务"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

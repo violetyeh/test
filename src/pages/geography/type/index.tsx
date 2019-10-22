@@ -21,65 +21,65 @@ const mockData = [
     
      {
         id: 'FANG0024',
-        mc:'绕城高速公路',
-        gg:'开挖至-6.1m（深6.1m）',
-        hz:'20',
+        mc:'绕城收费站',
+        gg:'JYH018',
+        hz:'大货车',
         jd:74,
         state: 1,
      },
      {
         id: 'FANG0025',
-        mc:'跃进路',
-        gg:'拆除1支撑',
-        hz:'20',
+        mc:'跃进收费站',
+        gg:'JYH019',
+        hz:'面包车',
         jd:95,
         state: 1,
      },
      {
         id: 'FANG0026',
-        mc:'新南路',
-        gg:'在-5m（深5m）处加撑',
-        hz:'15',
+        mc:'新南收费站',
+        gg:'JYH020',
+        hz:'小货车',
         jd:76,
         state: 1,
      },
      {
         id: 'FANG0021',
-        mc:'万寿路',
-        gg:'开挖至-6.6m（深6.6m）',
-        hz:'15',
+        mc:'万寿收费站',
+        gg:'JYH021',
+        hz:'小汽车',
         jd:98,
         state: 1,
      },
      {
          id: 'FANG0022',
-         mc:'五四路',
-         gg:'在-5.4m（深5.4m）处换撑',
-         hz:'20',
+         mc:'开源收费站',
+         gg:'JYH022',
+         hz:'越野车',
          jd:100,
          state: 1,
       },
       {
          id: 'FANG0023',
-         mc:'石青支路',
-         gg:'开挖至-5m（深5m）',
-         hz:'15',
+         mc:'清水台收费站',
+         gg:'JYH023',
+         hz:'面包车',
          jd:56,
          state: 1,
       },
      {
         id: 'FANG0027',
-        mc:'石杨路',
-        gg:'在-4.4m（深4.4m）处加撑',
-        hz:'10',
+        mc:'蒲河收费站',
+        gg:'JYH025',
+        hz:'大货车',
         jd:100,
         state: 1,
      },
      {
         id: 'FANG0028',
-        mc:'桥鸿路',
-        gg:'开挖至-6m（深6m）',
-        hz:'15',
+        mc:'王家沟收费站',
+        gg:'JYH024',
+        hz:'小汽车',
         jd:88,
         state: 1,
      }, 
@@ -100,28 +100,27 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '公路名称',
+            title: '收费站名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '工况状态',
+            title: '交易号',
             dataIndex: 'gg',
         },
         {
-            title: '地面超载（Kpa）',
+            title: '车型',
             dataIndex: 'hz',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '检测进度',
+            title: '收费（元）',
             dataIndex: 'jd',
-            render: (text) => <Progress percent={text} status="active" />,
         },
         {
-            title: '自动检测',
+            title: '联网收费',
             dataIndex: 'status',
-            render: () => <Switch checkedChildren="自动" unCheckedChildren="手动" />,
+            render: () => <Switch checkedChildren="联网" unCheckedChildren="未联网" defaultChecked/>,
         },
         {
             title: '操作',
@@ -150,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="公路环境参数管理"
+                title="收费明细"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

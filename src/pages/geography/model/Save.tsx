@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑质量动态监控信息"
+                title="编辑收费业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,28 +44,28 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="序号" >
+                    <Form.Item key="id" label="缴款单号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="项目名称" >
+                    <Form.Item key="cf" label="网络名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="龄期（d）" >
+                    <Form.Item key="dw" label="收费站名称" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="强度等级" >
+                    <Form.Item key="jc" label="分中心名称" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jg" label="受压面积（mm²）" >
+                    <Form.Item key="jg" label="收费员编号" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="质量监控进度（%）" >
+                    <Form.Item key="jx" label="收费进度（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

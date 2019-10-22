@@ -23,60 +23,60 @@ interface TypeState {
 
 const mockData = [
     {
-        id: 'AQGZE-00035',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合丙级',
+        id: 'GSSF035',
+        fl:'524辆',
+        mc:'233辆',
+        ma:'200辆',
+        nl:'#3高速收费站',
     },
     {
-        id: 'AQGZE-00064',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        id: 'GSSF064',
+        fl:'496辆',
+        mc:'205辆',
+        ma:'154辆',
+        nl:'#2高速收费站',
     },
     {
-        id: 'AQGZE-00078',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        id: 'GSSF078',
+        fl:'327辆',
+        mc:'168辆',
+        ma:'132辆',
+        nl:'#2高速收费站',
     },
     {
-        id: 'AQGZE-00021',
-        fl:'万能材料试验机',
-        mc:'钢筋（含接头）',
-        ma:'屈服强度，伸长度，抗拉强度',
-        nl:'公路工程-综合乙级',
+        id: 'GSSF021',
+        fl:'412辆',
+        mc:'125辆',
+        ma:'88辆',
+        nl:'#1高速收费站',
     },
     {
-        id: 'AQGZE-00035',
-        fl:'基桩超声检测仪',
-        mc:'地基基桩',
-        ma:'基装完整性',
-        nl:'公路工程-综合甲级',
+        id: 'GSSF035',
+        fl:'521辆',
+        mc:'142辆',
+        ma:'101辆',
+        nl:'#2高速收费站',
     },
     {
-        id: 'AQGZE-00038',
-        fl:'基桩超声检测仪',
-        mc:'地基基础',
-        ma:'基装完整性',
-        nl:'公路工程-综合丙级',
+        id: 'GSSF038',
+        fl:'352辆',
+        mc:'236辆',
+        ma:'198辆',
+        nl:'#3高速收费站',
     },
     {
-        id: 'AQGZE-00021',
-        fl:'加速磨光机',
-        mc:'集料',
-        ma:'磨光值',
-        nl:'公路工程-综合甲级',
+        id: 'GSSF021',
+        fl:'451辆',
+        mc:'254辆',
+        ma:'154辆',
+        nl:'#2高速收费站',
     },
     {
-        id: 'AQGZE-00037',
-        fl:'钢筋位置测定仪',
-        mc:'结构混凝土',
-        ma:'钢筋位置及保护层厚度',
-        nl:'公路工程-综合乙级',
+        id: 'GSSF037',
+        fl:'365辆',
+        mc:'156辆',
+        ma:'98辆',
+        nl:'#1高速收费站',
     },
   
     
@@ -97,31 +97,31 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '等级类型',
+            title: '收费站名称',
             dataIndex: 'nl',
         },
         
         
         {
-            title: '项目',
+            title: '车道小时交通量',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '本次检测参数',
+            title: '收费站出入口日交通量',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '参数对应设备',
+            title: '全线各站交通量',
             dataIndex: 'fl',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
 
         {
-            title: '检测状态',
+            title: '交通流量状态',
             dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="完成" unCheckedChildren="未完成" />,
+            render: (text) => <Switch checkedChildren="多" unCheckedChildren="少"  defaultChecked/>,
           },
         
         {
@@ -153,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="检测参数核查"
+                title="交通流量"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

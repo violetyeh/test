@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑公路环境参数信息"
+                title="编辑收费明细信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,41 +51,41 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="公路名称" >
+                    <Form.Item key="mc" label="收费站名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="工况状态" >
+                    <Form.Item key="gg" label="交易号" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="地面超载（Kpa）" >
+                    <Form.Item key="hz" label="车型" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="检测进度（%）" >
+                    <Form.Item key="jd" label="收费（元）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="自动检测" >
+                    <Form.Item key="status" label="联网收费" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
-                            <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">自动</Radio.Button>
-                               <Radio.Button value="b">手动</Radio.Button>
+                            <Radio.Group defaultValue="a" buttonStyle="solid" >
+                               <Radio.Button value="a" >联网</Radio.Button>
+                               <Radio.Button value="b">未联网</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>
