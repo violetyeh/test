@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '售票业务',
+          name: '计重业务',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '客运调度',
+          name: '计重操作',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '车辆信息管理',
+          name: '计重收费',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

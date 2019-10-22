@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置车辆信息"
+                title="设置计重收费"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="车牌颜色" >
+                    <Form.Item key="mc" label="轴型" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="客车类型" >
+                    <Form.Item key="gg" label="车货总重（KG）" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hz" label="是否临时" >
+                    <Form.Item key="hz" label="是否计重完成" >
                         {getFieldDecorator('hz', {
                             initialValue: currentItem.hz,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yy" label="燃油费" >
+                    <Form.Item key="yy" label="总费用" >
                         {getFieldDecorator('yy', {
                             initialValue: currentItem.yy,
                         })(
@@ -80,7 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jd" label="站务费" >
+                    <Form.Item key="jd" label="超重费用" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

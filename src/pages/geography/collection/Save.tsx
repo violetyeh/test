@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑售票业务信息"
+                title="编辑计重业务信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="班次" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="线路" >
+                    <Form.Item key="fl" label="收费站" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
@@ -59,35 +59,35 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="ma" label="座位数" >
+                    <Form.Item key="ma" label="轴型组合" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bf" label="发车时间" >
+                    <Form.Item key="bf" label="计重时间" >
                         {getFieldDecorator('bf', {
                             initialValue: currentItem.bf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sf" label="总余票" >
+                    <Form.Item key="sf" label="总重" >
                         {getFieldDecorator('sf', {
                             initialValue: currentItem.sf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nl" label="车型" >
+                    <Form.Item key="nl" label="总轴限" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dbz" label="票价" >
+                    <Form.Item key="dbz" label="超重" >
                         {getFieldDecorator('dbz', {
                             initialValue: currentItem.dbz,
                         })(

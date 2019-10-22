@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾客运综合管理系统',
+  title: '长株高速公路计重收费系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
