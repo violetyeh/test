@@ -21,7 +21,7 @@ const mockData = [
     {
        id:'BC01',
        cf:'24',
-       jc:'22',
+       jc:'220',
        dw:'30',
        jg:'2',
        jx:'91',
@@ -31,7 +31,7 @@ const mockData = [
     {
         id:'BC02',
         cf:'30',
-        jc:'30',
+        jc:'300',
         dw:'34',
         jg:'0',
         jx:'100',
@@ -41,7 +41,7 @@ const mockData = [
      {
         id:'BC03',
         cf:'18',
-        jc:'18',
+        jc:'180',
         dw:'30',
         jg:'0',
         jx:'100',
@@ -51,7 +51,7 @@ const mockData = [
      {
         id:'BC04',
         cf:'30',
-        jc:'29',
+        jc:'290',
         dw:'30',
         jg:'1',
         jx:'96',
@@ -61,7 +61,7 @@ const mockData = [
      {
          id:'BC05',
          cf:'25',
-         jc:'25',
+         jc:'250',
          dw:'34',
          jg:'0',
          jx:'100',
@@ -71,7 +71,7 @@ const mockData = [
       {
          id:'BC06',
          cf:'18',
-         jc:'10',
+         jc:'100',
          dw:'34',
          jg:'8',
          jx:'55',
@@ -81,7 +81,7 @@ const mockData = [
       {
         id:'BC07',
         cf:'25',
-        jc:'24',
+        jc:'240',
         dw:'30',
         jg:'1',
         jx:'96',
@@ -91,7 +91,7 @@ const mockData = [
      {
          id:'BC08',
          cf:'24',
-         jc:'24',
+         jc:'240',
          dw:'30',
          jg:'0',
          jx:'100',
@@ -113,38 +113,41 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'jz',
             render: (text, record) => (
                 <Fragment>
-                  <Checkbox >已检</Checkbox>
+                  <Checkbox >已对账</Checkbox>
                 </Fragment>
             ),
         },
         {
-            title: '班次',
+            title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '座数',
+            title: '移动支付金额',
             dataIndex: 'dw',
-            render: (text) => <Tag color="magenta">{text}</Tag>,
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '售票数',
+            title: '通行卡数量',
             dataIndex: 'cf',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '检票数',
+            title: '统缴金额',
             dataIndex: 'jc',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '人数差',
+            title: '票据数量',
             dataIndex: 'jg',
+            render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '实载率',
+            title: '使用率',
             dataIndex: 'jx', 
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
         {
-            title: '应班车牌号',
+            title: '车牌号',
             dataIndex: 'zhi',
             render: (text) => <Tag color="#f50000">{text}</Tag>,
         },
@@ -179,7 +182,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="客运调度"
+                title="入口交班对账"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

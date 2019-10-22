@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '售票业务',
+          name: '收费终端管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '客运调度',
+          name: '入口交班对账',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '车辆信息管理',
+          name: '收费业务明细',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
