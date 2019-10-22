@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '监控管理',
+          name: '设备管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '车辆管理',
+          name: '高速车辆信息管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '事故管理',
+          name: '高速事故',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

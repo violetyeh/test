@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '基于GIS技术的高速公路监控系统',
+  title: '长株高速公路运营管理信息系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

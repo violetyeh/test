@@ -18,6 +18,28 @@ interface TypeState {
 }
 
 const mockData = [
+    
+    {
+        id: 'BJ08201',
+        fenlei: '道路塌陷 ',
+        yaosu: '是',
+        state: '2019年10月18日09:02:13',
+        pinlv: '5SDF',
+    },
+    {
+        id: 'BJ03921',
+        fenlei: '非法变道',
+        yaosu: '否',
+        state: '2019年10月09日10:11:06',
+        pinlv: 'SX2C',
+    },
+    {
+        id: 'BJ00029',
+        fenlei: '车辆逆行',
+        yaosu: '是',
+        state: '2019年10月10日11:34:02',
+        pinlv: 'DS5F',
+    },
     {
         id: 'BJ02191',
         fenlei: '车辆拥堵',
@@ -53,27 +75,6 @@ const mockData = [
         state: '2019年10月17日17:42:19',
         pinlv: 'DF4G',
     },
-    {
-        id: 'BJ08201',
-        fenlei: '道路塌陷 ',
-        yaosu: '是',
-        state: '2019年10月18日09:02:13',
-        pinlv: '5SDF',
-    },
-    {
-        id: 'BJ03921',
-        fenlei: '非法变道',
-        yaosu: '否',
-        state: '2019年10月09日10:11:06',
-        pinlv: 'SX2C',
-    },
-    {
-        id: 'BJ00029',
-        fenlei: '车辆逆行',
-        yaosu: '是',
-        state: '2019年10月10日11:34:02',
-        pinlv: 'DS5F',
-    },
  
 ]
 
@@ -100,7 +101,6 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '高速公路',
             dataIndex: 'pinlv',
-            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
             title: '是否可通行',
@@ -112,12 +112,13 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '道路状况',
             dataIndex: 'fenlei',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="yellow">{text}</Tag>,
         },
 
         {
             title: '监控报警时间',
             dataIndex: 'state',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
             title: '操作',

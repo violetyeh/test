@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监控信息"
+                title="编辑设备信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="lg" label="高速监控点IP" >
+                    <Form.Item key="lg" label="设备名称" >
                         {getFieldDecorator('lg', {
                             initialValue: currentItem.lg,
                         })(
@@ -65,14 +65,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="高速路代码" >
+                    <Form.Item key="leixing" label="设备类型" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="监控存储进度(%)" >
+                    <Form.Item key="jishu" label="设备设置进度(%)" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
@@ -80,14 +80,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    
-                    <Form.Item key="name" label="监控存储占用率(%)" >
-                        {getFieldDecorator('name', {
-                            initialValue: currentItem.name,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                  
                 </Form>
             </Modal>
         );

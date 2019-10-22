@@ -20,67 +20,67 @@ interface ModelState {
 const mockData = [
     {
         id: 'CLGL9s1',
-        date: '是',
-        type: '疲劳驾驶',
+        date: '通畅',
+        type: '125',
         status: '启用',
-        pinlv: '京E110MK',
-        process: '小型越野车',
+        pinlv: '南通高速',
+        process: '50',
     },
     {
         id: 'CLGL80SJ',
-        date: '否',
-        type: '未违反交通规则',
+        date: '堵塞',
+        type: '147',
         status: '启用',
-        pinlv: '京NLU686',
-        process: '大型汽车',
+        pinlv: '成渝高速',
+        process: '42',
     },
     {
         id: 'CLGL8S0J',
-        date: '是',
-        type: '逆向行驶',
+        date: '通畅',
+        type: '156',
         status: '启用',
-        pinlv: '冀C666A',
-        process: '小型汽车',
+        pinlv: '南通高速',
+        process: '45',
     },
     {
         id: 'CLGL72IK',
-        date: '是',
-        type: '醉酒驾驶',
+        date: '通畅',
+        type: '134',
         status: '启用',
-        pinlv: '冀C63K6',
-        process: '小型汽车',
+        pinlv: '广绍高速',
+        process: '35',
     },
     {
         id: 'CLGL63JJ',
-        date: '是',
-        type: '肇事逃逸',
+        date: '通畅',
+        type: '125',
         status: '启用',
-        pinlv: '渝A52B6',
-        process: '面包车',
+        pinlv: '无锡高速',
+        process: '54',
     },
     {
         id: 'CLGL191',
-        date: '否',
-        type: '未违反交通规则',
+        date: '堵塞',
+        type: '174',
         status: '启用',
-        pinlv: '渝A23M6',
-        process: '大货车',
+        pinlv: '无锡高速',
+        process: '62',
     },
     {
         id: 'CLGL2SI1',
-        date: '是',
-        type: '超速',
+        date: '通畅',
+        type: '162',
         status: '启用',
-        pinlv: '沪C66A6',
-        process: '小型越野车',
+        pinlv: '南通高速',
+        process: '37',
     },
     {
         id: 'CLGL1IOS',
-        date: '是',
-        type: '醉酒驾驶',
+        date: '通畅',
+        type: '145',
         status: '启用',
-        pinlv: '津B25B3',
-        process: '小型汽车',
+        pinlv: '广绍高速',
+        process: '45',
     },
  
    
@@ -99,22 +99,23 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '车牌号码',
+            title: '高速名称',
             dataIndex: 'pinlv',
         },
         {
-            title: '是否黑名单',
+            title: '状态',
             dataIndex: 'date',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         {
-            title: '黑名单原因',
+            title: '车流量（辆/小时）',
             dataIndex: 'type',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '号码种类',
+            title: '占有率',
             dataIndex: 'process',
+            render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
         {
@@ -148,7 +149,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车辆管理"
+                title="高速路信息管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

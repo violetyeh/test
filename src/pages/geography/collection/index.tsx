@@ -26,74 +26,74 @@ const mockData = [
     {
         id: 'GSJK05',
         jishu: '100',
-        fenceng: '石鼓',
-        leixing: 'KHDM-343',
+        fenceng: '石鼓高速',
+        leixing: '计算机',
         name:'10',
         state: '启用',
-        lg:'198 . 207 . 107 . 10',
+        lg:'查询采集计算机',
     },
     {
         id: 'GSJK06',
         jishu: '98',
-        fenceng: '道滘',
-        leixing: 'KHDM-342',
+        fenceng: '道滘高速',
+        leixing: '车辆检测器',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:'高速监控服务器#3',
     },
     {
         id: 'GSJK07',
         jishu: '88',
-        fenceng: '望牛墩',
-        leixing: 'KHDM-258',
+        fenceng: '望牛墩高速',
+        leixing: '车辆检测器',
         name:'14',
         state: '启用',
-        lg:'198 . 207 . 107 . 05',
+        lg:'高速监控服务器#5',
     },
     {
         id: 'GSJK08',
         jishu: '24',
-        fenceng: '麻涌',
-        leixing: 'KHDM-247',
+        fenceng: '麻涌高速',
+        leixing: '车辆检测器',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 03',
+        lg:'高速监控服务器#3',
     },
     {
         id: 'GSJK01',
         jishu: '85',
-        fenceng: '太平',
-        leixing: 'KHDM-210',
+        fenceng: '太平高速',
+        leixing: '高速监控器',
         name:'20',
         state: '启用',
-        lg:'198 . 207 . 107 . 07',
+        lg:'高速监控服务器#7',
     },
     {
         id: 'GSJK02',
         jishu: '99',
-        fenceng: '五点梅',
-        leixing: 'KHDM-289',
+        fenceng: '五点梅高速',
+        leixing: '车辆监控器',
         name:'22',
         state: '启用',
-        lg:'198 . 207 . 107 . 08',
+        lg:'高速监控服务器#8',
     },
     {
         id: 'GSJK03',
         jishu: '100',
-        fenceng: '新联',
-        leixing: 'KHDM-154',
+        fenceng: '新联高速',
+        leixing: '车辆检测器',
         name:'16',
         state: '启用',
-        lg:'198 . 207 . 107 . 01',
+        lg:'高速监控服务器#1',
     },
     {
         id: 'GSJK04',
         jishu: '100',
-        fenceng: '厚街',
-        leixing: 'KHDM-315',
+        fenceng: '厚街高速',
+        leixing: '车辆检测器',
         name:'15',
         state: '启用',
-        lg:'198 . 207 . 107 . 06',
+        lg:'高速监控服务器#6',
     },
 ]
 
@@ -111,7 +111,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '高速监控点IP',
+            title: '设备名称',
             dataIndex: 'lg',
             render: (text) => <Tag color="RED">{text}</Tag>,
 
@@ -123,20 +123,16 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '高速路代码',
+            title: '设备类型',
             dataIndex: 'leixing',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
         {
-            title: '监控存储进度',
+            title: '设备设置进度',
             dataIndex: 'jishu',
-            render: (text) => <Progress type="circle" percent={text} size="small" />,
-        },
-        {
-            title: '监控存储占用率',
-            dataIndex: 'name',
             render: (text) => <Progress percent={text} status="active" />,
         },
+       
         {
             title: '状态',
             dataIndex: 'status',
@@ -172,7 +168,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="监控管理"
+                title="设备管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
