@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '道路运输环境',
+          name: '交通枢纽管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '安全预警管理',
+          name: '交通违章管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '安全预警设置',
+          name: '交通安全管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

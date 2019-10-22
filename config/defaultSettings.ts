@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾道路运输安全预警管理系统',
+  title: '长株高速交通枢纽可视化管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

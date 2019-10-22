@@ -20,64 +20,64 @@ interface ModelState {
 const mockData = [
     {
         id: 'YJ-63JJ',
-        date: '2019年8月28日21:48:17',
-        type: '车距过近报警',
+        date: '2019年9月28日21:48:17',
+        type: '逆行',
         status: '启用',
         pinlv: '渝A52B6',
         process: '孙晔',
     },
     {
         id: 'YJ-0191',
-        date: '2019年8月29日20:37:12',
-        type: '车道偏离报警',
+        date: '2019年9月29日20:37:12',
+        type: '闯红灯',
         status: '启用',
         pinlv: '渝A23M6',
         process: '方木宁',
     },
     {
         id: 'YJ-2SI1',
-        date: '2019年8月30日08:12:05',
-        type: '超速报警',
+        date: '2019年9月30日08:12:05',
+        type: '超速',
         status: '启用',
         pinlv: '沪C66A6',
         process: '江云',
     },
     {
         id: 'YJ-01IOS',
-        date: '2019年8月31日09:02:56',
-        type: '前向碰撞报警',
+        date: '2019年9月31日09:02:56',
+        type: '闯红灯',
         status: '启用',
         pinlv: '津B25B3',
         process: '方雅',
     },
     {
         id: 'YS-IW9s1',
-        date: '2019年8月31日11:08:24',
-        type: '疲劳驾驶报警',
+        date: '2019年9月31日11:08:24',
+        type: '驾驶人玩手机',
         status: '启用',
         pinlv: '京E110MK',
         process: '孟慧业',
     },
     {
         id: 'YJ-80SJ',
-        date: '2019年8月31日14:11:36',
-        type: '超速报警',
+        date: '2019年9月31日14:11:36',
+        type: '逆行',
         status: '启用',
         pinlv: '京NLU686',
         process: '钱来科',
     },
     {
         id: 'YJ-8S0J',
-        date: '2019年8月26日10:56:21',
-        type: '疲劳驾驶报警',
+        date: '2019年9月26日10:56:21',
+        type: '疲劳驾驶',
         status: '启用',
         pinlv: '冀C666A',
         process: '赵云峰',
     },
     {
         id: 'YJ-72IK',
-        date: '2019年8月27日06:23:03',
-        type: '前向碰撞报警',
+        date: '2019年9月27日06:23:03',
+        type: '超速',
         status: '启用',
         pinlv: '冀C63K6',
         process: '王梦洁',
@@ -104,11 +104,11 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '预警时间',
+            title: '监控时间',
             dataIndex: 'date',
         },
         {
-            title: '预警类型',
+            title: '违规类型',
             dataIndex: 'type',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
@@ -148,7 +148,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安全预警管理"
+                title="交通违章管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

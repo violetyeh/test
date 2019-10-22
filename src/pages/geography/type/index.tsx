@@ -23,21 +23,21 @@ const mockData = [
         fenlei: '车辆逆行',
         yaosu: '正常驾驶',
         state: '安全',
-        pinlv: '高速公路',
+        pinlv: '高速公路下道口',
     },
     {
         id: 'YS-BH-8201',
         fenlei: '道路塌陷 ',
         yaosu: '醉酒驾驶',
         state: '危险',
-        pinlv: '普通公路',
+        pinlv: '高速公路',
     },
     {
         id: 'YS-BH-3921',
         fenlei: '非法变道',
         yaosu: '正常驾驶',
         state: '安全',
-        pinlv: '高速公路',
+        pinlv: '高速公路汇流处',
     },
     {
         id: 'YS-BH-0029',
@@ -51,21 +51,21 @@ const mockData = [
         fenlei: '车辆拥堵',
         yaosu: '疲劳驾驶',
         state: '安全',
-        pinlv: '普通公路',
+        pinlv: '高速公路下道口',
     },
     {
         id: 'YS-BH-3321',
         fenlei: '异物抛撒',
         yaosu: '打电话驾驶',
         state: '危险',
-        pinlv: '高速公路',
+        pinlv: '高速公路汇流处',
     },
     {
         id: 'YS-BH-2136',
         fenlei: '异常停车',
         yaosu: '正常驾驶',
         state: '安全',
-        pinlv: '普通公路',
+        pinlv: '高速公路下道口',
     },
     {
         id: 'YS-BH-3354',
@@ -95,32 +95,32 @@ class Type extends Component<TypeProps, TypeState>{
             ),
         },
         {
-            title: '运输线路编号',
+            title: '编号',
             dataIndex: 'id',
         },
        
         {
             title: '道路类型',
             dataIndex: 'pinlv',
-            render: (text) => <Tag color="blue">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
             title: '驾驶人状态监测',
             dataIndex: 'yaosu',
-            render: (text) => <Tag color="RED">{text}</Tag>,
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         
         
         {
             title: '预警原因',
             dataIndex: 'fenlei',
-            render: (text) => <Tag color="#f50">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
 
         {
             title: '盲区检测',
             dataIndex: 'state',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="BLACK">{text}</Tag>,
         },
         {
             title: '操作',
@@ -149,7 +149,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="安全预警设置"
+                title="交通安全管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
