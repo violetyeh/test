@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'CEL0001',
-        jishu: 's230（16.632）',
-        fenceng: 's231（42.242）',
-        leixing: '无限制',
-        name: 'BLH',
+        jishu: '闽侯',
+        fenceng: '凤城',
+        leixing: '洋里',
+        name: '福州',
         state: '启用',
     },
     {
         id: 'CEL0002',
-        jishu: 's350（13.214）',
-        fenceng: 's351（36.612）',
-        leixing: '无限制',
-        name: 'xyh',
+        jishu: '连江',
+        fenceng: '敖江',
+        leixing: '竹岐',
+        name: '南昌',
         state: '启用',
     },
     {
         id: 'CEL0003',
-        jishu: 's412（31.451）',
-        fenceng: 's413（57.421）',
-        leixing: '无限制',
-        name: 'BLH',
+        jishu: '罗源',
+        fenceng: '东湖',
+        leixing: '南通',
+        name: '九江',
         state: '启用',
     },
     {
         id: 'CEL0004',
-        jishu: 's315（85.235）',
-        fenceng: 's316（94.423）',
-        leixing: '无限制',
-        name: 'xyh',
+        jishu: '闽清',
+        fenceng: '浦口',
+        leixing: '尚干',
+        name: '鹰潭',
         state: '启用',
     },
     {
         id: 'CEL0005',
-        jishu: 's315（27.235）',
-        fenceng: 's316（53.123）',
-        leixing: '有限制',
-        name: 'xyh',
+        jishu: '永泰',
+        fenceng: '东岱',
+        leixing: '南屿',
+        name: '上饶',
         state: '启用',
     },
     {
         id: 'CEL0006',
-        jishu: 's302（10.238）',
-        fenceng: 's303（25.421）',
-        leixing: '有限制',
-        name: 'BLH',
+        jishu: '平潭',
+        fenceng: '晓澳',
+        leixing: '青口',
+        name: '景德',
         state: '启用',
     },
     {
         id: 'CEL0007',
-        jishu: 's325（27.471）',
-        fenceng: 's326（47.571）',
-        leixing: '有限制',
-        name: 'xyh',
+        jishu: '仓山',
+        fenceng: '丹阳',
+        leixing: '白沙',
+        name: '新余',
         state: '启用',
     },
     {
         id: 'CEL0008',
-        jishu: 's315（16.235）',
-        fenceng: 's316（26.435）',
-        leixing: '有限制',
-        name: 'BLH',
+        jishu: '晋安',
+        fenceng: '长龙',
+        leixing: '荆溪',
+        name: '鹰潭',
         state: '启用',
     },
 ]
@@ -102,21 +102,19 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '坐标格式',
+            title: '市地',
             dataIndex: 'name',
         },
         {
-            title: '起点位置',
+            title: '县区',
             dataIndex: 'jishu',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '终点位置',
+            title: '乡镇',
             dataIndex: 'fenceng',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '承载限值',
+            title: '村',
             dataIndex: 'leixing',
         },
 
@@ -149,7 +147,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="测量配置"
+                title="权属信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

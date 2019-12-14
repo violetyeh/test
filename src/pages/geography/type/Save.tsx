@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑实时道路信息"
+                title="编辑图幅"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenlei" label="道路里程（KM）" >
+                    <Form.Item key="fenlei" label="横向图幅尺寸（KM）" >
                         {getFieldDecorator('fenlei', {
                             initialValue: currentItem.fenlei,
                         })(
@@ -59,21 +59,21 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="pinlv" label="交通事故报警点" >
+                    <Form.Item key="pinlv" label="纵向图幅尺寸（KM)" >
                         {getFieldDecorator('pinlv', {
                             initialValue: currentItem.pinlv,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="yaosu" label="道路类型" >
+                    <Form.Item key="yaosu" label="整取操作" >
                         {getFieldDecorator('yaosu', {
                             initialValue: currentItem.yaosu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="道路车道数" >
+                    <Form.Item key="fenceng" label="调查员" >
                         {getFieldDecorator('fenceng', {
                             initialValue: currentItem.fenceng,
                         })(

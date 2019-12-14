@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '基于GIS技术的高速公路监控系统',
+  title: '第三次全国国土调查数据建库及数据库管理系统软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑测量配置"
+                title="编辑权属信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="坐标格式" >
+                    <Form.Item key="name" label="市地" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="起点位置" >
+                    <Form.Item key="jishu" label="县区" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="终点位置" >
+                    <Form.Item key="fenceng" label="乡镇" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="leixing" label="承载限值" >
+                    <Form.Item key="leixing" label="村" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
