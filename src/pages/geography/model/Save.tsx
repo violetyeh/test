@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑景观规划信息"
+                title="编辑不动产信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="景观类别" >
+                    <Form.Item key="cf" label="地籍区" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="地形长" >
+                    <Form.Item key="dw" label="地籍子区" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="地形宽" >
+                    <Form.Item key="jc" label="所有权类型" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="jg" label="大约面积（m²）" >
+                    <Form.Item key="jg" label="宗地特征" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="规划进度（%）" >
+                    <Form.Item key="jx" label="调查进度（%）" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(

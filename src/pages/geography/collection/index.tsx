@@ -25,58 +25,58 @@ const mockData = [
     {
         id: 'AQGZE-00035',
         fl:'26.38',
-        mc:'坡度1',
-        ma:'21456.36',
-        nl:'0.00-37.59',
+        mc:'私人',
+        ma:'身份证',
+        nl:'方文',
     },
     {
         id: 'AQGZE-00064',
         fl:'0.31',
-        mc:'坡度2',
-        ma:'2521.25',
-        nl:'37.59-75.18',
+        mc:'私人',
+        ma:'身份证',
+        nl:'陈乐',
     },
     {
         id: 'AQGZE-00078',
         fl:'24.29',
-        mc:'坡度3',
-        ma:'32541.28',
-        nl:'75.18-112.76',
+        mc:'企业',
+        ma:'组织机构代码',
+        nl:'外贸服装公司',
     },
     {
         id: 'AQGZE-00021',
         fl:'0.12',
-        mc:'坡度4',
-        ma:'1254.21',
-        nl:'112.76-150.35',
+        mc:'私人',
+        ma:'身份证',
+        nl:'刘芳',
     },
     {
         id: 'AQGZE-00035',
         fl:'0.24',
-        mc:'坡度5',
-        ma:'2563.21',
-        nl:'150.35-187.79',
+        mc:'企业',
+        ma:'组织机构代码',
+        nl:'电子科技有限公司',
     },
     {
         id: 'AQGZE-00038',
         fl:'29.35',
-        mc:'坡度6',
-        ma:'15642.36',
-        nl:'187.79-225.53',
+        mc:'企业',
+        ma:'组织机构代码',
+        nl:'丰信华实有限公司',
     },
     {
         id: 'AQGZE-00021',
         fl:'31.25',
-        mc:'坡度7',
-        ma:'63254.12',
-        nl:'225.53-263.11',
+        mc:'私人',
+        ma:'身份证',
+        nl:'王迅',
     },
     {
         id: 'AQGZE-00037',
         fl:'23.21',
-        mc:'坡度8',
-        ma:'7737.23',
-        nl:'263.11-300.70',
+        mc:'企业',
+        ma:'组织机构代码',
+        nl:'风华华业实业有限公司',
     },
   
     
@@ -97,29 +97,29 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '坡度区间%',
+            title: '权利人名称',
             dataIndex: 'nl',
         },
         
         
         {
-            title: '层名',
+            title: '权利人类型',
             dataIndex: 'mc',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '平面面积',
+            title: '证件种类',
             dataIndex: 'ma',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '占总面积比（%）',
+            title: '录入进度',
             dataIndex: 'fl',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
 
         {
-            title: '检测状态',
+            title: '调查状态',
             dataIndex: 'status',
             render: (text) => <Switch checkedChildren="完成" unCheckedChildren="未完成" />,
           },
@@ -153,7 +153,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="地形分析"
+                title="权利人信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

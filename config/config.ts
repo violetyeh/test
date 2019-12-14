@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '地形分析',
+          name: '权利人信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '景观规划',
+          name: '不动产信息',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '种植设计',
+          name: '权属信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '景观平面规划设计软件',
+  title: '不动产权籍调查建库与管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
