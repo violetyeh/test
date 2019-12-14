@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'DKL0121',
-        fenceng: '大兴路',
-        name: '中内车道',
-        leixing: '不小于40米',
-        jishu: '待规划',
+        fenceng: '鹿岛',
+        name: '国有',
+        leixing: '使用权',
+        jishu: '待质检',
         state: '启用',
     },
     {
         id: 'DKL0122',
-        fenceng: '海滨路',
-        name: '中外车道',
-        leixing: '20—24米',
-        jishu: '待规划',
+        fenceng: '清远',
+        name: '私有',
+        leixing: '出让土地使用权',
+        jishu: '待质检',
         state: '启用',
     },
     {
         id: 'DKL0123',
-        fenceng: '红石路',
-        name: '中内车道',
-        leixing: '14—18米',
-        jishu: '待规划',
+        fenceng: '惠州',
+        name: '国有',
+        leixing: '使用权',
+        jishu: '待质检',
         state: '启用',
     },
     {
         id: 'DKL0124',
-        fenceng: '华怡路',
-        name: '中外车道',
-        leixing: '20—24米',
-        jishu: '已规划',
+        fenceng: '禅城',
+        name: '国有',
+        leixing: '使用权',
+        jishu: '已质检',
         state: '启用',
     },
     {
         id: 'DKL0125',
-        fenceng: '金家岩路',
-        name: '中线车道',
-        leixing: '14—18米',
-        jishu: '待规划',
+        fenceng: '金家岩',
+        name: '国有',
+        leixing: '出让土地使用权',
+        jishu: '待质检',
         state: '启用',
     },
     {
         id: 'DKL0126',
-        fenceng: '岚园路',
-        name: '超车道',
-        leixing: '30—40米',
-        jishu: '规划不通过',
+        fenceng: '岚园',
+        name: '私有',
+        leixing: '划拨土地使用权',
+        jishu: '质检不通过',
         state: '启用',
     },
     {
         id: 'DKL0127',
-        fenceng: '民权路',
-        name: '行车道',
-        leixing: '20—24米',
-        jishu: '已规划',
+        fenceng: '增城',
+        name: '国有',
+        leixing: '使用权',
+        jishu: '已质检',
         state: '启用',
     },
     {
         id: 'DKL0128',
-        fenceng: '青年路',
-        name: '主线道',
-        leixing: '30—40米',
-        jishu: '待规划',
+        fenceng: '越秀',
+        name: '国有',
+        leixing: '使用权',
+        jishu: '待质检',
         state: '启用',
     },
    
@@ -99,19 +99,19 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '编号',
+            title: '地籍编号',
             dataIndex: 'id',
         },
         {
-            title: '路口名称',
+            title: '行政区名',
             dataIndex: 'fenceng',
         },
         {
-            title: '车道类型',
+            title: '土地属性',
             dataIndex: 'name',
         },
         {
-            title: ' 进口道宽度',
+            title: ' 使用类型',
             dataIndex: 'leixing',
         },
         {
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="交叉口交通流"
+                title="地籍信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '叉口道路规划设计软件',
+  title: '国土资源调查数据汇交与质检系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

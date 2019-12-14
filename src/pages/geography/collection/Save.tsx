@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑交叉口交通流信息"
+                title="编辑地籍信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,14 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="编号" >
+                    <Form.Item key="id" label="地籍编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fenceng" label="路口名称" >
+                    <Form.Item key="fenceng" label="行政区名" >
                         {getFieldDecorator('remark', {
                             initialValue: currentItem.fenceng,
                         })(
@@ -59,7 +59,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="name" label="车道类型" >
+                    <Form.Item key="name" label="土地属性" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
@@ -67,7 +67,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="leixing" label="进口道宽度" >
+                    <Form.Item key="leixing" label="使用类型" >
                         {getFieldDecorator('leixing', {
                             initialValue: currentItem.leixing,
                         })(
@@ -79,9 +79,9 @@ class Save extends Component<SaveProps, SaveState>{
                             initialValue: currentItem.jishu,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                                <Radio.Button value="a">待规划</Radio.Button>
-                                <Radio.Button value="b">已规划</Radio.Button>
-                                <Radio.Button value="b">规划不通过</Radio.Button>
+                                <Radio.Button value="a">待质检</Radio.Button>
+                                <Radio.Button value="b">已质检</Radio.Button>
+                                <Radio.Button value="c">质检不通过</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

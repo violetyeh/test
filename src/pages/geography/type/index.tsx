@@ -20,72 +20,72 @@ interface TypeState {
 const mockData = [
     {
         id: 'TFSJ010278',
-        fenlei: '公路交通和标线设置规范 JTG',
+        fenlei: '60米',
         pinlv: 56,
-        yaosu: '信号机',
+        yaosu: 'LK01',
         fenceng: '孟非',
         state: '启用',
        
     },
     {
         id: 'TFSJ010226',
-        fenlei: '道路交通信号倒计时显示器 GA',
+        fenlei: '25米',
         pinlv: 12,
-        yaosu: '信号灯灯杆',
+        yaosu: 'RK36',
         fenceng: '江大',
         state: '启用',
        
     },
     {
         id: 'TFSJ010224',
-        fenlei: '公路交通标志反膜  GB',
+        fenlei: '45米',
         pinlv: 26,
-        yaosu: '指路标牌及分道标牌',
+        yaosu: 'LK03',
         fenceng: '汪峰',
         state: '启用',
        
     },
     {
         id: 'TFSJ010223',
-        fenlei: '公路车辆智能监测记录系统技术规范',
+        fenlei: '30米',
         pinlv: 33,
-        yaosu: '护栏',
+        yaosu: 'RK21',
         fenceng: '张三三',
         state: '启用',
        
     },
     {
         id: 'TFSJ010292',
-        fenlei: '道路交通信号机 GA',
+        fenlei: '50米',
         pinlv: 50,
-        yaosu: '护栏',
+        yaosu: 'RK023',
         fenceng: '王源',
         state: '启用',
        
     },
     {
         id: 'TFSJ010271',
-        fenlei: '道路交通信号灯 GB',
+        fenlei: '30米',
         pinlv: 62,
-        yaosu: '指路标牌及分道标牌',
+        yaosu: 'LK04',
         fenceng: '刘艺',
         state: '启用',
        
     },
     {
         id: 'TFSJ010228',
-        fenlei: '道路交通信号灯设置与安装规范 GB',
+        fenlei: '45米',
         pinlv: 65,
-        yaosu: '方向指示信号灯',
+        yaosu: 'RK63',
         fenceng: '李毅',
         state: '启用',
        
     },
     {
         id: 'TFSJ010264',
-        fenlei: '道路交通标志和标线 GB',
+        fenlei: '50米',
         pinlv: 42,
-        yaosu: '信号灯灯杆',
+        yaosu: 'LK32',
         fenceng: '赵丽',
         state: '启用',
        
@@ -108,11 +108,11 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '设计依据及标准',
+            title: '桩间隔',
             dataIndex: 'fenlei',
         },
         {
-            title: '设计进度',
+            title: '绘制进度',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -123,7 +123,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         },
         {
-            title: '规划类型',
+            title: '桩号',
             dataIndex: 'yaosu',
         },
         {
@@ -164,7 +164,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="设计依据"
+                title="公路征地边线"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '交叉口交通流',
+          name: '地籍信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '道路功能分类',
+          name: '图斑信息',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '设计依据',
+          name: '公路征地边线',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
