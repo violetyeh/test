@@ -24,66 +24,66 @@ interface TypeState {
 const mockData = [
     {
         id: 'LUMC0211',
-        fenceng: '大兴路',
-        name: '3404.141',
-        leixing: '3404.151',
-        jishu: '待审批',
+        fenceng: '空间直角坐标',
+        name: '大地坐标',
+        leixing: '批量反算',
+        jishu: '待转换',
         state: '启用',
     },
     {
         id: 'LUMC0212',
-        fenceng: '海滨路',
-        name: '3405.111',
-        leixing: '3405.121',
-        jishu: '待审批',
+        fenceng: '大地坐标',
+        name: '平面坐标',
+        leixing: '批量反算',
+        jishu: '待转换',
         state: '启用',
     },
     {
         id: 'LUMC0213',
-        fenceng: '红石路',
-        name: '3404.121',
-        leixing: '3404.131',
-        jishu: '待审批',
+        fenceng: '平面坐标',
+        name: '空间直角坐标',
+        leixing: '批量反算',
+        jishu: '待转换',
         state: '启用',
     },
     {
         id: 'LUMC0214',
-        fenceng: '华怡路',
-        name: '3102.125',
-        leixing: '3102.135',
-        jishu: '已审批',
+        fenceng: '平面坐标',
+        name: '大地坐标',
+        leixing: '批量反算',
+        jishu: '已转换',
         state: '启用',
     },
     {
         id: 'LUMC0215',
-        fenceng: '金家岩路',
-        name: '3256.021',
-        leixing: '3256.031',
-        jishu: '待审批',
+        fenceng: '空间直角坐标',
+        name: '大地坐标',
+        leixing: '批量反算',
+        jishu: '待转换',
         state: '启用',
     },
     {
         id: 'LUMC0216',
-        fenceng: '岚园路',
-        name: '3106.231',
-        leixing: '3106.241',
-        jishu: '审批不通过',
+        fenceng: '大地坐标',
+        name: '平面坐标',
+        leixing: '批量正算',
+        jishu: '转换不成功',
         state: '启用',
     },
     {
         id: 'LUMC0217',
-        fenceng: '民权路',
-        name: '3021.025',
-        leixing: '3021.035',
-        jishu: '已审批',
+        fenceng: '平面坐标',
+        name: '空间直角坐标',
+        leixing: '批量反算',
+        jishu: '已转换',
         state: '启用',
     },
     {
         id: 'LUMC0218',
-        fenceng: '青年路',
-        name: '3103.042',
-        leixing: '3103.052',
-        jishu: '待审批',
+        fenceng: '大地坐标',
+        name: '空间直角坐标',
+        leixing: '批量正算',
+        jishu: '待转换',
         state: '启用',
     },
    
@@ -99,19 +99,19 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '路线编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '路线名称',
+            title: '源坐标类型',
             dataIndex: 'fenceng',
         },
         {
-            title: '阻断起点桩号',
+            title: '转换坐标类型',
             dataIndex: 'name',
         },
         {
-            title: ' 阻断止点桩号',
+            title: ' 批量转换',
             dataIndex: 'leixing',
         },
         {
@@ -148,7 +148,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="公路交通阻断信息"
+                title="坐标转换"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

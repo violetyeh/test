@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '公路交通阻断信息',
+          name: '坐标转换',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '基础数据',
+          name: '参数输入',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '养护日常巡查管理',
+          name: '转换参数编辑',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

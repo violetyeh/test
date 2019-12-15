@@ -20,73 +20,73 @@ interface TypeState {
 const mockData = [
     {
         id: 'TFSJ010292',
-        fenlei: '该县巡检机构',
-        pinlv: 50,
-        yaosu: '100万-200万',
-        fenceng: '王源',
+        fenlei: '高解算旋转参数',
+        pinlv: -63.2541,
+        yaosu: '136.36587',
+        fenceng: '-36.2541',
         state: '启用',
        
     },
     {
         id: 'TFSJ010271',
-        fenlei: '该省巡检机构',
-        pinlv: 62,
-        yaosu: '50万-100万',
-        fenceng: '刘艺',
+        fenlei: '七参数',
+        pinlv: 389.2145,
+        yaosu: '326.0214',
+        fenceng: '88.3214',
         state: '启用',
        
     },
     {
         id: 'TFSJ010228',
-        fenlei: '该县巡检机构',
-        pinlv: 65,
-        yaosu: '100万-200万',
-        fenceng: '李毅',
+        fenlei: '高解算旋转参数',
+        pinlv: 65.2145,
+        yaosu: '-36.2140',
+        fenceng: '36.2158',
         state: '启用',
        
     },
     {
         id: 'TFSJ010264',
-        fenlei: '第三方巡检机构',
-        pinlv: 42,
-        yaosu: '10万-50万',
-        fenceng: '赵丽',
+        fenlei: '四参数',
+        pinlv: -63.32145,
+        yaosu: '254.32581',
+        fenceng: '36.2145',
         state: '启用',
        
     },
     {
         id: 'TFSJ010278',
-        fenlei: '第三方巡检机构',
-        pinlv: 56,
-        yaosu: '100万-200万',
-        fenceng: '孟非',
+        fenlei: '四参数',
+        pinlv: 1.2356,
+        yaosu: '3652.02145',
+        fenceng: '23.2147',
         state: '启用',
        
     },
     {
         id: 'TFSJ010226',
-        fenlei: '第三方巡检机构',
-        pinlv: 12,
-        yaosu: '10万-50万',
-        fenceng: '江大',
+        fenlei: '高解算旋转参数',
+        pinlv: 12.365,
+        yaosu: '-3.25741',
+        fenceng: '21.02541',
         state: '启用',
        
     },
     {
         id: 'TFSJ010224',
-        fenlei: '该县巡检机构',
-        pinlv: 26,
-        yaosu: '50万-100万',
-        fenceng: '汪峰',
+        fenlei: '七参数',
+        pinlv: 26.3651,
+        yaosu: '364.2574',
+        fenceng: '-1.2547',
         state: '启用',
        
     },
     {
         id: 'TFSJ010223',
-        fenlei: '第三方巡检机构',
-        pinlv: 33,
-        yaosu: '100万-200万',
-        fenceng: '张三三',
+        fenlei: '高解算旋转参数',
+        pinlv: -321.254,
+        yaosu: '214.25547',
+        fenceng: '-36.241',
         state: '启用',
        
     },
@@ -107,26 +107,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '巡检机构',
+            title: '参数区域说明',
             dataIndex: 'fenlei',
         },
         {
-            title: '巡检进度',
+            title: 'X平移',
             dataIndex: 'pinlv',
-            render: (text: number) =>
-                <div>
-                    <Tooltip title="3 done / 3 in progress / 4 to do">
-                        <Progress percent={text} successPercent={text / 2} type="circle" />
-                    </Tooltip>
-                </div>,
+            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
+            
 
         },
         {
-            title: '养护预算',
+            title: 'Y平移',
             dataIndex: 'yaosu',
+            render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
         {
-            title: '巡检负责人',
+            title: 'Z平移',
             dataIndex: 'fenceng',
             render: (text) => <Tag color="#2db7f5">{text}</Tag>,
         },
@@ -163,7 +160,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="养护日常巡查管理"
+                title="转换参数编辑"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路养护检测管理系统',
+  title: '空间数据坐标转换软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
