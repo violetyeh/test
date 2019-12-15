@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑集群信息"
+                title="编辑海图图库"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="机房名称" >
+                    <Form.Item key="fl" label="原始比例尺" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="主控服务地址" >
+                    <Form.Item key="mc" label="左边边界" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="线路类型" >
+                    <Form.Item key="ma" label="右边边界" >
                         {getFieldDecorator('ma', {
                             initialValue: currentItem.ma,
                         })(
@@ -73,14 +73,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="cpu" label="物理存储容量(%)" >
+                    <Form.Item key="cpu" label="上边边界" >
                         {getFieldDecorator('cpu', {
                             initialValue: currentItem.cpu,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="nc" label="虚拟存储容量(%)" >
+                    <Form.Item key="nc" label="下边边界" >
                         {getFieldDecorator('nc', {
                             initialValue: currentItem.nc,
                         })(

@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='云主机信息数量'
+          title='本船信息'
           action={
             <Tooltip
               title={
@@ -36,7 +36,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
           }
           loading={loading}
           total={3961}
-          footer='云主机日志信息:2030'
+          footer='静动态信息:2030'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 16 }}>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='资源池信息'
+          title='有效位置信息'
           action={
             <Tooltip
               title={
@@ -65,7 +65,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(1036).format('0,0')}
-          footer='云主机配置信息：989'
+          footer='海图标示：989'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='云主机信息查询'
+          title='海图信息查询'
           action={
             <Tooltip
               title={
@@ -86,7 +86,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           total={numeral(7652).format('0,0')}
-          footer='云主机信息查询：84%'
+          footer='数据查询：84%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />

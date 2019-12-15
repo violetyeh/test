@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '云主机管理系统',
+  title: '电子海图数据管理软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

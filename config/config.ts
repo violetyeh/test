@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '集群管理',
+          name: '海图图库管理',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '资源池管理',
+          name: '海图数据',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '云主机配置管理',
+          name: '本船详细信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
