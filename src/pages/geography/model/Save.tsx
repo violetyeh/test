@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑参数"
+                title="编辑影像特征"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -52,34 +52,28 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="jg" label="测试规范" >
+                    <Form.Item key="jg" label="图斑数据" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="测试方法" >
+                    <Form.Item key="jx" label="前时相影像" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="采样间隔（μs）" >
+                    <Form.Item key="cf" label="后时相影像" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="发射脉宽（μs）" >
-                        {getFieldDecorator('dw', {
-                            initialValue: currentItem.dw,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
+                   
                 </Form>
             </Modal>
         );

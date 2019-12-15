@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '基本信息设置',
+          name: '图斑类型',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '参数设置',
+          name: '影像特征',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '基桩信息',
+          name: '数据提取',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

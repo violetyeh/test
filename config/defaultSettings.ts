@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '公路基桩检测信息管理系统',
+  title: '遥感影像图斑数据提取软件',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

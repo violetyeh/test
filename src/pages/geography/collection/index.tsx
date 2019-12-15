@@ -24,57 +24,57 @@ interface TypeState {
 const mockData = [
     {
         id: 'WXNR000021',
-        fl:'#1公路基桩检测',
-        mc:'PILE#1',
+        fl:'房 屋 建 筑',
+        mc:'位于道路、城市、村镇内部或周边，一般与数据库范围内原有建筑特征一致',
         ma:'26.00',
         nl:'张文芳',
     },
     {
         id: 'WXNR000035',
-        fl:'#2公路基桩检测',
-        mc:'PILE#2',
+        fl:'工 厂 建 筑',
+        mc:'位于城镇周边有配套道路，普遍具有大面积彩钢瓦厂房及硬化地面，个别内部具备烟囱、大型机械设备等特征',
         ma:'25.00',
         nl:'王芳',
     },
     {
         id: 'WXNR000038',
-        fl:'#3公路基桩检测',
-        mc:'PILE#3',
+        fl:'公 园 建 设',
+        mc:'城镇周边一般具备配套湖泊、河流、道路等，绿化程度较高整体建设规划范围面积较大',
         ma:'27.00',
         nl:'刘文',
     },
     {
         id: 'WXNR000021',
-        fl:'#4公路基桩检测',
-        mc:'PILE#4',
+        fl:'养 殖 工 棚',
+        mc:'位于道路旁边交通便利，一般为白色瓦房或彩钢瓦建筑屋顶呈现一定坡度，偶尔有黑色排气孔，使用非透光材料',
         ma:'26.00',
         nl:'赵媛',
     },
     {
         id: 'WXNR000037',
-        fl:'#5公路基桩检测',
-        mc:'PILE#5',
+        fl:'桥 梁',
+        mc:'位于地形低洼区域、河流、海上包括铁路桥、公路桥等',
         ma:'25.00',
         nl:'刘冰',
     },
     {
         id: 'WXNR000035',
-        fl:'#6公路基桩检测',
-        mc:'PILE#6',
+        fl:'道 路',
+        mc:'仅提取成规模道路，具备一定宽度，重点是连接建制镇级别以上公路，对于村村通道路、山区道路、临时碾压道路、机耕道等不提取',
         ma:'26.00',
         nl:'汪峰',
     },
     {
         id: 'WXNR000064',
-        fl:'#7公路基桩检测',
-        mc:'PILE#7',
+        fl:'硬 化 地 面',
+        mc:'大范围硬化地面，配套道路非常便利，地形平整面积广阔（适用于停车场、货运站）',
         ma:'30.00',
         nl:'陈云',
     },
     {
         id: 'WXNR000078',
-        fl:'#8公路基桩检测',
-        mc:'PILE#8',
+        fl:'养 殖 水 塘',
+        mc:'位于湖泊、河流形状规则一般临近有配套小型房屋建筑',
         ma:'25.00',
         nl:'王安',
     },
@@ -90,37 +90,24 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '检测状态',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >检测中</Checkbox>
-                </Fragment>
-            ),
-        },
+        
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '工程名',
+            title: '分类',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '桩号',
+            title: '认定标准',
             dataIndex: 'mc',
             render: (text) => <Tag color="blue">{text}</Tag>,
         },
+        
         {
-            title: '桩长（m）',
-            dataIndex: 'ma',
-            render: (text) => <Tag color="RED">{text}</Tag>,
-        },
-       
-        {
-            title: '检测人员',
+            title: '负责人',
             dataIndex: 'nl',
         },
         {
@@ -152,7 +139,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="基本信息设置"
+                title="图斑类型"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑基本信息"
+                title="编辑图斑类型"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,29 +51,23 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="fl" label="工程名" >
+                    <Form.Item key="fl" label="分类" >
                         {getFieldDecorator('fl', {
                             initialValue: currentItem.fl,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="桩号" >
+                   
+                    <Form.Item key="mc" label="认定标准" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ma" label="桩长（m）" >
-                        {getFieldDecorator('ma', {
-                            initialValue: currentItem.ma,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
                    
-                    <Form.Item key="nl" label="检测人员" >
+                    <Form.Item key="nl" label="负责人" >
                         {getFieldDecorator('nl', {
                             initialValue: currentItem.nl,
                         })(

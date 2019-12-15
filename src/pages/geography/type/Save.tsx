@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑基桩信息"
+                title="编辑数据提取"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="gg" label="施工桩号" >
+                    <Form.Item key="gg" label="影像名称" >
                         {getFieldDecorator('gg', {
                             initialValue: currentItem.gg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="施工桩长（m）" >
+                    <Form.Item key="mc" label="影像类型" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -66,41 +66,22 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="hz" label="基桩尺寸（mm）" >
-                        {getFieldDecorator('hz', {
-                            initialValue: currentItem.hz,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="zd" label="桩顶标高（m）" >
-                        {getFieldDecorator('zd', {
-                            initialValue: currentItem.zd,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="zdd" label="桩端标高（m）" >
-                        {getFieldDecorator('zdd', {
-                            initialValue: currentItem.zdd,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="jd" label="检测进度（%）" >
+                    
+                    
+                    <Form.Item key="jd" label="提取进度（%）" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="绑定状态" >
+                    <Form.Item key="status" label="提取状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,
                         })(
                             <Radio.Group defaultValue="a" buttonStyle="solid">
-                               <Radio.Button value="a">绑定</Radio.Button>
-                               <Radio.Button value="b">未绑定</Radio.Button>
+                               <Radio.Button value="a">已提取</Radio.Button>
+                               <Radio.Button value="b">未提取</Radio.Button>
                             </Radio.Group>,
                         )}
                     </Form.Item>

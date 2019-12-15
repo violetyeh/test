@@ -19,9 +19,19 @@ interface TypeState {
 
 const mockData = [
     {
+        id: 'WLJK63125',
+        mc:'大规模集中农村居民点',
+        gg:'影像YINGX#8',
+        hz:'1600',
+        jd:95,
+        state: 1,
+        zd:'0.00',
+        zdd:'1.00',
+     },
+    {
         id: 'WLJK63126',
-        mc:'12',
-        gg:'PILE#1',
+        mc:'地基',
+        gg:'影像YINGX#1',
         hz:'1300',
         jd:76,
         state: 1,
@@ -30,8 +40,8 @@ const mockData = [
      },
      {
         id: 'WLJK63127',
-        mc:'20',
-        gg:'PILE#2',
+        mc:'建筑物',
+        gg:'影像YINGX#2',
         hz:'1500',
         jd:100,
         state: 1,
@@ -40,8 +50,8 @@ const mockData = [
      },
      {
         id: 'WLJK63128',
-        mc:'15',
-        gg:'PILE#3',
+        mc:'构筑物',
+        gg:'影像YINGX#3',
         hz:'1600',
         jd:88,
         state: 1,
@@ -50,8 +60,8 @@ const mockData = [
      }, 
     {
        id: 'WLJK63121',
-       mc:'20',
-       gg:'PILE#4',
+       mc:'广场',
+       gg:'影像YINGX#4',
        hz:'1400',
        jd:98,
        state: 1,
@@ -60,8 +70,8 @@ const mockData = [
     },
     {
         id: 'WLJK63122',
-        mc:'25',
-        gg:'PILE#5',
+        mc:'公园',
+        gg:'影像YINGX#5',
         hz:'1500',
         jd:100,
         state: 1,
@@ -70,8 +80,8 @@ const mockData = [
      },
      {
         id: 'WLJK63123',
-        mc:'17',
-        gg:'PILE#6',
+        mc:'住宅小区',
+        gg:'影像YINGX#6',
         hz:' 1300',
         jd:56,
         state: 1,
@@ -80,24 +90,15 @@ const mockData = [
      },
      {
         id: 'WLJK63124',
-        mc:'16',
-        gg:'PILE#7',
+        mc:'机场',
+        gg:'影像YINGX#7',
         hz:'1200',
         jd:74,
         state: 1,
         zd:'1.00',
         zdd:'2.00',
      },
-     {
-        id: 'WLJK63125',
-        mc:'25',
-        gg:'PILE#8',
-        hz:'1600',
-        jd:95,
-        state: 1,
-        zd:'0.00',
-        zdd:'1.00',
-     },
+    
     
    
 ]
@@ -111,38 +112,33 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
+        {
+            title: '提取状态',
+            dataIndex: 'jz',
+            render: (text, record) => (
+                <Fragment>
+                  <Checkbox >提取中</Checkbox>
+                </Fragment>
+            ),
+        },
        
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '施工桩号',
+            title: '影像名称',
             dataIndex: 'gg',
         },
         {
-            title: '施工桩长（m）',
+            title: '影像类型',
             dataIndex: 'mc',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
        
+       
         {
-            title: '基桩尺寸（mm）',
-            dataIndex: 'hz',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: '桩顶标高（m）',
-            dataIndex: 'zd',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: '桩端标高（m）',
-            dataIndex: 'zdd',
-            render: (text) => <Tag color="GREEN">{text}</Tag>,
-        },
-        {
-            title: '检测进度',
+            title: '提取进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -178,7 +174,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="基桩信息"
+                title="数据提取"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
