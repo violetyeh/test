@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '电视广告宣传发布系统',
+  title: '影院媒体信息转发系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

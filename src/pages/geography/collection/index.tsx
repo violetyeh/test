@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import React from "react";
 import Table, { ColumnProps } from "antd/lib/table";
-import { Divider, message, Card, Switch, Tag } from "antd";
+import { Divider, message, Card, Switch, Tag, Progress } from "antd";
 import styles from '../style.less';
 import Search from "./Search";
 import Save from "./Save";
@@ -24,75 +24,75 @@ interface TypeState {
 const mockData = [
    
       {
-        id: '商业广告',
-        name: '百雀羚系列',
-        type: 'P',
-        date: '化妆品',
-        creator: '百雀羚',
-        column:'10秒广告',
+        id: '商业电影',
+        name: '贺岁电影系列',
+        type: '2D',
+        date: '商业影片',
+        creator: '贺岁电影',
+        column:'120分钟电影',
         status: 10,
       },
       {
-        id: '公益广告',
-        name: '公安部',
-        type: 'v0890',
-        date: '公益',
-        creator: '警民同心 平安春节',
-        column:'30秒广告',
+        id: '国庆电影',
+        name: '国庆档',
+        type: '3D',
+        date: '国庆',
+        creator: '警民同心 平安国庆',
+        column:'125分钟电影',
         status: 30,
       },
       {
-        id: '公益广告',
-        name: 'CCTV',
-        type: 'v0891',
-        date: '公益',
+        id: '国庆电影',
+        name: '国庆档',
+        type: '3D',
+        date: '国庆',
         creator: '战斗英雄张富清',
-        column:'17秒广告',
+        column:'130分钟电影',
         status: 17,
       },
       {
-        id: '珠宝广告',
-        name: '周六福',
-        type: 'P',
-        date: '珠宝',
-        creator: '黄金',
-        column:'20秒广告',
+        id: '文艺电影',
+        name: '五一档',
+        type: '2D',
+        date: '喜剧',
+        creator: '文艺影片',
+        column:'120分钟电影',
         status: 20,
       },
       {
-        id: '珠宝广告',
-        name: '周六福',
-        type: 'P',
-        date: '珠宝',
-        creator: '钻石',
-        column:'15秒广告',
+        id: '喜剧电影',
+        name: '五一档',
+        type: '2D',
+        date: '喜剧影片',
+        creator: '喜剧',
+        column:'150分钟电影',
         status: 15,
       },
       {
-        id: '商业广告',
-        name: 'OLAY净白系列',
-        type: 'P',
-        date: '化妆品',
-        creator: 'OLAY',
-        column:'30秒广告',
+        id: '商业电影',
+        name: '五一档',
+        type: '2D',
+        date: '商业影片',
+        creator: '喜剧',
+        column:'130分钟电影',
         status: 30,
       },
       {
-        id: '商业广告',
-        name: 'SK-II系列',
-        type: 'P',
-        date: '化妆品',
-        creator: 'SK-II',
-        column:'9秒广告',
+        id: '商业电影',
+        name: '恐怖系列',
+        type: '2D',
+        date: '商业影片',
+        creator: '恐怖',
+        column:'120分钟电影',
         status: 9,
       },
       {
-        id: '商业广告',
-        name: '佰草集系列',
-        type: 'P',
-        date: '化妆品',
-        creator: '佰草集',
-        column:'16秒广告',
+        id: '商业电影',
+        name: '探案系列',
+        type: '3D',
+        date: '商业影片',
+        creator: '探案',
+        column:'145分钟电影',
         status: 16,
       },
 ]
@@ -107,12 +107,12 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '广告类型',
+            title: '电影类型',
             dataIndex: 'id',
             render: (text) => <Tag color="magenta">{text}</Tag>,
           },
           {
-            title: '名称',
+            title: '类别',
             dataIndex: 'name',
           },
           {
@@ -130,12 +130,13 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="magenta">{text}</Tag>,
           },
           {
-            title: '栏目类型',
+            title: '时间',
             dataIndex: 'column',
           },
           {
-            title: '定义长度（秒）',
+            title: '购票率',
             dataIndex: 'status',
+            render: (text) => <Progress percent={text} status="active" />,
           },
 
         {
@@ -167,7 +168,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="电视广告管理"
+                title="电影排期信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

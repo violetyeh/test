@@ -20,58 +20,58 @@ interface TypeState {
 const mockData = [
     {
         id: 'SJ20101',
-        time:'2019-10-01',
-        type: '中央一套',
-        creator: '化妆品广告',
+        time:'2020-01-01',
+        type: '12:45',
+        creator: '1号厅',
         status: 1,
       },
       {
         id: 'SJ20102',
-        time:'2019-10-01',
-        type: '湖南一套',
-        creator: '珠宝广告',
+        time:'2020-01-01',
+        type: '10:30',
+        creator: '6号厅',
         status: 1,
       },
       {
         id: 'SJ20103',
-        time:'2019-10-02',
-        type: '中央二套',
-        creator: '公益广告',
+        time:'2020-01-02',
+        type: '16:00',
+        creator: '2号厅',
         status: 1,
       },
       {
         id: 'SJ20104',
-        time:'2019-10-02',
-        type: '湖南一套',
-        creator: '化妆品广告',
+        time:'2020-01-02',
+        type: '15:30',
+        creator: '3号厅',
         status: 1,
       },
       {
         id: 'SJ20105',
-        time:'2019-10-03',
-        type: '湖南一套',
-        creator: '化妆品广告',
+        time:'2020-01-03',
+        type: '13:20',
+        creator: '5号厅',
         status: 1,
       },
       {
         id: 'SJ20106',
-        time:'2019-10-04',
-        type: '湖南一套',
-        creator: '汽车广告',
+        time:'2020-01-04',
+        type: '11:45',
+        creator: '2号厅',
         status: 1,
       },
       {
         id: 'SJ20107',
-        time:'2019-10-03',
-        type: '湖南一套',
-        creator: '医药广告',
+        time:'2020-01-03',
+        type: '9:30',
+        creator: '6号厅',
         status: 1,
       },
       {
         id: 'SJ20108',
-        time:'2019-10-03',
-        type: '湖南一套',
-        creator: '农药广告',
+        time:'2020-01-03',
+        type: '13:20',
+        creator: '4号厅',
         status: 1,
       },
 ]
@@ -90,23 +90,23 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
           },
           {
-            title: '广告播放日期',
+            title: '电影放映日期',
             dataIndex: 'time',
           },
           {
-            title: '电视名称',
+            title: '开始时间',
             dataIndex: 'type',
             render: (text) => <Tag color="green">{text}</Tag>,
           },
           {
-            title: '电视内容',
+            title: '放映厅',
             dataIndex: 'creator',
             render: (text) => <Tag color="red">{text}</Tag>,
           },
           {
-            title: '是否成功发布',
+            title: '是否成功转发',
             dataIndex: 'status',
-            render: (text) => <Switch checkedChildren="成功" unCheckedChildren="失败" />,
+            render: (text) => <Switch checkedChildren="成功" unCheckedChildren="失败"  defaultChecked/>,
           },
         {
             title: '操作',
@@ -135,7 +135,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="广告播放管理"
+                title="放映管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

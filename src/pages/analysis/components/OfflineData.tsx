@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 广告发布条数: 700, 广告发布价格: 800, 宣传效率: 260, 广告收益率: 90 },
-  { label: '0.2', 广告发布条数: 150, 广告发布价格: 900, 宣传效率: 130, 广告收益率: 35 },
-  { label: '0.3', 广告发布条数: 195, 广告发布价格: 950, 宣传效率: 900, 广告收益率: 50 },
-  { label: '0.4', 广告发布条数: 150, 广告发布价格: 500, 宣传效率: 390, 广告收益率: 15 },
-  { label: '0.5', 广告发布条数: 70, 广告发布价格: 110, 宣传效率: 600, 广告收益率: 33 },
-  { label: '0.6', 广告发布条数: 117, 广告发布价格: 270, 宣传效率: 100, 广告收益率: 34 },
-  { label: '0.7', 广告发布条数: 170, 广告发布价格: 170, 宣传效率: 100, 广告收益率: 78 },
-  { label: '0.8', 广告发布条数: 170, 广告发布价格: 370, 宣传效率:300, 广告收益率: 80 },
-  { label: '0.9', 广告发布条数: 167, 广告发布价格: 170, 宣传效率: 100, 广告收益率: 70 },
-  { label: '1.0', 广告发布条数: 170, 广告发布价格: 170, 宣传效率: 100, 广告收益率: 60 },
-  { label: '未评分', 广告发布条数: 170, 广告发布价格: 170, 宣传效率: 100, 广告收益率: 3 },
+  { label: '0.1', 排期信息: 700, 排期数量: 800, 播放信息: 260, 影片数量: 90 },
+  { label: '0.2', 排期信息: 150, 排期数量: 900, 播放信息: 130, 影片数量: 35 },
+  { label: '0.3', 排期信息: 195, 排期数量: 950, 播放信息: 900, 影片数量: 50 },
+  { label: '0.4', 排期信息: 150, 排期数量: 500, 播放信息: 390, 影片数量: 15 },
+  { label: '0.5', 排期信息: 70, 排期数量: 110, 播放信息: 600, 影片数量: 33 },
+  { label: '0.6', 排期信息: 117, 排期数量: 270, 播放信息: 100, 影片数量: 34 },
+  { label: '0.7', 排期信息: 170, 排期数量: 170, 播放信息: 100, 影片数量: 78 },
+  { label: '0.8', 排期信息: 170, 排期数量: 370, 播放信息:300, 影片数量: 80 },
+  { label: '0.9', 排期信息: 167, 排期数量: 170, 播放信息: 100, 影片数量: 70 },
+  { label: '1.0', 排期信息: 170, 排期数量: 170, 播放信息: 100, 影片数量: 60 },
+  { label: '未评分', 排期信息: 170, 排期数量: 170, 播放信息: 100, 影片数量: 3 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['广告发布条数', '广告发布价格', '宣传效率','广告收益率'], // 展开字段集
+  fields: ['排期信息', '排期数量', '播放信息','影片数量'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  广告收益率: {
+  影片数量: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '广告发布条数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '广告发布价格', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '宣传效率', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '广告收益率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '排期信息', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '排期数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '播放信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '影片数量', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '广告收益率') {
+              if (geom.getYScale().field === value && value === '影片数量') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '广告收益率') {
+              } else if (geom.getYScale().field === 'value' && value !== '影片数量') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,7 +104,7 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '广告收益率') {
+            if (value === '影片数量') {
               return '#2b6cbb';
             }
             if (value === '价格') {
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*广告收益率" color="#fad248" size={3} />
+        <Geom type="line" position="label*影片数量" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

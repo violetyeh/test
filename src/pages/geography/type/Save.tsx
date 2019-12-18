@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告播放信息"
+                title="编辑放映管理信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,21 +51,21 @@ class Save extends Component<SaveProps, SaveState>{
                         <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="time" label="广告播放时间" >
+                    <Form.Item key="time" label="电影放映时间" >
                         {getFieldDecorator('time', {
                         initialValue: currentItem.time,
                         })(
                         <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="type" label="电视名称" >
+                    <Form.Item key="type" label="开始时间" >
                         {getFieldDecorator('type', {
                         initialValue: currentItem.type,
                         })(
                         <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="creator" label="电视内容" >
+                    <Form.Item key="creator" label="放映厅" >
                         {getFieldDecorator('creator', {
                         initialValue: currentItem.creator,
                         })(

@@ -19,67 +19,67 @@ interface ModelState {
 
 const mockData = [
     {
-        id: '地方电视台',
-        creator: '浙江电视台',
-        project: '手机',
-        status: 1,
-        date:'刘四方',
+        id: '购物中心电影院',
+        creator: '2号厅',
+        project: '叶问4：完结篇',
+        status: '即将上映',
+        date:'280999人想看',
         process:'86',
       },
       {
-        id: '地方电视台',
-        creator: '重庆电视台',
-        project: '火锅',
-        status: 1,
-        date:'秦雨田',
+        id: '购物中心电影院',
+        creator: 'IMAX VIP厅',
+        project: '被光抓走的人',
+        status: '正在上映',
+        date:'7.7分',
         process:'100',
       },
       {
-        id: '地方电视台',
-        creator: '湖南电视台',
-        project: '感冒药',
-        status: 1,
-        date:'王思雅',
+        id: '购物中心电影院',
+        creator: '1号厅',
+        project: '星球大战：天行者崛起',
+        status: '即将上映',
+        date:'58882人想看',
         process:'62',
       },
       {
-        id: '中央电视台',
-        creator: '中央二台',
-        project: '手机',
-        status: 1,
-        date:'陈兆宇',
+        id: '电影城电影院',
+        creator: '1号厅',
+        project: '半个喜剧',
+        status: '正在上映',
+        date:'34012人想看',
         process:'74',
       },
       {
-        id: '中央电视台',
-        creator: '中央一台',
-        project: '牙膏',
-        status: 1,
-        date:'陆万',
+        id: '电影城电影院',
+        creator: '3号厅',
+        project: '只有芸知道',
+        status: '正在上映',
+        date:'34012人想看',
         process:'85',
       },
       {
-        id: '中央电视台',
-        creator: '新闻频道',
-        project: '公益广告',
-        status: 1,
-        date:'赵宇',
+        id: '电影城电影院',
+        creator: 'IMAX VIP厅',
+        project: '勇敢者游戏2：再战巅峰',
+        status:'正在上映',
+        date:'7.6分',
         process:'42',
       },
       {
-        id: '购物频道',
-        creator: '服饰购物频道',
-        project: '连衣裙',
-        status: 1,
-        date:'陈宗',
+        id: '商业街电影院',
+        creator: '4号厅',
+        project: '天.火',
+        status:'正在上映',
+        date:'8.0分',
         process:'76',
       },
       {
-        id: '购物频道',
-        creator: '家电购物频道',
-        project: '电视机',
-        status: 1,
-        date:'王明芳',
+        id: '商业街电影院',
+        creator: '5号厅',
+        project: '误杀',
+        status: '正在上映',
+        date:'9.5分',
         process:'98',
       },
    
@@ -95,7 +95,7 @@ class Model extends Component<ModelProps, ModelState>{
     columns: ColumnProps<any>[] = [
        
         {
-            title: '宣传频道',
+            title: '电影院位置',
             dataIndex: 'id',
           },
           {
@@ -103,22 +103,21 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'creator',
           },
           {
-            title: '广告商品名称',
+            title: '电影名称',
             dataIndex: 'project',
           },
           {
-            title: '频道开关',
+            title: '上映状态',
             dataIndex: 'status',
-            render: (text) => (<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />),
           },
         {
-            title: '频道负责人',
+            title: '评分',
             dataIndex: 'date',
             render: (text) => <Tag color="magenta">{text}</Tag>,
         },
 
         {
-            title: '发布进度',
+            title: '满座率',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -148,7 +147,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="广告宣传频道管理"
+                title="电影售票信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

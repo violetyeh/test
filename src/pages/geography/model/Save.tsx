@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑广告宣传频道信息"
+                title="编辑电影售票信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="宣传渠道" >
+                    <Form.Item key="id" label="电影院位置" >
                         {getFieldDecorator('id', {
                         initialValue: currentItem.id,
                         })(
@@ -58,31 +58,31 @@ class Save extends Component<SaveProps, SaveState>{
                         <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="project" label="广告商品名称" >
+                    <Form.Item key="project" label="电影名称" >
                         {getFieldDecorator('project', {
                         initialValue: currentItem.project,
                         })(
                         <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="status" label="渠道开关" >
+                    <Form.Item key="status" label="上映状态" >
                         {getFieldDecorator('status', {
                         initialValue: currentItem.status,
                         })(
                         <Radio.Group defaultValue="a" buttonStyle="solid">
-                            <Radio.Button value="a">开</Radio.Button>
-                            <Radio.Button value="b">关</Radio.Button>
+                            <Radio.Button value="a">正在上映</Radio.Button>
+                            <Radio.Button value="b">即将上映</Radio.Button>
                         </Radio.Group>,
                         )}
                     </Form.Item>
-                    <Form.Item key="date" label="频道负责人" >
+                    <Form.Item key="date" label="评分" >
                         {getFieldDecorator('date', {
                             initialValue: currentItem.date,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="发布进度(%)" >
+                    <Form.Item key="process" label="满座率(%)" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
