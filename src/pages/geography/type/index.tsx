@@ -101,7 +101,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '数据项',
+            title: '程序数据项',
             dataIndex: 'mc',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
@@ -114,7 +114,7 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'hz',
         },
         {
-            title: '功能选择',
+            title: '编辑功能选择',
             dataIndex: 'jd',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
         },

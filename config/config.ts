@@ -132,13 +132,13 @@ export default {
           component: './analysis',
         },
         {
-          name: '设置终端参数',
+          name: '视觉参数',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '监测管理',
+          name: '程序编辑',
           path: '/model',
           icon: 'fund',
           component: './geography/model',

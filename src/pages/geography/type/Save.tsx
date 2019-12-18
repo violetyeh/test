@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="数据项" >
+                    <Form.Item key="mc" label="程序数据项" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
@@ -72,7 +72,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jd" label="功能选择" >
+                    <Form.Item key="jd" label="编辑功能选择" >
                         {getFieldDecorator('jd', {
                             initialValue: currentItem.jd,
                         })(

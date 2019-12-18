@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '华云SDN管理平台',
+  title: '视觉程序编辑系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

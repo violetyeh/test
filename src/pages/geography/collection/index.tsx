@@ -24,8 +24,8 @@ interface TypeState {
 const mockData = [
     {
         id: 'ZD-0021',
-        fl:'CJ564-测试终端1',
-        mc:'1507',
+        fl:'CJ564-视觉程序1',
+        mc:'TCS',
         ma:'192.168.1.107',
         nl:'GPRS/CDMA',
         cs:'COM4,1200-e-8-1',
@@ -33,8 +33,8 @@ const mockData = [
     },
     {
         id: 'ZD-0035',
-        fl:'CJ564-测试终端2',
-        mc:'1305',
+        fl:'CJ564-视觉程序2',
+        mc:'TCS',
         ma:'192.168.1.105',
         nl:'本机串口',
         cs:'COM4,1201-e-5-1',
@@ -42,8 +42,8 @@ const mockData = [
     },
     {
         id: 'ZD-0038',
-        fl:'CJ564-测试终端3',
-        mc:'1993',
+        fl:'CJ564-视觉程序3',
+        mc:'PCS',
         ma:'192.168.1.133',
         nl:'本机串口',
         cs:'COM5,1358-e-8-1',
@@ -51,8 +51,8 @@ const mockData = [
     },
     {
         id: 'ZD-0021',
-        fl:'CJ564-测试终端4',
-        mc:'1902',
+        fl:'CJ564-视觉程序4',
+        mc:'TCS',
         ma:'192.168.1.102',
         nl:'本机串口',
         cs:'COM4,1500-e-8-6',
@@ -60,8 +60,8 @@ const mockData = [
     },
     {
         id: 'ZD-0037',
-        fl:'CJ564-测试终端5',
-        mc:'1942',
+        fl:'CJ564-视觉程序5',
+        mc:'PCS',
         ma:'192.168.1.142',
         nl:'GPRS/CDMA',
         cs:'COM1,1450-f-5-1',
@@ -69,8 +69,8 @@ const mockData = [
     },
     {
         id: 'ZD-0035',
-        fl:'CJ564-测试终端6',
-        mc:'1735',
+        fl:'CJ564-视觉程序6',
+        mc:'PCS',
         ma:'192.168.1.635',
         nl:'GPRS/CDMA',
         cs:'COM4,1200-m-7-1',
@@ -78,8 +78,8 @@ const mockData = [
     },
     {
         id: 'ZD-0064',
-        fl:'CJ564-测试终端7',
-        mc:'1333',
+        fl:'CJ564-视觉程序7',
+        mc:'TCS',
         ma:'192.168.1.733',
         nl:'GPRS/CDMA',
         cs:'COM4,1960-e-8-1',
@@ -87,8 +87,8 @@ const mockData = [
     },
     {
         id: 'ZD-0078',
-        fl:'CJ564-测试终端8',
-        mc:'1304',
+        fl:'CJ564-视觉程序8',
+        mc:'PCS',
         ma:'192.168.1.255',
         nl:'本机串口',
         cs:'COM4,1240-x-8-1',
@@ -106,27 +106,18 @@ class Type extends Component<TypeProps, TypeState>{
     }
 
     columns: ColumnProps<any>[] = [
-        {
-            title: '是否在检',
-            dataIndex: 'jz',
-            render: (text, record) => (
-                <Fragment>
-                  <Checkbox >是</Checkbox>
-                </Fragment>
-            ),
-        },
-        
+       
         {
             title: '序号',
             dataIndex: 'id',
         },
         {
-            title: '被检终端',
+            title: '视觉系统',
             dataIndex: 'fl',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
         {
-            title: '行政区码',
+            title: '固定视觉',
             dataIndex: 'mc',
             render: (text) => <Tag color="#f08ee9">{text}</Tag>,
         },
@@ -186,7 +177,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="设置终端参数"
+                title="设置视觉参数"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

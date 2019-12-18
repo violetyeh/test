@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑监测信息"
+                title="编辑程序"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="监测项目" >
+                    <Form.Item key="cf" label="程序名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="终端地址" >
+                    <Form.Item key="jg" label="视觉固定坐标系X" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jx" label="抄收间隔时间" >
+                    <Form.Item key="jx" label="视觉固定坐标系Y" >
                         {getFieldDecorator('jx', {
                             initialValue: currentItem.jx,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="抄收次数" >
+                    <Form.Item key="dw" label="是否角度取反" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
