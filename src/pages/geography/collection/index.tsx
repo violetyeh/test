@@ -113,25 +113,28 @@ class Type extends Component<TypeProps, TypeState>{
         {
             title: '图纸幅面标准',
             dataIndex: 'fl',
-            render: (text) => <Tag color="#108ee9">{text}</Tag>,
+            render: (text) => <Tag color="BLACK">{text}</Tag>,
         },
         {
             title: '深化图线型',
             dataIndex: 'mc',
-            render: (text) => <Tag color="#f08ee9">{text}</Tag>,
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
             title: '绘图常用比例',
             dataIndex: 'ma',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
             title: '尺寸类别',
             dataIndex: 'bf',
+            render: (text) => <Tag color="RED">{text}</Tag>,
            
         },
         {
             title: '文字字高',
             dataIndex: 'sf',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
        
         {
@@ -163,7 +166,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="制图规定"
+                title="排版要求"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -20,73 +20,73 @@ interface TypeState {
 const mockData = [
     {
        id: 'SJ-JF-0121',
-       mc:'CAD工程制图规则',
-       gg:'建筑',
+       mc:'形象创造',
+       gg:'滤镜',
        hz:'J-01~n',
-       yy:'JS-01~n',
+       yy:'lj JS-01~n',
        jd:98,
        state: 1,
     },
     {
         id: 'SJ-JF-0122',
-        mc:'房屋建筑CAD制图统一规则',
-        gg:'结构',
+        mc:'分色制板',
+        gg:'视图',
         hz:'G-01~n',
-        yy:'GS-01~n',
+        yy:'st GS-01~n',
         jd:100,
         state: 1,
      },
      {
         id: 'SJ-JF-0123',
-        mc:'CAD工程制图规则',
-        gg:'给排水',
+        mc:'形象创造',
+        gg:'滤镜',
         hz:'S-01~n ',
-        yy:'SS-01~n',
+        yy:'lj SS-01~n',
         jd:56,
         state: 1,
      },
      {
         id: 'SJ-JF-0124',
-        mc:'房屋建筑制图统一标准',
-        gg:'采暖通风空气调节',
+        mc:'图像处理',
+        gg:'图像',
         hz:'Se-01~n',
-        yy:'SeS-01~n',
+        yy:'tx SeS-01~n',
         jd:74,
         state: 1,
      },
      {
         id: 'SJ-JF-0125',
-        mc:'建筑制图标准',
-        gg:'电气',
+        mc:'形象创造',
+        gg:'视图',
         hz:'D-01~n',
-        yy:'DS-01~n',
+        yy:'st DS-01~n',
         jd:95,
         state: 1,
      },
      {
         id: 'SJ-JF-0126',
-        mc:'建筑结构制图标准',
-        gg:'弱电',
+        mc:'图像处理',
+        gg:'图层',
         hz:'DX-01~n',
-        yy:'DXS-01~n',
+        yy:'tc DXS-01~n',
         jd:76,
         state: 1,
      },
      {
         id: 'SJ-JF-0127',
-        mc:'混凝土结构施工图',
-        gg:'动力',
+        mc:'文字排版',
+        gg:'视图',
         hz:'M-01~n',
-        yy:'MS-01~n',
+        yy:'st MS-01~n',
         jd:100,
         state: 1,
      },
      {
         id: 'SJ-JF-0128',
-        mc:'给水排水制图标准',
-        gg:'建筑',
+        mc:'文字录入',
+        gg:'图层',
         hz:'J-01~n',
-        yy:'JS-01~n',
+        yy:'tc JS-01~n',
         jd:88,
         state: 1,
      },
@@ -107,33 +107,32 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '标准引用',
+            title: '处理操作',
             dataIndex: 'mc',
             render: (text) => <Tag color="#AA2222">{text}</Tag>,
         },
         {
-            title: '专业名称',
+            title: '处理控制',
             dataIndex: 'gg',
+            render: (text) => <Tag color="RED">{text}</Tag>,
         },
         {
-            title: '初步设计图纸专业代码',
+            title: '排版处理代码',
             dataIndex: 'hz',
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '施工图图纸专业代码',
+            title: '设计处理代码',
             dataIndex: 'yy',
+            render: (text) => <Tag color="GREEN">{text}</Tag>,
         },
         
         {
-            title: '发布进度',
+            title: '处理进度',
             dataIndex: 'jd',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
-        {
-            title: '状态',
-            dataIndex: 'status',
-            render: () => <Switch checkedChildren="已发布" unCheckedChildren="未发布" />,
-        },
+        
         {
             title: '操作',
             render: (text, record) => (
@@ -161,7 +160,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="制图标准设置"
+                title="处理操作"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

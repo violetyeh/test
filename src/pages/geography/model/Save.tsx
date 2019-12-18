@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="设置各专业图纸编制"
+                title="设置排版设计编制"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,28 +51,28 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="cf" label="专业" >
+                    <Form.Item key="cf" label="排版设计名称" >
                         {getFieldDecorator('cf', {
                             initialValue: currentItem.cf,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jc" label="施工图版本号" >
+                    <Form.Item key="jc" label="一次用图版本号" >
                         {getFieldDecorator('jc', {
                             initialValue: currentItem.jc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="非施工用图版本号" >
+                    <Form.Item key="dw" label="二次用图版本号" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="符号" >
+                    <Form.Item key="jg" label="排版符号" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(

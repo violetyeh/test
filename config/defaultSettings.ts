@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '设计制图标准化数据发布系统',
+  title: '排版设计处理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '制图规定',
+          name: '排版要求',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '各专业图纸编制',
+          name: '排版设计编制',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '制图标准设置',
+          name: '处理操作',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
