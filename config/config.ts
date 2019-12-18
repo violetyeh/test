@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '购票访客信息',
+          name: '购票信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '客服管理',
+          name: '票务客服管理',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '客服分配设置',
+          name: '票务营销管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

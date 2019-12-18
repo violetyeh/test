@@ -27,7 +27,7 @@ const mockData = [
         fenceng: 'FK02348',
         name: '王晓宇',
         leixing: '自助购票机',
-        jishu: '196.1.02.19.01',
+        jishu: '大梦难忘',
         state: '启用',
     },
     {
@@ -35,7 +35,7 @@ const mockData = [
         fenceng: 'FK02349',
         name: '赵王',
         leixing: '自助购票机',
-        jishu: '196.1.02.19.02',
+        jishu: '误杀',
         state: '启用',
     },
     {
@@ -43,7 +43,7 @@ const mockData = [
         fenceng: 'FK02350',
         name: '吴柆',
         leixing: '购票APP',
-        jishu: '196.1.02.19.56',
+        jishu: '半个喜剧',
         state: '启用',
     },
     {
@@ -51,7 +51,7 @@ const mockData = [
         fenceng: 'FK02351',
         name: '周俊凯',
         leixing: '购票APP',
-        jishu: '196.1.02.19.38',
+        jishu: '被光抓走的人',
         state: '启用',
     },
     {
@@ -59,7 +59,7 @@ const mockData = [
         fenceng: 'FK02352',
         name: '孟凡',
         leixing: '购票APP',
-        jishu: '196.1.02.19.47',
+        jishu: '南方车站的聚会',
         state: '启用',
     },
     {
@@ -67,7 +67,7 @@ const mockData = [
         fenceng: 'FK02353',
         name: '赵云出',
         leixing: '自助购票机',
-        jishu: '196.1.02.19.03',
+        jishu: '唐顿庄园',
         state: '启用',
     },
     {
@@ -75,7 +75,7 @@ const mockData = [
         fenceng: 'FK02354',
         name: '李梦洁',
         leixing: '购票APP',
-        jishu: '196.1.02.19.04',
+        jishu: '大梦难忘',
         state: '启用',
     },
     {
@@ -83,7 +83,7 @@ const mockData = [
         fenceng: 'FK02356',
         name: '王三三',
         leixing: '购票APP',
-        jishu: '196.1.02.19.01',
+        jishu: '被光抓走的人',
         state: '启用',
     },
    
@@ -117,7 +117,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: 'IP地址',
+            title: '电影名称',
             dataIndex: 'jishu',
             render: (text) => <Tag color="#108ee9">{text}</Tag>,
         },
@@ -150,7 +150,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="购票访客信息"
+                title="购票信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

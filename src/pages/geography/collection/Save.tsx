@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑购票访客信息"
+                title="编辑购票信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -74,7 +74,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jishu" label="IP地址" >
+                    <Form.Item key="jishu" label="电影名称" >
                         {getFieldDecorator('jishu', {
                             initialValue: currentItem.jishu,
                         })(

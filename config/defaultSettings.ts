@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾线上售票客服系统',
+  title: '票务营销服务平台',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

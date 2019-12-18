@@ -22,7 +22,7 @@ const mockData = [
         id: 'JZGG010278',
         fenlei: '管理员',
         pinlv: 56,
-        yaosu: '自助购票机客服',
+        yaosu: '49',
         fenceng: '20',
         state: '启用',
        
@@ -31,7 +31,7 @@ const mockData = [
         id: 'JZGG010226',
         fenlei: '客服',
         pinlv: 12,
-        yaosu: '未分组',
+        yaosu: '35',
         fenceng: '50',
         state: '启用',
        
@@ -40,7 +40,7 @@ const mockData = [
         id: 'JZGG010224',
         fenlei: '管理员',
         pinlv: 26,
-        yaosu: 'APP购票客服',
+        yaosu: '40',
         fenceng: '50',
         state: '启用',
        
@@ -49,7 +49,7 @@ const mockData = [
         id: 'JZGG010223',
         fenlei: '客服',
         pinlv: 33,
-        yaosu: '自助购票机客服',
+        yaosu: '50',
         fenceng: '20',
         state: '启用',
        
@@ -58,7 +58,7 @@ const mockData = [
         id: 'JZGG010292',
         fenlei: '客服',
         pinlv: 50,
-        yaosu: '自助购票机客服',
+        yaosu: '49',
         fenceng: '20',
         state: '启用',
        
@@ -67,7 +67,7 @@ const mockData = [
         id: 'JZGG010271',
         fenlei: '客服',
         pinlv: 62,
-        yaosu: 'APP购票客服',
+        yaosu: '35',
         fenceng: '30',
         state: '启用',
        
@@ -76,7 +76,7 @@ const mockData = [
         id: 'JZGG010228',
         fenlei: '客服',
         pinlv: 65,
-        yaosu: '自助购票机客服',
+        yaosu: '45',
         fenceng: '20',
         state: '启用',
        
@@ -85,7 +85,7 @@ const mockData = [
         id: 'JZGG010264',
         fenlei: '管理员',
         pinlv: 42,
-        yaosu: '未分组',
+        yaosu: '30',
         fenceng: '50',
         state: '启用',
        
@@ -102,7 +102,7 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: 'ID',
+            title: '电影编号',
             dataIndex: 'id',
         },
         {
@@ -111,12 +111,12 @@ class Type extends Component<TypeProps, TypeState>{
         },
        
         {
-            title: '所属分组',
+            title: '票价',
             dataIndex: 'yaosu',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '接待人数',
+            title: '购买人数',
             dataIndex: 'fenceng',
         },
         // {
@@ -124,7 +124,7 @@ class Type extends Component<TypeProps, TypeState>{
         //     dataIndex: 'leixing',
         // },
         {
-            title: '分配进度',
+            title: '服务效率',
             dataIndex: 'pinlv',
             render: (text: number) =>
                 <div>
@@ -167,7 +167,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="客服分配设置"
+                title="票务营销管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>
