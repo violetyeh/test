@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾驾驶员计时计程培训教学监管系统',
+  title: '爱尔眼科眼前节测量评估系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

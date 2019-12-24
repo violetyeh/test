@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑培训计时计程信息"
+                title="编辑影像送检信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,7 +51,7 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="学员姓名" >
+                    <Form.Item key="tongdao" label="姓名" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
@@ -59,7 +59,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="touguang" label="教练姓名" >
+                    <Form.Item key="touguang" label="检查室" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
@@ -67,14 +67,14 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="duizhao" label="培训阶段" >
+                    <Form.Item key="duizhao" label="一致性检查" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zt" label="总学时" >
+                    <Form.Item key="zt" label="左眼度数" >
                         {getFieldDecorator('zt', {
                             initialValue: currentItem.zt,
                         })(
@@ -82,7 +82,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="xq" label="总里程" >
+                    <Form.Item key="xq" label="右眼度数" >
                         {getFieldDecorator('xq', {
                             initialValue: currentItem.xq,
                         })(

@@ -20,7 +20,7 @@ interface ModelState {
 const mockData = [
     {
         id: 'JSJC0307',
-        sp:'新学员',
+        sp:'眼角膜',
         shijian:'01:10:11',
         biaozhun:'16（km）',
         jiance:'吴启拉',
@@ -29,7 +29,7 @@ const mockData = [
     },
     {
         id: 'JSJC0308',
-        sp:'老学员',
+        sp:'眼膜炎',
         shijian:'00:14:58',
         biaozhun:'15（km）',
         jiance:'赵元乐',
@@ -38,7 +38,7 @@ const mockData = [
     },
     {
         id: 'JSJC0309',
-        sp:'老学员',
+        sp:'眼角膜',
         shijian:'00:16:52',
         biaozhun:'24（km）',
         jiance:'王可媛',
@@ -47,7 +47,7 @@ const mockData = [
     },
     {
         id: 'JSJC0302',
-        sp:'新学员',
+        sp:'眼球',
         shijian:'01:05:30',
         biaozhun:'21（km）',
         jiance:'郑峰',
@@ -56,7 +56,7 @@ const mockData = [
     },
     {
         id: 'JSJC0303',
-        sp:'老学员',
+        sp:'视力',
         shijian:'00:33:24 ',
         biaozhun:'20（km）',
         jiance:'王媛',
@@ -65,7 +65,7 @@ const mockData = [
     },
     {
         id: 'JSJC0304',
-        sp:'老学员',
+        sp:'眼膜炎',
         shijian:'00:30:24',
         biaozhun:'19（km）',
         jiance:'刘琦歌',
@@ -74,7 +74,7 @@ const mockData = [
     },
     {
         id: 'JSJC0305',
-        sp:'新学员',
+        sp:'眼球',
         shijian:'01:30:31',
         biaozhun:'18（km）',
         jiance:'李武雨',
@@ -83,7 +83,7 @@ const mockData = [
     },
     {
         id: 'JSJC0306',
-        sp:'新学员',
+        sp:'眼球',
         shijian:'01:00:23',
         biaozhun:'17（km）',
         jiance:'王可可',
@@ -108,20 +108,17 @@ class Model extends Component<ModelProps, ModelState>{
             dataIndex: 'id',
         },
         {
-            title: '学员类别',
+            title: '类别名称',
             dataIndex: 'sp',
         },
         {
-            title: '本次计时',
+            title: '测量评估用时',
             dataIndex: 'shijian',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
+       
         {
-            title: '本次里程',
-            dataIndex: 'biaozhun',
-        },
-        {
-            title: '学员姓名',
+            title: '评估人',
             dataIndex: 'jiance',
             render: (text) => <Tag color="BROWN">{text}</Tag>,
         },
@@ -161,7 +158,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="费用管理"
+                title="检查类型设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

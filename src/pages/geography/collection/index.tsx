@@ -25,66 +25,66 @@ const mockData = [
     {
         id: 'JL02106',
         tongdao:'胡艳',
-        touguang:'吴教练',
-        xq:'2365',
-        duizhao:'阶段1',
-        zt:'96',
+        touguang:'眼前节OCT',
+        xq:'150',
+        duizhao:'自动检查',
+        zt:'200（带闪光）',
     },
     {
         id: 'JL02107',
         tongdao:'罗蒙',
-        touguang:'李教练',
-        xq:'2356 ',
-        duizhao:'阶段2',
-        zt:'96',
+        touguang:'青光眼检查',
+        xq:'220 ',
+        duizhao:'人工检查',
+        zt:'200',
     },
     {
         id: 'JL02108',
         tongdao:'姜丝',
-        touguang:'吴教练',
-        xq:'3725 ',
-        duizhao:'阶段1',
-        zt:'96',
+        touguang:'眼前节OCT',
+        xq:'200 ',
+        duizhao:'自动检查',
+        zt:'250',
     },
     {
         id: 'JL02101',
         tongdao:'张媛',
-        touguang:'张教练',
-        xq:'2358',
-        duizhao:'阶段2',
-        zt:'60',
+        touguang:'眼B超+影像工作站',
+        xq:'300（带闪光）',
+        duizhao:'人工检查',
+        zt:'300',
     },
     {
         id: 'JL02102',
         tongdao:'陈涛',
-        touguang:'吴教练',
-        xq:'3654',
-        duizhao:'阶段1',
-        zt:'90',
+        touguang:'青光眼检查',
+        xq:'150（带闪光）',
+        duizhao:'自动检查',
+        zt:'100',
     },
     {
         id: 'JL02103',
         tongdao:'孟明',
-        touguang:'吴教练',
-        xq:'62685',
-        duizhao:'阶段2',
-        zt:'96',
+        touguang:'眼底照相',
+        xq:'200',
+        duizhao:'人工检查',
+        zt:'200',
     },
     {
         id: 'JL02104',
         tongdao:'赵燕',
-        touguang:'李教练',
-        xq:'3645',
-        duizhao:'阶段1',
-        zt:'86',
+        touguang:'眼底立体像',
+        xq:'300',
+        duizhao:'自动检查',
+        zt:'350',
     },
     {
         id: 'JL02105',
         tongdao:'钱前',
-        touguang:'吴教练',
-        xq:'2564',
-        duizhao:'阶段3',
-        zt:'90',
+        touguang:'彩色眼底照相',
+        xq:'250',
+        duizhao:'人工检查',
+        zt:'200（带闪光）',
     },
 
     
@@ -104,27 +104,27 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '学员姓名',
+            title: '姓名',
             dataIndex: 'tongdao',
         },
         {
-            title: '教练姓名',
+            title: '检查室',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
        
         {
-            title: '培训阶段',
+            title: '一致性检查',
             dataIndex: 'duizhao',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
         {
-            title: '总学时',
+            title: '左眼度数',
             dataIndex: 'zt',
         },
        
         {
-            title: '总里程',
+            title: '右眼度数',
             dataIndex: 'xq',
         },
         {
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="培训计时计程管理"
+                title="影像送检统计"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

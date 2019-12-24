@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '培训计时计程管理',
+          name: '影像送检统计',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '费用管理',
+          name: '检查类型设置',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '车辆训练监控',
+          name: '影像图像信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

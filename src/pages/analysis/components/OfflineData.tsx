@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 学员人数: 355, 平均学时: 140, 教练人数:10, 平均里程: 308 },
-  { label: '0.2', 学员人数: 320, 平均学时: 236, 教练人数: 13, 平均里程: 406 },
-  { label: '0.3', 学员人数: 395, 平均学时: 139, 教练人数: 10, 平均里程: 307 },
-  { label: '0.4', 学员人数: 340, 平均学时: 235, 教练人数: 28, 平均里程: 305 },
-  { label: '0.5', 学员人数: 395, 平均学时: 139, 教练人数: 48, 平均里程: 306 },
-  { label: '0.6', 学员人数: 350, 平均学时: 234, 教练人数: 23, 平均里程: 305 },
-  { label: '0.7', 学员人数: 390, 平均学时: 185, 教练人数: 37, 平均里程: 208 },
-  { label: '0.8', 学员人数: 340, 平均学时: 215, 教练人数: 46, 平均里程: 307 },
-  { label: '0.9', 学员人数: 395, 平均学时: 135, 教练人数: 17, 平均里程: 308 },
-  { label: '1.0', 学员人数: 395, 平均学时: 243, 教练人数: 15, 平均里程: 308 },
-  { label: '未评分', 学员人数: 390, 平均学时: 176, 教练人数: 56, 平均里程: 306 },
+  { label: '0.1', 眼科医生人数: 355, 病人人数: 140, 测量评估信息:10, 评估效率: 308 },
+  { label: '0.2', 眼科医生人数: 320, 病人人数: 236, 测量评估信息: 13, 评估效率: 406 },
+  { label: '0.3', 眼科医生人数: 395, 病人人数: 139, 测量评估信息: 10, 评估效率: 307 },
+  { label: '0.4', 眼科医生人数: 340, 病人人数: 235, 测量评估信息: 28, 评估效率: 305 },
+  { label: '0.5', 眼科医生人数: 395, 病人人数: 139, 测量评估信息: 48, 评估效率: 306 },
+  { label: '0.6', 眼科医生人数: 350, 病人人数: 234, 测量评估信息: 23, 评估效率: 305 },
+  { label: '0.7', 眼科医生人数: 390, 病人人数: 185, 测量评估信息: 37, 评估效率: 208 },
+  { label: '0.8', 眼科医生人数: 340, 病人人数: 215, 测量评估信息: 46, 评估效率: 307 },
+  { label: '0.9', 眼科医生人数: 395, 病人人数: 135, 测量评估信息: 17, 评估效率: 308 },
+  { label: '1.0', 眼科医生人数: 395, 病人人数: 243, 测量评估信息: 15, 评估效率: 308 },
+  { label: '未评分', 眼科医生人数: 390, 病人人数: 176, 测量评估信息: 56, 评估效率: 306 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['学员人数', '平均学时', '教练人数','平均里程'], // 展开字段集
+  fields: ['眼科医生人数', '病人人数', '测量评估信息','评估效率'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  平均里程: {
+  评估效率: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '学员人数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '平均学时', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '教练人数', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '平均里程', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '眼科医生人数', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '病人人数', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '测量评估信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '评估效率', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '平均里程') {
+              if (geom.getYScale().field === value && value === '评估效率') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '平均里程') {
+              } else if (geom.getYScale().field === 'value' && value !== '评估效率') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '学员人数') {
+            if (value === '眼科医生人数') {
               return '#2b6cbb';
             }
-            if (value === '平均里程') {
+            if (value === '评估效率') {
               return '#41a2fc';
             }
-            if (value === '平均学时') {
+            if (value === '病人人数') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*平均里程" color="#fad248" size={3} />
+        <Geom type="line" position="label*评估效率" color="#fad248" size={3} />
       </Chart>
     </Card>
   );
