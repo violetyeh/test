@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑记录"
+                title="编辑扫描仪"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,7 +44,7 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="记录编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
@@ -52,7 +52,7 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="touguang" label="教育内容" >
+                    <Form.Item key="touguang" label="光源调节" >
                         {getFieldDecorator('touguang', {
                             initialValue: currentItem.touguang,
                         })(
@@ -60,28 +60,28 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="duizhao" label="培训地点" >
+                    <Form.Item key="duizhao" label="定位区域" >
                         {getFieldDecorator('duizhao', {
                             initialValue: currentItem.duizhao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zt" label="培训老师" >
+                    <Form.Item key="zt" label="扫描医生" >
                         {getFieldDecorator('zt', {
                             initialValue: currentItem.zt,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="tongdao" label="受教育司机姓名" >
+                    <Form.Item key="tongdao" label="扫描病人" >
                         {getFieldDecorator('tongdao', {
                             initialValue: currentItem.tongdao,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xq" label="司机联系方式" >
+                    <Form.Item key="xq" label="医生联系方式" >
                         {getFieldDecorator('xq', {
                             initialValue: currentItem.xq,
                         })(

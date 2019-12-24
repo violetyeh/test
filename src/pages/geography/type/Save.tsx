@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑培训课程信息"
+                title="编辑病人扫描信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -44,29 +44,14 @@ class Save extends Component<SaveProps, SaveState>{
 
             >
                 <Form {...formItemLayout} layout="vertical">
-                    <Form.Item key="id" label="课程编号" >
+                    <Form.Item key="id" label="编号" >
                         {getFieldDecorator('id', {
                             initialValue: currentItem.id,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="zhonglei" label="课程名称" >
-                        {getFieldDecorator('zhonglei', {
-                            initialValue: currentItem.zhonglei,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    <Form.Item key="mingcheng" label="课程要点" >
-                        {getFieldDecorator('mingcheng', {
-                            initialValue: currentItem.mingcheng,
-                        })(
-                            <Input />,
-                        )}
-                    </Form.Item>
-                    
-                    <Form.Item key="shengchan" label="课程负责人" >
+                    <Form.Item key="shengchan" label="负责医生" >
                         {getFieldDecorator('shengchan', {
                             initialValue: currentItem.shengchan,
                         })(
@@ -74,13 +59,31 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                     
-                    <Form.Item key="riqi" label="课程日期" >
+                    <Form.Item key="zhonglei" label="晶体声速" >
+                        {getFieldDecorator('zhonglei', {
+                            initialValue: currentItem.zhonglei,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="mingcheng" label="前房声速" >
+                        {getFieldDecorator('mingcheng', {
+                            initialValue: currentItem.mingcheng,
+                        })(
+                            <Input />,
+                        )}
+                    </Form.Item>
+                    <Form.Item key="riqi" label="玻璃体声速" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
+                    
+                    
+                    
+                  
                     <Form.Item key="status" label="培训状态" >
                         {getFieldDecorator('status', {
                             initialValue: currentItem.status,

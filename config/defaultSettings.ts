@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾司机安全教育培训系统',
+  title: '爱尔眼科光相干断层扫描仪系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

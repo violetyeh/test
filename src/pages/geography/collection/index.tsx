@@ -25,65 +25,65 @@ const mockData = [
     {
         id: 'JL0001',
         tongdao:'张媛',
-        touguang:'交通法律法规',
+        touguang:'1号光源',
         xq:'2358745684@qq.com',
-        duizhao:'客运公司部门',
+        duizhao:'眼内区域',
         zt:'刘思思',
     },
     {
         id: 'JL0002',
         tongdao:'陈涛',
-        touguang:'车辆使用制度',
+        touguang:'3号光源',
         xq:'365471547@qq.com',
-        duizhao:'客车客运公司部门',
+        duizhao:'眼表区域',
         zt:'赵舒',
     },
     {
         id: 'JL0003',
         tongdao:'孟明',
-        touguang:'安全行为辨识',
+        touguang:'2号光源',
         xq:'626854789@qq.com',
-        duizhao:'客运公司部门',
+        duizhao:'眼表区域',
         zt:'高明一',
     },
     {
         id: 'JL0004',
         tongdao:'赵燕',
-        touguang:'交通法律法规',
+        touguang:'1号光源',
         xq:'36457895@qq.com',
-        duizhao:'火车客运公司部门',
+        duizhao:'眼角区域',
         zt:'刘思思',
     },
     {
         id: 'JL0005',
         tongdao:'钱前',
-        touguang:'车辆使用制度',
+        touguang:'3号光源',
         xq:'15647895@qq.com',
-        duizhao:'客运公司部门',
+        duizhao:'眼表区域',
         zt:'李顺德',
     },
     {
         id: 'JL0006',
         tongdao:'胡艳',
-        touguang:'交通法律法规',
+        touguang:'1号光源',
         xq:'13654789@qq.com.',
-        duizhao:'客运公司部门',
+        duizhao:'眼表区域',
         zt:'高明一',
     },
     {
         id: 'JL0007',
         tongdao:'罗蒙',
-        touguang:'应急救援措施',
+        touguang:'2号光源',
         xq:'23568745@qq.com ',
-        duizhao:'高铁客运公司部门',
+        duizhao:'眼内区域',
         zt:'高明一',
     },
     {
         id: 'JL0008',
         tongdao:'姜丝',
-        touguang:'交通法律法规',
+        touguang:'1号光源',
         xq:'37258965@qq.com ',
-        duizhao:'客运公司部门',
+        duizhao:'眼外区域',
         zt:'高明一',
     },
     
@@ -99,32 +99,32 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '记录编号',
+            title: '编号',
             dataIndex: 'id',
         },
         
         {
-            title: '教育内容',
+            title: '光源调节',
             dataIndex: 'touguang',
             render: (text) => <Tag color="black">{text}</Tag>,
         },
        
         {
-            title: '培训地点',
+            title: '定位区域',
             dataIndex: 'duizhao',
-            render: (text) => <Tag color="red">{text}</Tag>,
+            render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '培训老师',
+            title: '扫描医生',
             dataIndex: 'zt',
             render: (text) => <Tag color="#ff0000">{text}</Tag>,
         },
         {
-            title: '受教育司机姓名',
+            title: '扫描病人',
             dataIndex: 'tongdao',
         },
         {
-            title: '司机联系方式',
+            title: '医生联系方式',
             dataIndex: 'xq',
         },
         {
@@ -156,7 +156,7 @@ class Type extends Component<TypeProps, TypeState>{
 
         return (
             <PageHeaderWrapper
-                title="安全教育培训记录"
+                title="扫描仪设置"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑评估信息"
+                title="编辑扫描仪参数"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="sp" label="被评估人" >
+                    <Form.Item key="sp" label="被扫描人" >
                         {getFieldDecorator('sp', {
                             initialValue: currentItem.sp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="shijian" label="评估方式" >
+                    <Form.Item key="shijian" label="曝光延时" >
                         {getFieldDecorator('shijian', {
                             initialValue: currentItem.shijian,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="biaozhun" label="评估日期" >
+                    <Form.Item key="biaozhun" label="曝光时间" >
                         {getFieldDecorator('biaozhun', {
                             initialValue: currentItem.biaozhun,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jiance" label="评估老师" >
+                    <Form.Item key="jiance" label="近视数据库增益参数" >
                         {getFieldDecorator('jiance', {
                             initialValue: currentItem.jiance,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="评估进度（%）" >
+                    <Form.Item key="process" label="扫描进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

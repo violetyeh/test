@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '安全教育培训记录',
+          name: '扫描仪设置',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '培训效果评估',
+          name: '扫描仪参数',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '培训课程管理',
+          name: '病人扫描信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',
