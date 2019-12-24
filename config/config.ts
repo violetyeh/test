@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '订票信息',
+          name: '病人信息',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '车次信息',
+          name: '眼底照相信息',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '乘车常识通知',
+          name: '荧光造影信息',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

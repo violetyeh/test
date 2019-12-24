@@ -12,28 +12,28 @@ import { Chart, Axis, Tooltip, Geom, Legend } from 'bizcharts';
 // 下面的代码会被作为 cdn script 注入 注释勿删
 // CDN START
 const data = [
-  { label: '0.1', 列车数量: 154, 旅客数量: 80, 票务信息: 45, 发车数量: 100 },
-  { label: '0.2', 列车数量: 190, 旅客数量: 80, 票务信息: 13, 发车数量: 81 },
-  { label: '0.3', 列车数量: 121, 旅客数量: 90, 票务信息: 90, 发车数量: 101 },
-  { label: '0.4', 列车数量: 150, 旅客数量: 50, 票务信息: 39, 发车数量: 52 },
-  { label: '0.5', 列车数量: 123, 旅客数量: 24, 票务信息: 50, 发车数量: 65},
-  { label: '0.6', 列车数量: 112, 旅客数量: 64, 票务信息: 66, 发车数量: 54 },
-  { label: '0.7', 列车数量: 163, 旅客数量: 44, 票务信息: 16, 发车数量: 87 },
-  { label: '0.8', 列车数量: 123, 旅客数量: 24, 票务信息: 66, 发车数量: 75 },
-  { label: '0.9', 列车数量: 153, 旅客数量: 34, 票务信息: 23, 发车数量: 84 },
-  { label: '1.0', 列车数量: 123, 旅客数量: 23, 票务信息: 78, 发车数量: 81 },
-  { label: '未评分', 列车数量: 113, 旅客数量: 13, 票务信息: 66, 发车数量: 110 },
+  { label: '0.1', 今日病人数量: 154, 病人数量: 80, 眼底照相信息: 45, 荧光造影信息: 100 },
+  { label: '0.2', 今日病人数量: 190, 病人数量: 80, 眼底照相信息: 13, 荧光造影信息: 81 },
+  { label: '0.3', 今日病人数量: 121, 病人数量: 90, 眼底照相信息: 90, 荧光造影信息: 101 },
+  { label: '0.4', 今日病人数量: 150, 病人数量: 50, 眼底照相信息: 39, 荧光造影信息: 52 },
+  { label: '0.5', 今日病人数量: 123, 病人数量: 24, 眼底照相信息: 50, 荧光造影信息: 65},
+  { label: '0.6', 今日病人数量: 112, 病人数量: 64, 眼底照相信息: 66, 荧光造影信息: 54 },
+  { label: '0.7', 今日病人数量: 163, 病人数量: 44, 眼底照相信息: 16, 荧光造影信息: 87 },
+  { label: '0.8', 今日病人数量: 123, 病人数量: 24, 眼底照相信息: 66, 荧光造影信息: 75 },
+  { label: '0.9', 今日病人数量: 153, 病人数量: 34, 眼底照相信息: 23, 荧光造影信息: 84 },
+  { label: '1.0', 今日病人数量: 123, 病人数量: 23, 眼底照相信息: 78, 荧光造影信息: 81 },
+  { label: '未评分', 今日病人数量: 113, 病人数量: 13, 眼底照相信息: 66, 荧光造影信息: 110 },
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 dv.transform({
   type: 'fold',
-  fields: ['列车数量', '旅客数量', '票务信息','发车数量'], // 展开字段集
+  fields: ['今日病人数量', '病人数量', '眼底照相信息','荧光造影信息'], // 展开字段集
   key: 'type', // key字段
   value: 'value', // value字段
 });
 const scale = {
-  发车数量: {
+  荧光造影信息: {
     type: 'linear',
     min: 0,
     max: 10,
@@ -67,10 +67,10 @@ const OfflineData = ({
           custom
           allowAllCanceled
           items={[
-            { value: '列车数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
-            { value: '旅客数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
-            { value: '票务信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
-            { value: '发车数量', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
+            { value: '今日病人数量', marker: { symbol: 'square', fill: '#3182bd', radius: 5 } },
+            { value: '病人数量', marker: { symbol: 'square', fill: '#41a2fc', radius: 5 } },
+            { value: '眼底照相信息', marker: { symbol: 'square', fill: '#54ca76', radius: 5 } },
+            { value: '荧光造影信息', marker: { symbol: 'hyphen', stroke: '#fad248', radius: 5, lineWidth: 3 } },
           ]}
           onClick={(ev) => {
             const item = ev.item;
@@ -79,13 +79,13 @@ const OfflineData = ({
             const geoms = chartIns.getAllGeoms();
             for (let i = 0; i < geoms.length; i++) {
               const geom = geoms[i];
-              if (geom.getYScale().field === value && value === '发车数量') {
+              if (geom.getYScale().field === value && value === '荧光造影信息') {
                 if (checked) {
                   geom.show();
                 } else {
                   geom.hide();
                 }
-              } else if (geom.getYScale().field === 'value' && value !== '发车数量') {
+              } else if (geom.getYScale().field === 'value' && value !== '荧光造影信息') {
                 geom.getShapes().map((shape) => {
                   if (shape._cfg.origin._origin.type == value) {
                     shape._cfg.visible = !shape._cfg.visible;
@@ -104,13 +104,13 @@ const OfflineData = ({
           type="interval"
           position="label*value"
           color={['type', (value) => {
-            if (value === '汽车数量') {
+            if (value === '照相数量') {
               return '#2b6cbb';
             }
-            if (value === '发车数量') {
+            if (value === '荧光造影信息') {
               return '#41a2fc';
             }
-            if (value === '旅客数量') {
+            if (value === '病人数量') {
               return '#54ca76';
             }
           }]}
@@ -119,7 +119,7 @@ const OfflineData = ({
             marginRatio: 1 / 32,
           }]}
         />
-        <Geom type="line" position="label*发车数量" color="#fad248" size={3} />
+        <Geom type="line" position="label*荧光造影信息" color="#fad248" size={3} />
       </Chart>
     </Card>
   );

@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '泰禾旅客信息在线管理平台',
+  title: '爱尔眼科眼底照相及荧光造影系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -20,73 +20,73 @@ interface ModelState {
 const mockData = [
     {
         hj: 'MESBH0231',
-        dw:'6:00',
-        ren:'G（高速动车）',
-        riqi:'80',
-        qk:'双寨站-扎麻隆站-石崖庄站',
+        dw:'周隼',
+        ren:'33',
+        riqi:'0.8',
+        qk:'1.0',
         process: 1,
         
     },
     {
         hj: 'MESBH0232',
-        dw:'6:15',
-        ren:'C（城际动车）',
-        riqi:'60',
-        qk:'成都--德阳--绵阳--江油--广元--略阳',
+        dw:'李伟',
+        ren:'45',
+        riqi:'1.0',
+        qk:'0.5',
         process: 5,
         
     },
     {
         hj: 'MESBH0233 ',
-        dw:'6:30',
-        ren:'D（普通动车）',
-        riqi:'80',
-        qk:'江油--广元--略阳--微县--宝鸡',
+        dw:'钱多多',
+        ren:'25',
+        riqi:'1.0',
+        qk:'1.0',
         process: 2,
         
     },
     {
         hj: 'MESBH0234',
-        dw:'7:00',
-        ren:'Z（直达特快）',
-        riqi:'60',
-        qk:'西安--渭南--华山--三门峡西',
+        dw:'赵思思',
+        ren:'20',
+        riqi:'0.2',
+        qk:'0.3',
         process: 1,
         
     },
     {
         hj: 'MESBH0235',
-        dw:'8:30',
-        ren:'T（特快）',
-        riqi:'40',
-        qk:'洛阳--新乡--汤阴--安阳--邯郸',
+        dw:'刘杰',
+        ren:'33',
+        riqi:'1.0',
+        qk:'1.0',
         process:8,
         
     },
     {
         hj: 'MESBH0236',
-        dw:'8:00',
-        ren:'K（快速）',
-        riqi:'30',
-        qk:'邯郸--沙河市--邢台--石家庄--定州',
+        dw:'陈思超',
+        ren:'45',
+        riqi:'1.2',
+        qk:'0.9',
         process: 7,
         
     },
     {
         hj: 'MESBH0237',
-        dw:'9:30',
-        ren:'L（临客）',
-        riqi:'40',
-        qk:'汤阴--安阳--邯郸--沙河市--邢台',
+        dw:'王猛',
+        ren:'12',
+        riqi:'0.6',
+        qk:'1.3',
         process:6,
         
     },
     {
         hj: 'MESBH0238',
-        dw:'9:00',
-        ren:'Y（旅游列车）',
-        riqi:'60',
-        qk:'石家庄--定州--保定--高碑店--北京西',
+        dw:'张宇',
+        ren:'30',
+        riqi:'5.0',
+        qk:'1.2',
         process: 4,
         
     },
@@ -108,28 +108,28 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '发车时刻',
+            title: '姓名',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '列车类别',
+            title: '年龄',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '票价',
+            title: '左眼视力',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '沿途车站',
+            title: '右眼视力',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '余票占比',
+            title: '检查进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -160,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="车次信息"
+                title="眼底照相信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

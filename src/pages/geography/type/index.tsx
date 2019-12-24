@@ -21,65 +21,65 @@ const mockData = [
     {
        id: 'TZ00032',
        hj:'赵玲玲',
-       mc:'不能把易燃易爆等危险品携带上车。',
-       bs:'G6001',
-       bcy:'2019年9月5日',
+       mc:'检查玻璃体',
+       bs:'正常眼',
+       bcy:'2019年12月5日',
        state: 1,
     },
     {
         id: 'TZ00049',
         hj:'王梦洁',
-        mc:'特别注意检查自己的行李',
-        bs:'G9998',
-        bcy:'2019年9月4日',
+        mc:'检查脉络膜',
+        bs:'致密白内障',
+        bcy:'2019年12月4日',
         state: 1,
      },
      {
         id: 'TZ00036',
         hj:'江云云',
-        mc:'不要在车厢连接处逗留',
-        bs:'C1023',
-        bcy:'2019年9月3日',
+        mc:'检查视神经',
+        bs:'无晶体眼',
+        bcy:'2019年12月3日',
         state: 1,
      },
      {
         id: 'TZ00047',
         hj:'刘艳',
-        mc:'不要再车厢里来回穿行',
-        bs:'C1058',
-        bcy:'2019年9月2日',
+        mc:'检查视网膜',
+        bs:'正常眼',
+        bcy:'2019年12月2日',
         state: 1,
      },
      {
         id: 'TZ00022',
         hj:'王梦洁',
-        mc:'不能将废弃物扔出窗外，以免砸伤他人。',
-        bs:'D5041',
-        bcy:'2019年9月1日',
+        mc:'检查视神经',
+        bs:'致密白内障',
+        bcy:'2019年12月1日',
         state: 1,
      },
      {
         id: 'TZ00047',
         hj:'赵玲玲',
-        mc:'乘车时，不要将头、手伸出窗外',
-        bs:'Z5064',
-        bcy:'2019年9月7日',
+        mc:'检查视网膜',
+        bs:'无晶体眼',
+        bcy:'2019年12月7日',
         state: 1,
      },
      {
         id: 'TZ00036',
         hj:'张凤',
-        mc:'不能乱动车厢内的紧急制动阀和各种仪表，以免导致事故发生。',
-        bs:'Z5073',
-        bcy:'2019年9月8日',
+        mc:'检查脉络膜',
+        bs:'致密白内障',
+        bcy:'2019年12月8日',
         state: 1,
      },
      {
         id: 'TZ00012',
         hj:'赵玲玲',
-        mc:'倒热水时不要过满，以免列车晃动热水溅出后烫伤人。',
-        bs:'T4901',
-        bcy:'2019年9月6日',
+        mc:'检查玻璃体',
+        bs:'正常眼',
+        bcy:'2019年12月6日',
         state: 1,
      },
 ]
@@ -94,23 +94,23 @@ class Type extends Component<TypeProps, TypeState>{
 
     columns: ColumnProps<any>[] = [
         {
-            title: '通知编号',
+            title: '编号',
             dataIndex: 'id',
         },
         {
-            title: '通知事件',
+            title: '检查类型',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
             
         },
         {
-            title: '播报人',
+            title: '检查人',
             dataIndex: 'hj',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
-            title: '车次',
+            title: 'A超结果',
             dataIndex: 'bs',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
@@ -120,7 +120,7 @@ class Type extends Component<TypeProps, TypeState>{
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '通报完成',
+            title: '检查完成',
             dataIndex: 'jl',
             render: () => <Switch checkedChildren="否" unCheckedChildren="是" />,
         },
@@ -151,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="乘车常识通报管理"
+                title="荧光造影信息"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

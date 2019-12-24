@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑车次信息"
+                title="编辑眼底照相信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="发车时刻" >
+                    <Form.Item key="dw" label="姓名" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="列车类别" >
+                    <Form.Item key="ren" label="年龄" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="票价" >
+                    <Form.Item key="riqi" label="左眼视力" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="qk" label="沿途车站" >
+                    <Form.Item key="qk" label="右眼视力" >
                         {getFieldDecorator('qk', {
                             initialValue: currentItem.qk,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="余票占比（%）" >
+                    <Form.Item key="process" label="检查进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(
