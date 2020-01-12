@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '爱尔眼科眼底照相及荧光造影系统',
+  title: '提取物深加工分离PID控制系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

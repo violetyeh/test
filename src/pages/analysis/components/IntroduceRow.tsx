@@ -24,7 +24,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
       <Col {...topColResponsiveProps}>
         <ChartCard
           bordered={false}
-          title='病人数量'
+          title='提取物数量'
           action={
             <Tooltip
               title={
@@ -35,17 +35,17 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
             </Tooltip>
           }
           loading={loading}
-          total={121}
-          footer='今日病人数量:31'
+          total={221}
+          footer='今日提取物数量:131'
           contentHeight={46}
         >
           <Trend flag="up" style={{ marginRight: 25 }}>
             <FormattedMessage id="analysis.analysis.week" defaultMessage="Weekly Changes" />
-            <span className={styles.trendText}>10%</span>
+            <span className={styles.trendText}>8%</span>
           </Trend>
           <Trend flag="down">
             <FormattedMessage id="analysis.analysis.day" defaultMessage="Daily Changes" />
-            <span className={styles.trendText}>11%</span>
+            <span className={styles.trendText}>7%</span>
           </Trend>
         </ChartCard>
       </Col>
@@ -54,7 +54,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='眼底照相信息'
+          title='深加工信息'
           action={
             <Tooltip
               title={
@@ -64,8 +64,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(564).format('0,0')}
-          footer='今日增加：122'
+          total={numeral(64).format('0,0')}
+          footer='今日增加：22'
           contentHeight={46}
         >
           <MiniArea color="#975FE4" data={visitData} />
@@ -75,7 +75,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           bordered={false}
           loading={loading}
-          title='荧光造影信息'
+          title='分离信息'
           action={
             <Tooltip
               title={
@@ -85,8 +85,8 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
               <Icon type="info-circle-o" />
             </Tooltip>
           }
-          total={numeral(541).format('0,0')}
-          footer='诊断效率：84%'
+          total={numeral(66).format('0,0')}
+          footer='分离效率：84%'
           contentHeight={46}
         >
           <MiniBar data={visitData} />
@@ -96,7 +96,7 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: IVi
         <ChartCard
           loading={loading}
           bordered={false}
-          title='延迟率'
+          title='PID控制效率'
           action={
             <Tooltip
               title={

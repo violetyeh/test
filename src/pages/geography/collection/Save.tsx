@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑病人信息"
+                title="编辑提取操作信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="name" label="姓名" >
+                    <Form.Item key="name" label="操作人" >
                         {getFieldDecorator('name', {
                             initialValue: currentItem.name,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dp" label="诊断时间" >
+                    <Form.Item key="dp" label="操作时间" >
                         {getFieldDecorator('dp', {
                             initialValue: currentItem.dp,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="xm" label="送检原因" >
+                    <Form.Item key="xm" label="工序" >
                         {getFieldDecorator('xm', {
                             initialValue: currentItem.xm,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jg" label="性别" >
+                    <Form.Item key="jg" label="详细信息" >
                         {getFieldDecorator('jg', {
                             initialValue: currentItem.jg,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="病历号" >
+                    <Form.Item key="dw" label="工序号" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(

@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑眼底照相信息"
+                title="编辑分离操作信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,35 +51,35 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="dw" label="姓名" >
+                    <Form.Item key="dw" label="操作人" >
                         {getFieldDecorator('dw', {
                             initialValue: currentItem.dw,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="ren" label="年龄" >
+                    <Form.Item key="ren" label="选择方法" >
                         {getFieldDecorator('ren', {
                             initialValue: currentItem.ren,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="riqi" label="左眼视力" >
+                    <Form.Item key="riqi" label="提取氨基酸pk值" >
                         {getFieldDecorator('riqi', {
                             initialValue: currentItem.riqi,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="qk" label="右眼视力" >
+                    <Form.Item key="qk" label="提取氨基酸pl值" >
                         {getFieldDecorator('qk', {
                             initialValue: currentItem.qk,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="process" label="检查进度（%）" >
+                    <Form.Item key="process" label="深加工进度（%）" >
                         {getFieldDecorator('process', {
                             initialValue: currentItem.process,
                         })(

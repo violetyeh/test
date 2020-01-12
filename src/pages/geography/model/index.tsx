@@ -21,7 +21,7 @@ const mockData = [
     {
         hj: 'MESBH0231',
         dw:'周隼',
-        ren:'33',
+        ren:'渗析法',
         riqi:'0.8',
         qk:'1.0',
         process: 1,
@@ -30,7 +30,7 @@ const mockData = [
     {
         hj: 'MESBH0232',
         dw:'李伟',
-        ren:'45',
+        ren:'离子交换法',
         riqi:'1.0',
         qk:'0.5',
         process: 5,
@@ -39,7 +39,7 @@ const mockData = [
     {
         hj: 'MESBH0233 ',
         dw:'钱多多',
-        ren:'25',
+        ren:'沉淀法',
         riqi:'1.0',
         qk:'1.0',
         process: 2,
@@ -48,7 +48,7 @@ const mockData = [
     {
         hj: 'MESBH0234',
         dw:'赵思思',
-        ren:'20',
+        ren:'萃取法',
         riqi:'0.2',
         qk:'0.3',
         process: 1,
@@ -57,7 +57,7 @@ const mockData = [
     {
         hj: 'MESBH0235',
         dw:'刘杰',
-        ren:'33',
+        ren:'渗析法',
         riqi:'1.0',
         qk:'1.0',
         process:8,
@@ -66,8 +66,8 @@ const mockData = [
     {
         hj: 'MESBH0236',
         dw:'陈思超',
-        ren:'45',
-        riqi:'1.2',
+        ren:'萃取法',
+        riqi:'0.2',
         qk:'0.9',
         process: 7,
         
@@ -75,18 +75,18 @@ const mockData = [
     {
         hj: 'MESBH0237',
         dw:'王猛',
-        ren:'12',
+        ren:'离子交换法',
         riqi:'0.6',
-        qk:'1.3',
+        qk:'0.3',
         process:6,
         
     },
     {
         hj: 'MESBH0238',
         dw:'张宇',
-        ren:'30',
-        riqi:'5.0',
-        qk:'1.2',
+        ren:'沉淀法',
+        riqi:'0.1',
+        qk:'0.2',
         process: 4,
         
     },
@@ -108,28 +108,28 @@ class Model extends Component<ModelProps, ModelState>{
             render: (text) => <Tag color="#123">{text}</Tag>,
         },
         {
-            title: '姓名',
+            title: '操作人',
             dataIndex: 'dw',
             render: (text) => <Tag color="green">{text}</Tag>,
         },
         {
-            title: '年龄',
+            title: '选择方法',
             dataIndex: 'ren',
             render: (text) => <Tag color="red">{text}</Tag>,
         },
 
         {
-            title: '左眼视力',
+            title: '提取氨基酸pk值',
             dataIndex: 'riqi',
             render: (text) => <Tag color="#003">{text}</Tag>,
         },
         {
-            title: '右眼视力',
+            title: '提取氨基酸pl值',
             dataIndex: 'qk',
             render: (text) => <Tag color="#f50">{text}</Tag>,
         },
         {
-            title: '检查进度',
+            title: '深加工进度',
             dataIndex: 'process',
             render: (text) => <Progress type="circle" percent={text} size="small" />,
         },
@@ -160,7 +160,7 @@ class Model extends Component<ModelProps, ModelState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="眼底照相信息"
+                title="分离操作"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

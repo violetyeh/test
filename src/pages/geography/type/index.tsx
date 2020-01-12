@@ -21,65 +21,65 @@ const mockData = [
     {
        id: 'TZ00032',
        hj:'赵玲玲',
-       mc:'检查玻璃体',
-       bs:'正常眼',
-       bcy:'2019年12月5日',
+       mc:'PID程序2474',
+       bs:'自动分离',
+       bcy:'2020年01月5日',
        state: 1,
     },
     {
         id: 'TZ00049',
         hj:'王梦洁',
-        mc:'检查脉络膜',
-        bs:'致密白内障',
-        bcy:'2019年12月4日',
+        mc:'PID程序4951',
+        bs:'手动分离',
+        bcy:'2020年01月4日',
         state: 1,
      },
      {
         id: 'TZ00036',
         hj:'江云云',
-        mc:'检查视神经',
-        bs:'无晶体眼',
-        bcy:'2019年12月3日',
+        mc:'PID程序5241',
+        bs:'自动分离',
+        bcy:'2020年01月3日',
         state: 1,
      },
      {
         id: 'TZ00047',
         hj:'刘艳',
-        mc:'检查视网膜',
-        bs:'正常眼',
-        bcy:'2019年12月2日',
+        mc:'PID程序3625',
+        bs:'自动分离',
+        bcy:'2020年01月2日',
         state: 1,
      },
      {
         id: 'TZ00022',
         hj:'王梦洁',
-        mc:'检查视神经',
-        bs:'致密白内障',
-        bcy:'2019年12月1日',
+        mc:'PID程序1245',
+        bs:'自动分离',
+        bcy:'2020年01月1日',
         state: 1,
      },
      {
         id: 'TZ00047',
         hj:'赵玲玲',
-        mc:'检查视网膜',
-        bs:'无晶体眼',
-        bcy:'2019年12月7日',
+        mc:'PID程序6547',
+        bs:'手动分离',
+        bcy:'2020年01月7日',
         state: 1,
      },
      {
         id: 'TZ00036',
         hj:'张凤',
-        mc:'检查脉络膜',
-        bs:'致密白内障',
-        bcy:'2019年12月8日',
+        mc:'PID程序3324',
+        bs:'手动分离',
+        bcy:'2020年01月8日',
         state: 1,
      },
      {
         id: 'TZ00012',
         hj:'赵玲玲',
-        mc:'检查玻璃体',
-        bs:'正常眼',
-        bcy:'2019年12月6日',
+        mc:'PID程序0214',
+        bs:'自动分离',
+        bcy:'2020年01月6日',
         state: 1,
      },
 ]
@@ -98,29 +98,29 @@ class Type extends Component<TypeProps, TypeState>{
             dataIndex: 'id',
         },
         {
-            title: '检查类型',
+            title: '程序名称',
             dataIndex: 'mc',
             render: (text) => <Tag color="GREEN">{text}</Tag>,
             
         },
         {
-            title: '检查人',
+            title: '管理人',
             dataIndex: 'hj',
             render: (text) => <Tag color="RED">{text}</Tag>,
         },
         
         {
-            title: 'A超结果',
+            title: '分离控制',
             dataIndex: 'bs',
             render: (text) => <Tag color="BLUE">{text}</Tag>,
         },
         {
-            title: '通知时间',
+            title: '程序启动时间',
             dataIndex: 'bcy',
             render: (text) => <Tag color="purple">{text}</Tag>,
         },
         {
-            title: '检查完成',
+            title: '程序完成',
             dataIndex: 'jl',
             render: () => <Switch checkedChildren="否" unCheckedChildren="是" />,
         },
@@ -151,7 +151,7 @@ class Type extends Component<TypeProps, TypeState>{
         const { saveVisible, data, currentItem } = this.state;
         return (
             <PageHeaderWrapper
-                title="荧光造影信息"
+                title="程序管理"
             >
                 <Card bordered={false}>
                     <div className={styles.tableListForm}><Search handleSave={() => this.setState({ currentItem: {}, saveVisible: true })} /></div>

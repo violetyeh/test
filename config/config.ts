@@ -132,19 +132,19 @@ export default {
           component: './analysis',
         },
         {
-          name: '病人信息',
+          name: '提取操作 ',
           path: '/collection',
           icon: 'line-chart',
           component: './geography/collection',
         },
         {
-          name: '眼底照相信息',
+          name: '分离操作',
           path: '/model',
           icon: 'fund',
           component: './geography/model',
         },
         {
-          name: '荧光造影信息',
+          name: '程序管理',
           path: '/type',
           icon: 'drag',
           component: './geography/type',

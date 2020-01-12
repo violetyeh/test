@@ -34,7 +34,7 @@ class Save extends Component<SaveProps, SaveState>{
         console.log(currentItem, 'item');
         return (
             <Modal
-                title="编辑荧光造影信息"
+                title="编辑程序信息"
                 className={styles.standardListForm}
                 width={640}
                 destroyOnClose
@@ -51,14 +51,14 @@ class Save extends Component<SaveProps, SaveState>{
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="mc" label="检查类型" >
+                    <Form.Item key="mc" label="程序名称" >
                         {getFieldDecorator('mc', {
                             initialValue: currentItem.mc,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="hj" label="检查人" >
+                    <Form.Item key="hj" label="管理人" >
                         {getFieldDecorator('hj', {
                             initialValue: currentItem.hj,
                         })(
@@ -66,21 +66,21 @@ class Save extends Component<SaveProps, SaveState>{
                         )}
                     </Form.Item>
                    
-                    <Form.Item key="bs" label="A超结果" >
+                    <Form.Item key="bs" label="分离控制" >
                         {getFieldDecorator('bs', {
                             initialValue: currentItem.bs,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="bcy" label="通知时间" >
+                    <Form.Item key="bcy" label="程序启动时间" >
                         {getFieldDecorator('bcy', {
                             initialValue: currentItem.bcy,
                         })(
                             <Input />,
                         )}
                     </Form.Item>
-                    <Form.Item key="jl" label="检查完成" >
+                    <Form.Item key="jl" label="程序完成" >
                         {getFieldDecorator('jl', {
                             initialValue: currentItem.jl,
                         })(
